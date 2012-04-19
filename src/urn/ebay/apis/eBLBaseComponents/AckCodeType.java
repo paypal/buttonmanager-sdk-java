@@ -11,24 +11,24 @@ package urn.ebay.apis.eBLBaseComponents;
 
 public enum AckCodeType {
 
-SUCCESS("Success"),
-FAILURE("Failure"),
-WARNING("Warning"),
-SUCCESSWITHWARNING("SuccessWithWarning"),
-FAILUREWITHWARNING("FailureWithWarning"),
-PARTIALSUCCESS("PartialSuccess"),
-CUSTOMCODE("CustomCode"),
-	;
-private String value;
-AckCodeType(String val){
-value=val;
-}public String getValue(){
-return value;
-}
-public static AckCodeType fromValue(String v) {
-		for (AckCodeType c : values())
-			if (c.value.equals(v))
-				return c;
-throw new IllegalArgumentException(v);
-}
+ 		SUCCESS("Success"),
+ 		FAILURE("Failure"),
+ 		WARNING("Warning"),
+ 		SUCCESSWITHWARNING("SuccessWithWarning"),
+ 		FAILUREWITHWARNING("FailureWithWarning"),
+ 		PARTIALSUCCESS("PartialSuccess"),
+ 		CUSTOMCODE("CustomCode"),
+		;
+		private String value;
+		AckCodeType(String val){
+			value=val;
+		}		public String getValue(){
+			return value;
+		}
+		public static AckCodeType fromValue(String v) {
+			for (AckCodeType c : values())
+				if (c.value.equals(v))
+					return c;
+			throw new IllegalArgumentException(v);
+		}
 }

@@ -32,8 +32,6 @@ import urn.ebay.api.PayPalAPI.BMSetInventoryReq;
 import urn.ebay.api.PayPalAPI.BMSetInventoryResponseType;
 import urn.ebay.api.PayPalAPI.BMUpdateButtonReq;
 import urn.ebay.api.PayPalAPI.BMUpdateButtonResponseType;
-import urn.ebay.api.PayPalAPI.DoCancelReq;
-import urn.ebay.api.PayPalAPI.DoCancelResponseType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 
@@ -220,29 +218,6 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 
 	public BMButtonSearchResponseType bMButtonSearch (BMButtonSearchReq BMButtonSearchReq) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException {
 		return bMButtonSearch(BMButtonSearchReq, null);
-	}
-
-	/**
-	 * @throws SSLConfigurationException
-	 * @throws InvalidCredentialException
-	 * @throws IOException
-	 * @throws HttpErrorException
-	 * @throws InvalidResponseDataException
-	 * @throws ClientActionRequiredException
-	 * @throws MissingCredentialException
-	 * @throws InterruptedException
-	 * @throws OAuthException
-	 * @throws ParserConfigurationException
-	 * @throws SAXException
-	 */
-	public DoCancelResponseType doCancel (DoCancelReq DoCancelReq,  String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException {
-		setStandardParams(DoCancelReq.getDoCancelRequest());
-		String response = call("DoCancel", DoCancelReq.toXMLString(), apiUsername);
-		return new DoCancelResponseType(response);
-	}
-
-	public DoCancelResponseType doCancel (DoCancelReq DoCancelReq) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException {
-		return doCancel(DoCancelReq, null);
 	}
 
 }

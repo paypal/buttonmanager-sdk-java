@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.BillUserRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class BillUserReq {
+public class BillUserReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private BillUserRequestType BillUserRequest;
-	public BillUserRequestType getBillUserRequest() {
-		return BillUserRequest;
-	}
-	public void setBillUserRequest(BillUserRequestType value) {
-		this.BillUserRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public BillUserReq (){
+	}	
+
+	/**
+	 * Getter for BillUserRequest
+	 */
+	 public BillUserRequestType getBillUserRequest() {
+	 	return BillUserRequest;
+	 }
+	 
+	/**
+	 * Setter for BillUserRequest
+	 */
+	 public void setBillUserRequest(BillUserRequestType BillUserRequest) {
+	 	this.BillUserRequest = BillUserRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:BillUserReq>");
-		if( BillUserRequest != null ) {
+		sb.append("<urn:BillUserReq>");
+		if(BillUserRequest != null) {
 			sb.append("<urn:BillUserRequest>");
 			sb.append(BillUserRequest.toXMLString());
 			sb.append("</urn:BillUserRequest>");
 		}
-sb.append("</urn:BillUserReq>");
+		sb.append("</urn:BillUserReq>");
 		return sb.toString();
 	}
 

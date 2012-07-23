@@ -1,22 +1,25 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.DoExpressCheckoutPaymentRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class DoUATPExpressCheckoutPaymentRequestType extends DoExpressCheckoutPaymentRequestType{
+public class DoUATPExpressCheckoutPaymentRequestType extends DoExpressCheckoutPaymentRequestType {
+
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public DoUATPExpressCheckoutPaymentRequestType (){
+	}	
 
 
 
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append(super.toXMLString());
+		sb.append(super.toXMLString());
 		return sb.toString();
 	}
 

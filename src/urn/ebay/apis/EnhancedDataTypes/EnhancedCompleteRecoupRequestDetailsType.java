@@ -1,19 +1,22 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.EnhancedDataTypes;
 
-
-
 /**
+ * No Document Comments
  */
-public class EnhancedCompleteRecoupRequestDetailsType {
+public class EnhancedCompleteRecoupRequestDetailsType{
+
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public EnhancedCompleteRecoupRequestDetailsType (){
+	}	
 
 
 
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		return sb.toString();
 	}

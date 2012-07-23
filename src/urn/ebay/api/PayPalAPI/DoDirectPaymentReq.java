@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.DoDirectPaymentRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class DoDirectPaymentReq {
+public class DoDirectPaymentReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private DoDirectPaymentRequestType DoDirectPaymentRequest;
-	public DoDirectPaymentRequestType getDoDirectPaymentRequest() {
-		return DoDirectPaymentRequest;
-	}
-	public void setDoDirectPaymentRequest(DoDirectPaymentRequestType value) {
-		this.DoDirectPaymentRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public DoDirectPaymentReq (){
+	}	
+
+	/**
+	 * Getter for DoDirectPaymentRequest
+	 */
+	 public DoDirectPaymentRequestType getDoDirectPaymentRequest() {
+	 	return DoDirectPaymentRequest;
+	 }
+	 
+	/**
+	 * Setter for DoDirectPaymentRequest
+	 */
+	 public void setDoDirectPaymentRequest(DoDirectPaymentRequestType DoDirectPaymentRequest) {
+	 	this.DoDirectPaymentRequest = DoDirectPaymentRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:DoDirectPaymentReq>");
-		if( DoDirectPaymentRequest != null ) {
+		sb.append("<urn:DoDirectPaymentReq>");
+		if(DoDirectPaymentRequest != null) {
 			sb.append("<urn:DoDirectPaymentRequest>");
 			sb.append(DoDirectPaymentRequest.toXMLString());
 			sb.append("</urn:DoDirectPaymentRequest>");
 		}
-sb.append("</urn:DoDirectPaymentReq>");
+		sb.append("</urn:DoDirectPaymentReq>");
 		return sb.toString();
 	}
 

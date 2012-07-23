@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.BMGetButtonDetailsRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class BMGetButtonDetailsReq {
+public class BMGetButtonDetailsReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private BMGetButtonDetailsRequestType BMGetButtonDetailsRequest;
-	public BMGetButtonDetailsRequestType getBMGetButtonDetailsRequest() {
-		return BMGetButtonDetailsRequest;
-	}
-	public void setBMGetButtonDetailsRequest(BMGetButtonDetailsRequestType value) {
-		this.BMGetButtonDetailsRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public BMGetButtonDetailsReq (){
+	}	
+
+	/**
+	 * Getter for BMGetButtonDetailsRequest
+	 */
+	 public BMGetButtonDetailsRequestType getBMGetButtonDetailsRequest() {
+	 	return BMGetButtonDetailsRequest;
+	 }
+	 
+	/**
+	 * Setter for BMGetButtonDetailsRequest
+	 */
+	 public void setBMGetButtonDetailsRequest(BMGetButtonDetailsRequestType BMGetButtonDetailsRequest) {
+	 	this.BMGetButtonDetailsRequest = BMGetButtonDetailsRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:BMGetButtonDetailsReq>");
-		if( BMGetButtonDetailsRequest != null ) {
+		sb.append("<urn:BMGetButtonDetailsReq>");
+		if(BMGetButtonDetailsRequest != null) {
 			sb.append("<urn:BMGetButtonDetailsRequest>");
 			sb.append(BMGetButtonDetailsRequest.toXMLString());
 			sb.append("</urn:BMGetButtonDetailsRequest>");
 		}
-sb.append("</urn:BMGetButtonDetailsReq>");
+		sb.append("</urn:BMGetButtonDetailsReq>");
 		return sb.toString();
 	}
 

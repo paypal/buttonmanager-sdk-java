@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.GetTransactionDetailsRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class GetTransactionDetailsReq {
+public class GetTransactionDetailsReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private GetTransactionDetailsRequestType GetTransactionDetailsRequest;
-	public GetTransactionDetailsRequestType getGetTransactionDetailsRequest() {
-		return GetTransactionDetailsRequest;
-	}
-	public void setGetTransactionDetailsRequest(GetTransactionDetailsRequestType value) {
-		this.GetTransactionDetailsRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public GetTransactionDetailsReq (){
+	}	
+
+	/**
+	 * Getter for GetTransactionDetailsRequest
+	 */
+	 public GetTransactionDetailsRequestType getGetTransactionDetailsRequest() {
+	 	return GetTransactionDetailsRequest;
+	 }
+	 
+	/**
+	 * Setter for GetTransactionDetailsRequest
+	 */
+	 public void setGetTransactionDetailsRequest(GetTransactionDetailsRequestType GetTransactionDetailsRequest) {
+	 	this.GetTransactionDetailsRequest = GetTransactionDetailsRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:GetTransactionDetailsReq>");
-		if( GetTransactionDetailsRequest != null ) {
+		sb.append("<urn:GetTransactionDetailsReq>");
+		if(GetTransactionDetailsRequest != null) {
 			sb.append("<urn:GetTransactionDetailsRequest>");
 			sb.append(GetTransactionDetailsRequest.toXMLString());
 			sb.append("</urn:GetTransactionDetailsRequest>");
 		}
-sb.append("</urn:GetTransactionDetailsReq>");
+		sb.append("</urn:GetTransactionDetailsReq>");
 		return sb.toString();
 	}
 

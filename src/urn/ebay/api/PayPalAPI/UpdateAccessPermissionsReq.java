@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.UpdateAccessPermissionsRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class UpdateAccessPermissionsReq {
+public class UpdateAccessPermissionsReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private UpdateAccessPermissionsRequestType UpdateAccessPermissionsRequest;
-	public UpdateAccessPermissionsRequestType getUpdateAccessPermissionsRequest() {
-		return UpdateAccessPermissionsRequest;
-	}
-	public void setUpdateAccessPermissionsRequest(UpdateAccessPermissionsRequestType value) {
-		this.UpdateAccessPermissionsRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public UpdateAccessPermissionsReq (){
+	}	
+
+	/**
+	 * Getter for UpdateAccessPermissionsRequest
+	 */
+	 public UpdateAccessPermissionsRequestType getUpdateAccessPermissionsRequest() {
+	 	return UpdateAccessPermissionsRequest;
+	 }
+	 
+	/**
+	 * Setter for UpdateAccessPermissionsRequest
+	 */
+	 public void setUpdateAccessPermissionsRequest(UpdateAccessPermissionsRequestType UpdateAccessPermissionsRequest) {
+	 	this.UpdateAccessPermissionsRequest = UpdateAccessPermissionsRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:UpdateAccessPermissionsReq>");
-		if( UpdateAccessPermissionsRequest != null ) {
+		sb.append("<urn:UpdateAccessPermissionsReq>");
+		if(UpdateAccessPermissionsRequest != null) {
 			sb.append("<urn:UpdateAccessPermissionsRequest>");
 			sb.append(UpdateAccessPermissionsRequest.toXMLString());
 			sb.append("</urn:UpdateAccessPermissionsRequest>");
 		}
-sb.append("</urn:UpdateAccessPermissionsReq>");
+		sb.append("</urn:UpdateAccessPermissionsReq>");
 		return sb.toString();
 	}
 

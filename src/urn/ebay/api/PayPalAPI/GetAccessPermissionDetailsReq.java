@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.GetAccessPermissionDetailsRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class GetAccessPermissionDetailsReq {
+public class GetAccessPermissionDetailsReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private GetAccessPermissionDetailsRequestType GetAccessPermissionDetailsRequest;
-	public GetAccessPermissionDetailsRequestType getGetAccessPermissionDetailsRequest() {
-		return GetAccessPermissionDetailsRequest;
-	}
-	public void setGetAccessPermissionDetailsRequest(GetAccessPermissionDetailsRequestType value) {
-		this.GetAccessPermissionDetailsRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public GetAccessPermissionDetailsReq (){
+	}	
+
+	/**
+	 * Getter for GetAccessPermissionDetailsRequest
+	 */
+	 public GetAccessPermissionDetailsRequestType getGetAccessPermissionDetailsRequest() {
+	 	return GetAccessPermissionDetailsRequest;
+	 }
+	 
+	/**
+	 * Setter for GetAccessPermissionDetailsRequest
+	 */
+	 public void setGetAccessPermissionDetailsRequest(GetAccessPermissionDetailsRequestType GetAccessPermissionDetailsRequest) {
+	 	this.GetAccessPermissionDetailsRequest = GetAccessPermissionDetailsRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:GetAccessPermissionDetailsReq>");
-		if( GetAccessPermissionDetailsRequest != null ) {
+		sb.append("<urn:GetAccessPermissionDetailsReq>");
+		if(GetAccessPermissionDetailsRequest != null) {
 			sb.append("<urn:GetAccessPermissionDetailsRequest>");
 			sb.append(GetAccessPermissionDetailsRequest.toXMLString());
 			sb.append("</urn:GetAccessPermissionDetailsRequest>");
 		}
-sb.append("</urn:GetAccessPermissionDetailsReq>");
+		sb.append("</urn:GetAccessPermissionDetailsReq>");
 		return sb.toString();
 	}
 

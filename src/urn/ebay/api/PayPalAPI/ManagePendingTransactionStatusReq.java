@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.ManagePendingTransactionStatusRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class ManagePendingTransactionStatusReq {
+public class ManagePendingTransactionStatusReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private ManagePendingTransactionStatusRequestType ManagePendingTransactionStatusRequest;
-	public ManagePendingTransactionStatusRequestType getManagePendingTransactionStatusRequest() {
-		return ManagePendingTransactionStatusRequest;
-	}
-	public void setManagePendingTransactionStatusRequest(ManagePendingTransactionStatusRequestType value) {
-		this.ManagePendingTransactionStatusRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public ManagePendingTransactionStatusReq (){
+	}	
+
+	/**
+	 * Getter for ManagePendingTransactionStatusRequest
+	 */
+	 public ManagePendingTransactionStatusRequestType getManagePendingTransactionStatusRequest() {
+	 	return ManagePendingTransactionStatusRequest;
+	 }
+	 
+	/**
+	 * Setter for ManagePendingTransactionStatusRequest
+	 */
+	 public void setManagePendingTransactionStatusRequest(ManagePendingTransactionStatusRequestType ManagePendingTransactionStatusRequest) {
+	 	this.ManagePendingTransactionStatusRequest = ManagePendingTransactionStatusRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:ManagePendingTransactionStatusReq>");
-		if( ManagePendingTransactionStatusRequest != null ) {
+		sb.append("<urn:ManagePendingTransactionStatusReq>");
+		if(ManagePendingTransactionStatusRequest != null) {
 			sb.append("<urn:ManagePendingTransactionStatusRequest>");
 			sb.append(ManagePendingTransactionStatusRequest.toXMLString());
 			sb.append("</urn:ManagePendingTransactionStatusRequest>");
 		}
-sb.append("</urn:ManagePendingTransactionStatusReq>");
+		sb.append("</urn:ManagePendingTransactionStatusReq>");
 		return sb.toString();
 	}
 

@@ -1,34 +1,46 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
-import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import urn.ebay.apis.eBLBaseComponents.ManageRecurringPaymentsProfileStatusRequestDetailsType;
-
+import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
+ * No Document Comments
  */
-public class ManageRecurringPaymentsProfileStatusRequestType extends AbstractRequestType{
+public class ManageRecurringPaymentsProfileStatusRequestType extends AbstractRequestType {
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private ManageRecurringPaymentsProfileStatusRequestDetailsType ManageRecurringPaymentsProfileStatusRequestDetails;
-	public ManageRecurringPaymentsProfileStatusRequestDetailsType getManageRecurringPaymentsProfileStatusRequestDetails() {
-		return ManageRecurringPaymentsProfileStatusRequestDetails;
-	}
-	public void setManageRecurringPaymentsProfileStatusRequestDetails(ManageRecurringPaymentsProfileStatusRequestDetailsType value) {
-		this.ManageRecurringPaymentsProfileStatusRequestDetails = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public ManageRecurringPaymentsProfileStatusRequestType (){
+	}	
+
+	/**
+	 * Getter for ManageRecurringPaymentsProfileStatusRequestDetails
+	 */
+	 public ManageRecurringPaymentsProfileStatusRequestDetailsType getManageRecurringPaymentsProfileStatusRequestDetails() {
+	 	return ManageRecurringPaymentsProfileStatusRequestDetails;
+	 }
+	 
+	/**
+	 * Setter for ManageRecurringPaymentsProfileStatusRequestDetails
+	 */
+	 public void setManageRecurringPaymentsProfileStatusRequestDetails(ManageRecurringPaymentsProfileStatusRequestDetailsType ManageRecurringPaymentsProfileStatusRequestDetails) {
+	 	this.ManageRecurringPaymentsProfileStatusRequestDetails = ManageRecurringPaymentsProfileStatusRequestDetails;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append(super.toXMLString());
-		if( ManageRecurringPaymentsProfileStatusRequestDetails != null ) {
+		sb.append(super.toXMLString());
+		if(ManageRecurringPaymentsProfileStatusRequestDetails != null) {
 			sb.append("<ebl:ManageRecurringPaymentsProfileStatusRequestDetails>");
 			sb.append(ManageRecurringPaymentsProfileStatusRequestDetails.toXMLString());
 			sb.append("</ebl:ManageRecurringPaymentsProfileStatusRequestDetails>");

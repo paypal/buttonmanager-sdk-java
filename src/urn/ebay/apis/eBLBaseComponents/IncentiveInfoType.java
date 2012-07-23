@@ -1,52 +1,71 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.eBLBaseComponents;
-
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 import urn.ebay.apis.eBLBaseComponents.IncentiveApplyIndicationType;
 
-
 /**
- * Details of incentive application on individual bucket.  
+ * Details of incentive application on individual bucket. 
  */
-public class IncentiveInfoType {
+public class IncentiveInfoType{
+
 
 	/**
-	 * Incentive redemption code.
-	 */
+	 * Incentive redemption code. 	 
+	 */ 
 	private String IncentiveCode;
-	public String getIncentiveCode() {
-		return IncentiveCode;
-	}
-	public void setIncentiveCode(String value) {
-		this.IncentiveCode = value;
-	}
 
 	/**
-	 * Defines which bucket or item that the incentive should be applied to. 
-	 */
+	 * Defines which bucket or item that the incentive should be
+	 * applied to. 	 
+	 */ 
 	private List<IncentiveApplyIndicationType> ApplyIndication = new ArrayList<IncentiveApplyIndicationType>();
-	public List<IncentiveApplyIndicationType> getApplyIndication() {
-		return ApplyIndication;
-	}
-	public void setApplyIndication(List<IncentiveApplyIndicationType> value) {
-		this.ApplyIndication = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public IncentiveInfoType (){
+	}	
+
+	/**
+	 * Getter for IncentiveCode
+	 */
+	 public String getIncentiveCode() {
+	 	return IncentiveCode;
+	 }
+	 
+	/**
+	 * Setter for IncentiveCode
+	 */
+	 public void setIncentiveCode(String IncentiveCode) {
+	 	this.IncentiveCode = IncentiveCode;
+	 }
+	 
+	/**
+	 * Getter for ApplyIndication
+	 */
+	 public List<IncentiveApplyIndicationType> getApplyIndication() {
+	 	return ApplyIndication;
+	 }
+	 
+	/**
+	 * Setter for ApplyIndication
+	 */
+	 public void setApplyIndication(List<IncentiveApplyIndicationType> ApplyIndication) {
+	 	this.ApplyIndication = ApplyIndication;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if( IncentiveCode != null ) {
+		if(IncentiveCode != null) {
 			sb.append("<ebl:IncentiveCode>").append(IncentiveCode);
 			sb.append("</ebl:IncentiveCode>");
 		}
-		if( ApplyIndication != null ) {
-			for(int i=0; i<ApplyIndication.size(); i++) {
+		if(ApplyIndication != null) {
+			for(int i=0; i < ApplyIndication.size(); i++) {
 				sb.append("<ebl:ApplyIndication>");
 				sb.append(ApplyIndication.get(i).toXMLString());
 				sb.append("</ebl:ApplyIndication>");

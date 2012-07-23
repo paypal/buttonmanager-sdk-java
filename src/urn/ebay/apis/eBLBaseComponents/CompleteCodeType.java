@@ -1,25 +1,32 @@
-/**
- * Auto generated code
- * CompleteCodeType 
- * This is the PayPal DoCapture CompleteType code
- */
 package urn.ebay.apis.eBLBaseComponents;
 
-public enum CompleteCodeType {
+/**
+ * 
+ *  CompleteCodeType 
+ *  This is the PayPal DoCapture CompleteType code
+ * 
+ */
+public enum  CompleteCodeType {
 
- 		NOTCOMPLETE("NotComplete"),
- 		COMPLETE("Complete"),
-		;
-		private String value;
-		CompleteCodeType(String val){
-			value=val;
-		}		public String getValue(){
-			return value;
-		}
-		public static CompleteCodeType fromValue(String v) {
-			for (CompleteCodeType c : values())
-				if (c.value.equals(v))
-					return c;
-			throw new IllegalArgumentException(v);
-		}
+	NOTCOMPLETE("NotComplete"),
+
+	COMPLETE("Complete");
+
+	private String value;
+
+	private CompleteCodeType (String value) {
+		this.value = value;
+	}
+
+	public String getValue(){
+		return value;
+	}
+	
+	public static CompleteCodeType fromValue(String v) {
+		for (CompleteCodeType c : values())
+			if (c.value.equals(v))
+				return c;
+		throw new IllegalArgumentException(v);
+	}
+
 }

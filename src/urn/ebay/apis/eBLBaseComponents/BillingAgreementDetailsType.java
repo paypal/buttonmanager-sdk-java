@@ -1,84 +1,122 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.eBLBaseComponents;
-
 import urn.ebay.apis.eBLBaseComponents.BillingCodeType;
 import urn.ebay.apis.eBLBaseComponents.MerchantPullPaymentCodeType;
 
-
 /**
+ * No Document Comments
  */
-public class BillingAgreementDetailsType {
+public class BillingAgreementDetailsType{
+
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private BillingCodeType BillingType;
-	public BillingCodeType getBillingType() {
-		return BillingType;
-	}
-	public void setBillingType(BillingCodeType value) {
-		this.BillingType = value;
-	}
 
 	/**
-	 * Only needed for AutoBill billinng type.
-	 */
+	 * Only needed for AutoBill billinng type. 	 
+	 */ 
 	private String BillingAgreementDescription;
-	public String getBillingAgreementDescription() {
-		return BillingAgreementDescription;
-	}
-	public void setBillingAgreementDescription(String value) {
-		this.BillingAgreementDescription = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private MerchantPullPaymentCodeType PaymentType;
-	public MerchantPullPaymentCodeType getPaymentType() {
-		return PaymentType;
-	}
-	public void setPaymentType(MerchantPullPaymentCodeType value) {
-		this.PaymentType = value;
-	}
 
 	/**
-	 * Custom annotation field for your exclusive use.
-	 */
+	 * Custom annotation field for your exclusive use. 	 
+	 */ 
 	private String BillingAgreementCustom;
-	public String getBillingAgreementCustom() {
-		return BillingAgreementCustom;
-	}
-	public void setBillingAgreementCustom(String value) {
-		this.BillingAgreementCustom = value;
-	}
 
+	
 
-	public BillingAgreementDetailsType(BillingCodeType BillingType) {
+	/**
+	 * Constructor with arguments
+	 */
+	public BillingAgreementDetailsType (BillingCodeType BillingType){
 		this.BillingType = BillingType;
-	}
-	public BillingAgreementDetailsType() {
-	}
+	}	
 
-	public String toXMLString()  {
+	/**
+	 * Default Constructor
+	 */
+	public BillingAgreementDetailsType (){
+	}	
+
+	/**
+	 * Getter for BillingType
+	 */
+	 public BillingCodeType getBillingType() {
+	 	return BillingType;
+	 }
+	 
+	/**
+	 * Setter for BillingType
+	 */
+	 public void setBillingType(BillingCodeType BillingType) {
+	 	this.BillingType = BillingType;
+	 }
+	 
+	/**
+	 * Getter for BillingAgreementDescription
+	 */
+	 public String getBillingAgreementDescription() {
+	 	return BillingAgreementDescription;
+	 }
+	 
+	/**
+	 * Setter for BillingAgreementDescription
+	 */
+	 public void setBillingAgreementDescription(String BillingAgreementDescription) {
+	 	this.BillingAgreementDescription = BillingAgreementDescription;
+	 }
+	 
+	/**
+	 * Getter for PaymentType
+	 */
+	 public MerchantPullPaymentCodeType getPaymentType() {
+	 	return PaymentType;
+	 }
+	 
+	/**
+	 * Setter for PaymentType
+	 */
+	 public void setPaymentType(MerchantPullPaymentCodeType PaymentType) {
+	 	this.PaymentType = PaymentType;
+	 }
+	 
+	/**
+	 * Getter for BillingAgreementCustom
+	 */
+	 public String getBillingAgreementCustom() {
+	 	return BillingAgreementCustom;
+	 }
+	 
+	/**
+	 * Setter for BillingAgreementCustom
+	 */
+	 public void setBillingAgreementCustom(String BillingAgreementCustom) {
+	 	this.BillingAgreementCustom = BillingAgreementCustom;
+	 }
+	 
+
+
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if( BillingType != null ) {
-			sb.append("<ebl:BillingType>").append( BillingType.getValue());
+		if(BillingType != null) {
+			sb.append("<ebl:BillingType>").append(BillingType.getValue());
 			sb.append("</ebl:BillingType>");
 		}
-		if( BillingAgreementDescription != null ) {
+		if(BillingAgreementDescription != null) {
 			sb.append("<ebl:BillingAgreementDescription>").append(BillingAgreementDescription);
 			sb.append("</ebl:BillingAgreementDescription>");
 		}
-		if( PaymentType != null ) {
-			sb.append("<ebl:PaymentType>").append( PaymentType.getValue());
+		if(PaymentType != null) {
+			sb.append("<ebl:PaymentType>").append(PaymentType.getValue());
 			sb.append("</ebl:PaymentType>");
 		}
-		if( BillingAgreementCustom != null ) {
+		if(BillingAgreementCustom != null) {
 			sb.append("<ebl:BillingAgreementCustom>").append(BillingAgreementCustom);
 			sb.append("</ebl:BillingAgreementCustom>");
 		}

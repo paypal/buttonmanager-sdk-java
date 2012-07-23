@@ -1,39 +1,51 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.eBLBaseComponents;
 
-
-
 /**
- * Identity Access token from merchant
+ * Identity Access token from merchant 
  */
-public class IdentityTokenInfoType {
+public class IdentityTokenInfoType{
+
 
 	/**
-Identity Access token from merchant	 *
-	 * @Required
-	 */
+	 * Identity Access token from merchant	  
+	 *@Required	 
+	 */ 
 	private String AccessToken;
-	public String getAccessToken() {
-		return AccessToken;
-	}
-	public void setAccessToken(String value) {
-		this.AccessToken = value;
-	}
 
+	
 
-	public IdentityTokenInfoType(String AccessToken) {
+	/**
+	 * Constructor with arguments
+	 */
+	public IdentityTokenInfoType (String AccessToken){
 		this.AccessToken = AccessToken;
-	}
-	public IdentityTokenInfoType() {
-	}
+	}	
 
-	public String toXMLString()  {
+	/**
+	 * Default Constructor
+	 */
+	public IdentityTokenInfoType (){
+	}	
+
+	/**
+	 * Getter for AccessToken
+	 */
+	 public String getAccessToken() {
+	 	return AccessToken;
+	 }
+	 
+	/**
+	 * Setter for AccessToken
+	 */
+	 public void setAccessToken(String AccessToken) {
+	 	this.AccessToken = AccessToken;
+	 }
+	 
+
+
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if( AccessToken != null ) {
+		if(AccessToken != null) {
 			sb.append("<ebl:AccessToken>").append(AccessToken);
 			sb.append("</ebl:AccessToken>");
 		}

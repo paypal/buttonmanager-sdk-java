@@ -1,70 +1,100 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.eBLBaseComponents;
-
 import urn.ebay.apis.eBLBaseComponents.StatusChangeActionType;
 
-
 /**
+ * No Document Comments
  */
-public class ManageRecurringPaymentsProfileStatusRequestDetailsType {
+public class ManageRecurringPaymentsProfileStatusRequestDetailsType{
+
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private String ProfileID;
-	public String getProfileID() {
-		return ProfileID;
-	}
-	public void setProfileID(String value) {
-		this.ProfileID = value;
-	}
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private StatusChangeActionType Action;
-	public StatusChangeActionType getAction() {
-		return Action;
-	}
-	public void setAction(StatusChangeActionType value) {
-		this.Action = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String Note;
-	public String getNote() {
-		return Note;
-	}
-	public void setNote(String value) {
-		this.Note = value;
-	}
 
+	
 
-	public ManageRecurringPaymentsProfileStatusRequestDetailsType(String ProfileID, StatusChangeActionType Action) {
+	/**
+	 * Constructor with arguments
+	 */
+	public ManageRecurringPaymentsProfileStatusRequestDetailsType (String ProfileID, StatusChangeActionType Action){
 		this.ProfileID = ProfileID;
 		this.Action = Action;
-	}
-	public ManageRecurringPaymentsProfileStatusRequestDetailsType() {
-	}
+	}	
 
-	public String toXMLString()  {
+	/**
+	 * Default Constructor
+	 */
+	public ManageRecurringPaymentsProfileStatusRequestDetailsType (){
+	}	
+
+	/**
+	 * Getter for ProfileID
+	 */
+	 public String getProfileID() {
+	 	return ProfileID;
+	 }
+	 
+	/**
+	 * Setter for ProfileID
+	 */
+	 public void setProfileID(String ProfileID) {
+	 	this.ProfileID = ProfileID;
+	 }
+	 
+	/**
+	 * Getter for Action
+	 */
+	 public StatusChangeActionType getAction() {
+	 	return Action;
+	 }
+	 
+	/**
+	 * Setter for Action
+	 */
+	 public void setAction(StatusChangeActionType Action) {
+	 	this.Action = Action;
+	 }
+	 
+	/**
+	 * Getter for Note
+	 */
+	 public String getNote() {
+	 	return Note;
+	 }
+	 
+	/**
+	 * Setter for Note
+	 */
+	 public void setNote(String Note) {
+	 	this.Note = Note;
+	 }
+	 
+
+
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if( ProfileID != null ) {
+		if(ProfileID != null) {
 			sb.append("<ebl:ProfileID>").append(ProfileID);
 			sb.append("</ebl:ProfileID>");
 		}
-		if( Action != null ) {
-			sb.append("<ebl:Action>").append( Action.getValue());
+		if(Action != null) {
+			sb.append("<ebl:Action>").append(Action.getValue());
 			sb.append("</ebl:Action>");
 		}
-		if( Note != null ) {
+		if(Note != null) {
 			sb.append("<ebl:Note>").append(Note);
 			sb.append("</ebl:Note>");
 		}

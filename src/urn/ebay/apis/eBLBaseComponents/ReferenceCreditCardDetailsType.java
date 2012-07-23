@@ -1,151 +1,234 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.eBLBaseComponents;
-
-import urn.ebay.apis.eBLBaseComponents.AddressType;
 import urn.ebay.apis.eBLBaseComponents.CreditCardNumberTypeType;
 import urn.ebay.apis.eBLBaseComponents.PersonNameType;
-
+import urn.ebay.apis.eBLBaseComponents.AddressType;
 
 /**
  * CreditCardDetailsType for DCC Reference Transaction
- * Information about a Credit Card.
+ * Information about a Credit Card. 
  */
-public class ReferenceCreditCardDetailsType {
+public class ReferenceCreditCardDetailsType{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private CreditCardNumberTypeType CreditCardNumberType;
-	public CreditCardNumberTypeType getCreditCardNumberType() {
-		return CreditCardNumberType;
-	}
-	public void setCreditCardNumberType(CreditCardNumberTypeType value) {
-		this.CreditCardNumberType = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private Integer ExpMonth;
-	public Integer getExpMonth() {
-		return ExpMonth;
-	}
-	public void setExpMonth(Integer value) {
-		this.ExpMonth = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private Integer ExpYear;
-	public Integer getExpYear() {
-		return ExpYear;
-	}
-	public void setExpYear(Integer value) {
-		this.ExpYear = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private PersonNameType CardOwnerName;
-	public PersonNameType getCardOwnerName() {
-		return CardOwnerName;
-	}
-	public void setCardOwnerName(PersonNameType value) {
-		this.CardOwnerName = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private AddressType BillingAddress;
-	public AddressType getBillingAddress() {
-		return BillingAddress;
-	}
-	public void setBillingAddress(AddressType value) {
-		this.BillingAddress = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String CVV2;
-	public String getCVV2() {
-		return CVV2;
-	}
-	public void setCVV2(String value) {
-		this.CVV2 = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private Integer StartMonth;
-	public Integer getStartMonth() {
-		return StartMonth;
-	}
-	public void setStartMonth(Integer value) {
-		this.StartMonth = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private Integer StartYear;
-	public Integer getStartYear() {
-		return StartYear;
-	}
-	public void setStartYear(Integer value) {
-		this.StartYear = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String IssueNumber;
-	public String getIssueNumber() {
-		return IssueNumber;
-	}
-	public void setIssueNumber(String value) {
-		this.IssueNumber = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public ReferenceCreditCardDetailsType (){
+	}	
+
+	/**
+	 * Getter for CreditCardNumberType
+	 */
+	 public CreditCardNumberTypeType getCreditCardNumberType() {
+	 	return CreditCardNumberType;
+	 }
+	 
+	/**
+	 * Setter for CreditCardNumberType
+	 */
+	 public void setCreditCardNumberType(CreditCardNumberTypeType CreditCardNumberType) {
+	 	this.CreditCardNumberType = CreditCardNumberType;
+	 }
+	 
+	/**
+	 * Getter for ExpMonth
+	 */
+	 public Integer getExpMonth() {
+	 	return ExpMonth;
+	 }
+	 
+	/**
+	 * Setter for ExpMonth
+	 */
+	 public void setExpMonth(Integer ExpMonth) {
+	 	this.ExpMonth = ExpMonth;
+	 }
+	 
+	/**
+	 * Getter for ExpYear
+	 */
+	 public Integer getExpYear() {
+	 	return ExpYear;
+	 }
+	 
+	/**
+	 * Setter for ExpYear
+	 */
+	 public void setExpYear(Integer ExpYear) {
+	 	this.ExpYear = ExpYear;
+	 }
+	 
+	/**
+	 * Getter for CardOwnerName
+	 */
+	 public PersonNameType getCardOwnerName() {
+	 	return CardOwnerName;
+	 }
+	 
+	/**
+	 * Setter for CardOwnerName
+	 */
+	 public void setCardOwnerName(PersonNameType CardOwnerName) {
+	 	this.CardOwnerName = CardOwnerName;
+	 }
+	 
+	/**
+	 * Getter for BillingAddress
+	 */
+	 public AddressType getBillingAddress() {
+	 	return BillingAddress;
+	 }
+	 
+	/**
+	 * Setter for BillingAddress
+	 */
+	 public void setBillingAddress(AddressType BillingAddress) {
+	 	this.BillingAddress = BillingAddress;
+	 }
+	 
+	/**
+	 * Getter for CVV2
+	 */
+	 public String getCVV2() {
+	 	return CVV2;
+	 }
+	 
+	/**
+	 * Setter for CVV2
+	 */
+	 public void setCVV2(String CVV2) {
+	 	this.CVV2 = CVV2;
+	 }
+	 
+	/**
+	 * Getter for StartMonth
+	 */
+	 public Integer getStartMonth() {
+	 	return StartMonth;
+	 }
+	 
+	/**
+	 * Setter for StartMonth
+	 */
+	 public void setStartMonth(Integer StartMonth) {
+	 	this.StartMonth = StartMonth;
+	 }
+	 
+	/**
+	 * Getter for StartYear
+	 */
+	 public Integer getStartYear() {
+	 	return StartYear;
+	 }
+	 
+	/**
+	 * Setter for StartYear
+	 */
+	 public void setStartYear(Integer StartYear) {
+	 	this.StartYear = StartYear;
+	 }
+	 
+	/**
+	 * Getter for IssueNumber
+	 */
+	 public String getIssueNumber() {
+	 	return IssueNumber;
+	 }
+	 
+	/**
+	 * Setter for IssueNumber
+	 */
+	 public void setIssueNumber(String IssueNumber) {
+	 	this.IssueNumber = IssueNumber;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if( CreditCardNumberType != null ) {
+		if(CreditCardNumberType != null) {
 			sb.append("<ebl:CreditCardNumberType>");
 			sb.append(CreditCardNumberType.toXMLString());
 			sb.append("</ebl:CreditCardNumberType>");
 		}
-		if( ExpMonth != null ) {
+		if(ExpMonth != null) {
 			sb.append("<ebl:ExpMonth>").append(ExpMonth);
 			sb.append("</ebl:ExpMonth>");
 		}
-		if( ExpYear != null ) {
+		if(ExpYear != null) {
 			sb.append("<ebl:ExpYear>").append(ExpYear);
 			sb.append("</ebl:ExpYear>");
 		}
-		if( CardOwnerName != null ) {
+		if(CardOwnerName != null) {
 			sb.append("<ebl:CardOwnerName>");
 			sb.append(CardOwnerName.toXMLString());
 			sb.append("</ebl:CardOwnerName>");
 		}
-		if( BillingAddress != null ) {
+		if(BillingAddress != null) {
 			sb.append("<ebl:BillingAddress>");
 			sb.append(BillingAddress.toXMLString());
 			sb.append("</ebl:BillingAddress>");
 		}
-		if( CVV2 != null ) {
+		if(CVV2 != null) {
 			sb.append("<ebl:CVV2>").append(CVV2);
 			sb.append("</ebl:CVV2>");
 		}
-		if( StartMonth != null ) {
+		if(StartMonth != null) {
 			sb.append("<ebl:StartMonth>").append(StartMonth);
 			sb.append("</ebl:StartMonth>");
 		}
-		if( StartYear != null ) {
+		if(StartYear != null) {
 			sb.append("<ebl:StartYear>").append(StartYear);
 			sb.append("</ebl:StartYear>");
 		}
-		if( IssueNumber != null ) {
+		if(IssueNumber != null) {
 			sb.append("<ebl:IssueNumber>").append(IssueNumber);
 			sb.append("</ebl:IssueNumber>");
 		}

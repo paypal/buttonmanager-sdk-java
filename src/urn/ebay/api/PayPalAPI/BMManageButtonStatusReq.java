@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.BMManageButtonStatusRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class BMManageButtonStatusReq {
+public class BMManageButtonStatusReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private BMManageButtonStatusRequestType BMManageButtonStatusRequest;
-	public BMManageButtonStatusRequestType getBMManageButtonStatusRequest() {
-		return BMManageButtonStatusRequest;
-	}
-	public void setBMManageButtonStatusRequest(BMManageButtonStatusRequestType value) {
-		this.BMManageButtonStatusRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public BMManageButtonStatusReq (){
+	}	
+
+	/**
+	 * Getter for BMManageButtonStatusRequest
+	 */
+	 public BMManageButtonStatusRequestType getBMManageButtonStatusRequest() {
+	 	return BMManageButtonStatusRequest;
+	 }
+	 
+	/**
+	 * Setter for BMManageButtonStatusRequest
+	 */
+	 public void setBMManageButtonStatusRequest(BMManageButtonStatusRequestType BMManageButtonStatusRequest) {
+	 	this.BMManageButtonStatusRequest = BMManageButtonStatusRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:BMManageButtonStatusReq>");
-		if( BMManageButtonStatusRequest != null ) {
+		sb.append("<urn:BMManageButtonStatusReq>");
+		if(BMManageButtonStatusRequest != null) {
 			sb.append("<urn:BMManageButtonStatusRequest>");
 			sb.append(BMManageButtonStatusRequest.toXMLString());
 			sb.append("</urn:BMManageButtonStatusRequest>");
 		}
-sb.append("</urn:BMManageButtonStatusReq>");
+		sb.append("</urn:BMManageButtonStatusReq>");
 		return sb.toString();
 	}
 

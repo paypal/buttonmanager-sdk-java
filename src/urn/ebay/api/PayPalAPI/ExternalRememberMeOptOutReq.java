@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.ExternalRememberMeOptOutRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class ExternalRememberMeOptOutReq {
+public class ExternalRememberMeOptOutReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private ExternalRememberMeOptOutRequestType ExternalRememberMeOptOutRequest;
-	public ExternalRememberMeOptOutRequestType getExternalRememberMeOptOutRequest() {
-		return ExternalRememberMeOptOutRequest;
-	}
-	public void setExternalRememberMeOptOutRequest(ExternalRememberMeOptOutRequestType value) {
-		this.ExternalRememberMeOptOutRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public ExternalRememberMeOptOutReq (){
+	}	
+
+	/**
+	 * Getter for ExternalRememberMeOptOutRequest
+	 */
+	 public ExternalRememberMeOptOutRequestType getExternalRememberMeOptOutRequest() {
+	 	return ExternalRememberMeOptOutRequest;
+	 }
+	 
+	/**
+	 * Setter for ExternalRememberMeOptOutRequest
+	 */
+	 public void setExternalRememberMeOptOutRequest(ExternalRememberMeOptOutRequestType ExternalRememberMeOptOutRequest) {
+	 	this.ExternalRememberMeOptOutRequest = ExternalRememberMeOptOutRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:ExternalRememberMeOptOutReq>");
-		if( ExternalRememberMeOptOutRequest != null ) {
+		sb.append("<urn:ExternalRememberMeOptOutReq>");
+		if(ExternalRememberMeOptOutRequest != null) {
 			sb.append("<urn:ExternalRememberMeOptOutRequest>");
 			sb.append(ExternalRememberMeOptOutRequest.toXMLString());
 			sb.append("</urn:ExternalRememberMeOptOutRequest>");
 		}
-sb.append("</urn:ExternalRememberMeOptOutReq>");
+		sb.append("</urn:ExternalRememberMeOptOutReq>");
 		return sb.toString();
 	}
 

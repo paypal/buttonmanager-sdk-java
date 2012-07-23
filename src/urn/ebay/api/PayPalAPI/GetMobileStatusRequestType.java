@@ -1,41 +1,54 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
-import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import urn.ebay.apis.eBLBaseComponents.GetMobileStatusRequestDetailsType;
-
+import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
+ * No Document Comments
  */
-public class GetMobileStatusRequestType extends AbstractRequestType{
+public class GetMobileStatusRequestType extends AbstractRequestType {
+
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private GetMobileStatusRequestDetailsType GetMobileStatusRequestDetails;
-	public GetMobileStatusRequestDetailsType getGetMobileStatusRequestDetails() {
-		return GetMobileStatusRequestDetails;
-	}
-	public void setGetMobileStatusRequestDetails(GetMobileStatusRequestDetailsType value) {
-		this.GetMobileStatusRequestDetails = value;
-	}
 
+	
 
-	public GetMobileStatusRequestType(GetMobileStatusRequestDetailsType GetMobileStatusRequestDetails) {
+	/**
+	 * Constructor with arguments
+	 */
+	public GetMobileStatusRequestType (GetMobileStatusRequestDetailsType GetMobileStatusRequestDetails){
 		this.GetMobileStatusRequestDetails = GetMobileStatusRequestDetails;
-	}
-	public GetMobileStatusRequestType() {
-	}
+	}	
 
-	public String toXMLString()  {
+	/**
+	 * Default Constructor
+	 */
+	public GetMobileStatusRequestType (){
+	}	
+
+	/**
+	 * Getter for GetMobileStatusRequestDetails
+	 */
+	 public GetMobileStatusRequestDetailsType getGetMobileStatusRequestDetails() {
+	 	return GetMobileStatusRequestDetails;
+	 }
+	 
+	/**
+	 * Setter for GetMobileStatusRequestDetails
+	 */
+	 public void setGetMobileStatusRequestDetails(GetMobileStatusRequestDetailsType GetMobileStatusRequestDetails) {
+	 	this.GetMobileStatusRequestDetails = GetMobileStatusRequestDetails;
+	 }
+	 
+
+
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append(super.toXMLString());
-		if( GetMobileStatusRequestDetails != null ) {
+		sb.append(super.toXMLString());
+		if(GetMobileStatusRequestDetails != null) {
 			sb.append("<ebl:GetMobileStatusRequestDetails>");
 			sb.append(GetMobileStatusRequestDetails.toXMLString());
 			sb.append("</ebl:GetMobileStatusRequestDetails>");

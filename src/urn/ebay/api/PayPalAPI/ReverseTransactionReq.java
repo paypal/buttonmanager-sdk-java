@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.ReverseTransactionRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class ReverseTransactionReq {
+public class ReverseTransactionReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private ReverseTransactionRequestType ReverseTransactionRequest;
-	public ReverseTransactionRequestType getReverseTransactionRequest() {
-		return ReverseTransactionRequest;
-	}
-	public void setReverseTransactionRequest(ReverseTransactionRequestType value) {
-		this.ReverseTransactionRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public ReverseTransactionReq (){
+	}	
+
+	/**
+	 * Getter for ReverseTransactionRequest
+	 */
+	 public ReverseTransactionRequestType getReverseTransactionRequest() {
+	 	return ReverseTransactionRequest;
+	 }
+	 
+	/**
+	 * Setter for ReverseTransactionRequest
+	 */
+	 public void setReverseTransactionRequest(ReverseTransactionRequestType ReverseTransactionRequest) {
+	 	this.ReverseTransactionRequest = ReverseTransactionRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:ReverseTransactionReq>");
-		if( ReverseTransactionRequest != null ) {
+		sb.append("<urn:ReverseTransactionReq>");
+		if(ReverseTransactionRequest != null) {
 			sb.append("<urn:ReverseTransactionRequest>");
 			sb.append(ReverseTransactionRequest.toXMLString());
 			sb.append("</urn:ReverseTransactionRequest>");
 		}
-sb.append("</urn:ReverseTransactionReq>");
+		sb.append("</urn:ReverseTransactionReq>");
 		return sb.toString();
 	}
 

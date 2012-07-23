@@ -1,32 +1,43 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.eBLBaseComponents;
 
-
-
 /**
- * The Session token returned during buyer authentication.
+ * The Session token returned during buyer authentication. 
  */
-public class MobileIDInfoType {
+public class MobileIDInfoType{
+
 
 	/**
-The Session token returned during buyer authentication.	 */
+	 * The Session token returned during buyer authentication.	 
+	 */ 
 	private String SessionToken;
-	public String getSessionToken() {
-		return SessionToken;
-	}
-	public void setSessionToken(String value) {
-		this.SessionToken = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public MobileIDInfoType (){
+	}	
+
+	/**
+	 * Getter for SessionToken
+	 */
+	 public String getSessionToken() {
+	 	return SessionToken;
+	 }
+	 
+	/**
+	 * Setter for SessionToken
+	 */
+	 public void setSessionToken(String SessionToken) {
+	 	this.SessionToken = SessionToken;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if( SessionToken != null ) {
+		if(SessionToken != null) {
 			sb.append("<ebl:SessionToken>").append(SessionToken);
 			sb.append("</ebl:SessionToken>");
 		}

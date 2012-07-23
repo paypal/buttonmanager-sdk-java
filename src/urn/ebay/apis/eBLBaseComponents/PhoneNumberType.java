@@ -1,63 +1,89 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.eBLBaseComponents;
 
-
-
 /**
- * Country code associated with this phone number.  
+ * Country code associated with this phone number. 
  */
-public class PhoneNumberType {
+public class PhoneNumberType{
+
 
 	/**
-	 * Country code associated with this phone number.  
-	 */
+	 * Country code associated with this phone number. 	 
+	 */ 
 	private String CountryCode;
-	public String getCountryCode() {
-		return CountryCode;
-	}
-	public void setCountryCode(String value) {
-		this.CountryCode = value;
-	}
 
 	/**
-	 * Phone number associated with this phone.  
-	 */
+	 * Phone number associated with this phone. 	 
+	 */ 
 	private String PhoneNumber;
-	public String getPhoneNumber() {
-		return PhoneNumber;
-	}
-	public void setPhoneNumber(String value) {
-		this.PhoneNumber = value;
-	}
 
 	/**
-	 * Extension associated with this phone number.  
-	 */
+	 * Extension associated with this phone number. 	 
+	 */ 
 	private String Extension;
-	public String getExtension() {
-		return Extension;
-	}
-	public void setExtension(String value) {
-		this.Extension = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public PhoneNumberType (){
+	}	
+
+	/**
+	 * Getter for CountryCode
+	 */
+	 public String getCountryCode() {
+	 	return CountryCode;
+	 }
+	 
+	/**
+	 * Setter for CountryCode
+	 */
+	 public void setCountryCode(String CountryCode) {
+	 	this.CountryCode = CountryCode;
+	 }
+	 
+	/**
+	 * Getter for PhoneNumber
+	 */
+	 public String getPhoneNumber() {
+	 	return PhoneNumber;
+	 }
+	 
+	/**
+	 * Setter for PhoneNumber
+	 */
+	 public void setPhoneNumber(String PhoneNumber) {
+	 	this.PhoneNumber = PhoneNumber;
+	 }
+	 
+	/**
+	 * Getter for Extension
+	 */
+	 public String getExtension() {
+	 	return Extension;
+	 }
+	 
+	/**
+	 * Setter for Extension
+	 */
+	 public void setExtension(String Extension) {
+	 	this.Extension = Extension;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if( CountryCode != null ) {
+		if(CountryCode != null) {
 			sb.append("<ebl:CountryCode>").append(CountryCode);
 			sb.append("</ebl:CountryCode>");
 		}
-		if( PhoneNumber != null ) {
+		if(PhoneNumber != null) {
 			sb.append("<ebl:PhoneNumber>").append(PhoneNumber);
 			sb.append("</ebl:PhoneNumber>");
 		}
-		if( Extension != null ) {
+		if(Extension != null) {
 			sb.append("<ebl:Extension>").append(Extension);
 			sb.append("</ebl:Extension>");
 		}

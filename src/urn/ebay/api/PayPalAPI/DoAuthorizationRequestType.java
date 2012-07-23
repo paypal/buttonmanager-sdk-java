@@ -1,87 +1,140 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
+import urn.ebay.apis.eBLBaseComponents.TransactionEntityType;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
-import urn.ebay.apis.eBLBaseComponents.TransactionEntityType;
-
 
 /**
- * The value of the order’s transaction identification number returned by a PayPal product. 
- * Required
- * Character length and limits: 19 single-byte characters maximum
+ * The value of the order’s transaction identification number
+ * returned by a PayPal product. Required Character length and
+ * limits: 19 single-byte characters maximum 
  */
-public class DoAuthorizationRequestType extends AbstractRequestType{
+public class DoAuthorizationRequestType extends AbstractRequestType {
+
 
 	/**
-The value of the order’s transaction identification number returned by a PayPal product. 
-	 * Required
-	 * Character length and limits: 19 single-byte characters maximum
-	 *
-	 * @Required
-	 */
+	 * The value of the order’s transaction identification number
+	 * returned by a PayPal product. Required Character length and
+	 * limits: 19 single-byte characters maximum	  
+	 *@Required	 
+	 */ 
 	private String TransactionID;
-	public String getTransactionID() {
-		return TransactionID;
-	}
-	public void setTransactionID(String value) {
-		this.TransactionID = value;
-	}
 
 	/**
-Type of transaction to authorize. The only allowable value is Order, which means that the transaction represents a customer order that can be fulfilled over 29 days. 
-	 * Optional
-	 */
+	 * Type of transaction to authorize. The only allowable value
+	 * is Order, which means that the transaction represents a
+	 * customer order that can be fulfilled over 29 days. Optional	 
+	 */ 
 	private TransactionEntityType TransactionEntity;
-	public TransactionEntityType getTransactionEntity() {
-		return TransactionEntity;
-	}
-	public void setTransactionEntity(TransactionEntityType value) {
-		this.TransactionEntity = value;
-	}
 
 	/**
-Amount to authorize. 
-	 * Required
-	 * Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
-	 *
-	 * @Required
-	 */
+	 * Amount to authorize. Required Limitations: Must not exceed
+	 * $10,000 USD in any currency. No currency symbol. Decimal
+	 * separator must be a period (.), and the thousands separator
+	 * must be a comma (,).	  
+	 *@Required	 
+	 */ 
 	private BasicAmountType Amount;
-	public BasicAmountType getAmount() {
-		return Amount;
-	}
-	public void setAmount(BasicAmountType value) {
-		this.Amount = value;
-	}
 
+	/**
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 	 
+	 */ 
+	private String MsgSubID;
 
-	public DoAuthorizationRequestType(String TransactionID, BasicAmountType Amount) {
+	
+
+	/**
+	 * Constructor with arguments
+	 */
+	public DoAuthorizationRequestType (String TransactionID, BasicAmountType Amount){
 		this.TransactionID = TransactionID;
 		this.Amount = Amount;
-	}
-	public DoAuthorizationRequestType() {
-	}
+	}	
 
-	public String toXMLString()  {
+	/**
+	 * Default Constructor
+	 */
+	public DoAuthorizationRequestType (){
+	}	
+
+	/**
+	 * Getter for TransactionID
+	 */
+	 public String getTransactionID() {
+	 	return TransactionID;
+	 }
+	 
+	/**
+	 * Setter for TransactionID
+	 */
+	 public void setTransactionID(String TransactionID) {
+	 	this.TransactionID = TransactionID;
+	 }
+	 
+	/**
+	 * Getter for TransactionEntity
+	 */
+	 public TransactionEntityType getTransactionEntity() {
+	 	return TransactionEntity;
+	 }
+	 
+	/**
+	 * Setter for TransactionEntity
+	 */
+	 public void setTransactionEntity(TransactionEntityType TransactionEntity) {
+	 	this.TransactionEntity = TransactionEntity;
+	 }
+	 
+	/**
+	 * Getter for Amount
+	 */
+	 public BasicAmountType getAmount() {
+	 	return Amount;
+	 }
+	 
+	/**
+	 * Setter for Amount
+	 */
+	 public void setAmount(BasicAmountType Amount) {
+	 	this.Amount = Amount;
+	 }
+	 
+	/**
+	 * Getter for MsgSubID
+	 */
+	 public String getMsgSubID() {
+	 	return MsgSubID;
+	 }
+	 
+	/**
+	 * Setter for MsgSubID
+	 */
+	 public void setMsgSubID(String MsgSubID) {
+	 	this.MsgSubID = MsgSubID;
+	 }
+	 
+
+
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append(super.toXMLString());
-		if( TransactionID != null ) {
+		sb.append(super.toXMLString());
+		if(TransactionID != null) {
 			sb.append("<urn:TransactionID>").append(TransactionID);
 			sb.append("</urn:TransactionID>");
 		}
-		if( TransactionEntity != null ) {
-			sb.append("<urn:TransactionEntity>").append( TransactionEntity.getValue());
+		if(TransactionEntity != null) {
+			sb.append("<urn:TransactionEntity>").append(TransactionEntity.getValue());
 			sb.append("</urn:TransactionEntity>");
 		}
-		if( Amount != null ) {
-			sb.append("<urn:Amount ");
+		if(Amount != null) {
+			sb.append("<urn:Amount");
 			sb.append(Amount.toXMLString());
 			sb.append("</urn:Amount>");
+		}
+		if(MsgSubID != null) {
+			sb.append("<urn:MsgSubID>").append(MsgSubID);
+			sb.append("</urn:MsgSubID>");
 		}
 		return sb.toString();
 	}

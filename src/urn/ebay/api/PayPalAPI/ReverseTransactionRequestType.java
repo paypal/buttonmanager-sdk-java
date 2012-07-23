@@ -1,41 +1,54 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
-import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import urn.ebay.apis.eBLBaseComponents.ReverseTransactionRequestDetailsType;
-
+import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
+ * No Document Comments
  */
-public class ReverseTransactionRequestType extends AbstractRequestType{
+public class ReverseTransactionRequestType extends AbstractRequestType {
+
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private ReverseTransactionRequestDetailsType ReverseTransactionRequestDetails;
-	public ReverseTransactionRequestDetailsType getReverseTransactionRequestDetails() {
-		return ReverseTransactionRequestDetails;
-	}
-	public void setReverseTransactionRequestDetails(ReverseTransactionRequestDetailsType value) {
-		this.ReverseTransactionRequestDetails = value;
-	}
 
+	
 
-	public ReverseTransactionRequestType(ReverseTransactionRequestDetailsType ReverseTransactionRequestDetails) {
+	/**
+	 * Constructor with arguments
+	 */
+	public ReverseTransactionRequestType (ReverseTransactionRequestDetailsType ReverseTransactionRequestDetails){
 		this.ReverseTransactionRequestDetails = ReverseTransactionRequestDetails;
-	}
-	public ReverseTransactionRequestType() {
-	}
+	}	
 
-	public String toXMLString()  {
+	/**
+	 * Default Constructor
+	 */
+	public ReverseTransactionRequestType (){
+	}	
+
+	/**
+	 * Getter for ReverseTransactionRequestDetails
+	 */
+	 public ReverseTransactionRequestDetailsType getReverseTransactionRequestDetails() {
+	 	return ReverseTransactionRequestDetails;
+	 }
+	 
+	/**
+	 * Setter for ReverseTransactionRequestDetails
+	 */
+	 public void setReverseTransactionRequestDetails(ReverseTransactionRequestDetailsType ReverseTransactionRequestDetails) {
+	 	this.ReverseTransactionRequestDetails = ReverseTransactionRequestDetails;
+	 }
+	 
+
+
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append(super.toXMLString());
-		if( ReverseTransactionRequestDetails != null ) {
+		sb.append(super.toXMLString());
+		if(ReverseTransactionRequestDetails != null) {
 			sb.append("<ebl:ReverseTransactionRequestDetails>");
 			sb.append(ReverseTransactionRequestDetails.toXMLString());
 			sb.append("</ebl:ReverseTransactionRequestDetails>");

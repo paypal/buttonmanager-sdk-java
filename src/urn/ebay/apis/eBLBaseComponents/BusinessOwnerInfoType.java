@@ -1,79 +1,117 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.eBLBaseComponents;
-
 import urn.ebay.apis.eBLBaseComponents.PayerInfoType;
-
 
 /**
  * BusinessOwnerInfoType 
  */
-public class BusinessOwnerInfoType {
+public class BusinessOwnerInfoType{
+
 
 	/**
-	 * Details about the business owner	 */
+	 * Details about the business owner	 
+	 */ 
 	private PayerInfoType Owner;
-	public PayerInfoType getOwner() {
-		return Owner;
-	}
-	public void setOwner(PayerInfoType value) {
-		this.Owner = value;
-	}
 
 	/**
-	 * Business owner’s home telephone number
-	 * Character length and limitations: 32 alphanumeric characters	 */
+	 * Business owner’s home telephone number Character length
+	 * and limitations: 32 alphanumeric characters	 
+	 */ 
 	private String HomePhone;
-	public String getHomePhone() {
-		return HomePhone;
-	}
-	public void setHomePhone(String value) {
-		this.HomePhone = value;
-	}
 
 	/**
-	 * Business owner’s mobile telephone number
-	 * Character length and limitations: 32 alphanumeric characters	 */
+	 * Business owner’s mobile telephone number Character length
+	 * and limitations: 32 alphanumeric characters	 
+	 */ 
 	private String MobilePhone;
-	public String getMobilePhone() {
-		return MobilePhone;
-	}
-	public void setMobilePhone(String value) {
-		this.MobilePhone = value;
-	}
 
 	/**
-	 * Business owner’s social security number
-	 * Character length and limitations: 9 alphanumeric characters	 */
+	 * Business owner’s social security number Character length
+	 * and limitations: 9 alphanumeric characters	 
+	 */ 
 	private String SSN;
-	public String getSSN() {
-		return SSN;
-	}
-	public void setSSN(String value) {
-		this.SSN = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public BusinessOwnerInfoType (){
+	}	
+
+	/**
+	 * Getter for Owner
+	 */
+	 public PayerInfoType getOwner() {
+	 	return Owner;
+	 }
+	 
+	/**
+	 * Setter for Owner
+	 */
+	 public void setOwner(PayerInfoType Owner) {
+	 	this.Owner = Owner;
+	 }
+	 
+	/**
+	 * Getter for HomePhone
+	 */
+	 public String getHomePhone() {
+	 	return HomePhone;
+	 }
+	 
+	/**
+	 * Setter for HomePhone
+	 */
+	 public void setHomePhone(String HomePhone) {
+	 	this.HomePhone = HomePhone;
+	 }
+	 
+	/**
+	 * Getter for MobilePhone
+	 */
+	 public String getMobilePhone() {
+	 	return MobilePhone;
+	 }
+	 
+	/**
+	 * Setter for MobilePhone
+	 */
+	 public void setMobilePhone(String MobilePhone) {
+	 	this.MobilePhone = MobilePhone;
+	 }
+	 
+	/**
+	 * Getter for SSN
+	 */
+	 public String getSSN() {
+	 	return SSN;
+	 }
+	 
+	/**
+	 * Setter for SSN
+	 */
+	 public void setSSN(String SSN) {
+	 	this.SSN = SSN;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if( Owner != null ) {
+		if(Owner != null) {
 			sb.append("<ebl:Owner>");
 			sb.append(Owner.toXMLString());
 			sb.append("</ebl:Owner>");
 		}
-		if( HomePhone != null ) {
+		if(HomePhone != null) {
 			sb.append("<ebl:HomePhone>").append(HomePhone);
 			sb.append("</ebl:HomePhone>");
 		}
-		if( MobilePhone != null ) {
+		if(MobilePhone != null) {
 			sb.append("<ebl:MobilePhone>").append(MobilePhone);
 			sb.append("</ebl:MobilePhone>");
 		}
-		if( SSN != null ) {
+		if(SSN != null) {
 			sb.append("<ebl:SSN>").append(SSN);
 			sb.append("</ebl:SSN>");
 		}

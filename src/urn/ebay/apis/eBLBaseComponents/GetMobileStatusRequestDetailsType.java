@@ -1,33 +1,44 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.eBLBaseComponents;
-
 import urn.ebay.apis.eBLBaseComponents.PhoneNumberType;
-
 
 /**
  * Phone number for status inquiry 
  */
-public class GetMobileStatusRequestDetailsType {
+public class GetMobileStatusRequestDetailsType{
+
 
 	/**
-Phone number for status inquiry 	 */
+	 * Phone number for status inquiry 	 
+	 */ 
 	private PhoneNumberType Phone;
-	public PhoneNumberType getPhone() {
-		return Phone;
-	}
-	public void setPhone(PhoneNumberType value) {
-		this.Phone = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public GetMobileStatusRequestDetailsType (){
+	}	
+
+	/**
+	 * Getter for Phone
+	 */
+	 public PhoneNumberType getPhone() {
+	 	return Phone;
+	 }
+	 
+	/**
+	 * Setter for Phone
+	 */
+	 public void setPhone(PhoneNumberType Phone) {
+	 	this.Phone = Phone;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if( Phone != null ) {
+		if(Phone != null) {
 			sb.append("<ebl:Phone>");
 			sb.append(Phone.toXMLString());
 			sb.append("</ebl:Phone>");

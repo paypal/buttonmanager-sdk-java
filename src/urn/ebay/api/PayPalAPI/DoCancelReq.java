@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.DoCancelRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class DoCancelReq {
+public class DoCancelReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private DoCancelRequestType DoCancelRequest;
-	public DoCancelRequestType getDoCancelRequest() {
-		return DoCancelRequest;
-	}
-	public void setDoCancelRequest(DoCancelRequestType value) {
-		this.DoCancelRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public DoCancelReq (){
+	}	
+
+	/**
+	 * Getter for DoCancelRequest
+	 */
+	 public DoCancelRequestType getDoCancelRequest() {
+	 	return DoCancelRequest;
+	 }
+	 
+	/**
+	 * Setter for DoCancelRequest
+	 */
+	 public void setDoCancelRequest(DoCancelRequestType DoCancelRequest) {
+	 	this.DoCancelRequest = DoCancelRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:DoCancelReq>");
-		if( DoCancelRequest != null ) {
+		sb.append("<urn:DoCancelReq>");
+		if(DoCancelRequest != null) {
 			sb.append("<urn:DoCancelRequest>");
 			sb.append(DoCancelRequest.toXMLString());
 			sb.append("</urn:DoCancelRequest>");
 		}
-sb.append("</urn:DoCancelReq>");
+		sb.append("</urn:DoCancelReq>");
 		return sb.toString();
 	}
 

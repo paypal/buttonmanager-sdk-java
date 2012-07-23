@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.InitiateRecoupRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class InitiateRecoupReq {
+public class InitiateRecoupReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private InitiateRecoupRequestType InitiateRecoupRequest;
-	public InitiateRecoupRequestType getInitiateRecoupRequest() {
-		return InitiateRecoupRequest;
-	}
-	public void setInitiateRecoupRequest(InitiateRecoupRequestType value) {
-		this.InitiateRecoupRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public InitiateRecoupReq (){
+	}	
+
+	/**
+	 * Getter for InitiateRecoupRequest
+	 */
+	 public InitiateRecoupRequestType getInitiateRecoupRequest() {
+	 	return InitiateRecoupRequest;
+	 }
+	 
+	/**
+	 * Setter for InitiateRecoupRequest
+	 */
+	 public void setInitiateRecoupRequest(InitiateRecoupRequestType InitiateRecoupRequest) {
+	 	this.InitiateRecoupRequest = InitiateRecoupRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:InitiateRecoupReq>");
-		if( InitiateRecoupRequest != null ) {
+		sb.append("<urn:InitiateRecoupReq>");
+		if(InitiateRecoupRequest != null) {
 			sb.append("<urn:InitiateRecoupRequest>");
 			sb.append(InitiateRecoupRequest.toXMLString());
 			sb.append("</urn:InitiateRecoupRequest>");
 		}
-sb.append("</urn:InitiateRecoupReq>");
+		sb.append("</urn:InitiateRecoupReq>");
 		return sb.toString();
 	}
 

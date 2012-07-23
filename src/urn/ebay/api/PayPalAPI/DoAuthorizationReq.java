@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.DoAuthorizationRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class DoAuthorizationReq {
+public class DoAuthorizationReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private DoAuthorizationRequestType DoAuthorizationRequest;
-	public DoAuthorizationRequestType getDoAuthorizationRequest() {
-		return DoAuthorizationRequest;
-	}
-	public void setDoAuthorizationRequest(DoAuthorizationRequestType value) {
-		this.DoAuthorizationRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public DoAuthorizationReq (){
+	}	
+
+	/**
+	 * Getter for DoAuthorizationRequest
+	 */
+	 public DoAuthorizationRequestType getDoAuthorizationRequest() {
+	 	return DoAuthorizationRequest;
+	 }
+	 
+	/**
+	 * Setter for DoAuthorizationRequest
+	 */
+	 public void setDoAuthorizationRequest(DoAuthorizationRequestType DoAuthorizationRequest) {
+	 	this.DoAuthorizationRequest = DoAuthorizationRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:DoAuthorizationReq>");
-		if( DoAuthorizationRequest != null ) {
+		sb.append("<urn:DoAuthorizationReq>");
+		if(DoAuthorizationRequest != null) {
 			sb.append("<urn:DoAuthorizationRequest>");
 			sb.append(DoAuthorizationRequest.toXMLString());
 			sb.append("</urn:DoAuthorizationRequest>");
 		}
-sb.append("</urn:DoAuthorizationReq>");
+		sb.append("</urn:DoAuthorizationReq>");
 		return sb.toString();
 	}
 

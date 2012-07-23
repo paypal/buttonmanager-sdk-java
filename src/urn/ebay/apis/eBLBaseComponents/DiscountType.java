@@ -1,106 +1,149 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.eBLBaseComponents;
-
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.RedeemedOfferType;
 
-
 /**
- * Describes discount information
+ * Describes discount information 
  */
-public class DiscountType {
+public class DiscountType{
+
 
 	/**
-Item nameOptional
-	 * Character length and limits: 127 single-byte characters
-	 */
+	 * Item nameOptional Character length and limits: 127
+	 * single-byte characters 	 
+	 */ 
 	private String Name;
-	public String getName() {
-		return Name;
-	}
-	public void setName(String value) {
-		this.Name = value;
-	}
 
 	/**
-description of the discountOptional
-	 * Character length and limits: 127 single-byte characters
-	 */
+	 * description of the discountOptional Character length and
+	 * limits: 127 single-byte characters 	 
+	 */ 
 	private String Description;
-	public String getDescription() {
-		return Description;
-	}
-	public void setDescription(String value) {
-		this.Description = value;
-	}
 
 	/**
-amount discountedOptional
-	 *
-	 * @Required
-	 */
+	 * amount discountedOptional 	  
+	 *@Required	 
+	 */ 
 	private BasicAmountType Amount;
-	public BasicAmountType getAmount() {
-		return Amount;
-	}
-	public void setAmount(BasicAmountType value) {
-		this.Amount = value;
-	}
 
 	/**
-offer typeOptional
-	 */
+	 * offer typeOptional 	 
+	 */ 
 	private RedeemedOfferType RedeemedOfferType;
-	public RedeemedOfferType getRedeemedOfferType() {
-		return RedeemedOfferType;
-	}
-	public void setRedeemedOfferType(RedeemedOfferType value) {
-		this.RedeemedOfferType = value;
-	}
 
 	/**
-offer IDOptional
-	 * Character length and limits: 64 single-byte characters
-	 */
+	 * offer IDOptional Character length and limits: 64 single-byte
+	 * characters 	 
+	 */ 
 	private String RedeemedOfferID;
-	public String getRedeemedOfferID() {
-		return RedeemedOfferID;
-	}
-	public void setRedeemedOfferID(String value) {
-		this.RedeemedOfferID = value;
-	}
 
+	
 
-	public DiscountType(BasicAmountType Amount) {
+	/**
+	 * Constructor with arguments
+	 */
+	public DiscountType (BasicAmountType Amount){
 		this.Amount = Amount;
-	}
-	public DiscountType() {
-	}
+	}	
 
-	public String toXMLString()  {
+	/**
+	 * Default Constructor
+	 */
+	public DiscountType (){
+	}	
+
+	/**
+	 * Getter for Name
+	 */
+	 public String getName() {
+	 	return Name;
+	 }
+	 
+	/**
+	 * Setter for Name
+	 */
+	 public void setName(String Name) {
+	 	this.Name = Name;
+	 }
+	 
+	/**
+	 * Getter for Description
+	 */
+	 public String getDescription() {
+	 	return Description;
+	 }
+	 
+	/**
+	 * Setter for Description
+	 */
+	 public void setDescription(String Description) {
+	 	this.Description = Description;
+	 }
+	 
+	/**
+	 * Getter for Amount
+	 */
+	 public BasicAmountType getAmount() {
+	 	return Amount;
+	 }
+	 
+	/**
+	 * Setter for Amount
+	 */
+	 public void setAmount(BasicAmountType Amount) {
+	 	this.Amount = Amount;
+	 }
+	 
+	/**
+	 * Getter for RedeemedOfferType
+	 */
+	 public RedeemedOfferType getRedeemedOfferType() {
+	 	return RedeemedOfferType;
+	 }
+	 
+	/**
+	 * Setter for RedeemedOfferType
+	 */
+	 public void setRedeemedOfferType(RedeemedOfferType RedeemedOfferType) {
+	 	this.RedeemedOfferType = RedeemedOfferType;
+	 }
+	 
+	/**
+	 * Getter for RedeemedOfferID
+	 */
+	 public String getRedeemedOfferID() {
+	 	return RedeemedOfferID;
+	 }
+	 
+	/**
+	 * Setter for RedeemedOfferID
+	 */
+	 public void setRedeemedOfferID(String RedeemedOfferID) {
+	 	this.RedeemedOfferID = RedeemedOfferID;
+	 }
+	 
+
+
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if( Name != null ) {
+		if(Name != null) {
 			sb.append("<ebl:Name>").append(Name);
 			sb.append("</ebl:Name>");
 		}
-		if( Description != null ) {
+		if(Description != null) {
 			sb.append("<ebl:Description>").append(Description);
 			sb.append("</ebl:Description>");
 		}
-		if( Amount != null ) {
-			sb.append("<ebl:Amount ");
+		if(Amount != null) {
+			sb.append("<ebl:Amount");
 			sb.append(Amount.toXMLString());
 			sb.append("</ebl:Amount>");
 		}
-		if( RedeemedOfferType != null ) {
-			sb.append("<ebl:RedeemedOfferType>").append( RedeemedOfferType.getValue());
+		if(RedeemedOfferType != null) {
+			sb.append("<ebl:RedeemedOfferType>").append(RedeemedOfferType.getValue());
 			sb.append("</ebl:RedeemedOfferType>");
 		}
-		if( RedeemedOfferID != null ) {
+		if(RedeemedOfferID != null) {
 			sb.append("<ebl:RedeemedOfferID>").append(RedeemedOfferID);
 			sb.append("</ebl:RedeemedOfferID>");
 		}

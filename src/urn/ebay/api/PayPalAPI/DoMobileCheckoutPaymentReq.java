@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.DoMobileCheckoutPaymentRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class DoMobileCheckoutPaymentReq {
+public class DoMobileCheckoutPaymentReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private DoMobileCheckoutPaymentRequestType DoMobileCheckoutPaymentRequest;
-	public DoMobileCheckoutPaymentRequestType getDoMobileCheckoutPaymentRequest() {
-		return DoMobileCheckoutPaymentRequest;
-	}
-	public void setDoMobileCheckoutPaymentRequest(DoMobileCheckoutPaymentRequestType value) {
-		this.DoMobileCheckoutPaymentRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public DoMobileCheckoutPaymentReq (){
+	}	
+
+	/**
+	 * Getter for DoMobileCheckoutPaymentRequest
+	 */
+	 public DoMobileCheckoutPaymentRequestType getDoMobileCheckoutPaymentRequest() {
+	 	return DoMobileCheckoutPaymentRequest;
+	 }
+	 
+	/**
+	 * Setter for DoMobileCheckoutPaymentRequest
+	 */
+	 public void setDoMobileCheckoutPaymentRequest(DoMobileCheckoutPaymentRequestType DoMobileCheckoutPaymentRequest) {
+	 	this.DoMobileCheckoutPaymentRequest = DoMobileCheckoutPaymentRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:DoMobileCheckoutPaymentReq>");
-		if( DoMobileCheckoutPaymentRequest != null ) {
+		sb.append("<urn:DoMobileCheckoutPaymentReq>");
+		if(DoMobileCheckoutPaymentRequest != null) {
 			sb.append("<urn:DoMobileCheckoutPaymentRequest>");
 			sb.append(DoMobileCheckoutPaymentRequest.toXMLString());
 			sb.append("</urn:DoMobileCheckoutPaymentRequest>");
 		}
-sb.append("</urn:DoMobileCheckoutPaymentReq>");
+		sb.append("</urn:DoMobileCheckoutPaymentReq>");
 		return sb.toString();
 	}
 

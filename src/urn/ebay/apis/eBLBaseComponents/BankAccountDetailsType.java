@@ -1,78 +1,116 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.eBLBaseComponents;
-
 import urn.ebay.apis.eBLBaseComponents.BankAccountTypeType;
-
 
 /**
  * BankAccountDetailsType 
  */
-public class BankAccountDetailsType {
+public class BankAccountDetailsType{
+
 
 	/**
-	 * Name of bank
-	 * Character length and limitations: 192 alphanumeric characters	 */
+	 * Name of bank Character length and limitations: 192
+	 * alphanumeric characters	 
+	 */ 
 	private String Name;
-	public String getName() {
-		return Name;
-	}
-	public void setName(String value) {
-		this.Name = value;
-	}
 
 	/**
-	 * Type of bank account: Checking or Savings	 */
+	 * Type of bank account: Checking or Savings	 
+	 */ 
 	private BankAccountTypeType Type;
-	public BankAccountTypeType getType() {
-		return Type;
-	}
-	public void setType(BankAccountTypeType value) {
-		this.Type = value;
-	}
 
 	/**
-	 * Merchant’s bank routing number
-	 * Character length and limitations: 23 alphanumeric characters	 */
+	 * Merchant’s bank routing number Character length and
+	 * limitations: 23 alphanumeric characters	 
+	 */ 
 	private String RoutingNumber;
-	public String getRoutingNumber() {
-		return RoutingNumber;
-	}
-	public void setRoutingNumber(String value) {
-		this.RoutingNumber = value;
-	}
 
 	/**
-	 * Merchant’s bank account number
-	 * Character length and limitations: 256 alphanumeric characters	 */
+	 * Merchant’s bank account number Character length and
+	 * limitations: 256 alphanumeric characters	 
+	 */ 
 	private String AccountNumber;
-	public String getAccountNumber() {
-		return AccountNumber;
-	}
-	public void setAccountNumber(String value) {
-		this.AccountNumber = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public BankAccountDetailsType (){
+	}	
+
+	/**
+	 * Getter for Name
+	 */
+	 public String getName() {
+	 	return Name;
+	 }
+	 
+	/**
+	 * Setter for Name
+	 */
+	 public void setName(String Name) {
+	 	this.Name = Name;
+	 }
+	 
+	/**
+	 * Getter for Type
+	 */
+	 public BankAccountTypeType getType() {
+	 	return Type;
+	 }
+	 
+	/**
+	 * Setter for Type
+	 */
+	 public void setType(BankAccountTypeType Type) {
+	 	this.Type = Type;
+	 }
+	 
+	/**
+	 * Getter for RoutingNumber
+	 */
+	 public String getRoutingNumber() {
+	 	return RoutingNumber;
+	 }
+	 
+	/**
+	 * Setter for RoutingNumber
+	 */
+	 public void setRoutingNumber(String RoutingNumber) {
+	 	this.RoutingNumber = RoutingNumber;
+	 }
+	 
+	/**
+	 * Getter for AccountNumber
+	 */
+	 public String getAccountNumber() {
+	 	return AccountNumber;
+	 }
+	 
+	/**
+	 * Setter for AccountNumber
+	 */
+	 public void setAccountNumber(String AccountNumber) {
+	 	this.AccountNumber = AccountNumber;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if( Name != null ) {
+		if(Name != null) {
 			sb.append("<ebl:Name>").append(Name);
 			sb.append("</ebl:Name>");
 		}
-		if( Type != null ) {
-			sb.append("<ebl:Type>").append( Type.getValue());
+		if(Type != null) {
+			sb.append("<ebl:Type>").append(Type.getValue());
 			sb.append("</ebl:Type>");
 		}
-		if( RoutingNumber != null ) {
+		if(RoutingNumber != null) {
 			sb.append("<ebl:RoutingNumber>").append(RoutingNumber);
 			sb.append("</ebl:RoutingNumber>");
 		}
-		if( AccountNumber != null ) {
+		if(AccountNumber != null) {
 			sb.append("<ebl:AccountNumber>").append(AccountNumber);
 			sb.append("</ebl:AccountNumber>");
 		}

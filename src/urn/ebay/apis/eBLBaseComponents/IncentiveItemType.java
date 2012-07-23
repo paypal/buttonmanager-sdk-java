@@ -1,89 +1,137 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.eBLBaseComponents;
-
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 
-
 /**
+ * No Document Comments
  */
-public class IncentiveItemType {
+public class IncentiveItemType{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String ItemId;
-	public String getItemId() {
-		return ItemId;
-	}
-	public void setItemId(String value) {
-		this.ItemId = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String PurchaseTime;
-	public String getPurchaseTime() {
-		return PurchaseTime;
-	}
-	public void setPurchaseTime(String value) {
-		this.PurchaseTime = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String ItemCategoryList;
-	public String getItemCategoryList() {
-		return ItemCategoryList;
-	}
-	public void setItemCategoryList(String value) {
-		this.ItemCategoryList = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private BasicAmountType ItemPrice;
-	public BasicAmountType getItemPrice() {
-		return ItemPrice;
-	}
-	public void setItemPrice(BasicAmountType value) {
-		this.ItemPrice = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private Integer ItemQuantity;
-	public Integer getItemQuantity() {
-		return ItemQuantity;
-	}
-	public void setItemQuantity(Integer value) {
-		this.ItemQuantity = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public IncentiveItemType (){
+	}	
+
+	/**
+	 * Getter for ItemId
+	 */
+	 public String getItemId() {
+	 	return ItemId;
+	 }
+	 
+	/**
+	 * Setter for ItemId
+	 */
+	 public void setItemId(String ItemId) {
+	 	this.ItemId = ItemId;
+	 }
+	 
+	/**
+	 * Getter for PurchaseTime
+	 */
+	 public String getPurchaseTime() {
+	 	return PurchaseTime;
+	 }
+	 
+	/**
+	 * Setter for PurchaseTime
+	 */
+	 public void setPurchaseTime(String PurchaseTime) {
+	 	this.PurchaseTime = PurchaseTime;
+	 }
+	 
+	/**
+	 * Getter for ItemCategoryList
+	 */
+	 public String getItemCategoryList() {
+	 	return ItemCategoryList;
+	 }
+	 
+	/**
+	 * Setter for ItemCategoryList
+	 */
+	 public void setItemCategoryList(String ItemCategoryList) {
+	 	this.ItemCategoryList = ItemCategoryList;
+	 }
+	 
+	/**
+	 * Getter for ItemPrice
+	 */
+	 public BasicAmountType getItemPrice() {
+	 	return ItemPrice;
+	 }
+	 
+	/**
+	 * Setter for ItemPrice
+	 */
+	 public void setItemPrice(BasicAmountType ItemPrice) {
+	 	this.ItemPrice = ItemPrice;
+	 }
+	 
+	/**
+	 * Getter for ItemQuantity
+	 */
+	 public Integer getItemQuantity() {
+	 	return ItemQuantity;
+	 }
+	 
+	/**
+	 * Setter for ItemQuantity
+	 */
+	 public void setItemQuantity(Integer ItemQuantity) {
+	 	this.ItemQuantity = ItemQuantity;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if( ItemId != null ) {
+		if(ItemId != null) {
 			sb.append("<ebl:ItemId>").append(ItemId);
 			sb.append("</ebl:ItemId>");
 		}
-		if( PurchaseTime != null ) {
+		if(PurchaseTime != null) {
 			sb.append("<ebl:PurchaseTime>").append(PurchaseTime);
 			sb.append("</ebl:PurchaseTime>");
 		}
-		if( ItemCategoryList != null ) {
+		if(ItemCategoryList != null) {
 			sb.append("<ebl:ItemCategoryList>").append(ItemCategoryList);
 			sb.append("</ebl:ItemCategoryList>");
 		}
-		if( ItemPrice != null ) {
-			sb.append("<ebl:ItemPrice ");
+		if(ItemPrice != null) {
+			sb.append("<ebl:ItemPrice");
 			sb.append(ItemPrice.toXMLString());
 			sb.append("</ebl:ItemPrice>");
 		}
-		if( ItemQuantity != null ) {
+		if(ItemQuantity != null) {
 			sb.append("<ebl:ItemQuantity>").append(ItemQuantity);
 			sb.append("</ebl:ItemQuantity>");
 		}

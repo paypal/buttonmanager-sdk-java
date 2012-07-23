@@ -1,48 +1,67 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.eBLBaseComponents;
 
-
-
 /**
- * Defines which bucket or item that the incentive should be applied to.  
+ * Defines which bucket or item that the incentive should be
+ * applied to. 
  */
-public class IncentiveApplyIndicationType {
+public class IncentiveApplyIndicationType{
+
 
 	/**
-	 * The Bucket ID that the incentive is applied to.
-	 */
+	 * The Bucket ID that the incentive is applied to. 	 
+	 */ 
 	private String PaymentRequestID;
-	public String getPaymentRequestID() {
-		return PaymentRequestID;
-	}
-	public void setPaymentRequestID(String value) {
-		this.PaymentRequestID = value;
-	}
 
 	/**
-	 * The item that the incentive is applied to. 
-	 */
+	 * The item that the incentive is applied to. 	 
+	 */ 
 	private String ItemId;
-	public String getItemId() {
-		return ItemId;
-	}
-	public void setItemId(String value) {
-		this.ItemId = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public IncentiveApplyIndicationType (){
+	}	
+
+	/**
+	 * Getter for PaymentRequestID
+	 */
+	 public String getPaymentRequestID() {
+	 	return PaymentRequestID;
+	 }
+	 
+	/**
+	 * Setter for PaymentRequestID
+	 */
+	 public void setPaymentRequestID(String PaymentRequestID) {
+	 	this.PaymentRequestID = PaymentRequestID;
+	 }
+	 
+	/**
+	 * Getter for ItemId
+	 */
+	 public String getItemId() {
+	 	return ItemId;
+	 }
+	 
+	/**
+	 * Setter for ItemId
+	 */
+	 public void setItemId(String ItemId) {
+	 	this.ItemId = ItemId;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if( PaymentRequestID != null ) {
+		if(PaymentRequestID != null) {
 			sb.append("<ebl:PaymentRequestID>").append(PaymentRequestID);
 			sb.append("</ebl:PaymentRequestID>");
 		}
-		if( ItemId != null ) {
+		if(ItemId != null) {
 			sb.append("<ebl:ItemId>").append(ItemId);
 			sb.append("</ebl:ItemId>");
 		}

@@ -1,41 +1,54 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
-import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import urn.ebay.apis.eBLBaseComponents.SetMobileCheckoutRequestDetailsType;
-
+import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
+ * No Document Comments
  */
-public class SetMobileCheckoutRequestType extends AbstractRequestType{
+public class SetMobileCheckoutRequestType extends AbstractRequestType {
+
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private SetMobileCheckoutRequestDetailsType SetMobileCheckoutRequestDetails;
-	public SetMobileCheckoutRequestDetailsType getSetMobileCheckoutRequestDetails() {
-		return SetMobileCheckoutRequestDetails;
-	}
-	public void setSetMobileCheckoutRequestDetails(SetMobileCheckoutRequestDetailsType value) {
-		this.SetMobileCheckoutRequestDetails = value;
-	}
 
+	
 
-	public SetMobileCheckoutRequestType(SetMobileCheckoutRequestDetailsType SetMobileCheckoutRequestDetails) {
+	/**
+	 * Constructor with arguments
+	 */
+	public SetMobileCheckoutRequestType (SetMobileCheckoutRequestDetailsType SetMobileCheckoutRequestDetails){
 		this.SetMobileCheckoutRequestDetails = SetMobileCheckoutRequestDetails;
-	}
-	public SetMobileCheckoutRequestType() {
-	}
+	}	
 
-	public String toXMLString()  {
+	/**
+	 * Default Constructor
+	 */
+	public SetMobileCheckoutRequestType (){
+	}	
+
+	/**
+	 * Getter for SetMobileCheckoutRequestDetails
+	 */
+	 public SetMobileCheckoutRequestDetailsType getSetMobileCheckoutRequestDetails() {
+	 	return SetMobileCheckoutRequestDetails;
+	 }
+	 
+	/**
+	 * Setter for SetMobileCheckoutRequestDetails
+	 */
+	 public void setSetMobileCheckoutRequestDetails(SetMobileCheckoutRequestDetailsType SetMobileCheckoutRequestDetails) {
+	 	this.SetMobileCheckoutRequestDetails = SetMobileCheckoutRequestDetails;
+	 }
+	 
+
+
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append(super.toXMLString());
-		if( SetMobileCheckoutRequestDetails != null ) {
+		sb.append(super.toXMLString());
+		if(SetMobileCheckoutRequestDetails != null) {
 			sb.append("<ebl:SetMobileCheckoutRequestDetails>");
 			sb.append(SetMobileCheckoutRequestDetails.toXMLString());
 			sb.append("</ebl:SetMobileCheckoutRequestDetails>");

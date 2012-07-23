@@ -1,41 +1,54 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
-import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import urn.ebay.apis.eBLBaseComponents.SetAuthFlowParamRequestDetailsType;
-
+import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
+ * No Document Comments
  */
-public class SetAuthFlowParamRequestType extends AbstractRequestType{
+public class SetAuthFlowParamRequestType extends AbstractRequestType {
+
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private SetAuthFlowParamRequestDetailsType SetAuthFlowParamRequestDetails;
-	public SetAuthFlowParamRequestDetailsType getSetAuthFlowParamRequestDetails() {
-		return SetAuthFlowParamRequestDetails;
-	}
-	public void setSetAuthFlowParamRequestDetails(SetAuthFlowParamRequestDetailsType value) {
-		this.SetAuthFlowParamRequestDetails = value;
-	}
 
+	
 
-	public SetAuthFlowParamRequestType(SetAuthFlowParamRequestDetailsType SetAuthFlowParamRequestDetails) {
+	/**
+	 * Constructor with arguments
+	 */
+	public SetAuthFlowParamRequestType (SetAuthFlowParamRequestDetailsType SetAuthFlowParamRequestDetails){
 		this.SetAuthFlowParamRequestDetails = SetAuthFlowParamRequestDetails;
-	}
-	public SetAuthFlowParamRequestType() {
-	}
+	}	
 
-	public String toXMLString()  {
+	/**
+	 * Default Constructor
+	 */
+	public SetAuthFlowParamRequestType (){
+	}	
+
+	/**
+	 * Getter for SetAuthFlowParamRequestDetails
+	 */
+	 public SetAuthFlowParamRequestDetailsType getSetAuthFlowParamRequestDetails() {
+	 	return SetAuthFlowParamRequestDetails;
+	 }
+	 
+	/**
+	 * Setter for SetAuthFlowParamRequestDetails
+	 */
+	 public void setSetAuthFlowParamRequestDetails(SetAuthFlowParamRequestDetailsType SetAuthFlowParamRequestDetails) {
+	 	this.SetAuthFlowParamRequestDetails = SetAuthFlowParamRequestDetails;
+	 }
+	 
+
+
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append(super.toXMLString());
-		if( SetAuthFlowParamRequestDetails != null ) {
+		sb.append(super.toXMLString());
+		if(SetAuthFlowParamRequestDetails != null) {
 			sb.append("<ebl:SetAuthFlowParamRequestDetails>");
 			sb.append(SetAuthFlowParamRequestDetails.toXMLString());
 			sb.append("</ebl:SetAuthFlowParamRequestDetails>");

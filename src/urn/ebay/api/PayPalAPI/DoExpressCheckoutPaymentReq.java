@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.DoExpressCheckoutPaymentRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class DoExpressCheckoutPaymentReq {
+public class DoExpressCheckoutPaymentReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private DoExpressCheckoutPaymentRequestType DoExpressCheckoutPaymentRequest;
-	public DoExpressCheckoutPaymentRequestType getDoExpressCheckoutPaymentRequest() {
-		return DoExpressCheckoutPaymentRequest;
-	}
-	public void setDoExpressCheckoutPaymentRequest(DoExpressCheckoutPaymentRequestType value) {
-		this.DoExpressCheckoutPaymentRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public DoExpressCheckoutPaymentReq (){
+	}	
+
+	/**
+	 * Getter for DoExpressCheckoutPaymentRequest
+	 */
+	 public DoExpressCheckoutPaymentRequestType getDoExpressCheckoutPaymentRequest() {
+	 	return DoExpressCheckoutPaymentRequest;
+	 }
+	 
+	/**
+	 * Setter for DoExpressCheckoutPaymentRequest
+	 */
+	 public void setDoExpressCheckoutPaymentRequest(DoExpressCheckoutPaymentRequestType DoExpressCheckoutPaymentRequest) {
+	 	this.DoExpressCheckoutPaymentRequest = DoExpressCheckoutPaymentRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:DoExpressCheckoutPaymentReq>");
-		if( DoExpressCheckoutPaymentRequest != null ) {
+		sb.append("<urn:DoExpressCheckoutPaymentReq>");
+		if(DoExpressCheckoutPaymentRequest != null) {
 			sb.append("<urn:DoExpressCheckoutPaymentRequest>");
 			sb.append(DoExpressCheckoutPaymentRequest.toXMLString());
 			sb.append("</urn:DoExpressCheckoutPaymentRequest>");
 		}
-sb.append("</urn:DoExpressCheckoutPaymentReq>");
+		sb.append("</urn:DoExpressCheckoutPaymentReq>");
 		return sb.toString();
 	}
 

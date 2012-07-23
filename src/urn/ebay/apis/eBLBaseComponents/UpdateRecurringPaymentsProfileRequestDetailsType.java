@@ -1,277 +1,432 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.eBLBaseComponents;
-
-import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.AddressType;
+import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.AutoBillType;
-import urn.ebay.apis.eBLBaseComponents.BillingPeriodDetailsType_Update;
 import urn.ebay.apis.eBLBaseComponents.CreditCardDetailsType;
-
+import urn.ebay.apis.eBLBaseComponents.BillingPeriodDetailsType_Update;
 
 /**
+ * No Document Comments
  */
-public class UpdateRecurringPaymentsProfileRequestDetailsType {
+public class UpdateRecurringPaymentsProfileRequestDetailsType{
+
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private String ProfileID;
-	public String getProfileID() {
-		return ProfileID;
-	}
-	public void setProfileID(String value) {
-		this.ProfileID = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String Note;
-	public String getNote() {
-		return Note;
-	}
-	public void setNote(String value) {
-		this.Note = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String Description;
-	public String getDescription() {
-		return Description;
-	}
-	public void setDescription(String value) {
-		this.Description = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String SubscriberName;
-	public String getSubscriberName() {
-		return SubscriberName;
-	}
-	public void setSubscriberName(String value) {
-		this.SubscriberName = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private AddressType SubscriberShippingAddress;
-	public AddressType getSubscriberShippingAddress() {
-		return SubscriberShippingAddress;
-	}
-	public void setSubscriberShippingAddress(AddressType value) {
-		this.SubscriberShippingAddress = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String ProfileReference;
-	public String getProfileReference() {
-		return ProfileReference;
-	}
-	public void setProfileReference(String value) {
-		this.ProfileReference = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private Integer AdditionalBillingCycles;
-	public Integer getAdditionalBillingCycles() {
-		return AdditionalBillingCycles;
-	}
-	public void setAdditionalBillingCycles(Integer value) {
-		this.AdditionalBillingCycles = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private BasicAmountType Amount;
-	public BasicAmountType getAmount() {
-		return Amount;
-	}
-	public void setAmount(BasicAmountType value) {
-		this.Amount = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private BasicAmountType ShippingAmount;
-	public BasicAmountType getShippingAmount() {
-		return ShippingAmount;
-	}
-	public void setShippingAmount(BasicAmountType value) {
-		this.ShippingAmount = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private BasicAmountType TaxAmount;
-	public BasicAmountType getTaxAmount() {
-		return TaxAmount;
-	}
-	public void setTaxAmount(BasicAmountType value) {
-		this.TaxAmount = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private BasicAmountType OutstandingBalance;
-	public BasicAmountType getOutstandingBalance() {
-		return OutstandingBalance;
-	}
-	public void setOutstandingBalance(BasicAmountType value) {
-		this.OutstandingBalance = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private AutoBillType AutoBillOutstandingAmount;
-	public AutoBillType getAutoBillOutstandingAmount() {
-		return AutoBillOutstandingAmount;
-	}
-	public void setAutoBillOutstandingAmount(AutoBillType value) {
-		this.AutoBillOutstandingAmount = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private Integer MaxFailedPayments;
-	public Integer getMaxFailedPayments() {
-		return MaxFailedPayments;
-	}
-	public void setMaxFailedPayments(Integer value) {
-		this.MaxFailedPayments = value;
-	}
 
 	/**
-	 * Information about the credit card to be charged (required if Direct Payment)
-	 */
+	 * Information about the credit card to be charged (required if
+	 * Direct Payment) 	 
+	 */ 
 	private CreditCardDetailsType CreditCard;
-	public CreditCardDetailsType getCreditCard() {
-		return CreditCard;
-	}
-	public void setCreditCard(CreditCardDetailsType value) {
-		this.CreditCard = value;
-	}
 
 	/**
-	 * When does this Profile begin billing?
-	 */
+	 * When does this Profile begin billing? 	 
+	 */ 
 	private String BillingStartDate;
-	public String getBillingStartDate() {
-		return BillingStartDate;
-	}
-	public void setBillingStartDate(String value) {
-		this.BillingStartDate = value;
-	}
 
 	/**
-	 * Trial period of this schedule
-	 */
+	 * Trial period of this schedule 	 
+	 */ 
 	private BillingPeriodDetailsType_Update TrialPeriod;
-	public BillingPeriodDetailsType_Update getTrialPeriod() {
-		return TrialPeriod;
-	}
-	public void setTrialPeriod(BillingPeriodDetailsType_Update value) {
-		this.TrialPeriod = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private BillingPeriodDetailsType_Update PaymentPeriod;
-	public BillingPeriodDetailsType_Update getPaymentPeriod() {
-		return PaymentPeriod;
-	}
-	public void setPaymentPeriod(BillingPeriodDetailsType_Update value) {
-		this.PaymentPeriod = value;
-	}
 
+	
 
-	public UpdateRecurringPaymentsProfileRequestDetailsType(String ProfileID) {
+	/**
+	 * Constructor with arguments
+	 */
+	public UpdateRecurringPaymentsProfileRequestDetailsType (String ProfileID){
 		this.ProfileID = ProfileID;
-	}
-	public UpdateRecurringPaymentsProfileRequestDetailsType() {
-	}
+	}	
 
-	public String toXMLString()  {
+	/**
+	 * Default Constructor
+	 */
+	public UpdateRecurringPaymentsProfileRequestDetailsType (){
+	}	
+
+	/**
+	 * Getter for ProfileID
+	 */
+	 public String getProfileID() {
+	 	return ProfileID;
+	 }
+	 
+	/**
+	 * Setter for ProfileID
+	 */
+	 public void setProfileID(String ProfileID) {
+	 	this.ProfileID = ProfileID;
+	 }
+	 
+	/**
+	 * Getter for Note
+	 */
+	 public String getNote() {
+	 	return Note;
+	 }
+	 
+	/**
+	 * Setter for Note
+	 */
+	 public void setNote(String Note) {
+	 	this.Note = Note;
+	 }
+	 
+	/**
+	 * Getter for Description
+	 */
+	 public String getDescription() {
+	 	return Description;
+	 }
+	 
+	/**
+	 * Setter for Description
+	 */
+	 public void setDescription(String Description) {
+	 	this.Description = Description;
+	 }
+	 
+	/**
+	 * Getter for SubscriberName
+	 */
+	 public String getSubscriberName() {
+	 	return SubscriberName;
+	 }
+	 
+	/**
+	 * Setter for SubscriberName
+	 */
+	 public void setSubscriberName(String SubscriberName) {
+	 	this.SubscriberName = SubscriberName;
+	 }
+	 
+	/**
+	 * Getter for SubscriberShippingAddress
+	 */
+	 public AddressType getSubscriberShippingAddress() {
+	 	return SubscriberShippingAddress;
+	 }
+	 
+	/**
+	 * Setter for SubscriberShippingAddress
+	 */
+	 public void setSubscriberShippingAddress(AddressType SubscriberShippingAddress) {
+	 	this.SubscriberShippingAddress = SubscriberShippingAddress;
+	 }
+	 
+	/**
+	 * Getter for ProfileReference
+	 */
+	 public String getProfileReference() {
+	 	return ProfileReference;
+	 }
+	 
+	/**
+	 * Setter for ProfileReference
+	 */
+	 public void setProfileReference(String ProfileReference) {
+	 	this.ProfileReference = ProfileReference;
+	 }
+	 
+	/**
+	 * Getter for AdditionalBillingCycles
+	 */
+	 public Integer getAdditionalBillingCycles() {
+	 	return AdditionalBillingCycles;
+	 }
+	 
+	/**
+	 * Setter for AdditionalBillingCycles
+	 */
+	 public void setAdditionalBillingCycles(Integer AdditionalBillingCycles) {
+	 	this.AdditionalBillingCycles = AdditionalBillingCycles;
+	 }
+	 
+	/**
+	 * Getter for Amount
+	 */
+	 public BasicAmountType getAmount() {
+	 	return Amount;
+	 }
+	 
+	/**
+	 * Setter for Amount
+	 */
+	 public void setAmount(BasicAmountType Amount) {
+	 	this.Amount = Amount;
+	 }
+	 
+	/**
+	 * Getter for ShippingAmount
+	 */
+	 public BasicAmountType getShippingAmount() {
+	 	return ShippingAmount;
+	 }
+	 
+	/**
+	 * Setter for ShippingAmount
+	 */
+	 public void setShippingAmount(BasicAmountType ShippingAmount) {
+	 	this.ShippingAmount = ShippingAmount;
+	 }
+	 
+	/**
+	 * Getter for TaxAmount
+	 */
+	 public BasicAmountType getTaxAmount() {
+	 	return TaxAmount;
+	 }
+	 
+	/**
+	 * Setter for TaxAmount
+	 */
+	 public void setTaxAmount(BasicAmountType TaxAmount) {
+	 	this.TaxAmount = TaxAmount;
+	 }
+	 
+	/**
+	 * Getter for OutstandingBalance
+	 */
+	 public BasicAmountType getOutstandingBalance() {
+	 	return OutstandingBalance;
+	 }
+	 
+	/**
+	 * Setter for OutstandingBalance
+	 */
+	 public void setOutstandingBalance(BasicAmountType OutstandingBalance) {
+	 	this.OutstandingBalance = OutstandingBalance;
+	 }
+	 
+	/**
+	 * Getter for AutoBillOutstandingAmount
+	 */
+	 public AutoBillType getAutoBillOutstandingAmount() {
+	 	return AutoBillOutstandingAmount;
+	 }
+	 
+	/**
+	 * Setter for AutoBillOutstandingAmount
+	 */
+	 public void setAutoBillOutstandingAmount(AutoBillType AutoBillOutstandingAmount) {
+	 	this.AutoBillOutstandingAmount = AutoBillOutstandingAmount;
+	 }
+	 
+	/**
+	 * Getter for MaxFailedPayments
+	 */
+	 public Integer getMaxFailedPayments() {
+	 	return MaxFailedPayments;
+	 }
+	 
+	/**
+	 * Setter for MaxFailedPayments
+	 */
+	 public void setMaxFailedPayments(Integer MaxFailedPayments) {
+	 	this.MaxFailedPayments = MaxFailedPayments;
+	 }
+	 
+	/**
+	 * Getter for CreditCard
+	 */
+	 public CreditCardDetailsType getCreditCard() {
+	 	return CreditCard;
+	 }
+	 
+	/**
+	 * Setter for CreditCard
+	 */
+	 public void setCreditCard(CreditCardDetailsType CreditCard) {
+	 	this.CreditCard = CreditCard;
+	 }
+	 
+	/**
+	 * Getter for BillingStartDate
+	 */
+	 public String getBillingStartDate() {
+	 	return BillingStartDate;
+	 }
+	 
+	/**
+	 * Setter for BillingStartDate
+	 */
+	 public void setBillingStartDate(String BillingStartDate) {
+	 	this.BillingStartDate = BillingStartDate;
+	 }
+	 
+	/**
+	 * Getter for TrialPeriod
+	 */
+	 public BillingPeriodDetailsType_Update getTrialPeriod() {
+	 	return TrialPeriod;
+	 }
+	 
+	/**
+	 * Setter for TrialPeriod
+	 */
+	 public void setTrialPeriod(BillingPeriodDetailsType_Update TrialPeriod) {
+	 	this.TrialPeriod = TrialPeriod;
+	 }
+	 
+	/**
+	 * Getter for PaymentPeriod
+	 */
+	 public BillingPeriodDetailsType_Update getPaymentPeriod() {
+	 	return PaymentPeriod;
+	 }
+	 
+	/**
+	 * Setter for PaymentPeriod
+	 */
+	 public void setPaymentPeriod(BillingPeriodDetailsType_Update PaymentPeriod) {
+	 	this.PaymentPeriod = PaymentPeriod;
+	 }
+	 
+
+
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if( ProfileID != null ) {
+		if(ProfileID != null) {
 			sb.append("<ebl:ProfileID>").append(ProfileID);
 			sb.append("</ebl:ProfileID>");
 		}
-		if( Note != null ) {
+		if(Note != null) {
 			sb.append("<ebl:Note>").append(Note);
 			sb.append("</ebl:Note>");
 		}
-		if( Description != null ) {
+		if(Description != null) {
 			sb.append("<ebl:Description>").append(Description);
 			sb.append("</ebl:Description>");
 		}
-		if( SubscriberName != null ) {
+		if(SubscriberName != null) {
 			sb.append("<ebl:SubscriberName>").append(SubscriberName);
 			sb.append("</ebl:SubscriberName>");
 		}
-		if( SubscriberShippingAddress != null ) {
+		if(SubscriberShippingAddress != null) {
 			sb.append("<ebl:SubscriberShippingAddress>");
 			sb.append(SubscriberShippingAddress.toXMLString());
 			sb.append("</ebl:SubscriberShippingAddress>");
 		}
-		if( ProfileReference != null ) {
+		if(ProfileReference != null) {
 			sb.append("<ebl:ProfileReference>").append(ProfileReference);
 			sb.append("</ebl:ProfileReference>");
 		}
-		if( AdditionalBillingCycles != null ) {
+		if(AdditionalBillingCycles != null) {
 			sb.append("<ebl:AdditionalBillingCycles>").append(AdditionalBillingCycles);
 			sb.append("</ebl:AdditionalBillingCycles>");
 		}
-		if( Amount != null ) {
-			sb.append("<ebl:Amount ");
+		if(Amount != null) {
+			sb.append("<ebl:Amount");
 			sb.append(Amount.toXMLString());
 			sb.append("</ebl:Amount>");
 		}
-		if( ShippingAmount != null ) {
-			sb.append("<ebl:ShippingAmount ");
+		if(ShippingAmount != null) {
+			sb.append("<ebl:ShippingAmount");
 			sb.append(ShippingAmount.toXMLString());
 			sb.append("</ebl:ShippingAmount>");
 		}
-		if( TaxAmount != null ) {
-			sb.append("<ebl:TaxAmount ");
+		if(TaxAmount != null) {
+			sb.append("<ebl:TaxAmount");
 			sb.append(TaxAmount.toXMLString());
 			sb.append("</ebl:TaxAmount>");
 		}
-		if( OutstandingBalance != null ) {
-			sb.append("<ebl:OutstandingBalance ");
+		if(OutstandingBalance != null) {
+			sb.append("<ebl:OutstandingBalance");
 			sb.append(OutstandingBalance.toXMLString());
 			sb.append("</ebl:OutstandingBalance>");
 		}
-		if( AutoBillOutstandingAmount != null ) {
-			sb.append("<ebl:AutoBillOutstandingAmount>").append( AutoBillOutstandingAmount.getValue());
+		if(AutoBillOutstandingAmount != null) {
+			sb.append("<ebl:AutoBillOutstandingAmount>").append(AutoBillOutstandingAmount.getValue());
 			sb.append("</ebl:AutoBillOutstandingAmount>");
 		}
-		if( MaxFailedPayments != null ) {
+		if(MaxFailedPayments != null) {
 			sb.append("<ebl:MaxFailedPayments>").append(MaxFailedPayments);
 			sb.append("</ebl:MaxFailedPayments>");
 		}
-		if( CreditCard != null ) {
+		if(CreditCard != null) {
 			sb.append("<ebl:CreditCard>");
 			sb.append(CreditCard.toXMLString());
 			sb.append("</ebl:CreditCard>");
 		}
-		if( BillingStartDate != null ) {
+		if(BillingStartDate != null) {
 			sb.append("<ebl:BillingStartDate>").append(BillingStartDate);
 			sb.append("</ebl:BillingStartDate>");
 		}
-		if( TrialPeriod != null ) {
+		if(TrialPeriod != null) {
 			sb.append("<ebl:TrialPeriod>");
 			sb.append(TrialPeriod.toXMLString());
 			sb.append("</ebl:TrialPeriod>");
 		}
-		if( PaymentPeriod != null ) {
+		if(PaymentPeriod != null) {
 			sb.append("<ebl:PaymentPeriod>");
 			sb.append(PaymentPeriod.toXMLString());
 			sb.append("</ebl:PaymentPeriod>");

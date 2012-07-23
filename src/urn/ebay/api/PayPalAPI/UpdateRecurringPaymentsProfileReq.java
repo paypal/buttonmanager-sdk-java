@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.UpdateRecurringPaymentsProfileRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class UpdateRecurringPaymentsProfileReq {
+public class UpdateRecurringPaymentsProfileReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private UpdateRecurringPaymentsProfileRequestType UpdateRecurringPaymentsProfileRequest;
-	public UpdateRecurringPaymentsProfileRequestType getUpdateRecurringPaymentsProfileRequest() {
-		return UpdateRecurringPaymentsProfileRequest;
-	}
-	public void setUpdateRecurringPaymentsProfileRequest(UpdateRecurringPaymentsProfileRequestType value) {
-		this.UpdateRecurringPaymentsProfileRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public UpdateRecurringPaymentsProfileReq (){
+	}	
+
+	/**
+	 * Getter for UpdateRecurringPaymentsProfileRequest
+	 */
+	 public UpdateRecurringPaymentsProfileRequestType getUpdateRecurringPaymentsProfileRequest() {
+	 	return UpdateRecurringPaymentsProfileRequest;
+	 }
+	 
+	/**
+	 * Setter for UpdateRecurringPaymentsProfileRequest
+	 */
+	 public void setUpdateRecurringPaymentsProfileRequest(UpdateRecurringPaymentsProfileRequestType UpdateRecurringPaymentsProfileRequest) {
+	 	this.UpdateRecurringPaymentsProfileRequest = UpdateRecurringPaymentsProfileRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:UpdateRecurringPaymentsProfileReq>");
-		if( UpdateRecurringPaymentsProfileRequest != null ) {
+		sb.append("<urn:UpdateRecurringPaymentsProfileReq>");
+		if(UpdateRecurringPaymentsProfileRequest != null) {
 			sb.append("<urn:UpdateRecurringPaymentsProfileRequest>");
 			sb.append(UpdateRecurringPaymentsProfileRequest.toXMLString());
 			sb.append("</urn:UpdateRecurringPaymentsProfileRequest>");
 		}
-sb.append("</urn:UpdateRecurringPaymentsProfileReq>");
+		sb.append("</urn:UpdateRecurringPaymentsProfileReq>");
 		return sb.toString();
 	}
 

@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.BMCreateButtonRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class BMCreateButtonReq {
+public class BMCreateButtonReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private BMCreateButtonRequestType BMCreateButtonRequest;
-	public BMCreateButtonRequestType getBMCreateButtonRequest() {
-		return BMCreateButtonRequest;
-	}
-	public void setBMCreateButtonRequest(BMCreateButtonRequestType value) {
-		this.BMCreateButtonRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public BMCreateButtonReq (){
+	}	
+
+	/**
+	 * Getter for BMCreateButtonRequest
+	 */
+	 public BMCreateButtonRequestType getBMCreateButtonRequest() {
+	 	return BMCreateButtonRequest;
+	 }
+	 
+	/**
+	 * Setter for BMCreateButtonRequest
+	 */
+	 public void setBMCreateButtonRequest(BMCreateButtonRequestType BMCreateButtonRequest) {
+	 	this.BMCreateButtonRequest = BMCreateButtonRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:BMCreateButtonReq>");
-		if( BMCreateButtonRequest != null ) {
+		sb.append("<urn:BMCreateButtonReq>");
+		if(BMCreateButtonRequest != null) {
 			sb.append("<urn:BMCreateButtonRequest>");
 			sb.append(BMCreateButtonRequest.toXMLString());
 			sb.append("</urn:BMCreateButtonRequest>");
 		}
-sb.append("</urn:BMCreateButtonReq>");
+		sb.append("</urn:BMCreateButtonReq>");
 		return sb.toString();
 	}
 

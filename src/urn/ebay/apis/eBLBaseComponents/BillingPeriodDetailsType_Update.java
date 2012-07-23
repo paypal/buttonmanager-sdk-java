@@ -1,113 +1,163 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.eBLBaseComponents;
-
-import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.BillingPeriodType;
-
+import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 
 /**
- * Unit of meausre for billing cycle
+ * Unit of meausre for billing cycle 
  */
-public class BillingPeriodDetailsType_Update {
+public class BillingPeriodDetailsType_Update{
+
 
 	/**
-	 * Unit of meausre for billing cycle
-	 */
+	 * Unit of meausre for billing cycle 	 
+	 */ 
 	private BillingPeriodType BillingPeriod;
-	public BillingPeriodType getBillingPeriod() {
-		return BillingPeriod;
-	}
-	public void setBillingPeriod(BillingPeriodType value) {
-		this.BillingPeriod = value;
-	}
 
 	/**
-	 * Number of BillingPeriod that make up one billing cycle
-	 */
+	 * Number of BillingPeriod that make up one billing cycle 	 
+	 */ 
 	private Integer BillingFrequency;
-	public Integer getBillingFrequency() {
-		return BillingFrequency;
-	}
-	public void setBillingFrequency(Integer value) {
-		this.BillingFrequency = value;
-	}
 
 	/**
-	 * Total billing cycles in this portion of the schedule
-	 */
+	 * Total billing cycles in this portion of the schedule 	 
+	 */ 
 	private Integer TotalBillingCycles;
-	public Integer getTotalBillingCycles() {
-		return TotalBillingCycles;
-	}
-	public void setTotalBillingCycles(Integer value) {
-		this.TotalBillingCycles = value;
-	}
 
 	/**
-	 * Amount to charge
-	 */
+	 * Amount to charge 	 
+	 */ 
 	private BasicAmountType Amount;
-	public BasicAmountType getAmount() {
-		return Amount;
-	}
-	public void setAmount(BasicAmountType value) {
-		this.Amount = value;
-	}
 
 	/**
-	 * Additional shipping amount to charge
-	 */
+	 * Additional shipping amount to charge 	 
+	 */ 
 	private BasicAmountType ShippingAmount;
-	public BasicAmountType getShippingAmount() {
-		return ShippingAmount;
-	}
-	public void setShippingAmount(BasicAmountType value) {
-		this.ShippingAmount = value;
-	}
 
 	/**
-	 * Additional tax amount to charge
-	 */
+	 * Additional tax amount to charge 	 
+	 */ 
 	private BasicAmountType TaxAmount;
-	public BasicAmountType getTaxAmount() {
-		return TaxAmount;
-	}
-	public void setTaxAmount(BasicAmountType value) {
-		this.TaxAmount = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public BillingPeriodDetailsType_Update (){
+	}	
+
+	/**
+	 * Getter for BillingPeriod
+	 */
+	 public BillingPeriodType getBillingPeriod() {
+	 	return BillingPeriod;
+	 }
+	 
+	/**
+	 * Setter for BillingPeriod
+	 */
+	 public void setBillingPeriod(BillingPeriodType BillingPeriod) {
+	 	this.BillingPeriod = BillingPeriod;
+	 }
+	 
+	/**
+	 * Getter for BillingFrequency
+	 */
+	 public Integer getBillingFrequency() {
+	 	return BillingFrequency;
+	 }
+	 
+	/**
+	 * Setter for BillingFrequency
+	 */
+	 public void setBillingFrequency(Integer BillingFrequency) {
+	 	this.BillingFrequency = BillingFrequency;
+	 }
+	 
+	/**
+	 * Getter for TotalBillingCycles
+	 */
+	 public Integer getTotalBillingCycles() {
+	 	return TotalBillingCycles;
+	 }
+	 
+	/**
+	 * Setter for TotalBillingCycles
+	 */
+	 public void setTotalBillingCycles(Integer TotalBillingCycles) {
+	 	this.TotalBillingCycles = TotalBillingCycles;
+	 }
+	 
+	/**
+	 * Getter for Amount
+	 */
+	 public BasicAmountType getAmount() {
+	 	return Amount;
+	 }
+	 
+	/**
+	 * Setter for Amount
+	 */
+	 public void setAmount(BasicAmountType Amount) {
+	 	this.Amount = Amount;
+	 }
+	 
+	/**
+	 * Getter for ShippingAmount
+	 */
+	 public BasicAmountType getShippingAmount() {
+	 	return ShippingAmount;
+	 }
+	 
+	/**
+	 * Setter for ShippingAmount
+	 */
+	 public void setShippingAmount(BasicAmountType ShippingAmount) {
+	 	this.ShippingAmount = ShippingAmount;
+	 }
+	 
+	/**
+	 * Getter for TaxAmount
+	 */
+	 public BasicAmountType getTaxAmount() {
+	 	return TaxAmount;
+	 }
+	 
+	/**
+	 * Setter for TaxAmount
+	 */
+	 public void setTaxAmount(BasicAmountType TaxAmount) {
+	 	this.TaxAmount = TaxAmount;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if( BillingPeriod != null ) {
-			sb.append("<ebl:BillingPeriod>").append( BillingPeriod.getValue());
+		if(BillingPeriod != null) {
+			sb.append("<ebl:BillingPeriod>").append(BillingPeriod.getValue());
 			sb.append("</ebl:BillingPeriod>");
 		}
-		if( BillingFrequency != null ) {
+		if(BillingFrequency != null) {
 			sb.append("<ebl:BillingFrequency>").append(BillingFrequency);
 			sb.append("</ebl:BillingFrequency>");
 		}
-		if( TotalBillingCycles != null ) {
+		if(TotalBillingCycles != null) {
 			sb.append("<ebl:TotalBillingCycles>").append(TotalBillingCycles);
 			sb.append("</ebl:TotalBillingCycles>");
 		}
-		if( Amount != null ) {
-			sb.append("<ebl:Amount ");
+		if(Amount != null) {
+			sb.append("<ebl:Amount");
 			sb.append(Amount.toXMLString());
 			sb.append("</ebl:Amount>");
 		}
-		if( ShippingAmount != null ) {
-			sb.append("<ebl:ShippingAmount ");
+		if(ShippingAmount != null) {
+			sb.append("<ebl:ShippingAmount");
 			sb.append(ShippingAmount.toXMLString());
 			sb.append("</ebl:ShippingAmount>");
 		}
-		if( TaxAmount != null ) {
-			sb.append("<ebl:TaxAmount ");
+		if(TaxAmount != null) {
+			sb.append("<ebl:TaxAmount");
 			sb.append(TaxAmount.toXMLString());
 			sb.append("</ebl:TaxAmount>");
 		}

@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.CancelRecoupRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class CancelRecoupReq {
+public class CancelRecoupReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private CancelRecoupRequestType CancelRecoupRequest;
-	public CancelRecoupRequestType getCancelRecoupRequest() {
-		return CancelRecoupRequest;
-	}
-	public void setCancelRecoupRequest(CancelRecoupRequestType value) {
-		this.CancelRecoupRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public CancelRecoupReq (){
+	}	
+
+	/**
+	 * Getter for CancelRecoupRequest
+	 */
+	 public CancelRecoupRequestType getCancelRecoupRequest() {
+	 	return CancelRecoupRequest;
+	 }
+	 
+	/**
+	 * Setter for CancelRecoupRequest
+	 */
+	 public void setCancelRecoupRequest(CancelRecoupRequestType CancelRecoupRequest) {
+	 	this.CancelRecoupRequest = CancelRecoupRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:CancelRecoupReq>");
-		if( CancelRecoupRequest != null ) {
+		sb.append("<urn:CancelRecoupReq>");
+		if(CancelRecoupRequest != null) {
 			sb.append("<urn:CancelRecoupRequest>");
 			sb.append(CancelRecoupRequest.toXMLString());
 			sb.append("</urn:CancelRecoupRequest>");
 		}
-sb.append("</urn:CancelRecoupReq>");
+		sb.append("</urn:CancelRecoupReq>");
 		return sb.toString();
 	}
 

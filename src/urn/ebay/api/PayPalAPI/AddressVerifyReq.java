@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.AddressVerifyRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class AddressVerifyReq {
+public class AddressVerifyReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private AddressVerifyRequestType AddressVerifyRequest;
-	public AddressVerifyRequestType getAddressVerifyRequest() {
-		return AddressVerifyRequest;
-	}
-	public void setAddressVerifyRequest(AddressVerifyRequestType value) {
-		this.AddressVerifyRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public AddressVerifyReq (){
+	}	
+
+	/**
+	 * Getter for AddressVerifyRequest
+	 */
+	 public AddressVerifyRequestType getAddressVerifyRequest() {
+	 	return AddressVerifyRequest;
+	 }
+	 
+	/**
+	 * Setter for AddressVerifyRequest
+	 */
+	 public void setAddressVerifyRequest(AddressVerifyRequestType AddressVerifyRequest) {
+	 	this.AddressVerifyRequest = AddressVerifyRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:AddressVerifyReq>");
-		if( AddressVerifyRequest != null ) {
+		sb.append("<urn:AddressVerifyReq>");
+		if(AddressVerifyRequest != null) {
 			sb.append("<urn:AddressVerifyRequest>");
 			sb.append(AddressVerifyRequest.toXMLString());
 			sb.append("</urn:AddressVerifyRequest>");
 		}
-sb.append("</urn:AddressVerifyReq>");
+		sb.append("</urn:AddressVerifyReq>");
 		return sb.toString();
 	}
 

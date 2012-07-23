@@ -1,33 +1,44 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.eBLBaseComponents;
-
 import urn.ebay.apis.eBLBaseComponents.AirlineItineraryType;
 
-
 /**
- * Enhanced Data Information. Example: AID for Airlines
+ * Enhanced Data Information. Example: AID for Airlines 
  */
-public class EnhancedDataType {
+public class EnhancedDataType{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private AirlineItineraryType AirlineItinerary;
-	public AirlineItineraryType getAirlineItinerary() {
-		return AirlineItinerary;
-	}
-	public void setAirlineItinerary(AirlineItineraryType value) {
-		this.AirlineItinerary = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public EnhancedDataType (){
+	}	
+
+	/**
+	 * Getter for AirlineItinerary
+	 */
+	 public AirlineItineraryType getAirlineItinerary() {
+	 	return AirlineItinerary;
+	 }
+	 
+	/**
+	 * Setter for AirlineItinerary
+	 */
+	 public void setAirlineItinerary(AirlineItineraryType AirlineItinerary) {
+	 	this.AirlineItinerary = AirlineItinerary;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if( AirlineItinerary != null ) {
+		if(AirlineItinerary != null) {
 			sb.append("<ebl:AirlineItinerary>");
 			sb.append(AirlineItinerary.toXMLString());
 			sb.append("</ebl:AirlineItinerary>");

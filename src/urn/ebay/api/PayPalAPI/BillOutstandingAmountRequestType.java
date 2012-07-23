@@ -1,34 +1,46 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
-import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import urn.ebay.apis.eBLBaseComponents.BillOutstandingAmountRequestDetailsType;
-
+import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
+ * No Document Comments
  */
-public class BillOutstandingAmountRequestType extends AbstractRequestType{
+public class BillOutstandingAmountRequestType extends AbstractRequestType {
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private BillOutstandingAmountRequestDetailsType BillOutstandingAmountRequestDetails;
-	public BillOutstandingAmountRequestDetailsType getBillOutstandingAmountRequestDetails() {
-		return BillOutstandingAmountRequestDetails;
-	}
-	public void setBillOutstandingAmountRequestDetails(BillOutstandingAmountRequestDetailsType value) {
-		this.BillOutstandingAmountRequestDetails = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public BillOutstandingAmountRequestType (){
+	}	
+
+	/**
+	 * Getter for BillOutstandingAmountRequestDetails
+	 */
+	 public BillOutstandingAmountRequestDetailsType getBillOutstandingAmountRequestDetails() {
+	 	return BillOutstandingAmountRequestDetails;
+	 }
+	 
+	/**
+	 * Setter for BillOutstandingAmountRequestDetails
+	 */
+	 public void setBillOutstandingAmountRequestDetails(BillOutstandingAmountRequestDetailsType BillOutstandingAmountRequestDetails) {
+	 	this.BillOutstandingAmountRequestDetails = BillOutstandingAmountRequestDetails;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append(super.toXMLString());
-		if( BillOutstandingAmountRequestDetails != null ) {
+		sb.append(super.toXMLString());
+		if(BillOutstandingAmountRequestDetails != null) {
 			sb.append("<ebl:BillOutstandingAmountRequestDetails>");
 			sb.append(BillOutstandingAmountRequestDetails.toXMLString());
 			sb.append("</ebl:BillOutstandingAmountRequestDetails>");

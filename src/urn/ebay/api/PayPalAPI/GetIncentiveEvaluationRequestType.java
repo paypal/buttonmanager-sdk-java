@@ -1,41 +1,54 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
-import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import urn.ebay.apis.eBLBaseComponents.GetIncentiveEvaluationRequestDetailsType;
-
+import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
+ * No Document Comments
  */
-public class GetIncentiveEvaluationRequestType extends AbstractRequestType{
+public class GetIncentiveEvaluationRequestType extends AbstractRequestType {
+
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private GetIncentiveEvaluationRequestDetailsType GetIncentiveEvaluationRequestDetails;
-	public GetIncentiveEvaluationRequestDetailsType getGetIncentiveEvaluationRequestDetails() {
-		return GetIncentiveEvaluationRequestDetails;
-	}
-	public void setGetIncentiveEvaluationRequestDetails(GetIncentiveEvaluationRequestDetailsType value) {
-		this.GetIncentiveEvaluationRequestDetails = value;
-	}
 
+	
 
-	public GetIncentiveEvaluationRequestType(GetIncentiveEvaluationRequestDetailsType GetIncentiveEvaluationRequestDetails) {
+	/**
+	 * Constructor with arguments
+	 */
+	public GetIncentiveEvaluationRequestType (GetIncentiveEvaluationRequestDetailsType GetIncentiveEvaluationRequestDetails){
 		this.GetIncentiveEvaluationRequestDetails = GetIncentiveEvaluationRequestDetails;
-	}
-	public GetIncentiveEvaluationRequestType() {
-	}
+	}	
 
-	public String toXMLString()  {
+	/**
+	 * Default Constructor
+	 */
+	public GetIncentiveEvaluationRequestType (){
+	}	
+
+	/**
+	 * Getter for GetIncentiveEvaluationRequestDetails
+	 */
+	 public GetIncentiveEvaluationRequestDetailsType getGetIncentiveEvaluationRequestDetails() {
+	 	return GetIncentiveEvaluationRequestDetails;
+	 }
+	 
+	/**
+	 * Setter for GetIncentiveEvaluationRequestDetails
+	 */
+	 public void setGetIncentiveEvaluationRequestDetails(GetIncentiveEvaluationRequestDetailsType GetIncentiveEvaluationRequestDetails) {
+	 	this.GetIncentiveEvaluationRequestDetails = GetIncentiveEvaluationRequestDetails;
+	 }
+	 
+
+
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append(super.toXMLString());
-		if( GetIncentiveEvaluationRequestDetails != null ) {
+		sb.append(super.toXMLString());
+		if(GetIncentiveEvaluationRequestDetails != null) {
 			sb.append("<ebl:GetIncentiveEvaluationRequestDetails>");
 			sb.append(GetIncentiveEvaluationRequestDetails.toXMLString());
 			sb.append("</ebl:GetIncentiveEvaluationRequestDetails>");

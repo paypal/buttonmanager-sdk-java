@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.GetMobileStatusRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class GetMobileStatusReq {
+public class GetMobileStatusReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private GetMobileStatusRequestType GetMobileStatusRequest;
-	public GetMobileStatusRequestType getGetMobileStatusRequest() {
-		return GetMobileStatusRequest;
-	}
-	public void setGetMobileStatusRequest(GetMobileStatusRequestType value) {
-		this.GetMobileStatusRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public GetMobileStatusReq (){
+	}	
+
+	/**
+	 * Getter for GetMobileStatusRequest
+	 */
+	 public GetMobileStatusRequestType getGetMobileStatusRequest() {
+	 	return GetMobileStatusRequest;
+	 }
+	 
+	/**
+	 * Setter for GetMobileStatusRequest
+	 */
+	 public void setGetMobileStatusRequest(GetMobileStatusRequestType GetMobileStatusRequest) {
+	 	this.GetMobileStatusRequest = GetMobileStatusRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:GetMobileStatusReq>");
-		if( GetMobileStatusRequest != null ) {
+		sb.append("<urn:GetMobileStatusReq>");
+		if(GetMobileStatusRequest != null) {
 			sb.append("<urn:GetMobileStatusRequest>");
 			sb.append(GetMobileStatusRequest.toXMLString());
 			sb.append("</urn:GetMobileStatusRequest>");
 		}
-sb.append("</urn:GetMobileStatusReq>");
+		sb.append("</urn:GetMobileStatusReq>");
 		return sb.toString();
 	}
 

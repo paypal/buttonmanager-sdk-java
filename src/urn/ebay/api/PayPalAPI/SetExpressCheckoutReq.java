@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.SetExpressCheckoutRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class SetExpressCheckoutReq {
+public class SetExpressCheckoutReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private SetExpressCheckoutRequestType SetExpressCheckoutRequest;
-	public SetExpressCheckoutRequestType getSetExpressCheckoutRequest() {
-		return SetExpressCheckoutRequest;
-	}
-	public void setSetExpressCheckoutRequest(SetExpressCheckoutRequestType value) {
-		this.SetExpressCheckoutRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public SetExpressCheckoutReq (){
+	}	
+
+	/**
+	 * Getter for SetExpressCheckoutRequest
+	 */
+	 public SetExpressCheckoutRequestType getSetExpressCheckoutRequest() {
+	 	return SetExpressCheckoutRequest;
+	 }
+	 
+	/**
+	 * Setter for SetExpressCheckoutRequest
+	 */
+	 public void setSetExpressCheckoutRequest(SetExpressCheckoutRequestType SetExpressCheckoutRequest) {
+	 	this.SetExpressCheckoutRequest = SetExpressCheckoutRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:SetExpressCheckoutReq>");
-		if( SetExpressCheckoutRequest != null ) {
+		sb.append("<urn:SetExpressCheckoutReq>");
+		if(SetExpressCheckoutRequest != null) {
 			sb.append("<urn:SetExpressCheckoutRequest>");
 			sb.append(SetExpressCheckoutRequest.toXMLString());
 			sb.append("</urn:SetExpressCheckoutRequest>");
 		}
-sb.append("</urn:SetExpressCheckoutReq>");
+		sb.append("</urn:SetExpressCheckoutReq>");
 		return sb.toString();
 	}
 

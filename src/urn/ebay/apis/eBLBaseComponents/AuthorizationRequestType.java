@@ -1,38 +1,51 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.eBLBaseComponents;
 
-
-
 /**
+ * No Document Comments
  */
-public class AuthorizationRequestType {
+public class AuthorizationRequestType{
+
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private Boolean IsRequested;
-	public Boolean getIsRequested() {
-		return IsRequested;
-	}
-	public void setIsRequested(Boolean value) {
-		this.IsRequested = value;
-	}
 
+	
 
-	public AuthorizationRequestType(Boolean IsRequested) {
+	/**
+	 * Constructor with arguments
+	 */
+	public AuthorizationRequestType (Boolean IsRequested){
 		this.IsRequested = IsRequested;
-	}
-	public AuthorizationRequestType() {
-	}
+	}	
 
-	public String toXMLString()  {
+	/**
+	 * Default Constructor
+	 */
+	public AuthorizationRequestType (){
+	}	
+
+	/**
+	 * Getter for IsRequested
+	 */
+	 public Boolean getIsRequested() {
+	 	return IsRequested;
+	 }
+	 
+	/**
+	 * Setter for IsRequested
+	 */
+	 public void setIsRequested(Boolean IsRequested) {
+	 	this.IsRequested = IsRequested;
+	 }
+	 
+
+
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if( IsRequested != null ) {
+		if(IsRequested != null) {
 			sb.append("<ebl:IsRequested>").append(IsRequested);
 			sb.append("</ebl:IsRequested>");
 		}

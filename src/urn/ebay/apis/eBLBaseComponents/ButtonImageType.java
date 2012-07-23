@@ -1,25 +1,33 @@
-/**
- * Auto generated code
- * Types of button images
- */
 package urn.ebay.apis.eBLBaseComponents;
 
-public enum ButtonImageType {
+/**
+ * 
+ *  Types of button images
+ * 
+ */
+public enum  ButtonImageType {
 
- 		REG("REG"),
- 		SML("SML"),
- 		CC("CC"),
-		;
-		private String value;
-		ButtonImageType(String val){
-			value=val;
-		}		public String getValue(){
-			return value;
-		}
-		public static ButtonImageType fromValue(String v) {
-			for (ButtonImageType c : values())
-				if (c.value.equals(v))
-					return c;
-			throw new IllegalArgumentException(v);
-		}
+	REG("REG"),
+
+	SML("SML"),
+
+	CC("CC");
+
+	private String value;
+
+	private ButtonImageType (String value) {
+		this.value = value;
+	}
+
+	public String getValue(){
+		return value;
+	}
+	
+	public static ButtonImageType fromValue(String v) {
+		for (ButtonImageType c : values())
+			if (c.value.equals(v))
+				return c;
+		throw new IllegalArgumentException(v);
+	}
+
 }

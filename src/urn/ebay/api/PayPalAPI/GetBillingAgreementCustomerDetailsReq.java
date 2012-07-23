@@ -1,38 +1,50 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.api.PayPalAPI;
-
 import urn.ebay.api.PayPalAPI.GetBillingAgreementCustomerDetailsRequestType;
 
-
 /**
+ * No Document Comments
  */
-public class GetBillingAgreementCustomerDetailsReq {
+public class GetBillingAgreementCustomerDetailsReq{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private GetBillingAgreementCustomerDetailsRequestType GetBillingAgreementCustomerDetailsRequest;
-	public GetBillingAgreementCustomerDetailsRequestType getGetBillingAgreementCustomerDetailsRequest() {
-		return GetBillingAgreementCustomerDetailsRequest;
-	}
-	public void setGetBillingAgreementCustomerDetailsRequest(GetBillingAgreementCustomerDetailsRequestType value) {
-		this.GetBillingAgreementCustomerDetailsRequest = value;
-	}
+
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public GetBillingAgreementCustomerDetailsReq (){
+	}	
+
+	/**
+	 * Getter for GetBillingAgreementCustomerDetailsRequest
+	 */
+	 public GetBillingAgreementCustomerDetailsRequestType getGetBillingAgreementCustomerDetailsRequest() {
+	 	return GetBillingAgreementCustomerDetailsRequest;
+	 }
+	 
+	/**
+	 * Setter for GetBillingAgreementCustomerDetailsRequest
+	 */
+	 public void setGetBillingAgreementCustomerDetailsRequest(GetBillingAgreementCustomerDetailsRequestType GetBillingAgreementCustomerDetailsRequest) {
+	 	this.GetBillingAgreementCustomerDetailsRequest = GetBillingAgreementCustomerDetailsRequest;
+	 }
+	 
 
 
-
-	public String toXMLString()  {
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-sb.append("<urn:GetBillingAgreementCustomerDetailsReq>");
-		if( GetBillingAgreementCustomerDetailsRequest != null ) {
+		sb.append("<urn:GetBillingAgreementCustomerDetailsReq>");
+		if(GetBillingAgreementCustomerDetailsRequest != null) {
 			sb.append("<urn:GetBillingAgreementCustomerDetailsRequest>");
 			sb.append(GetBillingAgreementCustomerDetailsRequest.toXMLString());
 			sb.append("</urn:GetBillingAgreementCustomerDetailsRequest>");
 		}
-sb.append("</urn:GetBillingAgreementCustomerDetailsReq>");
+		sb.append("</urn:GetBillingAgreementCustomerDetailsReq>");
 		return sb.toString();
 	}
 

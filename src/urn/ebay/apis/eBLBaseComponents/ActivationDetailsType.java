@@ -1,56 +1,78 @@
-
-/**
- * Auto generated code
- */
-
 package urn.ebay.apis.eBLBaseComponents;
-
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.FailedPaymentActionType;
 
-
 /**
+ * No Document Comments
  */
-public class ActivationDetailsType {
+public class ActivationDetailsType{
+
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private BasicAmountType InitialAmount;
-	public BasicAmountType getInitialAmount() {
-		return InitialAmount;
-	}
-	public void setInitialAmount(BasicAmountType value) {
-		this.InitialAmount = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private FailedPaymentActionType FailedInitialAmountAction;
-	public FailedPaymentActionType getFailedInitialAmountAction() {
-		return FailedInitialAmountAction;
-	}
-	public void setFailedInitialAmountAction(FailedPaymentActionType value) {
-		this.FailedInitialAmountAction = value;
-	}
 
+	
 
-	public ActivationDetailsType(BasicAmountType InitialAmount) {
+	/**
+	 * Constructor with arguments
+	 */
+	public ActivationDetailsType (BasicAmountType InitialAmount){
 		this.InitialAmount = InitialAmount;
-	}
-	public ActivationDetailsType() {
-	}
+	}	
 
-	public String toXMLString()  {
+	/**
+	 * Default Constructor
+	 */
+	public ActivationDetailsType (){
+	}	
+
+	/**
+	 * Getter for InitialAmount
+	 */
+	 public BasicAmountType getInitialAmount() {
+	 	return InitialAmount;
+	 }
+	 
+	/**
+	 * Setter for InitialAmount
+	 */
+	 public void setInitialAmount(BasicAmountType InitialAmount) {
+	 	this.InitialAmount = InitialAmount;
+	 }
+	 
+	/**
+	 * Getter for FailedInitialAmountAction
+	 */
+	 public FailedPaymentActionType getFailedInitialAmountAction() {
+	 	return FailedInitialAmountAction;
+	 }
+	 
+	/**
+	 * Setter for FailedInitialAmountAction
+	 */
+	 public void setFailedInitialAmountAction(FailedPaymentActionType FailedInitialAmountAction) {
+	 	this.FailedInitialAmountAction = FailedInitialAmountAction;
+	 }
+	 
+
+
+	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if( InitialAmount != null ) {
-			sb.append("<ebl:InitialAmount ");
+		if(InitialAmount != null) {
+			sb.append("<ebl:InitialAmount");
 			sb.append(InitialAmount.toXMLString());
 			sb.append("</ebl:InitialAmount>");
 		}
-		if( FailedInitialAmountAction != null ) {
-			sb.append("<ebl:FailedInitialAmountAction>").append( FailedInitialAmountAction.getValue());
+		if(FailedInitialAmountAction != null) {
+			sb.append("<ebl:FailedInitialAmountAction>").append(FailedInitialAmountAction.getValue());
 			sb.append("</ebl:FailedInitialAmountAction>");
 		}
 		return sb.toString();

@@ -178,7 +178,7 @@
 					<input type="submit" name="BMUpdateButtonBtn"
 						value="BMUpdateButton" /><br />
 				</div>
-				<a href="/merchant-sample/index.html">Home</a> <br /> <br />
+				<a href="/buttonmanager-sample/index.html">Home</a> <br /> <br />
 				<p>
 					Note:All Button Types will not work with all Button Code types.In
 					order to know the details see <a

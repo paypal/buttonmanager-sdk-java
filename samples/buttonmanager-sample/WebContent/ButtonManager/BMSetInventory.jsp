@@ -64,7 +64,7 @@
 					<input type="submit" name="BMSetInventoryBtn"
 						value="BMSetInventory" /> <br />
 				</div>
-				<a href="/merchant-sample/index.html">Home</a><br /> <br />
+				<a href="/buttonmanager-sample/index.html">Home</a><br /> <br />
 				<p>Note:We must track the inventory or gross profit. So both the
 					values can't be zero at the same time</p>
 			</div>

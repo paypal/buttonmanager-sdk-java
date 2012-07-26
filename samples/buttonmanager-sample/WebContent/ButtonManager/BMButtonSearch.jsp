@@ -43,7 +43,7 @@
 					<input type="submit" name="BMButtonSearchBtn"
 						value="BMButtonSearch" /> <br />
 				</div>
-				<a href="/merchant-sample/index.html">Home</a>
+				<a href="/buttonmanager-sample/index.html">Home</a>
 
 			</div>
 		</form>

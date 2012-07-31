@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.SetMobileCheckoutRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class SetMobileCheckoutReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private SetMobileCheckoutRequestType SetMobileCheckoutRequest;
 

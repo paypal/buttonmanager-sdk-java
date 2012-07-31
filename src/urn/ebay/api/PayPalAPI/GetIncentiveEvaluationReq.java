@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.GetIncentiveEvaluationRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class GetIncentiveEvaluationReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private GetIncentiveEvaluationRequestType GetIncentiveEvaluationRequest;
 

@@ -71,7 +71,7 @@ public class PaymentDetailsItemType{
 	private String PromoCode;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private ProductCategoryType ProductCategory;
 
@@ -440,7 +440,7 @@ public class PaymentDetailsItemType{
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

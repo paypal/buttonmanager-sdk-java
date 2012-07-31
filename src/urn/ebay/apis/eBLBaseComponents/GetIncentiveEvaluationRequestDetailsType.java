@@ -7,38 +7,38 @@ import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.IncentiveRequestDetailsType;
 
 /**
- * No Document Comments
+ * 
  */
 public class GetIncentiveEvaluationRequestDetailsType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ExternalBuyerId;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private List<String> IncentiveCodes = new ArrayList<String>();
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private List<IncentiveApplyIndicationType> ApplyIndication = new ArrayList<IncentiveApplyIndicationType>();
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private List<IncentiveBucketType> Buckets = new ArrayList<IncentiveBucketType>();
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType CartTotalAmt;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private IncentiveRequestDetailsType RequestDetails;
 

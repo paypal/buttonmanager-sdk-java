@@ -8,87 +8,87 @@ public class FlightDetailsType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ConjuctionTicket;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ExchangeTicket;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String CouponNumber;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ServiceClass;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String TravelDate;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String CarrierCode;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String StopOverPermitted;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String DepartureAirport;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ArrivalAirport;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String FlightNumber;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String DepartureTime;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ArrivalTime;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String FareBasisCode;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType Fare;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType Taxes;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType Fee;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String EndorsementOrRestrictions;
 

@@ -88,7 +88,7 @@ public class TransactionSearchRequestType extends AbstractRequestType {
 	private String InvoiceID;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String CardNumber;
 

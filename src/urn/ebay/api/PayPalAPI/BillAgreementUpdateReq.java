@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.BAUpdateRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class BillAgreementUpdateReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BAUpdateRequestType BAUpdateRequest;
 

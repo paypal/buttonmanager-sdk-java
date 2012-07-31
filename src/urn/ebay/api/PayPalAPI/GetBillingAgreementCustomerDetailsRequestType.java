@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class GetBillingAgreementCustomerDetailsRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String Token;

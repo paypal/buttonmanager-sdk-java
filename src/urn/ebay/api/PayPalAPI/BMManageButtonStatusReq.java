@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.BMManageButtonStatusRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class BMManageButtonStatusReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BMManageButtonStatusRequestType BMManageButtonStatusRequest;
 

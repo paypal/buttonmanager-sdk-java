@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.DoCancelRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class DoCancelReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private DoCancelRequestType DoCancelRequest;
 

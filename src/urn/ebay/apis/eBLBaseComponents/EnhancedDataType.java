@@ -8,7 +8,7 @@ public class EnhancedDataType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private AirlineItineraryType AirlineItinerary;
 

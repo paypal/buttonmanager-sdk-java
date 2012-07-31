@@ -32,83 +32,83 @@ public class GetRecurringPaymentsProfileDetailsResponseDetailsType{
 	private String ProfileID;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private RecurringPaymentsProfileStatusType ProfileStatus;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String Description;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private AutoBillType AutoBillOutstandingAmount;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private Integer MaxFailedPayments;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private RecurringPaymentsProfileDetailsType RecurringPaymentsProfileDetails;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BillingPeriodDetailsType CurrentRecurringPaymentsPeriod;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private RecurringPaymentsSummaryType RecurringPaymentsSummary;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private CreditCardDetailsType CreditCard;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BillingPeriodDetailsType TrialRecurringPaymentsPeriod;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BillingPeriodDetailsType RegularRecurringPaymentsPeriod;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType TrialAmountPaid;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType RegularAmountPaid;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType AggregateAmount;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType AggregateOptionalAmount;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String FinalPaymentDueDate;
 
@@ -359,7 +359,7 @@ public class GetRecurringPaymentsProfileDetailsResponseDetailsType{
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

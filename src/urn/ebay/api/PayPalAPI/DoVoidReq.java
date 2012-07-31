@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.DoVoidRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class DoVoidReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private DoVoidRequestType DoVoidRequest;
 

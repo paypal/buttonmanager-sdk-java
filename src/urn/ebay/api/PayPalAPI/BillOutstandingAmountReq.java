@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.BillOutstandingAmountRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class BillOutstandingAmountReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BillOutstandingAmountRequestType BillOutstandingAmountRequest;
 

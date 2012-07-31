@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.ExternalRememberMeOptOutRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class ExternalRememberMeOptOutReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private ExternalRememberMeOptOutRequestType ExternalRememberMeOptOutRequest;
 

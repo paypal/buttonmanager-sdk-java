@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.RefundTransactionRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class RefundTransactionReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private RefundTransactionRequestType RefundTransactionRequest;
 

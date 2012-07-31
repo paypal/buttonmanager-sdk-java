@@ -3,13 +3,13 @@ import urn.ebay.apis.EnhancedDataTypes.EnhancedCompleteRecoupRequestDetailsType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class CompleteRecoupRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private EnhancedCompleteRecoupRequestDetailsType EnhancedCompleteRecoupRequestDetails;

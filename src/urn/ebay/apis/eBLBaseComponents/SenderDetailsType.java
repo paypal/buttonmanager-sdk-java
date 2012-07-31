@@ -2,13 +2,13 @@ package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.DeviceDetailsType;
 
 /**
- * No Document Comments
+ * 
  */
 public class SenderDetailsType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private DeviceDetailsType DeviceDetails;
 

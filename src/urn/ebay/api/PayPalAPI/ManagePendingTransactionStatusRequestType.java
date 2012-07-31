@@ -3,19 +3,19 @@ import urn.ebay.apis.eBLBaseComponents.FMFPendingTransactionActionType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class ManagePendingTransactionStatusRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String TransactionID;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private FMFPendingTransactionActionType Action;

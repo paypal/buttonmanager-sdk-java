@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.ManagePendingTransactionStatusRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class ManagePendingTransactionStatusReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private ManagePendingTransactionStatusRequestType ManagePendingTransactionStatusRequest;
 

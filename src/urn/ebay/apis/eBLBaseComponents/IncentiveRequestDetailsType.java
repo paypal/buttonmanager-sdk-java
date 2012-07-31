@@ -3,23 +3,23 @@ import urn.ebay.apis.eBLBaseComponents.IncentiveRequestCodeType;
 import urn.ebay.apis.eBLBaseComponents.IncentiveRequestDetailLevelCodeType;
 
 /**
- * No Document Comments
+ * 
  */
 public class IncentiveRequestDetailsType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String RequestId;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private IncentiveRequestCodeType RequestType;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private IncentiveRequestDetailLevelCodeType RequestDetailLevel;
 

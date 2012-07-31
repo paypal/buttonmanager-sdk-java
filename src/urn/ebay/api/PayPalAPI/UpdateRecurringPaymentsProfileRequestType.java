@@ -3,13 +3,13 @@ import urn.ebay.apis.eBLBaseComponents.UpdateRecurringPaymentsProfileRequestDeta
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class UpdateRecurringPaymentsProfileRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private UpdateRecurringPaymentsProfileRequestDetailsType UpdateRecurringPaymentsProfileRequestDetails;
 

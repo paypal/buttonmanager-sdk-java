@@ -21,7 +21,7 @@ public class DoUATPAuthorizationResponseType extends DoAuthorizationResponseType
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private UATPDetailsType UATPDetails;
@@ -123,7 +123,7 @@ public class DoUATPAuthorizationResponseType extends DoAuthorizationResponseType
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

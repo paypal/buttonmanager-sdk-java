@@ -3,13 +3,13 @@ import urn.ebay.apis.eBLBaseComponents.EnterBoardingRequestDetailsType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class EnterBoardingRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private EnterBoardingRequestDetailsType EnterBoardingRequestDetails;

@@ -6,74 +6,74 @@ import urn.ebay.apis.eBLBaseComponents.CreditCardDetailsType;
 import urn.ebay.apis.eBLBaseComponents.BillingPeriodDetailsType_Update;
 
 /**
- * No Document Comments
+ * 
  */
 public class UpdateRecurringPaymentsProfileRequestDetailsType{
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String ProfileID;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String Note;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String Description;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String SubscriberName;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private AddressType SubscriberShippingAddress;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ProfileReference;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private Integer AdditionalBillingCycles;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType Amount;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType ShippingAmount;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType TaxAmount;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType OutstandingBalance;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private AutoBillType AutoBillOutstandingAmount;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private Integer MaxFailedPayments;
 
@@ -94,7 +94,7 @@ public class UpdateRecurringPaymentsProfileRequestDetailsType{
 	private BillingPeriodDetailsType_Update TrialPeriod;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BillingPeriodDetailsType_Update PaymentPeriod;
 

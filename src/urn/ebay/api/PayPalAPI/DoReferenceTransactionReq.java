@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.DoReferenceTransactionRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class DoReferenceTransactionReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private DoReferenceTransactionRequestType DoReferenceTransactionRequest;
 

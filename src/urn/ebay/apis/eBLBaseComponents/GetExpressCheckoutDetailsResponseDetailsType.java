@@ -68,12 +68,12 @@ public class GetExpressCheckoutDetailsResponseDetailsType{
 	private String ContactPhone;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private Boolean BillingAgreementAcceptedStatus;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String RedirectRequired;
 
@@ -515,7 +515,7 @@ public class GetExpressCheckoutDetailsResponseDetailsType{
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

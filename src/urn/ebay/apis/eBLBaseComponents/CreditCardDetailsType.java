@@ -22,52 +22,52 @@ public class CreditCardDetailsType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private CreditCardTypeType CreditCardType;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String CreditCardNumber;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private Integer ExpMonth;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private Integer ExpYear;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private PayerInfoType CardOwner;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String CVV2;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private Integer StartMonth;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private Integer StartYear;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String IssueNumber;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private ThreeDSecureRequestType ThreeDSecureRequest;
 
@@ -280,7 +280,7 @@ public class CreditCardDetailsType{
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

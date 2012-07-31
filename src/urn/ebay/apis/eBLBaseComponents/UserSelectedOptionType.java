@@ -20,27 +20,27 @@ public class UserSelectedOptionType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ShippingCalculationMode;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String InsuranceOptionSelected;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ShippingOptionIsDefault;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType ShippingOptionAmount;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ShippingOptionName;
 
@@ -162,7 +162,7 @@ public class UserSelectedOptionType{
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

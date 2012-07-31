@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.SetAccessPermissionsRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class SetAccessPermissionsReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private SetAccessPermissionsRequestType SetAccessPermissionsRequest;
 

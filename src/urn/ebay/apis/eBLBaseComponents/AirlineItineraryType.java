@@ -11,72 +11,72 @@ public class AirlineItineraryType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String PassengerName;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String IssueDate;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String TravelAgencyName;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String TravelAgencyCode;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String TicketNumber;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String IssuingCarrierCode;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String CustomerCode;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType TotalFare;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType TotalTaxes;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType TotalFee;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String RestrictedTicket;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ClearingSequence;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ClearingCount;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private List<FlightDetailsType> FlightDetails = new ArrayList<FlightDetailsType>();
 

@@ -3,13 +3,13 @@ import urn.ebay.apis.eBLBaseComponents.ReverseTransactionRequestDetailsType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class ReverseTransactionRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private ReverseTransactionRequestDetailsType ReverseTransactionRequestDetails;

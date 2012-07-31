@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.GetMobileStatusRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class GetMobileStatusReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private GetMobileStatusRequestType GetMobileStatusRequest;
 

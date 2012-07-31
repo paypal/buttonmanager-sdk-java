@@ -3,13 +3,13 @@ import urn.ebay.apis.eBLBaseComponents.ExecuteCheckoutOperationsRequestDetailsTy
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class ExecuteCheckoutOperationsRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private ExecuteCheckoutOperationsRequestDetailsType ExecuteCheckoutOperationsRequestDetails;

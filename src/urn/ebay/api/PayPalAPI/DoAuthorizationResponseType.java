@@ -36,7 +36,7 @@ public class DoAuthorizationResponseType extends AbstractResponseType {
 	private BasicAmountType Amount;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private AuthorizationInfoType AuthorizationInfo;
 
@@ -124,7 +124,7 @@ public class DoAuthorizationResponseType extends AbstractResponseType {
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

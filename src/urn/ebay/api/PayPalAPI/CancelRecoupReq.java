@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.CancelRecoupRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class CancelRecoupReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private CancelRecoupRequestType CancelRecoupRequest;
 

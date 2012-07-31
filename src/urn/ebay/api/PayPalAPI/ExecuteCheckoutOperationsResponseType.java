@@ -15,13 +15,13 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * No Document Comments
+ * 
  */
 public class ExecuteCheckoutOperationsResponseType extends AbstractResponseType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private ExecuteCheckoutOperationsResponseDetailsType ExecuteCheckoutOperationsResponseDetails;
@@ -63,7 +63,7 @@ public class ExecuteCheckoutOperationsResponseType extends AbstractResponseType 
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

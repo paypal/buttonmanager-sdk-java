@@ -45,7 +45,7 @@ public class AbstractResponseType{
 	private String CorrelationID;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private List<ErrorType> Errors = new ArrayList<ErrorType>();
 
@@ -168,7 +168,7 @@ public class AbstractResponseType{
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

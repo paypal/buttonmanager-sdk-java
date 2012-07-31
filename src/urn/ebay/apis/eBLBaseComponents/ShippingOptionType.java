@@ -8,17 +8,17 @@ public class ShippingOptionType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ShippingOptionIsDefault;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType ShippingOptionAmount;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ShippingOptionName;
 

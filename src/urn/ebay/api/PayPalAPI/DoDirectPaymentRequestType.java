@@ -10,7 +10,7 @@ public class DoDirectPaymentRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private DoDirectPaymentRequestDetailsType DoDirectPaymentRequestDetails;

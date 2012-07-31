@@ -3,19 +3,19 @@ import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.FailedPaymentActionType;
 
 /**
- * No Document Comments
+ * 
  */
 public class ActivationDetailsType{
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private BasicAmountType InitialAmount;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private FailedPaymentActionType FailedInitialAmountAction;
 

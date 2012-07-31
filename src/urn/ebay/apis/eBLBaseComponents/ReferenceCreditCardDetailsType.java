@@ -11,47 +11,47 @@ public class ReferenceCreditCardDetailsType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private CreditCardNumberTypeType CreditCardNumberType;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private Integer ExpMonth;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private Integer ExpYear;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private PersonNameType CardOwnerName;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private AddressType BillingAddress;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String CVV2;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private Integer StartMonth;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private Integer StartYear;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String IssueNumber;
 

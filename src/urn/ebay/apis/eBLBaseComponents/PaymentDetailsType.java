@@ -127,7 +127,7 @@ public class PaymentDetailsType{
 	private AddressType ShipToAddress;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private ShippingServiceCodeType ShippingMethod;
 
@@ -824,7 +824,7 @@ public class PaymentDetailsType{
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

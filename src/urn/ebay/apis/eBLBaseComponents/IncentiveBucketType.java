@@ -5,53 +5,53 @@ import urn.ebay.apis.eBLBaseComponents.IncentiveItemType;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 
 /**
- * No Document Comments
+ * 
  */
 public class IncentiveBucketType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private List<IncentiveItemType> Items = new ArrayList<IncentiveItemType>();
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String BucketId;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String SellerId;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ExternalSellerId;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType BucketSubtotalAmt;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType BucketShippingAmt;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType BucketInsuranceAmt;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType BucketSalesTaxAmt;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType BucketTotalAmt;
 

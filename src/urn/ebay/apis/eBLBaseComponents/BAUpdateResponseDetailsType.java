@@ -17,41 +17,41 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * No Document Comments
+ * 
  */
 public class BAUpdateResponseDetailsType{
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String BillingAgreementID;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String BillingAgreementDescription;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private MerchantPullStatusCodeType BillingAgreementStatus;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String BillingAgreementCustom;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private PayerInfoType PayerInfo;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType BillingAgreementMax;
 
@@ -184,7 +184,7 @@ public class BAUpdateResponseDetailsType{
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

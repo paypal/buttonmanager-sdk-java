@@ -14,47 +14,47 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * No Document Comments
+ * 
  */
 public class RecurringPaymentsSummaryType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String NextBillingDate;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private Integer NumberCyclesCompleted;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private Integer NumberCyclesRemaining;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private BasicAmountType OutstandingBalance;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private Integer FailedPaymentCount;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String LastPaymentDate;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType LastPaymentAmount;
 
@@ -179,7 +179,7 @@ public class RecurringPaymentsSummaryType{
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

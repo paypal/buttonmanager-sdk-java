@@ -10,7 +10,7 @@ public class DoReferenceTransactionRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private DoReferenceTransactionRequestDetailsType DoReferenceTransactionRequestDetails;

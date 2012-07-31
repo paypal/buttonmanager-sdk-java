@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.CompleteRecoupRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class CompleteRecoupReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private CompleteRecoupRequestType CompleteRecoupRequest;
 

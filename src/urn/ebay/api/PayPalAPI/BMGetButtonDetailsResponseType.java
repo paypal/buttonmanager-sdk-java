@@ -32,22 +32,22 @@ public class BMGetButtonDetailsResponseType extends AbstractResponseType {
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String Website;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String Email;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String Mobile;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String HostedButtonID;
 
@@ -77,7 +77,7 @@ public class BMGetButtonDetailsResponseType extends AbstractResponseType {
 	private List<String> ButtonVar = new ArrayList<String>();
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private List<OptionDetailsType> OptionDetails = new ArrayList<OptionDetailsType>();
 
@@ -365,7 +365,7 @@ public class BMGetButtonDetailsResponseType extends AbstractResponseType {
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

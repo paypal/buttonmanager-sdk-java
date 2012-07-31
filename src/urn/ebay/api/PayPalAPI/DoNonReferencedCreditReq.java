@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.DoNonReferencedCreditRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class DoNonReferencedCreditReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private DoNonReferencedCreditRequestType DoNonReferencedCreditRequest;
 

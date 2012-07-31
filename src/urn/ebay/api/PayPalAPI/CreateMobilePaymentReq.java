@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.CreateMobilePaymentRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class CreateMobilePaymentReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private CreateMobilePaymentRequestType CreateMobilePaymentRequest;
 

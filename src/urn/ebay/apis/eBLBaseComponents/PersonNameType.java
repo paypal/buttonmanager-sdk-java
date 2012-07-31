@@ -13,33 +13,33 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * No Document Comments
+ * 
  */
 public class PersonNameType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String Salutation;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String FirstName;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String MiddleName;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String LastName;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String Suffix;
 
@@ -160,7 +160,7 @@ public class PersonNameType{
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

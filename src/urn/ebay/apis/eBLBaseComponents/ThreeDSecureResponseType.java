@@ -19,12 +19,12 @@ public class ThreeDSecureResponseType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String Vpas;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String EciSubmitted3DS;
 
@@ -79,7 +79,7 @@ public class ThreeDSecureResponseType{
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

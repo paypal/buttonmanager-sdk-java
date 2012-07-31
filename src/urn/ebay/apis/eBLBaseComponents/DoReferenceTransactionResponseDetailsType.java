@@ -15,38 +15,38 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * No Document Comments
+ * 
  */
 public class DoReferenceTransactionResponseDetailsType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String BillingAgreementID;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private PaymentInfoType PaymentInfo;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType Amount;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String AVSCode;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String CVV2Code;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String TransactionID;
 
@@ -177,7 +177,7 @@ public class DoReferenceTransactionResponseDetailsType{
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

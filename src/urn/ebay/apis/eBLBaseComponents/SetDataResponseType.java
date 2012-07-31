@@ -29,7 +29,7 @@ public class SetDataResponseType{
 	private String Token;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private List<ErrorType> SetDataError = new ArrayList<ErrorType>();
 
@@ -84,7 +84,7 @@ public class SetDataResponseType{
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

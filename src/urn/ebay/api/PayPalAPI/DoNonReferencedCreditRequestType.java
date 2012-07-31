@@ -3,13 +3,13 @@ import urn.ebay.apis.eBLBaseComponents.DoNonReferencedCreditRequestDetailsType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class DoNonReferencedCreditRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private DoNonReferencedCreditRequestDetailsType DoNonReferencedCreditRequestDetails;

@@ -46,7 +46,7 @@ public class BMCreateButtonRequestType extends AbstractRequestType {
 	private List<String> ButtonVar = new ArrayList<String>();
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private List<OptionDetailsType> OptionDetails = new ArrayList<OptionDetailsType>();
 

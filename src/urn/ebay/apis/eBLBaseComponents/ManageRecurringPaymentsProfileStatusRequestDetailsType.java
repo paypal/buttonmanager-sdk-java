@@ -2,25 +2,25 @@ package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.StatusChangeActionType;
 
 /**
- * No Document Comments
+ * 
  */
 public class ManageRecurringPaymentsProfileStatusRequestDetailsType{
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String ProfileID;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private StatusChangeActionType Action;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String Note;
 

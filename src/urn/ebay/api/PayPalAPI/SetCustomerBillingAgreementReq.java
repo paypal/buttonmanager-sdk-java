@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.SetCustomerBillingAgreementRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class SetCustomerBillingAgreementReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private SetCustomerBillingAgreementRequestType SetCustomerBillingAgreementRequest;
 

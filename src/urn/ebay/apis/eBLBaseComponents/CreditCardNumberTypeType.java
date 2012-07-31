@@ -2,18 +2,18 @@ package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.CreditCardTypeType;
 
 /**
- * No Document Comments
+ * 
  */
 public class CreditCardNumberTypeType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private CreditCardTypeType CreditCardType;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String CreditCardNumber;
 

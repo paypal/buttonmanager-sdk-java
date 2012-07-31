@@ -3,13 +3,13 @@ import urn.ebay.apis.eBLBaseComponents.GetIncentiveEvaluationRequestDetailsType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class GetIncentiveEvaluationRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private GetIncentiveEvaluationRequestDetailsType GetIncentiveEvaluationRequestDetails;

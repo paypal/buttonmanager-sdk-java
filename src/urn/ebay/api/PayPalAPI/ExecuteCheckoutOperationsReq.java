@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.ExecuteCheckoutOperationsRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class ExecuteCheckoutOperationsReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private ExecuteCheckoutOperationsRequestType ExecuteCheckoutOperationsRequest;
 

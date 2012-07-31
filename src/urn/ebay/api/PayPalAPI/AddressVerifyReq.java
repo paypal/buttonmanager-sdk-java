@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.AddressVerifyRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class AddressVerifyReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private AddressVerifyRequestType AddressVerifyRequest;
 

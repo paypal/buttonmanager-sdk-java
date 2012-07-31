@@ -54,7 +54,7 @@ public class DoDirectPaymentRequestDetailsType{
 	private String MerchantSessionId;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private Boolean ReturnFMFDetails;
 

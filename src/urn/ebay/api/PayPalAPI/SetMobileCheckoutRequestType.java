@@ -3,13 +3,13 @@ import urn.ebay.apis.eBLBaseComponents.SetMobileCheckoutRequestDetailsType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class SetMobileCheckoutRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private SetMobileCheckoutRequestDetailsType SetMobileCheckoutRequestDetails;

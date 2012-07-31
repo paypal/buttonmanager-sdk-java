@@ -3,13 +3,13 @@ import urn.ebay.apis.eBLBaseComponents.SetAccessPermissionsRequestDetailsType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class SetAccessPermissionsRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private SetAccessPermissionsRequestDetailsType SetAccessPermissionsRequestDetails;

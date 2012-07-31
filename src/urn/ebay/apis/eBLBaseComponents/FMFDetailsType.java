@@ -21,22 +21,22 @@ public class FMFDetailsType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private RiskFilterListType AcceptFilters;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private RiskFilterListType PendingFilters;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private RiskFilterListType DenyFilters;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private RiskFilterListType ReportFilters;
 
@@ -119,7 +119,7 @@ public class FMFDetailsType{
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

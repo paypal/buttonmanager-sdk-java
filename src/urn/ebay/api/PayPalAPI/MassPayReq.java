@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.MassPayRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class MassPayReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private MassPayRequestType MassPayRequest;
 

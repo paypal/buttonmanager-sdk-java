@@ -3,13 +3,13 @@ import urn.ebay.apis.eBLBaseComponents.CreateMobilePaymentRequestDetailsType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class CreateMobilePaymentRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private CreateMobilePaymentRequestDetailsType CreateMobilePaymentRequestDetails;

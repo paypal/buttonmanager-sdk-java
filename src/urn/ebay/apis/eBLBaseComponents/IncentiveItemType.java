@@ -2,33 +2,33 @@ package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 
 /**
- * No Document Comments
+ * 
  */
 public class IncentiveItemType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ItemId;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String PurchaseTime;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ItemCategoryList;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType ItemPrice;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private Integer ItemQuantity;
 

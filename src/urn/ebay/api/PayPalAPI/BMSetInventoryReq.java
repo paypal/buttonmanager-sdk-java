@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.BMSetInventoryRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class BMSetInventoryReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BMSetInventoryRequestType BMSetInventoryRequest;
 

@@ -3,13 +3,13 @@ import urn.ebay.apis.eBLBaseComponents.GetMobileStatusRequestDetailsType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class GetMobileStatusRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private GetMobileStatusRequestDetailsType GetMobileStatusRequestDetails;

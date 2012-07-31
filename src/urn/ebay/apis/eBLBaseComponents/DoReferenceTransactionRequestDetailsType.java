@@ -6,61 +6,61 @@ import urn.ebay.apis.eBLBaseComponents.ReferenceCreditCardDetailsType;
 import urn.ebay.apis.eBLBaseComponents.SenderDetailsType;
 
 /**
- * No Document Comments
+ * 
  */
 public class DoReferenceTransactionRequestDetailsType{
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String ReferenceID;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private PaymentActionCodeType PaymentAction;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private MerchantPullPaymentCodeType PaymentType;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private PaymentDetailsType PaymentDetails;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private ReferenceCreditCardDetailsType CreditCard;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String IPAddress;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String MerchantSessionId;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ReqConfirmShipping;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String SoftDescriptor;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private SenderDetailsType SenderDetails;
 

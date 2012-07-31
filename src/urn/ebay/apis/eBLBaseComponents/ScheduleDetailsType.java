@@ -21,7 +21,7 @@ public class ScheduleDetailsType{
 	private BillingPeriodDetailsType TrialPeriod;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private BillingPeriodDetailsType PaymentPeriod;
@@ -33,12 +33,12 @@ public class ScheduleDetailsType{
 	private Integer MaxFailedPayments;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private ActivationDetailsType ActivationDetails;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private AutoBillType AutoBillOutstandingAmount;
 

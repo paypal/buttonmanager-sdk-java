@@ -306,12 +306,12 @@ public class SetExpressCheckoutRequestDetailsType{
 	private String BuyerEmail;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private ChannelType ChannelType;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private List<BillingAgreementDetailsType> BillingAgreementDetails = new ArrayList<BillingAgreementDetailsType>();
 
@@ -328,12 +328,12 @@ public class SetExpressCheckoutRequestDetailsType{
 	private String PayPalCheckOutBtnType;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private ProductCategoryType ProductCategory;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private ShippingServiceCodeType ShippingMethod;
 
@@ -461,7 +461,7 @@ public class SetExpressCheckoutRequestDetailsType{
 	private List<String> SurveyChoice = new ArrayList<String>();
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private TotalType TotalType;
 

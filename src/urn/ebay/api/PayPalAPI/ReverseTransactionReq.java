@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.ReverseTransactionRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class ReverseTransactionReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private ReverseTransactionRequestType ReverseTransactionRequest;
 

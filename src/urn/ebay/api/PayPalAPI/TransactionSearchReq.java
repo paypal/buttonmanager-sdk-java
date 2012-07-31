@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.TransactionSearchRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class TransactionSearchReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private TransactionSearchRequestType TransactionSearchRequest;
 

@@ -19,27 +19,27 @@ public class ThreeDSecureRequestType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String Eci3ds;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String Cavv;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String Xid;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String MpiVendor3ds;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String AuthStatus3ds;
 
@@ -160,7 +160,7 @@ public class ThreeDSecureRequestType{
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

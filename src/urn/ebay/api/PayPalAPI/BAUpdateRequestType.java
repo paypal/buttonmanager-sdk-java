@@ -3,29 +3,29 @@ import urn.ebay.apis.eBLBaseComponents.MerchantPullStatusCodeType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class BAUpdateRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String ReferenceID;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String BillingAgreementDescription;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private MerchantPullStatusCodeType BillingAgreementStatus;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String BillingAgreementCustom;
 

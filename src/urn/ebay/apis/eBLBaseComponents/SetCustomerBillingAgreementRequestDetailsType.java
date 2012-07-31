@@ -2,61 +2,61 @@ package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.BillingAgreementDetailsType;
 
 /**
- * No Document Comments
+ * 
  */
 public class SetCustomerBillingAgreementRequestDetailsType{
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private BillingAgreementDetailsType BillingAgreementDetails;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String ReturnURL;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String CancelURL;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String LocaleCode;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String PageStyle;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String cppHeaderImage;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String cppHeaderBorderColor;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String cppHeaderBackColor;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String cppPayflowColor;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String BuyerEmail;
 

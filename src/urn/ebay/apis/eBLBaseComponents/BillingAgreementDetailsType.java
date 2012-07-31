@@ -3,13 +3,13 @@ import urn.ebay.apis.eBLBaseComponents.BillingCodeType;
 import urn.ebay.apis.eBLBaseComponents.MerchantPullPaymentCodeType;
 
 /**
- * No Document Comments
+ * 
  */
 public class BillingAgreementDetailsType{
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private BillingCodeType BillingType;
@@ -20,7 +20,7 @@ public class BillingAgreementDetailsType{
 	private String BillingAgreementDescription;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private MerchantPullPaymentCodeType PaymentType;
 

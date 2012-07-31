@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.DoAuthorizationRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class DoAuthorizationReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private DoAuthorizationRequestType DoAuthorizationRequest;
 

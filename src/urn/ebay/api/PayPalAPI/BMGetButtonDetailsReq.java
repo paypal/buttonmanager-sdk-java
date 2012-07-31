@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.BMGetButtonDetailsRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class BMGetButtonDetailsReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BMGetButtonDetailsRequestType BMGetButtonDetailsRequest;
 

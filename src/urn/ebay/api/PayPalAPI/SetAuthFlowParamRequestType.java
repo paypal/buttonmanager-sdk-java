@@ -3,13 +3,13 @@ import urn.ebay.apis.eBLBaseComponents.SetAuthFlowParamRequestDetailsType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class SetAuthFlowParamRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private SetAuthFlowParamRequestDetailsType SetAuthFlowParamRequestDetails;

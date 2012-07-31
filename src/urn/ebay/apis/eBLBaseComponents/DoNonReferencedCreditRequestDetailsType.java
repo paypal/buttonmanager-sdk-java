@@ -3,43 +3,43 @@ import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.CreditCardDetailsType;
 
 /**
- * No Document Comments
+ * 
  */
 public class DoNonReferencedCreditRequestDetailsType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType Amount;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType NetAmount;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType TaxAmount;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BasicAmountType ShippingAmount;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private CreditCardDetailsType CreditCard;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ReceiverEmail;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String Comment;
 

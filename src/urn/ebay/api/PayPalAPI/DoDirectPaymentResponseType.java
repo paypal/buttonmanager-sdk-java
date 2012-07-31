@@ -80,12 +80,12 @@ public class DoDirectPaymentResponseType extends AbstractResponseType {
 	private PaymentStatusCodeType PaymentStatus;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private FMFDetailsType FMFDetails;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private ThreeDSecureResponseType ThreeDSecureResponse;
 
@@ -244,7 +244,7 @@ public class DoDirectPaymentResponseType extends AbstractResponseType {
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

@@ -10,7 +10,7 @@ public class DoExpressCheckoutPaymentRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private DoExpressCheckoutPaymentRequestDetailsType DoExpressCheckoutPaymentRequestDetails;

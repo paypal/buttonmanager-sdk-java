@@ -34,7 +34,7 @@ public class BMSetInventoryRequestType extends AbstractRequestType {
 	private String TrackPnl;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private ItemTrackingDetailsType ItemTrackingDetails;
 
@@ -45,7 +45,7 @@ public class BMSetInventoryRequestType extends AbstractRequestType {
 	private String OptionIndex;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private List<OptionTrackingDetailsType> OptionTrackingDetails = new ArrayList<OptionTrackingDetailsType>();
 

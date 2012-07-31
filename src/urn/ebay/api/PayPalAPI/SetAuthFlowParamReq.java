@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.SetAuthFlowParamRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class SetAuthFlowParamReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private SetAuthFlowParamRequestType SetAuthFlowParamRequest;
 

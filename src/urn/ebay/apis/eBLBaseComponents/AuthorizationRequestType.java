@@ -1,13 +1,13 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * No Document Comments
+ * 
  */
 public class AuthorizationRequestType{
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private Boolean IsRequested;

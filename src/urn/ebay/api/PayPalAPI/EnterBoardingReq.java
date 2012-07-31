@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.EnterBoardingRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class EnterBoardingReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private EnterBoardingRequestType EnterBoardingRequest;
 

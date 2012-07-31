@@ -3,13 +3,13 @@ import urn.ebay.apis.eBLBaseComponents.SetCustomerBillingAgreementRequestDetails
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class SetCustomerBillingAgreementRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private SetCustomerBillingAgreementRequestDetailsType SetCustomerBillingAgreementRequestDetails;

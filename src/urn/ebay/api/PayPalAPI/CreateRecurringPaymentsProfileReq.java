@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.CreateRecurringPaymentsProfileRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class CreateRecurringPaymentsProfileReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private CreateRecurringPaymentsProfileRequestType CreateRecurringPaymentsProfileRequest;
 

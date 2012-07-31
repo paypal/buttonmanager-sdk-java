@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.BMCreateButtonRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class BMCreateButtonReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BMCreateButtonRequestType BMCreateButtonRequest;
 

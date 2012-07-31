@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.BillUserRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class BillUserReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BillUserRequestType BillUserRequest;
 

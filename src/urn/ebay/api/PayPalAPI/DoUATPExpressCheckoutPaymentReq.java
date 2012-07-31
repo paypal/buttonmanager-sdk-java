@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.DoUATPExpressCheckoutPaymentRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class DoUATPExpressCheckoutPaymentReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private DoUATPExpressCheckoutPaymentRequestType DoUATPExpressCheckoutPaymentRequest;
 

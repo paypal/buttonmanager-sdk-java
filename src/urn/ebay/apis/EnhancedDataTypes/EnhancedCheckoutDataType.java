@@ -1,7 +1,7 @@
 package urn.ebay.apis.EnhancedDataTypes;
 
 /**
- * No Document Comments
+ * 
  */
 public class EnhancedCheckoutDataType{
 

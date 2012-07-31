@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.DoCaptureRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class DoCaptureReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private DoCaptureRequestType DoCaptureRequest;
 

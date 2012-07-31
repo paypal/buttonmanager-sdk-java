@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.GetTransactionDetailsRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class GetTransactionDetailsReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private GetTransactionDetailsRequestType GetTransactionDetailsRequest;
 

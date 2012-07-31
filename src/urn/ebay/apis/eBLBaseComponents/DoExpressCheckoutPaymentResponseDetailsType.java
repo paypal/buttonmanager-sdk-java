@@ -39,12 +39,12 @@ public class DoExpressCheckoutPaymentResponseDetailsType{
 	private List<PaymentInfoType> PaymentInfo = new ArrayList<PaymentInfoType>();
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String BillingAgreementID;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String RedirectRequired;
 
@@ -186,7 +186,7 @@ public class DoExpressCheckoutPaymentResponseDetailsType{
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

@@ -10,7 +10,7 @@ public class BillUserRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private MerchantPullPaymentType MerchantPullPaymentDetails;
 

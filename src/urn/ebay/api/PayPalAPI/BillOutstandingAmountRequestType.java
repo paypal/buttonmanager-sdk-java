@@ -3,13 +3,13 @@ import urn.ebay.apis.eBLBaseComponents.BillOutstandingAmountRequestDetailsType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class BillOutstandingAmountRequestType extends AbstractRequestType {
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BillOutstandingAmountRequestDetailsType BillOutstandingAmountRequestDetails;
 

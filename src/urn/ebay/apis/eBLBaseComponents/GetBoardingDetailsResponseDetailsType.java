@@ -48,17 +48,17 @@ public class GetBoardingDetailsResponseDetailsType{
 	private String Reason;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ProgramName;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ProgramCode;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String CampaignID;
 
@@ -344,7 +344,7 @@ public class GetBoardingDetailsResponseDetailsType{
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

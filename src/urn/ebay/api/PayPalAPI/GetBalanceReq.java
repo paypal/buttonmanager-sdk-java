@@ -2,13 +2,13 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.GetBalanceRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class GetBalanceReq{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private GetBalanceRequestType GetBalanceRequest;
 

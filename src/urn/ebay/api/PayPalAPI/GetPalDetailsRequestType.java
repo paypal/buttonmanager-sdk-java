@@ -2,7 +2,7 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 
 /**
- * No Document Comments
+ * 
  */
 public class GetPalDetailsRequestType extends AbstractRequestType {
 

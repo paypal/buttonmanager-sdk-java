@@ -17,48 +17,48 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * No Document Comments
+ * 
  */
 public class IncentiveDetailType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String RedemptionCode;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String DisplayCode;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ProgramId;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private IncentiveTypeCodeType IncentiveType;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String IncentiveDescription;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private List<IncentiveAppliedToType> AppliedTo = new ArrayList<IncentiveAppliedToType>();
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String Status;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String ErrorCode;
 
@@ -197,7 +197,7 @@ public class IncentiveDetailType{
 		String name = n.getNodeName();
 		short type = n.getNodeType();
 		if (Node.CDATA_SECTION_NODE == type) {
-			return "&lt![CDATA[\" + n.getNodeValue() + \"]]&gt";
+			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
 		}
 		if (name.startsWith("#")) {
 			return "";

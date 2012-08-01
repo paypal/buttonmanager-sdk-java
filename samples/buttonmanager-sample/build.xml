@@ -50,6 +50,7 @@
 			<fileset dir="WebContent" />
 			<classes dir="build/classes" />
 		</war>
+        <delete dir="build" />
 	</target>
 
 	<target name="clean">

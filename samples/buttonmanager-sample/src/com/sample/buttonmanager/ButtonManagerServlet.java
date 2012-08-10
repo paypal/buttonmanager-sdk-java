@@ -165,7 +165,7 @@ public class ButtonManagerServlet extends HttpServlet {
 					reqType.setOptionDetails(optList);
 				} else if (req.getParameter("buttonType").equalsIgnoreCase(
 						"AUTOBILLING")) {
-					lst.add("min_amount=" + req.getParameter("minAmount"));
+					lst.add("min_amount=" + req.getParameter("minAmt"));
 				} else if (req.getParameter("buttonType").equalsIgnoreCase(
 						"GIFTCERTIFICATE")) {
 					lst.add("shopping_url=" + req.getParameter("shoppingUrl"));

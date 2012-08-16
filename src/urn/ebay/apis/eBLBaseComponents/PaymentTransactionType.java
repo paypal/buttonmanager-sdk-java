@@ -4,6 +4,7 @@ import urn.ebay.apis.eBLBaseComponents.PayerInfoType;
 import urn.ebay.apis.eBLBaseComponents.PaymentInfoType;
 import urn.ebay.apis.eBLBaseComponents.PaymentItemInfoType;
 import urn.ebay.apis.eBLBaseComponents.OfferCouponInfoType;
+import urn.ebay.apis.eBLBaseComponents.AddressType;
 import urn.ebay.apis.eBLBaseComponents.UserSelectedOptionType;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import java.util.List;
@@ -53,6 +54,11 @@ public class PaymentTransactionType{
 	 * in the transaction	 
 	 */ 
 	private OfferCouponInfoType OfferCouponInfo;
+
+	/**
+	 * Information about Secondary Address	 
+	 */ 
+	private AddressType SecondaryAddress;
 
 	/**
 	 * Information about the user selected options.  	 
@@ -173,6 +179,20 @@ public class PaymentTransactionType{
 	 }
 	 
 	/**
+	 * Getter for SecondaryAddress
+	 */
+	 public AddressType getSecondaryAddress() {
+	 	return SecondaryAddress;
+	 }
+	 
+	/**
+	 * Setter for SecondaryAddress
+	 */
+	 public void setSecondaryAddress(AddressType SecondaryAddress) {
+	 	this.SecondaryAddress = SecondaryAddress;
+	 }
+	 
+	/**
 	 * Getter for UserSelectedOptions
 	 */
 	 public UserSelectedOptionType getUserSelectedOptions() {
@@ -290,6 +310,8 @@ public class PaymentTransactionType{
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ){
+			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
@@ -383,6 +405,13 @@ public class PaymentTransactionType{
 				this.OfferCouponInfo =  new OfferCouponInfoType(xmlString);
 			}
 		}
+		if(document.getElementsByTagName("SecondaryAddress").getLength()!=0) {
+			if(!isWhitespaceNode(document.getElementsByTagName("SecondaryAddress").item(0))) {
+				nodeList = document.getElementsByTagName("SecondaryAddress");
+				xmlString = convertToXML(nodeList.item(0));
+				this.SecondaryAddress =  new AddressType(xmlString);
+			}
+		}
 		if(document.getElementsByTagName("UserSelectedOptions").getLength()!=0) {
 			if(!isWhitespaceNode(document.getElementsByTagName("UserSelectedOptions").item(0))) {
 				nodeList = document.getElementsByTagName("UserSelectedOptions");
@@ -438,5 +467,5 @@ public class PaymentTransactionType{
 			}
 		}
 	}
-
+ 
 }

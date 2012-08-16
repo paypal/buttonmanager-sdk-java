@@ -33,6 +33,11 @@ public class DoCaptureResponseDetailsType{
 	 */ 
 	private PaymentInfoType PaymentInfo;
 
+	/**
+	 * Return msgsubid back to merchant 	 
+	 */ 
+	private String MsgSubID;
+
 	
 
 	/**
@@ -69,12 +74,28 @@ public class DoCaptureResponseDetailsType{
 	 	this.PaymentInfo = PaymentInfo;
 	 }
 	 
+	/**
+	 * Getter for MsgSubID
+	 */
+	 public String getMsgSubID() {
+	 	return MsgSubID;
+	 }
+	 
+	/**
+	 * Setter for MsgSubID
+	 */
+	 public void setMsgSubID(String MsgSubID) {
+	 	this.MsgSubID = MsgSubID;
+	 }
+	 
 
 
 	private  boolean isWhitespaceNode(Node n) {
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ){
+			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
@@ -146,6 +167,12 @@ public class DoCaptureResponseDetailsType{
 				this.PaymentInfo =  new PaymentInfoType(xmlString);
 			}
 		}
+		if (document.getElementsByTagName("MsgSubID").getLength() != 0) {
+			if(!isWhitespaceNode(document.getElementsByTagName("MsgSubID").item(0))) {
+				this.MsgSubID = (String)document.getElementsByTagName("MsgSubID").item(0).getTextContent();
+			}
+		}
+	
 	}
-
+ 
 }

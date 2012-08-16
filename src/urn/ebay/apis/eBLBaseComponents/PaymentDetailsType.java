@@ -1,6 +1,7 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.AddressType;
+import urn.ebay.apis.eBLBaseComponents.PaymentCategoryType;
 import urn.ebay.apis.eBLBaseComponents.ShippingServiceCodeType;
 import java.util.List;
 import java.util.ArrayList;
@@ -125,6 +126,16 @@ public class PaymentDetailsType{
 	 * set the CountryName element. 	 
 	 */ 
 	private AddressType ShipToAddress;
+
+	/**
+	 * 	 
+	 */ 
+	private AddressType FulfillmentAddress;
+
+	/**
+	 * 	 
+	 */ 
+	private PaymentCategoryType PaymentCategoryType;
 
 	/**
 	 * 	 
@@ -403,6 +414,34 @@ public class PaymentDetailsType{
 	 */
 	 public void setShipToAddress(AddressType ShipToAddress) {
 	 	this.ShipToAddress = ShipToAddress;
+	 }
+	 
+	/**
+	 * Getter for FulfillmentAddress
+	 */
+	 public AddressType getFulfillmentAddress() {
+	 	return FulfillmentAddress;
+	 }
+	 
+	/**
+	 * Setter for FulfillmentAddress
+	 */
+	 public void setFulfillmentAddress(AddressType FulfillmentAddress) {
+	 	this.FulfillmentAddress = FulfillmentAddress;
+	 }
+	 
+	/**
+	 * Getter for PaymentCategoryType
+	 */
+	 public PaymentCategoryType getPaymentCategoryType() {
+	 	return PaymentCategoryType;
+	 }
+	 
+	/**
+	 * Setter for PaymentCategoryType
+	 */
+	 public void setPaymentCategoryType(PaymentCategoryType PaymentCategoryType) {
+	 	this.PaymentCategoryType = PaymentCategoryType;
 	 }
 	 
 	/**
@@ -725,6 +764,15 @@ public class PaymentDetailsType{
 			sb.append(ShipToAddress.toXMLString());
 			sb.append("</ebl:ShipToAddress>");
 		}
+		if(FulfillmentAddress != null) {
+			sb.append("<ebl:FulfillmentAddress>");
+			sb.append(FulfillmentAddress.toXMLString());
+			sb.append("</ebl:FulfillmentAddress>");
+		}
+		if(PaymentCategoryType != null) {
+			sb.append("<ebl:PaymentCategoryType>").append(PaymentCategoryType.getValue());
+			sb.append("</ebl:PaymentCategoryType>");
+		}
 		if(ShippingMethod != null) {
 			sb.append("<ebl:ShippingMethod>").append(ShippingMethod.getValue());
 			sb.append("</ebl:ShippingMethod>");
@@ -815,6 +863,8 @@ public class PaymentDetailsType{
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ){
+			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
@@ -945,6 +995,18 @@ public class PaymentDetailsType{
 				this.ShipToAddress =  new AddressType(xmlString);
 			}
 		}
+		if(document.getElementsByTagName("FulfillmentAddress").getLength()!=0) {
+			if(!isWhitespaceNode(document.getElementsByTagName("FulfillmentAddress").item(0))) {
+				nodeList = document.getElementsByTagName("FulfillmentAddress");
+				xmlString = convertToXML(nodeList.item(0));
+				this.FulfillmentAddress =  new AddressType(xmlString);
+			}
+		}
+		if(document.getElementsByTagName("PaymentCategoryType").getLength() != 0) {
+			if(!isWhitespaceNode(document.getElementsByTagName("PaymentCategoryType").item(0))) {
+				this.PaymentCategoryType = PaymentCategoryType.fromValue(document.getElementsByTagName("PaymentCategoryType").item(0).getTextContent());
+			}
+		}
 		if(document.getElementsByTagName("ShippingMethod").getLength() != 0) {
 			if(!isWhitespaceNode(document.getElementsByTagName("ShippingMethod").item(0))) {
 				this.ShippingMethod = ShippingServiceCodeType.fromValue(document.getElementsByTagName("ShippingMethod").item(0).getTextContent());
@@ -1063,5 +1125,5 @@ public class PaymentDetailsType{
 			}
 		}
 	}
-
+ 
 }

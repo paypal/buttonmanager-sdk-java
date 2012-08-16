@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.ArrayList;
 import urn.ebay.apis.eBLBaseComponents.PaymentInfoType;
 import urn.ebay.apis.eBLBaseComponents.UserSelectedOptionType;
+import urn.ebay.apis.eBLBaseComponents.CoupledPaymentInfoType;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -64,6 +65,11 @@ public class DoExpressCheckoutPaymentResponseDetailsType{
 	 * Information about the user selected options. 	 
 	 */ 
 	private UserSelectedOptionType UserSelectedOptions;
+
+	/**
+	 * Information about Coupled Payment transactions. 	 
+	 */ 
+	private List<CoupledPaymentInfoType> CoupledPaymentInfo = new ArrayList<CoupledPaymentInfoType>();
 
 	
 
@@ -171,12 +177,28 @@ public class DoExpressCheckoutPaymentResponseDetailsType{
 	 	this.UserSelectedOptions = UserSelectedOptions;
 	 }
 	 
+	/**
+	 * Getter for CoupledPaymentInfo
+	 */
+	 public List<CoupledPaymentInfoType> getCoupledPaymentInfo() {
+	 	return CoupledPaymentInfo;
+	 }
+	 
+	/**
+	 * Setter for CoupledPaymentInfo
+	 */
+	 public void setCoupledPaymentInfo(List<CoupledPaymentInfoType> CoupledPaymentInfo) {
+	 	this.CoupledPaymentInfo = CoupledPaymentInfo;
+	 }
+	 
 
 
 	private  boolean isWhitespaceNode(Node n) {
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ){
+			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
@@ -281,6 +303,15 @@ public class DoExpressCheckoutPaymentResponseDetailsType{
 				this.UserSelectedOptions =  new UserSelectedOptionType(xmlString);
 			}
 		}
+		if (document.getElementsByTagName("CoupledPaymentInfo").getLength() != 0) {
+			if(!isWhitespaceNode(document.getElementsByTagName("CoupledPaymentInfo").item(0))) {
+				nodeList = document.getElementsByTagName("CoupledPaymentInfo");
+				for(int i=0; i < nodeList.getLength(); i++) {
+					xmlString = convertToXML(nodeList.item(i));
+					this.CoupledPaymentInfo.add(new CoupledPaymentInfoType(xmlString));
+				}
+			}
+		}
 	}
-
+ 
 }

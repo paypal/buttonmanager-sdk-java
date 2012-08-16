@@ -56,6 +56,11 @@ public class DoReferenceTransactionResponseDetailsType{
 	 */ 
 	private String PaymentAdviceCode;
 
+	/**
+	 * Return msgsubid back to merchant 	 
+	 */ 
+	private String MsgSubID;
+
 	
 
 	/**
@@ -162,12 +167,28 @@ public class DoReferenceTransactionResponseDetailsType{
 	 	this.PaymentAdviceCode = PaymentAdviceCode;
 	 }
 	 
+	/**
+	 * Getter for MsgSubID
+	 */
+	 public String getMsgSubID() {
+	 	return MsgSubID;
+	 }
+	 
+	/**
+	 * Setter for MsgSubID
+	 */
+	 public void setMsgSubID(String MsgSubID) {
+	 	this.MsgSubID = MsgSubID;
+	 }
+	 
 
 
 	private  boolean isWhitespaceNode(Node n) {
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ){
+			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
@@ -270,6 +291,12 @@ public class DoReferenceTransactionResponseDetailsType{
 			}
 		}
 	
+		if (document.getElementsByTagName("MsgSubID").getLength() != 0) {
+			if(!isWhitespaceNode(document.getElementsByTagName("MsgSubID").item(0))) {
+				this.MsgSubID = (String)document.getElementsByTagName("MsgSubID").item(0).getTextContent();
+			}
+		}
+	
 	}
-
+ 
 }

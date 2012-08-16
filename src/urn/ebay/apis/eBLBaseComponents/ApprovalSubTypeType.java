@@ -7,7 +7,11 @@ public enum  ApprovalSubTypeType {
 
 	NONE("None"),
 
-	MERCHANTINITIATEDBILLING("MerchantInitiatedBilling");
+	MERCHANTINITIATEDBILLING("MerchantInitiatedBilling"),
+
+	MERCHANTINITIATEDBILLINGSINGLEAGREEMENT("MerchantInitiatedBillingSingleAgreement"),
+
+	CHANNELINITIATEDBILLING("ChannelInitiatedBilling");
 
 	private String value;
 

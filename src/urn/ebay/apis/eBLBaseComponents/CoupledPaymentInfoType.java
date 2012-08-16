@@ -13,37 +13,57 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * InstrumentDetailsType Promotional Instrument Information. 
+ * Information about Coupled Payment transactions. 
  */
-public class InstrumentDetailsType{
+public class CoupledPaymentInfoType{
 
 
 	/**
-	 * This field holds the category of the instrument only when it
-	 * is promotional. Return value 1 represents BML. 	 
+	 * ID received in the Coupled Payment Request	 
 	 */ 
-	private String InstrumentCategory;
+	private String CoupledPaymentRequestID;
+
+	/**
+	 * ID that uniquely identifies this CoupledPayment. Generated
+	 * by PP in Response	  
+	 *@Required	 
+	 */ 
+	private String CoupledPaymentID;
 
 	
 
 	/**
 	 * Default Constructor
 	 */
-	public InstrumentDetailsType (){
+	public CoupledPaymentInfoType (){
 	}	
 
 	/**
-	 * Getter for InstrumentCategory
+	 * Getter for CoupledPaymentRequestID
 	 */
-	 public String getInstrumentCategory() {
-	 	return InstrumentCategory;
+	 public String getCoupledPaymentRequestID() {
+	 	return CoupledPaymentRequestID;
 	 }
 	 
 	/**
-	 * Setter for InstrumentCategory
+	 * Setter for CoupledPaymentRequestID
 	 */
-	 public void setInstrumentCategory(String InstrumentCategory) {
-	 	this.InstrumentCategory = InstrumentCategory;
+	 public void setCoupledPaymentRequestID(String CoupledPaymentRequestID) {
+	 	this.CoupledPaymentRequestID = CoupledPaymentRequestID;
+	 }
+	 
+	/**
+	 * Getter for CoupledPaymentID
+	 */
+	 public String getCoupledPaymentID() {
+	 	return CoupledPaymentID;
+	 }
+	 
+	/**
+	 * Setter for CoupledPaymentID
+	 */
+	 public void setCoupledPaymentID(String CoupledPaymentID) {
+	 	this.CoupledPaymentID = CoupledPaymentID;
 	 }
 	 
 
@@ -103,7 +123,7 @@ public class InstrumentDetailsType{
 		return sb.toString();
 	}
 	
-	public InstrumentDetailsType(Object xmlSoap) throws IOException, SAXException, ParserConfigurationException {
+	public CoupledPaymentInfoType(Object xmlSoap) throws IOException, SAXException, ParserConfigurationException {
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = builderFactory.newDocumentBuilder();
 		InputSource inStream = new InputSource();
@@ -112,13 +132,18 @@ public class InstrumentDetailsType{
 		NodeList nodeList= null;
 		
 		String xmlString = "";
-		if (document.getElementsByTagName("InstrumentCategory").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("InstrumentCategory").item(0))) {
-				nodeList = document.getElementsByTagName("InstrumentCategory");
-				String value = nodeList.item(0).getTextContent();
-				this.InstrumentCategory = value;
+		if (document.getElementsByTagName("CoupledPaymentRequestID").getLength() != 0) {
+			if(!isWhitespaceNode(document.getElementsByTagName("CoupledPaymentRequestID").item(0))) {
+				this.CoupledPaymentRequestID = (String)document.getElementsByTagName("CoupledPaymentRequestID").item(0).getTextContent();
 			}
 		}
+	
+		if (document.getElementsByTagName("CoupledPaymentID").getLength() != 0) {
+			if(!isWhitespaceNode(document.getElementsByTagName("CoupledPaymentID").item(0))) {
+				this.CoupledPaymentID = (String)document.getElementsByTagName("CoupledPaymentID").item(0).getTextContent();
+			}
+		}
+	
 	}
  
 }

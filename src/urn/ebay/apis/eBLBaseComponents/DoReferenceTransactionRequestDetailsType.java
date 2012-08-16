@@ -64,6 +64,13 @@ public class DoReferenceTransactionRequestDetailsType{
 	 */ 
 	private SenderDetailsType SenderDetails;
 
+	/**
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 	 
+	 */ 
+	private String MsgSubID;
+
 	
 
 	/**
@@ -221,6 +228,20 @@ public class DoReferenceTransactionRequestDetailsType{
 	 	this.SenderDetails = SenderDetails;
 	 }
 	 
+	/**
+	 * Getter for MsgSubID
+	 */
+	 public String getMsgSubID() {
+	 	return MsgSubID;
+	 }
+	 
+	/**
+	 * Setter for MsgSubID
+	 */
+	 public void setMsgSubID(String MsgSubID) {
+	 	this.MsgSubID = MsgSubID;
+	 }
+	 
 
 
 	public String toXMLString() {
@@ -267,6 +288,10 @@ public class DoReferenceTransactionRequestDetailsType{
 			sb.append("<ebl:SenderDetails>");
 			sb.append(SenderDetails.toXMLString());
 			sb.append("</ebl:SenderDetails>");
+		}
+		if(MsgSubID != null) {
+			sb.append("<ebl:MsgSubID>").append(MsgSubID);
+			sb.append("</ebl:MsgSubID>");
 		}
 		return sb.toString();
 	}

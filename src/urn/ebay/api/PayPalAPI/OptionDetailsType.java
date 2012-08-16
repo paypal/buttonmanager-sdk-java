@@ -96,6 +96,8 @@ public class OptionDetailsType{
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ){
+			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
@@ -170,5 +172,5 @@ public class OptionDetailsType{
 			}
 		}
 	}
-
+ 
 }

@@ -22,6 +22,7 @@ import urn.ebay.apis.eBLBaseComponents.ExternalRememberMeOptInDetailsType;
 import urn.ebay.apis.eBLBaseComponents.FlowControlDetailsType;
 import urn.ebay.apis.eBLBaseComponents.DisplayControlDetailsType;
 import urn.ebay.apis.eBLBaseComponents.ExternalPartnerTrackingDetailsType;
+import urn.ebay.apis.eBLBaseComponents.CoupledBucketsType;
 
 /**
  * The total cost of the order to the customer. If shipping
@@ -508,6 +509,11 @@ public class SetExpressCheckoutRequestDetailsType{
 	 * partner. 	 
 	 */ 
 	private ExternalPartnerTrackingDetailsType ExternalPartnerTrackingDetails;
+
+	/**
+	 * Optional element that defines relationship between buckets 	 
+	 */ 
+	private List<CoupledBucketsType> CoupledBuckets = new ArrayList<CoupledBucketsType>();
 
 	
 
@@ -1441,6 +1447,20 @@ public class SetExpressCheckoutRequestDetailsType{
 	 	this.ExternalPartnerTrackingDetails = ExternalPartnerTrackingDetails;
 	 }
 	 
+	/**
+	 * Getter for CoupledBuckets
+	 */
+	 public List<CoupledBucketsType> getCoupledBuckets() {
+	 	return CoupledBuckets;
+	 }
+	 
+	/**
+	 * Setter for CoupledBuckets
+	 */
+	 public void setCoupledBuckets(List<CoupledBucketsType> CoupledBuckets) {
+	 	this.CoupledBuckets = CoupledBuckets;
+	 }
+	 
 
 
 	public String toXMLString() {
@@ -1739,6 +1759,13 @@ public class SetExpressCheckoutRequestDetailsType{
 			sb.append("<ebl:ExternalPartnerTrackingDetails>");
 			sb.append(ExternalPartnerTrackingDetails.toXMLString());
 			sb.append("</ebl:ExternalPartnerTrackingDetails>");
+		}
+		if(CoupledBuckets != null) {
+			for(int i=0; i < CoupledBuckets.size(); i++) {
+				sb.append("<ebl:CoupledBuckets>");
+				sb.append(CoupledBuckets.get(i).toXMLString());
+				sb.append("</ebl:CoupledBuckets>");
+			}
 		}
 		return sb.toString();
 	}

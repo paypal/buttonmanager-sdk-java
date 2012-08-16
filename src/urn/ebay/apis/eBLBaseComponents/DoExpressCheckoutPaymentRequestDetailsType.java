@@ -6,6 +6,7 @@ import urn.ebay.apis.eBLBaseComponents.PaymentDetailsType;
 import urn.ebay.apis.eBLBaseComponents.EnhancedDataType;
 import urn.ebay.apis.eBLBaseComponents.UserSelectedOptionType;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
+import urn.ebay.apis.eBLBaseComponents.CoupledBucketsType;
 
 /**
  * How you want to obtain payment. Required Authorization
@@ -140,6 +141,11 @@ public class DoExpressCheckoutPaymentRequestDetailsType{
 	 * billing agreement as part of DoEC or not. Optional 	 
 	 */ 
 	private Boolean SkipBACreation;
+
+	/**
+	 * Optional element that defines relationship between buckets 	 
+	 */ 
+	private List<CoupledBucketsType> CoupledBuckets = new ArrayList<CoupledBucketsType>();
 
 	
 
@@ -415,6 +421,20 @@ public class DoExpressCheckoutPaymentRequestDetailsType{
 	 	this.SkipBACreation = SkipBACreation;
 	 }
 	 
+	/**
+	 * Getter for CoupledBuckets
+	 */
+	 public List<CoupledBucketsType> getCoupledBuckets() {
+	 	return CoupledBuckets;
+	 }
+	 
+	/**
+	 * Setter for CoupledBuckets
+	 */
+	 public void setCoupledBuckets(List<CoupledBucketsType> CoupledBuckets) {
+	 	this.CoupledBuckets = CoupledBuckets;
+	 }
+	 
 
 
 	public String toXMLString() {
@@ -502,6 +522,13 @@ public class DoExpressCheckoutPaymentRequestDetailsType{
 		if(SkipBACreation != null) {
 			sb.append("<ebl:SkipBACreation>").append(SkipBACreation);
 			sb.append("</ebl:SkipBACreation>");
+		}
+		if(CoupledBuckets != null) {
+			for(int i=0; i < CoupledBuckets.size(); i++) {
+				sb.append("<ebl:CoupledBuckets>");
+				sb.append(CoupledBuckets.get(i).toXMLString());
+				sb.append("</ebl:CoupledBuckets>");
+			}
 		}
 		return sb.toString();
 	}

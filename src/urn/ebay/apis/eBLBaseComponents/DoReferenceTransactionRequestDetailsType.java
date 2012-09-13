@@ -4,6 +4,7 @@ import urn.ebay.apis.eBLBaseComponents.MerchantPullPaymentCodeType;
 import urn.ebay.apis.eBLBaseComponents.PaymentDetailsType;
 import urn.ebay.apis.eBLBaseComponents.ReferenceCreditCardDetailsType;
 import urn.ebay.apis.eBLBaseComponents.SenderDetailsType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -247,15 +248,15 @@ public class DoReferenceTransactionRequestDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(ReferenceID != null) {
-			sb.append("<ebl:ReferenceID>").append(ReferenceID);
+			sb.append("<ebl:ReferenceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReferenceID));
 			sb.append("</ebl:ReferenceID>");
 		}
 		if(PaymentAction != null) {
-			sb.append("<ebl:PaymentAction>").append(PaymentAction.getValue());
+			sb.append("<ebl:PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentAction.getValue()));
 			sb.append("</ebl:PaymentAction>");
 		}
 		if(PaymentType != null) {
-			sb.append("<ebl:PaymentType>").append(PaymentType.getValue());
+			sb.append("<ebl:PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentType.getValue()));
 			sb.append("</ebl:PaymentType>");
 		}
 		if(PaymentDetails != null) {
@@ -269,19 +270,19 @@ public class DoReferenceTransactionRequestDetailsType{
 			sb.append("</ebl:CreditCard>");
 		}
 		if(IPAddress != null) {
-			sb.append("<ebl:IPAddress>").append(IPAddress);
+			sb.append("<ebl:IPAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(IPAddress));
 			sb.append("</ebl:IPAddress>");
 		}
 		if(MerchantSessionId != null) {
-			sb.append("<ebl:MerchantSessionId>").append(MerchantSessionId);
+			sb.append("<ebl:MerchantSessionId>").append(SDKUtil.escapeInvalidXmlCharsRegex(MerchantSessionId));
 			sb.append("</ebl:MerchantSessionId>");
 		}
 		if(ReqConfirmShipping != null) {
-			sb.append("<ebl:ReqConfirmShipping>").append(ReqConfirmShipping);
+			sb.append("<ebl:ReqConfirmShipping>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReqConfirmShipping));
 			sb.append("</ebl:ReqConfirmShipping>");
 		}
 		if(SoftDescriptor != null) {
-			sb.append("<ebl:SoftDescriptor>").append(SoftDescriptor);
+			sb.append("<ebl:SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(SoftDescriptor));
 			sb.append("</ebl:SoftDescriptor>");
 		}
 		if(SenderDetails != null) {
@@ -290,7 +291,7 @@ public class DoReferenceTransactionRequestDetailsType{
 			sb.append("</ebl:SenderDetails>");
 		}
 		if(MsgSubID != null) {
-			sb.append("<ebl:MsgSubID>").append(MsgSubID);
+			sb.append("<ebl:MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(MsgSubID));
 			sb.append("</ebl:MsgSubID>");
 		}
 		return sb.toString();

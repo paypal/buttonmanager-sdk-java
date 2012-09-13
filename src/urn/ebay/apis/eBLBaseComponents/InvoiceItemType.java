@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.ArrayList;
 import urn.ebay.apis.eBLBaseComponents.DiscountType;
 import urn.ebay.apis.eBLBaseComponents.AdditionalFeeType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Describes an individual item for an invoice. 
@@ -407,23 +408,23 @@ public class InvoiceItemType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(Name != null) {
-			sb.append("<ebl:Name>").append(Name);
+			sb.append("<ebl:Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(Name));
 			sb.append("</ebl:Name>");
 		}
 		if(Description != null) {
-			sb.append("<ebl:Description>").append(Description);
+			sb.append("<ebl:Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(Description));
 			sb.append("</ebl:Description>");
 		}
 		if(EAN != null) {
-			sb.append("<ebl:EAN>").append(EAN);
+			sb.append("<ebl:EAN>").append(SDKUtil.escapeInvalidXmlCharsRegex(EAN));
 			sb.append("</ebl:EAN>");
 		}
 		if(SKU != null) {
-			sb.append("<ebl:SKU>").append(SKU);
+			sb.append("<ebl:SKU>").append(SDKUtil.escapeInvalidXmlCharsRegex(SKU));
 			sb.append("</ebl:SKU>");
 		}
 		if(ReturnPolicyIdentifier != null) {
-			sb.append("<ebl:ReturnPolicyIdentifier>").append(ReturnPolicyIdentifier);
+			sb.append("<ebl:ReturnPolicyIdentifier>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReturnPolicyIdentifier));
 			sb.append("</ebl:ReturnPolicyIdentifier>");
 		}
 		if(Price != null) {
@@ -437,11 +438,11 @@ public class InvoiceItemType{
 			sb.append("</ebl:ItemPrice>");
 		}
 		if(ItemCount != null) {
-			sb.append("<ebl:ItemCount>").append(ItemCount);
+			sb.append("<ebl:ItemCount>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemCount));
 			sb.append("</ebl:ItemCount>");
 		}
 		if(ItemCountUnit != null) {
-			sb.append("<ebl:ItemCountUnit>").append(ItemCountUnit.getValue());
+			sb.append("<ebl:ItemCountUnit>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemCountUnit.getValue()));
 			sb.append("</ebl:ItemCountUnit>");
 		}
 		if(Discount != null) {
@@ -452,11 +453,11 @@ public class InvoiceItemType{
 			}
 		}
 		if(Taxable != null) {
-			sb.append("<ebl:Taxable>").append(Taxable);
+			sb.append("<ebl:Taxable>").append(SDKUtil.escapeInvalidXmlCharsRegex(Taxable));
 			sb.append("</ebl:Taxable>");
 		}
 		if(TaxRate != null) {
-			sb.append("<ebl:TaxRate>").append(TaxRate);
+			sb.append("<ebl:TaxRate>").append(SDKUtil.escapeInvalidXmlCharsRegex(TaxRate));
 			sb.append("</ebl:TaxRate>");
 		}
 		if(AdditionalFees != null) {
@@ -467,27 +468,27 @@ public class InvoiceItemType{
 			}
 		}
 		if(Reimbursable != null) {
-			sb.append("<ebl:Reimbursable>").append(Reimbursable);
+			sb.append("<ebl:Reimbursable>").append(SDKUtil.escapeInvalidXmlCharsRegex(Reimbursable));
 			sb.append("</ebl:Reimbursable>");
 		}
 		if(MPN != null) {
-			sb.append("<ebl:MPN>").append(MPN);
+			sb.append("<ebl:MPN>").append(SDKUtil.escapeInvalidXmlCharsRegex(MPN));
 			sb.append("</ebl:MPN>");
 		}
 		if(ISBN != null) {
-			sb.append("<ebl:ISBN>").append(ISBN);
+			sb.append("<ebl:ISBN>").append(SDKUtil.escapeInvalidXmlCharsRegex(ISBN));
 			sb.append("</ebl:ISBN>");
 		}
 		if(PLU != null) {
-			sb.append("<ebl:PLU>").append(PLU);
+			sb.append("<ebl:PLU>").append(SDKUtil.escapeInvalidXmlCharsRegex(PLU));
 			sb.append("</ebl:PLU>");
 		}
 		if(ModelNumber != null) {
-			sb.append("<ebl:ModelNumber>").append(ModelNumber);
+			sb.append("<ebl:ModelNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(ModelNumber));
 			sb.append("</ebl:ModelNumber>");
 		}
 		if(StyleNumber != null) {
-			sb.append("<ebl:StyleNumber>").append(StyleNumber);
+			sb.append("<ebl:StyleNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(StyleNumber));
 			sb.append("</ebl:StyleNumber>");
 		}
 		return sb.toString();

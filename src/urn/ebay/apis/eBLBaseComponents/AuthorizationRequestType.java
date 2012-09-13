@@ -1,4 +1,5 @@
 package urn.ebay.apis.eBLBaseComponents;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -46,7 +47,7 @@ public class AuthorizationRequestType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(IsRequested != null) {
-			sb.append("<ebl:IsRequested>").append(IsRequested);
+			sb.append("<ebl:IsRequested>").append(SDKUtil.escapeInvalidXmlCharsRegex(IsRequested));
 			sb.append("</ebl:IsRequested>");
 		}
 		return sb.toString();

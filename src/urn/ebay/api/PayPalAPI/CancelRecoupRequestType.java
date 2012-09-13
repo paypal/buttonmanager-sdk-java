@@ -1,6 +1,7 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.EnhancedDataTypes.EnhancedCancelRecoupRequestDetailsType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 

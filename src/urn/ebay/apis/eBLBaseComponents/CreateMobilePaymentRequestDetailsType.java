@@ -4,6 +4,7 @@ import urn.ebay.apis.eBLBaseComponents.PaymentActionCodeType;
 import urn.ebay.apis.eBLBaseComponents.PhoneNumberType;
 import urn.ebay.apis.eBLBaseComponents.MobileRecipientCodeType;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Type of the payment Required 
@@ -322,11 +323,11 @@ public class CreateMobilePaymentRequestDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(PaymentType != null) {
-			sb.append("<ebl:PaymentType>").append(PaymentType.getValue());
+			sb.append("<ebl:PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentType.getValue()));
 			sb.append("</ebl:PaymentType>");
 		}
 		if(PaymentAction != null) {
-			sb.append("<ebl:PaymentAction>").append(PaymentAction.getValue());
+			sb.append("<ebl:PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentAction.getValue()));
 			sb.append("</ebl:PaymentAction>");
 		}
 		if(SenderPhone != null) {
@@ -335,11 +336,11 @@ public class CreateMobilePaymentRequestDetailsType{
 			sb.append("</ebl:SenderPhone>");
 		}
 		if(RecipientType != null) {
-			sb.append("<ebl:RecipientType>").append(RecipientType.getValue());
+			sb.append("<ebl:RecipientType>").append(SDKUtil.escapeInvalidXmlCharsRegex(RecipientType.getValue()));
 			sb.append("</ebl:RecipientType>");
 		}
 		if(RecipientEmail != null) {
-			sb.append("<ebl:RecipientEmail>").append(RecipientEmail);
+			sb.append("<ebl:RecipientEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(RecipientEmail));
 			sb.append("</ebl:RecipientEmail>");
 		}
 		if(RecipientPhone != null) {
@@ -363,27 +364,27 @@ public class CreateMobilePaymentRequestDetailsType{
 			sb.append("</ebl:Shipping>");
 		}
 		if(ItemName != null) {
-			sb.append("<ebl:ItemName>").append(ItemName);
+			sb.append("<ebl:ItemName>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemName));
 			sb.append("</ebl:ItemName>");
 		}
 		if(ItemNumber != null) {
-			sb.append("<ebl:ItemNumber>").append(ItemNumber);
+			sb.append("<ebl:ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemNumber));
 			sb.append("</ebl:ItemNumber>");
 		}
 		if(Note != null) {
-			sb.append("<ebl:Note>").append(Note);
+			sb.append("<ebl:Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(Note));
 			sb.append("</ebl:Note>");
 		}
 		if(CustomID != null) {
-			sb.append("<ebl:CustomID>").append(CustomID);
+			sb.append("<ebl:CustomID>").append(SDKUtil.escapeInvalidXmlCharsRegex(CustomID));
 			sb.append("</ebl:CustomID>");
 		}
 		if(SharePhoneNumber != null) {
-			sb.append("<ebl:SharePhoneNumber>").append(SharePhoneNumber);
+			sb.append("<ebl:SharePhoneNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(SharePhoneNumber));
 			sb.append("</ebl:SharePhoneNumber>");
 		}
 		if(ShareHomeAddress != null) {
-			sb.append("<ebl:ShareHomeAddress>").append(ShareHomeAddress);
+			sb.append("<ebl:ShareHomeAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(ShareHomeAddress));
 			sb.append("</ebl:ShareHomeAddress>");
 		}
 		return sb.toString();

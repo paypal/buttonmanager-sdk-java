@@ -1,4 +1,5 @@
 package urn.ebay.apis.eBLBaseComponents;
+import com.paypal.core.SDKUtil;
 
 /**
  * Identity Access token from merchant 
@@ -46,7 +47,7 @@ public class IdentityTokenInfoType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(AccessToken != null) {
-			sb.append("<ebl:AccessToken>").append(AccessToken);
+			sb.append("<ebl:AccessToken>").append(SDKUtil.escapeInvalidXmlCharsRegex(AccessToken));
 			sb.append("</ebl:AccessToken>");
 		}
 		return sb.toString();

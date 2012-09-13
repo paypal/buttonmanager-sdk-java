@@ -1,6 +1,7 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.BillingPeriodType;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Unit of meausre for billing cycle 
@@ -135,15 +136,15 @@ public class BillingPeriodDetailsType_Update{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(BillingPeriod != null) {
-			sb.append("<ebl:BillingPeriod>").append(BillingPeriod.getValue());
+			sb.append("<ebl:BillingPeriod>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingPeriod.getValue()));
 			sb.append("</ebl:BillingPeriod>");
 		}
 		if(BillingFrequency != null) {
-			sb.append("<ebl:BillingFrequency>").append(BillingFrequency);
+			sb.append("<ebl:BillingFrequency>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingFrequency));
 			sb.append("</ebl:BillingFrequency>");
 		}
 		if(TotalBillingCycles != null) {
-			sb.append("<ebl:TotalBillingCycles>").append(TotalBillingCycles);
+			sb.append("<ebl:TotalBillingCycles>").append(SDKUtil.escapeInvalidXmlCharsRegex(TotalBillingCycles));
 			sb.append("</ebl:TotalBillingCycles>");
 		}
 		if(Amount != null) {

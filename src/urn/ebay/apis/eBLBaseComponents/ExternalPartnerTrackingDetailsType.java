@@ -1,4 +1,5 @@
 package urn.ebay.apis.eBLBaseComponents;
+import com.paypal.core.SDKUtil;
 
 /**
  * Contains elements that allow tracking for an external
@@ -48,7 +49,7 @@ public class ExternalPartnerTrackingDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(ExternalPartnerSegmentID != null) {
-			sb.append("<ebl:ExternalPartnerSegmentID>").append(ExternalPartnerSegmentID);
+			sb.append("<ebl:ExternalPartnerSegmentID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExternalPartnerSegmentID));
 			sb.append("</ebl:ExternalPartnerSegmentID>");
 		}
 		return sb.toString();

@@ -1,6 +1,7 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * The value of a previously authorized transaction
@@ -83,7 +84,7 @@ public class DoReauthorizationRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(AuthorizationID != null) {
-			sb.append("<urn:AuthorizationID>").append(AuthorizationID);
+			sb.append("<urn:AuthorizationID>").append(SDKUtil.escapeInvalidXmlCharsRegex(AuthorizationID));
 			sb.append("</urn:AuthorizationID>");
 		}
 		if(Amount != null) {

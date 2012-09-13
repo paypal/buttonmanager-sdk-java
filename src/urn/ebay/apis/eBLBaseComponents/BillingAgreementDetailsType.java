@@ -1,6 +1,7 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.BillingCodeType;
 import urn.ebay.apis.eBLBaseComponents.MerchantPullPaymentCodeType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -105,19 +106,19 @@ public class BillingAgreementDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(BillingType != null) {
-			sb.append("<ebl:BillingType>").append(BillingType.getValue());
+			sb.append("<ebl:BillingType>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingType.getValue()));
 			sb.append("</ebl:BillingType>");
 		}
 		if(BillingAgreementDescription != null) {
-			sb.append("<ebl:BillingAgreementDescription>").append(BillingAgreementDescription);
+			sb.append("<ebl:BillingAgreementDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingAgreementDescription));
 			sb.append("</ebl:BillingAgreementDescription>");
 		}
 		if(PaymentType != null) {
-			sb.append("<ebl:PaymentType>").append(PaymentType.getValue());
+			sb.append("<ebl:PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentType.getValue()));
 			sb.append("</ebl:PaymentType>");
 		}
 		if(BillingAgreementCustom != null) {
-			sb.append("<ebl:BillingAgreementCustom>").append(BillingAgreementCustom);
+			sb.append("<ebl:BillingAgreementCustom>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingAgreementCustom));
 			sb.append("</ebl:BillingAgreementCustom>");
 		}
 		return sb.toString();

@@ -7,6 +7,10 @@ import urn.ebay.apis.eBLBaseComponents.AuctionInfoType;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -178,112 +182,52 @@ public class PaymentItemInfoType{
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
-		} else if (n.getNodeType() == Node.ELEMENT_NODE ){
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ) {
 			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
 	}
 	
-	private String convertToXML(Node n){
-		String name = n.getNodeName();
-		short type = n.getNodeType();
-		if (Node.CDATA_SECTION_NODE == type) {
-			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
-		}
-		if (name.startsWith("#")) {
-			return "";
-		}
-		StringBuffer sb = new StringBuffer();
-		sb.append("<").append(name);
-		NamedNodeMap attrs = n.getAttributes();
-		if (attrs != null) {
-			for (int i = 0; i < attrs.getLength(); i++) {
-				Node attr = attrs.item(i);
-				sb.append(" ").append(attr.getNodeName()).append("=\"").append(attr.getNodeValue()).append("\"");
-			}
-		}
-		String textContent = null;
-		NodeList children = n.getChildNodes();
-		if (children.getLength() == 0) {
-			if (((textContent = n.getTextContent())) != null && (!"".equals(textContent))) {
-				sb.append(textContent).append("</").append(name).append(">");
-			} else {
-				sb.append("/>");
-			}
-		} else {
-			sb.append(">");
-			boolean hasValidChildren = false;
-			for (int i = 0; i < children.getLength(); i++) {
-				String childToString = convertToXML(children.item(i));
-				if (!"".equals(childToString)) {
-					sb.append(childToString);
-					hasValidChildren = true;
-				}
-			}
-			if (!hasValidChildren && ((textContent = n.getTextContent()) != null)) {
-				sb.append(textContent);
-			}
-			sb.append("</").append(name).append(">");
-		}
-		return sb.toString();
-	}
-	
-	public PaymentItemInfoType(Object xmlSoap) throws IOException, SAXException, ParserConfigurationException {
-		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = builderFactory.newDocumentBuilder();
-		InputSource inStream = new InputSource();
-		inStream.setCharacterStream(new StringReader((String)xmlSoap));
-		Document document = builder.parse(inStream);
-		NodeList nodeList= null;
-		
-		String xmlString = "";
-		if (document.getElementsByTagName("InvoiceID").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("InvoiceID").item(0))) {
-				this.InvoiceID = (String)document.getElementsByTagName("InvoiceID").item(0).getTextContent();
-			}
+	public PaymentItemInfoType(Node node) throws XPathExpressionException {
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		Node childNode = null;
+		NodeList nodeList = null;
+		childNode = (Node) xpath.evaluate("InvoiceID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.InvoiceID = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("Custom").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Custom").item(0))) {
-				this.Custom = (String)document.getElementsByTagName("Custom").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("Custom", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Custom = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("Memo").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Memo").item(0))) {
-				this.Memo = (String)document.getElementsByTagName("Memo").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("Memo", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Memo = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("SalesTax").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("SalesTax").item(0))) {
-				this.SalesTax = (String)document.getElementsByTagName("SalesTax").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("SalesTax", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.SalesTax = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("PaymentItem").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("PaymentItem").item(0))) {
-				nodeList = document.getElementsByTagName("PaymentItem");
-				for(int i=0; i < nodeList.getLength(); i++) {
-					xmlString = convertToXML(nodeList.item(i));
-					this.PaymentItem.add(new PaymentItemType(xmlString));
-				}
+        nodeList = (NodeList) xpath.evaluate("PaymentItem", node, XPathConstants.NODESET);
+		if (nodeList != null && nodeList.getLength() > 0) {
+			for(int i=0; i < nodeList.getLength(); i++) {
+				Node subNode = nodeList.item(i);
+				this.PaymentItem.add(new PaymentItemType(subNode));
 			}
 		}
-		if(document.getElementsByTagName("Subscription").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Subscription").item(0))) {
-				nodeList = document.getElementsByTagName("Subscription");
-				xmlString = convertToXML(nodeList.item(0));
-				this.Subscription =  new SubscriptionInfoType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("Subscription", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Subscription =  new SubscriptionInfoType(childNode);
 		}
-		if(document.getElementsByTagName("Auction").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Auction").item(0))) {
-				nodeList = document.getElementsByTagName("Auction");
-				xmlString = convertToXML(nodeList.item(0));
-				this.Auction =  new AuctionInfoType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("Auction", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Auction =  new AuctionInfoType(childNode);
 		}
 	}
  

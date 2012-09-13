@@ -1,5 +1,6 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.DoAuthorizationRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 

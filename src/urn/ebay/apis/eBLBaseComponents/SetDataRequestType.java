@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import urn.ebay.apis.eBLBaseComponents.BillingApprovalDetailsType;
 import urn.ebay.apis.eBLBaseComponents.BuyerDetailType;
 import urn.ebay.apis.eBLBaseComponents.InfoSharingDirectivesType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Details about Billing Agreements requested to be created. 

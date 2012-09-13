@@ -1,5 +1,6 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Description of the Order. 
@@ -59,7 +60,7 @@ public class OrderDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(Description != null) {
-			sb.append("<ebl:Description>").append(Description);
+			sb.append("<ebl:Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(Description));
 			sb.append("</ebl:Description>");
 		}
 		if(MaxAmount != null) {

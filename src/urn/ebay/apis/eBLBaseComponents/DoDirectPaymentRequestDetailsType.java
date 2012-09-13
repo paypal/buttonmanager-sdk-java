@@ -2,6 +2,7 @@ package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.PaymentActionCodeType;
 import urn.ebay.apis.eBLBaseComponents.PaymentDetailsType;
 import urn.ebay.apis.eBLBaseComponents.CreditCardDetailsType;
+import com.paypal.core.SDKUtil;
 
 /**
  * How you want to obtain payment. Required Authorization
@@ -155,7 +156,7 @@ public class DoDirectPaymentRequestDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(PaymentAction != null) {
-			sb.append("<ebl:PaymentAction>").append(PaymentAction.getValue());
+			sb.append("<ebl:PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentAction.getValue()));
 			sb.append("</ebl:PaymentAction>");
 		}
 		if(PaymentDetails != null) {
@@ -169,15 +170,15 @@ public class DoDirectPaymentRequestDetailsType{
 			sb.append("</ebl:CreditCard>");
 		}
 		if(IPAddress != null) {
-			sb.append("<ebl:IPAddress>").append(IPAddress);
+			sb.append("<ebl:IPAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(IPAddress));
 			sb.append("</ebl:IPAddress>");
 		}
 		if(MerchantSessionId != null) {
-			sb.append("<ebl:MerchantSessionId>").append(MerchantSessionId);
+			sb.append("<ebl:MerchantSessionId>").append(SDKUtil.escapeInvalidXmlCharsRegex(MerchantSessionId));
 			sb.append("</ebl:MerchantSessionId>");
 		}
 		if(ReturnFMFDetails != null) {
-			sb.append("<ebl:ReturnFMFDetails>").append(ReturnFMFDetails);
+			sb.append("<ebl:ReturnFMFDetails>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReturnFMFDetails));
 			sb.append("</ebl:ReturnFMFDetails>");
 		}
 		return sb.toString();

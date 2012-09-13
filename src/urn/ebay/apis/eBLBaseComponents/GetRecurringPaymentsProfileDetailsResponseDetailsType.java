@@ -9,6 +9,10 @@ import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -350,168 +354,84 @@ public class GetRecurringPaymentsProfileDetailsResponseDetailsType{
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
-		} else if (n.getNodeType() == Node.ELEMENT_NODE ){
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ) {
 			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
 	}
 	
-	private String convertToXML(Node n){
-		String name = n.getNodeName();
-		short type = n.getNodeType();
-		if (Node.CDATA_SECTION_NODE == type) {
-			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
-		}
-		if (name.startsWith("#")) {
-			return "";
-		}
-		StringBuffer sb = new StringBuffer();
-		sb.append("<").append(name);
-		NamedNodeMap attrs = n.getAttributes();
-		if (attrs != null) {
-			for (int i = 0; i < attrs.getLength(); i++) {
-				Node attr = attrs.item(i);
-				sb.append(" ").append(attr.getNodeName()).append("=\"").append(attr.getNodeValue()).append("\"");
-			}
-		}
-		String textContent = null;
-		NodeList children = n.getChildNodes();
-		if (children.getLength() == 0) {
-			if (((textContent = n.getTextContent())) != null && (!"".equals(textContent))) {
-				sb.append(textContent).append("</").append(name).append(">");
-			} else {
-				sb.append("/>");
-			}
-		} else {
-			sb.append(">");
-			boolean hasValidChildren = false;
-			for (int i = 0; i < children.getLength(); i++) {
-				String childToString = convertToXML(children.item(i));
-				if (!"".equals(childToString)) {
-					sb.append(childToString);
-					hasValidChildren = true;
-				}
-			}
-			if (!hasValidChildren && ((textContent = n.getTextContent()) != null)) {
-				sb.append(textContent);
-			}
-			sb.append("</").append(name).append(">");
-		}
-		return sb.toString();
-	}
-	
-	public GetRecurringPaymentsProfileDetailsResponseDetailsType(Object xmlSoap) throws IOException, SAXException, ParserConfigurationException {
-		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = builderFactory.newDocumentBuilder();
-		InputSource inStream = new InputSource();
-		inStream.setCharacterStream(new StringReader((String)xmlSoap));
-		Document document = builder.parse(inStream);
-		NodeList nodeList= null;
-		
-		String xmlString = "";
-		if (document.getElementsByTagName("ProfileID").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ProfileID").item(0))) {
-				this.ProfileID = (String)document.getElementsByTagName("ProfileID").item(0).getTextContent();
-			}
+	public GetRecurringPaymentsProfileDetailsResponseDetailsType(Node node) throws XPathExpressionException {
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		Node childNode = null;
+		NodeList nodeList = null;
+		childNode = (Node) xpath.evaluate("ProfileID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ProfileID = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("ProfileStatus").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ProfileStatus").item(0))) {
-				this.ProfileStatus = RecurringPaymentsProfileStatusType.fromValue(document.getElementsByTagName("ProfileStatus").item(0).getTextContent());
-			}
+		childNode = (Node) xpath.evaluate("ProfileStatus", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ProfileStatus = RecurringPaymentsProfileStatusType.fromValue(childNode.getTextContent());
 		}
-		if (document.getElementsByTagName("Description").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Description").item(0))) {
-				this.Description = (String)document.getElementsByTagName("Description").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("Description", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Description = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("AutoBillOutstandingAmount").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("AutoBillOutstandingAmount").item(0))) {
-				this.AutoBillOutstandingAmount = AutoBillType.fromValue(document.getElementsByTagName("AutoBillOutstandingAmount").item(0).getTextContent());
-			}
+		childNode = (Node) xpath.evaluate("AutoBillOutstandingAmount", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.AutoBillOutstandingAmount = AutoBillType.fromValue(childNode.getTextContent());
 		}
-		if (document.getElementsByTagName("MaxFailedPayments").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("MaxFailedPayments").item(0))) {
-				this.MaxFailedPayments = Integer.valueOf(document.getElementsByTagName("MaxFailedPayments").item(0).getTextContent());
-			}
+		childNode = (Node) xpath.evaluate("MaxFailedPayments", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+			this.MaxFailedPayments = Integer.valueOf(childNode.getTextContent());
 		}
 	
-		if(document.getElementsByTagName("RecurringPaymentsProfileDetails").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("RecurringPaymentsProfileDetails").item(0))) {
-				nodeList = document.getElementsByTagName("RecurringPaymentsProfileDetails");
-				xmlString = convertToXML(nodeList.item(0));
-				this.RecurringPaymentsProfileDetails =  new RecurringPaymentsProfileDetailsType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("RecurringPaymentsProfileDetails", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.RecurringPaymentsProfileDetails =  new RecurringPaymentsProfileDetailsType(childNode);
 		}
-		if(document.getElementsByTagName("CurrentRecurringPaymentsPeriod").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("CurrentRecurringPaymentsPeriod").item(0))) {
-				nodeList = document.getElementsByTagName("CurrentRecurringPaymentsPeriod");
-				xmlString = convertToXML(nodeList.item(0));
-				this.CurrentRecurringPaymentsPeriod =  new BillingPeriodDetailsType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("CurrentRecurringPaymentsPeriod", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.CurrentRecurringPaymentsPeriod =  new BillingPeriodDetailsType(childNode);
 		}
-		if(document.getElementsByTagName("RecurringPaymentsSummary").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("RecurringPaymentsSummary").item(0))) {
-				nodeList = document.getElementsByTagName("RecurringPaymentsSummary");
-				xmlString = convertToXML(nodeList.item(0));
-				this.RecurringPaymentsSummary =  new RecurringPaymentsSummaryType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("RecurringPaymentsSummary", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.RecurringPaymentsSummary =  new RecurringPaymentsSummaryType(childNode);
 		}
-		if(document.getElementsByTagName("CreditCard").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("CreditCard").item(0))) {
-				nodeList = document.getElementsByTagName("CreditCard");
-				xmlString = convertToXML(nodeList.item(0));
-				this.CreditCard =  new CreditCardDetailsType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("CreditCard", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.CreditCard =  new CreditCardDetailsType(childNode);
 		}
-		if(document.getElementsByTagName("TrialRecurringPaymentsPeriod").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("TrialRecurringPaymentsPeriod").item(0))) {
-				nodeList = document.getElementsByTagName("TrialRecurringPaymentsPeriod");
-				xmlString = convertToXML(nodeList.item(0));
-				this.TrialRecurringPaymentsPeriod =  new BillingPeriodDetailsType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("TrialRecurringPaymentsPeriod", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.TrialRecurringPaymentsPeriod =  new BillingPeriodDetailsType(childNode);
 		}
-		if(document.getElementsByTagName("RegularRecurringPaymentsPeriod").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("RegularRecurringPaymentsPeriod").item(0))) {
-				nodeList = document.getElementsByTagName("RegularRecurringPaymentsPeriod");
-				xmlString = convertToXML(nodeList.item(0));
-				this.RegularRecurringPaymentsPeriod =  new BillingPeriodDetailsType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("RegularRecurringPaymentsPeriod", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.RegularRecurringPaymentsPeriod =  new BillingPeriodDetailsType(childNode);
 		}
-		if(document.getElementsByTagName("TrialAmountPaid").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("TrialAmountPaid").item(0))) {
-				nodeList = document.getElementsByTagName("TrialAmountPaid");
-				xmlString = convertToXML(nodeList.item(0));
-				this.TrialAmountPaid =  new BasicAmountType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("TrialAmountPaid", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.TrialAmountPaid =  new BasicAmountType(childNode);
 		}
-		if(document.getElementsByTagName("RegularAmountPaid").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("RegularAmountPaid").item(0))) {
-				nodeList = document.getElementsByTagName("RegularAmountPaid");
-				xmlString = convertToXML(nodeList.item(0));
-				this.RegularAmountPaid =  new BasicAmountType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("RegularAmountPaid", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.RegularAmountPaid =  new BasicAmountType(childNode);
 		}
-		if(document.getElementsByTagName("AggregateAmount").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("AggregateAmount").item(0))) {
-				nodeList = document.getElementsByTagName("AggregateAmount");
-				xmlString = convertToXML(nodeList.item(0));
-				this.AggregateAmount =  new BasicAmountType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("AggregateAmount", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.AggregateAmount =  new BasicAmountType(childNode);
 		}
-		if(document.getElementsByTagName("AggregateOptionalAmount").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("AggregateOptionalAmount").item(0))) {
-				nodeList = document.getElementsByTagName("AggregateOptionalAmount");
-				xmlString = convertToXML(nodeList.item(0));
-				this.AggregateOptionalAmount =  new BasicAmountType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("AggregateOptionalAmount", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.AggregateOptionalAmount =  new BasicAmountType(childNode);
 		}
-		if (document.getElementsByTagName("FinalPaymentDueDate").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("FinalPaymentDueDate").item(0))) {
-				this.FinalPaymentDueDate = (String)document.getElementsByTagName("FinalPaymentDueDate").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("FinalPaymentDueDate", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.FinalPaymentDueDate = childNode.getTextContent();
 		}
 	
 	}

@@ -1,6 +1,7 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.APIType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Msg Sub Id that was used for the orginal operation. 
@@ -70,11 +71,11 @@ public class DoCancelRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(CancelMsgSubID != null) {
-			sb.append("<urn:CancelMsgSubID>").append(CancelMsgSubID);
+			sb.append("<urn:CancelMsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(CancelMsgSubID));
 			sb.append("</urn:CancelMsgSubID>");
 		}
 		if(APIType != null) {
-			sb.append("<urn:APIType>").append(APIType.getValue());
+			sb.append("<urn:APIType>").append(SDKUtil.escapeInvalidXmlCharsRegex(APIType.getValue()));
 			sb.append("</urn:APIType>");
 		}
 		return sb.toString();

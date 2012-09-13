@@ -2,6 +2,7 @@ package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.TransactionEntityType;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * The value of the order’s transaction identification number
@@ -120,11 +121,11 @@ public class DoAuthorizationRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(TransactionID != null) {
-			sb.append("<urn:TransactionID>").append(TransactionID);
+			sb.append("<urn:TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionID));
 			sb.append("</urn:TransactionID>");
 		}
 		if(TransactionEntity != null) {
-			sb.append("<urn:TransactionEntity>").append(TransactionEntity.getValue());
+			sb.append("<urn:TransactionEntity>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionEntity.getValue()));
 			sb.append("</urn:TransactionEntity>");
 		}
 		if(Amount != null) {
@@ -133,7 +134,7 @@ public class DoAuthorizationRequestType extends AbstractRequestType {
 			sb.append("</urn:Amount>");
 		}
 		if(MsgSubID != null) {
-			sb.append("<urn:MsgSubID>").append(MsgSubID);
+			sb.append("<urn:MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(MsgSubID));
 			sb.append("</urn:MsgSubID>");
 		}
 		return sb.toString();

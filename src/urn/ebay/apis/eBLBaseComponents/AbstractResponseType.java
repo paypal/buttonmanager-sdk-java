@@ -6,6 +6,10 @@ import urn.ebay.apis.eBLBaseComponents.ErrorType;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -159,102 +163,47 @@ public class AbstractResponseType{
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
-		} else if (n.getNodeType() == Node.ELEMENT_NODE ){
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ) {
 			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
 	}
 	
-	private String convertToXML(Node n){
-		String name = n.getNodeName();
-		short type = n.getNodeType();
-		if (Node.CDATA_SECTION_NODE == type) {
-			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
-		}
-		if (name.startsWith("#")) {
-			return "";
-		}
-		StringBuffer sb = new StringBuffer();
-		sb.append("<").append(name);
-		NamedNodeMap attrs = n.getAttributes();
-		if (attrs != null) {
-			for (int i = 0; i < attrs.getLength(); i++) {
-				Node attr = attrs.item(i);
-				sb.append(" ").append(attr.getNodeName()).append("=\"").append(attr.getNodeValue()).append("\"");
-			}
-		}
-		String textContent = null;
-		NodeList children = n.getChildNodes();
-		if (children.getLength() == 0) {
-			if (((textContent = n.getTextContent())) != null && (!"".equals(textContent))) {
-				sb.append(textContent).append("</").append(name).append(">");
-			} else {
-				sb.append("/>");
-			}
-		} else {
-			sb.append(">");
-			boolean hasValidChildren = false;
-			for (int i = 0; i < children.getLength(); i++) {
-				String childToString = convertToXML(children.item(i));
-				if (!"".equals(childToString)) {
-					sb.append(childToString);
-					hasValidChildren = true;
-				}
-			}
-			if (!hasValidChildren && ((textContent = n.getTextContent()) != null)) {
-				sb.append(textContent);
-			}
-			sb.append("</").append(name).append(">");
-		}
-		return sb.toString();
-	}
-	
-	public AbstractResponseType(Object xmlSoap) throws IOException, SAXException, ParserConfigurationException {
-		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = builderFactory.newDocumentBuilder();
-		InputSource inStream = new InputSource();
-		inStream.setCharacterStream(new StringReader((String)xmlSoap));
-		Document document = builder.parse(inStream);
-		NodeList nodeList= null;
-		
-		String xmlString = "";
-		if (document.getElementsByTagName("Timestamp").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Timestamp").item(0))) {
-				this.Timestamp = (String)document.getElementsByTagName("Timestamp").item(0).getTextContent();
-			}
+	public AbstractResponseType(Node node) throws XPathExpressionException {
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		Node childNode = null;
+		NodeList nodeList = null;
+		childNode = (Node) xpath.evaluate("Timestamp", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Timestamp = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("Ack").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Ack").item(0))) {
-				this.Ack = AckCodeType.fromValue(document.getElementsByTagName("Ack").item(0).getTextContent());
-			}
+		childNode = (Node) xpath.evaluate("Ack", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Ack = AckCodeType.fromValue(childNode.getTextContent());
 		}
-		if (document.getElementsByTagName("CorrelationID").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("CorrelationID").item(0))) {
-				this.CorrelationID = (String)document.getElementsByTagName("CorrelationID").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("CorrelationID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.CorrelationID = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("Errors").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Errors").item(0))) {
-				nodeList = document.getElementsByTagName("Errors");
-				for(int i=0; i < nodeList.getLength(); i++) {
-					xmlString = convertToXML(nodeList.item(i));
-					this.Errors.add(new ErrorType(xmlString));
-				}
+        nodeList = (NodeList) xpath.evaluate("Errors", node, XPathConstants.NODESET);
+		if (nodeList != null && nodeList.getLength() > 0) {
+			for(int i=0; i < nodeList.getLength(); i++) {
+				Node subNode = nodeList.item(i);
+				this.Errors.add(new ErrorType(subNode));
 			}
 		}
-		if (document.getElementsByTagName("Version").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Version").item(0))) {
-				this.Version = (String)document.getElementsByTagName("Version").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("Version", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Version = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("Build").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Build").item(0))) {
-				this.Build = (String)document.getElementsByTagName("Build").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("Build", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Build = childNode.getTextContent();
 		}
 	
 	}

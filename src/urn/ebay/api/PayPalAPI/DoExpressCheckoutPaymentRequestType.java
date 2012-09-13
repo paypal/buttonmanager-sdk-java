@@ -1,6 +1,7 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.DoExpressCheckoutPaymentRequestDetailsType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * This flag indicates that the response should include
@@ -75,7 +76,7 @@ public class DoExpressCheckoutPaymentRequestType extends AbstractRequestType {
 			sb.append("</ebl:DoExpressCheckoutPaymentRequestDetails>");
 		}
 		if(ReturnFMFDetails != null) {
-			sb.append("<urn:ReturnFMFDetails>").append(ReturnFMFDetails);
+			sb.append("<urn:ReturnFMFDetails>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReturnFMFDetails));
 			sb.append("</urn:ReturnFMFDetails>");
 		}
 		return sb.toString();

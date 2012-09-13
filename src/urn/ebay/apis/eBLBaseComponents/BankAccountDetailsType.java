@@ -1,5 +1,6 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.BankAccountTypeType;
+import com.paypal.core.SDKUtil;
 
 /**
  * BankAccountDetailsType 
@@ -99,19 +100,19 @@ public class BankAccountDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(Name != null) {
-			sb.append("<ebl:Name>").append(Name);
+			sb.append("<ebl:Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(Name));
 			sb.append("</ebl:Name>");
 		}
 		if(Type != null) {
-			sb.append("<ebl:Type>").append(Type.getValue());
+			sb.append("<ebl:Type>").append(SDKUtil.escapeInvalidXmlCharsRegex(Type.getValue()));
 			sb.append("</ebl:Type>");
 		}
 		if(RoutingNumber != null) {
-			sb.append("<ebl:RoutingNumber>").append(RoutingNumber);
+			sb.append("<ebl:RoutingNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(RoutingNumber));
 			sb.append("</ebl:RoutingNumber>");
 		}
 		if(AccountNumber != null) {
-			sb.append("<ebl:AccountNumber>").append(AccountNumber);
+			sb.append("<ebl:AccountNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(AccountNumber));
 			sb.append("</ebl:AccountNumber>");
 		}
 		return sb.toString();

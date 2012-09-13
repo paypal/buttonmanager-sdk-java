@@ -1,5 +1,6 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.MerchantPullPaymentCodeType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Type of the Payment is it Instant or Echeck or Any. 
@@ -39,7 +40,7 @@ public class PaymentDirectivesType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(PaymentType != null) {
-			sb.append("<ebl:PaymentType>").append(PaymentType.getValue());
+			sb.append("<ebl:PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentType.getValue()));
 			sb.append("</ebl:PaymentType>");
 		}
 		return sb.toString();

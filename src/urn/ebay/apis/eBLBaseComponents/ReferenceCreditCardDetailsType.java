@@ -2,6 +2,7 @@ package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.CreditCardNumberTypeType;
 import urn.ebay.apis.eBLBaseComponents.PersonNameType;
 import urn.ebay.apis.eBLBaseComponents.AddressType;
+import com.paypal.core.SDKUtil;
 
 /**
  * CreditCardDetailsType for DCC Reference Transaction
@@ -199,11 +200,11 @@ public class ReferenceCreditCardDetailsType{
 			sb.append("</ebl:CreditCardNumberType>");
 		}
 		if(ExpMonth != null) {
-			sb.append("<ebl:ExpMonth>").append(ExpMonth);
+			sb.append("<ebl:ExpMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExpMonth));
 			sb.append("</ebl:ExpMonth>");
 		}
 		if(ExpYear != null) {
-			sb.append("<ebl:ExpYear>").append(ExpYear);
+			sb.append("<ebl:ExpYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExpYear));
 			sb.append("</ebl:ExpYear>");
 		}
 		if(CardOwnerName != null) {
@@ -217,19 +218,19 @@ public class ReferenceCreditCardDetailsType{
 			sb.append("</ebl:BillingAddress>");
 		}
 		if(CVV2 != null) {
-			sb.append("<ebl:CVV2>").append(CVV2);
+			sb.append("<ebl:CVV2>").append(SDKUtil.escapeInvalidXmlCharsRegex(CVV2));
 			sb.append("</ebl:CVV2>");
 		}
 		if(StartMonth != null) {
-			sb.append("<ebl:StartMonth>").append(StartMonth);
+			sb.append("<ebl:StartMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(StartMonth));
 			sb.append("</ebl:StartMonth>");
 		}
 		if(StartYear != null) {
-			sb.append("<ebl:StartYear>").append(StartYear);
+			sb.append("<ebl:StartYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(StartYear));
 			sb.append("</ebl:StartYear>");
 		}
 		if(IssueNumber != null) {
-			sb.append("<ebl:IssueNumber>").append(IssueNumber);
+			sb.append("<ebl:IssueNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(IssueNumber));
 			sb.append("</ebl:IssueNumber>");
 		}
 		return sb.toString();

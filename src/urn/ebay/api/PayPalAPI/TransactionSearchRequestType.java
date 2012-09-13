@@ -5,6 +5,7 @@ import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.CurrencyCodeType;
 import urn.ebay.apis.eBLBaseComponents.PaymentTransactionStatusCodeType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * The earliest transaction date at which to start the search.
@@ -375,31 +376,31 @@ public class TransactionSearchRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(StartDate != null) {
-			sb.append("<urn:StartDate>").append(StartDate);
+			sb.append("<urn:StartDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(StartDate));
 			sb.append("</urn:StartDate>");
 		}
 		if(EndDate != null) {
-			sb.append("<urn:EndDate>").append(EndDate);
+			sb.append("<urn:EndDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(EndDate));
 			sb.append("</urn:EndDate>");
 		}
 		if(Payer != null) {
-			sb.append("<urn:Payer>").append(Payer);
+			sb.append("<urn:Payer>").append(SDKUtil.escapeInvalidXmlCharsRegex(Payer));
 			sb.append("</urn:Payer>");
 		}
 		if(Receiver != null) {
-			sb.append("<urn:Receiver>").append(Receiver);
+			sb.append("<urn:Receiver>").append(SDKUtil.escapeInvalidXmlCharsRegex(Receiver));
 			sb.append("</urn:Receiver>");
 		}
 		if(ReceiptID != null) {
-			sb.append("<urn:ReceiptID>").append(ReceiptID);
+			sb.append("<urn:ReceiptID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReceiptID));
 			sb.append("</urn:ReceiptID>");
 		}
 		if(TransactionID != null) {
-			sb.append("<urn:TransactionID>").append(TransactionID);
+			sb.append("<urn:TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionID));
 			sb.append("</urn:TransactionID>");
 		}
 		if(ProfileID != null) {
-			sb.append("<urn:ProfileID>").append(ProfileID);
+			sb.append("<urn:ProfileID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProfileID));
 			sb.append("</urn:ProfileID>");
 		}
 		if(PayerName != null) {
@@ -408,19 +409,19 @@ public class TransactionSearchRequestType extends AbstractRequestType {
 			sb.append("</urn:PayerName>");
 		}
 		if(AuctionItemNumber != null) {
-			sb.append("<urn:AuctionItemNumber>").append(AuctionItemNumber);
+			sb.append("<urn:AuctionItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(AuctionItemNumber));
 			sb.append("</urn:AuctionItemNumber>");
 		}
 		if(InvoiceID != null) {
-			sb.append("<urn:InvoiceID>").append(InvoiceID);
+			sb.append("<urn:InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(InvoiceID));
 			sb.append("</urn:InvoiceID>");
 		}
 		if(CardNumber != null) {
-			sb.append("<urn:CardNumber>").append(CardNumber);
+			sb.append("<urn:CardNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(CardNumber));
 			sb.append("</urn:CardNumber>");
 		}
 		if(TransactionClass != null) {
-			sb.append("<urn:TransactionClass>").append(TransactionClass.getValue());
+			sb.append("<urn:TransactionClass>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionClass.getValue()));
 			sb.append("</urn:TransactionClass>");
 		}
 		if(Amount != null) {
@@ -429,11 +430,11 @@ public class TransactionSearchRequestType extends AbstractRequestType {
 			sb.append("</urn:Amount>");
 		}
 		if(CurrencyCode != null) {
-			sb.append("<urn:CurrencyCode>").append(CurrencyCode.getValue());
+			sb.append("<urn:CurrencyCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(CurrencyCode.getValue()));
 			sb.append("</urn:CurrencyCode>");
 		}
 		if(Status != null) {
-			sb.append("<urn:Status>").append(Status.getValue());
+			sb.append("<urn:Status>").append(SDKUtil.escapeInvalidXmlCharsRegex(Status.getValue()));
 			sb.append("</urn:Status>");
 		}
 		return sb.toString();

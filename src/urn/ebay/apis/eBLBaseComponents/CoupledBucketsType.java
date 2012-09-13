@@ -2,6 +2,7 @@ package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.CoupleType;
 import java.util.List;
 import java.util.ArrayList;
+import com.paypal.core.SDKUtil;
 
 /**
  * Defines relationship between buckets 
@@ -87,16 +88,16 @@ public class CoupledBucketsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(CoupleType != null) {
-			sb.append("<ebl:CoupleType>").append(CoupleType.getValue());
+			sb.append("<ebl:CoupleType>").append(SDKUtil.escapeInvalidXmlCharsRegex(CoupleType.getValue()));
 			sb.append("</ebl:CoupleType>");
 		}
 		if(CoupledPaymentRequestID != null) {
-			sb.append("<ebl:CoupledPaymentRequestID>").append(CoupledPaymentRequestID);
+			sb.append("<ebl:CoupledPaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(CoupledPaymentRequestID));
 			sb.append("</ebl:CoupledPaymentRequestID>");
 		}
 		if(PaymentRequestID != null) {
 			for(int i=0; i < PaymentRequestID.size(); i++) {
-				sb.append("<ebl:PaymentRequestID>").append(PaymentRequestID.get(i));
+				sb.append("<ebl:PaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentRequestID.get(i)));
 				sb.append("</ebl:PaymentRequestID>");
 			}
 		}

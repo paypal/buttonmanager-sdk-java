@@ -1,4 +1,5 @@
 package urn.ebay.apis.eBLBaseComponents;
+import com.paypal.core.SDKUtil;
 
 /**
  * Country code associated with this phone number. 
@@ -76,15 +77,15 @@ public class PhoneNumberType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(CountryCode != null) {
-			sb.append("<ebl:CountryCode>").append(CountryCode);
+			sb.append("<ebl:CountryCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(CountryCode));
 			sb.append("</ebl:CountryCode>");
 		}
 		if(PhoneNumber != null) {
-			sb.append("<ebl:PhoneNumber>").append(PhoneNumber);
+			sb.append("<ebl:PhoneNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(PhoneNumber));
 			sb.append("</ebl:PhoneNumber>");
 		}
 		if(Extension != null) {
-			sb.append("<ebl:Extension>").append(Extension);
+			sb.append("<ebl:Extension>").append(SDKUtil.escapeInvalidXmlCharsRegex(Extension));
 			sb.append("</ebl:Extension>");
 		}
 		return sb.toString();

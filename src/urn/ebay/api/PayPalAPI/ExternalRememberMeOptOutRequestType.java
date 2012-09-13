@@ -1,6 +1,7 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.ExternalRememberMeOwnerDetailsType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * The merchant passes in the ExternalRememberMeID to identify
@@ -77,7 +78,7 @@ public class ExternalRememberMeOptOutRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(ExternalRememberMeID != null) {
-			sb.append("<urn:ExternalRememberMeID>").append(ExternalRememberMeID);
+			sb.append("<urn:ExternalRememberMeID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExternalRememberMeID));
 			sb.append("</urn:ExternalRememberMeID>");
 		}
 		if(ExternalRememberMeOwnerDetails != null) {

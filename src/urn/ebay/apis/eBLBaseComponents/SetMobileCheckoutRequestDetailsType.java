@@ -2,6 +2,7 @@ package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.PhoneNumberType;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.AddressType;
+import com.paypal.core.SDKUtil;
 
 /**
  * The phone number of the buyer's mobile device, if available.
@@ -353,35 +354,35 @@ public class SetMobileCheckoutRequestDetailsType{
 			sb.append("</ebl:Shipping>");
 		}
 		if(ItemName != null) {
-			sb.append("<ebl:ItemName>").append(ItemName);
+			sb.append("<ebl:ItemName>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemName));
 			sb.append("</ebl:ItemName>");
 		}
 		if(ItemNumber != null) {
-			sb.append("<ebl:ItemNumber>").append(ItemNumber);
+			sb.append("<ebl:ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemNumber));
 			sb.append("</ebl:ItemNumber>");
 		}
 		if(Custom != null) {
-			sb.append("<ebl:Custom>").append(Custom);
+			sb.append("<ebl:Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(Custom));
 			sb.append("</ebl:Custom>");
 		}
 		if(InvoiceID != null) {
-			sb.append("<ebl:InvoiceID>").append(InvoiceID);
+			sb.append("<ebl:InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(InvoiceID));
 			sb.append("</ebl:InvoiceID>");
 		}
 		if(ReturnURL != null) {
-			sb.append("<ebl:ReturnURL>").append(ReturnURL);
+			sb.append("<ebl:ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReturnURL));
 			sb.append("</ebl:ReturnURL>");
 		}
 		if(CancelURL != null) {
-			sb.append("<ebl:CancelURL>").append(CancelURL);
+			sb.append("<ebl:CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(CancelURL));
 			sb.append("</ebl:CancelURL>");
 		}
 		if(AddressDisplayOptions != null) {
-			sb.append("<ebl:AddressDisplayOptions>").append(AddressDisplayOptions);
+			sb.append("<ebl:AddressDisplayOptions>").append(SDKUtil.escapeInvalidXmlCharsRegex(AddressDisplayOptions));
 			sb.append("</ebl:AddressDisplayOptions>");
 		}
 		if(SharePhone != null) {
-			sb.append("<ebl:SharePhone>").append(SharePhone);
+			sb.append("<ebl:SharePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(SharePhone));
 			sb.append("</ebl:SharePhone>");
 		}
 		if(ShipToAddress != null) {
@@ -390,7 +391,7 @@ public class SetMobileCheckoutRequestDetailsType{
 			sb.append("</ebl:ShipToAddress>");
 		}
 		if(BuyerEmail != null) {
-			sb.append("<ebl:BuyerEmail>").append(BuyerEmail);
+			sb.append("<ebl:BuyerEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(BuyerEmail));
 			sb.append("</ebl:BuyerEmail>");
 		}
 		return sb.toString();

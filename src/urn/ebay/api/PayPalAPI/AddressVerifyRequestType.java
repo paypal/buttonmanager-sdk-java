@@ -1,5 +1,6 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Email address of buyer to be verified. Required Maximum
@@ -103,15 +104,15 @@ public class AddressVerifyRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(Email != null) {
-			sb.append("<urn:Email>").append(Email);
+			sb.append("<urn:Email>").append(SDKUtil.escapeInvalidXmlCharsRegex(Email));
 			sb.append("</urn:Email>");
 		}
 		if(Street != null) {
-			sb.append("<urn:Street>").append(Street);
+			sb.append("<urn:Street>").append(SDKUtil.escapeInvalidXmlCharsRegex(Street));
 			sb.append("</urn:Street>");
 		}
 		if(Zip != null) {
-			sb.append("<urn:Zip>").append(Zip);
+			sb.append("<urn:Zip>").append(SDKUtil.escapeInvalidXmlCharsRegex(Zip));
 			sb.append("</urn:Zip>");
 		}
 		return sb.toString();

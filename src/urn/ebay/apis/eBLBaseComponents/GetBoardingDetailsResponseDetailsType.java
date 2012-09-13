@@ -6,6 +6,10 @@ import urn.ebay.apis.eBLBaseComponents.APICredentialsType;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -335,154 +339,87 @@ public class GetBoardingDetailsResponseDetailsType{
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
-		} else if (n.getNodeType() == Node.ELEMENT_NODE ){
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ) {
 			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
 	}
 	
-	private String convertToXML(Node n){
-		String name = n.getNodeName();
-		short type = n.getNodeType();
-		if (Node.CDATA_SECTION_NODE == type) {
-			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
+	public GetBoardingDetailsResponseDetailsType(Node node) throws XPathExpressionException {
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		Node childNode = null;
+		NodeList nodeList = null;
+		childNode = (Node) xpath.evaluate("Status", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Status = BoardingStatusType.fromValue(childNode.getTextContent());
 		}
-		if (name.startsWith("#")) {
-			return "";
-		}
-		StringBuffer sb = new StringBuffer();
-		sb.append("<").append(name);
-		NamedNodeMap attrs = n.getAttributes();
-		if (attrs != null) {
-			for (int i = 0; i < attrs.getLength(); i++) {
-				Node attr = attrs.item(i);
-				sb.append(" ").append(attr.getNodeName()).append("=\"").append(attr.getNodeValue()).append("\"");
-			}
-		}
-		String textContent = null;
-		NodeList children = n.getChildNodes();
-		if (children.getLength() == 0) {
-			if (((textContent = n.getTextContent())) != null && (!"".equals(textContent))) {
-				sb.append(textContent).append("</").append(name).append(">");
-			} else {
-				sb.append("/>");
-			}
-		} else {
-			sb.append(">");
-			boolean hasValidChildren = false;
-			for (int i = 0; i < children.getLength(); i++) {
-				String childToString = convertToXML(children.item(i));
-				if (!"".equals(childToString)) {
-					sb.append(childToString);
-					hasValidChildren = true;
-				}
-			}
-			if (!hasValidChildren && ((textContent = n.getTextContent()) != null)) {
-				sb.append(textContent);
-			}
-			sb.append("</").append(name).append(">");
-		}
-		return sb.toString();
-	}
-	
-	public GetBoardingDetailsResponseDetailsType(Object xmlSoap) throws IOException, SAXException, ParserConfigurationException {
-		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = builderFactory.newDocumentBuilder();
-		InputSource inStream = new InputSource();
-		inStream.setCharacterStream(new StringReader((String)xmlSoap));
-		Document document = builder.parse(inStream);
-		NodeList nodeList= null;
-		
-		String xmlString = "";
-		if(document.getElementsByTagName("Status").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Status").item(0))) {
-				this.Status = BoardingStatusType.fromValue(document.getElementsByTagName("Status").item(0).getTextContent());
-			}
-		}
-		if (document.getElementsByTagName("StartDate").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("StartDate").item(0))) {
-				this.StartDate = (String)document.getElementsByTagName("StartDate").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("StartDate", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.StartDate = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("LastUpdated").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("LastUpdated").item(0))) {
-				this.LastUpdated = (String)document.getElementsByTagName("LastUpdated").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("LastUpdated", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.LastUpdated = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("Reason").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Reason").item(0))) {
-				this.Reason = (String)document.getElementsByTagName("Reason").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("Reason", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Reason = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("ProgramName").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ProgramName").item(0))) {
-				this.ProgramName = (String)document.getElementsByTagName("ProgramName").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("ProgramName", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ProgramName = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("ProgramCode").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ProgramCode").item(0))) {
-				this.ProgramCode = (String)document.getElementsByTagName("ProgramCode").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("ProgramCode", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ProgramCode = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("CampaignID").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("CampaignID").item(0))) {
-				this.CampaignID = (String)document.getElementsByTagName("CampaignID").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("CampaignID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.CampaignID = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("UserWithdrawalLimit").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("UserWithdrawalLimit").item(0))) {
-				this.UserWithdrawalLimit = UserWithdrawalLimitTypeType.fromValue(document.getElementsByTagName("UserWithdrawalLimit").item(0).getTextContent());
-			}
+		childNode = (Node) xpath.evaluate("UserWithdrawalLimit", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.UserWithdrawalLimit = UserWithdrawalLimitTypeType.fromValue(childNode.getTextContent());
 		}
-		if (document.getElementsByTagName("PartnerCustom").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("PartnerCustom").item(0))) {
-				this.PartnerCustom = (String)document.getElementsByTagName("PartnerCustom").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("PartnerCustom", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.PartnerCustom = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("AccountOwner").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("AccountOwner").item(0))) {
-				nodeList = document.getElementsByTagName("AccountOwner");
-				xmlString = convertToXML(nodeList.item(0));
-				this.AccountOwner =  new PayerInfoType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("AccountOwner", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.AccountOwner =  new PayerInfoType(childNode);
 		}
-		if(document.getElementsByTagName("Credentials").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Credentials").item(0))) {
-				nodeList = document.getElementsByTagName("Credentials");
-				xmlString = convertToXML(nodeList.item(0));
-				this.Credentials =  new APICredentialsType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("Credentials", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Credentials =  new APICredentialsType(childNode);
 		}
-		if (document.getElementsByTagName("ConfigureAPIs").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ConfigureAPIs").item(0))) {
-				this.ConfigureAPIs = (String)document.getElementsByTagName("ConfigureAPIs").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("ConfigureAPIs", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ConfigureAPIs = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("EmailVerificationStatus").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("EmailVerificationStatus").item(0))) {
-				this.EmailVerificationStatus = (String)document.getElementsByTagName("EmailVerificationStatus").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("EmailVerificationStatus", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.EmailVerificationStatus = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("VettingStatus").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("VettingStatus").item(0))) {
-				this.VettingStatus = (String)document.getElementsByTagName("VettingStatus").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("VettingStatus", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.VettingStatus = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("BankAccountVerificationStatus").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("BankAccountVerificationStatus").item(0))) {
-				this.BankAccountVerificationStatus = (String)document.getElementsByTagName("BankAccountVerificationStatus").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("BankAccountVerificationStatus", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.BankAccountVerificationStatus = childNode.getTextContent();
 		}
 	
 	}

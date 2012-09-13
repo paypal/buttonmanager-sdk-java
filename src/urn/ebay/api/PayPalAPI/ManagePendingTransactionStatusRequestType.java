@@ -1,6 +1,7 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.FMFPendingTransactionActionType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -70,11 +71,11 @@ public class ManagePendingTransactionStatusRequestType extends AbstractRequestTy
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(TransactionID != null) {
-			sb.append("<urn:TransactionID>").append(TransactionID);
+			sb.append("<urn:TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionID));
 			sb.append("</urn:TransactionID>");
 		}
 		if(Action != null) {
-			sb.append("<urn:Action>").append(Action.getValue());
+			sb.append("<urn:Action>").append(SDKUtil.escapeInvalidXmlCharsRegex(Action.getValue()));
 			sb.append("</urn:Action>");
 		}
 		return sb.toString();

@@ -1,5 +1,6 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.BillingAgreementDetailsType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -249,43 +250,43 @@ public class SetCustomerBillingAgreementRequestDetailsType{
 			sb.append("</ebl:BillingAgreementDetails>");
 		}
 		if(ReturnURL != null) {
-			sb.append("<ebl:ReturnURL>").append(ReturnURL);
+			sb.append("<ebl:ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReturnURL));
 			sb.append("</ebl:ReturnURL>");
 		}
 		if(CancelURL != null) {
-			sb.append("<ebl:CancelURL>").append(CancelURL);
+			sb.append("<ebl:CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(CancelURL));
 			sb.append("</ebl:CancelURL>");
 		}
 		if(LocaleCode != null) {
-			sb.append("<ebl:LocaleCode>").append(LocaleCode);
+			sb.append("<ebl:LocaleCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(LocaleCode));
 			sb.append("</ebl:LocaleCode>");
 		}
 		if(PageStyle != null) {
-			sb.append("<ebl:PageStyle>").append(PageStyle);
+			sb.append("<ebl:PageStyle>").append(SDKUtil.escapeInvalidXmlCharsRegex(PageStyle));
 			sb.append("</ebl:PageStyle>");
 		}
 		if(cppHeaderImage != null) {
-			sb.append("<ebl:cpp-header-image>").append(cppHeaderImage);
-			sb.append("</ebl:cpp-header-image>");
+			sb.append("<ebl:cppHeaderImage>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderImage));
+			sb.append("</ebl:cppHeaderImage>");
 		}
 		if(cppHeaderBorderColor != null) {
-			sb.append("<ebl:cpp-header-border-color>").append(cppHeaderBorderColor);
-			sb.append("</ebl:cpp-header-border-color>");
+			sb.append("<ebl:cppHeaderBorderColor>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBorderColor));
+			sb.append("</ebl:cppHeaderBorderColor>");
 		}
 		if(cppHeaderBackColor != null) {
-			sb.append("<ebl:cpp-header-back-color>").append(cppHeaderBackColor);
-			sb.append("</ebl:cpp-header-back-color>");
+			sb.append("<ebl:cppHeaderBackColor>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBackColor));
+			sb.append("</ebl:cppHeaderBackColor>");
 		}
 		if(cppPayflowColor != null) {
-			sb.append("<ebl:cpp-payflow-color>").append(cppPayflowColor);
-			sb.append("</ebl:cpp-payflow-color>");
+			sb.append("<ebl:cppPayflowColor>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppPayflowColor));
+			sb.append("</ebl:cppPayflowColor>");
 		}
 		if(BuyerEmail != null) {
-			sb.append("<ebl:BuyerEmail>").append(BuyerEmail);
+			sb.append("<ebl:BuyerEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(BuyerEmail));
 			sb.append("</ebl:BuyerEmail>");
 		}
 		if(ReqBillingAddress != null) {
-			sb.append("<ebl:ReqBillingAddress>").append(ReqBillingAddress);
+			sb.append("<ebl:ReqBillingAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReqBillingAddress));
 			sb.append("</ebl:ReqBillingAddress>");
 		}
 		return sb.toString();

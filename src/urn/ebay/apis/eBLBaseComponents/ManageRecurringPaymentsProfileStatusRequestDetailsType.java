@@ -1,5 +1,6 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.StatusChangeActionType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -87,15 +88,15 @@ public class ManageRecurringPaymentsProfileStatusRequestDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(ProfileID != null) {
-			sb.append("<ebl:ProfileID>").append(ProfileID);
+			sb.append("<ebl:ProfileID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProfileID));
 			sb.append("</ebl:ProfileID>");
 		}
 		if(Action != null) {
-			sb.append("<ebl:Action>").append(Action.getValue());
+			sb.append("<ebl:Action>").append(SDKUtil.escapeInvalidXmlCharsRegex(Action.getValue()));
 			sb.append("</ebl:Action>");
 		}
 		if(Note != null) {
-			sb.append("<ebl:Note>").append(Note);
+			sb.append("<ebl:Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(Note));
 			sb.append("</ebl:Note>");
 		}
 		return sb.toString();

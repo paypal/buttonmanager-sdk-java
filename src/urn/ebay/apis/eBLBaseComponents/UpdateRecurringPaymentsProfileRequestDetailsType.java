@@ -4,6 +4,7 @@ import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.AutoBillType;
 import urn.ebay.apis.eBLBaseComponents.CreditCardDetailsType;
 import urn.ebay.apis.eBLBaseComponents.BillingPeriodDetailsType_Update;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -356,19 +357,19 @@ public class UpdateRecurringPaymentsProfileRequestDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(ProfileID != null) {
-			sb.append("<ebl:ProfileID>").append(ProfileID);
+			sb.append("<ebl:ProfileID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProfileID));
 			sb.append("</ebl:ProfileID>");
 		}
 		if(Note != null) {
-			sb.append("<ebl:Note>").append(Note);
+			sb.append("<ebl:Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(Note));
 			sb.append("</ebl:Note>");
 		}
 		if(Description != null) {
-			sb.append("<ebl:Description>").append(Description);
+			sb.append("<ebl:Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(Description));
 			sb.append("</ebl:Description>");
 		}
 		if(SubscriberName != null) {
-			sb.append("<ebl:SubscriberName>").append(SubscriberName);
+			sb.append("<ebl:SubscriberName>").append(SDKUtil.escapeInvalidXmlCharsRegex(SubscriberName));
 			sb.append("</ebl:SubscriberName>");
 		}
 		if(SubscriberShippingAddress != null) {
@@ -377,11 +378,11 @@ public class UpdateRecurringPaymentsProfileRequestDetailsType{
 			sb.append("</ebl:SubscriberShippingAddress>");
 		}
 		if(ProfileReference != null) {
-			sb.append("<ebl:ProfileReference>").append(ProfileReference);
+			sb.append("<ebl:ProfileReference>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProfileReference));
 			sb.append("</ebl:ProfileReference>");
 		}
 		if(AdditionalBillingCycles != null) {
-			sb.append("<ebl:AdditionalBillingCycles>").append(AdditionalBillingCycles);
+			sb.append("<ebl:AdditionalBillingCycles>").append(SDKUtil.escapeInvalidXmlCharsRegex(AdditionalBillingCycles));
 			sb.append("</ebl:AdditionalBillingCycles>");
 		}
 		if(Amount != null) {
@@ -405,11 +406,11 @@ public class UpdateRecurringPaymentsProfileRequestDetailsType{
 			sb.append("</ebl:OutstandingBalance>");
 		}
 		if(AutoBillOutstandingAmount != null) {
-			sb.append("<ebl:AutoBillOutstandingAmount>").append(AutoBillOutstandingAmount.getValue());
+			sb.append("<ebl:AutoBillOutstandingAmount>").append(SDKUtil.escapeInvalidXmlCharsRegex(AutoBillOutstandingAmount.getValue()));
 			sb.append("</ebl:AutoBillOutstandingAmount>");
 		}
 		if(MaxFailedPayments != null) {
-			sb.append("<ebl:MaxFailedPayments>").append(MaxFailedPayments);
+			sb.append("<ebl:MaxFailedPayments>").append(SDKUtil.escapeInvalidXmlCharsRegex(MaxFailedPayments));
 			sb.append("</ebl:MaxFailedPayments>");
 		}
 		if(CreditCard != null) {
@@ -418,7 +419,7 @@ public class UpdateRecurringPaymentsProfileRequestDetailsType{
 			sb.append("</ebl:CreditCard>");
 		}
 		if(BillingStartDate != null) {
-			sb.append("<ebl:BillingStartDate>").append(BillingStartDate);
+			sb.append("<ebl:BillingStartDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingStartDate));
 			sb.append("</ebl:BillingStartDate>");
 		}
 		if(TrialPeriod != null) {

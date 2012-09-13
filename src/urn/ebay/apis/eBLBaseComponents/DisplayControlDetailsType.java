@@ -1,4 +1,5 @@
 package urn.ebay.apis.eBLBaseComponents;
+import com.paypal.core.SDKUtil;
 
 /**
  * Contains elements that allows customization of display (user
@@ -41,7 +42,7 @@ public class DisplayControlDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(InContextPaymentButtonImage != null) {
-			sb.append("<ebl:InContextPaymentButtonImage>").append(InContextPaymentButtonImage);
+			sb.append("<ebl:InContextPaymentButtonImage>").append(SDKUtil.escapeInvalidXmlCharsRegex(InContextPaymentButtonImage));
 			sb.append("</ebl:InContextPaymentButtonImage>");
 		}
 		return sb.toString();

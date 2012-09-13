@@ -5,9 +5,14 @@ import urn.ebay.apis.eBLBaseComponents.CountryCodeType;
 import urn.ebay.apis.eBLBaseComponents.AddressType;
 import urn.ebay.apis.eBLBaseComponents.TaxIdDetailsType;
 import urn.ebay.apis.EnhancedDataTypes.EnhancedPayerInfoType;
+import com.paypal.core.SDKUtil;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -233,15 +238,15 @@ public class PayerInfoType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(Payer != null) {
-			sb.append("<ebl:Payer>").append(Payer);
+			sb.append("<ebl:Payer>").append(SDKUtil.escapeInvalidXmlCharsRegex(Payer));
 			sb.append("</ebl:Payer>");
 		}
 		if(PayerID != null) {
-			sb.append("<ebl:PayerID>").append(PayerID);
+			sb.append("<ebl:PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(PayerID));
 			sb.append("</ebl:PayerID>");
 		}
 		if(PayerStatus != null) {
-			sb.append("<ebl:PayerStatus>").append(PayerStatus.getValue());
+			sb.append("<ebl:PayerStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(PayerStatus.getValue()));
 			sb.append("</ebl:PayerStatus>");
 		}
 		if(PayerName != null) {
@@ -250,11 +255,11 @@ public class PayerInfoType{
 			sb.append("</ebl:PayerName>");
 		}
 		if(PayerCountry != null) {
-			sb.append("<ebl:PayerCountry>").append(PayerCountry.getValue());
+			sb.append("<ebl:PayerCountry>").append(SDKUtil.escapeInvalidXmlCharsRegex(PayerCountry.getValue()));
 			sb.append("</ebl:PayerCountry>");
 		}
 		if(PayerBusiness != null) {
-			sb.append("<ebl:PayerBusiness>").append(PayerBusiness);
+			sb.append("<ebl:PayerBusiness>").append(SDKUtil.escapeInvalidXmlCharsRegex(PayerBusiness));
 			sb.append("</ebl:PayerBusiness>");
 		}
 		if(Address != null) {
@@ -263,7 +268,7 @@ public class PayerInfoType{
 			sb.append("</ebl:Address>");
 		}
 		if(ContactPhone != null) {
-			sb.append("<ebl:ContactPhone>").append(ContactPhone);
+			sb.append("<ebl:ContactPhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(ContactPhone));
 			sb.append("</ebl:ContactPhone>");
 		}
 		if(TaxIdDetails != null) {
@@ -282,127 +287,61 @@ public class PayerInfoType{
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
-		} else if (n.getNodeType() == Node.ELEMENT_NODE ){
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ) {
 			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
 	}
 	
-	private String convertToXML(Node n){
-		String name = n.getNodeName();
-		short type = n.getNodeType();
-		if (Node.CDATA_SECTION_NODE == type) {
-			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
-		}
-		if (name.startsWith("#")) {
-			return "";
-		}
-		StringBuffer sb = new StringBuffer();
-		sb.append("<").append(name);
-		NamedNodeMap attrs = n.getAttributes();
-		if (attrs != null) {
-			for (int i = 0; i < attrs.getLength(); i++) {
-				Node attr = attrs.item(i);
-				sb.append(" ").append(attr.getNodeName()).append("=\"").append(attr.getNodeValue()).append("\"");
-			}
-		}
-		String textContent = null;
-		NodeList children = n.getChildNodes();
-		if (children.getLength() == 0) {
-			if (((textContent = n.getTextContent())) != null && (!"".equals(textContent))) {
-				sb.append(textContent).append("</").append(name).append(">");
-			} else {
-				sb.append("/>");
-			}
-		} else {
-			sb.append(">");
-			boolean hasValidChildren = false;
-			for (int i = 0; i < children.getLength(); i++) {
-				String childToString = convertToXML(children.item(i));
-				if (!"".equals(childToString)) {
-					sb.append(childToString);
-					hasValidChildren = true;
-				}
-			}
-			if (!hasValidChildren && ((textContent = n.getTextContent()) != null)) {
-				sb.append(textContent);
-			}
-			sb.append("</").append(name).append(">");
-		}
-		return sb.toString();
-	}
-	
-	public PayerInfoType(Object xmlSoap) throws IOException, SAXException, ParserConfigurationException {
-		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = builderFactory.newDocumentBuilder();
-		InputSource inStream = new InputSource();
-		inStream.setCharacterStream(new StringReader((String)xmlSoap));
-		Document document = builder.parse(inStream);
-		NodeList nodeList= null;
-		
-		String xmlString = "";
-		if (document.getElementsByTagName("Payer").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Payer").item(0))) {
-				this.Payer = (String)document.getElementsByTagName("Payer").item(0).getTextContent();
-			}
+	public PayerInfoType(Node node) throws XPathExpressionException {
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		Node childNode = null;
+		NodeList nodeList = null;
+		childNode = (Node) xpath.evaluate("Payer", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Payer = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("PayerID").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("PayerID").item(0))) {
-				this.PayerID = (String)document.getElementsByTagName("PayerID").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("PayerID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.PayerID = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("PayerStatus").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("PayerStatus").item(0))) {
-				this.PayerStatus = PayPalUserStatusCodeType.fromValue(document.getElementsByTagName("PayerStatus").item(0).getTextContent());
-			}
+		childNode = (Node) xpath.evaluate("PayerStatus", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.PayerStatus = PayPalUserStatusCodeType.fromValue(childNode.getTextContent());
 		}
-		if(document.getElementsByTagName("PayerName").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("PayerName").item(0))) {
-				nodeList = document.getElementsByTagName("PayerName");
-				xmlString = convertToXML(nodeList.item(0));
-				this.PayerName =  new PersonNameType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("PayerName", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.PayerName =  new PersonNameType(childNode);
 		}
-		if(document.getElementsByTagName("PayerCountry").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("PayerCountry").item(0))) {
-				this.PayerCountry = CountryCodeType.fromValue(document.getElementsByTagName("PayerCountry").item(0).getTextContent());
-			}
+		childNode = (Node) xpath.evaluate("PayerCountry", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.PayerCountry = CountryCodeType.fromValue(childNode.getTextContent());
 		}
-		if (document.getElementsByTagName("PayerBusiness").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("PayerBusiness").item(0))) {
-				this.PayerBusiness = (String)document.getElementsByTagName("PayerBusiness").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("PayerBusiness", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.PayerBusiness = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("Address").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Address").item(0))) {
-				nodeList = document.getElementsByTagName("Address");
-				xmlString = convertToXML(nodeList.item(0));
-				this.Address =  new AddressType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("Address", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Address =  new AddressType(childNode);
 		}
-		if (document.getElementsByTagName("ContactPhone").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ContactPhone").item(0))) {
-				this.ContactPhone = (String)document.getElementsByTagName("ContactPhone").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("ContactPhone", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ContactPhone = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("TaxIdDetails").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("TaxIdDetails").item(0))) {
-				nodeList = document.getElementsByTagName("TaxIdDetails");
-				xmlString = convertToXML(nodeList.item(0));
-				this.TaxIdDetails =  new TaxIdDetailsType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("TaxIdDetails", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.TaxIdDetails =  new TaxIdDetailsType(childNode);
 		}
-		if(document.getElementsByTagName("EnhancedPayerInfo").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("EnhancedPayerInfo").item(0))) {
-				nodeList = document.getElementsByTagName("EnhancedPayerInfo");
-				xmlString = convertToXML(nodeList.item(0));
-				this.EnhancedPayerInfo =  new EnhancedPayerInfoType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("EnhancedPayerInfo", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.EnhancedPayerInfo =  new EnhancedPayerInfoType(childNode);
 		}
 	}
  

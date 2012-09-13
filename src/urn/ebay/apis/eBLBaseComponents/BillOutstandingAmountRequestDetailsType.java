@@ -1,5 +1,6 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -85,7 +86,7 @@ public class BillOutstandingAmountRequestDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(ProfileID != null) {
-			sb.append("<ebl:ProfileID>").append(ProfileID);
+			sb.append("<ebl:ProfileID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProfileID));
 			sb.append("</ebl:ProfileID>");
 		}
 		if(Amount != null) {
@@ -94,7 +95,7 @@ public class BillOutstandingAmountRequestDetailsType{
 			sb.append("</ebl:Amount>");
 		}
 		if(Note != null) {
-			sb.append("<ebl:Note>").append(Note);
+			sb.append("<ebl:Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(Note));
 			sb.append("</ebl:Note>");
 		}
 		return sb.toString();

@@ -1,5 +1,6 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Button ID of button to return.  Required Character length
@@ -50,7 +51,7 @@ public class BMGetButtonDetailsRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(HostedButtonID != null) {
-			sb.append("<urn:HostedButtonID>").append(HostedButtonID);
+			sb.append("<urn:HostedButtonID>").append(SDKUtil.escapeInvalidXmlCharsRegex(HostedButtonID));
 			sb.append("</urn:HostedButtonID>");
 		}
 		return sb.toString();

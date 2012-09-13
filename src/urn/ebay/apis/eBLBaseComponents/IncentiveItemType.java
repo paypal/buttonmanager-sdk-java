@@ -1,5 +1,6 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -115,15 +116,15 @@ public class IncentiveItemType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(ItemId != null) {
-			sb.append("<ebl:ItemId>").append(ItemId);
+			sb.append("<ebl:ItemId>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemId));
 			sb.append("</ebl:ItemId>");
 		}
 		if(PurchaseTime != null) {
-			sb.append("<ebl:PurchaseTime>").append(PurchaseTime);
+			sb.append("<ebl:PurchaseTime>").append(SDKUtil.escapeInvalidXmlCharsRegex(PurchaseTime));
 			sb.append("</ebl:PurchaseTime>");
 		}
 		if(ItemCategoryList != null) {
-			sb.append("<ebl:ItemCategoryList>").append(ItemCategoryList);
+			sb.append("<ebl:ItemCategoryList>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemCategoryList));
 			sb.append("</ebl:ItemCategoryList>");
 		}
 		if(ItemPrice != null) {
@@ -132,7 +133,7 @@ public class IncentiveItemType{
 			sb.append("</ebl:ItemPrice>");
 		}
 		if(ItemQuantity != null) {
-			sb.append("<ebl:ItemQuantity>").append(ItemQuantity);
+			sb.append("<ebl:ItemQuantity>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemQuantity));
 			sb.append("</ebl:ItemQuantity>");
 		}
 		return sb.toString();

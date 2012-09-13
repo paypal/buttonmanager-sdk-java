@@ -1,5 +1,6 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -40,7 +41,7 @@ public class GetBalanceRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(ReturnAllCurrencies != null) {
-			sb.append("<urn:ReturnAllCurrencies>").append(ReturnAllCurrencies);
+			sb.append("<urn:ReturnAllCurrencies>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReturnAllCurrencies));
 			sb.append("</urn:ReturnAllCurrencies>");
 		}
 		return sb.toString();

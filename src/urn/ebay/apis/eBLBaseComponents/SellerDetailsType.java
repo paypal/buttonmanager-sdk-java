@@ -1,7 +1,12 @@
 package urn.ebay.apis.eBLBaseComponents;
+import com.paypal.core.SDKUtil;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -131,23 +136,23 @@ public class SellerDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(SellerId != null) {
-			sb.append("<ebl:SellerId>").append(SellerId);
+			sb.append("<ebl:SellerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(SellerId));
 			sb.append("</ebl:SellerId>");
 		}
 		if(SellerUserName != null) {
-			sb.append("<ebl:SellerUserName>").append(SellerUserName);
+			sb.append("<ebl:SellerUserName>").append(SDKUtil.escapeInvalidXmlCharsRegex(SellerUserName));
 			sb.append("</ebl:SellerUserName>");
 		}
 		if(SellerRegistrationDate != null) {
-			sb.append("<ebl:SellerRegistrationDate>").append(SellerRegistrationDate);
+			sb.append("<ebl:SellerRegistrationDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(SellerRegistrationDate));
 			sb.append("</ebl:SellerRegistrationDate>");
 		}
 		if(PayPalAccountID != null) {
-			sb.append("<ebl:PayPalAccountID>").append(PayPalAccountID);
+			sb.append("<ebl:PayPalAccountID>").append(SDKUtil.escapeInvalidXmlCharsRegex(PayPalAccountID));
 			sb.append("</ebl:PayPalAccountID>");
 		}
 		if(SecureMerchantAccountID != null) {
-			sb.append("<ebl:SecureMerchantAccountID>").append(SecureMerchantAccountID);
+			sb.append("<ebl:SecureMerchantAccountID>").append(SDKUtil.escapeInvalidXmlCharsRegex(SecureMerchantAccountID));
 			sb.append("</ebl:SecureMerchantAccountID>");
 		}
 		return sb.toString();
@@ -156,94 +161,41 @@ public class SellerDetailsType{
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
-		} else if (n.getNodeType() == Node.ELEMENT_NODE ){
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ) {
 			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
 	}
 	
-	private String convertToXML(Node n){
-		String name = n.getNodeName();
-		short type = n.getNodeType();
-		if (Node.CDATA_SECTION_NODE == type) {
-			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
-		}
-		if (name.startsWith("#")) {
-			return "";
-		}
-		StringBuffer sb = new StringBuffer();
-		sb.append("<").append(name);
-		NamedNodeMap attrs = n.getAttributes();
-		if (attrs != null) {
-			for (int i = 0; i < attrs.getLength(); i++) {
-				Node attr = attrs.item(i);
-				sb.append(" ").append(attr.getNodeName()).append("=\"").append(attr.getNodeValue()).append("\"");
-			}
-		}
-		String textContent = null;
-		NodeList children = n.getChildNodes();
-		if (children.getLength() == 0) {
-			if (((textContent = n.getTextContent())) != null && (!"".equals(textContent))) {
-				sb.append(textContent).append("</").append(name).append(">");
-			} else {
-				sb.append("/>");
-			}
-		} else {
-			sb.append(">");
-			boolean hasValidChildren = false;
-			for (int i = 0; i < children.getLength(); i++) {
-				String childToString = convertToXML(children.item(i));
-				if (!"".equals(childToString)) {
-					sb.append(childToString);
-					hasValidChildren = true;
-				}
-			}
-			if (!hasValidChildren && ((textContent = n.getTextContent()) != null)) {
-				sb.append(textContent);
-			}
-			sb.append("</").append(name).append(">");
-		}
-		return sb.toString();
-	}
-	
-	public SellerDetailsType(Object xmlSoap) throws IOException, SAXException, ParserConfigurationException {
-		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = builderFactory.newDocumentBuilder();
-		InputSource inStream = new InputSource();
-		inStream.setCharacterStream(new StringReader((String)xmlSoap));
-		Document document = builder.parse(inStream);
-		NodeList nodeList= null;
-		
-		String xmlString = "";
-		if (document.getElementsByTagName("SellerId").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("SellerId").item(0))) {
-				this.SellerId = (String)document.getElementsByTagName("SellerId").item(0).getTextContent();
-			}
+	public SellerDetailsType(Node node) throws XPathExpressionException {
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		Node childNode = null;
+		NodeList nodeList = null;
+		childNode = (Node) xpath.evaluate("SellerId", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.SellerId = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("SellerUserName").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("SellerUserName").item(0))) {
-				this.SellerUserName = (String)document.getElementsByTagName("SellerUserName").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("SellerUserName", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.SellerUserName = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("SellerRegistrationDate").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("SellerRegistrationDate").item(0))) {
-				this.SellerRegistrationDate = (String)document.getElementsByTagName("SellerRegistrationDate").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("SellerRegistrationDate", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.SellerRegistrationDate = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("PayPalAccountID").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("PayPalAccountID").item(0))) {
-				this.PayPalAccountID = (String)document.getElementsByTagName("PayPalAccountID").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("PayPalAccountID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.PayPalAccountID = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("SecureMerchantAccountID").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("SecureMerchantAccountID").item(0))) {
-				this.SecureMerchantAccountID = (String)document.getElementsByTagName("SecureMerchantAccountID").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("SecureMerchantAccountID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.SecureMerchantAccountID = childNode.getTextContent();
 		}
 	
 	}

@@ -2,9 +2,14 @@ package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.CreditCardTypeType;
 import urn.ebay.apis.eBLBaseComponents.PayerInfoType;
 import urn.ebay.apis.eBLBaseComponents.ThreeDSecureRequestType;
+import com.paypal.core.SDKUtil;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -224,19 +229,19 @@ public class CreditCardDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(CreditCardType != null) {
-			sb.append("<ebl:CreditCardType>").append(CreditCardType.getValue());
+			sb.append("<ebl:CreditCardType>").append(SDKUtil.escapeInvalidXmlCharsRegex(CreditCardType.getValue()));
 			sb.append("</ebl:CreditCardType>");
 		}
 		if(CreditCardNumber != null) {
-			sb.append("<ebl:CreditCardNumber>").append(CreditCardNumber);
+			sb.append("<ebl:CreditCardNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(CreditCardNumber));
 			sb.append("</ebl:CreditCardNumber>");
 		}
 		if(ExpMonth != null) {
-			sb.append("<ebl:ExpMonth>").append(ExpMonth);
+			sb.append("<ebl:ExpMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExpMonth));
 			sb.append("</ebl:ExpMonth>");
 		}
 		if(ExpYear != null) {
-			sb.append("<ebl:ExpYear>").append(ExpYear);
+			sb.append("<ebl:ExpYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExpYear));
 			sb.append("</ebl:ExpYear>");
 		}
 		if(CardOwner != null) {
@@ -245,19 +250,19 @@ public class CreditCardDetailsType{
 			sb.append("</ebl:CardOwner>");
 		}
 		if(CVV2 != null) {
-			sb.append("<ebl:CVV2>").append(CVV2);
+			sb.append("<ebl:CVV2>").append(SDKUtil.escapeInvalidXmlCharsRegex(CVV2));
 			sb.append("</ebl:CVV2>");
 		}
 		if(StartMonth != null) {
-			sb.append("<ebl:StartMonth>").append(StartMonth);
+			sb.append("<ebl:StartMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(StartMonth));
 			sb.append("</ebl:StartMonth>");
 		}
 		if(StartYear != null) {
-			sb.append("<ebl:StartYear>").append(StartYear);
+			sb.append("<ebl:StartYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(StartYear));
 			sb.append("</ebl:StartYear>");
 		}
 		if(IssueNumber != null) {
-			sb.append("<ebl:IssueNumber>").append(IssueNumber);
+			sb.append("<ebl:IssueNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(IssueNumber));
 			sb.append("</ebl:IssueNumber>");
 		}
 		if(ThreeDSecureRequest != null) {
@@ -271,126 +276,64 @@ public class CreditCardDetailsType{
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
-		} else if (n.getNodeType() == Node.ELEMENT_NODE ){
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ) {
 			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
 	}
 	
-	private String convertToXML(Node n){
-		String name = n.getNodeName();
-		short type = n.getNodeType();
-		if (Node.CDATA_SECTION_NODE == type) {
-			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
+	public CreditCardDetailsType(Node node) throws XPathExpressionException {
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		Node childNode = null;
+		NodeList nodeList = null;
+		childNode = (Node) xpath.evaluate("CreditCardType", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.CreditCardType = CreditCardTypeType.fromValue(childNode.getTextContent());
 		}
-		if (name.startsWith("#")) {
-			return "";
-		}
-		StringBuffer sb = new StringBuffer();
-		sb.append("<").append(name);
-		NamedNodeMap attrs = n.getAttributes();
-		if (attrs != null) {
-			for (int i = 0; i < attrs.getLength(); i++) {
-				Node attr = attrs.item(i);
-				sb.append(" ").append(attr.getNodeName()).append("=\"").append(attr.getNodeValue()).append("\"");
-			}
-		}
-		String textContent = null;
-		NodeList children = n.getChildNodes();
-		if (children.getLength() == 0) {
-			if (((textContent = n.getTextContent())) != null && (!"".equals(textContent))) {
-				sb.append(textContent).append("</").append(name).append(">");
-			} else {
-				sb.append("/>");
-			}
-		} else {
-			sb.append(">");
-			boolean hasValidChildren = false;
-			for (int i = 0; i < children.getLength(); i++) {
-				String childToString = convertToXML(children.item(i));
-				if (!"".equals(childToString)) {
-					sb.append(childToString);
-					hasValidChildren = true;
-				}
-			}
-			if (!hasValidChildren && ((textContent = n.getTextContent()) != null)) {
-				sb.append(textContent);
-			}
-			sb.append("</").append(name).append(">");
-		}
-		return sb.toString();
-	}
-	
-	public CreditCardDetailsType(Object xmlSoap) throws IOException, SAXException, ParserConfigurationException {
-		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = builderFactory.newDocumentBuilder();
-		InputSource inStream = new InputSource();
-		inStream.setCharacterStream(new StringReader((String)xmlSoap));
-		Document document = builder.parse(inStream);
-		NodeList nodeList= null;
-		
-		String xmlString = "";
-		if(document.getElementsByTagName("CreditCardType").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("CreditCardType").item(0))) {
-				this.CreditCardType = CreditCardTypeType.fromValue(document.getElementsByTagName("CreditCardType").item(0).getTextContent());
-			}
-		}
-		if (document.getElementsByTagName("CreditCardNumber").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("CreditCardNumber").item(0))) {
-				this.CreditCardNumber = (String)document.getElementsByTagName("CreditCardNumber").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("CreditCardNumber", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.CreditCardNumber = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("ExpMonth").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ExpMonth").item(0))) {
-				this.ExpMonth = Integer.valueOf(document.getElementsByTagName("ExpMonth").item(0).getTextContent());
-			}
+		childNode = (Node) xpath.evaluate("ExpMonth", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+			this.ExpMonth = Integer.valueOf(childNode.getTextContent());
 		}
 	
-		if (document.getElementsByTagName("ExpYear").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ExpYear").item(0))) {
-				this.ExpYear = Integer.valueOf(document.getElementsByTagName("ExpYear").item(0).getTextContent());
-			}
+		childNode = (Node) xpath.evaluate("ExpYear", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+			this.ExpYear = Integer.valueOf(childNode.getTextContent());
 		}
 	
-		if(document.getElementsByTagName("CardOwner").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("CardOwner").item(0))) {
-				nodeList = document.getElementsByTagName("CardOwner");
-				xmlString = convertToXML(nodeList.item(0));
-				this.CardOwner =  new PayerInfoType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("CardOwner", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.CardOwner =  new PayerInfoType(childNode);
 		}
-		if (document.getElementsByTagName("CVV2").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("CVV2").item(0))) {
-				this.CVV2 = (String)document.getElementsByTagName("CVV2").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("CVV2", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.CVV2 = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("StartMonth").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("StartMonth").item(0))) {
-				this.StartMonth = Integer.valueOf(document.getElementsByTagName("StartMonth").item(0).getTextContent());
-			}
+		childNode = (Node) xpath.evaluate("StartMonth", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+			this.StartMonth = Integer.valueOf(childNode.getTextContent());
 		}
 	
-		if (document.getElementsByTagName("StartYear").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("StartYear").item(0))) {
-				this.StartYear = Integer.valueOf(document.getElementsByTagName("StartYear").item(0).getTextContent());
-			}
+		childNode = (Node) xpath.evaluate("StartYear", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+			this.StartYear = Integer.valueOf(childNode.getTextContent());
 		}
 	
-		if (document.getElementsByTagName("IssueNumber").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("IssueNumber").item(0))) {
-				this.IssueNumber = (String)document.getElementsByTagName("IssueNumber").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("IssueNumber", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.IssueNumber = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("ThreeDSecureRequest").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ThreeDSecureRequest").item(0))) {
-				nodeList = document.getElementsByTagName("ThreeDSecureRequest");
-				xmlString = convertToXML(nodeList.item(0));
-				this.ThreeDSecureRequest =  new ThreeDSecureRequestType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("ThreeDSecureRequest", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ThreeDSecureRequest =  new ThreeDSecureRequestType(childNode);
 		}
 	}
  

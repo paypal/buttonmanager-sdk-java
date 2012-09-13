@@ -1,4 +1,5 @@
 package urn.ebay.apis.eBLBaseComponents;
+import com.paypal.core.SDKUtil;
 
 /**
  * The Session token returned during buyer authentication. 
@@ -38,7 +39,7 @@ public class MobileIDInfoType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(SessionToken != null) {
-			sb.append("<ebl:SessionToken>").append(SessionToken);
+			sb.append("<ebl:SessionToken>").append(SDKUtil.escapeInvalidXmlCharsRegex(SessionToken));
 			sb.append("</ebl:SessionToken>");
 		}
 		return sb.toString();

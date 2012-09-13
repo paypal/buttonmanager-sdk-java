@@ -10,6 +10,7 @@ import urn.ebay.apis.eBLBaseComponents.BuyNowTextType;
 import urn.ebay.apis.eBLBaseComponents.SubscribeTextType;
 import urn.ebay.apis.eBLBaseComponents.CountryCodeType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Type of Button to create.  Required Must be one of the
@@ -273,20 +274,20 @@ public class BMCreateButtonRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(ButtonType != null) {
-			sb.append("<urn:ButtonType>").append(ButtonType.getValue());
+			sb.append("<urn:ButtonType>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonType.getValue()));
 			sb.append("</urn:ButtonType>");
 		}
 		if(ButtonCode != null) {
-			sb.append("<urn:ButtonCode>").append(ButtonCode.getValue());
+			sb.append("<urn:ButtonCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonCode.getValue()));
 			sb.append("</urn:ButtonCode>");
 		}
 		if(ButtonSubType != null) {
-			sb.append("<urn:ButtonSubType>").append(ButtonSubType.getValue());
+			sb.append("<urn:ButtonSubType>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonSubType.getValue()));
 			sb.append("</urn:ButtonSubType>");
 		}
 		if(ButtonVar != null) {
 			for(int i=0; i < ButtonVar.size(); i++) {
-				sb.append("<urn:ButtonVar>").append(ButtonVar.get(i));
+				sb.append("<urn:ButtonVar>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonVar.get(i)));
 				sb.append("</urn:ButtonVar>");
 			}
 		}
@@ -299,32 +300,32 @@ public class BMCreateButtonRequestType extends AbstractRequestType {
 		}
 		if(TextBox != null) {
 			for(int i=0; i < TextBox.size(); i++) {
-				sb.append("<urn:TextBox>").append(TextBox.get(i));
+				sb.append("<urn:TextBox>").append(SDKUtil.escapeInvalidXmlCharsRegex(TextBox.get(i)));
 				sb.append("</urn:TextBox>");
 			}
 		}
 		if(ButtonImage != null) {
-			sb.append("<urn:ButtonImage>").append(ButtonImage.getValue());
+			sb.append("<urn:ButtonImage>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonImage.getValue()));
 			sb.append("</urn:ButtonImage>");
 		}
 		if(ButtonImageURL != null) {
-			sb.append("<urn:ButtonImageURL>").append(ButtonImageURL);
+			sb.append("<urn:ButtonImageURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonImageURL));
 			sb.append("</urn:ButtonImageURL>");
 		}
 		if(BuyNowText != null) {
-			sb.append("<urn:BuyNowText>").append(BuyNowText.getValue());
+			sb.append("<urn:BuyNowText>").append(SDKUtil.escapeInvalidXmlCharsRegex(BuyNowText.getValue()));
 			sb.append("</urn:BuyNowText>");
 		}
 		if(SubscribeText != null) {
-			sb.append("<urn:SubscribeText>").append(SubscribeText.getValue());
+			sb.append("<urn:SubscribeText>").append(SDKUtil.escapeInvalidXmlCharsRegex(SubscribeText.getValue()));
 			sb.append("</urn:SubscribeText>");
 		}
 		if(ButtonCountry != null) {
-			sb.append("<urn:ButtonCountry>").append(ButtonCountry.getValue());
+			sb.append("<urn:ButtonCountry>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonCountry.getValue()));
 			sb.append("</urn:ButtonCountry>");
 		}
 		if(ButtonLanguage != null) {
-			sb.append("<urn:ButtonLanguage>").append(ButtonLanguage);
+			sb.append("<urn:ButtonLanguage>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonLanguage));
 			sb.append("</urn:ButtonLanguage>");
 		}
 		return sb.toString();

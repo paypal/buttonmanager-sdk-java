@@ -1,5 +1,6 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.api.PayPalAPI.GetBoardingDetailsRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 

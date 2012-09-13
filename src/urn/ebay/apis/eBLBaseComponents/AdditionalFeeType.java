@@ -1,5 +1,6 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -58,7 +59,7 @@ public class AdditionalFeeType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(Type != null) {
-			sb.append("<ebl:Type>").append(Type);
+			sb.append("<ebl:Type>").append(SDKUtil.escapeInvalidXmlCharsRegex(Type));
 			sb.append("</ebl:Type>");
 		}
 		if(Amount != null) {

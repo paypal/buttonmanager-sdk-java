@@ -7,6 +7,7 @@ import urn.ebay.apis.eBLBaseComponents.EnhancedDataType;
 import urn.ebay.apis.eBLBaseComponents.UserSelectedOptionType;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.CoupledBucketsType;
+import com.paypal.core.SDKUtil;
 
 /**
  * How you want to obtain payment. Required Authorization
@@ -440,19 +441,19 @@ public class DoExpressCheckoutPaymentRequestDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(PaymentAction != null) {
-			sb.append("<ebl:PaymentAction>").append(PaymentAction.getValue());
+			sb.append("<ebl:PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentAction.getValue()));
 			sb.append("</ebl:PaymentAction>");
 		}
 		if(Token != null) {
-			sb.append("<ebl:Token>").append(Token);
+			sb.append("<ebl:Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(Token));
 			sb.append("</ebl:Token>");
 		}
 		if(PayerID != null) {
-			sb.append("<ebl:PayerID>").append(PayerID);
+			sb.append("<ebl:PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(PayerID));
 			sb.append("</ebl:PayerID>");
 		}
 		if(OrderURL != null) {
-			sb.append("<ebl:OrderURL>").append(OrderURL);
+			sb.append("<ebl:OrderURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(OrderURL));
 			sb.append("</ebl:OrderURL>");
 		}
 		if(PaymentDetails != null) {
@@ -463,11 +464,11 @@ public class DoExpressCheckoutPaymentRequestDetailsType{
 			}
 		}
 		if(PromoOverrideFlag != null) {
-			sb.append("<ebl:PromoOverrideFlag>").append(PromoOverrideFlag);
+			sb.append("<ebl:PromoOverrideFlag>").append(SDKUtil.escapeInvalidXmlCharsRegex(PromoOverrideFlag));
 			sb.append("</ebl:PromoOverrideFlag>");
 		}
 		if(PromoCode != null) {
-			sb.append("<ebl:PromoCode>").append(PromoCode);
+			sb.append("<ebl:PromoCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(PromoCode));
 			sb.append("</ebl:PromoCode>");
 		}
 		if(EnhancedData != null) {
@@ -476,7 +477,7 @@ public class DoExpressCheckoutPaymentRequestDetailsType{
 			sb.append("</ebl:EnhancedData>");
 		}
 		if(SoftDescriptor != null) {
-			sb.append("<ebl:SoftDescriptor>").append(SoftDescriptor);
+			sb.append("<ebl:SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(SoftDescriptor));
 			sb.append("</ebl:SoftDescriptor>");
 		}
 		if(UserSelectedOptions != null) {
@@ -485,15 +486,15 @@ public class DoExpressCheckoutPaymentRequestDetailsType{
 			sb.append("</ebl:UserSelectedOptions>");
 		}
 		if(GiftMessage != null) {
-			sb.append("<ebl:GiftMessage>").append(GiftMessage);
+			sb.append("<ebl:GiftMessage>").append(SDKUtil.escapeInvalidXmlCharsRegex(GiftMessage));
 			sb.append("</ebl:GiftMessage>");
 		}
 		if(GiftReceiptEnable != null) {
-			sb.append("<ebl:GiftReceiptEnable>").append(GiftReceiptEnable);
+			sb.append("<ebl:GiftReceiptEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(GiftReceiptEnable));
 			sb.append("</ebl:GiftReceiptEnable>");
 		}
 		if(GiftWrapName != null) {
-			sb.append("<ebl:GiftWrapName>").append(GiftWrapName);
+			sb.append("<ebl:GiftWrapName>").append(SDKUtil.escapeInvalidXmlCharsRegex(GiftWrapName));
 			sb.append("</ebl:GiftWrapName>");
 		}
 		if(GiftWrapAmount != null) {
@@ -502,25 +503,25 @@ public class DoExpressCheckoutPaymentRequestDetailsType{
 			sb.append("</ebl:GiftWrapAmount>");
 		}
 		if(BuyerMarketingEmail != null) {
-			sb.append("<ebl:BuyerMarketingEmail>").append(BuyerMarketingEmail);
+			sb.append("<ebl:BuyerMarketingEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(BuyerMarketingEmail));
 			sb.append("</ebl:BuyerMarketingEmail>");
 		}
 		if(SurveyQuestion != null) {
-			sb.append("<ebl:SurveyQuestion>").append(SurveyQuestion);
+			sb.append("<ebl:SurveyQuestion>").append(SDKUtil.escapeInvalidXmlCharsRegex(SurveyQuestion));
 			sb.append("</ebl:SurveyQuestion>");
 		}
 		if(SurveyChoiceSelected != null) {
 			for(int i=0; i < SurveyChoiceSelected.size(); i++) {
-				sb.append("<ebl:SurveyChoiceSelected>").append(SurveyChoiceSelected.get(i));
+				sb.append("<ebl:SurveyChoiceSelected>").append(SDKUtil.escapeInvalidXmlCharsRegex(SurveyChoiceSelected.get(i)));
 				sb.append("</ebl:SurveyChoiceSelected>");
 			}
 		}
 		if(ButtonSource != null) {
-			sb.append("<ebl:ButtonSource>").append(ButtonSource);
+			sb.append("<ebl:ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonSource));
 			sb.append("</ebl:ButtonSource>");
 		}
 		if(SkipBACreation != null) {
-			sb.append("<ebl:SkipBACreation>").append(SkipBACreation);
+			sb.append("<ebl:SkipBACreation>").append(SDKUtil.escapeInvalidXmlCharsRegex(SkipBACreation));
 			sb.append("</ebl:SkipBACreation>");
 		}
 		if(CoupledBuckets != null) {

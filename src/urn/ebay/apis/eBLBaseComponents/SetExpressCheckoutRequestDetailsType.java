@@ -23,6 +23,7 @@ import urn.ebay.apis.eBLBaseComponents.FlowControlDetailsType;
 import urn.ebay.apis.eBLBaseComponents.DisplayControlDetailsType;
 import urn.ebay.apis.eBLBaseComponents.ExternalPartnerTrackingDetailsType;
 import urn.ebay.apis.eBLBaseComponents.CoupledBucketsType;
+import com.paypal.core.SDKUtil;
 
 /**
  * The total cost of the order to the customer. If shipping
@@ -1471,31 +1472,31 @@ public class SetExpressCheckoutRequestDetailsType{
 			sb.append("</ebl:OrderTotal>");
 		}
 		if(ReturnURL != null) {
-			sb.append("<ebl:ReturnURL>").append(ReturnURL);
+			sb.append("<ebl:ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReturnURL));
 			sb.append("</ebl:ReturnURL>");
 		}
 		if(CancelURL != null) {
-			sb.append("<ebl:CancelURL>").append(CancelURL);
+			sb.append("<ebl:CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(CancelURL));
 			sb.append("</ebl:CancelURL>");
 		}
 		if(TrackingImageURL != null) {
-			sb.append("<ebl:TrackingImageURL>").append(TrackingImageURL);
+			sb.append("<ebl:TrackingImageURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(TrackingImageURL));
 			sb.append("</ebl:TrackingImageURL>");
 		}
 		if(giropaySuccessURL != null) {
-			sb.append("<ebl:giropaySuccessURL>").append(giropaySuccessURL);
+			sb.append("<ebl:giropaySuccessURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(giropaySuccessURL));
 			sb.append("</ebl:giropaySuccessURL>");
 		}
 		if(giropayCancelURL != null) {
-			sb.append("<ebl:giropayCancelURL>").append(giropayCancelURL);
+			sb.append("<ebl:giropayCancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(giropayCancelURL));
 			sb.append("</ebl:giropayCancelURL>");
 		}
 		if(BanktxnPendingURL != null) {
-			sb.append("<ebl:BanktxnPendingURL>").append(BanktxnPendingURL);
+			sb.append("<ebl:BanktxnPendingURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(BanktxnPendingURL));
 			sb.append("</ebl:BanktxnPendingURL>");
 		}
 		if(Token != null) {
-			sb.append("<ebl:Token>").append(Token);
+			sb.append("<ebl:Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(Token));
 			sb.append("</ebl:Token>");
 		}
 		if(MaxAmount != null) {
@@ -1504,23 +1505,23 @@ public class SetExpressCheckoutRequestDetailsType{
 			sb.append("</ebl:MaxAmount>");
 		}
 		if(OrderDescription != null) {
-			sb.append("<ebl:OrderDescription>").append(OrderDescription);
+			sb.append("<ebl:OrderDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(OrderDescription));
 			sb.append("</ebl:OrderDescription>");
 		}
 		if(Custom != null) {
-			sb.append("<ebl:Custom>").append(Custom);
+			sb.append("<ebl:Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(Custom));
 			sb.append("</ebl:Custom>");
 		}
 		if(InvoiceID != null) {
-			sb.append("<ebl:InvoiceID>").append(InvoiceID);
+			sb.append("<ebl:InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(InvoiceID));
 			sb.append("</ebl:InvoiceID>");
 		}
 		if(ReqConfirmShipping != null) {
-			sb.append("<ebl:ReqConfirmShipping>").append(ReqConfirmShipping);
+			sb.append("<ebl:ReqConfirmShipping>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReqConfirmShipping));
 			sb.append("</ebl:ReqConfirmShipping>");
 		}
 		if(ReqBillingAddress != null) {
-			sb.append("<ebl:ReqBillingAddress>").append(ReqBillingAddress);
+			sb.append("<ebl:ReqBillingAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReqBillingAddress));
 			sb.append("</ebl:ReqBillingAddress>");
 		}
 		if(BillingAddress != null) {
@@ -1529,44 +1530,44 @@ public class SetExpressCheckoutRequestDetailsType{
 			sb.append("</ebl:BillingAddress>");
 		}
 		if(NoShipping != null) {
-			sb.append("<ebl:NoShipping>").append(NoShipping);
+			sb.append("<ebl:NoShipping>").append(SDKUtil.escapeInvalidXmlCharsRegex(NoShipping));
 			sb.append("</ebl:NoShipping>");
 		}
 		if(AddressOverride != null) {
-			sb.append("<ebl:AddressOverride>").append(AddressOverride);
+			sb.append("<ebl:AddressOverride>").append(SDKUtil.escapeInvalidXmlCharsRegex(AddressOverride));
 			sb.append("</ebl:AddressOverride>");
 		}
 		if(LocaleCode != null) {
-			sb.append("<ebl:LocaleCode>").append(LocaleCode);
+			sb.append("<ebl:LocaleCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(LocaleCode));
 			sb.append("</ebl:LocaleCode>");
 		}
 		if(PageStyle != null) {
-			sb.append("<ebl:PageStyle>").append(PageStyle);
+			sb.append("<ebl:PageStyle>").append(SDKUtil.escapeInvalidXmlCharsRegex(PageStyle));
 			sb.append("</ebl:PageStyle>");
 		}
 		if(cppHeaderImage != null) {
-			sb.append("<ebl:cpp-header-image>").append(cppHeaderImage);
-			sb.append("</ebl:cpp-header-image>");
+			sb.append("<ebl:cppHeaderImage>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderImage));
+			sb.append("</ebl:cppHeaderImage>");
 		}
 		if(cppHeaderBorderColor != null) {
-			sb.append("<ebl:cpp-header-border-color>").append(cppHeaderBorderColor);
-			sb.append("</ebl:cpp-header-border-color>");
+			sb.append("<ebl:cppHeaderBorderColor>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBorderColor));
+			sb.append("</ebl:cppHeaderBorderColor>");
 		}
 		if(cppHeaderBackColor != null) {
-			sb.append("<ebl:cpp-header-back-color>").append(cppHeaderBackColor);
-			sb.append("</ebl:cpp-header-back-color>");
+			sb.append("<ebl:cppHeaderBackColor>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBackColor));
+			sb.append("</ebl:cppHeaderBackColor>");
 		}
 		if(cppPayflowColor != null) {
-			sb.append("<ebl:cpp-payflow-color>").append(cppPayflowColor);
-			sb.append("</ebl:cpp-payflow-color>");
+			sb.append("<ebl:cppPayflowColor>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppPayflowColor));
+			sb.append("</ebl:cppPayflowColor>");
 		}
 		if(cppCartBorderColor != null) {
-			sb.append("<ebl:cpp-cart-border-color>").append(cppCartBorderColor);
-			sb.append("</ebl:cpp-cart-border-color>");
+			sb.append("<ebl:cppCartBorderColor>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppCartBorderColor));
+			sb.append("</ebl:cppCartBorderColor>");
 		}
 		if(cppLogoImage != null) {
-			sb.append("<ebl:cpp-logo-image>").append(cppLogoImage);
-			sb.append("</ebl:cpp-logo-image>");
+			sb.append("<ebl:cppLogoImage>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppLogoImage));
+			sb.append("</ebl:cppLogoImage>");
 		}
 		if(Address != null) {
 			sb.append("<ebl:Address>");
@@ -1574,23 +1575,23 @@ public class SetExpressCheckoutRequestDetailsType{
 			sb.append("</ebl:Address>");
 		}
 		if(PaymentAction != null) {
-			sb.append("<ebl:PaymentAction>").append(PaymentAction.getValue());
+			sb.append("<ebl:PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentAction.getValue()));
 			sb.append("</ebl:PaymentAction>");
 		}
 		if(SolutionType != null) {
-			sb.append("<ebl:SolutionType>").append(SolutionType.getValue());
+			sb.append("<ebl:SolutionType>").append(SDKUtil.escapeInvalidXmlCharsRegex(SolutionType.getValue()));
 			sb.append("</ebl:SolutionType>");
 		}
 		if(LandingPage != null) {
-			sb.append("<ebl:LandingPage>").append(LandingPage.getValue());
+			sb.append("<ebl:LandingPage>").append(SDKUtil.escapeInvalidXmlCharsRegex(LandingPage.getValue()));
 			sb.append("</ebl:LandingPage>");
 		}
 		if(BuyerEmail != null) {
-			sb.append("<ebl:BuyerEmail>").append(BuyerEmail);
+			sb.append("<ebl:BuyerEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(BuyerEmail));
 			sb.append("</ebl:BuyerEmail>");
 		}
 		if(ChannelType != null) {
-			sb.append("<ebl:ChannelType>").append(ChannelType.getValue());
+			sb.append("<ebl:ChannelType>").append(SDKUtil.escapeInvalidXmlCharsRegex(ChannelType.getValue()));
 			sb.append("</ebl:ChannelType>");
 		}
 		if(BillingAgreementDetails != null) {
@@ -1602,28 +1603,28 @@ public class SetExpressCheckoutRequestDetailsType{
 		}
 		if(PromoCodes != null) {
 			for(int i=0; i < PromoCodes.size(); i++) {
-				sb.append("<ebl:PromoCodes>").append(PromoCodes.get(i));
+				sb.append("<ebl:PromoCodes>").append(SDKUtil.escapeInvalidXmlCharsRegex(PromoCodes.get(i)));
 				sb.append("</ebl:PromoCodes>");
 			}
 		}
 		if(PayPalCheckOutBtnType != null) {
-			sb.append("<ebl:PayPalCheckOutBtnType>").append(PayPalCheckOutBtnType);
+			sb.append("<ebl:PayPalCheckOutBtnType>").append(SDKUtil.escapeInvalidXmlCharsRegex(PayPalCheckOutBtnType));
 			sb.append("</ebl:PayPalCheckOutBtnType>");
 		}
 		if(ProductCategory != null) {
-			sb.append("<ebl:ProductCategory>").append(ProductCategory.getValue());
+			sb.append("<ebl:ProductCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProductCategory.getValue()));
 			sb.append("</ebl:ProductCategory>");
 		}
 		if(ShippingMethod != null) {
-			sb.append("<ebl:ShippingMethod>").append(ShippingMethod.getValue());
+			sb.append("<ebl:ShippingMethod>").append(SDKUtil.escapeInvalidXmlCharsRegex(ShippingMethod.getValue()));
 			sb.append("</ebl:ShippingMethod>");
 		}
 		if(ProfileAddressChangeDate != null) {
-			sb.append("<ebl:ProfileAddressChangeDate>").append(ProfileAddressChangeDate);
+			sb.append("<ebl:ProfileAddressChangeDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProfileAddressChangeDate));
 			sb.append("</ebl:ProfileAddressChangeDate>");
 		}
 		if(AllowNote != null) {
-			sb.append("<ebl:AllowNote>").append(AllowNote);
+			sb.append("<ebl:AllowNote>").append(SDKUtil.escapeInvalidXmlCharsRegex(AllowNote));
 			sb.append("</ebl:AllowNote>");
 		}
 		if(FundingSourceDetails != null) {
@@ -1632,11 +1633,11 @@ public class SetExpressCheckoutRequestDetailsType{
 			sb.append("</ebl:FundingSourceDetails>");
 		}
 		if(BrandName != null) {
-			sb.append("<ebl:BrandName>").append(BrandName);
+			sb.append("<ebl:BrandName>").append(SDKUtil.escapeInvalidXmlCharsRegex(BrandName));
 			sb.append("</ebl:BrandName>");
 		}
 		if(CallbackURL != null) {
-			sb.append("<ebl:CallbackURL>").append(CallbackURL);
+			sb.append("<ebl:CallbackURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(CallbackURL));
 			sb.append("</ebl:CallbackURL>");
 		}
 		if(EnhancedCheckoutData != null) {
@@ -1671,31 +1672,31 @@ public class SetExpressCheckoutRequestDetailsType{
 			}
 		}
 		if(CallbackTimeout != null) {
-			sb.append("<ebl:CallbackTimeout>").append(CallbackTimeout);
+			sb.append("<ebl:CallbackTimeout>").append(SDKUtil.escapeInvalidXmlCharsRegex(CallbackTimeout));
 			sb.append("</ebl:CallbackTimeout>");
 		}
 		if(CallbackVersion != null) {
-			sb.append("<ebl:CallbackVersion>").append(CallbackVersion);
+			sb.append("<ebl:CallbackVersion>").append(SDKUtil.escapeInvalidXmlCharsRegex(CallbackVersion));
 			sb.append("</ebl:CallbackVersion>");
 		}
 		if(CustomerServiceNumber != null) {
-			sb.append("<ebl:CustomerServiceNumber>").append(CustomerServiceNumber);
+			sb.append("<ebl:CustomerServiceNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(CustomerServiceNumber));
 			sb.append("</ebl:CustomerServiceNumber>");
 		}
 		if(GiftMessageEnable != null) {
-			sb.append("<ebl:GiftMessageEnable>").append(GiftMessageEnable);
+			sb.append("<ebl:GiftMessageEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(GiftMessageEnable));
 			sb.append("</ebl:GiftMessageEnable>");
 		}
 		if(GiftReceiptEnable != null) {
-			sb.append("<ebl:GiftReceiptEnable>").append(GiftReceiptEnable);
+			sb.append("<ebl:GiftReceiptEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(GiftReceiptEnable));
 			sb.append("</ebl:GiftReceiptEnable>");
 		}
 		if(GiftWrapEnable != null) {
-			sb.append("<ebl:GiftWrapEnable>").append(GiftWrapEnable);
+			sb.append("<ebl:GiftWrapEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(GiftWrapEnable));
 			sb.append("</ebl:GiftWrapEnable>");
 		}
 		if(GiftWrapName != null) {
-			sb.append("<ebl:GiftWrapName>").append(GiftWrapName);
+			sb.append("<ebl:GiftWrapName>").append(SDKUtil.escapeInvalidXmlCharsRegex(GiftWrapName));
 			sb.append("</ebl:GiftWrapName>");
 		}
 		if(GiftWrapAmount != null) {
@@ -1704,29 +1705,29 @@ public class SetExpressCheckoutRequestDetailsType{
 			sb.append("</ebl:GiftWrapAmount>");
 		}
 		if(BuyerEmailOptInEnable != null) {
-			sb.append("<ebl:BuyerEmailOptInEnable>").append(BuyerEmailOptInEnable);
+			sb.append("<ebl:BuyerEmailOptInEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(BuyerEmailOptInEnable));
 			sb.append("</ebl:BuyerEmailOptInEnable>");
 		}
 		if(SurveyEnable != null) {
-			sb.append("<ebl:SurveyEnable>").append(SurveyEnable);
+			sb.append("<ebl:SurveyEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(SurveyEnable));
 			sb.append("</ebl:SurveyEnable>");
 		}
 		if(SurveyQuestion != null) {
-			sb.append("<ebl:SurveyQuestion>").append(SurveyQuestion);
+			sb.append("<ebl:SurveyQuestion>").append(SDKUtil.escapeInvalidXmlCharsRegex(SurveyQuestion));
 			sb.append("</ebl:SurveyQuestion>");
 		}
 		if(SurveyChoice != null) {
 			for(int i=0; i < SurveyChoice.size(); i++) {
-				sb.append("<ebl:SurveyChoice>").append(SurveyChoice.get(i));
+				sb.append("<ebl:SurveyChoice>").append(SDKUtil.escapeInvalidXmlCharsRegex(SurveyChoice.get(i)));
 				sb.append("</ebl:SurveyChoice>");
 			}
 		}
 		if(TotalType != null) {
-			sb.append("<ebl:TotalType>").append(TotalType.getValue());
+			sb.append("<ebl:TotalType>").append(SDKUtil.escapeInvalidXmlCharsRegex(TotalType.getValue()));
 			sb.append("</ebl:TotalType>");
 		}
 		if(NoteToBuyer != null) {
-			sb.append("<ebl:NoteToBuyer>").append(NoteToBuyer);
+			sb.append("<ebl:NoteToBuyer>").append(SDKUtil.escapeInvalidXmlCharsRegex(NoteToBuyer));
 			sb.append("</ebl:NoteToBuyer>");
 		}
 		if(Incentives != null) {
@@ -1737,7 +1738,7 @@ public class SetExpressCheckoutRequestDetailsType{
 			}
 		}
 		if(ReqInstrumentDetails != null) {
-			sb.append("<ebl:ReqInstrumentDetails>").append(ReqInstrumentDetails);
+			sb.append("<ebl:ReqInstrumentDetails>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReqInstrumentDetails));
 			sb.append("</ebl:ReqInstrumentDetails>");
 		}
 		if(ExternalRememberMeOptInDetails != null) {

@@ -1,6 +1,7 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.TaxIdDetailsType;
 import urn.ebay.apis.eBLBaseComponents.IdentificationInfoType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Details about the buyer's account passed in by the merchant
@@ -119,15 +120,15 @@ public class BuyerDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(BuyerId != null) {
-			sb.append("<ebl:BuyerId>").append(BuyerId);
+			sb.append("<ebl:BuyerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(BuyerId));
 			sb.append("</ebl:BuyerId>");
 		}
 		if(BuyerUserName != null) {
-			sb.append("<ebl:BuyerUserName>").append(BuyerUserName);
+			sb.append("<ebl:BuyerUserName>").append(SDKUtil.escapeInvalidXmlCharsRegex(BuyerUserName));
 			sb.append("</ebl:BuyerUserName>");
 		}
 		if(BuyerRegistrationDate != null) {
-			sb.append("<ebl:BuyerRegistrationDate>").append(BuyerRegistrationDate);
+			sb.append("<ebl:BuyerRegistrationDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(BuyerRegistrationDate));
 			sb.append("</ebl:BuyerRegistrationDate>");
 		}
 		if(TaxIdDetails != null) {

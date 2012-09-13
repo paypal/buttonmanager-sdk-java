@@ -5,6 +5,7 @@ import urn.ebay.apis.eBLBaseComponents.ScheduleDetailsType;
 import java.util.List;
 import java.util.ArrayList;
 import urn.ebay.apis.eBLBaseComponents.PaymentDetailsItemType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Billing Agreement token (required if Express Checkout) 
@@ -131,7 +132,7 @@ public class CreateRecurringPaymentsProfileRequestDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(Token != null) {
-			sb.append("<ebl:Token>").append(Token);
+			sb.append("<ebl:Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(Token));
 			sb.append("</ebl:Token>");
 		}
 		if(CreditCard != null) {

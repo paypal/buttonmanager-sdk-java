@@ -1,7 +1,12 @@
 package urn.ebay.apis.eBLBaseComponents;
+import com.paypal.core.SDKUtil;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -126,23 +131,23 @@ public class PersonNameType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(Salutation != null) {
-			sb.append("<ebl:Salutation>").append(Salutation);
+			sb.append("<ebl:Salutation>").append(SDKUtil.escapeInvalidXmlCharsRegex(Salutation));
 			sb.append("</ebl:Salutation>");
 		}
 		if(FirstName != null) {
-			sb.append("<ebl:FirstName>").append(FirstName);
+			sb.append("<ebl:FirstName>").append(SDKUtil.escapeInvalidXmlCharsRegex(FirstName));
 			sb.append("</ebl:FirstName>");
 		}
 		if(MiddleName != null) {
-			sb.append("<ebl:MiddleName>").append(MiddleName);
+			sb.append("<ebl:MiddleName>").append(SDKUtil.escapeInvalidXmlCharsRegex(MiddleName));
 			sb.append("</ebl:MiddleName>");
 		}
 		if(LastName != null) {
-			sb.append("<ebl:LastName>").append(LastName);
+			sb.append("<ebl:LastName>").append(SDKUtil.escapeInvalidXmlCharsRegex(LastName));
 			sb.append("</ebl:LastName>");
 		}
 		if(Suffix != null) {
-			sb.append("<ebl:Suffix>").append(Suffix);
+			sb.append("<ebl:Suffix>").append(SDKUtil.escapeInvalidXmlCharsRegex(Suffix));
 			sb.append("</ebl:Suffix>");
 		}
 		return sb.toString();
@@ -151,94 +156,41 @@ public class PersonNameType{
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
-		} else if (n.getNodeType() == Node.ELEMENT_NODE ){
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ) {
 			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
 	}
 	
-	private String convertToXML(Node n){
-		String name = n.getNodeName();
-		short type = n.getNodeType();
-		if (Node.CDATA_SECTION_NODE == type) {
-			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
-		}
-		if (name.startsWith("#")) {
-			return "";
-		}
-		StringBuffer sb = new StringBuffer();
-		sb.append("<").append(name);
-		NamedNodeMap attrs = n.getAttributes();
-		if (attrs != null) {
-			for (int i = 0; i < attrs.getLength(); i++) {
-				Node attr = attrs.item(i);
-				sb.append(" ").append(attr.getNodeName()).append("=\"").append(attr.getNodeValue()).append("\"");
-			}
-		}
-		String textContent = null;
-		NodeList children = n.getChildNodes();
-		if (children.getLength() == 0) {
-			if (((textContent = n.getTextContent())) != null && (!"".equals(textContent))) {
-				sb.append(textContent).append("</").append(name).append(">");
-			} else {
-				sb.append("/>");
-			}
-		} else {
-			sb.append(">");
-			boolean hasValidChildren = false;
-			for (int i = 0; i < children.getLength(); i++) {
-				String childToString = convertToXML(children.item(i));
-				if (!"".equals(childToString)) {
-					sb.append(childToString);
-					hasValidChildren = true;
-				}
-			}
-			if (!hasValidChildren && ((textContent = n.getTextContent()) != null)) {
-				sb.append(textContent);
-			}
-			sb.append("</").append(name).append(">");
-		}
-		return sb.toString();
-	}
-	
-	public PersonNameType(Object xmlSoap) throws IOException, SAXException, ParserConfigurationException {
-		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = builderFactory.newDocumentBuilder();
-		InputSource inStream = new InputSource();
-		inStream.setCharacterStream(new StringReader((String)xmlSoap));
-		Document document = builder.parse(inStream);
-		NodeList nodeList= null;
-		
-		String xmlString = "";
-		if (document.getElementsByTagName("Salutation").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Salutation").item(0))) {
-				this.Salutation = (String)document.getElementsByTagName("Salutation").item(0).getTextContent();
-			}
+	public PersonNameType(Node node) throws XPathExpressionException {
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		Node childNode = null;
+		NodeList nodeList = null;
+		childNode = (Node) xpath.evaluate("Salutation", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Salutation = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("FirstName").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("FirstName").item(0))) {
-				this.FirstName = (String)document.getElementsByTagName("FirstName").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("FirstName", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.FirstName = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("MiddleName").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("MiddleName").item(0))) {
-				this.MiddleName = (String)document.getElementsByTagName("MiddleName").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("MiddleName", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.MiddleName = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("LastName").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("LastName").item(0))) {
-				this.LastName = (String)document.getElementsByTagName("LastName").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("LastName", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.LastName = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("Suffix").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Suffix").item(0))) {
-				this.Suffix = (String)document.getElementsByTagName("Suffix").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("Suffix", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Suffix = childNode.getTextContent();
 		}
 	
 	}

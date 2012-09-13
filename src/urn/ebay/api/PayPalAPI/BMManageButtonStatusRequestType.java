@@ -1,6 +1,7 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.ButtonStatusType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Button ID of Hosted button.  Required Character length and
@@ -64,11 +65,11 @@ public class BMManageButtonStatusRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(HostedButtonID != null) {
-			sb.append("<urn:HostedButtonID>").append(HostedButtonID);
+			sb.append("<urn:HostedButtonID>").append(SDKUtil.escapeInvalidXmlCharsRegex(HostedButtonID));
 			sb.append("</urn:HostedButtonID>");
 		}
 		if(ButtonStatus != null) {
-			sb.append("<urn:ButtonStatus>").append(ButtonStatus.getValue());
+			sb.append("<urn:ButtonStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonStatus.getValue()));
 			sb.append("</urn:ButtonStatus>");
 		}
 		return sb.toString();

@@ -1,5 +1,6 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * The value of the original authorization identification
@@ -80,11 +81,11 @@ public class DoVoidRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(AuthorizationID != null) {
-			sb.append("<urn:AuthorizationID>").append(AuthorizationID);
+			sb.append("<urn:AuthorizationID>").append(SDKUtil.escapeInvalidXmlCharsRegex(AuthorizationID));
 			sb.append("</urn:AuthorizationID>");
 		}
 		if(Note != null) {
-			sb.append("<urn:Note>").append(Note);
+			sb.append("<urn:Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(Note));
 			sb.append("</urn:Note>");
 		}
 		return sb.toString();

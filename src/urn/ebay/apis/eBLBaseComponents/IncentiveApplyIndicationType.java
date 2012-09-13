@@ -1,4 +1,5 @@
 package urn.ebay.apis.eBLBaseComponents;
+import com.paypal.core.SDKUtil;
 
 /**
  * Defines which bucket or item that the incentive should be
@@ -58,11 +59,11 @@ public class IncentiveApplyIndicationType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(PaymentRequestID != null) {
-			sb.append("<ebl:PaymentRequestID>").append(PaymentRequestID);
+			sb.append("<ebl:PaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentRequestID));
 			sb.append("</ebl:PaymentRequestID>");
 		}
 		if(ItemId != null) {
-			sb.append("<ebl:ItemId>").append(ItemId);
+			sb.append("<ebl:ItemId>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemId));
 			sb.append("</ebl:ItemId>");
 		}
 		return sb.toString();

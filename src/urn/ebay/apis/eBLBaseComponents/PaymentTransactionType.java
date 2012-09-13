@@ -12,6 +12,10 @@ import java.util.ArrayList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -310,160 +314,82 @@ public class PaymentTransactionType{
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
-		} else if (n.getNodeType() == Node.ELEMENT_NODE ){
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ) {
 			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
 	}
 	
-	private String convertToXML(Node n){
-		String name = n.getNodeName();
-		short type = n.getNodeType();
-		if (Node.CDATA_SECTION_NODE == type) {
-			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
+	public PaymentTransactionType(Node node) throws XPathExpressionException {
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		Node childNode = null;
+		NodeList nodeList = null;
+		childNode = (Node) xpath.evaluate("ReceiverInfo", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ReceiverInfo =  new ReceiverInfoType(childNode);
 		}
-		if (name.startsWith("#")) {
-			return "";
+		childNode = (Node) xpath.evaluate("PayerInfo", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.PayerInfo =  new PayerInfoType(childNode);
 		}
-		StringBuffer sb = new StringBuffer();
-		sb.append("<").append(name);
-		NamedNodeMap attrs = n.getAttributes();
-		if (attrs != null) {
-			for (int i = 0; i < attrs.getLength(); i++) {
-				Node attr = attrs.item(i);
-				sb.append(" ").append(attr.getNodeName()).append("=\"").append(attr.getNodeValue()).append("\"");
-			}
+		childNode = (Node) xpath.evaluate("PaymentInfo", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.PaymentInfo =  new PaymentInfoType(childNode);
 		}
-		String textContent = null;
-		NodeList children = n.getChildNodes();
-		if (children.getLength() == 0) {
-			if (((textContent = n.getTextContent())) != null && (!"".equals(textContent))) {
-				sb.append(textContent).append("</").append(name).append(">");
-			} else {
-				sb.append("/>");
-			}
-		} else {
-			sb.append(">");
-			boolean hasValidChildren = false;
-			for (int i = 0; i < children.getLength(); i++) {
-				String childToString = convertToXML(children.item(i));
-				if (!"".equals(childToString)) {
-					sb.append(childToString);
-					hasValidChildren = true;
-				}
-			}
-			if (!hasValidChildren && ((textContent = n.getTextContent()) != null)) {
-				sb.append(textContent);
-			}
-			sb.append("</").append(name).append(">");
+		childNode = (Node) xpath.evaluate("PaymentItemInfo", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.PaymentItemInfo =  new PaymentItemInfoType(childNode);
 		}
-		return sb.toString();
-	}
-	
-	public PaymentTransactionType(Object xmlSoap) throws IOException, SAXException, ParserConfigurationException {
-		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = builderFactory.newDocumentBuilder();
-		InputSource inStream = new InputSource();
-		inStream.setCharacterStream(new StringReader((String)xmlSoap));
-		Document document = builder.parse(inStream);
-		NodeList nodeList= null;
-		
-		String xmlString = "";
-		if(document.getElementsByTagName("ReceiverInfo").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ReceiverInfo").item(0))) {
-				nodeList = document.getElementsByTagName("ReceiverInfo");
-				xmlString = convertToXML(nodeList.item(0));
-				this.ReceiverInfo =  new ReceiverInfoType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("OfferCouponInfo", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.OfferCouponInfo =  new OfferCouponInfoType(childNode);
 		}
-		if(document.getElementsByTagName("PayerInfo").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("PayerInfo").item(0))) {
-				nodeList = document.getElementsByTagName("PayerInfo");
-				xmlString = convertToXML(nodeList.item(0));
-				this.PayerInfo =  new PayerInfoType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("SecondaryAddress", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.SecondaryAddress =  new AddressType(childNode);
 		}
-		if(document.getElementsByTagName("PaymentInfo").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("PaymentInfo").item(0))) {
-				nodeList = document.getElementsByTagName("PaymentInfo");
-				xmlString = convertToXML(nodeList.item(0));
-				this.PaymentInfo =  new PaymentInfoType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("UserSelectedOptions", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.UserSelectedOptions =  new UserSelectedOptionType(childNode);
 		}
-		if(document.getElementsByTagName("PaymentItemInfo").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("PaymentItemInfo").item(0))) {
-				nodeList = document.getElementsByTagName("PaymentItemInfo");
-				xmlString = convertToXML(nodeList.item(0));
-				this.PaymentItemInfo =  new PaymentItemInfoType(xmlString);
-			}
-		}
-		if(document.getElementsByTagName("OfferCouponInfo").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("OfferCouponInfo").item(0))) {
-				nodeList = document.getElementsByTagName("OfferCouponInfo");
-				xmlString = convertToXML(nodeList.item(0));
-				this.OfferCouponInfo =  new OfferCouponInfoType(xmlString);
-			}
-		}
-		if(document.getElementsByTagName("SecondaryAddress").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("SecondaryAddress").item(0))) {
-				nodeList = document.getElementsByTagName("SecondaryAddress");
-				xmlString = convertToXML(nodeList.item(0));
-				this.SecondaryAddress =  new AddressType(xmlString);
-			}
-		}
-		if(document.getElementsByTagName("UserSelectedOptions").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("UserSelectedOptions").item(0))) {
-				nodeList = document.getElementsByTagName("UserSelectedOptions");
-				xmlString = convertToXML(nodeList.item(0));
-				this.UserSelectedOptions =  new UserSelectedOptionType(xmlString);
-			}
-		}
-		if (document.getElementsByTagName("GiftMessage").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("GiftMessage").item(0))) {
-				this.GiftMessage = (String)document.getElementsByTagName("GiftMessage").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("GiftMessage", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.GiftMessage = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("GiftReceipt").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("GiftReceipt").item(0))) {
-				this.GiftReceipt = (String)document.getElementsByTagName("GiftReceipt").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("GiftReceipt", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.GiftReceipt = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("GiftWrapName").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("GiftWrapName").item(0))) {
-				this.GiftWrapName = (String)document.getElementsByTagName("GiftWrapName").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("GiftWrapName", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.GiftWrapName = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("GiftWrapAmount").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("GiftWrapAmount").item(0))) {
-				nodeList = document.getElementsByTagName("GiftWrapAmount");
-				xmlString = convertToXML(nodeList.item(0));
-				this.GiftWrapAmount =  new BasicAmountType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("GiftWrapAmount", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.GiftWrapAmount =  new BasicAmountType(childNode);
 		}
-		if (document.getElementsByTagName("BuyerEmailOptIn").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("BuyerEmailOptIn").item(0))) {
-				this.BuyerEmailOptIn = (String)document.getElementsByTagName("BuyerEmailOptIn").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("BuyerEmailOptIn", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.BuyerEmailOptIn = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("SurveyQuestion").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("SurveyQuestion").item(0))) {
-				this.SurveyQuestion = (String)document.getElementsByTagName("SurveyQuestion").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("SurveyQuestion", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.SurveyQuestion = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("SurveyChoiceSelected").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("SurveyChoiceSelected").item(0))) {
-				nodeList = document.getElementsByTagName("SurveyChoiceSelected");
-				for(int i=0; i < nodeList.getLength(); i++) {
-					String value = nodeList.item(i).getTextContent();
-					this.SurveyChoiceSelected.add(value);
+        nodeList = (NodeList) xpath.evaluate("SurveyChoiceSelected", node, XPathConstants.NODESET);
+		if (nodeList != null && nodeList.getLength() > 0) {
+			for(int i=0; i < nodeList.getLength(); i++) {
+			    Node subNode = nodeList.item(i);
+			    String value = subNode.getTextContent();
+			    this.SurveyChoiceSelected.add(value);
 					
-				}
 			}
 		}
 	}

@@ -2,6 +2,7 @@ package urn.ebay.apis.eBLBaseComponents;
 import java.util.List;
 import java.util.ArrayList;
 import urn.ebay.apis.eBLBaseComponents.IncentiveApplyIndicationType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Details of incentive application on individual bucket. 
@@ -61,7 +62,7 @@ public class IncentiveInfoType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(IncentiveCode != null) {
-			sb.append("<ebl:IncentiveCode>").append(IncentiveCode);
+			sb.append("<ebl:IncentiveCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(IncentiveCode));
 			sb.append("</ebl:IncentiveCode>");
 		}
 		if(ApplyIndication != null) {

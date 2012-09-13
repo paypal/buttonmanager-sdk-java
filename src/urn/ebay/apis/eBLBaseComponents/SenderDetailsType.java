@@ -1,5 +1,6 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.DeviceDetailsType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 

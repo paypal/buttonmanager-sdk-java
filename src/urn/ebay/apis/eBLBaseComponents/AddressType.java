@@ -2,9 +2,14 @@ package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.CountryCodeType;
 import urn.ebay.apis.eBLBaseComponents.AddressOwnerCodeType;
 import urn.ebay.apis.eBLBaseComponents.AddressStatusCodeType;
+import com.paypal.core.SDKUtil;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -401,67 +406,67 @@ public class AddressType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(Name != null) {
-			sb.append("<ebl:Name>").append(Name);
+			sb.append("<ebl:Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(Name));
 			sb.append("</ebl:Name>");
 		}
 		if(Street1 != null) {
-			sb.append("<ebl:Street1>").append(Street1);
+			sb.append("<ebl:Street1>").append(SDKUtil.escapeInvalidXmlCharsRegex(Street1));
 			sb.append("</ebl:Street1>");
 		}
 		if(Street2 != null) {
-			sb.append("<ebl:Street2>").append(Street2);
+			sb.append("<ebl:Street2>").append(SDKUtil.escapeInvalidXmlCharsRegex(Street2));
 			sb.append("</ebl:Street2>");
 		}
 		if(CityName != null) {
-			sb.append("<ebl:CityName>").append(CityName);
+			sb.append("<ebl:CityName>").append(SDKUtil.escapeInvalidXmlCharsRegex(CityName));
 			sb.append("</ebl:CityName>");
 		}
 		if(StateOrProvince != null) {
-			sb.append("<ebl:StateOrProvince>").append(StateOrProvince);
+			sb.append("<ebl:StateOrProvince>").append(SDKUtil.escapeInvalidXmlCharsRegex(StateOrProvince));
 			sb.append("</ebl:StateOrProvince>");
 		}
 		if(Country != null) {
-			sb.append("<ebl:Country>").append(Country.getValue());
+			sb.append("<ebl:Country>").append(SDKUtil.escapeInvalidXmlCharsRegex(Country.getValue()));
 			sb.append("</ebl:Country>");
 		}
 		if(CountryName != null) {
-			sb.append("<ebl:CountryName>").append(CountryName);
+			sb.append("<ebl:CountryName>").append(SDKUtil.escapeInvalidXmlCharsRegex(CountryName));
 			sb.append("</ebl:CountryName>");
 		}
 		if(Phone != null) {
-			sb.append("<ebl:Phone>").append(Phone);
+			sb.append("<ebl:Phone>").append(SDKUtil.escapeInvalidXmlCharsRegex(Phone));
 			sb.append("</ebl:Phone>");
 		}
 		if(PostalCode != null) {
-			sb.append("<ebl:PostalCode>").append(PostalCode);
+			sb.append("<ebl:PostalCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(PostalCode));
 			sb.append("</ebl:PostalCode>");
 		}
 		if(AddressID != null) {
-			sb.append("<ebl:AddressID>").append(AddressID);
+			sb.append("<ebl:AddressID>").append(SDKUtil.escapeInvalidXmlCharsRegex(AddressID));
 			sb.append("</ebl:AddressID>");
 		}
 		if(AddressOwner != null) {
-			sb.append("<ebl:AddressOwner>").append(AddressOwner.getValue());
+			sb.append("<ebl:AddressOwner>").append(SDKUtil.escapeInvalidXmlCharsRegex(AddressOwner.getValue()));
 			sb.append("</ebl:AddressOwner>");
 		}
 		if(ExternalAddressID != null) {
-			sb.append("<ebl:ExternalAddressID>").append(ExternalAddressID);
+			sb.append("<ebl:ExternalAddressID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExternalAddressID));
 			sb.append("</ebl:ExternalAddressID>");
 		}
 		if(InternationalName != null) {
-			sb.append("<ebl:InternationalName>").append(InternationalName);
+			sb.append("<ebl:InternationalName>").append(SDKUtil.escapeInvalidXmlCharsRegex(InternationalName));
 			sb.append("</ebl:InternationalName>");
 		}
 		if(InternationalStateAndCity != null) {
-			sb.append("<ebl:InternationalStateAndCity>").append(InternationalStateAndCity);
+			sb.append("<ebl:InternationalStateAndCity>").append(SDKUtil.escapeInvalidXmlCharsRegex(InternationalStateAndCity));
 			sb.append("</ebl:InternationalStateAndCity>");
 		}
 		if(InternationalStreet != null) {
-			sb.append("<ebl:InternationalStreet>").append(InternationalStreet);
+			sb.append("<ebl:InternationalStreet>").append(SDKUtil.escapeInvalidXmlCharsRegex(InternationalStreet));
 			sb.append("</ebl:InternationalStreet>");
 		}
 		if(AddressStatus != null) {
-			sb.append("<ebl:AddressStatus>").append(AddressStatus.getValue());
+			sb.append("<ebl:AddressStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(AddressStatus.getValue()));
 			sb.append("</ebl:AddressStatus>");
 		}
 		return sb.toString();
@@ -470,158 +475,94 @@ public class AddressType{
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
-		} else if (n.getNodeType() == Node.ELEMENT_NODE ){
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ) {
 			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
 	}
 	
-	private String convertToXML(Node n){
-		String name = n.getNodeName();
-		short type = n.getNodeType();
-		if (Node.CDATA_SECTION_NODE == type) {
-			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
-		}
-		if (name.startsWith("#")) {
-			return "";
-		}
-		StringBuffer sb = new StringBuffer();
-		sb.append("<").append(name);
-		NamedNodeMap attrs = n.getAttributes();
-		if (attrs != null) {
-			for (int i = 0; i < attrs.getLength(); i++) {
-				Node attr = attrs.item(i);
-				sb.append(" ").append(attr.getNodeName()).append("=\"").append(attr.getNodeValue()).append("\"");
-			}
-		}
-		String textContent = null;
-		NodeList children = n.getChildNodes();
-		if (children.getLength() == 0) {
-			if (((textContent = n.getTextContent())) != null && (!"".equals(textContent))) {
-				sb.append(textContent).append("</").append(name).append(">");
-			} else {
-				sb.append("/>");
-			}
-		} else {
-			sb.append(">");
-			boolean hasValidChildren = false;
-			for (int i = 0; i < children.getLength(); i++) {
-				String childToString = convertToXML(children.item(i));
-				if (!"".equals(childToString)) {
-					sb.append(childToString);
-					hasValidChildren = true;
-				}
-			}
-			if (!hasValidChildren && ((textContent = n.getTextContent()) != null)) {
-				sb.append(textContent);
-			}
-			sb.append("</").append(name).append(">");
-		}
-		return sb.toString();
-	}
-	
-	public AddressType(Object xmlSoap) throws IOException, SAXException, ParserConfigurationException {
-		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = builderFactory.newDocumentBuilder();
-		InputSource inStream = new InputSource();
-		inStream.setCharacterStream(new StringReader((String)xmlSoap));
-		Document document = builder.parse(inStream);
-		NodeList nodeList= null;
-		
-		String xmlString = "";
-		if (document.getElementsByTagName("Name").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Name").item(0))) {
-				this.Name = (String)document.getElementsByTagName("Name").item(0).getTextContent();
-			}
+	public AddressType(Node node) throws XPathExpressionException {
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		Node childNode = null;
+		NodeList nodeList = null;
+		childNode = (Node) xpath.evaluate("Name", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Name = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("Street1").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Street1").item(0))) {
-				this.Street1 = (String)document.getElementsByTagName("Street1").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("Street1", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Street1 = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("Street2").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Street2").item(0))) {
-				this.Street2 = (String)document.getElementsByTagName("Street2").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("Street2", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Street2 = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("CityName").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("CityName").item(0))) {
-				this.CityName = (String)document.getElementsByTagName("CityName").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("CityName", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.CityName = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("StateOrProvince").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("StateOrProvince").item(0))) {
-				this.StateOrProvince = (String)document.getElementsByTagName("StateOrProvince").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("StateOrProvince", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.StateOrProvince = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("Country").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Country").item(0))) {
-				this.Country = CountryCodeType.fromValue(document.getElementsByTagName("Country").item(0).getTextContent());
-			}
+		childNode = (Node) xpath.evaluate("Country", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Country = CountryCodeType.fromValue(childNode.getTextContent());
 		}
-		if (document.getElementsByTagName("CountryName").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("CountryName").item(0))) {
-				this.CountryName = (String)document.getElementsByTagName("CountryName").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("CountryName", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.CountryName = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("Phone").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Phone").item(0))) {
-				this.Phone = (String)document.getElementsByTagName("Phone").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("Phone", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Phone = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("PostalCode").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("PostalCode").item(0))) {
-				this.PostalCode = (String)document.getElementsByTagName("PostalCode").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("PostalCode", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.PostalCode = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("AddressID").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("AddressID").item(0))) {
-				this.AddressID = (String)document.getElementsByTagName("AddressID").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("AddressID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.AddressID = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("AddressOwner").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("AddressOwner").item(0))) {
-				this.AddressOwner = AddressOwnerCodeType.fromValue(document.getElementsByTagName("AddressOwner").item(0).getTextContent());
-			}
+		childNode = (Node) xpath.evaluate("AddressOwner", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.AddressOwner = AddressOwnerCodeType.fromValue(childNode.getTextContent());
 		}
-		if (document.getElementsByTagName("ExternalAddressID").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ExternalAddressID").item(0))) {
-				this.ExternalAddressID = (String)document.getElementsByTagName("ExternalAddressID").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("ExternalAddressID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ExternalAddressID = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("InternationalName").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("InternationalName").item(0))) {
-				this.InternationalName = (String)document.getElementsByTagName("InternationalName").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("InternationalName", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.InternationalName = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("InternationalStateAndCity").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("InternationalStateAndCity").item(0))) {
-				this.InternationalStateAndCity = (String)document.getElementsByTagName("InternationalStateAndCity").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("InternationalStateAndCity", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.InternationalStateAndCity = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("InternationalStreet").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("InternationalStreet").item(0))) {
-				this.InternationalStreet = (String)document.getElementsByTagName("InternationalStreet").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("InternationalStreet", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.InternationalStreet = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("AddressStatus").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("AddressStatus").item(0))) {
-				this.AddressStatus = AddressStatusCodeType.fromValue(document.getElementsByTagName("AddressStatus").item(0).getTextContent());
-			}
+		childNode = (Node) xpath.evaluate("AddressStatus", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.AddressStatus = AddressStatusCodeType.fromValue(childNode.getTextContent());
 		}
 	}
  

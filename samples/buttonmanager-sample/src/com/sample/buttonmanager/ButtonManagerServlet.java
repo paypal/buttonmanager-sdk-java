@@ -208,9 +208,10 @@ public class ButtonManagerServlet extends HttpServlet {
 
 				List<String> lst = new ArrayList<String>();
 
-				lst.add("item_name=Widget");
+				lst.add("item_name=" + req.getParameter("itemName"));
+				lst.add("amount=" + req.getParameter("amt"));
 				lst.add("return=" + req.getParameter("returnURL"));
-				lst.add("business=jb-us-seller@paypal.com");
+				lst.add("business=" + req.getParameter("businessMail"));
 
 				reqType.setButtonVar(lst);
 				// Construct the request values according to the Button Type and

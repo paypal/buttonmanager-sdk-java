@@ -2,6 +2,7 @@ package urn.ebay.apis.eBLBaseComponents;
 import java.util.List;
 import java.util.ArrayList;
 import urn.ebay.apis.eBLBaseComponents.AddressType;
+import com.paypal.core.SDKUtil;
 
 /**
  * URL to which the customer's browser is returned after
@@ -370,67 +371,67 @@ public class SetAccessPermissionsRequestDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(ReturnURL != null) {
-			sb.append("<ebl:ReturnURL>").append(ReturnURL);
+			sb.append("<ebl:ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReturnURL));
 			sb.append("</ebl:ReturnURL>");
 		}
 		if(CancelURL != null) {
-			sb.append("<ebl:CancelURL>").append(CancelURL);
+			sb.append("<ebl:CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(CancelURL));
 			sb.append("</ebl:CancelURL>");
 		}
 		if(LogoutURL != null) {
-			sb.append("<ebl:LogoutURL>").append(LogoutURL);
+			sb.append("<ebl:LogoutURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(LogoutURL));
 			sb.append("</ebl:LogoutURL>");
 		}
 		if(InitFlowType != null) {
-			sb.append("<ebl:InitFlowType>").append(InitFlowType);
+			sb.append("<ebl:InitFlowType>").append(SDKUtil.escapeInvalidXmlCharsRegex(InitFlowType));
 			sb.append("</ebl:InitFlowType>");
 		}
 		if(SkipLoginPage != null) {
-			sb.append("<ebl:SkipLoginPage>").append(SkipLoginPage);
+			sb.append("<ebl:SkipLoginPage>").append(SDKUtil.escapeInvalidXmlCharsRegex(SkipLoginPage));
 			sb.append("</ebl:SkipLoginPage>");
 		}
 		if(RequiredAccessPermissions != null) {
 			for(int i=0; i < RequiredAccessPermissions.size(); i++) {
-				sb.append("<ebl:RequiredAccessPermissions>").append(RequiredAccessPermissions.get(i));
+				sb.append("<ebl:RequiredAccessPermissions>").append(SDKUtil.escapeInvalidXmlCharsRegex(RequiredAccessPermissions.get(i)));
 				sb.append("</ebl:RequiredAccessPermissions>");
 			}
 		}
 		if(OptionalAccessPermissions != null) {
 			for(int i=0; i < OptionalAccessPermissions.size(); i++) {
-				sb.append("<ebl:OptionalAccessPermissions>").append(OptionalAccessPermissions.get(i));
+				sb.append("<ebl:OptionalAccessPermissions>").append(SDKUtil.escapeInvalidXmlCharsRegex(OptionalAccessPermissions.get(i)));
 				sb.append("</ebl:OptionalAccessPermissions>");
 			}
 		}
 		if(LocaleCode != null) {
-			sb.append("<ebl:LocaleCode>").append(LocaleCode);
+			sb.append("<ebl:LocaleCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(LocaleCode));
 			sb.append("</ebl:LocaleCode>");
 		}
 		if(PageStyle != null) {
-			sb.append("<ebl:PageStyle>").append(PageStyle);
+			sb.append("<ebl:PageStyle>").append(SDKUtil.escapeInvalidXmlCharsRegex(PageStyle));
 			sb.append("</ebl:PageStyle>");
 		}
 		if(cppHeaderImage != null) {
-			sb.append("<ebl:cpp-header-image>").append(cppHeaderImage);
-			sb.append("</ebl:cpp-header-image>");
+			sb.append("<ebl:cppHeaderImage>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderImage));
+			sb.append("</ebl:cppHeaderImage>");
 		}
 		if(cppHeaderBorderColor != null) {
-			sb.append("<ebl:cpp-header-border-color>").append(cppHeaderBorderColor);
-			sb.append("</ebl:cpp-header-border-color>");
+			sb.append("<ebl:cppHeaderBorderColor>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBorderColor));
+			sb.append("</ebl:cppHeaderBorderColor>");
 		}
 		if(cppHeaderBackColor != null) {
-			sb.append("<ebl:cpp-header-back-color>").append(cppHeaderBackColor);
-			sb.append("</ebl:cpp-header-back-color>");
+			sb.append("<ebl:cppHeaderBackColor>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBackColor));
+			sb.append("</ebl:cppHeaderBackColor>");
 		}
 		if(cppPayflowColor != null) {
-			sb.append("<ebl:cpp-payflow-color>").append(cppPayflowColor);
-			sb.append("</ebl:cpp-payflow-color>");
+			sb.append("<ebl:cppPayflowColor>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppPayflowColor));
+			sb.append("</ebl:cppPayflowColor>");
 		}
 		if(FirstName != null) {
-			sb.append("<ebl:FirstName>").append(FirstName);
+			sb.append("<ebl:FirstName>").append(SDKUtil.escapeInvalidXmlCharsRegex(FirstName));
 			sb.append("</ebl:FirstName>");
 		}
 		if(LastName != null) {
-			sb.append("<ebl:LastName>").append(LastName);
+			sb.append("<ebl:LastName>").append(SDKUtil.escapeInvalidXmlCharsRegex(LastName));
 			sb.append("</ebl:LastName>");
 		}
 		if(Address != null) {

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 import urn.ebay.api.PayPalAPI.MassPayRequestItemType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Subject line of the email sent to all recipients. This
@@ -122,15 +123,15 @@ public class MassPayRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(EmailSubject != null) {
-			sb.append("<urn:EmailSubject>").append(EmailSubject);
+			sb.append("<urn:EmailSubject>").append(SDKUtil.escapeInvalidXmlCharsRegex(EmailSubject));
 			sb.append("</urn:EmailSubject>");
 		}
 		if(ReceiverType != null) {
-			sb.append("<urn:ReceiverType>").append(ReceiverType.getValue());
+			sb.append("<urn:ReceiverType>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReceiverType.getValue()));
 			sb.append("</urn:ReceiverType>");
 		}
 		if(ButtonSource != null) {
-			sb.append("<urn:ButtonSource>").append(ButtonSource);
+			sb.append("<urn:ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonSource));
 			sb.append("</urn:ButtonSource>");
 		}
 		if(MassPayItem != null) {

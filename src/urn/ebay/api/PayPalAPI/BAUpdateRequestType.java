@@ -1,6 +1,7 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.MerchantPullStatusCodeType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -106,19 +107,19 @@ public class BAUpdateRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(ReferenceID != null) {
-			sb.append("<urn:ReferenceID>").append(ReferenceID);
+			sb.append("<urn:ReferenceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReferenceID));
 			sb.append("</urn:ReferenceID>");
 		}
 		if(BillingAgreementDescription != null) {
-			sb.append("<urn:BillingAgreementDescription>").append(BillingAgreementDescription);
+			sb.append("<urn:BillingAgreementDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingAgreementDescription));
 			sb.append("</urn:BillingAgreementDescription>");
 		}
 		if(BillingAgreementStatus != null) {
-			sb.append("<urn:BillingAgreementStatus>").append(BillingAgreementStatus.getValue());
+			sb.append("<urn:BillingAgreementStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingAgreementStatus.getValue()));
 			sb.append("</urn:BillingAgreementStatus>");
 		}
 		if(BillingAgreementCustom != null) {
-			sb.append("<urn:BillingAgreementCustom>").append(BillingAgreementCustom);
+			sb.append("<urn:BillingAgreementCustom>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingAgreementCustom));
 			sb.append("</urn:BillingAgreementCustom>");
 		}
 		return sb.toString();

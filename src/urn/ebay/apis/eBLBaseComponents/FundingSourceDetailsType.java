@@ -1,5 +1,6 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.UserSelectedFundingSourceType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Allowable values: 0,1 The value 1 indicates that the
@@ -67,11 +68,11 @@ public class FundingSourceDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(AllowPushFunding != null) {
-			sb.append("<ebl:AllowPushFunding>").append(AllowPushFunding);
+			sb.append("<ebl:AllowPushFunding>").append(SDKUtil.escapeInvalidXmlCharsRegex(AllowPushFunding));
 			sb.append("</ebl:AllowPushFunding>");
 		}
 		if(UserSelectedFundingSource != null) {
-			sb.append("<ebl:UserSelectedFundingSource>").append(UserSelectedFundingSource.getValue());
+			sb.append("<ebl:UserSelectedFundingSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(UserSelectedFundingSource.getValue()));
 			sb.append("</ebl:UserSelectedFundingSource>");
 		}
 		return sb.toString();

@@ -1,4 +1,5 @@
 package urn.ebay.apis.eBLBaseComponents;
+import com.paypal.core.SDKUtil;
 
 /**
  * External remember-me ID returned by
@@ -50,7 +51,7 @@ public class RememberMeIDInfoType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(ExternalRememberMeID != null) {
-			sb.append("<ebl:ExternalRememberMeID>").append(ExternalRememberMeID);
+			sb.append("<ebl:ExternalRememberMeID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExternalRememberMeID));
 			sb.append("</ebl:ExternalRememberMeID>");
 		}
 		return sb.toString();

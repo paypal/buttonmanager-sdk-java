@@ -165,7 +165,7 @@ public class ButtonManagerServlet extends HttpServlet {
 					reqType.setOptionDetails(optList);
 				} else if (req.getParameter("buttonType").equalsIgnoreCase(
 						"AUTOBILLING")) {
-					lst.add("min_amount=" + req.getParameter("minAmount"));
+					lst.add("min_amount=" + req.getParameter("minAmt"));
 				} else if (req.getParameter("buttonType").equalsIgnoreCase(
 						"GIFTCERTIFICATE")) {
 					lst.add("shopping_url=" + req.getParameter("shoppingUrl"));
@@ -208,9 +208,10 @@ public class ButtonManagerServlet extends HttpServlet {
 
 				List<String> lst = new ArrayList<String>();
 
-				lst.add("item_name=Widget");
+				lst.add("item_name=" + req.getParameter("itemName"));
+				lst.add("amount=" + req.getParameter("amt"));
 				lst.add("return=" + req.getParameter("returnURL"));
-				lst.add("business=jb-us-seller@paypal.com");
+				lst.add("business=" + req.getParameter("businessMail"));
 
 				reqType.setButtonVar(lst);
 				// Construct the request values according to the Button Type and

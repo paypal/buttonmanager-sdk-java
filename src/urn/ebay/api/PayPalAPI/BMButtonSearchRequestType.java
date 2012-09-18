@@ -1,5 +1,6 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * The earliest transaction date at which to start the search.
@@ -62,11 +63,11 @@ public class BMButtonSearchRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(StartDate != null) {
-			sb.append("<urn:StartDate>").append(StartDate);
+			sb.append("<urn:StartDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(StartDate));
 			sb.append("</urn:StartDate>");
 		}
 		if(EndDate != null) {
-			sb.append("<urn:EndDate>").append(EndDate);
+			sb.append("<urn:EndDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(EndDate));
 			sb.append("</urn:EndDate>");
 		}
 		return sb.toString();

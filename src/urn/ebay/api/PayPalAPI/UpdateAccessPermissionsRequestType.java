@@ -1,5 +1,6 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Unique PayPal customer account number, the value of which
@@ -52,7 +53,7 @@ public class UpdateAccessPermissionsRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(PayerID != null) {
-			sb.append("<urn:PayerID>").append(PayerID);
+			sb.append("<urn:PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(PayerID));
 			sb.append("</urn:PayerID>");
 		}
 		return sb.toString();

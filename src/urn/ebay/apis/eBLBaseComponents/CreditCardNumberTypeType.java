@@ -1,5 +1,6 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.CreditCardTypeType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -58,11 +59,11 @@ public class CreditCardNumberTypeType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(CreditCardType != null) {
-			sb.append("<ebl:CreditCardType>").append(CreditCardType.getValue());
+			sb.append("<ebl:CreditCardType>").append(SDKUtil.escapeInvalidXmlCharsRegex(CreditCardType.getValue()));
 			sb.append("</ebl:CreditCardType>");
 		}
 		if(CreditCardNumber != null) {
-			sb.append("<ebl:CreditCardNumber>").append(CreditCardNumber);
+			sb.append("<ebl:CreditCardNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(CreditCardNumber));
 			sb.append("</ebl:CreditCardNumber>");
 		}
 		return sb.toString();

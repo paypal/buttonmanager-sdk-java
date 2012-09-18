@@ -1,4 +1,5 @@
 package urn.ebay.apis.eBLBaseComponents;
+import com.paypal.core.SDKUtil;
 
 /**
  * Identifier of the transaction to reverse. Required Character
@@ -42,7 +43,7 @@ public class ReverseTransactionRequestDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(TransactionID != null) {
-			sb.append("<ebl:TransactionID>").append(TransactionID);
+			sb.append("<ebl:TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionID));
 			sb.append("</ebl:TransactionID>");
 		}
 		return sb.toString();

@@ -1,6 +1,7 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.RedeemedOfferType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Describes discount information 
@@ -127,11 +128,11 @@ public class DiscountType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(Name != null) {
-			sb.append("<ebl:Name>").append(Name);
+			sb.append("<ebl:Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(Name));
 			sb.append("</ebl:Name>");
 		}
 		if(Description != null) {
-			sb.append("<ebl:Description>").append(Description);
+			sb.append("<ebl:Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(Description));
 			sb.append("</ebl:Description>");
 		}
 		if(Amount != null) {
@@ -140,11 +141,11 @@ public class DiscountType{
 			sb.append("</ebl:Amount>");
 		}
 		if(RedeemedOfferType != null) {
-			sb.append("<ebl:RedeemedOfferType>").append(RedeemedOfferType.getValue());
+			sb.append("<ebl:RedeemedOfferType>").append(SDKUtil.escapeInvalidXmlCharsRegex(RedeemedOfferType.getValue()));
 			sb.append("</ebl:RedeemedOfferType>");
 		}
 		if(RedeemedOfferID != null) {
-			sb.append("<ebl:RedeemedOfferID>").append(RedeemedOfferID);
+			sb.append("<ebl:RedeemedOfferID>").append(SDKUtil.escapeInvalidXmlCharsRegex(RedeemedOfferID));
 			sb.append("</ebl:RedeemedOfferID>");
 		}
 		return sb.toString();

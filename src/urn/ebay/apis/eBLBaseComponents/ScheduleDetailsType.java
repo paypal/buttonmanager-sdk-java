@@ -2,6 +2,7 @@ package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.BillingPeriodDetailsType;
 import urn.ebay.apis.eBLBaseComponents.ActivationDetailsType;
 import urn.ebay.apis.eBLBaseComponents.AutoBillType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Schedule details for the Recurring Payment 
@@ -147,7 +148,7 @@ public class ScheduleDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(Description != null) {
-			sb.append("<ebl:Description>").append(Description);
+			sb.append("<ebl:Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(Description));
 			sb.append("</ebl:Description>");
 		}
 		if(TrialPeriod != null) {
@@ -161,7 +162,7 @@ public class ScheduleDetailsType{
 			sb.append("</ebl:PaymentPeriod>");
 		}
 		if(MaxFailedPayments != null) {
-			sb.append("<ebl:MaxFailedPayments>").append(MaxFailedPayments);
+			sb.append("<ebl:MaxFailedPayments>").append(SDKUtil.escapeInvalidXmlCharsRegex(MaxFailedPayments));
 			sb.append("</ebl:MaxFailedPayments>");
 		}
 		if(ActivationDetails != null) {
@@ -170,7 +171,7 @@ public class ScheduleDetailsType{
 			sb.append("</ebl:ActivationDetails>");
 		}
 		if(AutoBillOutstandingAmount != null) {
-			sb.append("<ebl:AutoBillOutstandingAmount>").append(AutoBillOutstandingAmount.getValue());
+			sb.append("<ebl:AutoBillOutstandingAmount>").append(SDKUtil.escapeInvalidXmlCharsRegex(AutoBillOutstandingAmount.getValue()));
 			sb.append("</ebl:AutoBillOutstandingAmount>");
 		}
 		return sb.toString();

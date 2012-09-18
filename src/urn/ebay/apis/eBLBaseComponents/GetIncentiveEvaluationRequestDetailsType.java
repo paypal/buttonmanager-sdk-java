@@ -5,6 +5,7 @@ import urn.ebay.apis.eBLBaseComponents.IncentiveApplyIndicationType;
 import urn.ebay.apis.eBLBaseComponents.IncentiveBucketType;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.IncentiveRequestDetailsType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -139,12 +140,12 @@ public class GetIncentiveEvaluationRequestDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(ExternalBuyerId != null) {
-			sb.append("<ebl:ExternalBuyerId>").append(ExternalBuyerId);
+			sb.append("<ebl:ExternalBuyerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExternalBuyerId));
 			sb.append("</ebl:ExternalBuyerId>");
 		}
 		if(IncentiveCodes != null) {
 			for(int i=0; i < IncentiveCodes.size(); i++) {
-				sb.append("<ebl:IncentiveCodes>").append(IncentiveCodes.get(i));
+				sb.append("<ebl:IncentiveCodes>").append(SDKUtil.escapeInvalidXmlCharsRegex(IncentiveCodes.get(i)));
 				sb.append("</ebl:IncentiveCodes>");
 			}
 		}

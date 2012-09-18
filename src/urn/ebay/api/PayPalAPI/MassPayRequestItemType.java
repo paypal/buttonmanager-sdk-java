@@ -1,5 +1,6 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
+import com.paypal.core.SDKUtil;
 
 /**
  * MassPayRequestItemType 
@@ -163,15 +164,15 @@ public class MassPayRequestItemType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(ReceiverEmail != null) {
-			sb.append("<urn:ReceiverEmail>").append(ReceiverEmail);
+			sb.append("<urn:ReceiverEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReceiverEmail));
 			sb.append("</urn:ReceiverEmail>");
 		}
 		if(ReceiverPhone != null) {
-			sb.append("<urn:ReceiverPhone>").append(ReceiverPhone);
+			sb.append("<urn:ReceiverPhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReceiverPhone));
 			sb.append("</urn:ReceiverPhone>");
 		}
 		if(ReceiverID != null) {
-			sb.append("<urn:ReceiverID>").append(ReceiverID);
+			sb.append("<urn:ReceiverID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReceiverID));
 			sb.append("</urn:ReceiverID>");
 		}
 		if(Amount != null) {
@@ -180,11 +181,11 @@ public class MassPayRequestItemType{
 			sb.append("</urn:Amount>");
 		}
 		if(UniqueId != null) {
-			sb.append("<urn:UniqueId>").append(UniqueId);
+			sb.append("<urn:UniqueId>").append(SDKUtil.escapeInvalidXmlCharsRegex(UniqueId));
 			sb.append("</urn:UniqueId>");
 		}
 		if(Note != null) {
-			sb.append("<urn:Note>").append(Note);
+			sb.append("<urn:Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(Note));
 			sb.append("</urn:Note>");
 		}
 		return sb.toString();

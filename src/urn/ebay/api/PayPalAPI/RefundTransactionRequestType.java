@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.ArrayList;
 import urn.ebay.apis.eBLBaseComponents.InvoiceItemType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Unique identifier of the transaction you are refunding.
@@ -253,15 +254,15 @@ public class RefundTransactionRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(TransactionID != null) {
-			sb.append("<urn:TransactionID>").append(TransactionID);
+			sb.append("<urn:TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionID));
 			sb.append("</urn:TransactionID>");
 		}
 		if(InvoiceID != null) {
-			sb.append("<urn:InvoiceID>").append(InvoiceID);
+			sb.append("<urn:InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(InvoiceID));
 			sb.append("</urn:InvoiceID>");
 		}
 		if(RefundType != null) {
-			sb.append("<urn:RefundType>").append(RefundType.getValue());
+			sb.append("<urn:RefundType>").append(SDKUtil.escapeInvalidXmlCharsRegex(RefundType.getValue()));
 			sb.append("</urn:RefundType>");
 		}
 		if(Amount != null) {
@@ -270,19 +271,19 @@ public class RefundTransactionRequestType extends AbstractRequestType {
 			sb.append("</urn:Amount>");
 		}
 		if(Memo != null) {
-			sb.append("<urn:Memo>").append(Memo);
+			sb.append("<urn:Memo>").append(SDKUtil.escapeInvalidXmlCharsRegex(Memo));
 			sb.append("</urn:Memo>");
 		}
 		if(RetryUntil != null) {
-			sb.append("<urn:RetryUntil>").append(RetryUntil);
+			sb.append("<urn:RetryUntil>").append(SDKUtil.escapeInvalidXmlCharsRegex(RetryUntil));
 			sb.append("</urn:RetryUntil>");
 		}
 		if(RefundSource != null) {
-			sb.append("<urn:RefundSource>").append(RefundSource.getValue());
+			sb.append("<urn:RefundSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(RefundSource.getValue()));
 			sb.append("</urn:RefundSource>");
 		}
 		if(RefundAdvice != null) {
-			sb.append("<urn:RefundAdvice>").append(RefundAdvice);
+			sb.append("<urn:RefundAdvice>").append(SDKUtil.escapeInvalidXmlCharsRegex(RefundAdvice));
 			sb.append("</urn:RefundAdvice>");
 		}
 		if(MerchantStoreDetails != null) {
@@ -298,7 +299,7 @@ public class RefundTransactionRequestType extends AbstractRequestType {
 			}
 		}
 		if(MsgSubID != null) {
-			sb.append("<urn:MsgSubID>").append(MsgSubID);
+			sb.append("<urn:MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(MsgSubID));
 			sb.append("</urn:MsgSubID>");
 		}
 		return sb.toString();

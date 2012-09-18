@@ -132,7 +132,7 @@
 				<div class="params">
 					<div class="param_name">Minimum Amount</div>
 					<div class="param_value">
-						<input type="text" name="minAmt" value="1.00" size="50"
+						<input type="text" name="minAmount" value="1.00" size="50"
 							maxlength="260" />
 					</div>
 				</div>

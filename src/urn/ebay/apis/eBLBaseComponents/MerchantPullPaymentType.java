@@ -1,6 +1,7 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.MerchantPullPaymentCodeType;
+import com.paypal.core.SDKUtil;
 
 /**
  * MerchantPullPayment Parameters to make initiate a pull
@@ -308,19 +309,19 @@ public class MerchantPullPaymentType{
 			sb.append("</ebl:Amount>");
 		}
 		if(MpID != null) {
-			sb.append("<ebl:MpID>").append(MpID);
+			sb.append("<ebl:MpID>").append(SDKUtil.escapeInvalidXmlCharsRegex(MpID));
 			sb.append("</ebl:MpID>");
 		}
 		if(PaymentType != null) {
-			sb.append("<ebl:PaymentType>").append(PaymentType.getValue());
+			sb.append("<ebl:PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentType.getValue()));
 			sb.append("</ebl:PaymentType>");
 		}
 		if(Memo != null) {
-			sb.append("<ebl:Memo>").append(Memo);
+			sb.append("<ebl:Memo>").append(SDKUtil.escapeInvalidXmlCharsRegex(Memo));
 			sb.append("</ebl:Memo>");
 		}
 		if(EmailSubject != null) {
-			sb.append("<ebl:EmailSubject>").append(EmailSubject);
+			sb.append("<ebl:EmailSubject>").append(SDKUtil.escapeInvalidXmlCharsRegex(EmailSubject));
 			sb.append("</ebl:EmailSubject>");
 		}
 		if(Tax != null) {
@@ -339,27 +340,27 @@ public class MerchantPullPaymentType{
 			sb.append("</ebl:Handling>");
 		}
 		if(ItemName != null) {
-			sb.append("<ebl:ItemName>").append(ItemName);
+			sb.append("<ebl:ItemName>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemName));
 			sb.append("</ebl:ItemName>");
 		}
 		if(ItemNumber != null) {
-			sb.append("<ebl:ItemNumber>").append(ItemNumber);
+			sb.append("<ebl:ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemNumber));
 			sb.append("</ebl:ItemNumber>");
 		}
 		if(Invoice != null) {
-			sb.append("<ebl:Invoice>").append(Invoice);
+			sb.append("<ebl:Invoice>").append(SDKUtil.escapeInvalidXmlCharsRegex(Invoice));
 			sb.append("</ebl:Invoice>");
 		}
 		if(Custom != null) {
-			sb.append("<ebl:Custom>").append(Custom);
+			sb.append("<ebl:Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(Custom));
 			sb.append("</ebl:Custom>");
 		}
 		if(ButtonSource != null) {
-			sb.append("<ebl:ButtonSource>").append(ButtonSource);
+			sb.append("<ebl:ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonSource));
 			sb.append("</ebl:ButtonSource>");
 		}
 		if(SoftDescriptor != null) {
-			sb.append("<ebl:SoftDescriptor>").append(SoftDescriptor);
+			sb.append("<ebl:SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(SoftDescriptor));
 			sb.append("</ebl:SoftDescriptor>");
 		}
 		return sb.toString();

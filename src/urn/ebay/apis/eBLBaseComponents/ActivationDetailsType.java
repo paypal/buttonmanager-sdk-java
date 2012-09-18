@@ -1,6 +1,7 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.FailedPaymentActionType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -72,7 +73,7 @@ public class ActivationDetailsType{
 			sb.append("</ebl:InitialAmount>");
 		}
 		if(FailedInitialAmountAction != null) {
-			sb.append("<ebl:FailedInitialAmountAction>").append(FailedInitialAmountAction.getValue());
+			sb.append("<ebl:FailedInitialAmountAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(FailedInitialAmountAction.getValue()));
 			sb.append("</ebl:FailedInitialAmountAction>");
 		}
 		return sb.toString();

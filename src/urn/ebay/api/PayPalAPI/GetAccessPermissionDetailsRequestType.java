@@ -1,5 +1,6 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * A timestamped token, the value of which was returned by
@@ -52,7 +53,7 @@ public class GetAccessPermissionDetailsRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(Token != null) {
-			sb.append("<urn:Token>").append(Token);
+			sb.append("<urn:Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(Token));
 			sb.append("</urn:Token>");
 		}
 		return sb.toString();

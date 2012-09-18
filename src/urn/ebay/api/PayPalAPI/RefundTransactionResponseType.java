@@ -5,6 +5,10 @@ import urn.ebay.apis.eBLBaseComponents.AbstractResponseType;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -191,118 +195,54 @@ public class RefundTransactionResponseType extends AbstractResponseType {
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ) {
+			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
 	}
 	
-	private String convertToXML(Node n){
-		String name = n.getNodeName();
-		short type = n.getNodeType();
-		if (Node.CDATA_SECTION_NODE == type) {
-			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
-		}
-		if (name.startsWith("#")) {
-			return "";
-		}
-		StringBuffer sb = new StringBuffer();
-		sb.append("<").append(name);
-		NamedNodeMap attrs = n.getAttributes();
-		if (attrs != null) {
-			for (int i = 0; i < attrs.getLength(); i++) {
-				Node attr = attrs.item(i);
-				sb.append(" ").append(attr.getNodeName()).append("=\"").append(attr.getNodeValue()).append("\"");
-			}
-		}
-		String textContent = null;
-		NodeList children = n.getChildNodes();
-		if (children.getLength() == 0) {
-			if (((textContent = n.getTextContent())) != null && (!"".equals(textContent))) {
-				sb.append(textContent).append("</").append(name).append(">");
-			} else {
-				sb.append("/>");
-			}
-		} else {
-			sb.append(">");
-			boolean hasValidChildren = false;
-			for (int i = 0; i < children.getLength(); i++) {
-				String childToString = convertToXML(children.item(i));
-				if (!"".equals(childToString)) {
-					sb.append(childToString);
-					hasValidChildren = true;
-				}
-			}
-			if (!hasValidChildren && ((textContent = n.getTextContent()) != null)) {
-				sb.append(textContent);
-			}
-			sb.append("</").append(name).append(">");
-		}
-		return sb.toString();
-	}
-	
-	public RefundTransactionResponseType(Object xmlSoap) throws IOException, SAXException, ParserConfigurationException {
-		super(xmlSoap);
-		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = builderFactory.newDocumentBuilder();
-		InputSource inStream = new InputSource();
-		inStream.setCharacterStream(new StringReader((String)xmlSoap));
-		Document document = builder.parse(inStream);
-		NodeList nodeList= null;
-		
-		String xmlString = "";
-		if (document.getElementsByTagName("RefundTransactionID").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("RefundTransactionID").item(0))) {
-				this.RefundTransactionID = (String)document.getElementsByTagName("RefundTransactionID").item(0).getTextContent();
-			}
+	public RefundTransactionResponseType(Node node) throws XPathExpressionException {
+		super(node);
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		Node childNode = null;
+		NodeList nodeList = null;
+		childNode = (Node) xpath.evaluate("RefundTransactionID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.RefundTransactionID = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("NetRefundAmount").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("NetRefundAmount").item(0))) {
-				nodeList = document.getElementsByTagName("NetRefundAmount");
-				xmlString = convertToXML(nodeList.item(0));
-				this.NetRefundAmount =  new BasicAmountType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("NetRefundAmount", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.NetRefundAmount =  new BasicAmountType(childNode);
 		}
-		if(document.getElementsByTagName("FeeRefundAmount").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("FeeRefundAmount").item(0))) {
-				nodeList = document.getElementsByTagName("FeeRefundAmount");
-				xmlString = convertToXML(nodeList.item(0));
-				this.FeeRefundAmount =  new BasicAmountType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("FeeRefundAmount", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.FeeRefundAmount =  new BasicAmountType(childNode);
 		}
-		if(document.getElementsByTagName("GrossRefundAmount").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("GrossRefundAmount").item(0))) {
-				nodeList = document.getElementsByTagName("GrossRefundAmount");
-				xmlString = convertToXML(nodeList.item(0));
-				this.GrossRefundAmount =  new BasicAmountType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("GrossRefundAmount", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.GrossRefundAmount =  new BasicAmountType(childNode);
 		}
-		if(document.getElementsByTagName("TotalRefundedAmount").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("TotalRefundedAmount").item(0))) {
-				nodeList = document.getElementsByTagName("TotalRefundedAmount");
-				xmlString = convertToXML(nodeList.item(0));
-				this.TotalRefundedAmount =  new BasicAmountType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("TotalRefundedAmount", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.TotalRefundedAmount =  new BasicAmountType(childNode);
 		}
-		if(document.getElementsByTagName("RefundInfo").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("RefundInfo").item(0))) {
-				nodeList = document.getElementsByTagName("RefundInfo");
-				xmlString = convertToXML(nodeList.item(0));
-				this.RefundInfo =  new RefundInfoType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("RefundInfo", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.RefundInfo =  new RefundInfoType(childNode);
 		}
-		if (document.getElementsByTagName("ReceiptData").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ReceiptData").item(0))) {
-				this.ReceiptData = (String)document.getElementsByTagName("ReceiptData").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("ReceiptData", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ReceiptData = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("MsgSubID").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("MsgSubID").item(0))) {
-				this.MsgSubID = (String)document.getElementsByTagName("MsgSubID").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("MsgSubID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.MsgSubID = childNode.getTextContent();
 		}
 	
 	}
-
+ 
 }

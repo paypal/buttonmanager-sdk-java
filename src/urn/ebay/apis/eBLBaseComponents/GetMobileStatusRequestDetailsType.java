@@ -1,5 +1,6 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.PhoneNumberType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Phone number for status inquiry 

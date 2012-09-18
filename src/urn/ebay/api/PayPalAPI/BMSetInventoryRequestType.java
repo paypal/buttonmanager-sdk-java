@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 import urn.ebay.apis.eBLBaseComponents.OptionTrackingDetailsType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Hosted Button ID of button you wish to change.  Required
@@ -239,15 +240,15 @@ public class BMSetInventoryRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(HostedButtonID != null) {
-			sb.append("<urn:HostedButtonID>").append(HostedButtonID);
+			sb.append("<urn:HostedButtonID>").append(SDKUtil.escapeInvalidXmlCharsRegex(HostedButtonID));
 			sb.append("</urn:HostedButtonID>");
 		}
 		if(TrackInv != null) {
-			sb.append("<urn:TrackInv>").append(TrackInv);
+			sb.append("<urn:TrackInv>").append(SDKUtil.escapeInvalidXmlCharsRegex(TrackInv));
 			sb.append("</urn:TrackInv>");
 		}
 		if(TrackPnl != null) {
-			sb.append("<urn:TrackPnl>").append(TrackPnl);
+			sb.append("<urn:TrackPnl>").append(SDKUtil.escapeInvalidXmlCharsRegex(TrackPnl));
 			sb.append("</urn:TrackPnl>");
 		}
 		if(ItemTrackingDetails != null) {
@@ -256,7 +257,7 @@ public class BMSetInventoryRequestType extends AbstractRequestType {
 			sb.append("</ebl:ItemTrackingDetails>");
 		}
 		if(OptionIndex != null) {
-			sb.append("<urn:OptionIndex>").append(OptionIndex);
+			sb.append("<urn:OptionIndex>").append(SDKUtil.escapeInvalidXmlCharsRegex(OptionIndex));
 			sb.append("</urn:OptionIndex>");
 		}
 		if(OptionTrackingDetails != null) {
@@ -267,20 +268,20 @@ public class BMSetInventoryRequestType extends AbstractRequestType {
 			}
 		}
 		if(SoldoutURL != null) {
-			sb.append("<urn:SoldoutURL>").append(SoldoutURL);
+			sb.append("<urn:SoldoutURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(SoldoutURL));
 			sb.append("</urn:SoldoutURL>");
 		}
 		if(ReuseDigitalDownloadKeys != null) {
-			sb.append("<urn:ReuseDigitalDownloadKeys>").append(ReuseDigitalDownloadKeys);
+			sb.append("<urn:ReuseDigitalDownloadKeys>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReuseDigitalDownloadKeys));
 			sb.append("</urn:ReuseDigitalDownloadKeys>");
 		}
 		if(AppendDigitalDownloadKeys != null) {
-			sb.append("<urn:AppendDigitalDownloadKeys>").append(AppendDigitalDownloadKeys);
+			sb.append("<urn:AppendDigitalDownloadKeys>").append(SDKUtil.escapeInvalidXmlCharsRegex(AppendDigitalDownloadKeys));
 			sb.append("</urn:AppendDigitalDownloadKeys>");
 		}
 		if(DigitalDownloadKeys != null) {
 			for(int i=0; i < DigitalDownloadKeys.size(); i++) {
-				sb.append("<urn:DigitalDownloadKeys>").append(DigitalDownloadKeys.get(i));
+				sb.append("<urn:DigitalDownloadKeys>").append(SDKUtil.escapeInvalidXmlCharsRegex(DigitalDownloadKeys.get(i)));
 				sb.append("</urn:DigitalDownloadKeys>");
 			}
 		}

@@ -2,6 +2,7 @@ package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.MobileIDInfoType;
 import urn.ebay.apis.eBLBaseComponents.RememberMeIDInfoType;
 import urn.ebay.apis.eBLBaseComponents.IdentityTokenInfoType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Mobile specific buyer identification. 

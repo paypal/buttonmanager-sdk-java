@@ -7,6 +7,7 @@ import urn.ebay.apis.eBLBaseComponents.AverageTransactionPriceType;
 import urn.ebay.apis.eBLBaseComponents.AverageMonthlyVolumeType;
 import urn.ebay.apis.eBLBaseComponents.SalesVenueType;
 import urn.ebay.apis.eBLBaseComponents.PercentageRevenueFromOnlineSalesType;
+import com.paypal.core.SDKUtil;
 
 /**
  * BusinessInfoType 
@@ -324,11 +325,11 @@ public class BusinessInfoType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(Type != null) {
-			sb.append("<ebl:Type>").append(Type.getValue());
+			sb.append("<ebl:Type>").append(SDKUtil.escapeInvalidXmlCharsRegex(Type.getValue()));
 			sb.append("</ebl:Type>");
 		}
 		if(Name != null) {
-			sb.append("<ebl:Name>").append(Name);
+			sb.append("<ebl:Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(Name));
 			sb.append("</ebl:Name>");
 		}
 		if(Address != null) {
@@ -337,47 +338,47 @@ public class BusinessInfoType{
 			sb.append("</ebl:Address>");
 		}
 		if(WorkPhone != null) {
-			sb.append("<ebl:WorkPhone>").append(WorkPhone);
+			sb.append("<ebl:WorkPhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(WorkPhone));
 			sb.append("</ebl:WorkPhone>");
 		}
 		if(Category != null) {
-			sb.append("<ebl:Category>").append(Category.getValue());
+			sb.append("<ebl:Category>").append(SDKUtil.escapeInvalidXmlCharsRegex(Category.getValue()));
 			sb.append("</ebl:Category>");
 		}
 		if(SubCategory != null) {
-			sb.append("<ebl:SubCategory>").append(SubCategory.getValue());
+			sb.append("<ebl:SubCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(SubCategory.getValue()));
 			sb.append("</ebl:SubCategory>");
 		}
 		if(AveragePrice != null) {
-			sb.append("<ebl:AveragePrice>").append(AveragePrice.getValue());
+			sb.append("<ebl:AveragePrice>").append(SDKUtil.escapeInvalidXmlCharsRegex(AveragePrice.getValue()));
 			sb.append("</ebl:AveragePrice>");
 		}
 		if(AverageMonthlyVolume != null) {
-			sb.append("<ebl:AverageMonthlyVolume>").append(AverageMonthlyVolume.getValue());
+			sb.append("<ebl:AverageMonthlyVolume>").append(SDKUtil.escapeInvalidXmlCharsRegex(AverageMonthlyVolume.getValue()));
 			sb.append("</ebl:AverageMonthlyVolume>");
 		}
 		if(SalesVenue != null) {
-			sb.append("<ebl:SalesVenue>").append(SalesVenue.getValue());
+			sb.append("<ebl:SalesVenue>").append(SDKUtil.escapeInvalidXmlCharsRegex(SalesVenue.getValue()));
 			sb.append("</ebl:SalesVenue>");
 		}
 		if(Website != null) {
-			sb.append("<ebl:Website>").append(Website);
+			sb.append("<ebl:Website>").append(SDKUtil.escapeInvalidXmlCharsRegex(Website));
 			sb.append("</ebl:Website>");
 		}
 		if(RevenueFromOnlineSales != null) {
-			sb.append("<ebl:RevenueFromOnlineSales>").append(RevenueFromOnlineSales.getValue());
+			sb.append("<ebl:RevenueFromOnlineSales>").append(SDKUtil.escapeInvalidXmlCharsRegex(RevenueFromOnlineSales.getValue()));
 			sb.append("</ebl:RevenueFromOnlineSales>");
 		}
 		if(BusinessEstablished != null) {
-			sb.append("<ebl:BusinessEstablished>").append(BusinessEstablished);
+			sb.append("<ebl:BusinessEstablished>").append(SDKUtil.escapeInvalidXmlCharsRegex(BusinessEstablished));
 			sb.append("</ebl:BusinessEstablished>");
 		}
 		if(CustomerServiceEmail != null) {
-			sb.append("<ebl:CustomerServiceEmail>").append(CustomerServiceEmail);
+			sb.append("<ebl:CustomerServiceEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(CustomerServiceEmail));
 			sb.append("</ebl:CustomerServiceEmail>");
 		}
 		if(CustomerServicePhone != null) {
-			sb.append("<ebl:CustomerServicePhone>").append(CustomerServicePhone);
+			sb.append("<ebl:CustomerServicePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(CustomerServicePhone));
 			sb.append("</ebl:CustomerServicePhone>");
 		}
 		return sb.toString();

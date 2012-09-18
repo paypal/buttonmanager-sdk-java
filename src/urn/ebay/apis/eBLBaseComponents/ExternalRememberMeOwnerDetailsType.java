@@ -1,4 +1,5 @@
 package urn.ebay.apis.eBLBaseComponents;
+import com.paypal.core.SDKUtil;
 
 /**
  * E-mail address or secure merchant account ID of merchant to
@@ -71,11 +72,11 @@ public class ExternalRememberMeOwnerDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(ExternalRememberMeOwnerIDType != null) {
-			sb.append("<ebl:ExternalRememberMeOwnerIDType>").append(ExternalRememberMeOwnerIDType);
+			sb.append("<ebl:ExternalRememberMeOwnerIDType>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExternalRememberMeOwnerIDType));
 			sb.append("</ebl:ExternalRememberMeOwnerIDType>");
 		}
 		if(ExternalRememberMeOwnerID != null) {
-			sb.append("<ebl:ExternalRememberMeOwnerID>").append(ExternalRememberMeOwnerID);
+			sb.append("<ebl:ExternalRememberMeOwnerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExternalRememberMeOwnerID));
 			sb.append("</ebl:ExternalRememberMeOwnerID>");
 		}
 		return sb.toString();

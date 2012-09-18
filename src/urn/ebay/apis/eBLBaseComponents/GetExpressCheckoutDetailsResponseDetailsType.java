@@ -12,6 +12,10 @@ import urn.ebay.apis.eBLBaseComponents.ExternalRememberMeStatusDetailsType;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -506,221 +510,137 @@ public class GetExpressCheckoutDetailsResponseDetailsType{
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ) {
+			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
 	}
 	
-	private String convertToXML(Node n){
-		String name = n.getNodeName();
-		short type = n.getNodeType();
-		if (Node.CDATA_SECTION_NODE == type) {
-			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
-		}
-		if (name.startsWith("#")) {
-			return "";
-		}
-		StringBuffer sb = new StringBuffer();
-		sb.append("<").append(name);
-		NamedNodeMap attrs = n.getAttributes();
-		if (attrs != null) {
-			for (int i = 0; i < attrs.getLength(); i++) {
-				Node attr = attrs.item(i);
-				sb.append(" ").append(attr.getNodeName()).append("=\"").append(attr.getNodeValue()).append("\"");
-			}
-		}
-		String textContent = null;
-		NodeList children = n.getChildNodes();
-		if (children.getLength() == 0) {
-			if (((textContent = n.getTextContent())) != null && (!"".equals(textContent))) {
-				sb.append(textContent).append("</").append(name).append(">");
-			} else {
-				sb.append("/>");
-			}
-		} else {
-			sb.append(">");
-			boolean hasValidChildren = false;
-			for (int i = 0; i < children.getLength(); i++) {
-				String childToString = convertToXML(children.item(i));
-				if (!"".equals(childToString)) {
-					sb.append(childToString);
-					hasValidChildren = true;
-				}
-			}
-			if (!hasValidChildren && ((textContent = n.getTextContent()) != null)) {
-				sb.append(textContent);
-			}
-			sb.append("</").append(name).append(">");
-		}
-		return sb.toString();
-	}
-	
-	public GetExpressCheckoutDetailsResponseDetailsType(Object xmlSoap) throws IOException, SAXException, ParserConfigurationException {
-		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = builderFactory.newDocumentBuilder();
-		InputSource inStream = new InputSource();
-		inStream.setCharacterStream(new StringReader((String)xmlSoap));
-		Document document = builder.parse(inStream);
-		NodeList nodeList= null;
-		
-		String xmlString = "";
-		if (document.getElementsByTagName("Token").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Token").item(0))) {
-				this.Token = (String)document.getElementsByTagName("Token").item(0).getTextContent();
-			}
+	public GetExpressCheckoutDetailsResponseDetailsType(Node node) throws XPathExpressionException {
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		Node childNode = null;
+		NodeList nodeList = null;
+		childNode = (Node) xpath.evaluate("Token", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Token = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("PayerInfo").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("PayerInfo").item(0))) {
-				nodeList = document.getElementsByTagName("PayerInfo");
-				xmlString = convertToXML(nodeList.item(0));
-				this.PayerInfo =  new PayerInfoType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("PayerInfo", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.PayerInfo =  new PayerInfoType(childNode);
 		}
-		if (document.getElementsByTagName("Custom").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Custom").item(0))) {
-				this.Custom = (String)document.getElementsByTagName("Custom").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("Custom", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Custom = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("InvoiceID").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("InvoiceID").item(0))) {
-				this.InvoiceID = (String)document.getElementsByTagName("InvoiceID").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("InvoiceID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.InvoiceID = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("ContactPhone").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ContactPhone").item(0))) {
-				this.ContactPhone = (String)document.getElementsByTagName("ContactPhone").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("ContactPhone", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ContactPhone = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("BillingAgreementAcceptedStatus").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("BillingAgreementAcceptedStatus").item(0))) {
-				this.BillingAgreementAcceptedStatus = Boolean.valueOf(document.getElementsByTagName("BillingAgreementAcceptedStatus").item(0).getTextContent());
-			}
+		childNode = (Node) xpath.evaluate("BillingAgreementAcceptedStatus", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+			this.BillingAgreementAcceptedStatus = Boolean.valueOf(childNode.getTextContent());
 		}
 	
-		if (document.getElementsByTagName("RedirectRequired").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("RedirectRequired").item(0))) {
-				this.RedirectRequired = (String)document.getElementsByTagName("RedirectRequired").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("RedirectRequired", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.RedirectRequired = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("BillingAddress").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("BillingAddress").item(0))) {
-				nodeList = document.getElementsByTagName("BillingAddress");
-				xmlString = convertToXML(nodeList.item(0));
-				this.BillingAddress =  new AddressType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("BillingAddress", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.BillingAddress =  new AddressType(childNode);
 		}
-		if (document.getElementsByTagName("Note").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Note").item(0))) {
-				this.Note = (String)document.getElementsByTagName("Note").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("Note", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Note = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("CheckoutStatus").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("CheckoutStatus").item(0))) {
-				this.CheckoutStatus = (String)document.getElementsByTagName("CheckoutStatus").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("CheckoutStatus", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.CheckoutStatus = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("PayPalAdjustment").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("PayPalAdjustment").item(0))) {
-				nodeList = document.getElementsByTagName("PayPalAdjustment");
-				xmlString = convertToXML(nodeList.item(0));
-				this.PayPalAdjustment =  new BasicAmountType(xmlString);
+		childNode = (Node) xpath.evaluate("PayPalAdjustment", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.PayPalAdjustment =  new BasicAmountType(childNode);
+		}
+        nodeList = (NodeList) xpath.evaluate("PaymentDetails", node, XPathConstants.NODESET);
+		if (nodeList != null && nodeList.getLength() > 0) {
+			for(int i=0; i < nodeList.getLength(); i++) {
+				Node subNode = nodeList.item(i);
+				this.PaymentDetails.add(new PaymentDetailsType(subNode));
 			}
 		}
-		if (document.getElementsByTagName("PaymentDetails").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("PaymentDetails").item(0))) {
-				nodeList = document.getElementsByTagName("PaymentDetails");
-				for(int i=0; i < nodeList.getLength(); i++) {
-					xmlString = convertToXML(nodeList.item(i));
-					this.PaymentDetails.add(new PaymentDetailsType(xmlString));
-				}
+		childNode = (Node) xpath.evaluate("UserSelectedOptions", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.UserSelectedOptions =  new UserSelectedOptionType(childNode);
+		}
+        nodeList = (NodeList) xpath.evaluate("IncentiveDetails", node, XPathConstants.NODESET);
+		if (nodeList != null && nodeList.getLength() > 0) {
+			for(int i=0; i < nodeList.getLength(); i++) {
+				Node subNode = nodeList.item(i);
+				this.IncentiveDetails.add(new IncentiveDetailsType(subNode));
 			}
 		}
-		if(document.getElementsByTagName("UserSelectedOptions").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("UserSelectedOptions").item(0))) {
-				nodeList = document.getElementsByTagName("UserSelectedOptions");
-				xmlString = convertToXML(nodeList.item(0));
-				this.UserSelectedOptions =  new UserSelectedOptionType(xmlString);
-			}
-		}
-		if (document.getElementsByTagName("IncentiveDetails").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("IncentiveDetails").item(0))) {
-				nodeList = document.getElementsByTagName("IncentiveDetails");
-				for(int i=0; i < nodeList.getLength(); i++) {
-					xmlString = convertToXML(nodeList.item(i));
-					this.IncentiveDetails.add(new IncentiveDetailsType(xmlString));
-				}
-			}
-		}
-		if (document.getElementsByTagName("GiftMessage").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("GiftMessage").item(0))) {
-				this.GiftMessage = (String)document.getElementsByTagName("GiftMessage").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("GiftMessage", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.GiftMessage = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("GiftReceiptEnable").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("GiftReceiptEnable").item(0))) {
-				this.GiftReceiptEnable = (String)document.getElementsByTagName("GiftReceiptEnable").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("GiftReceiptEnable", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.GiftReceiptEnable = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("GiftWrapName").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("GiftWrapName").item(0))) {
-				this.GiftWrapName = (String)document.getElementsByTagName("GiftWrapName").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("GiftWrapName", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.GiftWrapName = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("GiftWrapAmount").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("GiftWrapAmount").item(0))) {
-				nodeList = document.getElementsByTagName("GiftWrapAmount");
-				xmlString = convertToXML(nodeList.item(0));
-				this.GiftWrapAmount =  new BasicAmountType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("GiftWrapAmount", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.GiftWrapAmount =  new BasicAmountType(childNode);
 		}
-		if (document.getElementsByTagName("BuyerMarketingEmail").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("BuyerMarketingEmail").item(0))) {
-				this.BuyerMarketingEmail = (String)document.getElementsByTagName("BuyerMarketingEmail").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("BuyerMarketingEmail", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.BuyerMarketingEmail = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("SurveyQuestion").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("SurveyQuestion").item(0))) {
-				this.SurveyQuestion = (String)document.getElementsByTagName("SurveyQuestion").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("SurveyQuestion", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.SurveyQuestion = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("SurveyChoiceSelected").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("SurveyChoiceSelected").item(0))) {
-				nodeList = document.getElementsByTagName("SurveyChoiceSelected");
-				for(int i=0; i < nodeList.getLength(); i++) {
-					String value = nodeList.item(i).getTextContent();
-					this.SurveyChoiceSelected.add(value);
+        nodeList = (NodeList) xpath.evaluate("SurveyChoiceSelected", node, XPathConstants.NODESET);
+		if (nodeList != null && nodeList.getLength() > 0) {
+			for(int i=0; i < nodeList.getLength(); i++) {
+			    Node subNode = nodeList.item(i);
+			    String value = subNode.getTextContent();
+			    this.SurveyChoiceSelected.add(value);
 					
-				}
 			}
 		}
-		if (document.getElementsByTagName("PaymentRequestInfo").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("PaymentRequestInfo").item(0))) {
-				nodeList = document.getElementsByTagName("PaymentRequestInfo");
-				for(int i=0; i < nodeList.getLength(); i++) {
-					xmlString = convertToXML(nodeList.item(i));
-					this.PaymentRequestInfo.add(new PaymentRequestInfoType(xmlString));
-				}
+        nodeList = (NodeList) xpath.evaluate("PaymentRequestInfo", node, XPathConstants.NODESET);
+		if (nodeList != null && nodeList.getLength() > 0) {
+			for(int i=0; i < nodeList.getLength(); i++) {
+				Node subNode = nodeList.item(i);
+				this.PaymentRequestInfo.add(new PaymentRequestInfoType(subNode));
 			}
 		}
-		if(document.getElementsByTagName("ExternalRememberMeStatusDetails").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ExternalRememberMeStatusDetails").item(0))) {
-				nodeList = document.getElementsByTagName("ExternalRememberMeStatusDetails");
-				xmlString = convertToXML(nodeList.item(0));
-				this.ExternalRememberMeStatusDetails =  new ExternalRememberMeStatusDetailsType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("ExternalRememberMeStatusDetails", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ExternalRememberMeStatusDetails =  new ExternalRememberMeStatusDetailsType(childNode);
 		}
 	}
-
+ 
 }

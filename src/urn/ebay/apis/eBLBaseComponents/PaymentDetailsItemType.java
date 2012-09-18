@@ -5,9 +5,14 @@ import urn.ebay.apis.eBLBaseComponents.ProductCategoryType;
 import urn.ebay.apis.CoreComponentTypes.MeasureType;
 import urn.ebay.apis.EnhancedDataTypes.EnhancedItemDataType;
 import urn.ebay.apis.eBLBaseComponents.ItemCategoryType;
+import com.paypal.core.SDKUtil;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -354,15 +359,15 @@ public class PaymentDetailsItemType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(Name != null) {
-			sb.append("<ebl:Name>").append(Name);
+			sb.append("<ebl:Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(Name));
 			sb.append("</ebl:Name>");
 		}
 		if(Number != null) {
-			sb.append("<ebl:Number>").append(Number);
+			sb.append("<ebl:Number>").append(SDKUtil.escapeInvalidXmlCharsRegex(Number));
 			sb.append("</ebl:Number>");
 		}
 		if(Quantity != null) {
-			sb.append("<ebl:Quantity>").append(Quantity);
+			sb.append("<ebl:Quantity>").append(SDKUtil.escapeInvalidXmlCharsRegex(Quantity));
 			sb.append("</ebl:Quantity>");
 		}
 		if(Tax != null) {
@@ -381,15 +386,15 @@ public class PaymentDetailsItemType{
 			sb.append("</ebl:EbayItemPaymentDetailsItem>");
 		}
 		if(PromoCode != null) {
-			sb.append("<ebl:PromoCode>").append(PromoCode);
+			sb.append("<ebl:PromoCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(PromoCode));
 			sb.append("</ebl:PromoCode>");
 		}
 		if(ProductCategory != null) {
-			sb.append("<ebl:ProductCategory>").append(ProductCategory.getValue());
+			sb.append("<ebl:ProductCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProductCategory.getValue()));
 			sb.append("</ebl:ProductCategory>");
 		}
 		if(Description != null) {
-			sb.append("<ebl:Description>").append(Description);
+			sb.append("<ebl:Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(Description));
 			sb.append("</ebl:Description>");
 		}
 		if(ItemWeight != null) {
@@ -413,7 +418,7 @@ public class PaymentDetailsItemType{
 			sb.append("</ebl:ItemHeight>");
 		}
 		if(ItemURL != null) {
-			sb.append("<ebl:ItemURL>").append(ItemURL);
+			sb.append("<ebl:ItemURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemURL));
 			sb.append("</ebl:ItemURL>");
 		}
 		if(EnhancedItemData != null) {
@@ -422,7 +427,7 @@ public class PaymentDetailsItemType{
 			sb.append("</ebl:EnhancedItemData>");
 		}
 		if(ItemCategory != null) {
-			sb.append("<ebl:ItemCategory>").append(ItemCategory.getValue());
+			sb.append("<ebl:ItemCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemCategory.getValue()));
 			sb.append("</ebl:ItemCategory>");
 		}
 		return sb.toString();
@@ -431,166 +436,88 @@ public class PaymentDetailsItemType{
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ) {
+			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
 	}
 	
-	private String convertToXML(Node n){
-		String name = n.getNodeName();
-		short type = n.getNodeType();
-		if (Node.CDATA_SECTION_NODE == type) {
-			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
-		}
-		if (name.startsWith("#")) {
-			return "";
-		}
-		StringBuffer sb = new StringBuffer();
-		sb.append("<").append(name);
-		NamedNodeMap attrs = n.getAttributes();
-		if (attrs != null) {
-			for (int i = 0; i < attrs.getLength(); i++) {
-				Node attr = attrs.item(i);
-				sb.append(" ").append(attr.getNodeName()).append("=\"").append(attr.getNodeValue()).append("\"");
-			}
-		}
-		String textContent = null;
-		NodeList children = n.getChildNodes();
-		if (children.getLength() == 0) {
-			if (((textContent = n.getTextContent())) != null && (!"".equals(textContent))) {
-				sb.append(textContent).append("</").append(name).append(">");
-			} else {
-				sb.append("/>");
-			}
-		} else {
-			sb.append(">");
-			boolean hasValidChildren = false;
-			for (int i = 0; i < children.getLength(); i++) {
-				String childToString = convertToXML(children.item(i));
-				if (!"".equals(childToString)) {
-					sb.append(childToString);
-					hasValidChildren = true;
-				}
-			}
-			if (!hasValidChildren && ((textContent = n.getTextContent()) != null)) {
-				sb.append(textContent);
-			}
-			sb.append("</").append(name).append(">");
-		}
-		return sb.toString();
-	}
-	
-	public PaymentDetailsItemType(Object xmlSoap) throws IOException, SAXException, ParserConfigurationException {
-		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = builderFactory.newDocumentBuilder();
-		InputSource inStream = new InputSource();
-		inStream.setCharacterStream(new StringReader((String)xmlSoap));
-		Document document = builder.parse(inStream);
-		NodeList nodeList= null;
-		
-		String xmlString = "";
-		if (document.getElementsByTagName("Name").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Name").item(0))) {
-				this.Name = (String)document.getElementsByTagName("Name").item(0).getTextContent();
-			}
+	public PaymentDetailsItemType(Node node) throws XPathExpressionException {
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		Node childNode = null;
+		NodeList nodeList = null;
+		childNode = (Node) xpath.evaluate("Name", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Name = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("Number").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Number").item(0))) {
-				this.Number = (String)document.getElementsByTagName("Number").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("Number", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Number = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("Quantity").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Quantity").item(0))) {
-				this.Quantity = Integer.valueOf(document.getElementsByTagName("Quantity").item(0).getTextContent());
-			}
+		childNode = (Node) xpath.evaluate("Quantity", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+			this.Quantity = Integer.valueOf(childNode.getTextContent());
 		}
 	
-		if(document.getElementsByTagName("Tax").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Tax").item(0))) {
-				nodeList = document.getElementsByTagName("Tax");
-				xmlString = convertToXML(nodeList.item(0));
-				this.Tax =  new BasicAmountType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("Tax", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Tax =  new BasicAmountType(childNode);
 		}
-		if(document.getElementsByTagName("Amount").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Amount").item(0))) {
-				nodeList = document.getElementsByTagName("Amount");
-				xmlString = convertToXML(nodeList.item(0));
-				this.Amount =  new BasicAmountType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("Amount", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Amount =  new BasicAmountType(childNode);
 		}
-		if(document.getElementsByTagName("EbayItemPaymentDetailsItem").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("EbayItemPaymentDetailsItem").item(0))) {
-				nodeList = document.getElementsByTagName("EbayItemPaymentDetailsItem");
-				xmlString = convertToXML(nodeList.item(0));
-				this.EbayItemPaymentDetailsItem =  new EbayItemPaymentDetailsItemType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("EbayItemPaymentDetailsItem", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.EbayItemPaymentDetailsItem =  new EbayItemPaymentDetailsItemType(childNode);
 		}
-		if (document.getElementsByTagName("PromoCode").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("PromoCode").item(0))) {
-				this.PromoCode = (String)document.getElementsByTagName("PromoCode").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("PromoCode", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.PromoCode = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("ProductCategory").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ProductCategory").item(0))) {
-				this.ProductCategory = ProductCategoryType.fromValue(document.getElementsByTagName("ProductCategory").item(0).getTextContent());
-			}
+		childNode = (Node) xpath.evaluate("ProductCategory", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ProductCategory = ProductCategoryType.fromValue(childNode.getTextContent());
 		}
-		if (document.getElementsByTagName("Description").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Description").item(0))) {
-				this.Description = (String)document.getElementsByTagName("Description").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("Description", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Description = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("ItemWeight").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ItemWeight").item(0))) {
-				nodeList = document.getElementsByTagName("ItemWeight");
-				xmlString = convertToXML(nodeList.item(0));
-				this.ItemWeight =  new MeasureType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("ItemWeight", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ItemWeight =  new MeasureType(childNode);
 		}
-		if(document.getElementsByTagName("ItemLength").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ItemLength").item(0))) {
-				nodeList = document.getElementsByTagName("ItemLength");
-				xmlString = convertToXML(nodeList.item(0));
-				this.ItemLength =  new MeasureType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("ItemLength", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ItemLength =  new MeasureType(childNode);
 		}
-		if(document.getElementsByTagName("ItemWidth").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ItemWidth").item(0))) {
-				nodeList = document.getElementsByTagName("ItemWidth");
-				xmlString = convertToXML(nodeList.item(0));
-				this.ItemWidth =  new MeasureType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("ItemWidth", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ItemWidth =  new MeasureType(childNode);
 		}
-		if(document.getElementsByTagName("ItemHeight").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ItemHeight").item(0))) {
-				nodeList = document.getElementsByTagName("ItemHeight");
-				xmlString = convertToXML(nodeList.item(0));
-				this.ItemHeight =  new MeasureType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("ItemHeight", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ItemHeight =  new MeasureType(childNode);
 		}
-		if (document.getElementsByTagName("ItemURL").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ItemURL").item(0))) {
-				this.ItemURL = (String)document.getElementsByTagName("ItemURL").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("ItemURL", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ItemURL = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("EnhancedItemData").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("EnhancedItemData").item(0))) {
-				nodeList = document.getElementsByTagName("EnhancedItemData");
-				xmlString = convertToXML(nodeList.item(0));
-				this.EnhancedItemData =  new EnhancedItemDataType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("EnhancedItemData", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.EnhancedItemData =  new EnhancedItemDataType(childNode);
 		}
-		if(document.getElementsByTagName("ItemCategory").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ItemCategory").item(0))) {
-				this.ItemCategory = ItemCategoryType.fromValue(document.getElementsByTagName("ItemCategory").item(0).getTextContent());
-			}
+		childNode = (Node) xpath.evaluate("ItemCategory", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ItemCategory = ItemCategoryType.fromValue(childNode.getTextContent());
 		}
 	}
-
+ 
 }

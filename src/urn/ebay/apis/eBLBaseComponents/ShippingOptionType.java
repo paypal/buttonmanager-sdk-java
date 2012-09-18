@@ -1,5 +1,6 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Fallback shipping options type. 
@@ -77,7 +78,7 @@ public class ShippingOptionType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(ShippingOptionIsDefault != null) {
-			sb.append("<ebl:ShippingOptionIsDefault>").append(ShippingOptionIsDefault);
+			sb.append("<ebl:ShippingOptionIsDefault>").append(SDKUtil.escapeInvalidXmlCharsRegex(ShippingOptionIsDefault));
 			sb.append("</ebl:ShippingOptionIsDefault>");
 		}
 		if(ShippingOptionAmount != null) {
@@ -86,7 +87,7 @@ public class ShippingOptionType{
 			sb.append("</ebl:ShippingOptionAmount>");
 		}
 		if(ShippingOptionName != null) {
-			sb.append("<ebl:ShippingOptionName>").append(ShippingOptionName);
+			sb.append("<ebl:ShippingOptionName>").append(SDKUtil.escapeInvalidXmlCharsRegex(ShippingOptionName));
 			sb.append("</ebl:ShippingOptionName>");
 		}
 		return sb.toString();

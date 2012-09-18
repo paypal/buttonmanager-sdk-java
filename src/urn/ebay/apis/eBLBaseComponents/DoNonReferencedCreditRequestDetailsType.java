@@ -1,6 +1,7 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.CreditCardDetailsType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -179,11 +180,11 @@ public class DoNonReferencedCreditRequestDetailsType{
 			sb.append("</ebl:CreditCard>");
 		}
 		if(ReceiverEmail != null) {
-			sb.append("<ebl:ReceiverEmail>").append(ReceiverEmail);
+			sb.append("<ebl:ReceiverEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReceiverEmail));
 			sb.append("</ebl:ReceiverEmail>");
 		}
 		if(Comment != null) {
-			sb.append("<ebl:Comment>").append(Comment);
+			sb.append("<ebl:Comment>").append(SDKUtil.escapeInvalidXmlCharsRegex(Comment));
 			sb.append("</ebl:Comment>");
 		}
 		return sb.toString();

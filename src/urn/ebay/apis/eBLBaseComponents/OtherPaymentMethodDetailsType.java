@@ -1,4 +1,5 @@
 package urn.ebay.apis.eBLBaseComponents;
+import com.paypal.core.SDKUtil;
 
 /**
  * Lists the Payment Methods (other than PayPal) that the use
@@ -175,35 +176,35 @@ public class OtherPaymentMethodDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(OtherPaymentMethodId != null) {
-			sb.append("<ebl:OtherPaymentMethodId>").append(OtherPaymentMethodId);
+			sb.append("<ebl:OtherPaymentMethodId>").append(SDKUtil.escapeInvalidXmlCharsRegex(OtherPaymentMethodId));
 			sb.append("</ebl:OtherPaymentMethodId>");
 		}
 		if(OtherPaymentMethodType != null) {
-			sb.append("<ebl:OtherPaymentMethodType>").append(OtherPaymentMethodType);
+			sb.append("<ebl:OtherPaymentMethodType>").append(SDKUtil.escapeInvalidXmlCharsRegex(OtherPaymentMethodType));
 			sb.append("</ebl:OtherPaymentMethodType>");
 		}
 		if(OtherPaymentMethodLabel != null) {
-			sb.append("<ebl:OtherPaymentMethodLabel>").append(OtherPaymentMethodLabel);
+			sb.append("<ebl:OtherPaymentMethodLabel>").append(SDKUtil.escapeInvalidXmlCharsRegex(OtherPaymentMethodLabel));
 			sb.append("</ebl:OtherPaymentMethodLabel>");
 		}
 		if(OtherPaymentMethodLabelDescription != null) {
-			sb.append("<ebl:OtherPaymentMethodLabelDescription>").append(OtherPaymentMethodLabelDescription);
+			sb.append("<ebl:OtherPaymentMethodLabelDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(OtherPaymentMethodLabelDescription));
 			sb.append("</ebl:OtherPaymentMethodLabelDescription>");
 		}
 		if(OtherPaymentMethodLongDescriptionTitle != null) {
-			sb.append("<ebl:OtherPaymentMethodLongDescriptionTitle>").append(OtherPaymentMethodLongDescriptionTitle);
+			sb.append("<ebl:OtherPaymentMethodLongDescriptionTitle>").append(SDKUtil.escapeInvalidXmlCharsRegex(OtherPaymentMethodLongDescriptionTitle));
 			sb.append("</ebl:OtherPaymentMethodLongDescriptionTitle>");
 		}
 		if(OtherPaymentMethodLongDescription != null) {
-			sb.append("<ebl:OtherPaymentMethodLongDescription>").append(OtherPaymentMethodLongDescription);
+			sb.append("<ebl:OtherPaymentMethodLongDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(OtherPaymentMethodLongDescription));
 			sb.append("</ebl:OtherPaymentMethodLongDescription>");
 		}
 		if(OtherPaymentMethodIcon != null) {
-			sb.append("<ebl:OtherPaymentMethodIcon>").append(OtherPaymentMethodIcon);
+			sb.append("<ebl:OtherPaymentMethodIcon>").append(SDKUtil.escapeInvalidXmlCharsRegex(OtherPaymentMethodIcon));
 			sb.append("</ebl:OtherPaymentMethodIcon>");
 		}
 		if(OtherPaymentMethodHideLabel != null) {
-			sb.append("<ebl:OtherPaymentMethodHideLabel>").append(OtherPaymentMethodHideLabel);
+			sb.append("<ebl:OtherPaymentMethodHideLabel>").append(SDKUtil.escapeInvalidXmlCharsRegex(OtherPaymentMethodHideLabel));
 			sb.append("</ebl:OtherPaymentMethodHideLabel>");
 		}
 		return sb.toString();

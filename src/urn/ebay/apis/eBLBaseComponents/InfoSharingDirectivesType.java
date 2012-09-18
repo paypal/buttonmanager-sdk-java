@@ -1,4 +1,5 @@
 package urn.ebay.apis.eBLBaseComponents;
+import com.paypal.core.SDKUtil;
 
 /**
  * If Billing Address should be returned in
@@ -42,7 +43,7 @@ public class InfoSharingDirectivesType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(ReqBillingAddress != null) {
-			sb.append("<ebl:ReqBillingAddress>").append(ReqBillingAddress);
+			sb.append("<ebl:ReqBillingAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReqBillingAddress));
 			sb.append("</ebl:ReqBillingAddress>");
 		}
 		return sb.toString();

@@ -1,5 +1,6 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Hosted Button ID of the button to return inventory for. 
@@ -52,7 +53,7 @@ public class BMGetInventoryRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(HostedButtonID != null) {
-			sb.append("<urn:HostedButtonID>").append(HostedButtonID);
+			sb.append("<urn:HostedButtonID>").append(SDKUtil.escapeInvalidXmlCharsRegex(HostedButtonID));
 			sb.append("</urn:HostedButtonID>");
 		}
 		return sb.toString();

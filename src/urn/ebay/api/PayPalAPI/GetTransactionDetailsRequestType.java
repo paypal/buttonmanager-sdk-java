@@ -1,5 +1,6 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Unique identifier of a transaction. RequiredThe details for
@@ -48,7 +49,7 @@ public class GetTransactionDetailsRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(TransactionID != null) {
-			sb.append("<urn:TransactionID>").append(TransactionID);
+			sb.append("<urn:TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionID));
 			sb.append("</urn:TransactionID>");
 		}
 		return sb.toString();

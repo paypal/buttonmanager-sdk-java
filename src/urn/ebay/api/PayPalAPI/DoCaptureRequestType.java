@@ -4,6 +4,7 @@ import urn.ebay.apis.eBLBaseComponents.CompleteCodeType;
 import urn.ebay.apis.eBLBaseComponents.EnhancedDataType;
 import urn.ebay.apis.eBLBaseComponents.MerchantStoreDetailsType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * The authorization identification number of the payment you
@@ -233,7 +234,7 @@ public class DoCaptureRequestType extends AbstractRequestType {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(AuthorizationID != null) {
-			sb.append("<urn:AuthorizationID>").append(AuthorizationID);
+			sb.append("<urn:AuthorizationID>").append(SDKUtil.escapeInvalidXmlCharsRegex(AuthorizationID));
 			sb.append("</urn:AuthorizationID>");
 		}
 		if(Amount != null) {
@@ -242,15 +243,15 @@ public class DoCaptureRequestType extends AbstractRequestType {
 			sb.append("</urn:Amount>");
 		}
 		if(CompleteType != null) {
-			sb.append("<urn:CompleteType>").append(CompleteType.getValue());
+			sb.append("<urn:CompleteType>").append(SDKUtil.escapeInvalidXmlCharsRegex(CompleteType.getValue()));
 			sb.append("</urn:CompleteType>");
 		}
 		if(Note != null) {
-			sb.append("<urn:Note>").append(Note);
+			sb.append("<urn:Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(Note));
 			sb.append("</urn:Note>");
 		}
 		if(InvoiceID != null) {
-			sb.append("<urn:InvoiceID>").append(InvoiceID);
+			sb.append("<urn:InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(InvoiceID));
 			sb.append("</urn:InvoiceID>");
 		}
 		if(EnhancedData != null) {
@@ -259,7 +260,7 @@ public class DoCaptureRequestType extends AbstractRequestType {
 			sb.append("</ebl:EnhancedData>");
 		}
 		if(Descriptor != null) {
-			sb.append("<urn:Descriptor>").append(Descriptor);
+			sb.append("<urn:Descriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(Descriptor));
 			sb.append("</urn:Descriptor>");
 		}
 		if(MerchantStoreDetails != null) {
@@ -268,7 +269,7 @@ public class DoCaptureRequestType extends AbstractRequestType {
 			sb.append("</ebl:MerchantStoreDetails>");
 		}
 		if(MsgSubID != null) {
-			sb.append("<urn:MsgSubID>").append(MsgSubID);
+			sb.append("<urn:MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(MsgSubID));
 			sb.append("</urn:MsgSubID>");
 		}
 		return sb.toString();

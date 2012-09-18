@@ -1,5 +1,6 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.ExternalRememberMeOwnerDetailsType;
+import com.paypal.core.SDKUtil;
 
 /**
  * This element contains information that allows the merchant
@@ -66,7 +67,7 @@ public class ExternalRememberMeOptInDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(ExternalRememberMeOptIn != null) {
-			sb.append("<ebl:ExternalRememberMeOptIn>").append(ExternalRememberMeOptIn);
+			sb.append("<ebl:ExternalRememberMeOptIn>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExternalRememberMeOptIn));
 			sb.append("</ebl:ExternalRememberMeOptIn>");
 		}
 		if(ExternalRememberMeOwnerDetails != null) {

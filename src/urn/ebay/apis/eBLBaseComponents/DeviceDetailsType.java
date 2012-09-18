@@ -1,4 +1,5 @@
 package urn.ebay.apis.eBLBaseComponents;
+import com.paypal.core.SDKUtil;
 
 /**
  * Device ID Optional  Character length and limits: 256
@@ -42,7 +43,7 @@ public class DeviceDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(DeviceID != null) {
-			sb.append("<ebl:DeviceID>").append(DeviceID);
+			sb.append("<ebl:DeviceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(DeviceID));
 			sb.append("</ebl:DeviceID>");
 		}
 		return sb.toString();

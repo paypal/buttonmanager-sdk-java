@@ -2,9 +2,19 @@ package urn.ebay.api.PayPalAPI;
 import java.io.*;
 import com.paypal.core.BaseService;
 import com.paypal.exception.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
+import org.xml.sax.InputSource;
 import javax.xml.parsers.ParserConfigurationException;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import urn.ebay.api.PayPalAPI.BMCreateButtonReq;
 import urn.ebay.api.PayPalAPI.BMCreateButtonResponseType;
 import urn.ebay.api.PayPalAPI.BMUpdateButtonReq;
@@ -25,7 +35,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 
 
 	// Service Version
-	public static final String SERVICE_VERSION = "92.0";
+	public static final String SERVICE_VERSION = "93.0";
 
 	// Service Name
 	public static final String SERVICE_NAME = "PayPalAPIInterfaceService";
@@ -68,10 +78,22 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 * @throws InterruptedException
 	 * @throws OAuthException
 	 */
-	 public BMCreateButtonResponseType bMCreateButton(BMCreateButtonReq bMCreateButtonReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException {
+	 public BMCreateButtonResponseType bMCreateButton(BMCreateButtonReq bMCreateButtonReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException, IOException {
 		setStandardParams(bMCreateButtonReq.getBMCreateButtonRequest());
 	 	String response = call("BMCreateButton", bMCreateButtonReq.toXMLString(), apiUsername);
-		return new BMCreateButtonResponseType(response);
+		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder builder = builderFactory.newDocumentBuilder();
+		InputSource inStream = new InputSource();
+		inStream.setCharacterStream(new StringReader((String) response));
+		Document document = builder.parse(inStream);
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		try {
+			Node node = (Node) xpath.evaluate("Envelope/Body/BMCreateButtonResponse", document, XPathConstants.NODE);
+			return new BMCreateButtonResponseType(node);
+		} catch (XPathExpressionException exe) {
+			throw new RuntimeException("Unable to parse response", exe);
+		}
 	 }
 	 
 	/** 
@@ -87,7 +109,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 * @throws InterruptedException
 	 * @throws OAuthException
 	 */
-	 public BMCreateButtonResponseType bMCreateButton(BMCreateButtonReq bMCreateButtonReq) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException {
+	 public BMCreateButtonResponseType bMCreateButton(BMCreateButtonReq bMCreateButtonReq) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException  {
 	 	return bMCreateButton(bMCreateButtonReq, null);
 	 }
 		
@@ -104,10 +126,22 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 * @throws InterruptedException
 	 * @throws OAuthException
 	 */
-	 public BMUpdateButtonResponseType bMUpdateButton(BMUpdateButtonReq bMUpdateButtonReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException {
+	 public BMUpdateButtonResponseType bMUpdateButton(BMUpdateButtonReq bMUpdateButtonReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException, IOException {
 		setStandardParams(bMUpdateButtonReq.getBMUpdateButtonRequest());
 	 	String response = call("BMUpdateButton", bMUpdateButtonReq.toXMLString(), apiUsername);
-		return new BMUpdateButtonResponseType(response);
+		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder builder = builderFactory.newDocumentBuilder();
+		InputSource inStream = new InputSource();
+		inStream.setCharacterStream(new StringReader((String) response));
+		Document document = builder.parse(inStream);
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		try {
+			Node node = (Node) xpath.evaluate("Envelope/Body/BMUpdateButtonResponse", document, XPathConstants.NODE);
+			return new BMUpdateButtonResponseType(node);
+		} catch (XPathExpressionException exe) {
+			throw new RuntimeException("Unable to parse response", exe);
+		}
 	 }
 	 
 	/** 
@@ -123,7 +157,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 * @throws InterruptedException
 	 * @throws OAuthException
 	 */
-	 public BMUpdateButtonResponseType bMUpdateButton(BMUpdateButtonReq bMUpdateButtonReq) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException {
+	 public BMUpdateButtonResponseType bMUpdateButton(BMUpdateButtonReq bMUpdateButtonReq) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException  {
 	 	return bMUpdateButton(bMUpdateButtonReq, null);
 	 }
 		
@@ -140,10 +174,22 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 * @throws InterruptedException
 	 * @throws OAuthException
 	 */
-	 public BMManageButtonStatusResponseType bMManageButtonStatus(BMManageButtonStatusReq bMManageButtonStatusReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException {
+	 public BMManageButtonStatusResponseType bMManageButtonStatus(BMManageButtonStatusReq bMManageButtonStatusReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException, IOException {
 		setStandardParams(bMManageButtonStatusReq.getBMManageButtonStatusRequest());
 	 	String response = call("BMManageButtonStatus", bMManageButtonStatusReq.toXMLString(), apiUsername);
-		return new BMManageButtonStatusResponseType(response);
+		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder builder = builderFactory.newDocumentBuilder();
+		InputSource inStream = new InputSource();
+		inStream.setCharacterStream(new StringReader((String) response));
+		Document document = builder.parse(inStream);
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		try {
+			Node node = (Node) xpath.evaluate("Envelope/Body/BMManageButtonStatusResponse", document, XPathConstants.NODE);
+			return new BMManageButtonStatusResponseType(node);
+		} catch (XPathExpressionException exe) {
+			throw new RuntimeException("Unable to parse response", exe);
+		}
 	 }
 	 
 	/** 
@@ -159,7 +205,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 * @throws InterruptedException
 	 * @throws OAuthException
 	 */
-	 public BMManageButtonStatusResponseType bMManageButtonStatus(BMManageButtonStatusReq bMManageButtonStatusReq) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException {
+	 public BMManageButtonStatusResponseType bMManageButtonStatus(BMManageButtonStatusReq bMManageButtonStatusReq) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException  {
 	 	return bMManageButtonStatus(bMManageButtonStatusReq, null);
 	 }
 		
@@ -176,10 +222,22 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 * @throws InterruptedException
 	 * @throws OAuthException
 	 */
-	 public BMGetButtonDetailsResponseType bMGetButtonDetails(BMGetButtonDetailsReq bMGetButtonDetailsReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException {
+	 public BMGetButtonDetailsResponseType bMGetButtonDetails(BMGetButtonDetailsReq bMGetButtonDetailsReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException, IOException {
 		setStandardParams(bMGetButtonDetailsReq.getBMGetButtonDetailsRequest());
 	 	String response = call("BMGetButtonDetails", bMGetButtonDetailsReq.toXMLString(), apiUsername);
-		return new BMGetButtonDetailsResponseType(response);
+		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder builder = builderFactory.newDocumentBuilder();
+		InputSource inStream = new InputSource();
+		inStream.setCharacterStream(new StringReader((String) response));
+		Document document = builder.parse(inStream);
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		try {
+			Node node = (Node) xpath.evaluate("Envelope/Body/BMGetButtonDetailsResponse", document, XPathConstants.NODE);
+			return new BMGetButtonDetailsResponseType(node);
+		} catch (XPathExpressionException exe) {
+			throw new RuntimeException("Unable to parse response", exe);
+		}
 	 }
 	 
 	/** 
@@ -195,7 +253,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 * @throws InterruptedException
 	 * @throws OAuthException
 	 */
-	 public BMGetButtonDetailsResponseType bMGetButtonDetails(BMGetButtonDetailsReq bMGetButtonDetailsReq) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException {
+	 public BMGetButtonDetailsResponseType bMGetButtonDetails(BMGetButtonDetailsReq bMGetButtonDetailsReq) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException  {
 	 	return bMGetButtonDetails(bMGetButtonDetailsReq, null);
 	 }
 		
@@ -212,10 +270,22 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 * @throws InterruptedException
 	 * @throws OAuthException
 	 */
-	 public BMSetInventoryResponseType bMSetInventory(BMSetInventoryReq bMSetInventoryReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException {
+	 public BMSetInventoryResponseType bMSetInventory(BMSetInventoryReq bMSetInventoryReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException, IOException {
 		setStandardParams(bMSetInventoryReq.getBMSetInventoryRequest());
 	 	String response = call("BMSetInventory", bMSetInventoryReq.toXMLString(), apiUsername);
-		return new BMSetInventoryResponseType(response);
+		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder builder = builderFactory.newDocumentBuilder();
+		InputSource inStream = new InputSource();
+		inStream.setCharacterStream(new StringReader((String) response));
+		Document document = builder.parse(inStream);
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		try {
+			Node node = (Node) xpath.evaluate("Envelope/Body/BMSetInventoryResponse", document, XPathConstants.NODE);
+			return new BMSetInventoryResponseType(node);
+		} catch (XPathExpressionException exe) {
+			throw new RuntimeException("Unable to parse response", exe);
+		}
 	 }
 	 
 	/** 
@@ -231,7 +301,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 * @throws InterruptedException
 	 * @throws OAuthException
 	 */
-	 public BMSetInventoryResponseType bMSetInventory(BMSetInventoryReq bMSetInventoryReq) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException {
+	 public BMSetInventoryResponseType bMSetInventory(BMSetInventoryReq bMSetInventoryReq) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException  {
 	 	return bMSetInventory(bMSetInventoryReq, null);
 	 }
 		
@@ -248,10 +318,22 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 * @throws InterruptedException
 	 * @throws OAuthException
 	 */
-	 public BMGetInventoryResponseType bMGetInventory(BMGetInventoryReq bMGetInventoryReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException {
+	 public BMGetInventoryResponseType bMGetInventory(BMGetInventoryReq bMGetInventoryReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException, IOException {
 		setStandardParams(bMGetInventoryReq.getBMGetInventoryRequest());
 	 	String response = call("BMGetInventory", bMGetInventoryReq.toXMLString(), apiUsername);
-		return new BMGetInventoryResponseType(response);
+		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder builder = builderFactory.newDocumentBuilder();
+		InputSource inStream = new InputSource();
+		inStream.setCharacterStream(new StringReader((String) response));
+		Document document = builder.parse(inStream);
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		try {
+			Node node = (Node) xpath.evaluate("Envelope/Body/BMGetInventoryResponse", document, XPathConstants.NODE);
+			return new BMGetInventoryResponseType(node);
+		} catch (XPathExpressionException exe) {
+			throw new RuntimeException("Unable to parse response", exe);
+		}
 	 }
 	 
 	/** 
@@ -267,7 +349,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 * @throws InterruptedException
 	 * @throws OAuthException
 	 */
-	 public BMGetInventoryResponseType bMGetInventory(BMGetInventoryReq bMGetInventoryReq) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException {
+	 public BMGetInventoryResponseType bMGetInventory(BMGetInventoryReq bMGetInventoryReq) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException  {
 	 	return bMGetInventory(bMGetInventoryReq, null);
 	 }
 		
@@ -284,10 +366,22 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 * @throws InterruptedException
 	 * @throws OAuthException
 	 */
-	 public BMButtonSearchResponseType bMButtonSearch(BMButtonSearchReq bMButtonSearchReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException {
+	 public BMButtonSearchResponseType bMButtonSearch(BMButtonSearchReq bMButtonSearchReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException, IOException {
 		setStandardParams(bMButtonSearchReq.getBMButtonSearchRequest());
 	 	String response = call("BMButtonSearch", bMButtonSearchReq.toXMLString(), apiUsername);
-		return new BMButtonSearchResponseType(response);
+		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder builder = builderFactory.newDocumentBuilder();
+		InputSource inStream = new InputSource();
+		inStream.setCharacterStream(new StringReader((String) response));
+		Document document = builder.parse(inStream);
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		try {
+			Node node = (Node) xpath.evaluate("Envelope/Body/BMButtonSearchResponse", document, XPathConstants.NODE);
+			return new BMButtonSearchResponseType(node);
+		} catch (XPathExpressionException exe) {
+			throw new RuntimeException("Unable to parse response", exe);
+		}
 	 }
 	 
 	/** 
@@ -303,7 +397,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 * @throws InterruptedException
 	 * @throws OAuthException
 	 */
-	 public BMButtonSearchResponseType bMButtonSearch(BMButtonSearchReq bMButtonSearchReq) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException {
+	 public BMButtonSearchResponseType bMButtonSearch(BMButtonSearchReq bMButtonSearchReq) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException  {
 	 	return bMButtonSearch(bMButtonSearchReq, null);
 	 }
 

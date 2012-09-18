@@ -3,6 +3,7 @@ import urn.ebay.apis.eBLBaseComponents.MarketingCategoryType;
 import urn.ebay.apis.eBLBaseComponents.BusinessInfoType;
 import urn.ebay.apis.eBLBaseComponents.BusinessOwnerInfoType;
 import urn.ebay.apis.eBLBaseComponents.BankAccountDetailsType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Onboarding program code given to you by PayPal. Required
@@ -194,23 +195,23 @@ public class EnterBoardingRequestDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(ProgramCode != null) {
-			sb.append("<ebl:ProgramCode>").append(ProgramCode);
+			sb.append("<ebl:ProgramCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProgramCode));
 			sb.append("</ebl:ProgramCode>");
 		}
 		if(ProductList != null) {
-			sb.append("<ebl:ProductList>").append(ProductList);
+			sb.append("<ebl:ProductList>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProductList));
 			sb.append("</ebl:ProductList>");
 		}
 		if(PartnerCustom != null) {
-			sb.append("<ebl:PartnerCustom>").append(PartnerCustom);
+			sb.append("<ebl:PartnerCustom>").append(SDKUtil.escapeInvalidXmlCharsRegex(PartnerCustom));
 			sb.append("</ebl:PartnerCustom>");
 		}
 		if(ImageUrl != null) {
-			sb.append("<ebl:ImageUrl>").append(ImageUrl);
+			sb.append("<ebl:ImageUrl>").append(SDKUtil.escapeInvalidXmlCharsRegex(ImageUrl));
 			sb.append("</ebl:ImageUrl>");
 		}
 		if(MarketingCategory != null) {
-			sb.append("<ebl:MarketingCategory>").append(MarketingCategory.getValue());
+			sb.append("<ebl:MarketingCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(MarketingCategory.getValue()));
 			sb.append("</ebl:MarketingCategory>");
 		}
 		if(BusinessInfo != null) {

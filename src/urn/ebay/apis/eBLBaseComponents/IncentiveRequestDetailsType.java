@@ -1,6 +1,7 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.IncentiveRequestCodeType;
 import urn.ebay.apis.eBLBaseComponents.IncentiveRequestDetailLevelCodeType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -78,15 +79,15 @@ public class IncentiveRequestDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(RequestId != null) {
-			sb.append("<ebl:RequestId>").append(RequestId);
+			sb.append("<ebl:RequestId>").append(SDKUtil.escapeInvalidXmlCharsRegex(RequestId));
 			sb.append("</ebl:RequestId>");
 		}
 		if(RequestType != null) {
-			sb.append("<ebl:RequestType>").append(RequestType.getValue());
+			sb.append("<ebl:RequestType>").append(SDKUtil.escapeInvalidXmlCharsRegex(RequestType.getValue()));
 			sb.append("</ebl:RequestType>");
 		}
 		if(RequestDetailLevel != null) {
-			sb.append("<ebl:RequestDetailLevel>").append(RequestDetailLevel.getValue());
+			sb.append("<ebl:RequestDetailLevel>").append(SDKUtil.escapeInvalidXmlCharsRegex(RequestDetailLevel.getValue()));
 			sb.append("</ebl:RequestDetailLevel>");
 		}
 		return sb.toString();

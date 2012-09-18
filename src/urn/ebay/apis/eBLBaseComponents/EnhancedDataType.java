@@ -1,5 +1,6 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.AirlineItineraryType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Enhanced Data Information. Example: AID for Airlines 

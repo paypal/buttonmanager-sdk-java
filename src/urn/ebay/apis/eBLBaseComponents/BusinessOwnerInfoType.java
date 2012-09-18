@@ -1,5 +1,6 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.PayerInfoType;
+import com.paypal.core.SDKUtil;
 
 /**
  * BusinessOwnerInfoType 
@@ -104,15 +105,15 @@ public class BusinessOwnerInfoType{
 			sb.append("</ebl:Owner>");
 		}
 		if(HomePhone != null) {
-			sb.append("<ebl:HomePhone>").append(HomePhone);
+			sb.append("<ebl:HomePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(HomePhone));
 			sb.append("</ebl:HomePhone>");
 		}
 		if(MobilePhone != null) {
-			sb.append("<ebl:MobilePhone>").append(MobilePhone);
+			sb.append("<ebl:MobilePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(MobilePhone));
 			sb.append("</ebl:MobilePhone>");
 		}
 		if(SSN != null) {
-			sb.append("<ebl:SSN>").append(SSN);
+			sb.append("<ebl:SSN>").append(SDKUtil.escapeInvalidXmlCharsRegex(SSN));
 			sb.append("</ebl:SSN>");
 		}
 		return sb.toString();

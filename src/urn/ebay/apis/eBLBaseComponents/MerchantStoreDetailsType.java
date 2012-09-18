@@ -1,4 +1,5 @@
 package urn.ebay.apis.eBLBaseComponents;
+import com.paypal.core.SDKUtil;
 
 /**
  * Store IDOptional Character length and limits: 50 single-byte
@@ -68,11 +69,11 @@ public class MerchantStoreDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(StoreID != null) {
-			sb.append("<ebl:StoreID>").append(StoreID);
+			sb.append("<ebl:StoreID>").append(SDKUtil.escapeInvalidXmlCharsRegex(StoreID));
 			sb.append("</ebl:StoreID>");
 		}
 		if(TerminalID != null) {
-			sb.append("<ebl:TerminalID>").append(TerminalID);
+			sb.append("<ebl:TerminalID>").append(SDKUtil.escapeInvalidXmlCharsRegex(TerminalID));
 			sb.append("</ebl:TerminalID>");
 		}
 		return sb.toString();

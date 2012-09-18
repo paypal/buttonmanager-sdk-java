@@ -1,5 +1,6 @@
 package urn.ebay.api.PayPalAPI;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -48,7 +49,7 @@ public class GetRecurringPaymentsProfileDetailsRequestType extends AbstractReque
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toXMLString());
 		if(ProfileID != null) {
-			sb.append("<urn:ProfileID>").append(ProfileID);
+			sb.append("<urn:ProfileID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProfileID));
 			sb.append("</urn:ProfileID>");
 		}
 		return sb.toString();

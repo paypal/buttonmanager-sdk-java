@@ -7,6 +7,10 @@ import urn.ebay.apis.eBLBaseComponents.AbstractResponseType;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -211,127 +215,69 @@ public class BMGetInventoryResponseType extends AbstractResponseType {
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ) {
+			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
 	}
 	
-	private String convertToXML(Node n){
-		String name = n.getNodeName();
-		short type = n.getNodeType();
-		if (Node.CDATA_SECTION_NODE == type) {
-			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
-		}
-		if (name.startsWith("#")) {
-			return "";
-		}
-		StringBuffer sb = new StringBuffer();
-		sb.append("<").append(name);
-		NamedNodeMap attrs = n.getAttributes();
-		if (attrs != null) {
-			for (int i = 0; i < attrs.getLength(); i++) {
-				Node attr = attrs.item(i);
-				sb.append(" ").append(attr.getNodeName()).append("=\"").append(attr.getNodeValue()).append("\"");
-			}
-		}
-		String textContent = null;
-		NodeList children = n.getChildNodes();
-		if (children.getLength() == 0) {
-			if (((textContent = n.getTextContent())) != null && (!"".equals(textContent))) {
-				sb.append(textContent).append("</").append(name).append(">");
-			} else {
-				sb.append("/>");
-			}
-		} else {
-			sb.append(">");
-			boolean hasValidChildren = false;
-			for (int i = 0; i < children.getLength(); i++) {
-				String childToString = convertToXML(children.item(i));
-				if (!"".equals(childToString)) {
-					sb.append(childToString);
-					hasValidChildren = true;
-				}
-			}
-			if (!hasValidChildren && ((textContent = n.getTextContent()) != null)) {
-				sb.append(textContent);
-			}
-			sb.append("</").append(name).append(">");
-		}
-		return sb.toString();
-	}
-	
-	public BMGetInventoryResponseType(Object xmlSoap) throws IOException, SAXException, ParserConfigurationException {
-		super(xmlSoap);
-		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = builderFactory.newDocumentBuilder();
-		InputSource inStream = new InputSource();
-		inStream.setCharacterStream(new StringReader((String)xmlSoap));
-		Document document = builder.parse(inStream);
-		NodeList nodeList= null;
-		
-		String xmlString = "";
-		if (document.getElementsByTagName("HostedButtonID").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("HostedButtonID").item(0))) {
-				this.HostedButtonID = (String)document.getElementsByTagName("HostedButtonID").item(0).getTextContent();
-			}
+	public BMGetInventoryResponseType(Node node) throws XPathExpressionException {
+		super(node);
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		Node childNode = null;
+		NodeList nodeList = null;
+		childNode = (Node) xpath.evaluate("HostedButtonID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.HostedButtonID = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("TrackInv").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("TrackInv").item(0))) {
-				this.TrackInv = (String)document.getElementsByTagName("TrackInv").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("TrackInv", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.TrackInv = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("TrackPnl").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("TrackPnl").item(0))) {
-				this.TrackPnl = (String)document.getElementsByTagName("TrackPnl").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("TrackPnl", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.TrackPnl = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("ItemTrackingDetails").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ItemTrackingDetails").item(0))) {
-				nodeList = document.getElementsByTagName("ItemTrackingDetails");
-				xmlString = convertToXML(nodeList.item(0));
-				this.ItemTrackingDetails =  new ItemTrackingDetailsType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("ItemTrackingDetails", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ItemTrackingDetails =  new ItemTrackingDetailsType(childNode);
 		}
-		if (document.getElementsByTagName("OptionIndex").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("OptionIndex").item(0))) {
-				this.OptionIndex = (String)document.getElementsByTagName("OptionIndex").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("OptionIndex", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.OptionIndex = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("OptionName").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("OptionName").item(0))) {
-				this.OptionName = (String)document.getElementsByTagName("OptionName").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("OptionName", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.OptionName = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("OptionTrackingDetails").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("OptionTrackingDetails").item(0))) {
-				nodeList = document.getElementsByTagName("OptionTrackingDetails");
-				for(int i=0; i < nodeList.getLength(); i++) {
-					xmlString = convertToXML(nodeList.item(i));
-					this.OptionTrackingDetails.add(new OptionTrackingDetailsType(xmlString));
-				}
+        nodeList = (NodeList) xpath.evaluate("OptionTrackingDetails", node, XPathConstants.NODESET);
+		if (nodeList != null && nodeList.getLength() > 0) {
+			for(int i=0; i < nodeList.getLength(); i++) {
+				Node subNode = nodeList.item(i);
+				this.OptionTrackingDetails.add(new OptionTrackingDetailsType(subNode));
 			}
 		}
-		if (document.getElementsByTagName("SoldoutURL").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("SoldoutURL").item(0))) {
-				this.SoldoutURL = (String)document.getElementsByTagName("SoldoutURL").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("SoldoutURL", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.SoldoutURL = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("DigitalDownloadKeys").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("DigitalDownloadKeys").item(0))) {
-				nodeList = document.getElementsByTagName("DigitalDownloadKeys");
-				for(int i=0; i < nodeList.getLength(); i++) {
-					String value = nodeList.item(i).getTextContent();
-					this.DigitalDownloadKeys.add(value);
+        nodeList = (NodeList) xpath.evaluate("DigitalDownloadKeys", node, XPathConstants.NODESET);
+		if (nodeList != null && nodeList.getLength() > 0) {
+			for(int i=0; i < nodeList.getLength(); i++) {
+			    Node subNode = nodeList.item(i);
+			    String value = subNode.getTextContent();
+			    this.DigitalDownloadKeys.add(value);
 					
-				}
 			}
 		}
 	}
-
+ 
 }

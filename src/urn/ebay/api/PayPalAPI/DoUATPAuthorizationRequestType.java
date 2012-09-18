@@ -3,6 +3,7 @@ import urn.ebay.apis.eBLBaseComponents.UATPDetailsType;
 import urn.ebay.apis.eBLBaseComponents.TransactionEntityType;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * UATP card details Required 
@@ -141,7 +142,7 @@ public class DoUATPAuthorizationRequestType extends AbstractRequestType {
 			sb.append("</ebl:UATPDetails>");
 		}
 		if(TransactionEntity != null) {
-			sb.append("<urn:TransactionEntity>").append(TransactionEntity.getValue());
+			sb.append("<urn:TransactionEntity>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionEntity.getValue()));
 			sb.append("</urn:TransactionEntity>");
 		}
 		if(Amount != null) {
@@ -150,11 +151,11 @@ public class DoUATPAuthorizationRequestType extends AbstractRequestType {
 			sb.append("</urn:Amount>");
 		}
 		if(InvoiceID != null) {
-			sb.append("<urn:InvoiceID>").append(InvoiceID);
+			sb.append("<urn:InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(InvoiceID));
 			sb.append("</urn:InvoiceID>");
 		}
 		if(MsgSubID != null) {
-			sb.append("<urn:MsgSubID>").append(MsgSubID);
+			sb.append("<urn:MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(MsgSubID));
 			sb.append("</urn:MsgSubID>");
 		}
 		return sb.toString();

@@ -6,6 +6,10 @@ import urn.ebay.apis.eBLBaseComponents.OptionType;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -307,152 +311,89 @@ public class PaymentItemType{
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();
 			return val.trim().length() == 0;
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ) {
+			return (n.getChildNodes().getLength() == 0);
 		} else {
 			return false;
 		}
 	}
 	
-	private String convertToXML(Node n){
-		String name = n.getNodeName();
-		short type = n.getNodeType();
-		if (Node.CDATA_SECTION_NODE == type) {
-			return "<![CDATA[" + n.getNodeValue() + "]]&gt;";
-		}
-		if (name.startsWith("#")) {
-			return "";
-		}
-		StringBuffer sb = new StringBuffer();
-		sb.append("<").append(name);
-		NamedNodeMap attrs = n.getAttributes();
-		if (attrs != null) {
-			for (int i = 0; i < attrs.getLength(); i++) {
-				Node attr = attrs.item(i);
-				sb.append(" ").append(attr.getNodeName()).append("=\"").append(attr.getNodeValue()).append("\"");
-			}
-		}
-		String textContent = null;
-		NodeList children = n.getChildNodes();
-		if (children.getLength() == 0) {
-			if (((textContent = n.getTextContent())) != null && (!"".equals(textContent))) {
-				sb.append(textContent).append("</").append(name).append(">");
-			} else {
-				sb.append("/>");
-			}
-		} else {
-			sb.append(">");
-			boolean hasValidChildren = false;
-			for (int i = 0; i < children.getLength(); i++) {
-				String childToString = convertToXML(children.item(i));
-				if (!"".equals(childToString)) {
-					sb.append(childToString);
-					hasValidChildren = true;
-				}
-			}
-			if (!hasValidChildren && ((textContent = n.getTextContent()) != null)) {
-				sb.append(textContent);
-			}
-			sb.append("</").append(name).append(">");
-		}
-		return sb.toString();
-	}
-	
-	public PaymentItemType(Object xmlSoap) throws IOException, SAXException, ParserConfigurationException {
-		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = builderFactory.newDocumentBuilder();
-		InputSource inStream = new InputSource();
-		inStream.setCharacterStream(new StringReader((String)xmlSoap));
-		Document document = builder.parse(inStream);
-		NodeList nodeList= null;
-		
-		String xmlString = "";
-		if (document.getElementsByTagName("EbayItemTxnId").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("EbayItemTxnId").item(0))) {
-				this.EbayItemTxnId = (String)document.getElementsByTagName("EbayItemTxnId").item(0).getTextContent();
-			}
+	public PaymentItemType(Node node) throws XPathExpressionException {
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		Node childNode = null;
+		NodeList nodeList = null;
+		childNode = (Node) xpath.evaluate("EbayItemTxnId", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.EbayItemTxnId = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("Name").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Name").item(0))) {
-				this.Name = (String)document.getElementsByTagName("Name").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("Name", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Name = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("Number").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Number").item(0))) {
-				this.Number = (String)document.getElementsByTagName("Number").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("Number", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Number = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("Quantity").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Quantity").item(0))) {
-				this.Quantity = (String)document.getElementsByTagName("Quantity").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("Quantity", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Quantity = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("SalesTax").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("SalesTax").item(0))) {
-				this.SalesTax = (String)document.getElementsByTagName("SalesTax").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("SalesTax", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.SalesTax = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("ShippingAmount").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("ShippingAmount").item(0))) {
-				this.ShippingAmount = (String)document.getElementsByTagName("ShippingAmount").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("ShippingAmount", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ShippingAmount = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("HandlingAmount").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("HandlingAmount").item(0))) {
-				this.HandlingAmount = (String)document.getElementsByTagName("HandlingAmount").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("HandlingAmount", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.HandlingAmount = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("CouponID").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("CouponID").item(0))) {
-				this.CouponID = (String)document.getElementsByTagName("CouponID").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("CouponID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.CouponID = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("CouponAmount").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("CouponAmount").item(0))) {
-				this.CouponAmount = (String)document.getElementsByTagName("CouponAmount").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("CouponAmount", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.CouponAmount = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("CouponAmountCurrency").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("CouponAmountCurrency").item(0))) {
-				this.CouponAmountCurrency = (String)document.getElementsByTagName("CouponAmountCurrency").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("CouponAmountCurrency", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.CouponAmountCurrency = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("LoyaltyCardDiscountAmount").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("LoyaltyCardDiscountAmount").item(0))) {
-				this.LoyaltyCardDiscountAmount = (String)document.getElementsByTagName("LoyaltyCardDiscountAmount").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("LoyaltyCardDiscountAmount", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.LoyaltyCardDiscountAmount = childNode.getTextContent();
 		}
 	
-		if (document.getElementsByTagName("LoyaltyCardDiscountCurrency").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("LoyaltyCardDiscountCurrency").item(0))) {
-				this.LoyaltyCardDiscountCurrency = (String)document.getElementsByTagName("LoyaltyCardDiscountCurrency").item(0).getTextContent();
-			}
+		childNode = (Node) xpath.evaluate("LoyaltyCardDiscountCurrency", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.LoyaltyCardDiscountCurrency = childNode.getTextContent();
 		}
 	
-		if(document.getElementsByTagName("Amount").getLength()!=0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Amount").item(0))) {
-				nodeList = document.getElementsByTagName("Amount");
-				xmlString = convertToXML(nodeList.item(0));
-				this.Amount =  new BasicAmountType(xmlString);
-			}
+		childNode = (Node) xpath.evaluate("Amount", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Amount =  new BasicAmountType(childNode);
 		}
-		if (document.getElementsByTagName("Options").getLength() != 0) {
-			if(!isWhitespaceNode(document.getElementsByTagName("Options").item(0))) {
-				nodeList = document.getElementsByTagName("Options");
-				for(int i=0; i < nodeList.getLength(); i++) {
-					xmlString = convertToXML(nodeList.item(i));
-					this.Options.add(new OptionType(xmlString));
-				}
+        nodeList = (NodeList) xpath.evaluate("Options", node, XPathConstants.NODESET);
+		if (nodeList != null && nodeList.getLength() > 0) {
+			for(int i=0; i < nodeList.getLength(); i++) {
+				Node subNode = nodeList.item(i);
+				this.Options.add(new OptionType(subNode));
 			}
 		}
 	}
-
+ 
 }

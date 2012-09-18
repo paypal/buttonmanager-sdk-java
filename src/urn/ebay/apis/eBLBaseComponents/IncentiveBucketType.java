@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.ArrayList;
 import urn.ebay.apis.eBLBaseComponents.IncentiveItemType;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
+import com.paypal.core.SDKUtil;
 
 /**
  * 
@@ -201,15 +202,15 @@ public class IncentiveBucketType{
 			}
 		}
 		if(BucketId != null) {
-			sb.append("<ebl:BucketId>").append(BucketId);
+			sb.append("<ebl:BucketId>").append(SDKUtil.escapeInvalidXmlCharsRegex(BucketId));
 			sb.append("</ebl:BucketId>");
 		}
 		if(SellerId != null) {
-			sb.append("<ebl:SellerId>").append(SellerId);
+			sb.append("<ebl:SellerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(SellerId));
 			sb.append("</ebl:SellerId>");
 		}
 		if(ExternalSellerId != null) {
-			sb.append("<ebl:ExternalSellerId>").append(ExternalSellerId);
+			sb.append("<ebl:ExternalSellerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExternalSellerId));
 			sb.append("</ebl:ExternalSellerId>");
 		}
 		if(BucketSubtotalAmt != null) {

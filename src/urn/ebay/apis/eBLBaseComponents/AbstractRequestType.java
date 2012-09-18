@@ -2,6 +2,7 @@ package urn.ebay.apis.eBLBaseComponents;
 import java.util.List;
 import java.util.ArrayList;
 import urn.ebay.apis.eBLBaseComponents.DetailLevelCodeType;
+import com.paypal.core.SDKUtil;
 
 /**
  * Base type definition of request payload that can carry any
@@ -87,15 +88,15 @@ public class AbstractRequestType{
 		StringBuilder sb = new StringBuilder();
 		if(DetailLevel != null) {
 			for(int i=0; i < DetailLevel.size(); i++) {
-				sb.append("<ebl:DetailLevel>").append(DetailLevel.get(i)).append("</ebl:DetailLevel>");
+				sb.append("<ebl:DetailLevel>").append(SDKUtil.escapeInvalidXmlCharsRegex(DetailLevel.get(i).getValue())).append("</ebl:DetailLevel>");
 			}
 		}
 		if(ErrorLanguage != null) {
-			sb.append("<ebl:ErrorLanguage>").append(ErrorLanguage);
+			sb.append("<ebl:ErrorLanguage>").append(SDKUtil.escapeInvalidXmlCharsRegex(ErrorLanguage));
 			sb.append("</ebl:ErrorLanguage>");
 		}
 		if(Version != null) {
-			sb.append("<ebl:Version>").append(Version);
+			sb.append("<ebl:Version>").append(SDKUtil.escapeInvalidXmlCharsRegex(Version));
 			sb.append("</ebl:Version>");
 		}
 		return sb.toString();

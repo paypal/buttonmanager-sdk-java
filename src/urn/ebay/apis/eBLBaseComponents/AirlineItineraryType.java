@@ -3,6 +3,7 @@ import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import java.util.List;
 import java.util.ArrayList;
 import urn.ebay.apis.eBLBaseComponents.FlightDetailsType;
+import com.paypal.core.SDKUtil;
 
 /**
  * AID for Airlines 
@@ -289,31 +290,31 @@ public class AirlineItineraryType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(PassengerName != null) {
-			sb.append("<ebl:PassengerName>").append(PassengerName);
+			sb.append("<ebl:PassengerName>").append(SDKUtil.escapeInvalidXmlCharsRegex(PassengerName));
 			sb.append("</ebl:PassengerName>");
 		}
 		if(IssueDate != null) {
-			sb.append("<ebl:IssueDate>").append(IssueDate);
+			sb.append("<ebl:IssueDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(IssueDate));
 			sb.append("</ebl:IssueDate>");
 		}
 		if(TravelAgencyName != null) {
-			sb.append("<ebl:TravelAgencyName>").append(TravelAgencyName);
+			sb.append("<ebl:TravelAgencyName>").append(SDKUtil.escapeInvalidXmlCharsRegex(TravelAgencyName));
 			sb.append("</ebl:TravelAgencyName>");
 		}
 		if(TravelAgencyCode != null) {
-			sb.append("<ebl:TravelAgencyCode>").append(TravelAgencyCode);
+			sb.append("<ebl:TravelAgencyCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(TravelAgencyCode));
 			sb.append("</ebl:TravelAgencyCode>");
 		}
 		if(TicketNumber != null) {
-			sb.append("<ebl:TicketNumber>").append(TicketNumber);
+			sb.append("<ebl:TicketNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(TicketNumber));
 			sb.append("</ebl:TicketNumber>");
 		}
 		if(IssuingCarrierCode != null) {
-			sb.append("<ebl:IssuingCarrierCode>").append(IssuingCarrierCode);
+			sb.append("<ebl:IssuingCarrierCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(IssuingCarrierCode));
 			sb.append("</ebl:IssuingCarrierCode>");
 		}
 		if(CustomerCode != null) {
-			sb.append("<ebl:CustomerCode>").append(CustomerCode);
+			sb.append("<ebl:CustomerCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(CustomerCode));
 			sb.append("</ebl:CustomerCode>");
 		}
 		if(TotalFare != null) {
@@ -332,15 +333,15 @@ public class AirlineItineraryType{
 			sb.append("</ebl:TotalFee>");
 		}
 		if(RestrictedTicket != null) {
-			sb.append("<ebl:RestrictedTicket>").append(RestrictedTicket);
+			sb.append("<ebl:RestrictedTicket>").append(SDKUtil.escapeInvalidXmlCharsRegex(RestrictedTicket));
 			sb.append("</ebl:RestrictedTicket>");
 		}
 		if(ClearingSequence != null) {
-			sb.append("<ebl:ClearingSequence>").append(ClearingSequence);
+			sb.append("<ebl:ClearingSequence>").append(SDKUtil.escapeInvalidXmlCharsRegex(ClearingSequence));
 			sb.append("</ebl:ClearingSequence>");
 		}
 		if(ClearingCount != null) {
-			sb.append("<ebl:ClearingCount>").append(ClearingCount);
+			sb.append("<ebl:ClearingCount>").append(SDKUtil.escapeInvalidXmlCharsRegex(ClearingCount));
 			sb.append("</ebl:ClearingCount>");
 		}
 		if(FlightDetails != null) {

@@ -1,4 +1,5 @@
 package urn.ebay.apis.eBLBaseComponents;
+import com.paypal.core.SDKUtil;
 
 /**
  * An optional set of values related to flow-specific details. 
@@ -60,11 +61,11 @@ public class FlowControlDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(ErrorURL != null) {
-			sb.append("<ebl:ErrorURL>").append(ErrorURL);
+			sb.append("<ebl:ErrorURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(ErrorURL));
 			sb.append("</ebl:ErrorURL>");
 		}
 		if(InContextReturnURL != null) {
-			sb.append("<ebl:InContextReturnURL>").append(InContextReturnURL);
+			sb.append("<ebl:InContextReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(InContextReturnURL));
 			sb.append("</ebl:InContextReturnURL>");
 		}
 		return sb.toString();

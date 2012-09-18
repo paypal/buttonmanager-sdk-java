@@ -1,6 +1,7 @@
 package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.SetDataRequestType;
 import urn.ebay.apis.eBLBaseComponents.AuthorizationRequestType;
+import com.paypal.core.SDKUtil;
 
 /**
  * On your first invocation of
@@ -102,7 +103,7 @@ public class ExecuteCheckoutOperationsRequestDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(Token != null) {
-			sb.append("<ebl:Token>").append(Token);
+			sb.append("<ebl:Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(Token));
 			sb.append("</ebl:Token>");
 		}
 		if(SetDataRequest != null) {

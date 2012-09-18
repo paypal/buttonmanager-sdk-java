@@ -3,6 +3,7 @@ import urn.ebay.apis.eBLBaseComponents.ApprovalTypeType;
 import urn.ebay.apis.eBLBaseComponents.ApprovalSubTypeType;
 import urn.ebay.apis.eBLBaseComponents.OrderDetailsType;
 import urn.ebay.apis.eBLBaseComponents.PaymentDirectivesType;
+import com.paypal.core.SDKUtil;
 
 /**
  * The Type of Approval requested - Billing Agreement or
@@ -130,11 +131,11 @@ public class BillingApprovalDetailsType{
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
 		if(ApprovalType != null) {
-			sb.append("<ebl:ApprovalType>").append(ApprovalType.getValue());
+			sb.append("<ebl:ApprovalType>").append(SDKUtil.escapeInvalidXmlCharsRegex(ApprovalType.getValue()));
 			sb.append("</ebl:ApprovalType>");
 		}
 		if(ApprovalSubType != null) {
-			sb.append("<ebl:ApprovalSubType>").append(ApprovalSubType.getValue());
+			sb.append("<ebl:ApprovalSubType>").append(SDKUtil.escapeInvalidXmlCharsRegex(ApprovalSubType.getValue()));
 			sb.append("</ebl:ApprovalSubType>");
 		}
 		if(OrderDetails != null) {
@@ -148,7 +149,7 @@ public class BillingApprovalDetailsType{
 			sb.append("</ebl:PaymentDirectives>");
 		}
 		if(Custom != null) {
-			sb.append("<ebl:Custom>").append(Custom);
+			sb.append("<ebl:Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(Custom));
 			sb.append("</ebl:Custom>");
 		}
 		return sb.toString();

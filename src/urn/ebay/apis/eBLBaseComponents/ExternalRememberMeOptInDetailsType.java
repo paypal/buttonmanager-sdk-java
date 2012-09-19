@@ -78,4 +78,5 @@ public class ExternalRememberMeOptInDetailsType{
 		return sb.toString();
 	}
 
+
 }

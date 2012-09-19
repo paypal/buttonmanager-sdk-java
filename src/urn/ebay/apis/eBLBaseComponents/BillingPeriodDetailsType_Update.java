@@ -165,4 +165,5 @@ public class BillingPeriodDetailsType_Update{
 		return sb.toString();
 	}
 
+
 }

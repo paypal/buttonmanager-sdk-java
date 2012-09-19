@@ -160,4 +160,5 @@ public class CreateRecurringPaymentsProfileRequestDetailsType{
 		return sb.toString();
 	}
 
+
 }

@@ -61,4 +61,5 @@ public class GetBoardingDetailsRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

@@ -49,4 +49,5 @@ public class ManageRecurringPaymentsProfileStatusRequestType extends AbstractReq
 		return sb.toString();
 	}
 
+
 }

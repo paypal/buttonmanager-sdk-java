@@ -47,4 +47,5 @@ public class GetMobileStatusRequestDetailsType{
 		return sb.toString();
 	}
 
+
 }

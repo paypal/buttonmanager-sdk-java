@@ -49,4 +49,5 @@ public class AddressVerifyReq{
 		return sb.toString();
 	}
 
+
 }

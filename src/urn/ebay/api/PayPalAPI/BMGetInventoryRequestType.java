@@ -59,4 +59,5 @@ public class BMGetInventoryRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

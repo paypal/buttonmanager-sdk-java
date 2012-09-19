@@ -57,4 +57,5 @@ public class CreateMobilePaymentRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

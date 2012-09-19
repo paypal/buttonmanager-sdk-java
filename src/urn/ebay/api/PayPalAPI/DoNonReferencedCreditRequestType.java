@@ -57,4 +57,5 @@ public class DoNonReferencedCreditRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

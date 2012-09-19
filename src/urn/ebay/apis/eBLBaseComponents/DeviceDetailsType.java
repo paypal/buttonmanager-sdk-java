@@ -49,4 +49,5 @@ public class DeviceDetailsType{
 		return sb.toString();
 	}
 
+
 }

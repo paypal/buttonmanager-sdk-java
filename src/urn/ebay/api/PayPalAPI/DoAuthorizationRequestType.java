@@ -140,4 +140,5 @@ public class DoAuthorizationRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

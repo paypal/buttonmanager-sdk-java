@@ -390,4 +390,5 @@ public class CreateMobilePaymentRequestDetailsType{
 		return sb.toString();
 	}
 
+
 }

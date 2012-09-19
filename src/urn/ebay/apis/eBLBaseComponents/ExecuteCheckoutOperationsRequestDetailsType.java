@@ -119,4 +119,5 @@ public class ExecuteCheckoutOperationsRequestDetailsType{
 		return sb.toString();
 	}
 
+
 }

@@ -417,4 +417,5 @@ public class FlightDetailsType{
 		return sb.toString();
 	}
 
+
 }

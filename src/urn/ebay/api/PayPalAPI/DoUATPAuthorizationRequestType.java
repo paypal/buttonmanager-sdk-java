@@ -161,4 +161,5 @@ public class DoUATPAuthorizationRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

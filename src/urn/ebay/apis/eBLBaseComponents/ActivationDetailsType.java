@@ -79,4 +79,5 @@ public class ActivationDetailsType{
 		return sb.toString();
 	}
 
+
 }

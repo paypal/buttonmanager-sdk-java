@@ -366,4 +366,5 @@ public class MerchantPullPaymentType{
 		return sb.toString();
 	}
 
+
 }

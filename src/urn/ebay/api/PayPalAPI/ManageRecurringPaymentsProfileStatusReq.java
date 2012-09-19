@@ -49,4 +49,5 @@ public class ManageRecurringPaymentsProfileStatusReq{
 		return sb.toString();
 	}
 
+
 }

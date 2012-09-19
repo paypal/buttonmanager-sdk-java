@@ -440,4 +440,5 @@ public class TransactionSearchRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

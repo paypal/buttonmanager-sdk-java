@@ -49,4 +49,5 @@ public class GetTransactionDetailsReq{
 		return sb.toString();
 	}
 
+
 }

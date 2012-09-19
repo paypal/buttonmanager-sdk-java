@@ -292,4 +292,5 @@ public class SetCustomerBillingAgreementRequestDetailsType{
 		return sb.toString();
 	}
 
+
 }

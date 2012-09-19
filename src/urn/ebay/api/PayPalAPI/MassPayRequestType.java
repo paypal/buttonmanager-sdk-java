@@ -144,4 +144,5 @@ public class MassPayRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

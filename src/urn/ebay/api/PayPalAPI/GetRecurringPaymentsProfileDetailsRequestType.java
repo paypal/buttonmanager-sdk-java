@@ -55,4 +55,5 @@ public class GetRecurringPaymentsProfileDetailsRequestType extends AbstractReque
 		return sb.toString();
 	}
 
+
 }

@@ -95,4 +95,5 @@ public class DoReauthorizationRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

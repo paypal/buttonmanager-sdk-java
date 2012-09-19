@@ -102,4 +102,5 @@ public class ManageRecurringPaymentsProfileStatusRequestDetailsType{
 		return sb.toString();
 	}
 
+
 }

@@ -49,4 +49,5 @@ public class BMManageButtonStatusReq{
 		return sb.toString();
 	}
 
+
 }

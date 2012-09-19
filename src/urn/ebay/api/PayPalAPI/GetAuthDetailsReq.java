@@ -49,4 +49,5 @@ public class GetAuthDetailsReq{
 		return sb.toString();
 	}
 
+
 }

@@ -57,4 +57,5 @@ public class SetCustomerBillingAgreementRequestType extends AbstractRequestType 
 		return sb.toString();
 	}
 
+
 }

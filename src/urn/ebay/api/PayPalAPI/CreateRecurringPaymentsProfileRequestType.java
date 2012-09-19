@@ -49,4 +49,5 @@ public class CreateRecurringPaymentsProfileRequestType extends AbstractRequestTy
 		return sb.toString();
 	}
 
+
 }

@@ -49,4 +49,5 @@ public class GetPalDetailsReq{
 		return sb.toString();
 	}
 
+
 }

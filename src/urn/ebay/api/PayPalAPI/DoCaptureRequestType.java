@@ -275,4 +275,5 @@ public class DoCaptureRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

@@ -55,4 +55,5 @@ public class GetTransactionDetailsRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

@@ -354,4 +354,5 @@ public class AirlineItineraryType{
 		return sb.toString();
 	}
 
+
 }

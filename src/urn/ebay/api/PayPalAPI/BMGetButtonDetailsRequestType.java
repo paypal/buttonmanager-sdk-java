@@ -57,4 +57,5 @@ public class BMGetButtonDetailsRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

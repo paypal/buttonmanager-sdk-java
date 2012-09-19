@@ -1771,4 +1771,5 @@ public class SetExpressCheckoutRequestDetailsType{
 		return sb.toString();
 	}
 
+
 }

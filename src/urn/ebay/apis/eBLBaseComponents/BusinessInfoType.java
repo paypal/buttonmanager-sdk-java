@@ -384,4 +384,5 @@ public class BusinessInfoType{
 		return sb.toString();
 	}
 
+
 }

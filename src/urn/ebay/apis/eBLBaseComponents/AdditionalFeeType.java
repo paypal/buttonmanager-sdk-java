@@ -70,4 +70,5 @@ public class AdditionalFeeType{
 		return sb.toString();
 	}
 
+
 }

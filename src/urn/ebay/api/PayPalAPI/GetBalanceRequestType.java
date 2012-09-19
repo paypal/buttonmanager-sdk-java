@@ -47,4 +47,5 @@ public class GetBalanceRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

@@ -57,4 +57,5 @@ public class InitiateRecoupRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

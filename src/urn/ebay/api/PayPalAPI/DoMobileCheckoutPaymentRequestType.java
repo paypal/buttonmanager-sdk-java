@@ -59,4 +59,5 @@ public class DoMobileCheckoutPaymentRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

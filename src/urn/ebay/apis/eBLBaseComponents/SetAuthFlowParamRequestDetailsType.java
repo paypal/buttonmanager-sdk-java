@@ -490,4 +490,5 @@ public class SetAuthFlowParamRequestDetailsType{
 		return sb.toString();
 	}
 
+
 }

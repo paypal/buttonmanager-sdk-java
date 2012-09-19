@@ -57,4 +57,5 @@ public class EnterBoardingRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

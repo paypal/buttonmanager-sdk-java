@@ -55,4 +55,5 @@ public class GetBillingAgreementCustomerDetailsRequestType extends AbstractReque
 		return sb.toString();
 	}
 
+
 }

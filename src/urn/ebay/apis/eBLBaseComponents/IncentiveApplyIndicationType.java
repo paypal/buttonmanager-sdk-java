@@ -69,4 +69,5 @@ public class IncentiveApplyIndicationType{
 		return sb.toString();
 	}
 
+
 }

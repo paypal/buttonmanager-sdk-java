@@ -177,4 +177,5 @@ public class ScheduleDetailsType{
 		return sb.toString();
 	}
 
+
 }

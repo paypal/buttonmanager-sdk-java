@@ -59,4 +59,5 @@ public class GetAccessPermissionDetailsRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

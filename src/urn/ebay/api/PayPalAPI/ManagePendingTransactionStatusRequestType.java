@@ -81,4 +81,5 @@ public class ManagePendingTransactionStatusRequestType extends AbstractRequestTy
 		return sb.toString();
 	}
 
+
 }

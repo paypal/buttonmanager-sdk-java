@@ -534,4 +534,5 @@ public class DoExpressCheckoutPaymentRequestDetailsType{
 		return sb.toString();
 	}
 
+
 }

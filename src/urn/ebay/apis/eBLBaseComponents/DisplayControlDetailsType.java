@@ -48,4 +48,5 @@ public class DisplayControlDetailsType{
 		return sb.toString();
 	}
 
+
 }

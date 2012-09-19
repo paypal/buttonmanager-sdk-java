@@ -24,4 +24,5 @@ public class GetPalDetailsRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

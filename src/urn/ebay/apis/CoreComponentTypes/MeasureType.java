@@ -83,15 +83,23 @@ public class MeasureType{
 
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if(unit != null) {
-			sb.append("<cc:unit>").append(SDKUtil.escapeInvalidXmlCharsRegex(unit));
-			sb.append("</cc:unit>");
-		}
+		sb.append(getAttributeAsXml());
+		sb.append(">");
 		if(value != null) {
 			sb.append(SDKUtil.escapeInvalidXmlCharsRegex(value));
 		}
 		return sb.toString();
 	}
+
+	
+	private String getAttributeAsXml() {
+		StringBuilder sb = new StringBuilder();
+		if(unit != null) {
+			sb.append(" unit=\"").append(SDKUtil.escapeInvalidXmlCharsRegex(unit)).append("\"");	
+		}
+		return sb.toString();
+	}
+
 	private  boolean isWhitespaceNode(Node n) {
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();

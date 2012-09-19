@@ -184,4 +184,5 @@ public class DoDirectPaymentRequestDetailsType{
 		return sb.toString();
 	}
 
+
 }

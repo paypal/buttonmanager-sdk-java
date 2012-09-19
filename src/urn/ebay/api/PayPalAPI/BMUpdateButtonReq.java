@@ -49,4 +49,5 @@ public class BMUpdateButtonReq{
 		return sb.toString();
 	}
 
+
 }

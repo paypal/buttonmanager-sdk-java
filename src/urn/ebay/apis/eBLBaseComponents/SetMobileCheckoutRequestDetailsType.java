@@ -397,4 +397,5 @@ public class SetMobileCheckoutRequestDetailsType{
 		return sb.toString();
 	}
 
+
 }

@@ -89,14 +89,23 @@ public class BasicAmountType{
 
 	public String toXMLString() {
 		StringBuilder sb = new StringBuilder();
-		if(currencyID != null) {
-			sb.append(" currencyID=\"").append(SDKUtil.escapeInvalidXmlCharsRegex(currencyID.getValue())).append("\">");
-		}
+		sb.append(getAttributeAsXml());
+		sb.append(">");
 		if(value != null) {
 			sb.append(SDKUtil.escapeInvalidXmlCharsRegex(value));
 		}
 		return sb.toString();
 	}
+
+	
+	private String getAttributeAsXml() {
+		StringBuilder sb = new StringBuilder();
+		if(currencyID != null) {
+			sb.append(" currencyID=\"").append(SDKUtil.escapeInvalidXmlCharsRegex(currencyID.getValue())).append("\"");	
+		}
+		return sb.toString();
+	}
+
 	private  boolean isWhitespaceNode(Node n) {
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();

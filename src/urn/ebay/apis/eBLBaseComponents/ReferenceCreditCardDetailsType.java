@@ -236,4 +236,5 @@ public class ReferenceCreditCardDetailsType{
 		return sb.toString();
 	}
 
+
 }

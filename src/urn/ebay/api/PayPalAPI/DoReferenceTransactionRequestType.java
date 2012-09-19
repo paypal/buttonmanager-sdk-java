@@ -82,4 +82,5 @@ public class DoReferenceTransactionRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

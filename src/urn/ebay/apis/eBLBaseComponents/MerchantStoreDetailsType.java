@@ -79,4 +79,5 @@ public class MerchantStoreDetailsType{
 		return sb.toString();
 	}
 
+
 }

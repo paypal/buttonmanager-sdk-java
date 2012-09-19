@@ -59,4 +59,5 @@ public class GetAuthDetailsRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

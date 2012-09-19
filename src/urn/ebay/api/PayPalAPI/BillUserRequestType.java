@@ -74,4 +74,5 @@ public class BillUserRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

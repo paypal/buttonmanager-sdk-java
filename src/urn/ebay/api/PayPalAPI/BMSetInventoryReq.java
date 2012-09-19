@@ -49,4 +49,5 @@ public class BMSetInventoryReq{
 		return sb.toString();
 	}
 
+
 }

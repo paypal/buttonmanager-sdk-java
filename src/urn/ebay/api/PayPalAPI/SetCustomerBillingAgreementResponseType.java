@@ -53,6 +53,7 @@ public class SetCustomerBillingAgreementResponseType extends AbstractResponseTyp
 	 
 
 
+
 	private  boolean isWhitespaceNode(Node n) {
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			String val = n.getNodeValue();

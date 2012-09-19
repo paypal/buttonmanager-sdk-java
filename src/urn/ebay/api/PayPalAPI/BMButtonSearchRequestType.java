@@ -73,4 +73,5 @@ public class BMButtonSearchRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

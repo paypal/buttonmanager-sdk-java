@@ -57,4 +57,5 @@ public class GetMobileStatusRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

@@ -364,4 +364,5 @@ public class BMUpdateButtonRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

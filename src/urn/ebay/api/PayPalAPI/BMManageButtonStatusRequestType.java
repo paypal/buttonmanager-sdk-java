@@ -75,4 +75,5 @@ public class BMManageButtonStatusRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

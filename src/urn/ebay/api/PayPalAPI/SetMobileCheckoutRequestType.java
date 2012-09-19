@@ -57,4 +57,5 @@ public class SetMobileCheckoutRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

@@ -118,4 +118,5 @@ public class AddressVerifyRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

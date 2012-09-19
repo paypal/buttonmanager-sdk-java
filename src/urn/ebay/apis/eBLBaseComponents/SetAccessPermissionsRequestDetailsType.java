@@ -442,4 +442,5 @@ public class SetAccessPermissionsRequestDetailsType{
 		return sb.toString();
 	}
 
+
 }

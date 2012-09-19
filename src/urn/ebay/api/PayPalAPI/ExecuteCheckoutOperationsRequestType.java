@@ -57,4 +57,5 @@ public class ExecuteCheckoutOperationsRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

@@ -49,4 +49,5 @@ public class GetRecurringPaymentsProfileDetailsReq{
 		return sb.toString();
 	}
 
+
 }

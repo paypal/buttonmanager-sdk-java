@@ -59,4 +59,5 @@ public class GetExpressCheckoutDetailsRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

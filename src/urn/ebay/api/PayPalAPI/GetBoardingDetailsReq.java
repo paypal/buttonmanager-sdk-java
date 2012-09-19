@@ -49,4 +49,5 @@ public class GetBoardingDetailsReq{
 		return sb.toString();
 	}
 
+
 }

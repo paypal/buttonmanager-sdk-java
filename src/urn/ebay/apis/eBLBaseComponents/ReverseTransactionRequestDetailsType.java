@@ -49,4 +49,5 @@ public class ReverseTransactionRequestDetailsType{
 		return sb.toString();
 	}
 
+
 }

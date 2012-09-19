@@ -435,4 +435,5 @@ public class UpdateRecurringPaymentsProfileRequestDetailsType{
 		return sb.toString();
 	}
 
+
 }

@@ -51,4 +51,5 @@ public class BuyerDetailType{
 		return sb.toString();
 	}
 
+
 }

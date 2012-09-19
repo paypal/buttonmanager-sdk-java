@@ -288,4 +288,5 @@ public class BMSetInventoryRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

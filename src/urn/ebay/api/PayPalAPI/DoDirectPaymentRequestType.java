@@ -82,4 +82,5 @@ public class DoDirectPaymentRequestType extends AbstractRequestType {
 		return sb.toString();
 	}
 
+
 }

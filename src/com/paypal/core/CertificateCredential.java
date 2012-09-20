@@ -10,7 +10,20 @@ public class CertificateCredential extends ICredential {
 	private static final long serialVersionUID = -5489365713654987523L;
 	private String certificatePath;
 	private String certificateKey;
-
+	private String subject;
+	
+	public CertificateCredential(String userName, String password,
+			String certificate, String certificateKey, String appId, String subject)
+			throws MissingCredentialException {
+		this.certificatePath = certificate;
+		this.certificateKey = certificateKey;
+		this.subject = subject;
+		setUserName(userName);
+		setPassword(password);
+		setApplicationId(appId);
+		this.validate();
+	}
+	
 	public CertificateCredential(String userName, String password,
 			String certificate, String certificateKey, String appId)
 			throws MissingCredentialException {
@@ -21,7 +34,7 @@ public class CertificateCredential extends ICredential {
 		setApplicationId(appId);
 		this.validate();
 	}
-
+	
 	public void validate() throws MissingCredentialException {
 		if (getUserName() == null || getUserName() == "") {
 			throw new MissingCredentialException("username can't be empty");
@@ -57,4 +70,12 @@ public class CertificateCredential extends ICredential {
 		this.certificateKey = certificateKey;
 	}
 
+	public String getSubject() {
+		return subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+	
 }

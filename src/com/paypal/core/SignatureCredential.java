@@ -5,7 +5,18 @@ import com.paypal.exception.MissingCredentialException;
 public class SignatureCredential extends ICredential {
 
 	private String signature;
-
+	private String subject;
+	
+	public SignatureCredential(String userName, String password,
+			String signature, String appId , String subject) throws MissingCredentialException {
+		this.signature = signature;
+		this.subject = subject;
+		setUserName(userName);
+		setPassword(password);
+		setApplicationId(appId);
+		this.validate();
+	}
+	
 	public SignatureCredential(String userName, String password,
 			String signature, String appId) throws MissingCredentialException {
 		this.signature = signature;
@@ -14,7 +25,6 @@ public class SignatureCredential extends ICredential {
 		setApplicationId(appId);
 		this.validate();
 	}
-
 	public void validate() throws MissingCredentialException {
 		if (getUserName() == null || getUserName() == "") {
 			throw new MissingCredentialException("username can't be empty");
@@ -36,6 +46,14 @@ public class SignatureCredential extends ICredential {
 
 	public void setSignature(String signature) {
 		this.signature = signature;
+	}
+
+	public String getSubject() {
+		return subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
 	}
 
 }

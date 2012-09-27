@@ -7,7 +7,7 @@ import java.util.Set;
 import com.paypal.exception.InvalidCredentialException;
 import com.paypal.exception.MissingCredentialException;
 
-public class CredentialManager {
+public final class CredentialManager {
 	private static CredentialManager instance = null;
 
 	private Map<String, ICredential> credentialMap = new HashMap<String, ICredential>();
@@ -44,8 +44,10 @@ public class CredentialManager {
 					"No valid API accounts have been configured");
 		}
 		while (suffix <= acctSet.size()) {
-			String userName = (String) credMap.get(prefix + suffix+ ".UserName");
-			String password = (String) credMap.get(prefix + suffix+ ".Password");
+			String userName = (String) credMap.get(prefix + suffix
+					+ ".UserName");
+			String password = (String) credMap.get(prefix + suffix
+					+ ".Password");
 			String appId = (String) credMap.get(prefix + suffix + ".AppId");
 			String subject = (String) credMap.get(prefix + suffix + ".Subject");
 			if (credMap.get(prefix + suffix + ".Signature") != null) {
@@ -54,8 +56,10 @@ public class CredentialManager {
 				credentialMap.put(userName, new SignatureCredential(userName,
 						password, signature, appId, subject));
 			} else if (credMap.get(prefix + suffix + ".CertPath") != null) {
-				String certPath = (String) credMap.get(prefix + suffix+ ".CertPath");
-				String certKey = (String) credMap.get(prefix + suffix+ ".CertKey");
+				String certPath = (String) credMap.get(prefix + suffix
+						+ ".CertPath");
+				String certKey = (String) credMap.get(prefix + suffix
+						+ ".CertKey");
 				credentialMap.put(userName, new CertificateCredential(userName,
 						password, certPath, certKey, appId, subject));
 			}
@@ -78,10 +82,11 @@ public class CredentialManager {
 	public ICredential getCredentialObject(String userId)
 			throws InvalidCredentialException {
 		ICredential credObj = null;
-		if (userId == null)
+		if (userId == null) {
 			credObj = (ICredential) credentialMap.get(defaultAcctName);
-		else if (credentialMap.containsKey(userId))
+		} else if (credentialMap.containsKey(userId)) {
 			credObj = (ICredential) credentialMap.get(userId);
+		}
 		if (credObj == null) {
 			throw new InvalidCredentialException("Invalid userId" + userId);
 		}

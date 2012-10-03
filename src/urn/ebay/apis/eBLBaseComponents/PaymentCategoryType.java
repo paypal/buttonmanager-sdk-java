@@ -20,9 +20,11 @@ public enum  PaymentCategoryType {
 	}
 	
 	public static PaymentCategoryType fromValue(String v) {
-		for (PaymentCategoryType c : values())
-			if (c.value.equals(v))
+		for (PaymentCategoryType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

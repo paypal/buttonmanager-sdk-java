@@ -552,9 +552,11 @@ public enum  BusinessSubCategoryType {
 	}
 	
 	public static BusinessSubCategoryType fromValue(String v) {
-		for (BusinessSubCategoryType c : values())
-			if (c.value.equals(v))
+		for (BusinessSubCategoryType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

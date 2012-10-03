@@ -22,9 +22,11 @@ public enum  BankAccountTypeType {
 	}
 	
 	public static BankAccountTypeType fromValue(String v) {
-		for (BankAccountTypeType c : values())
-			if (c.value.equals(v))
+		for (BankAccountTypeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

@@ -80,9 +80,11 @@ public enum  BusinessCategoryType {
 	}
 	
 	public static BusinessCategoryType fromValue(String v) {
-		for (BusinessCategoryType c : values())
-			if (c.value.equals(v))
+		for (BusinessCategoryType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

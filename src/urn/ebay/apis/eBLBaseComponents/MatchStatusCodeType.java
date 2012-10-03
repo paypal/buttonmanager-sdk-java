@@ -25,9 +25,11 @@ public enum  MatchStatusCodeType {
 	}
 	
 	public static MatchStatusCodeType fromValue(String v) {
-		for (MatchStatusCodeType c : values())
-			if (c.value.equals(v))
+		for (MatchStatusCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

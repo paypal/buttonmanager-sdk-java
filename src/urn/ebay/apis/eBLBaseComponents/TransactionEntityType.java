@@ -30,9 +30,11 @@ public enum  TransactionEntityType {
 	}
 	
 	public static TransactionEntityType fromValue(String v) {
-		for (TransactionEntityType c : values())
-			if (c.value.equals(v))
+		for (TransactionEntityType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

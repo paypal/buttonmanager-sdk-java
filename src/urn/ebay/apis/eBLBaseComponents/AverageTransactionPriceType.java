@@ -75,9 +75,11 @@ public enum  AverageTransactionPriceType {
 	}
 	
 	public static AverageTransactionPriceType fromValue(String v) {
-		for (AverageTransactionPriceType c : values())
-			if (c.value.equals(v))
+		for (AverageTransactionPriceType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

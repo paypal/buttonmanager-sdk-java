@@ -53,9 +53,11 @@ public enum  ShippingServiceCodeType {
 	}
 	
 	public static ShippingServiceCodeType fromValue(String v) {
-		for (ShippingServiceCodeType c : values())
-			if (c.value.equals(v))
+		for (ShippingServiceCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

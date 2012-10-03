@@ -18,9 +18,11 @@ public enum  CoupleType {
 	}
 	
 	public static CoupleType fromValue(String v) {
-		for (CoupleType c : values())
-			if (c.value.equals(v))
+		for (CoupleType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

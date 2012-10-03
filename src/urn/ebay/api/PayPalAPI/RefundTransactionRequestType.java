@@ -11,7 +11,7 @@ import com.paypal.core.SDKUtil;
 
 /**
  * Unique identifier of the transaction you are refunding.
- * Required Character length and limitations: 17 single-byte
+ * Optional Character length and limitations: 17 single-byte
  * alphanumeric characters 
  */
 public class RefundTransactionRequestType extends AbstractRequestType {
@@ -19,10 +19,17 @@ public class RefundTransactionRequestType extends AbstractRequestType {
 
 	/**
 	 * Unique identifier of the transaction you are refunding.
-	 * Required Character length and limitations: 17 single-byte
+	 * Optional Character length and limitations: 17 single-byte
 	 * alphanumeric characters 	 
 	 */ 
 	private String TransactionID;
+
+	/**
+	 * Encrypted PayPal customer account identification number.
+	 * Optional Character length and limitations: 127 single-byte
+	 * alphanumeric characters	 
+	 */ 
+	private String PayerID;
 
 	/**
 	 * Invoice number corresponding to transaction details for
@@ -106,6 +113,20 @@ public class RefundTransactionRequestType extends AbstractRequestType {
 	 */
 	 public void setTransactionID(String TransactionID) {
 	 	this.TransactionID = TransactionID;
+	 }
+	 
+	/**
+	 * Getter for PayerID
+	 */
+	 public String getPayerID() {
+	 	return PayerID;
+	 }
+	 
+	/**
+	 * Setter for PayerID
+	 */
+	 public void setPayerID(String PayerID) {
+	 	this.PayerID = PayerID;
 	 }
 	 
 	/**
@@ -256,6 +277,10 @@ public class RefundTransactionRequestType extends AbstractRequestType {
 		if(TransactionID != null) {
 			sb.append("<urn:TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionID));
 			sb.append("</urn:TransactionID>");
+		}
+		if(PayerID != null) {
+			sb.append("<urn:PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(PayerID));
+			sb.append("</urn:PayerID>");
 		}
 		if(InvoiceID != null) {
 			sb.append("<urn:InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(InvoiceID));

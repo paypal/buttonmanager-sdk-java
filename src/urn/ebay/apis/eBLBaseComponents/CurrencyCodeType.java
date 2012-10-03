@@ -436,9 +436,11 @@ public enum  CurrencyCodeType {
 	}
 	
 	public static CurrencyCodeType fromValue(String v) {
-		for (CurrencyCodeType c : values())
-			if (c.value.equals(v))
+		for (CurrencyCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

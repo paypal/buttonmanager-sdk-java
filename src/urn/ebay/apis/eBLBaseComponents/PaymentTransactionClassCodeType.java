@@ -46,7 +46,11 @@ public enum  PaymentTransactionClassCodeType {
 
 	BALANCEAFFECTING("BalanceAffecting"),
 
-	ECHECK("ECheck");
+	ECHECK("ECheck"),
+
+	FORCEDPOSTTRANSACTION("ForcedPostTransaction"),
+
+	NONREFERENCEDREFUNDS("NonReferencedRefunds");
 
 	private String value;
 
@@ -59,9 +63,11 @@ public enum  PaymentTransactionClassCodeType {
 	}
 	
 	public static PaymentTransactionClassCodeType fromValue(String v) {
-		for (PaymentTransactionClassCodeType c : values())
-			if (c.value.equals(v))
+		for (PaymentTransactionClassCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

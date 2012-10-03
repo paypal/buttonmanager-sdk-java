@@ -20,9 +20,11 @@ public enum  FailedPaymentActionType {
 	}
 	
 	public static FailedPaymentActionType fromValue(String v) {
-		for (FailedPaymentActionType c : values())
-			if (c.value.equals(v))
+		for (FailedPaymentActionType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

@@ -33,9 +33,11 @@ public enum  CreditCardTypeType {
 	}
 	
 	public static CreditCardTypeType fromValue(String v) {
-		for (CreditCardTypeType c : values())
-			if (c.value.equals(v))
+		for (CreditCardTypeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

@@ -20,9 +20,11 @@ public enum  ItemCategoryType {
 	}
 	
 	public static ItemCategoryType fromValue(String v) {
-		for (ItemCategoryType c : values())
-			if (c.value.equals(v))
+		for (ItemCategoryType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

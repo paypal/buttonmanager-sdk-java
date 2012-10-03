@@ -20,9 +20,11 @@ public enum  ButtonStatusType {
 	}
 	
 	public static ButtonStatusType fromValue(String v) {
-		for (ButtonStatusType c : values())
-			if (c.value.equals(v))
+		for (ButtonStatusType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

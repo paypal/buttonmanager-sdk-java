@@ -24,9 +24,11 @@ public enum  UserWithdrawalLimitTypeType {
 	}
 	
 	public static UserWithdrawalLimitTypeType fromValue(String v) {
-		for (UserWithdrawalLimitTypeType c : values())
-			if (c.value.equals(v))
+		for (UserWithdrawalLimitTypeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

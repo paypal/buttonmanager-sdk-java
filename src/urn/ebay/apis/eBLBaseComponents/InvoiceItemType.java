@@ -6,6 +6,22 @@ import java.util.ArrayList;
 import urn.ebay.apis.eBLBaseComponents.DiscountType;
 import urn.ebay.apis.eBLBaseComponents.AdditionalFeeType;
 import com.paypal.core.SDKUtil;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.NamedNodeMap;
+import java.io.FileInputStream;
+import java.io.StringReader;
+import java.io.IOException;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
 /**
  * Describes an individual item for an invoice. 
@@ -495,4 +511,118 @@ public class InvoiceItemType{
 	}
 
 
+	private  boolean isWhitespaceNode(Node n) {
+		if (n.getNodeType() == Node.TEXT_NODE) {
+			String val = n.getNodeValue();
+			return val.trim().length() == 0;
+		} else if (n.getNodeType() == Node.ELEMENT_NODE ) {
+			return (n.getChildNodes().getLength() == 0);
+		} else {
+			return false;
+		}
+	}
+	
+	public InvoiceItemType(Node node) throws XPathExpressionException {
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		Node childNode = null;
+		NodeList nodeList = null;
+		childNode = (Node) xpath.evaluate("Name", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Name = childNode.getTextContent();
+		}
+	
+		childNode = (Node) xpath.evaluate("Description", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Description = childNode.getTextContent();
+		}
+	
+		childNode = (Node) xpath.evaluate("EAN", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.EAN = childNode.getTextContent();
+		}
+	
+		childNode = (Node) xpath.evaluate("SKU", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.SKU = childNode.getTextContent();
+		}
+	
+		childNode = (Node) xpath.evaluate("ReturnPolicyIdentifier", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ReturnPolicyIdentifier = childNode.getTextContent();
+		}
+	
+		childNode = (Node) xpath.evaluate("Price", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.Price =  new BasicAmountType(childNode);
+		}
+		childNode = (Node) xpath.evaluate("ItemPrice", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ItemPrice =  new BasicAmountType(childNode);
+		}
+		childNode = (Node) xpath.evaluate("ItemCount", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+			this.ItemCount = Double.valueOf(childNode.getTextContent());
+		}
+	
+		childNode = (Node) xpath.evaluate("ItemCountUnit", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ItemCountUnit = UnitOfMeasure.fromValue(childNode.getTextContent());
+		}
+        nodeList = (NodeList) xpath.evaluate("Discount", node, XPathConstants.NODESET);
+		if (nodeList != null && nodeList.getLength() > 0) {
+			for(int i=0; i < nodeList.getLength(); i++) {
+				Node subNode = nodeList.item(i);
+				this.Discount.add(new DiscountType(subNode));
+			}
+		}
+		childNode = (Node) xpath.evaluate("Taxable", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+			this.Taxable = Boolean.valueOf(childNode.getTextContent());
+		}
+	
+		childNode = (Node) xpath.evaluate("TaxRate", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+			this.TaxRate = Double.valueOf(childNode.getTextContent());
+		}
+	
+        nodeList = (NodeList) xpath.evaluate("AdditionalFees", node, XPathConstants.NODESET);
+		if (nodeList != null && nodeList.getLength() > 0) {
+			for(int i=0; i < nodeList.getLength(); i++) {
+				Node subNode = nodeList.item(i);
+				this.AdditionalFees.add(new AdditionalFeeType(subNode));
+			}
+		}
+		childNode = (Node) xpath.evaluate("Reimbursable", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+			this.Reimbursable = Boolean.valueOf(childNode.getTextContent());
+		}
+	
+		childNode = (Node) xpath.evaluate("MPN", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.MPN = childNode.getTextContent();
+		}
+	
+		childNode = (Node) xpath.evaluate("ISBN", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ISBN = childNode.getTextContent();
+		}
+	
+		childNode = (Node) xpath.evaluate("PLU", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.PLU = childNode.getTextContent();
+		}
+	
+		childNode = (Node) xpath.evaluate("ModelNumber", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ModelNumber = childNode.getTextContent();
+		}
+	
+		childNode = (Node) xpath.evaluate("StyleNumber", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.StyleNumber = childNode.getTextContent();
+		}
+	
+	}
+ 
 }

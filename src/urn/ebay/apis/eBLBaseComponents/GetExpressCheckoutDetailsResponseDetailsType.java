@@ -9,6 +9,7 @@ import urn.ebay.apis.eBLBaseComponents.UserSelectedOptionType;
 import urn.ebay.apis.eBLBaseComponents.IncentiveDetailsType;
 import urn.ebay.apis.eBLBaseComponents.PaymentRequestInfoType;
 import urn.ebay.apis.eBLBaseComponents.ExternalRememberMeStatusDetailsType;
+import urn.ebay.apis.eBLBaseComponents.RefreshTokenStatusDetailsType;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -173,6 +174,12 @@ public class GetExpressCheckoutDetailsResponseDetailsType{
 	 * current login bypass status. 	 
 	 */ 
 	private ExternalRememberMeStatusDetailsType ExternalRememberMeStatusDetails;
+
+	/**
+	 * Response information resulting from opt-in operation or
+	 * current login bypass status. 	 
+	 */ 
+	private RefreshTokenStatusDetailsType RefreshTokenStatusDetails;
 
 	
 
@@ -504,6 +511,20 @@ public class GetExpressCheckoutDetailsResponseDetailsType{
 	 	this.ExternalRememberMeStatusDetails = ExternalRememberMeStatusDetails;
 	 }
 	 
+	/**
+	 * Getter for RefreshTokenStatusDetails
+	 */
+	 public RefreshTokenStatusDetailsType getRefreshTokenStatusDetails() {
+	 	return RefreshTokenStatusDetails;
+	 }
+	 
+	/**
+	 * Setter for RefreshTokenStatusDetails
+	 */
+	 public void setRefreshTokenStatusDetails(RefreshTokenStatusDetailsType RefreshTokenStatusDetails) {
+	 	this.RefreshTokenStatusDetails = RefreshTokenStatusDetails;
+	 }
+	 
 
 
 
@@ -641,6 +662,10 @@ public class GetExpressCheckoutDetailsResponseDetailsType{
 		childNode = (Node) xpath.evaluate("ExternalRememberMeStatusDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.ExternalRememberMeStatusDetails =  new ExternalRememberMeStatusDetailsType(childNode);
+		}
+		childNode = (Node) xpath.evaluate("RefreshTokenStatusDetails", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.RefreshTokenStatusDetails =  new RefreshTokenStatusDetailsType(childNode);
 		}
 	}
  

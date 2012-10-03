@@ -32,6 +32,13 @@ public class DoVoidRequestType extends AbstractRequestType {
 	 */ 
 	private String Note;
 
+	/**
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 	 
+	 */ 
+	private String MsgSubID;
+
 	
 
 	/**
@@ -75,6 +82,20 @@ public class DoVoidRequestType extends AbstractRequestType {
 	 	this.Note = Note;
 	 }
 	 
+	/**
+	 * Getter for MsgSubID
+	 */
+	 public String getMsgSubID() {
+	 	return MsgSubID;
+	 }
+	 
+	/**
+	 * Setter for MsgSubID
+	 */
+	 public void setMsgSubID(String MsgSubID) {
+	 	this.MsgSubID = MsgSubID;
+	 }
+	 
 
 
 	public String toXMLString() {
@@ -87,6 +108,10 @@ public class DoVoidRequestType extends AbstractRequestType {
 		if(Note != null) {
 			sb.append("<urn:Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(Note));
 			sb.append("</urn:Note>");
+		}
+		if(MsgSubID != null) {
+			sb.append("<urn:MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(MsgSubID));
+			sb.append("</urn:MsgSubID>");
 		}
 		return sb.toString();
 	}

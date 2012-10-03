@@ -6,6 +6,7 @@ import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.PaymentStatusCodeType;
 import urn.ebay.apis.eBLBaseComponents.PendingStatusCodeType;
 import urn.ebay.apis.eBLBaseComponents.ReversalReasonCodeType;
+import urn.ebay.apis.eBLBaseComponents.POSTransactionCodeType;
 import urn.ebay.apis.eBLBaseComponents.SellerDetailsType;
 import urn.ebay.apis.eBLBaseComponents.FMFDetailsType;
 import urn.ebay.apis.EnhancedDataTypes.EnhancedPaymentInfoType;
@@ -235,6 +236,19 @@ public class PaymentInfoType{
 	 * Protection Eligibility details for this Transaction 	 
 	 */ 
 	private String ProtectionEligibilityType;
+
+	/**
+	 * Receipt Reference Number for this Transaction 	 
+	 */ 
+	private String ReceiptReferenceNumber;
+
+	/**
+	 * The type of POS transaction F: Forced post transaction. POS
+	 * merchant can send transactions at a later point if
+	 * connectivity is lost. S: Single call checkout, and this is
+	 * to identify PayPal Lite API usage. 	 
+	 */ 
+	private POSTransactionCodeType POSTransactionType;
 
 	/**
 	 * Amount of shipping charged on transaction	 
@@ -613,6 +627,34 @@ public class PaymentInfoType{
 	 }
 	 
 	/**
+	 * Getter for ReceiptReferenceNumber
+	 */
+	 public String getReceiptReferenceNumber() {
+	 	return ReceiptReferenceNumber;
+	 }
+	 
+	/**
+	 * Setter for ReceiptReferenceNumber
+	 */
+	 public void setReceiptReferenceNumber(String ReceiptReferenceNumber) {
+	 	this.ReceiptReferenceNumber = ReceiptReferenceNumber;
+	 }
+	 
+	/**
+	 * Getter for POSTransactionType
+	 */
+	 public POSTransactionCodeType getPOSTransactionType() {
+	 	return POSTransactionType;
+	 }
+	 
+	/**
+	 * Setter for POSTransactionType
+	 */
+	 public void setPOSTransactionType(POSTransactionCodeType POSTransactionType) {
+	 	this.POSTransactionType = POSTransactionType;
+	 }
+	 
+	/**
 	 * Getter for ShipAmount
 	 */
 	 public String getShipAmount() {
@@ -922,6 +964,15 @@ public class PaymentInfoType{
 		    this.ProtectionEligibilityType = childNode.getTextContent();
 		}
 	
+		childNode = (Node) xpath.evaluate("ReceiptReferenceNumber", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.ReceiptReferenceNumber = childNode.getTextContent();
+		}
+	
+		childNode = (Node) xpath.evaluate("POSTransactionType", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.POSTransactionType = POSTransactionCodeType.fromValue(childNode.getTextContent());
+		}
 		childNode = (Node) xpath.evaluate("ShipAmount", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.ShipAmount = childNode.getTextContent();

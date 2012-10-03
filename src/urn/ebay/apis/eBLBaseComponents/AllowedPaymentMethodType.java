@@ -38,9 +38,11 @@ public enum  AllowedPaymentMethodType {
 	}
 	
 	public static AllowedPaymentMethodType fromValue(String v) {
-		for (AllowedPaymentMethodType c : values())
-			if (c.value.equals(v))
+		for (AllowedPaymentMethodType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

@@ -133,6 +133,12 @@ public class PaymentDetailsType{
 	private AddressType ShipToAddress;
 
 	/**
+	 * Thirdparty Fulfillment Reference Number. Optional Character
+	 * length and limitations: 32 alphanumeric characters. 	 
+	 */ 
+	private String FulfillmentReferenceNumber;
+
+	/**
 	 * 	 
 	 */ 
 	private AddressType FulfillmentAddress;
@@ -419,6 +425,20 @@ public class PaymentDetailsType{
 	 */
 	 public void setShipToAddress(AddressType ShipToAddress) {
 	 	this.ShipToAddress = ShipToAddress;
+	 }
+	 
+	/**
+	 * Getter for FulfillmentReferenceNumber
+	 */
+	 public String getFulfillmentReferenceNumber() {
+	 	return FulfillmentReferenceNumber;
+	 }
+	 
+	/**
+	 * Setter for FulfillmentReferenceNumber
+	 */
+	 public void setFulfillmentReferenceNumber(String FulfillmentReferenceNumber) {
+	 	this.FulfillmentReferenceNumber = FulfillmentReferenceNumber;
 	 }
 	 
 	/**
@@ -769,6 +789,10 @@ public class PaymentDetailsType{
 			sb.append(ShipToAddress.toXMLString());
 			sb.append("</ebl:ShipToAddress>");
 		}
+		if(FulfillmentReferenceNumber != null) {
+			sb.append("<ebl:FulfillmentReferenceNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(FulfillmentReferenceNumber));
+			sb.append("</ebl:FulfillmentReferenceNumber>");
+		}
 		if(FulfillmentAddress != null) {
 			sb.append("<ebl:FulfillmentAddress>");
 			sb.append(FulfillmentAddress.toXMLString());
@@ -931,6 +955,11 @@ public class PaymentDetailsType{
         if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.ShipToAddress =  new AddressType(childNode);
 		}
+		childNode = (Node) xpath.evaluate("FulfillmentReferenceNumber", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.FulfillmentReferenceNumber = childNode.getTextContent();
+		}
+	
 		childNode = (Node) xpath.evaluate("FulfillmentAddress", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.FulfillmentAddress =  new AddressType(childNode);

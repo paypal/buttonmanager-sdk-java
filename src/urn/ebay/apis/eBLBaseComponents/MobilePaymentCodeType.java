@@ -27,9 +27,11 @@ public enum  MobilePaymentCodeType {
 	}
 	
 	public static MobilePaymentCodeType fromValue(String v) {
-		for (MobilePaymentCodeType c : values())
-			if (c.value.equals(v))
+		for (MobilePaymentCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

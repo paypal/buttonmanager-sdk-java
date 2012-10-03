@@ -26,9 +26,11 @@ public enum  BillingCodeType {
 	}
 	
 	public static BillingCodeType fromValue(String v) {
-		for (BillingCodeType c : values())
-			if (c.value.equals(v))
+		for (BillingCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

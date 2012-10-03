@@ -40,9 +40,11 @@ public enum  AckCodeType {
 	}
 	
 	public static AckCodeType fromValue(String v) {
-		for (AckCodeType c : values())
-			if (c.value.equals(v))
+		for (AckCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

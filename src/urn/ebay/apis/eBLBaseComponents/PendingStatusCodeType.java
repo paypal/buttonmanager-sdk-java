@@ -44,9 +44,11 @@ public enum  PendingStatusCodeType {
 	}
 	
 	public static PendingStatusCodeType fromValue(String v) {
-		for (PendingStatusCodeType c : values())
-			if (c.value.equals(v))
+		for (PendingStatusCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

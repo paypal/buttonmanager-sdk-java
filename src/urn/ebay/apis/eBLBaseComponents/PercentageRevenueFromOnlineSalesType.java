@@ -45,9 +45,11 @@ public enum  PercentageRevenueFromOnlineSalesType {
 	}
 	
 	public static PercentageRevenueFromOnlineSalesType fromValue(String v) {
-		for (PercentageRevenueFromOnlineSalesType c : values())
-			if (c.value.equals(v))
+		for (PercentageRevenueFromOnlineSalesType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

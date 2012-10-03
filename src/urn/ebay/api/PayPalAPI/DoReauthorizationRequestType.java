@@ -34,6 +34,13 @@ public class DoReauthorizationRequestType extends AbstractRequestType {
 	 */ 
 	private BasicAmountType Amount;
 
+	/**
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 	 
+	 */ 
+	private String MsgSubID;
+
 	
 
 	/**
@@ -78,6 +85,20 @@ public class DoReauthorizationRequestType extends AbstractRequestType {
 	 	this.Amount = Amount;
 	 }
 	 
+	/**
+	 * Getter for MsgSubID
+	 */
+	 public String getMsgSubID() {
+	 	return MsgSubID;
+	 }
+	 
+	/**
+	 * Setter for MsgSubID
+	 */
+	 public void setMsgSubID(String MsgSubID) {
+	 	this.MsgSubID = MsgSubID;
+	 }
+	 
 
 
 	public String toXMLString() {
@@ -91,6 +112,10 @@ public class DoReauthorizationRequestType extends AbstractRequestType {
 			sb.append("<urn:Amount");
 			sb.append(Amount.toXMLString());
 			sb.append("</urn:Amount>");
+		}
+		if(MsgSubID != null) {
+			sb.append("<urn:MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(MsgSubID));
+			sb.append("</urn:MsgSubID>");
 		}
 		return sb.toString();
 	}

@@ -24,9 +24,11 @@ public enum  RedeemedOfferType {
 	}
 	
 	public static RedeemedOfferType fromValue(String v) {
-		for (RedeemedOfferType c : values())
-			if (c.value.equals(v))
+		for (RedeemedOfferType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

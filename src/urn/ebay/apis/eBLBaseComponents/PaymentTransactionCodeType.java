@@ -56,9 +56,11 @@ public enum  PaymentTransactionCodeType {
 	}
 	
 	public static PaymentTransactionCodeType fromValue(String v) {
-		for (PaymentTransactionCodeType c : values())
-			if (c.value.equals(v))
+		for (PaymentTransactionCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

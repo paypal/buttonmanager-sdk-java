@@ -20,9 +20,11 @@ public enum  APIType {
 	}
 	
 	public static APIType fromValue(String v) {
-		for (APIType c : values())
-			if (c.value.equals(v))
+		for (APIType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

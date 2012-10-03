@@ -29,9 +29,11 @@ public enum  RefundType {
 	}
 	
 	public static RefundType fromValue(String v) {
-		for (RefundType c : values())
-			if (c.value.equals(v))
+		for (RefundType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

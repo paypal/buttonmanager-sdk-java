@@ -32,9 +32,11 @@ public enum  BusinessTypeType {
 	}
 	
 	public static BusinessTypeType fromValue(String v) {
-		for (BusinessTypeType c : values())
-			if (c.value.equals(v))
+		for (BusinessTypeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

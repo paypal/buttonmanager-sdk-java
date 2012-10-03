@@ -36,9 +36,11 @@ public enum  RefundSourceCodeType {
 	}
 	
 	public static RefundSourceCodeType fromValue(String v) {
-		for (RefundSourceCodeType c : values())
-			if (c.value.equals(v))
+		for (RefundSourceCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

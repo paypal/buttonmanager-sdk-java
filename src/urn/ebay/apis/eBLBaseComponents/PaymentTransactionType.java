@@ -44,6 +44,12 @@ public class PaymentTransactionType{
 	private PayerInfoType PayerInfo;
 
 	/**
+	 * This field is for holding ReferenceId for shippment sent
+	 * from Merchant to the 3rd Party  	 
+	 */ 
+	private String TPLReferenceID;
+
+	/**
 	 * Information about the transaction 	 
 	 */ 
 	private PaymentInfoType PaymentInfo;
@@ -138,6 +144,20 @@ public class PaymentTransactionType{
 	 */
 	 public void setPayerInfo(PayerInfoType PayerInfo) {
 	 	this.PayerInfo = PayerInfo;
+	 }
+	 
+	/**
+	 * Getter for TPLReferenceID
+	 */
+	 public String getTPLReferenceID() {
+	 	return TPLReferenceID;
+	 }
+	 
+	/**
+	 * Setter for TPLReferenceID
+	 */
+	 public void setTPLReferenceID(String TPLReferenceID) {
+	 	this.TPLReferenceID = TPLReferenceID;
 	 }
 	 
 	/**
@@ -335,6 +355,11 @@ public class PaymentTransactionType{
         if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.PayerInfo =  new PayerInfoType(childNode);
 		}
+		childNode = (Node) xpath.evaluate("TPLReferenceID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.TPLReferenceID = childNode.getTextContent();
+		}
+	
 		childNode = (Node) xpath.evaluate("PaymentInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.PaymentInfo =  new PaymentInfoType(childNode);

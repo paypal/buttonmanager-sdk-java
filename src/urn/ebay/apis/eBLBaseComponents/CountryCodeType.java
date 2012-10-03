@@ -525,9 +525,11 @@ public enum  CountryCodeType {
 	}
 	
 	public static CountryCodeType fromValue(String v) {
-		for (CountryCodeType c : values())
-			if (c.value.equals(v))
+		for (CountryCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

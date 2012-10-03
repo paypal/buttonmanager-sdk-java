@@ -23,9 +23,11 @@ public enum  ChannelType {
 	}
 	
 	public static ChannelType fromValue(String v) {
-		for (ChannelType c : values())
-			if (c.value.equals(v))
+		for (ChannelType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

@@ -22,9 +22,11 @@ public enum  StatusChangeActionType {
 	}
 	
 	public static StatusChangeActionType fromValue(String v) {
-		for (StatusChangeActionType c : values())
-			if (c.value.equals(v))
+		for (StatusChangeActionType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

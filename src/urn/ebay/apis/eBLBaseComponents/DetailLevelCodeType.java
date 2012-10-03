@@ -24,9 +24,11 @@ public enum  DetailLevelCodeType {
 	}
 	
 	public static DetailLevelCodeType fromValue(String v) {
-		for (DetailLevelCodeType c : values())
-			if (c.value.equals(v))
+		for (DetailLevelCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

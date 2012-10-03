@@ -114,7 +114,9 @@ public class TransactionSearchRequestType extends AbstractRequestType {
 	 * involving BillPay reversals.Shipping: only transactions
 	 * involving UPS shipping fees.BalanceAffecting: only
 	 * transactions that affect the account balance.ECheck: only
-	 * transactions involving eCheck	 
+	 * transactions involving eCheckForcedPostTransaction: forced
+	 * post transaction.NonReferencedRefunds: non-referenced
+	 * refunds.	 
 	 */ 
 	private PaymentTransactionClassCodeType TransactionClass;
 

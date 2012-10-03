@@ -32,9 +32,11 @@ public enum  IncentiveTypeCodeType {
 	}
 	
 	public static IncentiveTypeCodeType fromValue(String v) {
-		for (IncentiveTypeCodeType c : values())
-			if (c.value.equals(v))
+		for (IncentiveTypeCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

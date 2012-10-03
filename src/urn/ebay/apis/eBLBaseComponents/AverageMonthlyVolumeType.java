@@ -55,9 +55,11 @@ public enum  AverageMonthlyVolumeType {
 	}
 	
 	public static AverageMonthlyVolumeType fromValue(String v) {
-		for (AverageMonthlyVolumeType c : values())
-			if (c.value.equals(v))
+		for (AverageMonthlyVolumeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

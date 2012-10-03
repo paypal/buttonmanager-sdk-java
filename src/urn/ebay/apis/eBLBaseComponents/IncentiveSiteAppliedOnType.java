@@ -25,9 +25,11 @@ public enum  IncentiveSiteAppliedOnType {
 	}
 	
 	public static IncentiveSiteAppliedOnType fromValue(String v) {
-		for (IncentiveSiteAppliedOnType c : values())
-			if (c.value.equals(v))
+		for (IncentiveSiteAppliedOnType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

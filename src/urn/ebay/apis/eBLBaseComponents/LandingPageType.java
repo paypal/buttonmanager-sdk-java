@@ -26,9 +26,11 @@ public enum  LandingPageType {
 	}
 	
 	public static LandingPageType fromValue(String v) {
-		for (LandingPageType c : values())
-			if (c.value.equals(v))
+		for (LandingPageType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

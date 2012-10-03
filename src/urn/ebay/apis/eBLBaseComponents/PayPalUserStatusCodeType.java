@@ -23,9 +23,11 @@ public enum  PayPalUserStatusCodeType {
 	}
 	
 	public static PayPalUserStatusCodeType fromValue(String v) {
-		for (PayPalUserStatusCodeType c : values())
-			if (c.value.equals(v))
+		for (PayPalUserStatusCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

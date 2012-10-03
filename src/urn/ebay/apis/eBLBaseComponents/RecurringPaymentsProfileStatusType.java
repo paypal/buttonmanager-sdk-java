@@ -26,9 +26,11 @@ public enum  RecurringPaymentsProfileStatusType {
 	}
 	
 	public static RecurringPaymentsProfileStatusType fromValue(String v) {
-		for (RecurringPaymentsProfileStatusType c : values())
-			if (c.value.equals(v))
+		for (RecurringPaymentsProfileStatusType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

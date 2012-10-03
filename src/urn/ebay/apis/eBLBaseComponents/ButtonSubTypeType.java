@@ -22,9 +22,11 @@ public enum  ButtonSubTypeType {
 	}
 	
 	public static ButtonSubTypeType fromValue(String v) {
-		for (ButtonSubTypeType c : values())
-			if (c.value.equals(v))
+		for (ButtonSubTypeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

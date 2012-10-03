@@ -21,6 +21,13 @@ public class DoCancelRequestType extends AbstractRequestType {
 	 */ 
 	private APIType APIType;
 
+	/**
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 	 
+	 */ 
+	private String MsgSubID;
+
 	
 
 	/**
@@ -65,6 +72,20 @@ public class DoCancelRequestType extends AbstractRequestType {
 	 	this.APIType = APIType;
 	 }
 	 
+	/**
+	 * Getter for MsgSubID
+	 */
+	 public String getMsgSubID() {
+	 	return MsgSubID;
+	 }
+	 
+	/**
+	 * Setter for MsgSubID
+	 */
+	 public void setMsgSubID(String MsgSubID) {
+	 	this.MsgSubID = MsgSubID;
+	 }
+	 
 
 
 	public String toXMLString() {
@@ -77,6 +98,10 @@ public class DoCancelRequestType extends AbstractRequestType {
 		if(APIType != null) {
 			sb.append("<urn:APIType>").append(SDKUtil.escapeInvalidXmlCharsRegex(APIType.getValue()));
 			sb.append("</urn:APIType>");
+		}
+		if(MsgSubID != null) {
+			sb.append("<urn:MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(MsgSubID));
+			sb.append("</urn:MsgSubID>");
 		}
 		return sb.toString();
 	}

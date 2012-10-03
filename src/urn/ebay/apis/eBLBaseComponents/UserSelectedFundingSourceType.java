@@ -27,9 +27,11 @@ public enum  UserSelectedFundingSourceType {
 	}
 	
 	public static UserSelectedFundingSourceType fromValue(String v) {
-		for (UserSelectedFundingSourceType c : values())
-			if (c.value.equals(v))
+		for (UserSelectedFundingSourceType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

@@ -25,9 +25,11 @@ public enum  IncentiveRequestDetailLevelCodeType {
 	}
 	
 	public static IncentiveRequestDetailLevelCodeType fromValue(String v) {
-		for (IncentiveRequestDetailLevelCodeType c : values())
-			if (c.value.equals(v))
+		for (IncentiveRequestDetailLevelCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

@@ -18,10 +18,15 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * 
+ * Return msgsubid back to merchant 
  */
 public class DoCancelResponseType extends AbstractResponseType {
 
+
+	/**
+	 * Return msgsubid back to merchant	 
+	 */ 
+	private String MsgSubID;
 
 	
 
@@ -31,6 +36,20 @@ public class DoCancelResponseType extends AbstractResponseType {
 	public DoCancelResponseType (){
 	}	
 
+	/**
+	 * Getter for MsgSubID
+	 */
+	 public String getMsgSubID() {
+	 	return MsgSubID;
+	 }
+	 
+	/**
+	 * Setter for MsgSubID
+	 */
+	 public void setMsgSubID(String MsgSubID) {
+	 	this.MsgSubID = MsgSubID;
+	 }
+	 
 
 
 
@@ -51,6 +70,11 @@ public class DoCancelResponseType extends AbstractResponseType {
 		XPath xpath = factory.newXPath();
 		Node childNode = null;
 		NodeList nodeList = null;
+		childNode = (Node) xpath.evaluate("MsgSubID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+			String value = childNode.getTextContent();
+			this.MsgSubID = value;
+		}
 	}
  
 }

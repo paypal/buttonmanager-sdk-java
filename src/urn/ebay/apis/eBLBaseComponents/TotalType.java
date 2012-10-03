@@ -23,9 +23,11 @@ public enum  TotalType {
 	}
 	
 	public static TotalType fromValue(String v) {
-		for (TotalType c : values())
-			if (c.value.equals(v))
+		for (TotalType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

@@ -23,9 +23,11 @@ public enum  CompleteCodeType {
 	}
 	
 	public static CompleteCodeType fromValue(String v) {
-		for (CompleteCodeType c : values())
-			if (c.value.equals(v))
+		for (CompleteCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

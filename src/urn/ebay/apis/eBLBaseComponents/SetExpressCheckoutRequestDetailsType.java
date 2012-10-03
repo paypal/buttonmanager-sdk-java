@@ -1546,28 +1546,28 @@ public class SetExpressCheckoutRequestDetailsType{
 			sb.append("</ebl:PageStyle>");
 		}
 		if(cppHeaderImage != null) {
-			sb.append("<ebl:cppHeaderImage>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderImage));
-			sb.append("</ebl:cppHeaderImage>");
+			sb.append("<ebl:cpp-header-image>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderImage));
+			sb.append("</ebl:cpp-header-image>");
 		}
 		if(cppHeaderBorderColor != null) {
-			sb.append("<ebl:cppHeaderBorderColor>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBorderColor));
-			sb.append("</ebl:cppHeaderBorderColor>");
+			sb.append("<ebl:cpp-header-border-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBorderColor));
+			sb.append("</ebl:cpp-header-border-color>");
 		}
 		if(cppHeaderBackColor != null) {
-			sb.append("<ebl:cppHeaderBackColor>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBackColor));
-			sb.append("</ebl:cppHeaderBackColor>");
+			sb.append("<ebl:cpp-header-back-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBackColor));
+			sb.append("</ebl:cpp-header-back-color>");
 		}
 		if(cppPayflowColor != null) {
-			sb.append("<ebl:cppPayflowColor>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppPayflowColor));
-			sb.append("</ebl:cppPayflowColor>");
+			sb.append("<ebl:cpp-payflow-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppPayflowColor));
+			sb.append("</ebl:cpp-payflow-color>");
 		}
 		if(cppCartBorderColor != null) {
-			sb.append("<ebl:cppCartBorderColor>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppCartBorderColor));
-			sb.append("</ebl:cppCartBorderColor>");
+			sb.append("<ebl:cpp-cart-border-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppCartBorderColor));
+			sb.append("</ebl:cpp-cart-border-color>");
 		}
 		if(cppLogoImage != null) {
-			sb.append("<ebl:cppLogoImage>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppLogoImage));
-			sb.append("</ebl:cppLogoImage>");
+			sb.append("<ebl:cpp-logo-image>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppLogoImage));
+			sb.append("</ebl:cpp-logo-image>");
 		}
 		if(Address != null) {
 			sb.append("<ebl:Address>");

@@ -20,9 +20,11 @@ public enum  RecurringFlagType {
 	}
 	
 	public static RecurringFlagType fromValue(String v) {
-		for (RecurringFlagType c : values())
-			if (c.value.equals(v))
+		for (RecurringFlagType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

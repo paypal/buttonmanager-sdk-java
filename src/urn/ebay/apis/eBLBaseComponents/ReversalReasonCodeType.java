@@ -32,9 +32,11 @@ public enum  ReversalReasonCodeType {
 	}
 	
 	public static ReversalReasonCodeType fromValue(String v) {
-		for (ReversalReasonCodeType c : values())
-			if (c.value.equals(v))
+		for (ReversalReasonCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

@@ -26,9 +26,11 @@ public enum  IncentiveRequestCodeType {
 	}
 	
 	public static IncentiveRequestCodeType fromValue(String v) {
-		for (IncentiveRequestCodeType c : values())
-			if (c.value.equals(v))
+		for (IncentiveRequestCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

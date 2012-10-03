@@ -22,9 +22,11 @@ public enum  BuyNowTextType {
 	}
 	
 	public static BuyNowTextType fromValue(String v) {
-		for (BuyNowTextType c : values())
-			if (c.value.equals(v))
+		for (BuyNowTextType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

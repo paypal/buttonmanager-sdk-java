@@ -27,9 +27,11 @@ public enum  AddressOwnerCodeType {
 	}
 	
 	public static AddressOwnerCodeType fromValue(String v) {
-		for (AddressOwnerCodeType c : values())
-			if (c.value.equals(v))
+		for (AddressOwnerCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

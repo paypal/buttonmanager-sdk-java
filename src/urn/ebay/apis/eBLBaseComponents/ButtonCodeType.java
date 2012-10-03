@@ -26,9 +26,11 @@ public enum  ButtonCodeType {
 	}
 	
 	public static ButtonCodeType fromValue(String v) {
-		for (ButtonCodeType c : values())
-			if (c.value.equals(v))
+		for (ButtonCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

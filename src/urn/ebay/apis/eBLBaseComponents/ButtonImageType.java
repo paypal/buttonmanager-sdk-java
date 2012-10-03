@@ -24,9 +24,11 @@ public enum  ButtonImageType {
 	}
 	
 	public static ButtonImageType fromValue(String v) {
-		for (ButtonImageType c : values())
-			if (c.value.equals(v))
+		for (ButtonImageType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

@@ -26,9 +26,11 @@ public enum  BoardingStatusType {
 	}
 	
 	public static BoardingStatusType fromValue(String v) {
-		for (BoardingStatusType c : values())
-			if (c.value.equals(v))
+		for (BoardingStatusType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

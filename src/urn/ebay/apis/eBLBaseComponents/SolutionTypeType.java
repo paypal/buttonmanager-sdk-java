@@ -24,9 +24,11 @@ public enum  SolutionTypeType {
 	}
 	
 	public static SolutionTypeType fromValue(String v) {
-		for (SolutionTypeType c : values())
-			if (c.value.equals(v))
+		for (SolutionTypeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

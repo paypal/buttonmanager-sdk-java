@@ -60,9 +60,11 @@ public enum  MarketingCategoryType {
 	}
 	
 	public static MarketingCategoryType fromValue(String v) {
-		for (MarketingCategoryType c : values())
-			if (c.value.equals(v))
+		for (MarketingCategoryType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

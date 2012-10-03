@@ -28,9 +28,11 @@ public enum  BillingPeriodType {
 	}
 	
 	public static BillingPeriodType fromValue(String v) {
-		for (BillingPeriodType c : values())
-			if (c.value.equals(v))
+		for (BillingPeriodType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

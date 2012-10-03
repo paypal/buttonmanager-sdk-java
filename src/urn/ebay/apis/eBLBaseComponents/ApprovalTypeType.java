@@ -20,9 +20,11 @@ public enum  ApprovalTypeType {
 	}
 	
 	public static ApprovalTypeType fromValue(String v) {
-		for (ApprovalTypeType c : values())
-			if (c.value.equals(v))
+		for (ApprovalTypeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

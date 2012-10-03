@@ -35,23 +35,23 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 
 
 	// Service Version
-	public static final String SERVICE_VERSION = "93.0";
+	public static final String SERVICE_VERSION = "94.0";
 
 	// Service Name
 	public static final String SERVICE_NAME = "PayPalAPIInterfaceService";
 
 	
-	public PayPalAPIInterfaceServiceService(File configFile) throws IOException, FileNotFoundException {
+	public PayPalAPIInterfaceServiceService(File configFile) throws IOException {
 		super(SERVICE_NAME, SERVICE_VERSION);
 		initConfig(configFile);
 	}		
 
-	public PayPalAPIInterfaceServiceService(InputStream config) throws IOException, FileNotFoundException {
+	public PayPalAPIInterfaceServiceService(InputStream config) throws IOException {
 		super(SERVICE_NAME, SERVICE_VERSION);
 		initConfig(config);
 	}
 
-	public PayPalAPIInterfaceServiceService(String configFilePath) throws IOException, FileNotFoundException {
+	public PayPalAPIInterfaceServiceService(String configFilePath) throws IOException {
 		super(SERVICE_NAME, SERVICE_VERSION);
 		initConfig(configFilePath);
 	}

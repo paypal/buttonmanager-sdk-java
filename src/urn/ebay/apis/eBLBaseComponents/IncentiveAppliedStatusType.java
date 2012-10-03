@@ -23,9 +23,11 @@ public enum  IncentiveAppliedStatusType {
 	}
 	
 	public static IncentiveAppliedStatusType fromValue(String v) {
-		for (IncentiveAppliedStatusType c : values())
-			if (c.value.equals(v))
+		for (IncentiveAppliedStatusType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

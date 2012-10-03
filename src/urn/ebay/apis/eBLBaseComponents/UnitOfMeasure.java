@@ -66,9 +66,11 @@ public enum  UnitOfMeasure {
 	}
 	
 	public static UnitOfMeasure fromValue(String v) {
-		for (UnitOfMeasure c : values())
-			if (c.value.equals(v))
+		for (UnitOfMeasure c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

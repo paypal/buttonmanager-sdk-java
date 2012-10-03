@@ -33,6 +33,11 @@ public class DoVoidResponseType extends AbstractResponseType {
 	 */ 
 	private String AuthorizationID;
 
+	/**
+	 * Return msgsubid back to merchant	 
+	 */ 
+	private String MsgSubID;
+
 	
 
 	/**
@@ -53,6 +58,20 @@ public class DoVoidResponseType extends AbstractResponseType {
 	 */
 	 public void setAuthorizationID(String AuthorizationID) {
 	 	this.AuthorizationID = AuthorizationID;
+	 }
+	 
+	/**
+	 * Getter for MsgSubID
+	 */
+	 public String getMsgSubID() {
+	 	return MsgSubID;
+	 }
+	 
+	/**
+	 * Setter for MsgSubID
+	 */
+	 public void setMsgSubID(String MsgSubID) {
+	 	this.MsgSubID = MsgSubID;
 	 }
 	 
 
@@ -77,9 +96,14 @@ public class DoVoidResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("AuthorizationID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			String value = childNode.getTextContent();
-			this.AuthorizationID = value;
+		    this.AuthorizationID = childNode.getTextContent();
 		}
+	
+		childNode = (Node) xpath.evaluate("MsgSubID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.MsgSubID = childNode.getTextContent();
+		}
+	
 	}
  
 }

@@ -62,9 +62,11 @@ public enum  ProductCategoryType {
 	}
 	
 	public static ProductCategoryType fromValue(String v) {
-		for (ProductCategoryType c : values())
-			if (c.value.equals(v))
+		for (ProductCategoryType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

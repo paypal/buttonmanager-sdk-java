@@ -23,9 +23,11 @@ public enum  FMFPendingTransactionActionType {
 	}
 	
 	public static FMFPendingTransactionActionType fromValue(String v) {
-		for (FMFPendingTransactionActionType c : values())
-			if (c.value.equals(v))
+		for (FMFPendingTransactionActionType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

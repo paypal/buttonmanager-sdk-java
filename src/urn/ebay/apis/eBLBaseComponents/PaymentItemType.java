@@ -1,4 +1,5 @@
 package urn.ebay.apis.eBLBaseComponents;
+import urn.ebay.apis.eBLBaseComponents.InvoiceItemType;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import java.util.List;
 import java.util.ArrayList;
@@ -65,6 +66,11 @@ public class PaymentItemType{
 	 * Amount of handling charged on payment 	 
 	 */ 
 	private String HandlingAmount;
+
+	/**
+	 * Invoice item details 	 
+	 */ 
+	private InvoiceItemType InvoiceItemDetails;
 
 	/**
 	 * Coupon ID Number 	 
@@ -205,6 +211,20 @@ public class PaymentItemType{
 	 */
 	 public void setHandlingAmount(String HandlingAmount) {
 	 	this.HandlingAmount = HandlingAmount;
+	 }
+	 
+	/**
+	 * Getter for InvoiceItemDetails
+	 */
+	 public InvoiceItemType getInvoiceItemDetails() {
+	 	return InvoiceItemDetails;
+	 }
+	 
+	/**
+	 * Setter for InvoiceItemDetails
+	 */
+	 public void setInvoiceItemDetails(InvoiceItemType InvoiceItemDetails) {
+	 	this.InvoiceItemDetails = InvoiceItemDetails;
 	 }
 	 
 	/**
@@ -359,6 +379,10 @@ public class PaymentItemType{
 		    this.HandlingAmount = childNode.getTextContent();
 		}
 	
+		childNode = (Node) xpath.evaluate("InvoiceItemDetails", node, XPathConstants.NODE);
+        if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.InvoiceItemDetails =  new InvoiceItemType(childNode);
+		}
 		childNode = (Node) xpath.evaluate("CouponID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.CouponID = childNode.getTextContent();

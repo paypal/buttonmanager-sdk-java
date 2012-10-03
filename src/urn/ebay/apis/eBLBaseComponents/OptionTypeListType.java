@@ -24,9 +24,11 @@ public enum  OptionTypeListType {
 	}
 	
 	public static OptionTypeListType fromValue(String v) {
-		for (OptionTypeListType c : values())
-			if (c.value.equals(v))
+		for (OptionTypeListType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

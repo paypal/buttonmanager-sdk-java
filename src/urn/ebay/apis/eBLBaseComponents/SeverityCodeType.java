@@ -31,9 +31,11 @@ public enum  SeverityCodeType {
 	}
 	
 	public static SeverityCodeType fromValue(String v) {
-		for (SeverityCodeType c : values())
-			if (c.value.equals(v))
+		for (SeverityCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

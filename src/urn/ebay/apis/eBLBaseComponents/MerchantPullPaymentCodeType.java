@@ -25,9 +25,11 @@ public enum  MerchantPullPaymentCodeType {
 	}
 	
 	public static MerchantPullPaymentCodeType fromValue(String v) {
-		for (MerchantPullPaymentCodeType c : values())
-			if (c.value.equals(v))
+		for (MerchantPullPaymentCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

@@ -25,9 +25,11 @@ public enum  AddressStatusCodeType {
 	}
 	
 	public static AddressStatusCodeType fromValue(String v) {
-		for (AddressStatusCodeType c : values())
-			if (c.value.equals(v))
+		for (AddressStatusCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

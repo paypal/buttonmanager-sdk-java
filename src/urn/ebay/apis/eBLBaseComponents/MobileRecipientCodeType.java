@@ -24,9 +24,11 @@ public enum  MobileRecipientCodeType {
 	}
 	
 	public static MobileRecipientCodeType fromValue(String v) {
-		for (MobileRecipientCodeType c : values())
-			if (c.value.equals(v))
+		for (MobileRecipientCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

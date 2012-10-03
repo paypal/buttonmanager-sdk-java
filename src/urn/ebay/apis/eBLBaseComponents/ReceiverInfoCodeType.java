@@ -25,9 +25,11 @@ public enum  ReceiverInfoCodeType {
 	}
 	
 	public static ReceiverInfoCodeType fromValue(String v) {
-		for (ReceiverInfoCodeType c : values())
-			if (c.value.equals(v))
+		for (ReceiverInfoCodeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

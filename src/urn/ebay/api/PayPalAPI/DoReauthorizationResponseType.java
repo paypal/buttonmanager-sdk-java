@@ -37,6 +37,11 @@ public class DoReauthorizationResponseType extends AbstractResponseType {
 	 */ 
 	private AuthorizationInfoType AuthorizationInfo;
 
+	/**
+	 * Return msgsubid back to merchant	 
+	 */ 
+	private String MsgSubID;
+
 	
 
 	/**
@@ -73,6 +78,20 @@ public class DoReauthorizationResponseType extends AbstractResponseType {
 	 	this.AuthorizationInfo = AuthorizationInfo;
 	 }
 	 
+	/**
+	 * Getter for MsgSubID
+	 */
+	 public String getMsgSubID() {
+	 	return MsgSubID;
+	 }
+	 
+	/**
+	 * Setter for MsgSubID
+	 */
+	 public void setMsgSubID(String MsgSubID) {
+	 	this.MsgSubID = MsgSubID;
+	 }
+	 
 
 
 
@@ -102,6 +121,11 @@ public class DoReauthorizationResponseType extends AbstractResponseType {
         if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.AuthorizationInfo =  new AuthorizationInfoType(childNode);
 		}
+		childNode = (Node) xpath.evaluate("MsgSubID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.MsgSubID = childNode.getTextContent();
+		}
+	
 	}
  
 }

@@ -27,9 +27,11 @@ public enum  PaymentReasonType {
 	}
 	
 	public static PaymentReasonType fromValue(String v) {
-		for (PaymentReasonType c : values())
-			if (c.value.equals(v))
+		for (PaymentReasonType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

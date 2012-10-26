@@ -190,10 +190,10 @@ public class ButtonManagerServlet extends HttpServlet {
 						map.put("Ack", resp.getAck());
 						map.put("Hosted Button ID", resp.getHostedButtonID());
 						session.setAttribute("map", map);
-						res.sendRedirect("/buttonmanager-sample/Response.jsp");
+						res.sendRedirect("/buttonmanagersample-1.0-SNAPSHOT/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getErrors());
-						res.sendRedirect("/buttonmanager-sample/Error.jsp");
+						res.sendRedirect("/buttonmanagersample-1.0-SNAPSHOT/Error.jsp");
 					}
 				}
 			} else if (req.getRequestURI().contains("BMUpdateButton")) {
@@ -268,10 +268,10 @@ public class ButtonManagerServlet extends HttpServlet {
 						map.put("Ack", resp.getAck());
 						map.put("Hosted Button ID", resp.getHostedButtonID());
 						session.setAttribute("map", map);
-						res.sendRedirect("/buttonmanager-sample/Response.jsp");
+						res.sendRedirect("/buttonmanagersample-1.0-SNAPSHOT/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getErrors());
-						res.sendRedirect("/buttonmanager-sample/Error.jsp");
+						res.sendRedirect("/buttonmanagersample-1.0-SNAPSHOT/Error.jsp");
 					}
 				}
 			} else if (req.getRequestURI().contains("BMButtonSearch")) {
@@ -302,10 +302,10 @@ public class ButtonManagerServlet extends HttpServlet {
 						}
 
 						session.setAttribute("map", map);
-						res.sendRedirect("/buttonmanager-sample/Response.jsp");
+						res.sendRedirect("/buttonmanagersample-1.0-SNAPSHOT/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getErrors());
-						res.sendRedirect("/buttonmanager-sample/Error.jsp");
+						res.sendRedirect("/buttonmanagersample-1.0-SNAPSHOT/Error.jsp");
 					}
 				}
 
@@ -328,10 +328,10 @@ public class ButtonManagerServlet extends HttpServlet {
 						map.put("ButtonCode", resp.getButtonCode());
 						map.put("Website", resp.getWebsite());
 						session.setAttribute("map", map);
-						res.sendRedirect("/buttonmanager-sample/Response.jsp");
+						res.sendRedirect("/buttonmanagersample-1.0-SNAPSHOT/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getErrors());
-						res.sendRedirect("/buttonmanager-sample/Error.jsp");
+						res.sendRedirect("/buttonmanagersample-1.0-SNAPSHOT/Error.jsp");
 					}
 				}
 
@@ -351,10 +351,10 @@ public class ButtonManagerServlet extends HttpServlet {
 						Map<Object, Object> map = new LinkedHashMap<Object, Object>();
 						map.put("Ack", resp.getAck());
 						session.setAttribute("map", map);
-						res.sendRedirect("/buttonmanager-sample/Response.jsp");
+						res.sendRedirect("/buttonmanagersample-1.0-SNAPSHOT/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getErrors());
-						res.sendRedirect("/buttonmanager-sample/Error.jsp");
+						res.sendRedirect("/buttonmanagersample-1.0-SNAPSHOT/Error.jsp");
 					}
 				}
 
@@ -385,12 +385,12 @@ public class ButtonManagerServlet extends HttpServlet {
 							map.put("Item Quantity", resp
 									.getItemTrackingDetails().getItemQty());
 							session.setAttribute("map", map);
-							res.sendRedirect("/buttonmanager-sample/Response.jsp");
+							res.sendRedirect("/buttonmanagersample-1.0-SNAPSHOT/Response.jsp");
 						}
 
 					} else {
 						session.setAttribute("Error", resp.getErrors());
-						res.sendRedirect("/buttonmanager-sample/Error.jsp");
+						res.sendRedirect("/buttonmanagersample-1.0-SNAPSHOT/Error.jsp");
 					}
 				}
 			} else if (req.getRequestURI().contains("BMSetInventory")) {
@@ -417,11 +417,13 @@ public class ButtonManagerServlet extends HttpServlet {
 						Map<Object, Object> map = new LinkedHashMap<Object, Object>();
 						map.put("Ack", resp.getAck());
 						session.setAttribute("map", map);
-						res.sendRedirect("/buttonmanager-sample/Response.jsp");
+						res.sendRedirect(this.getServletContext()
+								.getContextPath() + "/Response.jsp");
 					} else {
 
 						session.setAttribute("Error", resp.getErrors());
-						res.sendRedirect("/buttonmanager-sample/Error.jsp");
+						res.sendRedirect(this.getServletContext()
+								.getContextPath() + "/Error.jsp");
 					}
 				}
 			}

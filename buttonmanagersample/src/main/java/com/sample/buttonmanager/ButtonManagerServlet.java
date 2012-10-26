@@ -112,9 +112,8 @@ public class ButtonManagerServlet extends HttpServlet {
 				"<ul><li><a href='BM/BMCreateButton'>BMCreateButton</a></li><li><a href='BM/BMUpdateButton'>BMUpdateButton</a></li><li><a href='BM/BMButtonSearch'>BMButtonSearch</a></li><li><a href='BM/BMGetButtonDetails'>BMGetButtonDetails</a></li><li><a href='BM/BMManageButtonStatus'>BMManageButtonStatus</a></li><li><a href='BM/BMSetInventory'>BMSetInventory</a></li><li><a href='BM/BMGetInventory'>BMGetInventory</a></li></ul>");
 		res.setContentType("text/html");
 		try {
-			PayPalAPIInterfaceServiceService service = new PayPalAPIInterfaceServiceService(
-					this.getServletContext().getRealPath("/")
-							+ "/WEB-INF/sdk_config.properties");
+			PayPalAPIInterfaceServiceService service = new PayPalAPIInterfaceServiceService(this
+					.getClass().getResourceAsStream("/sdk_config.properties"));
 			if (req.getRequestURI().contains("BMCreateButton")) {
 
 				BMCreateButtonReq request = new BMCreateButtonReq();

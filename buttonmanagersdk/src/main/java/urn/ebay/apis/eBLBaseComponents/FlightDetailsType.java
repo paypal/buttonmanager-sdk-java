@@ -7,91 +7,93 @@ import com.paypal.core.SDKUtil;
  */
 public class FlightDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	 
 	 */ 
-	private String ConjuctionTicket;
+	private String conjuctionTicket;
 
 	/**
 	 * 	 
 	 */ 
-	private String ExchangeTicket;
+	private String exchangeTicket;
 
 	/**
 	 * 	 
 	 */ 
-	private String CouponNumber;
+	private String couponNumber;
 
 	/**
 	 * 	 
 	 */ 
-	private String ServiceClass;
+	private String serviceClass;
 
 	/**
 	 * 	 
 	 */ 
-	private String TravelDate;
+	private String travelDate;
 
 	/**
 	 * 	 
 	 */ 
-	private String CarrierCode;
+	private String carrierCode;
 
 	/**
 	 * 	 
 	 */ 
-	private String StopOverPermitted;
+	private String stopOverPermitted;
 
 	/**
 	 * 	 
 	 */ 
-	private String DepartureAirport;
+	private String departureAirport;
 
 	/**
 	 * 	 
 	 */ 
-	private String ArrivalAirport;
+	private String arrivalAirport;
 
 	/**
 	 * 	 
 	 */ 
-	private String FlightNumber;
+	private String flightNumber;
 
 	/**
 	 * 	 
 	 */ 
-	private String DepartureTime;
+	private String departureTime;
 
 	/**
 	 * 	 
 	 */ 
-	private String ArrivalTime;
+	private String arrivalTime;
 
 	/**
 	 * 	 
 	 */ 
-	private String FareBasisCode;
+	private String fareBasisCode;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType Fare;
+	private BasicAmountType fare;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType Taxes;
+	private BasicAmountType taxes;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType Fee;
+	private BasicAmountType fee;
 
 	/**
 	 * 	 
 	 */ 
-	private String EndorsementOrRestrictions;
+	private String endorsementOrRestrictions;
 
 	
 
@@ -102,317 +104,327 @@ public class FlightDetailsType{
 	}	
 
 	/**
-	 * Getter for ConjuctionTicket
+	 * Getter for conjuctionTicket
 	 */
 	 public String getConjuctionTicket() {
-	 	return ConjuctionTicket;
+	 	return conjuctionTicket;
 	 }
 	 
 	/**
-	 * Setter for ConjuctionTicket
+	 * Setter for conjuctionTicket
 	 */
-	 public void setConjuctionTicket(String ConjuctionTicket) {
-	 	this.ConjuctionTicket = ConjuctionTicket;
+	 public void setConjuctionTicket(String conjuctionTicket) {
+	 	this.conjuctionTicket = conjuctionTicket;
 	 }
 	 
 	/**
-	 * Getter for ExchangeTicket
+	 * Getter for exchangeTicket
 	 */
 	 public String getExchangeTicket() {
-	 	return ExchangeTicket;
+	 	return exchangeTicket;
 	 }
 	 
 	/**
-	 * Setter for ExchangeTicket
+	 * Setter for exchangeTicket
 	 */
-	 public void setExchangeTicket(String ExchangeTicket) {
-	 	this.ExchangeTicket = ExchangeTicket;
+	 public void setExchangeTicket(String exchangeTicket) {
+	 	this.exchangeTicket = exchangeTicket;
 	 }
 	 
 	/**
-	 * Getter for CouponNumber
+	 * Getter for couponNumber
 	 */
 	 public String getCouponNumber() {
-	 	return CouponNumber;
+	 	return couponNumber;
 	 }
 	 
 	/**
-	 * Setter for CouponNumber
+	 * Setter for couponNumber
 	 */
-	 public void setCouponNumber(String CouponNumber) {
-	 	this.CouponNumber = CouponNumber;
+	 public void setCouponNumber(String couponNumber) {
+	 	this.couponNumber = couponNumber;
 	 }
 	 
 	/**
-	 * Getter for ServiceClass
+	 * Getter for serviceClass
 	 */
 	 public String getServiceClass() {
-	 	return ServiceClass;
+	 	return serviceClass;
 	 }
 	 
 	/**
-	 * Setter for ServiceClass
+	 * Setter for serviceClass
 	 */
-	 public void setServiceClass(String ServiceClass) {
-	 	this.ServiceClass = ServiceClass;
+	 public void setServiceClass(String serviceClass) {
+	 	this.serviceClass = serviceClass;
 	 }
 	 
 	/**
-	 * Getter for TravelDate
+	 * Getter for travelDate
 	 */
 	 public String getTravelDate() {
-	 	return TravelDate;
+	 	return travelDate;
 	 }
 	 
 	/**
-	 * Setter for TravelDate
+	 * Setter for travelDate
 	 */
-	 public void setTravelDate(String TravelDate) {
-	 	this.TravelDate = TravelDate;
+	 public void setTravelDate(String travelDate) {
+	 	this.travelDate = travelDate;
 	 }
 	 
 	/**
-	 * Getter for CarrierCode
+	 * Getter for carrierCode
 	 */
 	 public String getCarrierCode() {
-	 	return CarrierCode;
+	 	return carrierCode;
 	 }
 	 
 	/**
-	 * Setter for CarrierCode
+	 * Setter for carrierCode
 	 */
-	 public void setCarrierCode(String CarrierCode) {
-	 	this.CarrierCode = CarrierCode;
+	 public void setCarrierCode(String carrierCode) {
+	 	this.carrierCode = carrierCode;
 	 }
 	 
 	/**
-	 * Getter for StopOverPermitted
+	 * Getter for stopOverPermitted
 	 */
 	 public String getStopOverPermitted() {
-	 	return StopOverPermitted;
+	 	return stopOverPermitted;
 	 }
 	 
 	/**
-	 * Setter for StopOverPermitted
+	 * Setter for stopOverPermitted
 	 */
-	 public void setStopOverPermitted(String StopOverPermitted) {
-	 	this.StopOverPermitted = StopOverPermitted;
+	 public void setStopOverPermitted(String stopOverPermitted) {
+	 	this.stopOverPermitted = stopOverPermitted;
 	 }
 	 
 	/**
-	 * Getter for DepartureAirport
+	 * Getter for departureAirport
 	 */
 	 public String getDepartureAirport() {
-	 	return DepartureAirport;
+	 	return departureAirport;
 	 }
 	 
 	/**
-	 * Setter for DepartureAirport
+	 * Setter for departureAirport
 	 */
-	 public void setDepartureAirport(String DepartureAirport) {
-	 	this.DepartureAirport = DepartureAirport;
+	 public void setDepartureAirport(String departureAirport) {
+	 	this.departureAirport = departureAirport;
 	 }
 	 
 	/**
-	 * Getter for ArrivalAirport
+	 * Getter for arrivalAirport
 	 */
 	 public String getArrivalAirport() {
-	 	return ArrivalAirport;
+	 	return arrivalAirport;
 	 }
 	 
 	/**
-	 * Setter for ArrivalAirport
+	 * Setter for arrivalAirport
 	 */
-	 public void setArrivalAirport(String ArrivalAirport) {
-	 	this.ArrivalAirport = ArrivalAirport;
+	 public void setArrivalAirport(String arrivalAirport) {
+	 	this.arrivalAirport = arrivalAirport;
 	 }
 	 
 	/**
-	 * Getter for FlightNumber
+	 * Getter for flightNumber
 	 */
 	 public String getFlightNumber() {
-	 	return FlightNumber;
+	 	return flightNumber;
 	 }
 	 
 	/**
-	 * Setter for FlightNumber
+	 * Setter for flightNumber
 	 */
-	 public void setFlightNumber(String FlightNumber) {
-	 	this.FlightNumber = FlightNumber;
+	 public void setFlightNumber(String flightNumber) {
+	 	this.flightNumber = flightNumber;
 	 }
 	 
 	/**
-	 * Getter for DepartureTime
+	 * Getter for departureTime
 	 */
 	 public String getDepartureTime() {
-	 	return DepartureTime;
+	 	return departureTime;
 	 }
 	 
 	/**
-	 * Setter for DepartureTime
+	 * Setter for departureTime
 	 */
-	 public void setDepartureTime(String DepartureTime) {
-	 	this.DepartureTime = DepartureTime;
+	 public void setDepartureTime(String departureTime) {
+	 	this.departureTime = departureTime;
 	 }
 	 
 	/**
-	 * Getter for ArrivalTime
+	 * Getter for arrivalTime
 	 */
 	 public String getArrivalTime() {
-	 	return ArrivalTime;
+	 	return arrivalTime;
 	 }
 	 
 	/**
-	 * Setter for ArrivalTime
+	 * Setter for arrivalTime
 	 */
-	 public void setArrivalTime(String ArrivalTime) {
-	 	this.ArrivalTime = ArrivalTime;
+	 public void setArrivalTime(String arrivalTime) {
+	 	this.arrivalTime = arrivalTime;
 	 }
 	 
 	/**
-	 * Getter for FareBasisCode
+	 * Getter for fareBasisCode
 	 */
 	 public String getFareBasisCode() {
-	 	return FareBasisCode;
+	 	return fareBasisCode;
 	 }
 	 
 	/**
-	 * Setter for FareBasisCode
+	 * Setter for fareBasisCode
 	 */
-	 public void setFareBasisCode(String FareBasisCode) {
-	 	this.FareBasisCode = FareBasisCode;
+	 public void setFareBasisCode(String fareBasisCode) {
+	 	this.fareBasisCode = fareBasisCode;
 	 }
 	 
 	/**
-	 * Getter for Fare
+	 * Getter for fare
 	 */
 	 public BasicAmountType getFare() {
-	 	return Fare;
+	 	return fare;
 	 }
 	 
 	/**
-	 * Setter for Fare
+	 * Setter for fare
 	 */
-	 public void setFare(BasicAmountType Fare) {
-	 	this.Fare = Fare;
+	 public void setFare(BasicAmountType fare) {
+	 	this.fare = fare;
 	 }
 	 
 	/**
-	 * Getter for Taxes
+	 * Getter for taxes
 	 */
 	 public BasicAmountType getTaxes() {
-	 	return Taxes;
+	 	return taxes;
 	 }
 	 
 	/**
-	 * Setter for Taxes
+	 * Setter for taxes
 	 */
-	 public void setTaxes(BasicAmountType Taxes) {
-	 	this.Taxes = Taxes;
+	 public void setTaxes(BasicAmountType taxes) {
+	 	this.taxes = taxes;
 	 }
 	 
 	/**
-	 * Getter for Fee
+	 * Getter for fee
 	 */
 	 public BasicAmountType getFee() {
-	 	return Fee;
+	 	return fee;
 	 }
 	 
 	/**
-	 * Setter for Fee
+	 * Setter for fee
 	 */
-	 public void setFee(BasicAmountType Fee) {
-	 	this.Fee = Fee;
+	 public void setFee(BasicAmountType fee) {
+	 	this.fee = fee;
 	 }
 	 
 	/**
-	 * Getter for EndorsementOrRestrictions
+	 * Getter for endorsementOrRestrictions
 	 */
 	 public String getEndorsementOrRestrictions() {
-	 	return EndorsementOrRestrictions;
+	 	return endorsementOrRestrictions;
 	 }
 	 
 	/**
-	 * Setter for EndorsementOrRestrictions
+	 * Setter for endorsementOrRestrictions
 	 */
-	 public void setEndorsementOrRestrictions(String EndorsementOrRestrictions) {
-	 	this.EndorsementOrRestrictions = EndorsementOrRestrictions;
+	 public void setEndorsementOrRestrictions(String endorsementOrRestrictions) {
+	 	this.endorsementOrRestrictions = endorsementOrRestrictions;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(ConjuctionTicket != null) {
-			sb.append("<ebl:ConjuctionTicket>").append(SDKUtil.escapeInvalidXmlCharsRegex(ConjuctionTicket));
-			sb.append("</ebl:ConjuctionTicket>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ExchangeTicket != null) {
-			sb.append("<ebl:ExchangeTicket>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExchangeTicket));
-			sb.append("</ebl:ExchangeTicket>");
+		if(conjuctionTicket != null) {
+			sb.append("<").append(preferredPrefix).append(":ConjuctionTicket>").append(SDKUtil.escapeInvalidXmlCharsRegex(conjuctionTicket));
+			sb.append("</").append(preferredPrefix).append(":ConjuctionTicket>");
 		}
-		if(CouponNumber != null) {
-			sb.append("<ebl:CouponNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(CouponNumber));
-			sb.append("</ebl:CouponNumber>");
+		if(exchangeTicket != null) {
+			sb.append("<").append(preferredPrefix).append(":ExchangeTicket>").append(SDKUtil.escapeInvalidXmlCharsRegex(exchangeTicket));
+			sb.append("</").append(preferredPrefix).append(":ExchangeTicket>");
 		}
-		if(ServiceClass != null) {
-			sb.append("<ebl:ServiceClass>").append(SDKUtil.escapeInvalidXmlCharsRegex(ServiceClass));
-			sb.append("</ebl:ServiceClass>");
+		if(couponNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":CouponNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(couponNumber));
+			sb.append("</").append(preferredPrefix).append(":CouponNumber>");
 		}
-		if(TravelDate != null) {
-			sb.append("<ebl:TravelDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(TravelDate));
-			sb.append("</ebl:TravelDate>");
+		if(serviceClass != null) {
+			sb.append("<").append(preferredPrefix).append(":ServiceClass>").append(SDKUtil.escapeInvalidXmlCharsRegex(serviceClass));
+			sb.append("</").append(preferredPrefix).append(":ServiceClass>");
 		}
-		if(CarrierCode != null) {
-			sb.append("<ebl:CarrierCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(CarrierCode));
-			sb.append("</ebl:CarrierCode>");
+		if(travelDate != null) {
+			sb.append("<").append(preferredPrefix).append(":TravelDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(travelDate));
+			sb.append("</").append(preferredPrefix).append(":TravelDate>");
 		}
-		if(StopOverPermitted != null) {
-			sb.append("<ebl:StopOverPermitted>").append(SDKUtil.escapeInvalidXmlCharsRegex(StopOverPermitted));
-			sb.append("</ebl:StopOverPermitted>");
+		if(carrierCode != null) {
+			sb.append("<").append(preferredPrefix).append(":CarrierCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(carrierCode));
+			sb.append("</").append(preferredPrefix).append(":CarrierCode>");
 		}
-		if(DepartureAirport != null) {
-			sb.append("<ebl:DepartureAirport>").append(SDKUtil.escapeInvalidXmlCharsRegex(DepartureAirport));
-			sb.append("</ebl:DepartureAirport>");
+		if(stopOverPermitted != null) {
+			sb.append("<").append(preferredPrefix).append(":StopOverPermitted>").append(SDKUtil.escapeInvalidXmlCharsRegex(stopOverPermitted));
+			sb.append("</").append(preferredPrefix).append(":StopOverPermitted>");
 		}
-		if(ArrivalAirport != null) {
-			sb.append("<ebl:ArrivalAirport>").append(SDKUtil.escapeInvalidXmlCharsRegex(ArrivalAirport));
-			sb.append("</ebl:ArrivalAirport>");
+		if(departureAirport != null) {
+			sb.append("<").append(preferredPrefix).append(":DepartureAirport>").append(SDKUtil.escapeInvalidXmlCharsRegex(departureAirport));
+			sb.append("</").append(preferredPrefix).append(":DepartureAirport>");
 		}
-		if(FlightNumber != null) {
-			sb.append("<ebl:FlightNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(FlightNumber));
-			sb.append("</ebl:FlightNumber>");
+		if(arrivalAirport != null) {
+			sb.append("<").append(preferredPrefix).append(":ArrivalAirport>").append(SDKUtil.escapeInvalidXmlCharsRegex(arrivalAirport));
+			sb.append("</").append(preferredPrefix).append(":ArrivalAirport>");
 		}
-		if(DepartureTime != null) {
-			sb.append("<ebl:DepartureTime>").append(SDKUtil.escapeInvalidXmlCharsRegex(DepartureTime));
-			sb.append("</ebl:DepartureTime>");
+		if(flightNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":FlightNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(flightNumber));
+			sb.append("</").append(preferredPrefix).append(":FlightNumber>");
 		}
-		if(ArrivalTime != null) {
-			sb.append("<ebl:ArrivalTime>").append(SDKUtil.escapeInvalidXmlCharsRegex(ArrivalTime));
-			sb.append("</ebl:ArrivalTime>");
+		if(departureTime != null) {
+			sb.append("<").append(preferredPrefix).append(":DepartureTime>").append(SDKUtil.escapeInvalidXmlCharsRegex(departureTime));
+			sb.append("</").append(preferredPrefix).append(":DepartureTime>");
 		}
-		if(FareBasisCode != null) {
-			sb.append("<ebl:FareBasisCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(FareBasisCode));
-			sb.append("</ebl:FareBasisCode>");
+		if(arrivalTime != null) {
+			sb.append("<").append(preferredPrefix).append(":ArrivalTime>").append(SDKUtil.escapeInvalidXmlCharsRegex(arrivalTime));
+			sb.append("</").append(preferredPrefix).append(":ArrivalTime>");
 		}
-		if(Fare != null) {
-			sb.append("<ebl:Fare");
-			sb.append(Fare.toXMLString());
-			sb.append("</ebl:Fare>");
+		if(fareBasisCode != null) {
+			sb.append("<").append(preferredPrefix).append(":FareBasisCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(fareBasisCode));
+			sb.append("</").append(preferredPrefix).append(":FareBasisCode>");
 		}
-		if(Taxes != null) {
-			sb.append("<ebl:Taxes");
-			sb.append(Taxes.toXMLString());
-			sb.append("</ebl:Taxes>");
+		if(fare != null) {
+			sb.append(fare.toXMLString(preferredPrefix,"Fare"));
 		}
-		if(Fee != null) {
-			sb.append("<ebl:Fee");
-			sb.append(Fee.toXMLString());
-			sb.append("</ebl:Fee>");
+		if(taxes != null) {
+			sb.append(taxes.toXMLString(preferredPrefix,"Taxes"));
 		}
-		if(EndorsementOrRestrictions != null) {
-			sb.append("<ebl:EndorsementOrRestrictions>").append(SDKUtil.escapeInvalidXmlCharsRegex(EndorsementOrRestrictions));
-			sb.append("</ebl:EndorsementOrRestrictions>");
+		if(fee != null) {
+			sb.append(fee.toXMLString(preferredPrefix,"Fee"));
+		}
+		if(endorsementOrRestrictions != null) {
+			sb.append("<").append(preferredPrefix).append(":EndorsementOrRestrictions>").append(SDKUtil.escapeInvalidXmlCharsRegex(endorsementOrRestrictions));
+			sb.append("</").append(preferredPrefix).append(":EndorsementOrRestrictions>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

@@ -28,7 +28,7 @@ public class GetBoardingDetailsResponseType extends AbstractResponseType {
 	 * 	  
 	 *@Required	 
 	 */ 
-	private GetBoardingDetailsResponseDetailsType GetBoardingDetailsResponseDetails;
+	private GetBoardingDetailsResponseDetailsType getBoardingDetailsResponseDetails;
 
 	
 
@@ -39,17 +39,17 @@ public class GetBoardingDetailsResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for GetBoardingDetailsResponseDetails
+	 * Getter for getBoardingDetailsResponseDetails
 	 */
 	 public GetBoardingDetailsResponseDetailsType getGetBoardingDetailsResponseDetails() {
-	 	return GetBoardingDetailsResponseDetails;
+	 	return getBoardingDetailsResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for GetBoardingDetailsResponseDetails
+	 * Setter for getBoardingDetailsResponseDetails
 	 */
-	 public void setGetBoardingDetailsResponseDetails(GetBoardingDetailsResponseDetailsType GetBoardingDetailsResponseDetails) {
-	 	this.GetBoardingDetailsResponseDetails = GetBoardingDetailsResponseDetails;
+	 public void setGetBoardingDetailsResponseDetails(GetBoardingDetailsResponseDetailsType getBoardingDetailsResponseDetails) {
+	 	this.getBoardingDetailsResponseDetails = getBoardingDetailsResponseDetails;
 	 }
 	 
 
@@ -74,7 +74,7 @@ public class GetBoardingDetailsResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("GetBoardingDetailsResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.GetBoardingDetailsResponseDetails =  new GetBoardingDetailsResponseDetailsType(childNode);
+		    this.getBoardingDetailsResponseDetails =  new GetBoardingDetailsResponseDetailsType(childNode);
 		}
 	}
  

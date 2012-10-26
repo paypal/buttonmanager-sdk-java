@@ -14,6 +14,8 @@ import com.paypal.core.SDKUtil;
  */
 public class MassPayRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * Subject line of the email sent to all recipients. This
@@ -21,7 +23,7 @@ public class MassPayRequestType extends AbstractRequestType {
 	 * it with your application. Optional Character length and
 	 * limitations: 255 single-byte alphanumeric characters	 
 	 */ 
-	private String EmailSubject;
+	private String emailSubject;
 
 	/**
 	 * Indicates how you identify the recipients of payments in all
@@ -30,29 +32,29 @@ public class MassPayRequestType extends AbstractRequestType {
 	 * by UserID (ReceiverID in MassPayItem). Required. You must
 	 * specify one or the other of EmailAddress or UserID.	 
 	 */ 
-	private ReceiverInfoCodeType ReceiverType;
+	private ReceiverInfoCodeType receiverType;
 
 	/**
 	 * Known as BN code, to track the partner referred merchant
 	 * transactions. OptionalCharacter length and limitations: 32
 	 * single-byte alphanumeric characters	 
 	 */ 
-	private String ButtonSource;
+	private String buttonSource;
 
 	/**
 	 * Details of each payment. A single MassPayRequest can include
 	 * up to 250 MassPayItems. Required 	  
 	 *@Required	 
 	 */ 
-	private List<MassPayRequestItemType> MassPayItem = new ArrayList<MassPayRequestItemType>();
+	private List<MassPayRequestItemType> massPayItem = new ArrayList<MassPayRequestItemType>();
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public MassPayRequestType (List<MassPayRequestItemType> MassPayItem){
-		this.MassPayItem = MassPayItem;
+	public MassPayRequestType (List<MassPayRequestItemType> massPayItem){
+		this.massPayItem = massPayItem;
 	}	
 
 	/**
@@ -62,83 +64,97 @@ public class MassPayRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for EmailSubject
+	 * Getter for emailSubject
 	 */
 	 public String getEmailSubject() {
-	 	return EmailSubject;
+	 	return emailSubject;
 	 }
 	 
 	/**
-	 * Setter for EmailSubject
+	 * Setter for emailSubject
 	 */
-	 public void setEmailSubject(String EmailSubject) {
-	 	this.EmailSubject = EmailSubject;
+	 public void setEmailSubject(String emailSubject) {
+	 	this.emailSubject = emailSubject;
 	 }
 	 
 	/**
-	 * Getter for ReceiverType
+	 * Getter for receiverType
 	 */
 	 public ReceiverInfoCodeType getReceiverType() {
-	 	return ReceiverType;
+	 	return receiverType;
 	 }
 	 
 	/**
-	 * Setter for ReceiverType
+	 * Setter for receiverType
 	 */
-	 public void setReceiverType(ReceiverInfoCodeType ReceiverType) {
-	 	this.ReceiverType = ReceiverType;
+	 public void setReceiverType(ReceiverInfoCodeType receiverType) {
+	 	this.receiverType = receiverType;
 	 }
 	 
 	/**
-	 * Getter for ButtonSource
+	 * Getter for buttonSource
 	 */
 	 public String getButtonSource() {
-	 	return ButtonSource;
+	 	return buttonSource;
 	 }
 	 
 	/**
-	 * Setter for ButtonSource
+	 * Setter for buttonSource
 	 */
-	 public void setButtonSource(String ButtonSource) {
-	 	this.ButtonSource = ButtonSource;
+	 public void setButtonSource(String buttonSource) {
+	 	this.buttonSource = buttonSource;
 	 }
 	 
 	/**
-	 * Getter for MassPayItem
+	 * Getter for massPayItem
 	 */
 	 public List<MassPayRequestItemType> getMassPayItem() {
-	 	return MassPayItem;
+	 	return massPayItem;
 	 }
 	 
 	/**
-	 * Setter for MassPayItem
+	 * Setter for massPayItem
 	 */
-	 public void setMassPayItem(List<MassPayRequestItemType> MassPayItem) {
-	 	this.MassPayItem = MassPayItem;
+	 public void setMassPayItem(List<MassPayRequestItemType> massPayItem) {
+	 	this.massPayItem = massPayItem;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(EmailSubject != null) {
-			sb.append("<urn:EmailSubject>").append(SDKUtil.escapeInvalidXmlCharsRegex(EmailSubject));
-			sb.append("</urn:EmailSubject>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ReceiverType != null) {
-			sb.append("<urn:ReceiverType>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReceiverType.getValue()));
-			sb.append("</urn:ReceiverType>");
+		sb.append(super.toXMLString(prefix, null));
+		if(emailSubject != null) {
+			sb.append("<").append(preferredPrefix).append(":EmailSubject>").append(SDKUtil.escapeInvalidXmlCharsRegex(emailSubject));
+			sb.append("</").append(preferredPrefix).append(":EmailSubject>");
 		}
-		if(ButtonSource != null) {
-			sb.append("<urn:ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonSource));
-			sb.append("</urn:ButtonSource>");
+		if(receiverType != null) {
+			sb.append("<").append(preferredPrefix).append(":ReceiverType>").append(SDKUtil.escapeInvalidXmlCharsRegex(receiverType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":ReceiverType>");
 		}
-		if(MassPayItem != null) {
-			for(int i=0; i < MassPayItem.size(); i++) {
-				sb.append("<urn:MassPayItem>");
-				sb.append(MassPayItem.get(i).toXMLString());
-				sb.append("</urn:MassPayItem>");
+		if(buttonSource != null) {
+			sb.append("<").append(preferredPrefix).append(":ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonSource));
+			sb.append("</").append(preferredPrefix).append(":ButtonSource>");
+		}
+		if(massPayItem != null) {
+			for(int i=0; i < massPayItem.size(); i++) {
+				sb.append(massPayItem.get(i).toXMLString(preferredPrefix,"MassPayItem"));
+			}
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
 			}
 		}
 		return sb.toString();

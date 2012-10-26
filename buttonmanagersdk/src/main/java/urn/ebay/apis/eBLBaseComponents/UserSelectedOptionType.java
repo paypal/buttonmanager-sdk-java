@@ -23,31 +23,33 @@ import org.xml.sax.SAXException;
  */
 public class UserSelectedOptionType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	 
 	 */ 
-	private String ShippingCalculationMode;
+	private String shippingCalculationMode;
 
 	/**
 	 * 	 
 	 */ 
-	private String InsuranceOptionSelected;
+	private String insuranceOptionSelected;
 
 	/**
 	 * 	 
 	 */ 
-	private String ShippingOptionIsDefault;
+	private String shippingOptionIsDefault;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType ShippingOptionAmount;
+	private BasicAmountType shippingOptionAmount;
 
 	/**
 	 * 	 
 	 */ 
-	private String ShippingOptionName;
+	private String shippingOptionName;
 
 	
 
@@ -58,99 +60,113 @@ public class UserSelectedOptionType{
 	}	
 
 	/**
-	 * Getter for ShippingCalculationMode
+	 * Getter for shippingCalculationMode
 	 */
 	 public String getShippingCalculationMode() {
-	 	return ShippingCalculationMode;
+	 	return shippingCalculationMode;
 	 }
 	 
 	/**
-	 * Setter for ShippingCalculationMode
+	 * Setter for shippingCalculationMode
 	 */
-	 public void setShippingCalculationMode(String ShippingCalculationMode) {
-	 	this.ShippingCalculationMode = ShippingCalculationMode;
+	 public void setShippingCalculationMode(String shippingCalculationMode) {
+	 	this.shippingCalculationMode = shippingCalculationMode;
 	 }
 	 
 	/**
-	 * Getter for InsuranceOptionSelected
+	 * Getter for insuranceOptionSelected
 	 */
 	 public String getInsuranceOptionSelected() {
-	 	return InsuranceOptionSelected;
+	 	return insuranceOptionSelected;
 	 }
 	 
 	/**
-	 * Setter for InsuranceOptionSelected
+	 * Setter for insuranceOptionSelected
 	 */
-	 public void setInsuranceOptionSelected(String InsuranceOptionSelected) {
-	 	this.InsuranceOptionSelected = InsuranceOptionSelected;
+	 public void setInsuranceOptionSelected(String insuranceOptionSelected) {
+	 	this.insuranceOptionSelected = insuranceOptionSelected;
 	 }
 	 
 	/**
-	 * Getter for ShippingOptionIsDefault
+	 * Getter for shippingOptionIsDefault
 	 */
 	 public String getShippingOptionIsDefault() {
-	 	return ShippingOptionIsDefault;
+	 	return shippingOptionIsDefault;
 	 }
 	 
 	/**
-	 * Setter for ShippingOptionIsDefault
+	 * Setter for shippingOptionIsDefault
 	 */
-	 public void setShippingOptionIsDefault(String ShippingOptionIsDefault) {
-	 	this.ShippingOptionIsDefault = ShippingOptionIsDefault;
+	 public void setShippingOptionIsDefault(String shippingOptionIsDefault) {
+	 	this.shippingOptionIsDefault = shippingOptionIsDefault;
 	 }
 	 
 	/**
-	 * Getter for ShippingOptionAmount
+	 * Getter for shippingOptionAmount
 	 */
 	 public BasicAmountType getShippingOptionAmount() {
-	 	return ShippingOptionAmount;
+	 	return shippingOptionAmount;
 	 }
 	 
 	/**
-	 * Setter for ShippingOptionAmount
+	 * Setter for shippingOptionAmount
 	 */
-	 public void setShippingOptionAmount(BasicAmountType ShippingOptionAmount) {
-	 	this.ShippingOptionAmount = ShippingOptionAmount;
+	 public void setShippingOptionAmount(BasicAmountType shippingOptionAmount) {
+	 	this.shippingOptionAmount = shippingOptionAmount;
 	 }
 	 
 	/**
-	 * Getter for ShippingOptionName
+	 * Getter for shippingOptionName
 	 */
 	 public String getShippingOptionName() {
-	 	return ShippingOptionName;
+	 	return shippingOptionName;
 	 }
 	 
 	/**
-	 * Setter for ShippingOptionName
+	 * Setter for shippingOptionName
 	 */
-	 public void setShippingOptionName(String ShippingOptionName) {
-	 	this.ShippingOptionName = ShippingOptionName;
+	 public void setShippingOptionName(String shippingOptionName) {
+	 	this.shippingOptionName = shippingOptionName;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(ShippingCalculationMode != null) {
-			sb.append("<ebl:ShippingCalculationMode>").append(SDKUtil.escapeInvalidXmlCharsRegex(ShippingCalculationMode));
-			sb.append("</ebl:ShippingCalculationMode>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(InsuranceOptionSelected != null) {
-			sb.append("<ebl:InsuranceOptionSelected>").append(SDKUtil.escapeInvalidXmlCharsRegex(InsuranceOptionSelected));
-			sb.append("</ebl:InsuranceOptionSelected>");
+		if(shippingCalculationMode != null) {
+			sb.append("<").append(preferredPrefix).append(":ShippingCalculationMode>").append(SDKUtil.escapeInvalidXmlCharsRegex(shippingCalculationMode));
+			sb.append("</").append(preferredPrefix).append(":ShippingCalculationMode>");
 		}
-		if(ShippingOptionIsDefault != null) {
-			sb.append("<ebl:ShippingOptionIsDefault>").append(SDKUtil.escapeInvalidXmlCharsRegex(ShippingOptionIsDefault));
-			sb.append("</ebl:ShippingOptionIsDefault>");
+		if(insuranceOptionSelected != null) {
+			sb.append("<").append(preferredPrefix).append(":InsuranceOptionSelected>").append(SDKUtil.escapeInvalidXmlCharsRegex(insuranceOptionSelected));
+			sb.append("</").append(preferredPrefix).append(":InsuranceOptionSelected>");
 		}
-		if(ShippingOptionAmount != null) {
-			sb.append("<ebl:ShippingOptionAmount");
-			sb.append(ShippingOptionAmount.toXMLString());
-			sb.append("</ebl:ShippingOptionAmount>");
+		if(shippingOptionIsDefault != null) {
+			sb.append("<").append(preferredPrefix).append(":ShippingOptionIsDefault>").append(SDKUtil.escapeInvalidXmlCharsRegex(shippingOptionIsDefault));
+			sb.append("</").append(preferredPrefix).append(":ShippingOptionIsDefault>");
 		}
-		if(ShippingOptionName != null) {
-			sb.append("<ebl:ShippingOptionName>").append(SDKUtil.escapeInvalidXmlCharsRegex(ShippingOptionName));
-			sb.append("</ebl:ShippingOptionName>");
+		if(shippingOptionAmount != null) {
+			sb.append(shippingOptionAmount.toXMLString(preferredPrefix,"ShippingOptionAmount"));
+		}
+		if(shippingOptionName != null) {
+			sb.append("<").append(preferredPrefix).append(":ShippingOptionName>").append(SDKUtil.escapeInvalidXmlCharsRegex(shippingOptionName));
+			sb.append("</").append(preferredPrefix).append(":ShippingOptionName>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -174,26 +190,26 @@ public class UserSelectedOptionType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("ShippingCalculationMode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ShippingCalculationMode = childNode.getTextContent();
+		    this.shippingCalculationMode = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("InsuranceOptionSelected", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.InsuranceOptionSelected = childNode.getTextContent();
+		    this.insuranceOptionSelected = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ShippingOptionIsDefault", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ShippingOptionIsDefault = childNode.getTextContent();
+		    this.shippingOptionIsDefault = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ShippingOptionAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ShippingOptionAmount =  new BasicAmountType(childNode);
+		    this.shippingOptionAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("ShippingOptionName", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ShippingOptionName = childNode.getTextContent();
+		    this.shippingOptionName = childNode.getTextContent();
 		}
 	
 	}

@@ -11,6 +11,8 @@ import com.paypal.core.SDKUtil;
  */
 public class AbstractRequestType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * This specifies the required detail level that is needed by a
@@ -19,18 +21,18 @@ public class AbstractRequestType{
 	 * specified in the DetailLevelCodeType which has all the
 	 * enumerated values of the detail level for each component. 	 
 	 */ 
-	private List<DetailLevelCodeType> DetailLevel = new ArrayList<DetailLevelCodeType>();
+	private List<DetailLevelCodeType> detailLevel = new ArrayList<DetailLevelCodeType>();
 
 	/**
 	 * This should be the standard RFC 3066 language identification
 	 * tag, e.g., en_US. 	 
 	 */ 
-	private String ErrorLanguage;
+	private String errorLanguage;
 
 	/**
 	 * This refers to the version of the request payload schema. 	 
 	 */ 
-	private String Version;
+	private String version;
 
 	
 
@@ -41,63 +43,79 @@ public class AbstractRequestType{
 	}	
 
 	/**
-	 * Getter for DetailLevel
+	 * Getter for detailLevel
 	 */
 	 public List<DetailLevelCodeType> getDetailLevel() {
-	 	return DetailLevel;
+	 	return detailLevel;
 	 }
 	 
 	/**
-	 * Setter for DetailLevel
+	 * Setter for detailLevel
 	 */
-	 public void setDetailLevel(List<DetailLevelCodeType> DetailLevel) {
-	 	this.DetailLevel = DetailLevel;
+	 public void setDetailLevel(List<DetailLevelCodeType> detailLevel) {
+	 	this.detailLevel = detailLevel;
 	 }
 	 
 	/**
-	 * Getter for ErrorLanguage
+	 * Getter for errorLanguage
 	 */
 	 public String getErrorLanguage() {
-	 	return ErrorLanguage;
+	 	return errorLanguage;
 	 }
 	 
 	/**
-	 * Setter for ErrorLanguage
+	 * Setter for errorLanguage
 	 */
-	 public void setErrorLanguage(String ErrorLanguage) {
-	 	this.ErrorLanguage = ErrorLanguage;
+	 public void setErrorLanguage(String errorLanguage) {
+	 	this.errorLanguage = errorLanguage;
 	 }
 	 
 	/**
-	 * Getter for Version
+	 * Getter for version
 	 */
 	 public String getVersion() {
-	 	return Version;
+	 	return version;
 	 }
 	 
 	/**
-	 * Setter for Version
+	 * Setter for version
 	 */
-	 public void setVersion(String Version) {
-	 	this.Version = Version;
+	 public void setVersion(String version) {
+	 	this.version = version;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(DetailLevel != null) {
-			for(int i=0; i < DetailLevel.size(); i++) {
-				sb.append("<ebl:DetailLevel>").append(SDKUtil.escapeInvalidXmlCharsRegex(DetailLevel.get(i).getValue())).append("</ebl:DetailLevel>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
 			}
 		}
-		if(ErrorLanguage != null) {
-			sb.append("<ebl:ErrorLanguage>").append(SDKUtil.escapeInvalidXmlCharsRegex(ErrorLanguage));
-			sb.append("</ebl:ErrorLanguage>");
+		if(detailLevel != null) {
+			for(int i=0; i < detailLevel.size(); i++) {
+				sb.append("<").append(preferredPrefix).append(":DetailLevel>").append(SDKUtil.escapeInvalidXmlCharsRegex(detailLevel.get(i).getValue())).append("</").append(preferredPrefix).append(":DetailLevel>");
+			}
 		}
-		if(Version != null) {
-			sb.append("<ebl:Version>").append(SDKUtil.escapeInvalidXmlCharsRegex(Version));
-			sb.append("</ebl:Version>");
+		if(errorLanguage != null) {
+			sb.append("<").append(preferredPrefix).append(":ErrorLanguage>").append(SDKUtil.escapeInvalidXmlCharsRegex(errorLanguage));
+			sb.append("</").append(preferredPrefix).append(":ErrorLanguage>");
+		}
+		if(version != null) {
+			sb.append("<").append(preferredPrefix).append(":Version>").append(SDKUtil.escapeInvalidXmlCharsRegex(version));
+			sb.append("</").append(preferredPrefix).append(":Version>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

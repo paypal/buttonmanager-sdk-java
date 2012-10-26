@@ -9,6 +9,8 @@ import com.paypal.core.SDKUtil;
  */
 public class MerchantPullPaymentType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * The amount to charge to the customer. Required Only numeric
@@ -17,7 +19,7 @@ public class MerchantPullPaymentType{
 	 * set the currencyID attribute to one of the three-character
 	 * currency code for any of the supported PayPal currencies. 	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	/**
 	 * Preapproved Payments billing agreement identification number
@@ -27,73 +29,73 @@ public class MerchantPullPaymentType{
 	 * single-character prefix B, followed by a hyphen and an
 	 * alphanumeric character string: B-unique_alphanumeric_string	 
 	 */ 
-	private String MpID;
+	private String mpID;
 
 	/**
 	 * Specifies type of PayPal payment you require Optional	 
 	 */ 
-	private MerchantPullPaymentCodeType PaymentType;
+	private MerchantPullPaymentCodeType paymentType;
 
 	/**
 	 * Text entered by the customer in the Note field during
 	 * enrollment Optional	 
 	 */ 
-	private String Memo;
+	private String memo;
 
 	/**
 	 * Subject line of confirmation email sent to recipient
 	 * Optional	 
 	 */ 
-	private String EmailSubject;
+	private String emailSubject;
 
 	/**
 	 * The tax charged on the transaction Optional	 
 	 */ 
-	private BasicAmountType Tax;
+	private BasicAmountType tax;
 
 	/**
 	 * Per-transaction shipping charge Optional	 
 	 */ 
-	private BasicAmountType Shipping;
+	private BasicAmountType shipping;
 
 	/**
 	 * Per-transaction handling charge Optional	 
 	 */ 
-	private BasicAmountType Handling;
+	private BasicAmountType handling;
 
 	/**
 	 * Name of purchased item Optional	 
 	 */ 
-	private String ItemName;
+	private String itemName;
 
 	/**
 	 * Reference number of purchased item Optional	 
 	 */ 
-	private String ItemNumber;
+	private String itemNumber;
 
 	/**
 	 * Your invoice number Optional	 
 	 */ 
-	private String Invoice;
+	private String invoice;
 
 	/**
 	 * Custom annotation field for tracking or other use Optional	 
 	 */ 
-	private String Custom;
+	private String custom;
 
 	/**
 	 * An identification code for use by third-party applications
 	 * to identify transactions. Optional Character length and
 	 * limitations: 32 single-byte alphanumeric characters	 
 	 */ 
-	private String ButtonSource;
+	private String buttonSource;
 
 	/**
 	 * Passed in soft descriptor string to be appended. Optional
 	 * Character length and limitations: single-byte alphanumeric
 	 * characters	 
 	 */ 
-	private String SoftDescriptor;
+	private String softDescriptor;
 
 	
 
@@ -104,264 +106,272 @@ public class MerchantPullPaymentType{
 	}	
 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 	/**
-	 * Getter for MpID
+	 * Getter for mpID
 	 */
 	 public String getMpID() {
-	 	return MpID;
+	 	return mpID;
 	 }
 	 
 	/**
-	 * Setter for MpID
+	 * Setter for mpID
 	 */
-	 public void setMpID(String MpID) {
-	 	this.MpID = MpID;
+	 public void setMpID(String mpID) {
+	 	this.mpID = mpID;
 	 }
 	 
 	/**
-	 * Getter for PaymentType
+	 * Getter for paymentType
 	 */
 	 public MerchantPullPaymentCodeType getPaymentType() {
-	 	return PaymentType;
+	 	return paymentType;
 	 }
 	 
 	/**
-	 * Setter for PaymentType
+	 * Setter for paymentType
 	 */
-	 public void setPaymentType(MerchantPullPaymentCodeType PaymentType) {
-	 	this.PaymentType = PaymentType;
+	 public void setPaymentType(MerchantPullPaymentCodeType paymentType) {
+	 	this.paymentType = paymentType;
 	 }
 	 
 	/**
-	 * Getter for Memo
+	 * Getter for memo
 	 */
 	 public String getMemo() {
-	 	return Memo;
+	 	return memo;
 	 }
 	 
 	/**
-	 * Setter for Memo
+	 * Setter for memo
 	 */
-	 public void setMemo(String Memo) {
-	 	this.Memo = Memo;
+	 public void setMemo(String memo) {
+	 	this.memo = memo;
 	 }
 	 
 	/**
-	 * Getter for EmailSubject
+	 * Getter for emailSubject
 	 */
 	 public String getEmailSubject() {
-	 	return EmailSubject;
+	 	return emailSubject;
 	 }
 	 
 	/**
-	 * Setter for EmailSubject
+	 * Setter for emailSubject
 	 */
-	 public void setEmailSubject(String EmailSubject) {
-	 	this.EmailSubject = EmailSubject;
+	 public void setEmailSubject(String emailSubject) {
+	 	this.emailSubject = emailSubject;
 	 }
 	 
 	/**
-	 * Getter for Tax
+	 * Getter for tax
 	 */
 	 public BasicAmountType getTax() {
-	 	return Tax;
+	 	return tax;
 	 }
 	 
 	/**
-	 * Setter for Tax
+	 * Setter for tax
 	 */
-	 public void setTax(BasicAmountType Tax) {
-	 	this.Tax = Tax;
+	 public void setTax(BasicAmountType tax) {
+	 	this.tax = tax;
 	 }
 	 
 	/**
-	 * Getter for Shipping
+	 * Getter for shipping
 	 */
 	 public BasicAmountType getShipping() {
-	 	return Shipping;
+	 	return shipping;
 	 }
 	 
 	/**
-	 * Setter for Shipping
+	 * Setter for shipping
 	 */
-	 public void setShipping(BasicAmountType Shipping) {
-	 	this.Shipping = Shipping;
+	 public void setShipping(BasicAmountType shipping) {
+	 	this.shipping = shipping;
 	 }
 	 
 	/**
-	 * Getter for Handling
+	 * Getter for handling
 	 */
 	 public BasicAmountType getHandling() {
-	 	return Handling;
+	 	return handling;
 	 }
 	 
 	/**
-	 * Setter for Handling
+	 * Setter for handling
 	 */
-	 public void setHandling(BasicAmountType Handling) {
-	 	this.Handling = Handling;
+	 public void setHandling(BasicAmountType handling) {
+	 	this.handling = handling;
 	 }
 	 
 	/**
-	 * Getter for ItemName
+	 * Getter for itemName
 	 */
 	 public String getItemName() {
-	 	return ItemName;
+	 	return itemName;
 	 }
 	 
 	/**
-	 * Setter for ItemName
+	 * Setter for itemName
 	 */
-	 public void setItemName(String ItemName) {
-	 	this.ItemName = ItemName;
+	 public void setItemName(String itemName) {
+	 	this.itemName = itemName;
 	 }
 	 
 	/**
-	 * Getter for ItemNumber
+	 * Getter for itemNumber
 	 */
 	 public String getItemNumber() {
-	 	return ItemNumber;
+	 	return itemNumber;
 	 }
 	 
 	/**
-	 * Setter for ItemNumber
+	 * Setter for itemNumber
 	 */
-	 public void setItemNumber(String ItemNumber) {
-	 	this.ItemNumber = ItemNumber;
+	 public void setItemNumber(String itemNumber) {
+	 	this.itemNumber = itemNumber;
 	 }
 	 
 	/**
-	 * Getter for Invoice
+	 * Getter for invoice
 	 */
 	 public String getInvoice() {
-	 	return Invoice;
+	 	return invoice;
 	 }
 	 
 	/**
-	 * Setter for Invoice
+	 * Setter for invoice
 	 */
-	 public void setInvoice(String Invoice) {
-	 	this.Invoice = Invoice;
+	 public void setInvoice(String invoice) {
+	 	this.invoice = invoice;
 	 }
 	 
 	/**
-	 * Getter for Custom
+	 * Getter for custom
 	 */
 	 public String getCustom() {
-	 	return Custom;
+	 	return custom;
 	 }
 	 
 	/**
-	 * Setter for Custom
+	 * Setter for custom
 	 */
-	 public void setCustom(String Custom) {
-	 	this.Custom = Custom;
+	 public void setCustom(String custom) {
+	 	this.custom = custom;
 	 }
 	 
 	/**
-	 * Getter for ButtonSource
+	 * Getter for buttonSource
 	 */
 	 public String getButtonSource() {
-	 	return ButtonSource;
+	 	return buttonSource;
 	 }
 	 
 	/**
-	 * Setter for ButtonSource
+	 * Setter for buttonSource
 	 */
-	 public void setButtonSource(String ButtonSource) {
-	 	this.ButtonSource = ButtonSource;
+	 public void setButtonSource(String buttonSource) {
+	 	this.buttonSource = buttonSource;
 	 }
 	 
 	/**
-	 * Getter for SoftDescriptor
+	 * Getter for softDescriptor
 	 */
 	 public String getSoftDescriptor() {
-	 	return SoftDescriptor;
+	 	return softDescriptor;
 	 }
 	 
 	/**
-	 * Setter for SoftDescriptor
+	 * Setter for softDescriptor
 	 */
-	 public void setSoftDescriptor(String SoftDescriptor) {
-	 	this.SoftDescriptor = SoftDescriptor;
+	 public void setSoftDescriptor(String softDescriptor) {
+	 	this.softDescriptor = softDescriptor;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(Amount != null) {
-			sb.append("<ebl:Amount");
-			sb.append(Amount.toXMLString());
-			sb.append("</ebl:Amount>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(MpID != null) {
-			sb.append("<ebl:MpID>").append(SDKUtil.escapeInvalidXmlCharsRegex(MpID));
-			sb.append("</ebl:MpID>");
+		if(amount != null) {
+			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
 		}
-		if(PaymentType != null) {
-			sb.append("<ebl:PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentType.getValue()));
-			sb.append("</ebl:PaymentType>");
+		if(mpID != null) {
+			sb.append("<").append(preferredPrefix).append(":MpID>").append(SDKUtil.escapeInvalidXmlCharsRegex(mpID));
+			sb.append("</").append(preferredPrefix).append(":MpID>");
 		}
-		if(Memo != null) {
-			sb.append("<ebl:Memo>").append(SDKUtil.escapeInvalidXmlCharsRegex(Memo));
-			sb.append("</ebl:Memo>");
+		if(paymentType != null) {
+			sb.append("<").append(preferredPrefix).append(":PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":PaymentType>");
 		}
-		if(EmailSubject != null) {
-			sb.append("<ebl:EmailSubject>").append(SDKUtil.escapeInvalidXmlCharsRegex(EmailSubject));
-			sb.append("</ebl:EmailSubject>");
+		if(memo != null) {
+			sb.append("<").append(preferredPrefix).append(":Memo>").append(SDKUtil.escapeInvalidXmlCharsRegex(memo));
+			sb.append("</").append(preferredPrefix).append(":Memo>");
 		}
-		if(Tax != null) {
-			sb.append("<ebl:Tax");
-			sb.append(Tax.toXMLString());
-			sb.append("</ebl:Tax>");
+		if(emailSubject != null) {
+			sb.append("<").append(preferredPrefix).append(":EmailSubject>").append(SDKUtil.escapeInvalidXmlCharsRegex(emailSubject));
+			sb.append("</").append(preferredPrefix).append(":EmailSubject>");
 		}
-		if(Shipping != null) {
-			sb.append("<ebl:Shipping");
-			sb.append(Shipping.toXMLString());
-			sb.append("</ebl:Shipping>");
+		if(tax != null) {
+			sb.append(tax.toXMLString(preferredPrefix,"Tax"));
 		}
-		if(Handling != null) {
-			sb.append("<ebl:Handling");
-			sb.append(Handling.toXMLString());
-			sb.append("</ebl:Handling>");
+		if(shipping != null) {
+			sb.append(shipping.toXMLString(preferredPrefix,"Shipping"));
 		}
-		if(ItemName != null) {
-			sb.append("<ebl:ItemName>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemName));
-			sb.append("</ebl:ItemName>");
+		if(handling != null) {
+			sb.append(handling.toXMLString(preferredPrefix,"Handling"));
 		}
-		if(ItemNumber != null) {
-			sb.append("<ebl:ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemNumber));
-			sb.append("</ebl:ItemNumber>");
+		if(itemName != null) {
+			sb.append("<").append(preferredPrefix).append(":ItemName>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemName));
+			sb.append("</").append(preferredPrefix).append(":ItemName>");
 		}
-		if(Invoice != null) {
-			sb.append("<ebl:Invoice>").append(SDKUtil.escapeInvalidXmlCharsRegex(Invoice));
-			sb.append("</ebl:Invoice>");
+		if(itemNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemNumber));
+			sb.append("</").append(preferredPrefix).append(":ItemNumber>");
 		}
-		if(Custom != null) {
-			sb.append("<ebl:Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(Custom));
-			sb.append("</ebl:Custom>");
+		if(invoice != null) {
+			sb.append("<").append(preferredPrefix).append(":Invoice>").append(SDKUtil.escapeInvalidXmlCharsRegex(invoice));
+			sb.append("</").append(preferredPrefix).append(":Invoice>");
 		}
-		if(ButtonSource != null) {
-			sb.append("<ebl:ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonSource));
-			sb.append("</ebl:ButtonSource>");
+		if(custom != null) {
+			sb.append("<").append(preferredPrefix).append(":Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(custom));
+			sb.append("</").append(preferredPrefix).append(":Custom>");
 		}
-		if(SoftDescriptor != null) {
-			sb.append("<ebl:SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(SoftDescriptor));
-			sb.append("</ebl:SoftDescriptor>");
+		if(buttonSource != null) {
+			sb.append("<").append(preferredPrefix).append(":ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonSource));
+			sb.append("</").append(preferredPrefix).append(":ButtonSource>");
+		}
+		if(softDescriptor != null) {
+			sb.append("<").append(preferredPrefix).append(":SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(softDescriptor));
+			sb.append("</").append(preferredPrefix).append(":SoftDescriptor>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

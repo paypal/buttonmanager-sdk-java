@@ -9,68 +9,70 @@ import com.paypal.core.SDKUtil;
  */
 public class SetAuthFlowParamRequestDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * URL to which the customer's browser is returned after
 	 * choosing to login with PayPal. Required Character length and
 	 * limitations: no limit. 	 
 	 */ 
-	private String ReturnURL;
+	private String returnURL;
 
 	/**
 	 * URL to which the customer is returned if he does not approve
 	 * the use of PayPal login. Required Character length and
 	 * limitations: no limit	 
 	 */ 
-	private String CancelURL;
+	private String cancelURL;
 
 	/**
 	 * URL to which the customer's browser is returned after user
 	 * logs out from PayPal. Required Character length and
 	 * limitations: no limit. 	 
 	 */ 
-	private String LogoutURL;
+	private String logoutURL;
 
 	/**
 	 * The type of the flow. Optional Character length and
 	 * limitations: 127 single-byte alphanumeric characters	 
 	 */ 
-	private String InitFlowType;
+	private String initFlowType;
 
 	/**
 	 * The used to decide SkipLogin allowed or not. Optional
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters 	 
 	 */ 
-	private String SkipLoginPage;
+	private String skipLoginPage;
 
 	/**
 	 * The name of the field Merchant requires from PayPal after
 	 * user's login. Optional Character length and limitations: 256
 	 * single-byte alphanumeric characters 	 
 	 */ 
-	private String ServiceName1;
+	private String serviceName1;
 
 	/**
 	 * Whether the field is required, opt-in or opt-out.  Optional
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters 	 
 	 */ 
-	private String ServiceDefReq1;
+	private String serviceDefReq1;
 
 	/**
 	 * The name of the field Merchant requires from PayPal after
 	 * user's login. Optional Character length and limitations: 256
 	 * single-byte alphanumeric characters	 
 	 */ 
-	private String ServiceName2;
+	private String serviceName2;
 
 	/**
 	 * Whether the field is required, opt-in or opt-out. Optional
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters	 
 	 */ 
-	private String ServiceDefReq2;
+	private String serviceDefReq2;
 
 	/**
 	 * Locale of pages displayed by PayPal during Authentication
@@ -79,7 +81,7 @@ public class SetAuthFlowParamRequestDetailsType{
 	 * Allowable values: AU or en_AUDE or de_DEFR or fr_FRGB or
 	 * en_GBIT or it_ITJP or ja_JPUS or en_US	 
 	 */ 
-	private String LocaleCode;
+	private String localeCode;
 
 	/**
 	 * Sets the Custom Payment Page Style for flow pages associated
@@ -91,7 +93,7 @@ public class SetAuthFlowParamRequestDetailsType{
 	 * length and limitations: 30 single-byte alphabetic
 	 * characters. 	 
 	 */ 
-	private String PageStyle;
+	private String pageStyle;
 
 	/**
 	 * A URL for the image you want to appear at the top left of
@@ -131,7 +133,7 @@ public class SetAuthFlowParamRequestDetailsType{
 	 * limitation: Six character HTML hexadecimal color code in
 	 * ASCII	 
 	 */ 
-	private String FirstName;
+	private String firstName;
 
 	/**
 	 * Last Name of the user, this information is used if user
@@ -139,7 +141,7 @@ public class SetAuthFlowParamRequestDetailsType{
 	 * limitation: Six character HTML hexadecimal color code in
 	 * ASCII	 
 	 */ 
-	private String LastName;
+	private String lastName;
 
 	/**
 	 * User address, this information is used when user chooses to
@@ -148,7 +150,7 @@ public class SetAuthFlowParamRequestDetailsType{
 	 * PayPal returns this same address in
 	 * GetExpressCheckoutDetailsResponse. 	 
 	 */ 
-	private AddressType Address;
+	private AddressType address;
 
 	
 
@@ -159,157 +161,157 @@ public class SetAuthFlowParamRequestDetailsType{
 	}	
 
 	/**
-	 * Getter for ReturnURL
+	 * Getter for returnURL
 	 */
 	 public String getReturnURL() {
-	 	return ReturnURL;
+	 	return returnURL;
 	 }
 	 
 	/**
-	 * Setter for ReturnURL
+	 * Setter for returnURL
 	 */
-	 public void setReturnURL(String ReturnURL) {
-	 	this.ReturnURL = ReturnURL;
+	 public void setReturnURL(String returnURL) {
+	 	this.returnURL = returnURL;
 	 }
 	 
 	/**
-	 * Getter for CancelURL
+	 * Getter for cancelURL
 	 */
 	 public String getCancelURL() {
-	 	return CancelURL;
+	 	return cancelURL;
 	 }
 	 
 	/**
-	 * Setter for CancelURL
+	 * Setter for cancelURL
 	 */
-	 public void setCancelURL(String CancelURL) {
-	 	this.CancelURL = CancelURL;
+	 public void setCancelURL(String cancelURL) {
+	 	this.cancelURL = cancelURL;
 	 }
 	 
 	/**
-	 * Getter for LogoutURL
+	 * Getter for logoutURL
 	 */
 	 public String getLogoutURL() {
-	 	return LogoutURL;
+	 	return logoutURL;
 	 }
 	 
 	/**
-	 * Setter for LogoutURL
+	 * Setter for logoutURL
 	 */
-	 public void setLogoutURL(String LogoutURL) {
-	 	this.LogoutURL = LogoutURL;
+	 public void setLogoutURL(String logoutURL) {
+	 	this.logoutURL = logoutURL;
 	 }
 	 
 	/**
-	 * Getter for InitFlowType
+	 * Getter for initFlowType
 	 */
 	 public String getInitFlowType() {
-	 	return InitFlowType;
+	 	return initFlowType;
 	 }
 	 
 	/**
-	 * Setter for InitFlowType
+	 * Setter for initFlowType
 	 */
-	 public void setInitFlowType(String InitFlowType) {
-	 	this.InitFlowType = InitFlowType;
+	 public void setInitFlowType(String initFlowType) {
+	 	this.initFlowType = initFlowType;
 	 }
 	 
 	/**
-	 * Getter for SkipLoginPage
+	 * Getter for skipLoginPage
 	 */
 	 public String getSkipLoginPage() {
-	 	return SkipLoginPage;
+	 	return skipLoginPage;
 	 }
 	 
 	/**
-	 * Setter for SkipLoginPage
+	 * Setter for skipLoginPage
 	 */
-	 public void setSkipLoginPage(String SkipLoginPage) {
-	 	this.SkipLoginPage = SkipLoginPage;
+	 public void setSkipLoginPage(String skipLoginPage) {
+	 	this.skipLoginPage = skipLoginPage;
 	 }
 	 
 	/**
-	 * Getter for ServiceName1
+	 * Getter for serviceName1
 	 */
 	 public String getServiceName1() {
-	 	return ServiceName1;
+	 	return serviceName1;
 	 }
 	 
 	/**
-	 * Setter for ServiceName1
+	 * Setter for serviceName1
 	 */
-	 public void setServiceName1(String ServiceName1) {
-	 	this.ServiceName1 = ServiceName1;
+	 public void setServiceName1(String serviceName1) {
+	 	this.serviceName1 = serviceName1;
 	 }
 	 
 	/**
-	 * Getter for ServiceDefReq1
+	 * Getter for serviceDefReq1
 	 */
 	 public String getServiceDefReq1() {
-	 	return ServiceDefReq1;
+	 	return serviceDefReq1;
 	 }
 	 
 	/**
-	 * Setter for ServiceDefReq1
+	 * Setter for serviceDefReq1
 	 */
-	 public void setServiceDefReq1(String ServiceDefReq1) {
-	 	this.ServiceDefReq1 = ServiceDefReq1;
+	 public void setServiceDefReq1(String serviceDefReq1) {
+	 	this.serviceDefReq1 = serviceDefReq1;
 	 }
 	 
 	/**
-	 * Getter for ServiceName2
+	 * Getter for serviceName2
 	 */
 	 public String getServiceName2() {
-	 	return ServiceName2;
+	 	return serviceName2;
 	 }
 	 
 	/**
-	 * Setter for ServiceName2
+	 * Setter for serviceName2
 	 */
-	 public void setServiceName2(String ServiceName2) {
-	 	this.ServiceName2 = ServiceName2;
+	 public void setServiceName2(String serviceName2) {
+	 	this.serviceName2 = serviceName2;
 	 }
 	 
 	/**
-	 * Getter for ServiceDefReq2
+	 * Getter for serviceDefReq2
 	 */
 	 public String getServiceDefReq2() {
-	 	return ServiceDefReq2;
+	 	return serviceDefReq2;
 	 }
 	 
 	/**
-	 * Setter for ServiceDefReq2
+	 * Setter for serviceDefReq2
 	 */
-	 public void setServiceDefReq2(String ServiceDefReq2) {
-	 	this.ServiceDefReq2 = ServiceDefReq2;
+	 public void setServiceDefReq2(String serviceDefReq2) {
+	 	this.serviceDefReq2 = serviceDefReq2;
 	 }
 	 
 	/**
-	 * Getter for LocaleCode
+	 * Getter for localeCode
 	 */
 	 public String getLocaleCode() {
-	 	return LocaleCode;
+	 	return localeCode;
 	 }
 	 
 	/**
-	 * Setter for LocaleCode
+	 * Setter for localeCode
 	 */
-	 public void setLocaleCode(String LocaleCode) {
-	 	this.LocaleCode = LocaleCode;
+	 public void setLocaleCode(String localeCode) {
+	 	this.localeCode = localeCode;
 	 }
 	 
 	/**
-	 * Getter for PageStyle
+	 * Getter for pageStyle
 	 */
 	 public String getPageStyle() {
-	 	return PageStyle;
+	 	return pageStyle;
 	 }
 	 
 	/**
-	 * Setter for PageStyle
+	 * Setter for pageStyle
 	 */
-	 public void setPageStyle(String PageStyle) {
-	 	this.PageStyle = PageStyle;
+	 public void setPageStyle(String pageStyle) {
+	 	this.pageStyle = pageStyle;
 	 }
 	 
 	/**
@@ -369,123 +371,137 @@ public class SetAuthFlowParamRequestDetailsType{
 	 }
 	 
 	/**
-	 * Getter for FirstName
+	 * Getter for firstName
 	 */
 	 public String getFirstName() {
-	 	return FirstName;
+	 	return firstName;
 	 }
 	 
 	/**
-	 * Setter for FirstName
+	 * Setter for firstName
 	 */
-	 public void setFirstName(String FirstName) {
-	 	this.FirstName = FirstName;
+	 public void setFirstName(String firstName) {
+	 	this.firstName = firstName;
 	 }
 	 
 	/**
-	 * Getter for LastName
+	 * Getter for lastName
 	 */
 	 public String getLastName() {
-	 	return LastName;
+	 	return lastName;
 	 }
 	 
 	/**
-	 * Setter for LastName
+	 * Setter for lastName
 	 */
-	 public void setLastName(String LastName) {
-	 	this.LastName = LastName;
+	 public void setLastName(String lastName) {
+	 	this.lastName = lastName;
 	 }
 	 
 	/**
-	 * Getter for Address
+	 * Getter for address
 	 */
 	 public AddressType getAddress() {
-	 	return Address;
+	 	return address;
 	 }
 	 
 	/**
-	 * Setter for Address
+	 * Setter for address
 	 */
-	 public void setAddress(AddressType Address) {
-	 	this.Address = Address;
+	 public void setAddress(AddressType address) {
+	 	this.address = address;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(ReturnURL != null) {
-			sb.append("<ebl:ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReturnURL));
-			sb.append("</ebl:ReturnURL>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(CancelURL != null) {
-			sb.append("<ebl:CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(CancelURL));
-			sb.append("</ebl:CancelURL>");
+		if(returnURL != null) {
+			sb.append("<").append(preferredPrefix).append(":ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(returnURL));
+			sb.append("</").append(preferredPrefix).append(":ReturnURL>");
 		}
-		if(LogoutURL != null) {
-			sb.append("<ebl:LogoutURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(LogoutURL));
-			sb.append("</ebl:LogoutURL>");
+		if(cancelURL != null) {
+			sb.append("<").append(preferredPrefix).append(":CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(cancelURL));
+			sb.append("</").append(preferredPrefix).append(":CancelURL>");
 		}
-		if(InitFlowType != null) {
-			sb.append("<ebl:InitFlowType>").append(SDKUtil.escapeInvalidXmlCharsRegex(InitFlowType));
-			sb.append("</ebl:InitFlowType>");
+		if(logoutURL != null) {
+			sb.append("<").append(preferredPrefix).append(":LogoutURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(logoutURL));
+			sb.append("</").append(preferredPrefix).append(":LogoutURL>");
 		}
-		if(SkipLoginPage != null) {
-			sb.append("<ebl:SkipLoginPage>").append(SDKUtil.escapeInvalidXmlCharsRegex(SkipLoginPage));
-			sb.append("</ebl:SkipLoginPage>");
+		if(initFlowType != null) {
+			sb.append("<").append(preferredPrefix).append(":InitFlowType>").append(SDKUtil.escapeInvalidXmlCharsRegex(initFlowType));
+			sb.append("</").append(preferredPrefix).append(":InitFlowType>");
 		}
-		if(ServiceName1 != null) {
-			sb.append("<ebl:ServiceName1>").append(SDKUtil.escapeInvalidXmlCharsRegex(ServiceName1));
-			sb.append("</ebl:ServiceName1>");
+		if(skipLoginPage != null) {
+			sb.append("<").append(preferredPrefix).append(":SkipLoginPage>").append(SDKUtil.escapeInvalidXmlCharsRegex(skipLoginPage));
+			sb.append("</").append(preferredPrefix).append(":SkipLoginPage>");
 		}
-		if(ServiceDefReq1 != null) {
-			sb.append("<ebl:ServiceDefReq1>").append(SDKUtil.escapeInvalidXmlCharsRegex(ServiceDefReq1));
-			sb.append("</ebl:ServiceDefReq1>");
+		if(serviceName1 != null) {
+			sb.append("<").append(preferredPrefix).append(":ServiceName1>").append(SDKUtil.escapeInvalidXmlCharsRegex(serviceName1));
+			sb.append("</").append(preferredPrefix).append(":ServiceName1>");
 		}
-		if(ServiceName2 != null) {
-			sb.append("<ebl:ServiceName2>").append(SDKUtil.escapeInvalidXmlCharsRegex(ServiceName2));
-			sb.append("</ebl:ServiceName2>");
+		if(serviceDefReq1 != null) {
+			sb.append("<").append(preferredPrefix).append(":ServiceDefReq1>").append(SDKUtil.escapeInvalidXmlCharsRegex(serviceDefReq1));
+			sb.append("</").append(preferredPrefix).append(":ServiceDefReq1>");
 		}
-		if(ServiceDefReq2 != null) {
-			sb.append("<ebl:ServiceDefReq2>").append(SDKUtil.escapeInvalidXmlCharsRegex(ServiceDefReq2));
-			sb.append("</ebl:ServiceDefReq2>");
+		if(serviceName2 != null) {
+			sb.append("<").append(preferredPrefix).append(":ServiceName2>").append(SDKUtil.escapeInvalidXmlCharsRegex(serviceName2));
+			sb.append("</").append(preferredPrefix).append(":ServiceName2>");
 		}
-		if(LocaleCode != null) {
-			sb.append("<ebl:LocaleCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(LocaleCode));
-			sb.append("</ebl:LocaleCode>");
+		if(serviceDefReq2 != null) {
+			sb.append("<").append(preferredPrefix).append(":ServiceDefReq2>").append(SDKUtil.escapeInvalidXmlCharsRegex(serviceDefReq2));
+			sb.append("</").append(preferredPrefix).append(":ServiceDefReq2>");
 		}
-		if(PageStyle != null) {
-			sb.append("<ebl:PageStyle>").append(SDKUtil.escapeInvalidXmlCharsRegex(PageStyle));
-			sb.append("</ebl:PageStyle>");
+		if(localeCode != null) {
+			sb.append("<").append(preferredPrefix).append(":LocaleCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(localeCode));
+			sb.append("</").append(preferredPrefix).append(":LocaleCode>");
+		}
+		if(pageStyle != null) {
+			sb.append("<").append(preferredPrefix).append(":PageStyle>").append(SDKUtil.escapeInvalidXmlCharsRegex(pageStyle));
+			sb.append("</").append(preferredPrefix).append(":PageStyle>");
 		}
 		if(cppHeaderImage != null) {
-			sb.append("<ebl:cpp-header-image>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderImage));
-			sb.append("</ebl:cpp-header-image>");
+			sb.append("<").append(preferredPrefix).append(":cpp-header-image>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderImage));
+			sb.append("</").append(preferredPrefix).append(":cpp-header-image>");
 		}
 		if(cppHeaderBorderColor != null) {
-			sb.append("<ebl:cpp-header-border-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBorderColor));
-			sb.append("</ebl:cpp-header-border-color>");
+			sb.append("<").append(preferredPrefix).append(":cpp-header-border-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBorderColor));
+			sb.append("</").append(preferredPrefix).append(":cpp-header-border-color>");
 		}
 		if(cppHeaderBackColor != null) {
-			sb.append("<ebl:cpp-header-back-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBackColor));
-			sb.append("</ebl:cpp-header-back-color>");
+			sb.append("<").append(preferredPrefix).append(":cpp-header-back-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBackColor));
+			sb.append("</").append(preferredPrefix).append(":cpp-header-back-color>");
 		}
 		if(cppPayflowColor != null) {
-			sb.append("<ebl:cpp-payflow-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppPayflowColor));
-			sb.append("</ebl:cpp-payflow-color>");
+			sb.append("<").append(preferredPrefix).append(":cpp-payflow-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppPayflowColor));
+			sb.append("</").append(preferredPrefix).append(":cpp-payflow-color>");
 		}
-		if(FirstName != null) {
-			sb.append("<ebl:FirstName>").append(SDKUtil.escapeInvalidXmlCharsRegex(FirstName));
-			sb.append("</ebl:FirstName>");
+		if(firstName != null) {
+			sb.append("<").append(preferredPrefix).append(":FirstName>").append(SDKUtil.escapeInvalidXmlCharsRegex(firstName));
+			sb.append("</").append(preferredPrefix).append(":FirstName>");
 		}
-		if(LastName != null) {
-			sb.append("<ebl:LastName>").append(SDKUtil.escapeInvalidXmlCharsRegex(LastName));
-			sb.append("</ebl:LastName>");
+		if(lastName != null) {
+			sb.append("<").append(preferredPrefix).append(":LastName>").append(SDKUtil.escapeInvalidXmlCharsRegex(lastName));
+			sb.append("</").append(preferredPrefix).append(":LastName>");
 		}
-		if(Address != null) {
-			sb.append("<ebl:Address>");
-			sb.append(Address.toXMLString());
-			sb.append("</ebl:Address>");
+		if(address != null) {
+			sb.append(address.toXMLString(preferredPrefix,"Address"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

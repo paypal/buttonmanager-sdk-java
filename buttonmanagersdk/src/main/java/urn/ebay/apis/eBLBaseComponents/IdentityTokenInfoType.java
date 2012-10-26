@@ -6,20 +6,22 @@ import com.paypal.core.SDKUtil;
  */
 public class IdentityTokenInfoType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Identity Access token from merchant	  
 	 *@Required	 
 	 */ 
-	private String AccessToken;
+	private String accessToken;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public IdentityTokenInfoType (String AccessToken){
-		this.AccessToken = AccessToken;
+	public IdentityTokenInfoType (String accessToken){
+		this.accessToken = accessToken;
 	}	
 
 	/**
@@ -29,26 +31,42 @@ public class IdentityTokenInfoType{
 	}	
 
 	/**
-	 * Getter for AccessToken
+	 * Getter for accessToken
 	 */
 	 public String getAccessToken() {
-	 	return AccessToken;
+	 	return accessToken;
 	 }
 	 
 	/**
-	 * Setter for AccessToken
+	 * Setter for accessToken
 	 */
-	 public void setAccessToken(String AccessToken) {
-	 	this.AccessToken = AccessToken;
+	 public void setAccessToken(String accessToken) {
+	 	this.accessToken = accessToken;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(AccessToken != null) {
-			sb.append("<ebl:AccessToken>").append(SDKUtil.escapeInvalidXmlCharsRegex(AccessToken));
-			sb.append("</ebl:AccessToken>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		if(accessToken != null) {
+			sb.append("<").append(preferredPrefix).append(":AccessToken>").append(SDKUtil.escapeInvalidXmlCharsRegex(accessToken));
+			sb.append("</").append(preferredPrefix).append(":AccessToken>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

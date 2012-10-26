@@ -26,7 +26,7 @@ public class InstrumentDetailsType{
 	 * This field holds the category of the instrument only when it
 	 * is promotional. Return value 1 represents BML. 	 
 	 */ 
-	private String InstrumentCategory;
+	private String instrumentCategory;
 
 	
 
@@ -37,17 +37,17 @@ public class InstrumentDetailsType{
 	}	
 
 	/**
-	 * Getter for InstrumentCategory
+	 * Getter for instrumentCategory
 	 */
 	 public String getInstrumentCategory() {
-	 	return InstrumentCategory;
+	 	return instrumentCategory;
 	 }
 	 
 	/**
-	 * Setter for InstrumentCategory
+	 * Setter for instrumentCategory
 	 */
-	 public void setInstrumentCategory(String InstrumentCategory) {
-	 	this.InstrumentCategory = InstrumentCategory;
+	 public void setInstrumentCategory(String instrumentCategory) {
+	 	this.instrumentCategory = instrumentCategory;
 	 }
 	 
 
@@ -72,7 +72,7 @@ public class InstrumentDetailsType{
 		childNode = (Node) xpath.evaluate("InstrumentCategory", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 			String value = childNode.getTextContent();
-			this.InstrumentCategory = value;
+			this.instrumentCategory = value;
 		}
 	}
  

@@ -27,27 +27,27 @@ public class IncentiveAppliedDetailsType{
 	 * PaymentRequestID uniquely identifies a bucket. It is the
 	 * "bucket id" in the world of EC API. 	 
 	 */ 
-	private String PaymentRequestID;
+	private String paymentRequestID;
 
 	/**
 	 * The item id passed through by the merchant. 	 
 	 */ 
-	private String ItemId;
+	private String itemId;
 
 	/**
 	 * The item transaction id passed through by the merchant. 	 
 	 */ 
-	private String ExternalTxnId;
+	private String externalTxnId;
 
 	/**
 	 * Discount offerred for this bucket or item. 	 
 	 */ 
-	private BasicAmountType DiscountAmount;
+	private BasicAmountType discountAmount;
 
 	/**
 	 * SubType for coupon. 	 
 	 */ 
-	private String SubType;
+	private String subType;
 
 	
 
@@ -58,73 +58,73 @@ public class IncentiveAppliedDetailsType{
 	}	
 
 	/**
-	 * Getter for PaymentRequestID
+	 * Getter for paymentRequestID
 	 */
 	 public String getPaymentRequestID() {
-	 	return PaymentRequestID;
+	 	return paymentRequestID;
 	 }
 	 
 	/**
-	 * Setter for PaymentRequestID
+	 * Setter for paymentRequestID
 	 */
-	 public void setPaymentRequestID(String PaymentRequestID) {
-	 	this.PaymentRequestID = PaymentRequestID;
+	 public void setPaymentRequestID(String paymentRequestID) {
+	 	this.paymentRequestID = paymentRequestID;
 	 }
 	 
 	/**
-	 * Getter for ItemId
+	 * Getter for itemId
 	 */
 	 public String getItemId() {
-	 	return ItemId;
+	 	return itemId;
 	 }
 	 
 	/**
-	 * Setter for ItemId
+	 * Setter for itemId
 	 */
-	 public void setItemId(String ItemId) {
-	 	this.ItemId = ItemId;
+	 public void setItemId(String itemId) {
+	 	this.itemId = itemId;
 	 }
 	 
 	/**
-	 * Getter for ExternalTxnId
+	 * Getter for externalTxnId
 	 */
 	 public String getExternalTxnId() {
-	 	return ExternalTxnId;
+	 	return externalTxnId;
 	 }
 	 
 	/**
-	 * Setter for ExternalTxnId
+	 * Setter for externalTxnId
 	 */
-	 public void setExternalTxnId(String ExternalTxnId) {
-	 	this.ExternalTxnId = ExternalTxnId;
+	 public void setExternalTxnId(String externalTxnId) {
+	 	this.externalTxnId = externalTxnId;
 	 }
 	 
 	/**
-	 * Getter for DiscountAmount
+	 * Getter for discountAmount
 	 */
 	 public BasicAmountType getDiscountAmount() {
-	 	return DiscountAmount;
+	 	return discountAmount;
 	 }
 	 
 	/**
-	 * Setter for DiscountAmount
+	 * Setter for discountAmount
 	 */
-	 public void setDiscountAmount(BasicAmountType DiscountAmount) {
-	 	this.DiscountAmount = DiscountAmount;
+	 public void setDiscountAmount(BasicAmountType discountAmount) {
+	 	this.discountAmount = discountAmount;
 	 }
 	 
 	/**
-	 * Getter for SubType
+	 * Getter for subType
 	 */
 	 public String getSubType() {
-	 	return SubType;
+	 	return subType;
 	 }
 	 
 	/**
-	 * Setter for SubType
+	 * Setter for subType
 	 */
-	 public void setSubType(String SubType) {
-	 	this.SubType = SubType;
+	 public void setSubType(String subType) {
+	 	this.subType = subType;
 	 }
 	 
 
@@ -148,26 +148,26 @@ public class IncentiveAppliedDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("PaymentRequestID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentRequestID = childNode.getTextContent();
+		    this.paymentRequestID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ItemId", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ItemId = childNode.getTextContent();
+		    this.itemId = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ExternalTxnId", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ExternalTxnId = childNode.getTextContent();
+		    this.externalTxnId = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("DiscountAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.DiscountAmount =  new BasicAmountType(childNode);
+		    this.discountAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("SubType", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SubType = childNode.getTextContent();
+		    this.subType = childNode.getTextContent();
 		}
 	
 	}

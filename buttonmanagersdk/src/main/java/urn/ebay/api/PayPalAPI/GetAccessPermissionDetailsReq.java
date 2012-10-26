@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class GetAccessPermissionDetailsReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private GetAccessPermissionDetailsRequestType GetAccessPermissionDetailsRequest;
+	private GetAccessPermissionDetailsRequestType getAccessPermissionDetailsRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class GetAccessPermissionDetailsReq{
 	}	
 
 	/**
-	 * Getter for GetAccessPermissionDetailsRequest
+	 * Getter for getAccessPermissionDetailsRequest
 	 */
 	 public GetAccessPermissionDetailsRequestType getGetAccessPermissionDetailsRequest() {
-	 	return GetAccessPermissionDetailsRequest;
+	 	return getAccessPermissionDetailsRequest;
 	 }
 	 
 	/**
-	 * Setter for GetAccessPermissionDetailsRequest
+	 * Setter for getAccessPermissionDetailsRequest
 	 */
-	 public void setGetAccessPermissionDetailsRequest(GetAccessPermissionDetailsRequestType GetAccessPermissionDetailsRequest) {
-	 	this.GetAccessPermissionDetailsRequest = GetAccessPermissionDetailsRequest;
+	 public void setGetAccessPermissionDetailsRequest(GetAccessPermissionDetailsRequestType getAccessPermissionDetailsRequest) {
+	 	this.getAccessPermissionDetailsRequest = getAccessPermissionDetailsRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:GetAccessPermissionDetailsReq>");
-		if(GetAccessPermissionDetailsRequest != null) {
-			sb.append("<urn:GetAccessPermissionDetailsRequest>");
-			sb.append(GetAccessPermissionDetailsRequest.toXMLString());
-			sb.append("</urn:GetAccessPermissionDetailsRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:GetAccessPermissionDetailsReq>");
+		if(getAccessPermissionDetailsRequest != null) {
+			sb.append(getAccessPermissionDetailsRequest.toXMLString(null,"GetAccessPermissionDetailsRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

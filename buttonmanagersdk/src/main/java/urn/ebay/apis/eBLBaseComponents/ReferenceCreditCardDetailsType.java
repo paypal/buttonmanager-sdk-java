@@ -10,51 +10,53 @@ import com.paypal.core.SDKUtil;
  */
 public class ReferenceCreditCardDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	 
 	 */ 
-	private CreditCardNumberTypeType CreditCardNumberType;
+	private CreditCardNumberTypeType creditCardNumberType;
 
 	/**
 	 * 	 
 	 */ 
-	private Integer ExpMonth;
+	private Integer expMonth;
 
 	/**
 	 * 	 
 	 */ 
-	private Integer ExpYear;
+	private Integer expYear;
 
 	/**
 	 * 	 
 	 */ 
-	private PersonNameType CardOwnerName;
+	private PersonNameType cardOwnerName;
 
 	/**
 	 * 	 
 	 */ 
-	private AddressType BillingAddress;
+	private AddressType billingAddress;
 
 	/**
 	 * 	 
 	 */ 
-	private String CVV2;
+	private String cVV2;
 
 	/**
 	 * 	 
 	 */ 
-	private Integer StartMonth;
+	private Integer startMonth;
 
 	/**
 	 * 	 
 	 */ 
-	private Integer StartYear;
+	private Integer startYear;
 
 	/**
 	 * 	 
 	 */ 
-	private String IssueNumber;
+	private String issueNumber;
 
 	
 
@@ -65,173 +67,183 @@ public class ReferenceCreditCardDetailsType{
 	}	
 
 	/**
-	 * Getter for CreditCardNumberType
+	 * Getter for creditCardNumberType
 	 */
 	 public CreditCardNumberTypeType getCreditCardNumberType() {
-	 	return CreditCardNumberType;
+	 	return creditCardNumberType;
 	 }
 	 
 	/**
-	 * Setter for CreditCardNumberType
+	 * Setter for creditCardNumberType
 	 */
-	 public void setCreditCardNumberType(CreditCardNumberTypeType CreditCardNumberType) {
-	 	this.CreditCardNumberType = CreditCardNumberType;
+	 public void setCreditCardNumberType(CreditCardNumberTypeType creditCardNumberType) {
+	 	this.creditCardNumberType = creditCardNumberType;
 	 }
 	 
 	/**
-	 * Getter for ExpMonth
+	 * Getter for expMonth
 	 */
 	 public Integer getExpMonth() {
-	 	return ExpMonth;
+	 	return expMonth;
 	 }
 	 
 	/**
-	 * Setter for ExpMonth
+	 * Setter for expMonth
 	 */
-	 public void setExpMonth(Integer ExpMonth) {
-	 	this.ExpMonth = ExpMonth;
+	 public void setExpMonth(Integer expMonth) {
+	 	this.expMonth = expMonth;
 	 }
 	 
 	/**
-	 * Getter for ExpYear
+	 * Getter for expYear
 	 */
 	 public Integer getExpYear() {
-	 	return ExpYear;
+	 	return expYear;
 	 }
 	 
 	/**
-	 * Setter for ExpYear
+	 * Setter for expYear
 	 */
-	 public void setExpYear(Integer ExpYear) {
-	 	this.ExpYear = ExpYear;
+	 public void setExpYear(Integer expYear) {
+	 	this.expYear = expYear;
 	 }
 	 
 	/**
-	 * Getter for CardOwnerName
+	 * Getter for cardOwnerName
 	 */
 	 public PersonNameType getCardOwnerName() {
-	 	return CardOwnerName;
+	 	return cardOwnerName;
 	 }
 	 
 	/**
-	 * Setter for CardOwnerName
+	 * Setter for cardOwnerName
 	 */
-	 public void setCardOwnerName(PersonNameType CardOwnerName) {
-	 	this.CardOwnerName = CardOwnerName;
+	 public void setCardOwnerName(PersonNameType cardOwnerName) {
+	 	this.cardOwnerName = cardOwnerName;
 	 }
 	 
 	/**
-	 * Getter for BillingAddress
+	 * Getter for billingAddress
 	 */
 	 public AddressType getBillingAddress() {
-	 	return BillingAddress;
+	 	return billingAddress;
 	 }
 	 
 	/**
-	 * Setter for BillingAddress
+	 * Setter for billingAddress
 	 */
-	 public void setBillingAddress(AddressType BillingAddress) {
-	 	this.BillingAddress = BillingAddress;
+	 public void setBillingAddress(AddressType billingAddress) {
+	 	this.billingAddress = billingAddress;
 	 }
 	 
 	/**
-	 * Getter for CVV2
+	 * Getter for cVV2
 	 */
 	 public String getCVV2() {
-	 	return CVV2;
+	 	return cVV2;
 	 }
 	 
 	/**
-	 * Setter for CVV2
+	 * Setter for cVV2
 	 */
-	 public void setCVV2(String CVV2) {
-	 	this.CVV2 = CVV2;
+	 public void setCVV2(String cVV2) {
+	 	this.cVV2 = cVV2;
 	 }
 	 
 	/**
-	 * Getter for StartMonth
+	 * Getter for startMonth
 	 */
 	 public Integer getStartMonth() {
-	 	return StartMonth;
+	 	return startMonth;
 	 }
 	 
 	/**
-	 * Setter for StartMonth
+	 * Setter for startMonth
 	 */
-	 public void setStartMonth(Integer StartMonth) {
-	 	this.StartMonth = StartMonth;
+	 public void setStartMonth(Integer startMonth) {
+	 	this.startMonth = startMonth;
 	 }
 	 
 	/**
-	 * Getter for StartYear
+	 * Getter for startYear
 	 */
 	 public Integer getStartYear() {
-	 	return StartYear;
+	 	return startYear;
 	 }
 	 
 	/**
-	 * Setter for StartYear
+	 * Setter for startYear
 	 */
-	 public void setStartYear(Integer StartYear) {
-	 	this.StartYear = StartYear;
+	 public void setStartYear(Integer startYear) {
+	 	this.startYear = startYear;
 	 }
 	 
 	/**
-	 * Getter for IssueNumber
+	 * Getter for issueNumber
 	 */
 	 public String getIssueNumber() {
-	 	return IssueNumber;
+	 	return issueNumber;
 	 }
 	 
 	/**
-	 * Setter for IssueNumber
+	 * Setter for issueNumber
 	 */
-	 public void setIssueNumber(String IssueNumber) {
-	 	this.IssueNumber = IssueNumber;
+	 public void setIssueNumber(String issueNumber) {
+	 	this.issueNumber = issueNumber;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(CreditCardNumberType != null) {
-			sb.append("<ebl:CreditCardNumberType>");
-			sb.append(CreditCardNumberType.toXMLString());
-			sb.append("</ebl:CreditCardNumberType>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ExpMonth != null) {
-			sb.append("<ebl:ExpMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExpMonth));
-			sb.append("</ebl:ExpMonth>");
+		if(creditCardNumberType != null) {
+			sb.append(creditCardNumberType.toXMLString(preferredPrefix,"CreditCardNumberType"));
 		}
-		if(ExpYear != null) {
-			sb.append("<ebl:ExpYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExpYear));
-			sb.append("</ebl:ExpYear>");
+		if(expMonth != null) {
+			sb.append("<").append(preferredPrefix).append(":ExpMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(expMonth));
+			sb.append("</").append(preferredPrefix).append(":ExpMonth>");
 		}
-		if(CardOwnerName != null) {
-			sb.append("<ebl:CardOwnerName>");
-			sb.append(CardOwnerName.toXMLString());
-			sb.append("</ebl:CardOwnerName>");
+		if(expYear != null) {
+			sb.append("<").append(preferredPrefix).append(":ExpYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(expYear));
+			sb.append("</").append(preferredPrefix).append(":ExpYear>");
 		}
-		if(BillingAddress != null) {
-			sb.append("<ebl:BillingAddress>");
-			sb.append(BillingAddress.toXMLString());
-			sb.append("</ebl:BillingAddress>");
+		if(cardOwnerName != null) {
+			sb.append(cardOwnerName.toXMLString(preferredPrefix,"CardOwnerName"));
 		}
-		if(CVV2 != null) {
-			sb.append("<ebl:CVV2>").append(SDKUtil.escapeInvalidXmlCharsRegex(CVV2));
-			sb.append("</ebl:CVV2>");
+		if(billingAddress != null) {
+			sb.append(billingAddress.toXMLString(preferredPrefix,"BillingAddress"));
 		}
-		if(StartMonth != null) {
-			sb.append("<ebl:StartMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(StartMonth));
-			sb.append("</ebl:StartMonth>");
+		if(cVV2 != null) {
+			sb.append("<").append(preferredPrefix).append(":CVV2>").append(SDKUtil.escapeInvalidXmlCharsRegex(cVV2));
+			sb.append("</").append(preferredPrefix).append(":CVV2>");
 		}
-		if(StartYear != null) {
-			sb.append("<ebl:StartYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(StartYear));
-			sb.append("</ebl:StartYear>");
+		if(startMonth != null) {
+			sb.append("<").append(preferredPrefix).append(":StartMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(startMonth));
+			sb.append("</").append(preferredPrefix).append(":StartMonth>");
 		}
-		if(IssueNumber != null) {
-			sb.append("<ebl:IssueNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(IssueNumber));
-			sb.append("</ebl:IssueNumber>");
+		if(startYear != null) {
+			sb.append("<").append(preferredPrefix).append(":StartYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(startYear));
+			sb.append("</").append(preferredPrefix).append(":StartYear>");
+		}
+		if(issueNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":IssueNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(issueNumber));
+			sb.append("</").append(preferredPrefix).append(":IssueNumber>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

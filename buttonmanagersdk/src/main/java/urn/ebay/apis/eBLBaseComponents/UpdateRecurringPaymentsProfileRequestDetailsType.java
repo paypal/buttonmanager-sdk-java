@@ -11,101 +11,103 @@ import com.paypal.core.SDKUtil;
  */
 public class UpdateRecurringPaymentsProfileRequestDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String ProfileID;
+	private String profileID;
 
 	/**
 	 * 	 
 	 */ 
-	private String Note;
+	private String note;
 
 	/**
 	 * 	 
 	 */ 
-	private String Description;
+	private String description;
 
 	/**
 	 * 	 
 	 */ 
-	private String SubscriberName;
+	private String subscriberName;
 
 	/**
 	 * 	 
 	 */ 
-	private AddressType SubscriberShippingAddress;
+	private AddressType subscriberShippingAddress;
 
 	/**
 	 * 	 
 	 */ 
-	private String ProfileReference;
+	private String profileReference;
 
 	/**
 	 * 	 
 	 */ 
-	private Integer AdditionalBillingCycles;
+	private Integer additionalBillingCycles;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType ShippingAmount;
+	private BasicAmountType shippingAmount;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType TaxAmount;
+	private BasicAmountType taxAmount;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType OutstandingBalance;
+	private BasicAmountType outstandingBalance;
 
 	/**
 	 * 	 
 	 */ 
-	private AutoBillType AutoBillOutstandingAmount;
+	private AutoBillType autoBillOutstandingAmount;
 
 	/**
 	 * 	 
 	 */ 
-	private Integer MaxFailedPayments;
+	private Integer maxFailedPayments;
 
 	/**
 	 * Information about the credit card to be charged (required if
 	 * Direct Payment) 	 
 	 */ 
-	private CreditCardDetailsType CreditCard;
+	private CreditCardDetailsType creditCard;
 
 	/**
 	 * When does this Profile begin billing? 	 
 	 */ 
-	private String BillingStartDate;
+	private String billingStartDate;
 
 	/**
 	 * Trial period of this schedule 	 
 	 */ 
-	private BillingPeriodDetailsType_Update TrialPeriod;
+	private BillingPeriodDetailsType_Update trialPeriod;
 
 	/**
 	 * 	 
 	 */ 
-	private BillingPeriodDetailsType_Update PaymentPeriod;
+	private BillingPeriodDetailsType_Update paymentPeriod;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public UpdateRecurringPaymentsProfileRequestDetailsType (String ProfileID){
-		this.ProfileID = ProfileID;
+	public UpdateRecurringPaymentsProfileRequestDetailsType (String profileID){
+		this.profileID = profileID;
 	}	
 
 	/**
@@ -115,322 +117,322 @@ public class UpdateRecurringPaymentsProfileRequestDetailsType{
 	}	
 
 	/**
-	 * Getter for ProfileID
+	 * Getter for profileID
 	 */
 	 public String getProfileID() {
-	 	return ProfileID;
+	 	return profileID;
 	 }
 	 
 	/**
-	 * Setter for ProfileID
+	 * Setter for profileID
 	 */
-	 public void setProfileID(String ProfileID) {
-	 	this.ProfileID = ProfileID;
+	 public void setProfileID(String profileID) {
+	 	this.profileID = profileID;
 	 }
 	 
 	/**
-	 * Getter for Note
+	 * Getter for note
 	 */
 	 public String getNote() {
-	 	return Note;
+	 	return note;
 	 }
 	 
 	/**
-	 * Setter for Note
+	 * Setter for note
 	 */
-	 public void setNote(String Note) {
-	 	this.Note = Note;
+	 public void setNote(String note) {
+	 	this.note = note;
 	 }
 	 
 	/**
-	 * Getter for Description
+	 * Getter for description
 	 */
 	 public String getDescription() {
-	 	return Description;
+	 	return description;
 	 }
 	 
 	/**
-	 * Setter for Description
+	 * Setter for description
 	 */
-	 public void setDescription(String Description) {
-	 	this.Description = Description;
+	 public void setDescription(String description) {
+	 	this.description = description;
 	 }
 	 
 	/**
-	 * Getter for SubscriberName
+	 * Getter for subscriberName
 	 */
 	 public String getSubscriberName() {
-	 	return SubscriberName;
+	 	return subscriberName;
 	 }
 	 
 	/**
-	 * Setter for SubscriberName
+	 * Setter for subscriberName
 	 */
-	 public void setSubscriberName(String SubscriberName) {
-	 	this.SubscriberName = SubscriberName;
+	 public void setSubscriberName(String subscriberName) {
+	 	this.subscriberName = subscriberName;
 	 }
 	 
 	/**
-	 * Getter for SubscriberShippingAddress
+	 * Getter for subscriberShippingAddress
 	 */
 	 public AddressType getSubscriberShippingAddress() {
-	 	return SubscriberShippingAddress;
+	 	return subscriberShippingAddress;
 	 }
 	 
 	/**
-	 * Setter for SubscriberShippingAddress
+	 * Setter for subscriberShippingAddress
 	 */
-	 public void setSubscriberShippingAddress(AddressType SubscriberShippingAddress) {
-	 	this.SubscriberShippingAddress = SubscriberShippingAddress;
+	 public void setSubscriberShippingAddress(AddressType subscriberShippingAddress) {
+	 	this.subscriberShippingAddress = subscriberShippingAddress;
 	 }
 	 
 	/**
-	 * Getter for ProfileReference
+	 * Getter for profileReference
 	 */
 	 public String getProfileReference() {
-	 	return ProfileReference;
+	 	return profileReference;
 	 }
 	 
 	/**
-	 * Setter for ProfileReference
+	 * Setter for profileReference
 	 */
-	 public void setProfileReference(String ProfileReference) {
-	 	this.ProfileReference = ProfileReference;
+	 public void setProfileReference(String profileReference) {
+	 	this.profileReference = profileReference;
 	 }
 	 
 	/**
-	 * Getter for AdditionalBillingCycles
+	 * Getter for additionalBillingCycles
 	 */
 	 public Integer getAdditionalBillingCycles() {
-	 	return AdditionalBillingCycles;
+	 	return additionalBillingCycles;
 	 }
 	 
 	/**
-	 * Setter for AdditionalBillingCycles
+	 * Setter for additionalBillingCycles
 	 */
-	 public void setAdditionalBillingCycles(Integer AdditionalBillingCycles) {
-	 	this.AdditionalBillingCycles = AdditionalBillingCycles;
+	 public void setAdditionalBillingCycles(Integer additionalBillingCycles) {
+	 	this.additionalBillingCycles = additionalBillingCycles;
 	 }
 	 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 	/**
-	 * Getter for ShippingAmount
+	 * Getter for shippingAmount
 	 */
 	 public BasicAmountType getShippingAmount() {
-	 	return ShippingAmount;
+	 	return shippingAmount;
 	 }
 	 
 	/**
-	 * Setter for ShippingAmount
+	 * Setter for shippingAmount
 	 */
-	 public void setShippingAmount(BasicAmountType ShippingAmount) {
-	 	this.ShippingAmount = ShippingAmount;
+	 public void setShippingAmount(BasicAmountType shippingAmount) {
+	 	this.shippingAmount = shippingAmount;
 	 }
 	 
 	/**
-	 * Getter for TaxAmount
+	 * Getter for taxAmount
 	 */
 	 public BasicAmountType getTaxAmount() {
-	 	return TaxAmount;
+	 	return taxAmount;
 	 }
 	 
 	/**
-	 * Setter for TaxAmount
+	 * Setter for taxAmount
 	 */
-	 public void setTaxAmount(BasicAmountType TaxAmount) {
-	 	this.TaxAmount = TaxAmount;
+	 public void setTaxAmount(BasicAmountType taxAmount) {
+	 	this.taxAmount = taxAmount;
 	 }
 	 
 	/**
-	 * Getter for OutstandingBalance
+	 * Getter for outstandingBalance
 	 */
 	 public BasicAmountType getOutstandingBalance() {
-	 	return OutstandingBalance;
+	 	return outstandingBalance;
 	 }
 	 
 	/**
-	 * Setter for OutstandingBalance
+	 * Setter for outstandingBalance
 	 */
-	 public void setOutstandingBalance(BasicAmountType OutstandingBalance) {
-	 	this.OutstandingBalance = OutstandingBalance;
+	 public void setOutstandingBalance(BasicAmountType outstandingBalance) {
+	 	this.outstandingBalance = outstandingBalance;
 	 }
 	 
 	/**
-	 * Getter for AutoBillOutstandingAmount
+	 * Getter for autoBillOutstandingAmount
 	 */
 	 public AutoBillType getAutoBillOutstandingAmount() {
-	 	return AutoBillOutstandingAmount;
+	 	return autoBillOutstandingAmount;
 	 }
 	 
 	/**
-	 * Setter for AutoBillOutstandingAmount
+	 * Setter for autoBillOutstandingAmount
 	 */
-	 public void setAutoBillOutstandingAmount(AutoBillType AutoBillOutstandingAmount) {
-	 	this.AutoBillOutstandingAmount = AutoBillOutstandingAmount;
+	 public void setAutoBillOutstandingAmount(AutoBillType autoBillOutstandingAmount) {
+	 	this.autoBillOutstandingAmount = autoBillOutstandingAmount;
 	 }
 	 
 	/**
-	 * Getter for MaxFailedPayments
+	 * Getter for maxFailedPayments
 	 */
 	 public Integer getMaxFailedPayments() {
-	 	return MaxFailedPayments;
+	 	return maxFailedPayments;
 	 }
 	 
 	/**
-	 * Setter for MaxFailedPayments
+	 * Setter for maxFailedPayments
 	 */
-	 public void setMaxFailedPayments(Integer MaxFailedPayments) {
-	 	this.MaxFailedPayments = MaxFailedPayments;
+	 public void setMaxFailedPayments(Integer maxFailedPayments) {
+	 	this.maxFailedPayments = maxFailedPayments;
 	 }
 	 
 	/**
-	 * Getter for CreditCard
+	 * Getter for creditCard
 	 */
 	 public CreditCardDetailsType getCreditCard() {
-	 	return CreditCard;
+	 	return creditCard;
 	 }
 	 
 	/**
-	 * Setter for CreditCard
+	 * Setter for creditCard
 	 */
-	 public void setCreditCard(CreditCardDetailsType CreditCard) {
-	 	this.CreditCard = CreditCard;
+	 public void setCreditCard(CreditCardDetailsType creditCard) {
+	 	this.creditCard = creditCard;
 	 }
 	 
 	/**
-	 * Getter for BillingStartDate
+	 * Getter for billingStartDate
 	 */
 	 public String getBillingStartDate() {
-	 	return BillingStartDate;
+	 	return billingStartDate;
 	 }
 	 
 	/**
-	 * Setter for BillingStartDate
+	 * Setter for billingStartDate
 	 */
-	 public void setBillingStartDate(String BillingStartDate) {
-	 	this.BillingStartDate = BillingStartDate;
+	 public void setBillingStartDate(String billingStartDate) {
+	 	this.billingStartDate = billingStartDate;
 	 }
 	 
 	/**
-	 * Getter for TrialPeriod
+	 * Getter for trialPeriod
 	 */
 	 public BillingPeriodDetailsType_Update getTrialPeriod() {
-	 	return TrialPeriod;
+	 	return trialPeriod;
 	 }
 	 
 	/**
-	 * Setter for TrialPeriod
+	 * Setter for trialPeriod
 	 */
-	 public void setTrialPeriod(BillingPeriodDetailsType_Update TrialPeriod) {
-	 	this.TrialPeriod = TrialPeriod;
+	 public void setTrialPeriod(BillingPeriodDetailsType_Update trialPeriod) {
+	 	this.trialPeriod = trialPeriod;
 	 }
 	 
 	/**
-	 * Getter for PaymentPeriod
+	 * Getter for paymentPeriod
 	 */
 	 public BillingPeriodDetailsType_Update getPaymentPeriod() {
-	 	return PaymentPeriod;
+	 	return paymentPeriod;
 	 }
 	 
 	/**
-	 * Setter for PaymentPeriod
+	 * Setter for paymentPeriod
 	 */
-	 public void setPaymentPeriod(BillingPeriodDetailsType_Update PaymentPeriod) {
-	 	this.PaymentPeriod = PaymentPeriod;
+	 public void setPaymentPeriod(BillingPeriodDetailsType_Update paymentPeriod) {
+	 	this.paymentPeriod = paymentPeriod;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(ProfileID != null) {
-			sb.append("<ebl:ProfileID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProfileID));
-			sb.append("</ebl:ProfileID>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(Note != null) {
-			sb.append("<ebl:Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(Note));
-			sb.append("</ebl:Note>");
+		if(profileID != null) {
+			sb.append("<").append(preferredPrefix).append(":ProfileID>").append(SDKUtil.escapeInvalidXmlCharsRegex(profileID));
+			sb.append("</").append(preferredPrefix).append(":ProfileID>");
 		}
-		if(Description != null) {
-			sb.append("<ebl:Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(Description));
-			sb.append("</ebl:Description>");
+		if(note != null) {
+			sb.append("<").append(preferredPrefix).append(":Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(note));
+			sb.append("</").append(preferredPrefix).append(":Note>");
 		}
-		if(SubscriberName != null) {
-			sb.append("<ebl:SubscriberName>").append(SDKUtil.escapeInvalidXmlCharsRegex(SubscriberName));
-			sb.append("</ebl:SubscriberName>");
+		if(description != null) {
+			sb.append("<").append(preferredPrefix).append(":Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(description));
+			sb.append("</").append(preferredPrefix).append(":Description>");
 		}
-		if(SubscriberShippingAddress != null) {
-			sb.append("<ebl:SubscriberShippingAddress>");
-			sb.append(SubscriberShippingAddress.toXMLString());
-			sb.append("</ebl:SubscriberShippingAddress>");
+		if(subscriberName != null) {
+			sb.append("<").append(preferredPrefix).append(":SubscriberName>").append(SDKUtil.escapeInvalidXmlCharsRegex(subscriberName));
+			sb.append("</").append(preferredPrefix).append(":SubscriberName>");
 		}
-		if(ProfileReference != null) {
-			sb.append("<ebl:ProfileReference>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProfileReference));
-			sb.append("</ebl:ProfileReference>");
+		if(subscriberShippingAddress != null) {
+			sb.append(subscriberShippingAddress.toXMLString(preferredPrefix,"SubscriberShippingAddress"));
 		}
-		if(AdditionalBillingCycles != null) {
-			sb.append("<ebl:AdditionalBillingCycles>").append(SDKUtil.escapeInvalidXmlCharsRegex(AdditionalBillingCycles));
-			sb.append("</ebl:AdditionalBillingCycles>");
+		if(profileReference != null) {
+			sb.append("<").append(preferredPrefix).append(":ProfileReference>").append(SDKUtil.escapeInvalidXmlCharsRegex(profileReference));
+			sb.append("</").append(preferredPrefix).append(":ProfileReference>");
 		}
-		if(Amount != null) {
-			sb.append("<ebl:Amount");
-			sb.append(Amount.toXMLString());
-			sb.append("</ebl:Amount>");
+		if(additionalBillingCycles != null) {
+			sb.append("<").append(preferredPrefix).append(":AdditionalBillingCycles>").append(SDKUtil.escapeInvalidXmlCharsRegex(additionalBillingCycles));
+			sb.append("</").append(preferredPrefix).append(":AdditionalBillingCycles>");
 		}
-		if(ShippingAmount != null) {
-			sb.append("<ebl:ShippingAmount");
-			sb.append(ShippingAmount.toXMLString());
-			sb.append("</ebl:ShippingAmount>");
+		if(amount != null) {
+			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
 		}
-		if(TaxAmount != null) {
-			sb.append("<ebl:TaxAmount");
-			sb.append(TaxAmount.toXMLString());
-			sb.append("</ebl:TaxAmount>");
+		if(shippingAmount != null) {
+			sb.append(shippingAmount.toXMLString(preferredPrefix,"ShippingAmount"));
 		}
-		if(OutstandingBalance != null) {
-			sb.append("<ebl:OutstandingBalance");
-			sb.append(OutstandingBalance.toXMLString());
-			sb.append("</ebl:OutstandingBalance>");
+		if(taxAmount != null) {
+			sb.append(taxAmount.toXMLString(preferredPrefix,"TaxAmount"));
 		}
-		if(AutoBillOutstandingAmount != null) {
-			sb.append("<ebl:AutoBillOutstandingAmount>").append(SDKUtil.escapeInvalidXmlCharsRegex(AutoBillOutstandingAmount.getValue()));
-			sb.append("</ebl:AutoBillOutstandingAmount>");
+		if(outstandingBalance != null) {
+			sb.append(outstandingBalance.toXMLString(preferredPrefix,"OutstandingBalance"));
 		}
-		if(MaxFailedPayments != null) {
-			sb.append("<ebl:MaxFailedPayments>").append(SDKUtil.escapeInvalidXmlCharsRegex(MaxFailedPayments));
-			sb.append("</ebl:MaxFailedPayments>");
+		if(autoBillOutstandingAmount != null) {
+			sb.append("<").append(preferredPrefix).append(":AutoBillOutstandingAmount>").append(SDKUtil.escapeInvalidXmlCharsRegex(autoBillOutstandingAmount.getValue()));
+			sb.append("</").append(preferredPrefix).append(":AutoBillOutstandingAmount>");
 		}
-		if(CreditCard != null) {
-			sb.append("<ebl:CreditCard>");
-			sb.append(CreditCard.toXMLString());
-			sb.append("</ebl:CreditCard>");
+		if(maxFailedPayments != null) {
+			sb.append("<").append(preferredPrefix).append(":MaxFailedPayments>").append(SDKUtil.escapeInvalidXmlCharsRegex(maxFailedPayments));
+			sb.append("</").append(preferredPrefix).append(":MaxFailedPayments>");
 		}
-		if(BillingStartDate != null) {
-			sb.append("<ebl:BillingStartDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingStartDate));
-			sb.append("</ebl:BillingStartDate>");
+		if(creditCard != null) {
+			sb.append(creditCard.toXMLString(preferredPrefix,"CreditCard"));
 		}
-		if(TrialPeriod != null) {
-			sb.append("<ebl:TrialPeriod>");
-			sb.append(TrialPeriod.toXMLString());
-			sb.append("</ebl:TrialPeriod>");
+		if(billingStartDate != null) {
+			sb.append("<").append(preferredPrefix).append(":BillingStartDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingStartDate));
+			sb.append("</").append(preferredPrefix).append(":BillingStartDate>");
 		}
-		if(PaymentPeriod != null) {
-			sb.append("<ebl:PaymentPeriod>");
-			sb.append(PaymentPeriod.toXMLString());
-			sb.append("</ebl:PaymentPeriod>");
+		if(trialPeriod != null) {
+			sb.append(trialPeriod.toXMLString(preferredPrefix,"TrialPeriod"));
+		}
+		if(paymentPeriod != null) {
+			sb.append(paymentPeriod.toXMLString(preferredPrefix,"PaymentPeriod"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

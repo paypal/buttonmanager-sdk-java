@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class ExecuteCheckoutOperationsReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private ExecuteCheckoutOperationsRequestType ExecuteCheckoutOperationsRequest;
+	private ExecuteCheckoutOperationsRequestType executeCheckoutOperationsRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class ExecuteCheckoutOperationsReq{
 	}	
 
 	/**
-	 * Getter for ExecuteCheckoutOperationsRequest
+	 * Getter for executeCheckoutOperationsRequest
 	 */
 	 public ExecuteCheckoutOperationsRequestType getExecuteCheckoutOperationsRequest() {
-	 	return ExecuteCheckoutOperationsRequest;
+	 	return executeCheckoutOperationsRequest;
 	 }
 	 
 	/**
-	 * Setter for ExecuteCheckoutOperationsRequest
+	 * Setter for executeCheckoutOperationsRequest
 	 */
-	 public void setExecuteCheckoutOperationsRequest(ExecuteCheckoutOperationsRequestType ExecuteCheckoutOperationsRequest) {
-	 	this.ExecuteCheckoutOperationsRequest = ExecuteCheckoutOperationsRequest;
+	 public void setExecuteCheckoutOperationsRequest(ExecuteCheckoutOperationsRequestType executeCheckoutOperationsRequest) {
+	 	this.executeCheckoutOperationsRequest = executeCheckoutOperationsRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:ExecuteCheckoutOperationsReq>");
-		if(ExecuteCheckoutOperationsRequest != null) {
-			sb.append("<urn:ExecuteCheckoutOperationsRequest>");
-			sb.append(ExecuteCheckoutOperationsRequest.toXMLString());
-			sb.append("</urn:ExecuteCheckoutOperationsRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:ExecuteCheckoutOperationsReq>");
+		if(executeCheckoutOperationsRequest != null) {
+			sb.append(executeCheckoutOperationsRequest.toXMLString(null,"ExecuteCheckoutOperationsRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

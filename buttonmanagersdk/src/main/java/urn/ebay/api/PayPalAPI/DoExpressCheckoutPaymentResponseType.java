@@ -29,12 +29,12 @@ public class DoExpressCheckoutPaymentResponseType extends AbstractResponseType {
 	 * 	  
 	 *@Required	 
 	 */ 
-	private DoExpressCheckoutPaymentResponseDetailsType DoExpressCheckoutPaymentResponseDetails;
+	private DoExpressCheckoutPaymentResponseDetailsType doExpressCheckoutPaymentResponseDetails;
 
 	/**
 	 * 	 
 	 */ 
-	private FMFDetailsType FMFDetails;
+	private FMFDetailsType fMFDetails;
 
 	
 
@@ -45,31 +45,31 @@ public class DoExpressCheckoutPaymentResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for DoExpressCheckoutPaymentResponseDetails
+	 * Getter for doExpressCheckoutPaymentResponseDetails
 	 */
 	 public DoExpressCheckoutPaymentResponseDetailsType getDoExpressCheckoutPaymentResponseDetails() {
-	 	return DoExpressCheckoutPaymentResponseDetails;
+	 	return doExpressCheckoutPaymentResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for DoExpressCheckoutPaymentResponseDetails
+	 * Setter for doExpressCheckoutPaymentResponseDetails
 	 */
-	 public void setDoExpressCheckoutPaymentResponseDetails(DoExpressCheckoutPaymentResponseDetailsType DoExpressCheckoutPaymentResponseDetails) {
-	 	this.DoExpressCheckoutPaymentResponseDetails = DoExpressCheckoutPaymentResponseDetails;
+	 public void setDoExpressCheckoutPaymentResponseDetails(DoExpressCheckoutPaymentResponseDetailsType doExpressCheckoutPaymentResponseDetails) {
+	 	this.doExpressCheckoutPaymentResponseDetails = doExpressCheckoutPaymentResponseDetails;
 	 }
 	 
 	/**
-	 * Getter for FMFDetails
+	 * Getter for fMFDetails
 	 */
 	 public FMFDetailsType getFMFDetails() {
-	 	return FMFDetails;
+	 	return fMFDetails;
 	 }
 	 
 	/**
-	 * Setter for FMFDetails
+	 * Setter for fMFDetails
 	 */
-	 public void setFMFDetails(FMFDetailsType FMFDetails) {
-	 	this.FMFDetails = FMFDetails;
+	 public void setFMFDetails(FMFDetailsType fMFDetails) {
+	 	this.fMFDetails = fMFDetails;
 	 }
 	 
 
@@ -94,11 +94,11 @@ public class DoExpressCheckoutPaymentResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("DoExpressCheckoutPaymentResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.DoExpressCheckoutPaymentResponseDetails =  new DoExpressCheckoutPaymentResponseDetailsType(childNode);
+		    this.doExpressCheckoutPaymentResponseDetails =  new DoExpressCheckoutPaymentResponseDetailsType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("FMFDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.FMFDetails =  new FMFDetailsType(childNode);
+		    this.fMFDetails =  new FMFDetailsType(childNode);
 		}
 	}
  

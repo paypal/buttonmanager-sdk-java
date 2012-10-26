@@ -34,7 +34,7 @@ public class DoDirectPaymentResponseType extends AbstractResponseType {
 	 * DoDirectPaymentRequest.	  
 	 *@Required	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	/**
 	 * Address Verification System response code. Character limit:
@@ -54,7 +54,7 @@ public class DoDirectPaymentResponseType extends AbstractResponseType {
 	 * others Error Not applicable	  
 	 *@Required	 
 	 */ 
-	private String AVSCode;
+	private String aVSCode;
 
 	/**
 	 * Result of the CVV2 check by PayPal. CVV2 CodeMeaningMatched
@@ -64,40 +64,40 @@ public class DoDirectPaymentResponseType extends AbstractResponseType {
 	 * others ErrorNot applicable 	  
 	 *@Required	 
 	 */ 
-	private String CVV2Code;
+	private String cVV2Code;
 
 	/**
 	 * Transaction identification number. Character length and
 	 * limitations: 19 characters maximum.	  
 	 *@Required	 
 	 */ 
-	private String TransactionID;
+	private String transactionID;
 
 	/**
 	 * The reason why a particular transaction went in pending. 	 
 	 */ 
-	private PendingStatusCodeType PendingReason;
+	private PendingStatusCodeType pendingReason;
 
 	/**
 	 * This will identify the actual transaction status. 	 
 	 */ 
-	private PaymentStatusCodeType PaymentStatus;
+	private PaymentStatusCodeType paymentStatus;
 
 	/**
 	 * 	 
 	 */ 
-	private FMFDetailsType FMFDetails;
+	private FMFDetailsType fMFDetails;
 
 	/**
 	 * 	 
 	 */ 
-	private ThreeDSecureResponseType ThreeDSecureResponse;
+	private ThreeDSecureResponseType threeDSecureResponse;
 
 	/**
 	 * Response code from the processor when a recurring
 	 * transaction is declined.  	 
 	 */ 
-	private String PaymentAdviceCode;
+	private String paymentAdviceCode;
 
 	
 
@@ -108,129 +108,129 @@ public class DoDirectPaymentResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 	/**
-	 * Getter for AVSCode
+	 * Getter for aVSCode
 	 */
 	 public String getAVSCode() {
-	 	return AVSCode;
+	 	return aVSCode;
 	 }
 	 
 	/**
-	 * Setter for AVSCode
+	 * Setter for aVSCode
 	 */
-	 public void setAVSCode(String AVSCode) {
-	 	this.AVSCode = AVSCode;
+	 public void setAVSCode(String aVSCode) {
+	 	this.aVSCode = aVSCode;
 	 }
 	 
 	/**
-	 * Getter for CVV2Code
+	 * Getter for cVV2Code
 	 */
 	 public String getCVV2Code() {
-	 	return CVV2Code;
+	 	return cVV2Code;
 	 }
 	 
 	/**
-	 * Setter for CVV2Code
+	 * Setter for cVV2Code
 	 */
-	 public void setCVV2Code(String CVV2Code) {
-	 	this.CVV2Code = CVV2Code;
+	 public void setCVV2Code(String cVV2Code) {
+	 	this.cVV2Code = cVV2Code;
 	 }
 	 
 	/**
-	 * Getter for TransactionID
+	 * Getter for transactionID
 	 */
 	 public String getTransactionID() {
-	 	return TransactionID;
+	 	return transactionID;
 	 }
 	 
 	/**
-	 * Setter for TransactionID
+	 * Setter for transactionID
 	 */
-	 public void setTransactionID(String TransactionID) {
-	 	this.TransactionID = TransactionID;
+	 public void setTransactionID(String transactionID) {
+	 	this.transactionID = transactionID;
 	 }
 	 
 	/**
-	 * Getter for PendingReason
+	 * Getter for pendingReason
 	 */
 	 public PendingStatusCodeType getPendingReason() {
-	 	return PendingReason;
+	 	return pendingReason;
 	 }
 	 
 	/**
-	 * Setter for PendingReason
+	 * Setter for pendingReason
 	 */
-	 public void setPendingReason(PendingStatusCodeType PendingReason) {
-	 	this.PendingReason = PendingReason;
+	 public void setPendingReason(PendingStatusCodeType pendingReason) {
+	 	this.pendingReason = pendingReason;
 	 }
 	 
 	/**
-	 * Getter for PaymentStatus
+	 * Getter for paymentStatus
 	 */
 	 public PaymentStatusCodeType getPaymentStatus() {
-	 	return PaymentStatus;
+	 	return paymentStatus;
 	 }
 	 
 	/**
-	 * Setter for PaymentStatus
+	 * Setter for paymentStatus
 	 */
-	 public void setPaymentStatus(PaymentStatusCodeType PaymentStatus) {
-	 	this.PaymentStatus = PaymentStatus;
+	 public void setPaymentStatus(PaymentStatusCodeType paymentStatus) {
+	 	this.paymentStatus = paymentStatus;
 	 }
 	 
 	/**
-	 * Getter for FMFDetails
+	 * Getter for fMFDetails
 	 */
 	 public FMFDetailsType getFMFDetails() {
-	 	return FMFDetails;
+	 	return fMFDetails;
 	 }
 	 
 	/**
-	 * Setter for FMFDetails
+	 * Setter for fMFDetails
 	 */
-	 public void setFMFDetails(FMFDetailsType FMFDetails) {
-	 	this.FMFDetails = FMFDetails;
+	 public void setFMFDetails(FMFDetailsType fMFDetails) {
+	 	this.fMFDetails = fMFDetails;
 	 }
 	 
 	/**
-	 * Getter for ThreeDSecureResponse
+	 * Getter for threeDSecureResponse
 	 */
 	 public ThreeDSecureResponseType getThreeDSecureResponse() {
-	 	return ThreeDSecureResponse;
+	 	return threeDSecureResponse;
 	 }
 	 
 	/**
-	 * Setter for ThreeDSecureResponse
+	 * Setter for threeDSecureResponse
 	 */
-	 public void setThreeDSecureResponse(ThreeDSecureResponseType ThreeDSecureResponse) {
-	 	this.ThreeDSecureResponse = ThreeDSecureResponse;
+	 public void setThreeDSecureResponse(ThreeDSecureResponseType threeDSecureResponse) {
+	 	this.threeDSecureResponse = threeDSecureResponse;
 	 }
 	 
 	/**
-	 * Getter for PaymentAdviceCode
+	 * Getter for paymentAdviceCode
 	 */
 	 public String getPaymentAdviceCode() {
-	 	return PaymentAdviceCode;
+	 	return paymentAdviceCode;
 	 }
 	 
 	/**
-	 * Setter for PaymentAdviceCode
+	 * Setter for paymentAdviceCode
 	 */
-	 public void setPaymentAdviceCode(String PaymentAdviceCode) {
-	 	this.PaymentAdviceCode = PaymentAdviceCode;
+	 public void setPaymentAdviceCode(String paymentAdviceCode) {
+	 	this.paymentAdviceCode = paymentAdviceCode;
 	 }
 	 
 
@@ -255,42 +255,42 @@ public class DoDirectPaymentResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Amount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Amount =  new BasicAmountType(childNode);
+		    this.amount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("AVSCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AVSCode = childNode.getTextContent();
+		    this.aVSCode = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("CVV2Code", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CVV2Code = childNode.getTextContent();
+		    this.cVV2Code = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("TransactionID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TransactionID = childNode.getTextContent();
+		    this.transactionID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PendingReason", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PendingReason = PendingStatusCodeType.fromValue(childNode.getTextContent());
+		    this.pendingReason = PendingStatusCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("PaymentStatus", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentStatus = PaymentStatusCodeType.fromValue(childNode.getTextContent());
+		    this.paymentStatus = PaymentStatusCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("FMFDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.FMFDetails =  new FMFDetailsType(childNode);
+		    this.fMFDetails =  new FMFDetailsType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("ThreeDSecureResponse", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ThreeDSecureResponse =  new ThreeDSecureResponseType(childNode);
+		    this.threeDSecureResponse =  new ThreeDSecureResponseType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("PaymentAdviceCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentAdviceCode = childNode.getTextContent();
+		    this.paymentAdviceCode = childNode.getTextContent();
 		}
 	
 	}

@@ -28,31 +28,33 @@ import org.xml.sax.SAXException;
  */
 public class PaymentDetailsItemType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Item name. Optional Character length and limitations: 127
 	 * single-byte characters	 
 	 */ 
-	private String Name;
+	private String name;
 
 	/**
 	 * Item number. Optional Character length and limitations: 127
 	 * single-byte characters	 
 	 */ 
-	private String Number;
+	private String number;
 
 	/**
 	 * Item quantity. Optional Character length and limitations:
 	 * Any positive integer	 
 	 */ 
-	private Integer Quantity;
+	private Integer quantity;
 
 	/**
 	 * Item sales tax. Optional Character length and limitations:
 	 * any valid currency amount; currency code is set the same as
 	 * for OrderTotal.	 
 	 */ 
-	private BasicAmountType Tax;
+	private BasicAmountType tax;
 
 	/**
 	 * Cost of item You must set the currencyID attribute to one of
@@ -62,65 +64,65 @@ public class PaymentDetailsItemType{
 	 * separator must be a period (.), and the thousands separator
 	 * must be a comma (,).	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	/**
 	 * Ebay specific details. Optional 	 
 	 */ 
-	private EbayItemPaymentDetailsItemType EbayItemPaymentDetailsItem;
+	private EbayItemPaymentDetailsItemType ebayItemPaymentDetailsItem;
 
 	/**
 	 * Promotional financing code for item. Part of the Merchant
 	 * Services Promotion Financing feature. 	 
 	 */ 
-	private String PromoCode;
+	private String promoCode;
 
 	/**
 	 * 	 
 	 */ 
-	private ProductCategoryType ProductCategory;
+	private ProductCategoryType productCategory;
 
 	/**
 	 * Item description. Optional Character length and limitations:
 	 * 127 single-byte characters 	 
 	 */ 
-	private String Description;
+	private String description;
 
 	/**
 	 * Information about the Item weight. 	 
 	 */ 
-	private MeasureType ItemWeight;
+	private MeasureType itemWeight;
 
 	/**
 	 * Information about the Item length. 	 
 	 */ 
-	private MeasureType ItemLength;
+	private MeasureType itemLength;
 
 	/**
 	 * Information about the Item width. 	 
 	 */ 
-	private MeasureType ItemWidth;
+	private MeasureType itemWidth;
 
 	/**
 	 * Information about the Item height. 	 
 	 */ 
-	private MeasureType ItemHeight;
+	private MeasureType itemHeight;
 
 	/**
 	 * URL for the item. Optional Character length and limitations:
 	 * no limit. 	 
 	 */ 
-	private String ItemURL;
+	private String itemURL;
 
 	/**
 	 * Enhanced data for each item in the cart. Optional 	 
 	 */ 
-	private EnhancedItemDataType EnhancedItemData;
+	private EnhancedItemDataType enhancedItemData;
 
 	/**
 	 * Item category - physical or digital. Optional 	 
 	 */ 
-	private ItemCategoryType ItemCategory;
+	private ItemCategoryType itemCategory;
 
 	
 
@@ -131,304 +133,304 @@ public class PaymentDetailsItemType{
 	}	
 
 	/**
-	 * Getter for Name
+	 * Getter for name
 	 */
 	 public String getName() {
-	 	return Name;
+	 	return name;
 	 }
 	 
 	/**
-	 * Setter for Name
+	 * Setter for name
 	 */
-	 public void setName(String Name) {
-	 	this.Name = Name;
+	 public void setName(String name) {
+	 	this.name = name;
 	 }
 	 
 	/**
-	 * Getter for Number
+	 * Getter for number
 	 */
 	 public String getNumber() {
-	 	return Number;
+	 	return number;
 	 }
 	 
 	/**
-	 * Setter for Number
+	 * Setter for number
 	 */
-	 public void setNumber(String Number) {
-	 	this.Number = Number;
+	 public void setNumber(String number) {
+	 	this.number = number;
 	 }
 	 
 	/**
-	 * Getter for Quantity
+	 * Getter for quantity
 	 */
 	 public Integer getQuantity() {
-	 	return Quantity;
+	 	return quantity;
 	 }
 	 
 	/**
-	 * Setter for Quantity
+	 * Setter for quantity
 	 */
-	 public void setQuantity(Integer Quantity) {
-	 	this.Quantity = Quantity;
+	 public void setQuantity(Integer quantity) {
+	 	this.quantity = quantity;
 	 }
 	 
 	/**
-	 * Getter for Tax
+	 * Getter for tax
 	 */
 	 public BasicAmountType getTax() {
-	 	return Tax;
+	 	return tax;
 	 }
 	 
 	/**
-	 * Setter for Tax
+	 * Setter for tax
 	 */
-	 public void setTax(BasicAmountType Tax) {
-	 	this.Tax = Tax;
+	 public void setTax(BasicAmountType tax) {
+	 	this.tax = tax;
 	 }
 	 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 	/**
-	 * Getter for EbayItemPaymentDetailsItem
+	 * Getter for ebayItemPaymentDetailsItem
 	 */
 	 public EbayItemPaymentDetailsItemType getEbayItemPaymentDetailsItem() {
-	 	return EbayItemPaymentDetailsItem;
+	 	return ebayItemPaymentDetailsItem;
 	 }
 	 
 	/**
-	 * Setter for EbayItemPaymentDetailsItem
+	 * Setter for ebayItemPaymentDetailsItem
 	 */
-	 public void setEbayItemPaymentDetailsItem(EbayItemPaymentDetailsItemType EbayItemPaymentDetailsItem) {
-	 	this.EbayItemPaymentDetailsItem = EbayItemPaymentDetailsItem;
+	 public void setEbayItemPaymentDetailsItem(EbayItemPaymentDetailsItemType ebayItemPaymentDetailsItem) {
+	 	this.ebayItemPaymentDetailsItem = ebayItemPaymentDetailsItem;
 	 }
 	 
 	/**
-	 * Getter for PromoCode
+	 * Getter for promoCode
 	 */
 	 public String getPromoCode() {
-	 	return PromoCode;
+	 	return promoCode;
 	 }
 	 
 	/**
-	 * Setter for PromoCode
+	 * Setter for promoCode
 	 */
-	 public void setPromoCode(String PromoCode) {
-	 	this.PromoCode = PromoCode;
+	 public void setPromoCode(String promoCode) {
+	 	this.promoCode = promoCode;
 	 }
 	 
 	/**
-	 * Getter for ProductCategory
+	 * Getter for productCategory
 	 */
 	 public ProductCategoryType getProductCategory() {
-	 	return ProductCategory;
+	 	return productCategory;
 	 }
 	 
 	/**
-	 * Setter for ProductCategory
+	 * Setter for productCategory
 	 */
-	 public void setProductCategory(ProductCategoryType ProductCategory) {
-	 	this.ProductCategory = ProductCategory;
+	 public void setProductCategory(ProductCategoryType productCategory) {
+	 	this.productCategory = productCategory;
 	 }
 	 
 	/**
-	 * Getter for Description
+	 * Getter for description
 	 */
 	 public String getDescription() {
-	 	return Description;
+	 	return description;
 	 }
 	 
 	/**
-	 * Setter for Description
+	 * Setter for description
 	 */
-	 public void setDescription(String Description) {
-	 	this.Description = Description;
+	 public void setDescription(String description) {
+	 	this.description = description;
 	 }
 	 
 	/**
-	 * Getter for ItemWeight
+	 * Getter for itemWeight
 	 */
 	 public MeasureType getItemWeight() {
-	 	return ItemWeight;
+	 	return itemWeight;
 	 }
 	 
 	/**
-	 * Setter for ItemWeight
+	 * Setter for itemWeight
 	 */
-	 public void setItemWeight(MeasureType ItemWeight) {
-	 	this.ItemWeight = ItemWeight;
+	 public void setItemWeight(MeasureType itemWeight) {
+	 	this.itemWeight = itemWeight;
 	 }
 	 
 	/**
-	 * Getter for ItemLength
+	 * Getter for itemLength
 	 */
 	 public MeasureType getItemLength() {
-	 	return ItemLength;
+	 	return itemLength;
 	 }
 	 
 	/**
-	 * Setter for ItemLength
+	 * Setter for itemLength
 	 */
-	 public void setItemLength(MeasureType ItemLength) {
-	 	this.ItemLength = ItemLength;
+	 public void setItemLength(MeasureType itemLength) {
+	 	this.itemLength = itemLength;
 	 }
 	 
 	/**
-	 * Getter for ItemWidth
+	 * Getter for itemWidth
 	 */
 	 public MeasureType getItemWidth() {
-	 	return ItemWidth;
+	 	return itemWidth;
 	 }
 	 
 	/**
-	 * Setter for ItemWidth
+	 * Setter for itemWidth
 	 */
-	 public void setItemWidth(MeasureType ItemWidth) {
-	 	this.ItemWidth = ItemWidth;
+	 public void setItemWidth(MeasureType itemWidth) {
+	 	this.itemWidth = itemWidth;
 	 }
 	 
 	/**
-	 * Getter for ItemHeight
+	 * Getter for itemHeight
 	 */
 	 public MeasureType getItemHeight() {
-	 	return ItemHeight;
+	 	return itemHeight;
 	 }
 	 
 	/**
-	 * Setter for ItemHeight
+	 * Setter for itemHeight
 	 */
-	 public void setItemHeight(MeasureType ItemHeight) {
-	 	this.ItemHeight = ItemHeight;
+	 public void setItemHeight(MeasureType itemHeight) {
+	 	this.itemHeight = itemHeight;
 	 }
 	 
 	/**
-	 * Getter for ItemURL
+	 * Getter for itemURL
 	 */
 	 public String getItemURL() {
-	 	return ItemURL;
+	 	return itemURL;
 	 }
 	 
 	/**
-	 * Setter for ItemURL
+	 * Setter for itemURL
 	 */
-	 public void setItemURL(String ItemURL) {
-	 	this.ItemURL = ItemURL;
+	 public void setItemURL(String itemURL) {
+	 	this.itemURL = itemURL;
 	 }
 	 
 	/**
-	 * Getter for EnhancedItemData
+	 * Getter for enhancedItemData
 	 */
 	 public EnhancedItemDataType getEnhancedItemData() {
-	 	return EnhancedItemData;
+	 	return enhancedItemData;
 	 }
 	 
 	/**
-	 * Setter for EnhancedItemData
+	 * Setter for enhancedItemData
 	 */
-	 public void setEnhancedItemData(EnhancedItemDataType EnhancedItemData) {
-	 	this.EnhancedItemData = EnhancedItemData;
+	 public void setEnhancedItemData(EnhancedItemDataType enhancedItemData) {
+	 	this.enhancedItemData = enhancedItemData;
 	 }
 	 
 	/**
-	 * Getter for ItemCategory
+	 * Getter for itemCategory
 	 */
 	 public ItemCategoryType getItemCategory() {
-	 	return ItemCategory;
+	 	return itemCategory;
 	 }
 	 
 	/**
-	 * Setter for ItemCategory
+	 * Setter for itemCategory
 	 */
-	 public void setItemCategory(ItemCategoryType ItemCategory) {
-	 	this.ItemCategory = ItemCategory;
+	 public void setItemCategory(ItemCategoryType itemCategory) {
+	 	this.itemCategory = itemCategory;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(Name != null) {
-			sb.append("<ebl:Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(Name));
-			sb.append("</ebl:Name>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(Number != null) {
-			sb.append("<ebl:Number>").append(SDKUtil.escapeInvalidXmlCharsRegex(Number));
-			sb.append("</ebl:Number>");
+		if(name != null) {
+			sb.append("<").append(preferredPrefix).append(":Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(name));
+			sb.append("</").append(preferredPrefix).append(":Name>");
 		}
-		if(Quantity != null) {
-			sb.append("<ebl:Quantity>").append(SDKUtil.escapeInvalidXmlCharsRegex(Quantity));
-			sb.append("</ebl:Quantity>");
+		if(number != null) {
+			sb.append("<").append(preferredPrefix).append(":Number>").append(SDKUtil.escapeInvalidXmlCharsRegex(number));
+			sb.append("</").append(preferredPrefix).append(":Number>");
 		}
-		if(Tax != null) {
-			sb.append("<ebl:Tax");
-			sb.append(Tax.toXMLString());
-			sb.append("</ebl:Tax>");
+		if(quantity != null) {
+			sb.append("<").append(preferredPrefix).append(":Quantity>").append(SDKUtil.escapeInvalidXmlCharsRegex(quantity));
+			sb.append("</").append(preferredPrefix).append(":Quantity>");
 		}
-		if(Amount != null) {
-			sb.append("<ebl:Amount");
-			sb.append(Amount.toXMLString());
-			sb.append("</ebl:Amount>");
+		if(tax != null) {
+			sb.append(tax.toXMLString(preferredPrefix,"Tax"));
 		}
-		if(EbayItemPaymentDetailsItem != null) {
-			sb.append("<ebl:EbayItemPaymentDetailsItem>");
-			sb.append(EbayItemPaymentDetailsItem.toXMLString());
-			sb.append("</ebl:EbayItemPaymentDetailsItem>");
+		if(amount != null) {
+			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
 		}
-		if(PromoCode != null) {
-			sb.append("<ebl:PromoCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(PromoCode));
-			sb.append("</ebl:PromoCode>");
+		if(ebayItemPaymentDetailsItem != null) {
+			sb.append(ebayItemPaymentDetailsItem.toXMLString(preferredPrefix,"EbayItemPaymentDetailsItem"));
 		}
-		if(ProductCategory != null) {
-			sb.append("<ebl:ProductCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProductCategory.getValue()));
-			sb.append("</ebl:ProductCategory>");
+		if(promoCode != null) {
+			sb.append("<").append(preferredPrefix).append(":PromoCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(promoCode));
+			sb.append("</").append(preferredPrefix).append(":PromoCode>");
 		}
-		if(Description != null) {
-			sb.append("<ebl:Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(Description));
-			sb.append("</ebl:Description>");
+		if(productCategory != null) {
+			sb.append("<").append(preferredPrefix).append(":ProductCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(productCategory.getValue()));
+			sb.append("</").append(preferredPrefix).append(":ProductCategory>");
 		}
-		if(ItemWeight != null) {
-			sb.append("<ebl:ItemWeight");
-			sb.append(ItemWeight.toXMLString());
-			sb.append("</ebl:ItemWeight>");
+		if(description != null) {
+			sb.append("<").append(preferredPrefix).append(":Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(description));
+			sb.append("</").append(preferredPrefix).append(":Description>");
 		}
-		if(ItemLength != null) {
-			sb.append("<ebl:ItemLength");
-			sb.append(ItemLength.toXMLString());
-			sb.append("</ebl:ItemLength>");
+		if(itemWeight != null) {
+			sb.append(itemWeight.toXMLString(preferredPrefix,"ItemWeight"));
 		}
-		if(ItemWidth != null) {
-			sb.append("<ebl:ItemWidth");
-			sb.append(ItemWidth.toXMLString());
-			sb.append("</ebl:ItemWidth>");
+		if(itemLength != null) {
+			sb.append(itemLength.toXMLString(preferredPrefix,"ItemLength"));
 		}
-		if(ItemHeight != null) {
-			sb.append("<ebl:ItemHeight");
-			sb.append(ItemHeight.toXMLString());
-			sb.append("</ebl:ItemHeight>");
+		if(itemWidth != null) {
+			sb.append(itemWidth.toXMLString(preferredPrefix,"ItemWidth"));
 		}
-		if(ItemURL != null) {
-			sb.append("<ebl:ItemURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemURL));
-			sb.append("</ebl:ItemURL>");
+		if(itemHeight != null) {
+			sb.append(itemHeight.toXMLString(preferredPrefix,"ItemHeight"));
 		}
-		if(EnhancedItemData != null) {
-			sb.append("<ebl:EnhancedItemData>");
-			sb.append(EnhancedItemData.toXMLString());
-			sb.append("</ebl:EnhancedItemData>");
+		if(itemURL != null) {
+			sb.append("<").append(preferredPrefix).append(":ItemURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemURL));
+			sb.append("</").append(preferredPrefix).append(":ItemURL>");
 		}
-		if(ItemCategory != null) {
-			sb.append("<ebl:ItemCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemCategory.getValue()));
-			sb.append("</ebl:ItemCategory>");
+		if(enhancedItemData != null) {
+			sb.append(enhancedItemData.toXMLString(preferredPrefix,"EnhancedItemData"));
+		}
+		if(itemCategory != null) {
+			sb.append("<").append(preferredPrefix).append(":ItemCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemCategory.getValue()));
+			sb.append("</").append(preferredPrefix).append(":ItemCategory>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -452,73 +454,73 @@ public class PaymentDetailsItemType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Name", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Name = childNode.getTextContent();
+		    this.name = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Number", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Number = childNode.getTextContent();
+		    this.number = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Quantity", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.Quantity = Integer.valueOf(childNode.getTextContent());
+			this.quantity = Integer.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("Tax", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Tax =  new BasicAmountType(childNode);
+		    this.tax =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("Amount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Amount =  new BasicAmountType(childNode);
+		    this.amount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("EbayItemPaymentDetailsItem", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.EbayItemPaymentDetailsItem =  new EbayItemPaymentDetailsItemType(childNode);
+		    this.ebayItemPaymentDetailsItem =  new EbayItemPaymentDetailsItemType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("PromoCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PromoCode = childNode.getTextContent();
+		    this.promoCode = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ProductCategory", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ProductCategory = ProductCategoryType.fromValue(childNode.getTextContent());
+		    this.productCategory = ProductCategoryType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("Description", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Description = childNode.getTextContent();
+		    this.description = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ItemWeight", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ItemWeight =  new MeasureType(childNode);
+		    this.itemWeight =  new MeasureType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("ItemLength", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ItemLength =  new MeasureType(childNode);
+		    this.itemLength =  new MeasureType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("ItemWidth", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ItemWidth =  new MeasureType(childNode);
+		    this.itemWidth =  new MeasureType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("ItemHeight", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ItemHeight =  new MeasureType(childNode);
+		    this.itemHeight =  new MeasureType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("ItemURL", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ItemURL = childNode.getTextContent();
+		    this.itemURL = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("EnhancedItemData", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.EnhancedItemData =  new EnhancedItemDataType(childNode);
+		    this.enhancedItemData =  new EnhancedItemDataType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("ItemCategory", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ItemCategory = ItemCategoryType.fromValue(childNode.getTextContent());
+		    this.itemCategory = ItemCategoryType.fromValue(childNode.getTextContent());
 		}
 	}
  

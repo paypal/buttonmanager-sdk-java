@@ -25,22 +25,22 @@ public class ButtonSearchResultType{
 	/**
 	 * 	 
 	 */ 
-	private String HostedButtonID;
+	private String hostedButtonID;
 
 	/**
 	 * 	 
 	 */ 
-	private String ButtonType;
+	private String buttonType;
 
 	/**
 	 * 	 
 	 */ 
-	private String ItemName;
+	private String itemName;
 
 	/**
 	 * 	 
 	 */ 
-	private String ModifyDate;
+	private String modifyDate;
 
 	
 
@@ -51,59 +51,59 @@ public class ButtonSearchResultType{
 	}	
 
 	/**
-	 * Getter for HostedButtonID
+	 * Getter for hostedButtonID
 	 */
 	 public String getHostedButtonID() {
-	 	return HostedButtonID;
+	 	return hostedButtonID;
 	 }
 	 
 	/**
-	 * Setter for HostedButtonID
+	 * Setter for hostedButtonID
 	 */
-	 public void setHostedButtonID(String HostedButtonID) {
-	 	this.HostedButtonID = HostedButtonID;
+	 public void setHostedButtonID(String hostedButtonID) {
+	 	this.hostedButtonID = hostedButtonID;
 	 }
 	 
 	/**
-	 * Getter for ButtonType
+	 * Getter for buttonType
 	 */
 	 public String getButtonType() {
-	 	return ButtonType;
+	 	return buttonType;
 	 }
 	 
 	/**
-	 * Setter for ButtonType
+	 * Setter for buttonType
 	 */
-	 public void setButtonType(String ButtonType) {
-	 	this.ButtonType = ButtonType;
+	 public void setButtonType(String buttonType) {
+	 	this.buttonType = buttonType;
 	 }
 	 
 	/**
-	 * Getter for ItemName
+	 * Getter for itemName
 	 */
 	 public String getItemName() {
-	 	return ItemName;
+	 	return itemName;
 	 }
 	 
 	/**
-	 * Setter for ItemName
+	 * Setter for itemName
 	 */
-	 public void setItemName(String ItemName) {
-	 	this.ItemName = ItemName;
+	 public void setItemName(String itemName) {
+	 	this.itemName = itemName;
 	 }
 	 
 	/**
-	 * Getter for ModifyDate
+	 * Getter for modifyDate
 	 */
 	 public String getModifyDate() {
-	 	return ModifyDate;
+	 	return modifyDate;
 	 }
 	 
 	/**
-	 * Setter for ModifyDate
+	 * Setter for modifyDate
 	 */
-	 public void setModifyDate(String ModifyDate) {
-	 	this.ModifyDate = ModifyDate;
+	 public void setModifyDate(String modifyDate) {
+	 	this.modifyDate = modifyDate;
 	 }
 	 
 
@@ -127,22 +127,22 @@ public class ButtonSearchResultType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("HostedButtonID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.HostedButtonID = childNode.getTextContent();
+		    this.hostedButtonID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ButtonType", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ButtonType = childNode.getTextContent();
+		    this.buttonType = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ItemName", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ItemName = childNode.getTextContent();
+		    this.itemName = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ModifyDate", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ModifyDate = childNode.getTextContent();
+		    this.modifyDate = childNode.getTextContent();
 		}
 	
 	}

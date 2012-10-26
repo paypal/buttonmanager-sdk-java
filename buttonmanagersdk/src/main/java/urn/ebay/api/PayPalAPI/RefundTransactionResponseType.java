@@ -30,44 +30,44 @@ public class RefundTransactionResponseType extends AbstractResponseType {
 	 * Unique transaction ID of the refund. Character length and
 	 * limitations:17 single-byte characters	 
 	 */ 
-	private String RefundTransactionID;
+	private String refundTransactionID;
 
 	/**
 	 * Amount subtracted from PayPal balance of original recipient
 	 * of payment to make this refund 	 
 	 */ 
-	private BasicAmountType NetRefundAmount;
+	private BasicAmountType netRefundAmount;
 
 	/**
 	 * Transaction fee refunded to original recipient of payment 	 
 	 */ 
-	private BasicAmountType FeeRefundAmount;
+	private BasicAmountType feeRefundAmount;
 
 	/**
 	 * Amount of money refunded to original payer 	 
 	 */ 
-	private BasicAmountType GrossRefundAmount;
+	private BasicAmountType grossRefundAmount;
 
 	/**
 	 * Total of all previous refunds	 
 	 */ 
-	private BasicAmountType TotalRefundedAmount;
+	private BasicAmountType totalRefundedAmount;
 
 	/**
 	 * Contains Refund Payment status information.	 
 	 */ 
-	private RefundInfoType RefundInfo;
+	private RefundInfoType refundInfo;
 
 	/**
 	 * Any general information like offer details that is
 	 * reinstated or any other marketing data	 
 	 */ 
-	private String ReceiptData;
+	private String receiptData;
 
 	/**
 	 * Return msgsubid back to merchant	 
 	 */ 
-	private String MsgSubID;
+	private String msgSubID;
 
 	
 
@@ -78,115 +78,115 @@ public class RefundTransactionResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for RefundTransactionID
+	 * Getter for refundTransactionID
 	 */
 	 public String getRefundTransactionID() {
-	 	return RefundTransactionID;
+	 	return refundTransactionID;
 	 }
 	 
 	/**
-	 * Setter for RefundTransactionID
+	 * Setter for refundTransactionID
 	 */
-	 public void setRefundTransactionID(String RefundTransactionID) {
-	 	this.RefundTransactionID = RefundTransactionID;
+	 public void setRefundTransactionID(String refundTransactionID) {
+	 	this.refundTransactionID = refundTransactionID;
 	 }
 	 
 	/**
-	 * Getter for NetRefundAmount
+	 * Getter for netRefundAmount
 	 */
 	 public BasicAmountType getNetRefundAmount() {
-	 	return NetRefundAmount;
+	 	return netRefundAmount;
 	 }
 	 
 	/**
-	 * Setter for NetRefundAmount
+	 * Setter for netRefundAmount
 	 */
-	 public void setNetRefundAmount(BasicAmountType NetRefundAmount) {
-	 	this.NetRefundAmount = NetRefundAmount;
+	 public void setNetRefundAmount(BasicAmountType netRefundAmount) {
+	 	this.netRefundAmount = netRefundAmount;
 	 }
 	 
 	/**
-	 * Getter for FeeRefundAmount
+	 * Getter for feeRefundAmount
 	 */
 	 public BasicAmountType getFeeRefundAmount() {
-	 	return FeeRefundAmount;
+	 	return feeRefundAmount;
 	 }
 	 
 	/**
-	 * Setter for FeeRefundAmount
+	 * Setter for feeRefundAmount
 	 */
-	 public void setFeeRefundAmount(BasicAmountType FeeRefundAmount) {
-	 	this.FeeRefundAmount = FeeRefundAmount;
+	 public void setFeeRefundAmount(BasicAmountType feeRefundAmount) {
+	 	this.feeRefundAmount = feeRefundAmount;
 	 }
 	 
 	/**
-	 * Getter for GrossRefundAmount
+	 * Getter for grossRefundAmount
 	 */
 	 public BasicAmountType getGrossRefundAmount() {
-	 	return GrossRefundAmount;
+	 	return grossRefundAmount;
 	 }
 	 
 	/**
-	 * Setter for GrossRefundAmount
+	 * Setter for grossRefundAmount
 	 */
-	 public void setGrossRefundAmount(BasicAmountType GrossRefundAmount) {
-	 	this.GrossRefundAmount = GrossRefundAmount;
+	 public void setGrossRefundAmount(BasicAmountType grossRefundAmount) {
+	 	this.grossRefundAmount = grossRefundAmount;
 	 }
 	 
 	/**
-	 * Getter for TotalRefundedAmount
+	 * Getter for totalRefundedAmount
 	 */
 	 public BasicAmountType getTotalRefundedAmount() {
-	 	return TotalRefundedAmount;
+	 	return totalRefundedAmount;
 	 }
 	 
 	/**
-	 * Setter for TotalRefundedAmount
+	 * Setter for totalRefundedAmount
 	 */
-	 public void setTotalRefundedAmount(BasicAmountType TotalRefundedAmount) {
-	 	this.TotalRefundedAmount = TotalRefundedAmount;
+	 public void setTotalRefundedAmount(BasicAmountType totalRefundedAmount) {
+	 	this.totalRefundedAmount = totalRefundedAmount;
 	 }
 	 
 	/**
-	 * Getter for RefundInfo
+	 * Getter for refundInfo
 	 */
 	 public RefundInfoType getRefundInfo() {
-	 	return RefundInfo;
+	 	return refundInfo;
 	 }
 	 
 	/**
-	 * Setter for RefundInfo
+	 * Setter for refundInfo
 	 */
-	 public void setRefundInfo(RefundInfoType RefundInfo) {
-	 	this.RefundInfo = RefundInfo;
+	 public void setRefundInfo(RefundInfoType refundInfo) {
+	 	this.refundInfo = refundInfo;
 	 }
 	 
 	/**
-	 * Getter for ReceiptData
+	 * Getter for receiptData
 	 */
 	 public String getReceiptData() {
-	 	return ReceiptData;
+	 	return receiptData;
 	 }
 	 
 	/**
-	 * Setter for ReceiptData
+	 * Setter for receiptData
 	 */
-	 public void setReceiptData(String ReceiptData) {
-	 	this.ReceiptData = ReceiptData;
+	 public void setReceiptData(String receiptData) {
+	 	this.receiptData = receiptData;
 	 }
 	 
 	/**
-	 * Getter for MsgSubID
+	 * Getter for msgSubID
 	 */
 	 public String getMsgSubID() {
-	 	return MsgSubID;
+	 	return msgSubID;
 	 }
 	 
 	/**
-	 * Setter for MsgSubID
+	 * Setter for msgSubID
 	 */
-	 public void setMsgSubID(String MsgSubID) {
-	 	this.MsgSubID = MsgSubID;
+	 public void setMsgSubID(String msgSubID) {
+	 	this.msgSubID = msgSubID;
 	 }
 	 
 
@@ -211,37 +211,37 @@ public class RefundTransactionResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("RefundTransactionID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.RefundTransactionID = childNode.getTextContent();
+		    this.refundTransactionID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("NetRefundAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.NetRefundAmount =  new BasicAmountType(childNode);
+		    this.netRefundAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("FeeRefundAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.FeeRefundAmount =  new BasicAmountType(childNode);
+		    this.feeRefundAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("GrossRefundAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.GrossRefundAmount =  new BasicAmountType(childNode);
+		    this.grossRefundAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("TotalRefundedAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TotalRefundedAmount =  new BasicAmountType(childNode);
+		    this.totalRefundedAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("RefundInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.RefundInfo =  new RefundInfoType(childNode);
+		    this.refundInfo =  new RefundInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("ReceiptData", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ReceiptData = childNode.getTextContent();
+		    this.receiptData = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("MsgSubID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.MsgSubID = childNode.getTextContent();
+		    this.msgSubID = childNode.getTextContent();
 		}
 	
 	}

@@ -7,49 +7,51 @@ import com.paypal.core.SDKUtil;
  */
 public class OtherPaymentMethodDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * The identifier of the Payment Method. 	 
 	 */ 
-	private String OtherPaymentMethodId;
+	private String otherPaymentMethodId;
 
 	/**
 	 * Valid values are 'Method', 'SubMethod'. 	 
 	 */ 
-	private String OtherPaymentMethodType;
+	private String otherPaymentMethodType;
 
 	/**
 	 * The name of the Payment Method. 	 
 	 */ 
-	private String OtherPaymentMethodLabel;
+	private String otherPaymentMethodLabel;
 
 	/**
 	 * The short description of the Payment Method, goes along with
 	 * the label. 	 
 	 */ 
-	private String OtherPaymentMethodLabelDescription;
+	private String otherPaymentMethodLabelDescription;
 
 	/**
 	 * The title for the long description. 	 
 	 */ 
-	private String OtherPaymentMethodLongDescriptionTitle;
+	private String otherPaymentMethodLongDescriptionTitle;
 
 	/**
 	 * The long description of the Payment Method. 	 
 	 */ 
-	private String OtherPaymentMethodLongDescription;
+	private String otherPaymentMethodLongDescription;
 
 	/**
 	 * The icon of the Payment Method. 	 
 	 */ 
-	private String OtherPaymentMethodIcon;
+	private String otherPaymentMethodIcon;
 
 	/**
 	 * If this flag is true, then OtherPaymentMethodIcon is
 	 * required to have a valid value; the label will be hidden and
 	 * only ICON will be shown. 	 
 	 */ 
-	private Boolean OtherPaymentMethodHideLabel;
+	private Boolean otherPaymentMethodHideLabel;
 
 	
 
@@ -60,152 +62,168 @@ public class OtherPaymentMethodDetailsType{
 	}	
 
 	/**
-	 * Getter for OtherPaymentMethodId
+	 * Getter for otherPaymentMethodId
 	 */
 	 public String getOtherPaymentMethodId() {
-	 	return OtherPaymentMethodId;
+	 	return otherPaymentMethodId;
 	 }
 	 
 	/**
-	 * Setter for OtherPaymentMethodId
+	 * Setter for otherPaymentMethodId
 	 */
-	 public void setOtherPaymentMethodId(String OtherPaymentMethodId) {
-	 	this.OtherPaymentMethodId = OtherPaymentMethodId;
+	 public void setOtherPaymentMethodId(String otherPaymentMethodId) {
+	 	this.otherPaymentMethodId = otherPaymentMethodId;
 	 }
 	 
 	/**
-	 * Getter for OtherPaymentMethodType
+	 * Getter for otherPaymentMethodType
 	 */
 	 public String getOtherPaymentMethodType() {
-	 	return OtherPaymentMethodType;
+	 	return otherPaymentMethodType;
 	 }
 	 
 	/**
-	 * Setter for OtherPaymentMethodType
+	 * Setter for otherPaymentMethodType
 	 */
-	 public void setOtherPaymentMethodType(String OtherPaymentMethodType) {
-	 	this.OtherPaymentMethodType = OtherPaymentMethodType;
+	 public void setOtherPaymentMethodType(String otherPaymentMethodType) {
+	 	this.otherPaymentMethodType = otherPaymentMethodType;
 	 }
 	 
 	/**
-	 * Getter for OtherPaymentMethodLabel
+	 * Getter for otherPaymentMethodLabel
 	 */
 	 public String getOtherPaymentMethodLabel() {
-	 	return OtherPaymentMethodLabel;
+	 	return otherPaymentMethodLabel;
 	 }
 	 
 	/**
-	 * Setter for OtherPaymentMethodLabel
+	 * Setter for otherPaymentMethodLabel
 	 */
-	 public void setOtherPaymentMethodLabel(String OtherPaymentMethodLabel) {
-	 	this.OtherPaymentMethodLabel = OtherPaymentMethodLabel;
+	 public void setOtherPaymentMethodLabel(String otherPaymentMethodLabel) {
+	 	this.otherPaymentMethodLabel = otherPaymentMethodLabel;
 	 }
 	 
 	/**
-	 * Getter for OtherPaymentMethodLabelDescription
+	 * Getter for otherPaymentMethodLabelDescription
 	 */
 	 public String getOtherPaymentMethodLabelDescription() {
-	 	return OtherPaymentMethodLabelDescription;
+	 	return otherPaymentMethodLabelDescription;
 	 }
 	 
 	/**
-	 * Setter for OtherPaymentMethodLabelDescription
+	 * Setter for otherPaymentMethodLabelDescription
 	 */
-	 public void setOtherPaymentMethodLabelDescription(String OtherPaymentMethodLabelDescription) {
-	 	this.OtherPaymentMethodLabelDescription = OtherPaymentMethodLabelDescription;
+	 public void setOtherPaymentMethodLabelDescription(String otherPaymentMethodLabelDescription) {
+	 	this.otherPaymentMethodLabelDescription = otherPaymentMethodLabelDescription;
 	 }
 	 
 	/**
-	 * Getter for OtherPaymentMethodLongDescriptionTitle
+	 * Getter for otherPaymentMethodLongDescriptionTitle
 	 */
 	 public String getOtherPaymentMethodLongDescriptionTitle() {
-	 	return OtherPaymentMethodLongDescriptionTitle;
+	 	return otherPaymentMethodLongDescriptionTitle;
 	 }
 	 
 	/**
-	 * Setter for OtherPaymentMethodLongDescriptionTitle
+	 * Setter for otherPaymentMethodLongDescriptionTitle
 	 */
-	 public void setOtherPaymentMethodLongDescriptionTitle(String OtherPaymentMethodLongDescriptionTitle) {
-	 	this.OtherPaymentMethodLongDescriptionTitle = OtherPaymentMethodLongDescriptionTitle;
+	 public void setOtherPaymentMethodLongDescriptionTitle(String otherPaymentMethodLongDescriptionTitle) {
+	 	this.otherPaymentMethodLongDescriptionTitle = otherPaymentMethodLongDescriptionTitle;
 	 }
 	 
 	/**
-	 * Getter for OtherPaymentMethodLongDescription
+	 * Getter for otherPaymentMethodLongDescription
 	 */
 	 public String getOtherPaymentMethodLongDescription() {
-	 	return OtherPaymentMethodLongDescription;
+	 	return otherPaymentMethodLongDescription;
 	 }
 	 
 	/**
-	 * Setter for OtherPaymentMethodLongDescription
+	 * Setter for otherPaymentMethodLongDescription
 	 */
-	 public void setOtherPaymentMethodLongDescription(String OtherPaymentMethodLongDescription) {
-	 	this.OtherPaymentMethodLongDescription = OtherPaymentMethodLongDescription;
+	 public void setOtherPaymentMethodLongDescription(String otherPaymentMethodLongDescription) {
+	 	this.otherPaymentMethodLongDescription = otherPaymentMethodLongDescription;
 	 }
 	 
 	/**
-	 * Getter for OtherPaymentMethodIcon
+	 * Getter for otherPaymentMethodIcon
 	 */
 	 public String getOtherPaymentMethodIcon() {
-	 	return OtherPaymentMethodIcon;
+	 	return otherPaymentMethodIcon;
 	 }
 	 
 	/**
-	 * Setter for OtherPaymentMethodIcon
+	 * Setter for otherPaymentMethodIcon
 	 */
-	 public void setOtherPaymentMethodIcon(String OtherPaymentMethodIcon) {
-	 	this.OtherPaymentMethodIcon = OtherPaymentMethodIcon;
+	 public void setOtherPaymentMethodIcon(String otherPaymentMethodIcon) {
+	 	this.otherPaymentMethodIcon = otherPaymentMethodIcon;
 	 }
 	 
 	/**
-	 * Getter for OtherPaymentMethodHideLabel
+	 * Getter for otherPaymentMethodHideLabel
 	 */
 	 public Boolean getOtherPaymentMethodHideLabel() {
-	 	return OtherPaymentMethodHideLabel;
+	 	return otherPaymentMethodHideLabel;
 	 }
 	 
 	/**
-	 * Setter for OtherPaymentMethodHideLabel
+	 * Setter for otherPaymentMethodHideLabel
 	 */
-	 public void setOtherPaymentMethodHideLabel(Boolean OtherPaymentMethodHideLabel) {
-	 	this.OtherPaymentMethodHideLabel = OtherPaymentMethodHideLabel;
+	 public void setOtherPaymentMethodHideLabel(Boolean otherPaymentMethodHideLabel) {
+	 	this.otherPaymentMethodHideLabel = otherPaymentMethodHideLabel;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(OtherPaymentMethodId != null) {
-			sb.append("<ebl:OtherPaymentMethodId>").append(SDKUtil.escapeInvalidXmlCharsRegex(OtherPaymentMethodId));
-			sb.append("</ebl:OtherPaymentMethodId>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(OtherPaymentMethodType != null) {
-			sb.append("<ebl:OtherPaymentMethodType>").append(SDKUtil.escapeInvalidXmlCharsRegex(OtherPaymentMethodType));
-			sb.append("</ebl:OtherPaymentMethodType>");
+		if(otherPaymentMethodId != null) {
+			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodId>").append(SDKUtil.escapeInvalidXmlCharsRegex(otherPaymentMethodId));
+			sb.append("</").append(preferredPrefix).append(":OtherPaymentMethodId>");
 		}
-		if(OtherPaymentMethodLabel != null) {
-			sb.append("<ebl:OtherPaymentMethodLabel>").append(SDKUtil.escapeInvalidXmlCharsRegex(OtherPaymentMethodLabel));
-			sb.append("</ebl:OtherPaymentMethodLabel>");
+		if(otherPaymentMethodType != null) {
+			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodType>").append(SDKUtil.escapeInvalidXmlCharsRegex(otherPaymentMethodType));
+			sb.append("</").append(preferredPrefix).append(":OtherPaymentMethodType>");
 		}
-		if(OtherPaymentMethodLabelDescription != null) {
-			sb.append("<ebl:OtherPaymentMethodLabelDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(OtherPaymentMethodLabelDescription));
-			sb.append("</ebl:OtherPaymentMethodLabelDescription>");
+		if(otherPaymentMethodLabel != null) {
+			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodLabel>").append(SDKUtil.escapeInvalidXmlCharsRegex(otherPaymentMethodLabel));
+			sb.append("</").append(preferredPrefix).append(":OtherPaymentMethodLabel>");
 		}
-		if(OtherPaymentMethodLongDescriptionTitle != null) {
-			sb.append("<ebl:OtherPaymentMethodLongDescriptionTitle>").append(SDKUtil.escapeInvalidXmlCharsRegex(OtherPaymentMethodLongDescriptionTitle));
-			sb.append("</ebl:OtherPaymentMethodLongDescriptionTitle>");
+		if(otherPaymentMethodLabelDescription != null) {
+			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodLabelDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(otherPaymentMethodLabelDescription));
+			sb.append("</").append(preferredPrefix).append(":OtherPaymentMethodLabelDescription>");
 		}
-		if(OtherPaymentMethodLongDescription != null) {
-			sb.append("<ebl:OtherPaymentMethodLongDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(OtherPaymentMethodLongDescription));
-			sb.append("</ebl:OtherPaymentMethodLongDescription>");
+		if(otherPaymentMethodLongDescriptionTitle != null) {
+			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodLongDescriptionTitle>").append(SDKUtil.escapeInvalidXmlCharsRegex(otherPaymentMethodLongDescriptionTitle));
+			sb.append("</").append(preferredPrefix).append(":OtherPaymentMethodLongDescriptionTitle>");
 		}
-		if(OtherPaymentMethodIcon != null) {
-			sb.append("<ebl:OtherPaymentMethodIcon>").append(SDKUtil.escapeInvalidXmlCharsRegex(OtherPaymentMethodIcon));
-			sb.append("</ebl:OtherPaymentMethodIcon>");
+		if(otherPaymentMethodLongDescription != null) {
+			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodLongDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(otherPaymentMethodLongDescription));
+			sb.append("</").append(preferredPrefix).append(":OtherPaymentMethodLongDescription>");
 		}
-		if(OtherPaymentMethodHideLabel != null) {
-			sb.append("<ebl:OtherPaymentMethodHideLabel>").append(SDKUtil.escapeInvalidXmlCharsRegex(OtherPaymentMethodHideLabel));
-			sb.append("</ebl:OtherPaymentMethodHideLabel>");
+		if(otherPaymentMethodIcon != null) {
+			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodIcon>").append(SDKUtil.escapeInvalidXmlCharsRegex(otherPaymentMethodIcon));
+			sb.append("</").append(preferredPrefix).append(":OtherPaymentMethodIcon>");
+		}
+		if(otherPaymentMethodHideLabel != null) {
+			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodHideLabel>").append(SDKUtil.escapeInvalidXmlCharsRegex(otherPaymentMethodHideLabel));
+			sb.append("</").append(preferredPrefix).append(":OtherPaymentMethodHideLabel>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

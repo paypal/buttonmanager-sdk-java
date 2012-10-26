@@ -31,26 +31,26 @@ public class ErrorType{
 	/**
 	 * 	 
 	 */ 
-	private String ShortMessage;
+	private String shortMessage;
 
 	/**
 	 * 	 
 	 */ 
-	private String LongMessage;
+	private String longMessage;
 
 	/**
 	 * Error code can be used by a receiving application to
 	 * debugging a response message. These codes will need to be
 	 * uniquely defined for each application. 	 
 	 */ 
-	private String ErrorCode;
+	private String errorCode;
 
 	/**
 	 * SeverityCode indicates whether the error is an application 
 	 * level error or if it is informational error, i.e., warning. 
 	 * 	 
 	 */ 
-	private SeverityCodeType SeverityCode;
+	private SeverityCodeType severityCode;
 
 	/**
 	 * This optional element may carry additional
@@ -59,7 +59,7 @@ public class ErrorType{
 	 * cases where there are multiple instances of the ErrorType
 	 * which require additional context.  	 
 	 */ 
-	private List<ErrorParameterType> ErrorParameters = new ArrayList<ErrorParameterType>();
+	private List<ErrorParameterType> errorParameters = new ArrayList<ErrorParameterType>();
 
 	
 
@@ -70,73 +70,73 @@ public class ErrorType{
 	}	
 
 	/**
-	 * Getter for ShortMessage
+	 * Getter for shortMessage
 	 */
 	 public String getShortMessage() {
-	 	return ShortMessage;
+	 	return shortMessage;
 	 }
 	 
 	/**
-	 * Setter for ShortMessage
+	 * Setter for shortMessage
 	 */
-	 public void setShortMessage(String ShortMessage) {
-	 	this.ShortMessage = ShortMessage;
+	 public void setShortMessage(String shortMessage) {
+	 	this.shortMessage = shortMessage;
 	 }
 	 
 	/**
-	 * Getter for LongMessage
+	 * Getter for longMessage
 	 */
 	 public String getLongMessage() {
-	 	return LongMessage;
+	 	return longMessage;
 	 }
 	 
 	/**
-	 * Setter for LongMessage
+	 * Setter for longMessage
 	 */
-	 public void setLongMessage(String LongMessage) {
-	 	this.LongMessage = LongMessage;
+	 public void setLongMessage(String longMessage) {
+	 	this.longMessage = longMessage;
 	 }
 	 
 	/**
-	 * Getter for ErrorCode
+	 * Getter for errorCode
 	 */
 	 public String getErrorCode() {
-	 	return ErrorCode;
+	 	return errorCode;
 	 }
 	 
 	/**
-	 * Setter for ErrorCode
+	 * Setter for errorCode
 	 */
-	 public void setErrorCode(String ErrorCode) {
-	 	this.ErrorCode = ErrorCode;
+	 public void setErrorCode(String errorCode) {
+	 	this.errorCode = errorCode;
 	 }
 	 
 	/**
-	 * Getter for SeverityCode
+	 * Getter for severityCode
 	 */
 	 public SeverityCodeType getSeverityCode() {
-	 	return SeverityCode;
+	 	return severityCode;
 	 }
 	 
 	/**
-	 * Setter for SeverityCode
+	 * Setter for severityCode
 	 */
-	 public void setSeverityCode(SeverityCodeType SeverityCode) {
-	 	this.SeverityCode = SeverityCode;
+	 public void setSeverityCode(SeverityCodeType severityCode) {
+	 	this.severityCode = severityCode;
 	 }
 	 
 	/**
-	 * Getter for ErrorParameters
+	 * Getter for errorParameters
 	 */
 	 public List<ErrorParameterType> getErrorParameters() {
-	 	return ErrorParameters;
+	 	return errorParameters;
 	 }
 	 
 	/**
-	 * Setter for ErrorParameters
+	 * Setter for errorParameters
 	 */
-	 public void setErrorParameters(List<ErrorParameterType> ErrorParameters) {
-	 	this.ErrorParameters = ErrorParameters;
+	 public void setErrorParameters(List<ErrorParameterType> errorParameters) {
+	 	this.errorParameters = errorParameters;
 	 }
 	 
 
@@ -160,28 +160,28 @@ public class ErrorType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("ShortMessage", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ShortMessage = childNode.getTextContent();
+		    this.shortMessage = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("LongMessage", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.LongMessage = childNode.getTextContent();
+		    this.longMessage = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ErrorCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ErrorCode = childNode.getTextContent();
+		    this.errorCode = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("SeverityCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SeverityCode = SeverityCodeType.fromValue(childNode.getTextContent());
+		    this.severityCode = SeverityCodeType.fromValue(childNode.getTextContent());
 		}
         nodeList = (NodeList) xpath.evaluate("ErrorParameters", node, XPathConstants.NODESET);
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.ErrorParameters.add(new ErrorParameterType(subNode));
+				this.errorParameters.add(new ErrorParameterType(subNode));
 			}
 		}
 	}

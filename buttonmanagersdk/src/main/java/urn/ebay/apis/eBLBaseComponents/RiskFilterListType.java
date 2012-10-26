@@ -29,7 +29,7 @@ public class RiskFilterListType{
 	 * 	  
 	 *@Required	 
 	 */ 
-	private List<RiskFilterDetailsType> Filters = new ArrayList<RiskFilterDetailsType>();
+	private List<RiskFilterDetailsType> filters = new ArrayList<RiskFilterDetailsType>();
 
 	
 
@@ -40,17 +40,17 @@ public class RiskFilterListType{
 	}	
 
 	/**
-	 * Getter for Filters
+	 * Getter for filters
 	 */
 	 public List<RiskFilterDetailsType> getFilters() {
-	 	return Filters;
+	 	return filters;
 	 }
 	 
 	/**
-	 * Setter for Filters
+	 * Setter for filters
 	 */
-	 public void setFilters(List<RiskFilterDetailsType> Filters) {
-	 	this.Filters = Filters;
+	 public void setFilters(List<RiskFilterDetailsType> filters) {
+	 	this.filters = filters;
 	 }
 	 
 
@@ -76,7 +76,7 @@ public class RiskFilterListType{
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.Filters.add(new RiskFilterDetailsType(subNode));
+				this.filters.add(new RiskFilterDetailsType(subNode));
 			}
 		}
 	}

@@ -6,21 +6,23 @@ import com.paypal.core.SDKUtil;
  */
 public class PhoneNumberType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Country code associated with this phone number. 	 
 	 */ 
-	private String CountryCode;
+	private String countryCode;
 
 	/**
 	 * Phone number associated with this phone. 	 
 	 */ 
-	private String PhoneNumber;
+	private String phoneNumber;
 
 	/**
 	 * Extension associated with this phone number. 	 
 	 */ 
-	private String Extension;
+	private String extension;
 
 	
 
@@ -31,62 +33,78 @@ public class PhoneNumberType{
 	}	
 
 	/**
-	 * Getter for CountryCode
+	 * Getter for countryCode
 	 */
 	 public String getCountryCode() {
-	 	return CountryCode;
+	 	return countryCode;
 	 }
 	 
 	/**
-	 * Setter for CountryCode
+	 * Setter for countryCode
 	 */
-	 public void setCountryCode(String CountryCode) {
-	 	this.CountryCode = CountryCode;
+	 public void setCountryCode(String countryCode) {
+	 	this.countryCode = countryCode;
 	 }
 	 
 	/**
-	 * Getter for PhoneNumber
+	 * Getter for phoneNumber
 	 */
 	 public String getPhoneNumber() {
-	 	return PhoneNumber;
+	 	return phoneNumber;
 	 }
 	 
 	/**
-	 * Setter for PhoneNumber
+	 * Setter for phoneNumber
 	 */
-	 public void setPhoneNumber(String PhoneNumber) {
-	 	this.PhoneNumber = PhoneNumber;
+	 public void setPhoneNumber(String phoneNumber) {
+	 	this.phoneNumber = phoneNumber;
 	 }
 	 
 	/**
-	 * Getter for Extension
+	 * Getter for extension
 	 */
 	 public String getExtension() {
-	 	return Extension;
+	 	return extension;
 	 }
 	 
 	/**
-	 * Setter for Extension
+	 * Setter for extension
 	 */
-	 public void setExtension(String Extension) {
-	 	this.Extension = Extension;
+	 public void setExtension(String extension) {
+	 	this.extension = extension;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(CountryCode != null) {
-			sb.append("<ebl:CountryCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(CountryCode));
-			sb.append("</ebl:CountryCode>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(PhoneNumber != null) {
-			sb.append("<ebl:PhoneNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(PhoneNumber));
-			sb.append("</ebl:PhoneNumber>");
+		if(countryCode != null) {
+			sb.append("<").append(preferredPrefix).append(":CountryCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(countryCode));
+			sb.append("</").append(preferredPrefix).append(":CountryCode>");
 		}
-		if(Extension != null) {
-			sb.append("<ebl:Extension>").append(SDKUtil.escapeInvalidXmlCharsRegex(Extension));
-			sb.append("</ebl:Extension>");
+		if(phoneNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":PhoneNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(phoneNumber));
+			sb.append("</").append(preferredPrefix).append(":PhoneNumber>");
+		}
+		if(extension != null) {
+			sb.append("<").append(preferredPrefix).append(":Extension>").append(SDKUtil.escapeInvalidXmlCharsRegex(extension));
+			sb.append("</").append(preferredPrefix).append(":Extension>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

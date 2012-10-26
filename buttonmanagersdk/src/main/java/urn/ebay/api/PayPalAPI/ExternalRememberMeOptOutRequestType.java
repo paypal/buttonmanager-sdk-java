@@ -12,6 +12,8 @@ import com.paypal.core.SDKUtil;
  */
 public class ExternalRememberMeOptOutRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * The merchant passes in the ExternalRememberMeID to identify
@@ -21,21 +23,21 @@ public class ExternalRememberMeOptOutRequestType extends AbstractRequestType {
 	 * Required 	  
 	 *@Required	 
 	 */ 
-	private String ExternalRememberMeID;
+	private String externalRememberMeID;
 
 	/**
 	 * E-mail address or secure merchant account ID of merchant to
 	 * associate with external remember-me. 	 
 	 */ 
-	private ExternalRememberMeOwnerDetailsType ExternalRememberMeOwnerDetails;
+	private ExternalRememberMeOwnerDetailsType externalRememberMeOwnerDetails;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public ExternalRememberMeOptOutRequestType (String ExternalRememberMeID){
-		this.ExternalRememberMeID = ExternalRememberMeID;
+	public ExternalRememberMeOptOutRequestType (String externalRememberMeID){
+		this.externalRememberMeID = externalRememberMeID;
 	}	
 
 	/**
@@ -45,46 +47,60 @@ public class ExternalRememberMeOptOutRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for ExternalRememberMeID
+	 * Getter for externalRememberMeID
 	 */
 	 public String getExternalRememberMeID() {
-	 	return ExternalRememberMeID;
+	 	return externalRememberMeID;
 	 }
 	 
 	/**
-	 * Setter for ExternalRememberMeID
+	 * Setter for externalRememberMeID
 	 */
-	 public void setExternalRememberMeID(String ExternalRememberMeID) {
-	 	this.ExternalRememberMeID = ExternalRememberMeID;
+	 public void setExternalRememberMeID(String externalRememberMeID) {
+	 	this.externalRememberMeID = externalRememberMeID;
 	 }
 	 
 	/**
-	 * Getter for ExternalRememberMeOwnerDetails
+	 * Getter for externalRememberMeOwnerDetails
 	 */
 	 public ExternalRememberMeOwnerDetailsType getExternalRememberMeOwnerDetails() {
-	 	return ExternalRememberMeOwnerDetails;
+	 	return externalRememberMeOwnerDetails;
 	 }
 	 
 	/**
-	 * Setter for ExternalRememberMeOwnerDetails
+	 * Setter for externalRememberMeOwnerDetails
 	 */
-	 public void setExternalRememberMeOwnerDetails(ExternalRememberMeOwnerDetailsType ExternalRememberMeOwnerDetails) {
-	 	this.ExternalRememberMeOwnerDetails = ExternalRememberMeOwnerDetails;
+	 public void setExternalRememberMeOwnerDetails(ExternalRememberMeOwnerDetailsType externalRememberMeOwnerDetails) {
+	 	this.externalRememberMeOwnerDetails = externalRememberMeOwnerDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(ExternalRememberMeID != null) {
-			sb.append("<urn:ExternalRememberMeID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExternalRememberMeID));
-			sb.append("</urn:ExternalRememberMeID>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ExternalRememberMeOwnerDetails != null) {
-			sb.append("<urn:ExternalRememberMeOwnerDetails>");
-			sb.append(ExternalRememberMeOwnerDetails.toXMLString());
-			sb.append("</urn:ExternalRememberMeOwnerDetails>");
+		sb.append(super.toXMLString(prefix, null));
+		if(externalRememberMeID != null) {
+			sb.append("<").append(preferredPrefix).append(":ExternalRememberMeID>").append(SDKUtil.escapeInvalidXmlCharsRegex(externalRememberMeID));
+			sb.append("</").append(preferredPrefix).append(":ExternalRememberMeID>");
+		}
+		if(externalRememberMeOwnerDetails != null) {
+			sb.append(externalRememberMeOwnerDetails.toXMLString(preferredPrefix,"ExternalRememberMeOwnerDetails"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

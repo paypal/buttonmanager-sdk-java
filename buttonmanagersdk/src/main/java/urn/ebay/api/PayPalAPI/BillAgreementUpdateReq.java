@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class BillAgreementUpdateReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private BAUpdateRequestType BAUpdateRequest;
+	private BAUpdateRequestType bAUpdateRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class BillAgreementUpdateReq{
 	}	
 
 	/**
-	 * Getter for BAUpdateRequest
+	 * Getter for bAUpdateRequest
 	 */
 	 public BAUpdateRequestType getBAUpdateRequest() {
-	 	return BAUpdateRequest;
+	 	return bAUpdateRequest;
 	 }
 	 
 	/**
-	 * Setter for BAUpdateRequest
+	 * Setter for bAUpdateRequest
 	 */
-	 public void setBAUpdateRequest(BAUpdateRequestType BAUpdateRequest) {
-	 	this.BAUpdateRequest = BAUpdateRequest;
+	 public void setBAUpdateRequest(BAUpdateRequestType bAUpdateRequest) {
+	 	this.bAUpdateRequest = bAUpdateRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:BillAgreementUpdateReq>");
-		if(BAUpdateRequest != null) {
-			sb.append("<urn:BAUpdateRequest>");
-			sb.append(BAUpdateRequest.toXMLString());
-			sb.append("</urn:BAUpdateRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:BillAgreementUpdateReq>");
+		if(bAUpdateRequest != null) {
+			sb.append(bAUpdateRequest.toXMLString(null,"BAUpdateRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

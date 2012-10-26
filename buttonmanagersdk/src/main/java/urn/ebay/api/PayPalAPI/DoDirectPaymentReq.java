@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class DoDirectPaymentReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private DoDirectPaymentRequestType DoDirectPaymentRequest;
+	private DoDirectPaymentRequestType doDirectPaymentRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class DoDirectPaymentReq{
 	}	
 
 	/**
-	 * Getter for DoDirectPaymentRequest
+	 * Getter for doDirectPaymentRequest
 	 */
 	 public DoDirectPaymentRequestType getDoDirectPaymentRequest() {
-	 	return DoDirectPaymentRequest;
+	 	return doDirectPaymentRequest;
 	 }
 	 
 	/**
-	 * Setter for DoDirectPaymentRequest
+	 * Setter for doDirectPaymentRequest
 	 */
-	 public void setDoDirectPaymentRequest(DoDirectPaymentRequestType DoDirectPaymentRequest) {
-	 	this.DoDirectPaymentRequest = DoDirectPaymentRequest;
+	 public void setDoDirectPaymentRequest(DoDirectPaymentRequestType doDirectPaymentRequest) {
+	 	this.doDirectPaymentRequest = doDirectPaymentRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:DoDirectPaymentReq>");
-		if(DoDirectPaymentRequest != null) {
-			sb.append("<urn:DoDirectPaymentRequest>");
-			sb.append(DoDirectPaymentRequest.toXMLString());
-			sb.append("</urn:DoDirectPaymentRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:DoDirectPaymentReq>");
+		if(doDirectPaymentRequest != null) {
+			sb.append(doDirectPaymentRequest.toXMLString(null,"DoDirectPaymentRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

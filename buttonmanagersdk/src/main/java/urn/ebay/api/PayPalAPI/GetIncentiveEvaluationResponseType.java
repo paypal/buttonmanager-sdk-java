@@ -28,7 +28,7 @@ public class GetIncentiveEvaluationResponseType extends AbstractResponseType {
 	 * 	  
 	 *@Required	 
 	 */ 
-	private GetIncentiveEvaluationResponseDetailsType GetIncentiveEvaluationResponseDetails;
+	private GetIncentiveEvaluationResponseDetailsType getIncentiveEvaluationResponseDetails;
 
 	
 
@@ -39,17 +39,17 @@ public class GetIncentiveEvaluationResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for GetIncentiveEvaluationResponseDetails
+	 * Getter for getIncentiveEvaluationResponseDetails
 	 */
 	 public GetIncentiveEvaluationResponseDetailsType getGetIncentiveEvaluationResponseDetails() {
-	 	return GetIncentiveEvaluationResponseDetails;
+	 	return getIncentiveEvaluationResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for GetIncentiveEvaluationResponseDetails
+	 * Setter for getIncentiveEvaluationResponseDetails
 	 */
-	 public void setGetIncentiveEvaluationResponseDetails(GetIncentiveEvaluationResponseDetailsType GetIncentiveEvaluationResponseDetails) {
-	 	this.GetIncentiveEvaluationResponseDetails = GetIncentiveEvaluationResponseDetails;
+	 public void setGetIncentiveEvaluationResponseDetails(GetIncentiveEvaluationResponseDetailsType getIncentiveEvaluationResponseDetails) {
+	 	this.getIncentiveEvaluationResponseDetails = getIncentiveEvaluationResponseDetails;
 	 }
 	 
 
@@ -74,7 +74,7 @@ public class GetIncentiveEvaluationResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("GetIncentiveEvaluationResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.GetIncentiveEvaluationResponseDetails =  new GetIncentiveEvaluationResponseDetailsType(childNode);
+		    this.getIncentiveEvaluationResponseDetails =  new GetIncentiveEvaluationResponseDetailsType(childNode);
 		}
 	}
  

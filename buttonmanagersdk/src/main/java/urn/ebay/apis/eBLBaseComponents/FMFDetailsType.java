@@ -27,22 +27,22 @@ public class FMFDetailsType{
 	/**
 	 * 	 
 	 */ 
-	private RiskFilterListType AcceptFilters;
+	private RiskFilterListType acceptFilters;
 
 	/**
 	 * 	 
 	 */ 
-	private RiskFilterListType PendingFilters;
+	private RiskFilterListType pendingFilters;
 
 	/**
 	 * 	 
 	 */ 
-	private RiskFilterListType DenyFilters;
+	private RiskFilterListType denyFilters;
 
 	/**
 	 * 	 
 	 */ 
-	private RiskFilterListType ReportFilters;
+	private RiskFilterListType reportFilters;
 
 	
 
@@ -53,59 +53,59 @@ public class FMFDetailsType{
 	}	
 
 	/**
-	 * Getter for AcceptFilters
+	 * Getter for acceptFilters
 	 */
 	 public RiskFilterListType getAcceptFilters() {
-	 	return AcceptFilters;
+	 	return acceptFilters;
 	 }
 	 
 	/**
-	 * Setter for AcceptFilters
+	 * Setter for acceptFilters
 	 */
-	 public void setAcceptFilters(RiskFilterListType AcceptFilters) {
-	 	this.AcceptFilters = AcceptFilters;
+	 public void setAcceptFilters(RiskFilterListType acceptFilters) {
+	 	this.acceptFilters = acceptFilters;
 	 }
 	 
 	/**
-	 * Getter for PendingFilters
+	 * Getter for pendingFilters
 	 */
 	 public RiskFilterListType getPendingFilters() {
-	 	return PendingFilters;
+	 	return pendingFilters;
 	 }
 	 
 	/**
-	 * Setter for PendingFilters
+	 * Setter for pendingFilters
 	 */
-	 public void setPendingFilters(RiskFilterListType PendingFilters) {
-	 	this.PendingFilters = PendingFilters;
+	 public void setPendingFilters(RiskFilterListType pendingFilters) {
+	 	this.pendingFilters = pendingFilters;
 	 }
 	 
 	/**
-	 * Getter for DenyFilters
+	 * Getter for denyFilters
 	 */
 	 public RiskFilterListType getDenyFilters() {
-	 	return DenyFilters;
+	 	return denyFilters;
 	 }
 	 
 	/**
-	 * Setter for DenyFilters
+	 * Setter for denyFilters
 	 */
-	 public void setDenyFilters(RiskFilterListType DenyFilters) {
-	 	this.DenyFilters = DenyFilters;
+	 public void setDenyFilters(RiskFilterListType denyFilters) {
+	 	this.denyFilters = denyFilters;
 	 }
 	 
 	/**
-	 * Getter for ReportFilters
+	 * Getter for reportFilters
 	 */
 	 public RiskFilterListType getReportFilters() {
-	 	return ReportFilters;
+	 	return reportFilters;
 	 }
 	 
 	/**
-	 * Setter for ReportFilters
+	 * Setter for reportFilters
 	 */
-	 public void setReportFilters(RiskFilterListType ReportFilters) {
-	 	this.ReportFilters = ReportFilters;
+	 public void setReportFilters(RiskFilterListType reportFilters) {
+	 	this.reportFilters = reportFilters;
 	 }
 	 
 
@@ -129,19 +129,19 @@ public class FMFDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("AcceptFilters", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AcceptFilters =  new RiskFilterListType(childNode);
+		    this.acceptFilters =  new RiskFilterListType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("PendingFilters", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PendingFilters =  new RiskFilterListType(childNode);
+		    this.pendingFilters =  new RiskFilterListType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("DenyFilters", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.DenyFilters =  new RiskFilterListType(childNode);
+		    this.denyFilters =  new RiskFilterListType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("ReportFilters", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ReportFilters =  new RiskFilterListType(childNode);
+		    this.reportFilters =  new RiskFilterListType(childNode);
 		}
 	}
  

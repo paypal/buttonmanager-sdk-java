@@ -28,7 +28,7 @@ public class ReverseTransactionResponseType extends AbstractResponseType {
 	 * 	  
 	 *@Required	 
 	 */ 
-	private ReverseTransactionResponseDetailsType ReverseTransactionResponseDetails;
+	private ReverseTransactionResponseDetailsType reverseTransactionResponseDetails;
 
 	
 
@@ -39,17 +39,17 @@ public class ReverseTransactionResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for ReverseTransactionResponseDetails
+	 * Getter for reverseTransactionResponseDetails
 	 */
 	 public ReverseTransactionResponseDetailsType getReverseTransactionResponseDetails() {
-	 	return ReverseTransactionResponseDetails;
+	 	return reverseTransactionResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for ReverseTransactionResponseDetails
+	 * Setter for reverseTransactionResponseDetails
 	 */
-	 public void setReverseTransactionResponseDetails(ReverseTransactionResponseDetailsType ReverseTransactionResponseDetails) {
-	 	this.ReverseTransactionResponseDetails = ReverseTransactionResponseDetails;
+	 public void setReverseTransactionResponseDetails(ReverseTransactionResponseDetailsType reverseTransactionResponseDetails) {
+	 	this.reverseTransactionResponseDetails = reverseTransactionResponseDetails;
 	 }
 	 
 
@@ -74,7 +74,7 @@ public class ReverseTransactionResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("ReverseTransactionResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ReverseTransactionResponseDetails =  new ReverseTransactionResponseDetailsType(childNode);
+		    this.reverseTransactionResponseDetails =  new ReverseTransactionResponseDetailsType(childNode);
 		}
 	}
  

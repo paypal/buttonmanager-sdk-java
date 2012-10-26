@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class DoMobileCheckoutPaymentReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private DoMobileCheckoutPaymentRequestType DoMobileCheckoutPaymentRequest;
+	private DoMobileCheckoutPaymentRequestType doMobileCheckoutPaymentRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class DoMobileCheckoutPaymentReq{
 	}	
 
 	/**
-	 * Getter for DoMobileCheckoutPaymentRequest
+	 * Getter for doMobileCheckoutPaymentRequest
 	 */
 	 public DoMobileCheckoutPaymentRequestType getDoMobileCheckoutPaymentRequest() {
-	 	return DoMobileCheckoutPaymentRequest;
+	 	return doMobileCheckoutPaymentRequest;
 	 }
 	 
 	/**
-	 * Setter for DoMobileCheckoutPaymentRequest
+	 * Setter for doMobileCheckoutPaymentRequest
 	 */
-	 public void setDoMobileCheckoutPaymentRequest(DoMobileCheckoutPaymentRequestType DoMobileCheckoutPaymentRequest) {
-	 	this.DoMobileCheckoutPaymentRequest = DoMobileCheckoutPaymentRequest;
+	 public void setDoMobileCheckoutPaymentRequest(DoMobileCheckoutPaymentRequestType doMobileCheckoutPaymentRequest) {
+	 	this.doMobileCheckoutPaymentRequest = doMobileCheckoutPaymentRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:DoMobileCheckoutPaymentReq>");
-		if(DoMobileCheckoutPaymentRequest != null) {
-			sb.append("<urn:DoMobileCheckoutPaymentRequest>");
-			sb.append(DoMobileCheckoutPaymentRequest.toXMLString());
-			sb.append("</urn:DoMobileCheckoutPaymentRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:DoMobileCheckoutPaymentReq>");
+		if(doMobileCheckoutPaymentRequest != null) {
+			sb.append(doMobileCheckoutPaymentRequest.toXMLString(null,"DoMobileCheckoutPaymentRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

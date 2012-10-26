@@ -37,6 +37,8 @@ import org.xml.sax.SAXException;
  */
 public class PaymentDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Total of order, including shipping, handling, and tax. You
@@ -47,7 +49,7 @@ public class PaymentDetailsType{
 	 * be a period (.), and the thousands separator must be a comma
 	 * (,). 	 
 	 */ 
-	private BasicAmountType OrderTotal;
+	private BasicAmountType orderTotal;
 
 	/**
 	 * Sum of cost of all items in this order. You must set the
@@ -55,7 +57,7 @@ public class PaymentDetailsType{
 	 * codes for any of the supported PayPal currencies. Optional
 	 * separator must be a comma (,).	 
 	 */ 
-	private BasicAmountType ItemTotal;
+	private BasicAmountType itemTotal;
 
 	/**
 	 * Total shipping costs for this order. You must set the
@@ -65,7 +67,7 @@ public class PaymentDetailsType{
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).	 
 	 */ 
-	private BasicAmountType ShippingTotal;
+	private BasicAmountType shippingTotal;
 
 	/**
 	 * Total handling costs for this order. You must set the
@@ -75,7 +77,7 @@ public class PaymentDetailsType{
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).	 
 	 */ 
-	private BasicAmountType HandlingTotal;
+	private BasicAmountType handlingTotal;
 
 	/**
 	 * Sum of tax for all items in this order. You must set the
@@ -85,35 +87,35 @@ public class PaymentDetailsType{
 	 * currency symbol. Decimal separator must be a period (.), and
 	 * the thousands separator must be a comma (,).	 
 	 */ 
-	private BasicAmountType TaxTotal;
+	private BasicAmountType taxTotal;
 
 	/**
 	 * Description of items the customer is purchasing. Optional
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters	 
 	 */ 
-	private String OrderDescription;
+	private String orderDescription;
 
 	/**
 	 * A free-form field for your own use. Optional Character
 	 * length and limitations: 256 single-byte alphanumeric
 	 * characters	 
 	 */ 
-	private String Custom;
+	private String custom;
 
 	/**
 	 * Your own invoice or tracking number. Optional Character
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters	 
 	 */ 
-	private String InvoiceID;
+	private String invoiceID;
 
 	/**
 	 * An identification code for use by third-party applications
 	 * to identify transactions. Optional Character length and
 	 * limitations: 32 single-byte alphanumeric characters	 
 	 */ 
-	private String ButtonSource;
+	private String buttonSource;
 
 	/**
 	 * Your URL for receiving Instant Payment Notification (IPN)
@@ -122,7 +124,7 @@ public class PaymentDetailsType{
 	 * Merchant Profile is used, if one exists. Character length
 	 * and limitations: 2,048 single-byte alphanumeric characters	 
 	 */ 
-	private String NotifyURL;
+	private String notifyURL;
 
 	/**
 	 * Address the order will be shipped to. Optional If you
@@ -130,83 +132,83 @@ public class PaymentDetailsType{
 	 * are required: Name Street1 CityName CountryCode Do not set
 	 * set the CountryName element. 	 
 	 */ 
-	private AddressType ShipToAddress;
+	private AddressType shipToAddress;
 
 	/**
 	 * Thirdparty Fulfillment Reference Number. Optional Character
 	 * length and limitations: 32 alphanumeric characters. 	 
 	 */ 
-	private String FulfillmentReferenceNumber;
+	private String fulfillmentReferenceNumber;
 
 	/**
 	 * 	 
 	 */ 
-	private AddressType FulfillmentAddress;
+	private AddressType fulfillmentAddress;
 
 	/**
 	 * 	 
 	 */ 
-	private PaymentCategoryType PaymentCategoryType;
+	private PaymentCategoryType paymentCategoryType;
 
 	/**
 	 * 	 
 	 */ 
-	private ShippingServiceCodeType ShippingMethod;
+	private ShippingServiceCodeType shippingMethod;
 
 	/**
 	 * Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at
 	 * which address was changed by the user. 	 
 	 */ 
-	private String ProfileAddressChangeDate;
+	private String profileAddressChangeDate;
 
 	/**
 	 * Information about the individual purchased items	 
 	 */ 
-	private List<PaymentDetailsItemType> PaymentDetailsItem = new ArrayList<PaymentDetailsItemType>();
+	private List<PaymentDetailsItemType> paymentDetailsItem = new ArrayList<PaymentDetailsItemType>();
 
 	/**
 	 * Total shipping insurance costs for this order. Optional 	 
 	 */ 
-	private BasicAmountType InsuranceTotal;
+	private BasicAmountType insuranceTotal;
 
 	/**
 	 * Shipping discount for this order, specified as a negative
 	 * number. Optional 	 
 	 */ 
-	private BasicAmountType ShippingDiscount;
+	private BasicAmountType shippingDiscount;
 
 	/**
 	 * Information about the Insurance options. 	 
 	 */ 
-	private String InsuranceOptionOffered;
+	private String insuranceOptionOffered;
 
 	/**
 	 * Allowed payment methods for this transaction. 	 
 	 */ 
-	private AllowedPaymentMethodType AllowedPaymentMethod;
+	private AllowedPaymentMethodType allowedPaymentMethod;
 
 	/**
 	 * Enhanced Data section to accept channel specific data.
 	 * Optional Refer to EnhancedPaymentDataType for details. 	 
 	 */ 
-	private EnhancedPaymentDataType EnhancedPaymentData;
+	private EnhancedPaymentDataType enhancedPaymentData;
 
 	/**
 	 * Details about the seller. Optional 	 
 	 */ 
-	private SellerDetailsType SellerDetails;
+	private SellerDetailsType sellerDetails;
 
 	/**
 	 * Note to recipient/seller. Optional Character length and
 	 * limitations: 127 single-byte alphanumeric characters. 	 
 	 */ 
-	private String NoteText;
+	private String noteText;
 
 	/**
 	 * PayPal Transaction Id, returned once DoExpressCheckout is
 	 * completed. 	 
 	 */ 
-	private String TransactionId;
+	private String transactionId;
 
 	/**
 	 * How you want to obtain payment. This payment action input
@@ -222,24 +224,24 @@ public class PaymentDetailsType{
 	 * API, DoExpressCheckoutPaymentRequest. Character length and
 	 * limit: Up to 13 single-byte alphabetic characters 	 
 	 */ 
-	private PaymentActionCodeType PaymentAction;
+	private PaymentActionCodeType paymentAction;
 
 	/**
 	 * Unique identifier and mandatory for the particular payment
 	 * request in case of multiple payment 	 
 	 */ 
-	private String PaymentRequestID;
+	private String paymentRequestID;
 
 	/**
 	 * URL on Merchant site pertaining to this invoice. Optional 	 
 	 */ 
-	private String OrderURL;
+	private String orderURL;
 
 	/**
 	 * Soft Descriptor supported for Sale and Auth in DEC only. For
 	 * Order this will be ignored. 	 
 	 */ 
-	private String SoftDescriptor;
+	private String softDescriptor;
 
 	/**
 	 * BranchLevel is used to identify chain payment. If
@@ -247,23 +249,23 @@ public class PaymentDetailsType{
 	 * If BranchLevel greater than 1, this payment contains the
 	 * actual seller info. Optional 	 
 	 */ 
-	private Integer BranchLevel;
+	private Integer branchLevel;
 
 	/**
 	 * Soft Descriptor supported for Sale and Auth in DEC only. For
 	 * Order this will be ignored. 	 
 	 */ 
-	private OfferDetailsType OfferDetails;
+	private OfferDetailsType offerDetails;
 
 	/**
 	 * Flag to indicate the recurring transaction 	 
 	 */ 
-	private RecurringFlagType Recurring;
+	private RecurringFlagType recurring;
 
 	/**
 	 * Indicates the purpose of this payment like Refund 	 
 	 */ 
-	private PaymentReasonType PaymentReason;
+	private PaymentReasonType paymentReason;
 
 	
 
@@ -274,617 +276,607 @@ public class PaymentDetailsType{
 	}	
 
 	/**
-	 * Getter for OrderTotal
+	 * Getter for orderTotal
 	 */
 	 public BasicAmountType getOrderTotal() {
-	 	return OrderTotal;
+	 	return orderTotal;
 	 }
 	 
 	/**
-	 * Setter for OrderTotal
+	 * Setter for orderTotal
 	 */
-	 public void setOrderTotal(BasicAmountType OrderTotal) {
-	 	this.OrderTotal = OrderTotal;
+	 public void setOrderTotal(BasicAmountType orderTotal) {
+	 	this.orderTotal = orderTotal;
 	 }
 	 
 	/**
-	 * Getter for ItemTotal
+	 * Getter for itemTotal
 	 */
 	 public BasicAmountType getItemTotal() {
-	 	return ItemTotal;
+	 	return itemTotal;
 	 }
 	 
 	/**
-	 * Setter for ItemTotal
+	 * Setter for itemTotal
 	 */
-	 public void setItemTotal(BasicAmountType ItemTotal) {
-	 	this.ItemTotal = ItemTotal;
+	 public void setItemTotal(BasicAmountType itemTotal) {
+	 	this.itemTotal = itemTotal;
 	 }
 	 
 	/**
-	 * Getter for ShippingTotal
+	 * Getter for shippingTotal
 	 */
 	 public BasicAmountType getShippingTotal() {
-	 	return ShippingTotal;
+	 	return shippingTotal;
 	 }
 	 
 	/**
-	 * Setter for ShippingTotal
+	 * Setter for shippingTotal
 	 */
-	 public void setShippingTotal(BasicAmountType ShippingTotal) {
-	 	this.ShippingTotal = ShippingTotal;
+	 public void setShippingTotal(BasicAmountType shippingTotal) {
+	 	this.shippingTotal = shippingTotal;
 	 }
 	 
 	/**
-	 * Getter for HandlingTotal
+	 * Getter for handlingTotal
 	 */
 	 public BasicAmountType getHandlingTotal() {
-	 	return HandlingTotal;
+	 	return handlingTotal;
 	 }
 	 
 	/**
-	 * Setter for HandlingTotal
+	 * Setter for handlingTotal
 	 */
-	 public void setHandlingTotal(BasicAmountType HandlingTotal) {
-	 	this.HandlingTotal = HandlingTotal;
+	 public void setHandlingTotal(BasicAmountType handlingTotal) {
+	 	this.handlingTotal = handlingTotal;
 	 }
 	 
 	/**
-	 * Getter for TaxTotal
+	 * Getter for taxTotal
 	 */
 	 public BasicAmountType getTaxTotal() {
-	 	return TaxTotal;
+	 	return taxTotal;
 	 }
 	 
 	/**
-	 * Setter for TaxTotal
+	 * Setter for taxTotal
 	 */
-	 public void setTaxTotal(BasicAmountType TaxTotal) {
-	 	this.TaxTotal = TaxTotal;
+	 public void setTaxTotal(BasicAmountType taxTotal) {
+	 	this.taxTotal = taxTotal;
 	 }
 	 
 	/**
-	 * Getter for OrderDescription
+	 * Getter for orderDescription
 	 */
 	 public String getOrderDescription() {
-	 	return OrderDescription;
+	 	return orderDescription;
 	 }
 	 
 	/**
-	 * Setter for OrderDescription
+	 * Setter for orderDescription
 	 */
-	 public void setOrderDescription(String OrderDescription) {
-	 	this.OrderDescription = OrderDescription;
+	 public void setOrderDescription(String orderDescription) {
+	 	this.orderDescription = orderDescription;
 	 }
 	 
 	/**
-	 * Getter for Custom
+	 * Getter for custom
 	 */
 	 public String getCustom() {
-	 	return Custom;
+	 	return custom;
 	 }
 	 
 	/**
-	 * Setter for Custom
+	 * Setter for custom
 	 */
-	 public void setCustom(String Custom) {
-	 	this.Custom = Custom;
+	 public void setCustom(String custom) {
+	 	this.custom = custom;
 	 }
 	 
 	/**
-	 * Getter for InvoiceID
+	 * Getter for invoiceID
 	 */
 	 public String getInvoiceID() {
-	 	return InvoiceID;
+	 	return invoiceID;
 	 }
 	 
 	/**
-	 * Setter for InvoiceID
+	 * Setter for invoiceID
 	 */
-	 public void setInvoiceID(String InvoiceID) {
-	 	this.InvoiceID = InvoiceID;
+	 public void setInvoiceID(String invoiceID) {
+	 	this.invoiceID = invoiceID;
 	 }
 	 
 	/**
-	 * Getter for ButtonSource
+	 * Getter for buttonSource
 	 */
 	 public String getButtonSource() {
-	 	return ButtonSource;
+	 	return buttonSource;
 	 }
 	 
 	/**
-	 * Setter for ButtonSource
+	 * Setter for buttonSource
 	 */
-	 public void setButtonSource(String ButtonSource) {
-	 	this.ButtonSource = ButtonSource;
+	 public void setButtonSource(String buttonSource) {
+	 	this.buttonSource = buttonSource;
 	 }
 	 
 	/**
-	 * Getter for NotifyURL
+	 * Getter for notifyURL
 	 */
 	 public String getNotifyURL() {
-	 	return NotifyURL;
+	 	return notifyURL;
 	 }
 	 
 	/**
-	 * Setter for NotifyURL
+	 * Setter for notifyURL
 	 */
-	 public void setNotifyURL(String NotifyURL) {
-	 	this.NotifyURL = NotifyURL;
+	 public void setNotifyURL(String notifyURL) {
+	 	this.notifyURL = notifyURL;
 	 }
 	 
 	/**
-	 * Getter for ShipToAddress
+	 * Getter for shipToAddress
 	 */
 	 public AddressType getShipToAddress() {
-	 	return ShipToAddress;
+	 	return shipToAddress;
 	 }
 	 
 	/**
-	 * Setter for ShipToAddress
+	 * Setter for shipToAddress
 	 */
-	 public void setShipToAddress(AddressType ShipToAddress) {
-	 	this.ShipToAddress = ShipToAddress;
+	 public void setShipToAddress(AddressType shipToAddress) {
+	 	this.shipToAddress = shipToAddress;
 	 }
 	 
 	/**
-	 * Getter for FulfillmentReferenceNumber
+	 * Getter for fulfillmentReferenceNumber
 	 */
 	 public String getFulfillmentReferenceNumber() {
-	 	return FulfillmentReferenceNumber;
+	 	return fulfillmentReferenceNumber;
 	 }
 	 
 	/**
-	 * Setter for FulfillmentReferenceNumber
+	 * Setter for fulfillmentReferenceNumber
 	 */
-	 public void setFulfillmentReferenceNumber(String FulfillmentReferenceNumber) {
-	 	this.FulfillmentReferenceNumber = FulfillmentReferenceNumber;
+	 public void setFulfillmentReferenceNumber(String fulfillmentReferenceNumber) {
+	 	this.fulfillmentReferenceNumber = fulfillmentReferenceNumber;
 	 }
 	 
 	/**
-	 * Getter for FulfillmentAddress
+	 * Getter for fulfillmentAddress
 	 */
 	 public AddressType getFulfillmentAddress() {
-	 	return FulfillmentAddress;
+	 	return fulfillmentAddress;
 	 }
 	 
 	/**
-	 * Setter for FulfillmentAddress
+	 * Setter for fulfillmentAddress
 	 */
-	 public void setFulfillmentAddress(AddressType FulfillmentAddress) {
-	 	this.FulfillmentAddress = FulfillmentAddress;
+	 public void setFulfillmentAddress(AddressType fulfillmentAddress) {
+	 	this.fulfillmentAddress = fulfillmentAddress;
 	 }
 	 
 	/**
-	 * Getter for PaymentCategoryType
+	 * Getter for paymentCategoryType
 	 */
 	 public PaymentCategoryType getPaymentCategoryType() {
-	 	return PaymentCategoryType;
+	 	return paymentCategoryType;
 	 }
 	 
 	/**
-	 * Setter for PaymentCategoryType
+	 * Setter for paymentCategoryType
 	 */
-	 public void setPaymentCategoryType(PaymentCategoryType PaymentCategoryType) {
-	 	this.PaymentCategoryType = PaymentCategoryType;
+	 public void setPaymentCategoryType(PaymentCategoryType paymentCategoryType) {
+	 	this.paymentCategoryType = paymentCategoryType;
 	 }
 	 
 	/**
-	 * Getter for ShippingMethod
+	 * Getter for shippingMethod
 	 */
 	 public ShippingServiceCodeType getShippingMethod() {
-	 	return ShippingMethod;
+	 	return shippingMethod;
 	 }
 	 
 	/**
-	 * Setter for ShippingMethod
+	 * Setter for shippingMethod
 	 */
-	 public void setShippingMethod(ShippingServiceCodeType ShippingMethod) {
-	 	this.ShippingMethod = ShippingMethod;
+	 public void setShippingMethod(ShippingServiceCodeType shippingMethod) {
+	 	this.shippingMethod = shippingMethod;
 	 }
 	 
 	/**
-	 * Getter for ProfileAddressChangeDate
+	 * Getter for profileAddressChangeDate
 	 */
 	 public String getProfileAddressChangeDate() {
-	 	return ProfileAddressChangeDate;
+	 	return profileAddressChangeDate;
 	 }
 	 
 	/**
-	 * Setter for ProfileAddressChangeDate
+	 * Setter for profileAddressChangeDate
 	 */
-	 public void setProfileAddressChangeDate(String ProfileAddressChangeDate) {
-	 	this.ProfileAddressChangeDate = ProfileAddressChangeDate;
+	 public void setProfileAddressChangeDate(String profileAddressChangeDate) {
+	 	this.profileAddressChangeDate = profileAddressChangeDate;
 	 }
 	 
 	/**
-	 * Getter for PaymentDetailsItem
+	 * Getter for paymentDetailsItem
 	 */
 	 public List<PaymentDetailsItemType> getPaymentDetailsItem() {
-	 	return PaymentDetailsItem;
+	 	return paymentDetailsItem;
 	 }
 	 
 	/**
-	 * Setter for PaymentDetailsItem
+	 * Setter for paymentDetailsItem
 	 */
-	 public void setPaymentDetailsItem(List<PaymentDetailsItemType> PaymentDetailsItem) {
-	 	this.PaymentDetailsItem = PaymentDetailsItem;
+	 public void setPaymentDetailsItem(List<PaymentDetailsItemType> paymentDetailsItem) {
+	 	this.paymentDetailsItem = paymentDetailsItem;
 	 }
 	 
 	/**
-	 * Getter for InsuranceTotal
+	 * Getter for insuranceTotal
 	 */
 	 public BasicAmountType getInsuranceTotal() {
-	 	return InsuranceTotal;
+	 	return insuranceTotal;
 	 }
 	 
 	/**
-	 * Setter for InsuranceTotal
+	 * Setter for insuranceTotal
 	 */
-	 public void setInsuranceTotal(BasicAmountType InsuranceTotal) {
-	 	this.InsuranceTotal = InsuranceTotal;
+	 public void setInsuranceTotal(BasicAmountType insuranceTotal) {
+	 	this.insuranceTotal = insuranceTotal;
 	 }
 	 
 	/**
-	 * Getter for ShippingDiscount
+	 * Getter for shippingDiscount
 	 */
 	 public BasicAmountType getShippingDiscount() {
-	 	return ShippingDiscount;
+	 	return shippingDiscount;
 	 }
 	 
 	/**
-	 * Setter for ShippingDiscount
+	 * Setter for shippingDiscount
 	 */
-	 public void setShippingDiscount(BasicAmountType ShippingDiscount) {
-	 	this.ShippingDiscount = ShippingDiscount;
+	 public void setShippingDiscount(BasicAmountType shippingDiscount) {
+	 	this.shippingDiscount = shippingDiscount;
 	 }
 	 
 	/**
-	 * Getter for InsuranceOptionOffered
+	 * Getter for insuranceOptionOffered
 	 */
 	 public String getInsuranceOptionOffered() {
-	 	return InsuranceOptionOffered;
+	 	return insuranceOptionOffered;
 	 }
 	 
 	/**
-	 * Setter for InsuranceOptionOffered
+	 * Setter for insuranceOptionOffered
 	 */
-	 public void setInsuranceOptionOffered(String InsuranceOptionOffered) {
-	 	this.InsuranceOptionOffered = InsuranceOptionOffered;
+	 public void setInsuranceOptionOffered(String insuranceOptionOffered) {
+	 	this.insuranceOptionOffered = insuranceOptionOffered;
 	 }
 	 
 	/**
-	 * Getter for AllowedPaymentMethod
+	 * Getter for allowedPaymentMethod
 	 */
 	 public AllowedPaymentMethodType getAllowedPaymentMethod() {
-	 	return AllowedPaymentMethod;
+	 	return allowedPaymentMethod;
 	 }
 	 
 	/**
-	 * Setter for AllowedPaymentMethod
+	 * Setter for allowedPaymentMethod
 	 */
-	 public void setAllowedPaymentMethod(AllowedPaymentMethodType AllowedPaymentMethod) {
-	 	this.AllowedPaymentMethod = AllowedPaymentMethod;
+	 public void setAllowedPaymentMethod(AllowedPaymentMethodType allowedPaymentMethod) {
+	 	this.allowedPaymentMethod = allowedPaymentMethod;
 	 }
 	 
 	/**
-	 * Getter for EnhancedPaymentData
+	 * Getter for enhancedPaymentData
 	 */
 	 public EnhancedPaymentDataType getEnhancedPaymentData() {
-	 	return EnhancedPaymentData;
+	 	return enhancedPaymentData;
 	 }
 	 
 	/**
-	 * Setter for EnhancedPaymentData
+	 * Setter for enhancedPaymentData
 	 */
-	 public void setEnhancedPaymentData(EnhancedPaymentDataType EnhancedPaymentData) {
-	 	this.EnhancedPaymentData = EnhancedPaymentData;
+	 public void setEnhancedPaymentData(EnhancedPaymentDataType enhancedPaymentData) {
+	 	this.enhancedPaymentData = enhancedPaymentData;
 	 }
 	 
 	/**
-	 * Getter for SellerDetails
+	 * Getter for sellerDetails
 	 */
 	 public SellerDetailsType getSellerDetails() {
-	 	return SellerDetails;
+	 	return sellerDetails;
 	 }
 	 
 	/**
-	 * Setter for SellerDetails
+	 * Setter for sellerDetails
 	 */
-	 public void setSellerDetails(SellerDetailsType SellerDetails) {
-	 	this.SellerDetails = SellerDetails;
+	 public void setSellerDetails(SellerDetailsType sellerDetails) {
+	 	this.sellerDetails = sellerDetails;
 	 }
 	 
 	/**
-	 * Getter for NoteText
+	 * Getter for noteText
 	 */
 	 public String getNoteText() {
-	 	return NoteText;
+	 	return noteText;
 	 }
 	 
 	/**
-	 * Setter for NoteText
+	 * Setter for noteText
 	 */
-	 public void setNoteText(String NoteText) {
-	 	this.NoteText = NoteText;
+	 public void setNoteText(String noteText) {
+	 	this.noteText = noteText;
 	 }
 	 
 	/**
-	 * Getter for TransactionId
+	 * Getter for transactionId
 	 */
 	 public String getTransactionId() {
-	 	return TransactionId;
+	 	return transactionId;
 	 }
 	 
 	/**
-	 * Setter for TransactionId
+	 * Setter for transactionId
 	 */
-	 public void setTransactionId(String TransactionId) {
-	 	this.TransactionId = TransactionId;
+	 public void setTransactionId(String transactionId) {
+	 	this.transactionId = transactionId;
 	 }
 	 
 	/**
-	 * Getter for PaymentAction
+	 * Getter for paymentAction
 	 */
 	 public PaymentActionCodeType getPaymentAction() {
-	 	return PaymentAction;
+	 	return paymentAction;
 	 }
 	 
 	/**
-	 * Setter for PaymentAction
+	 * Setter for paymentAction
 	 */
-	 public void setPaymentAction(PaymentActionCodeType PaymentAction) {
-	 	this.PaymentAction = PaymentAction;
+	 public void setPaymentAction(PaymentActionCodeType paymentAction) {
+	 	this.paymentAction = paymentAction;
 	 }
 	 
 	/**
-	 * Getter for PaymentRequestID
+	 * Getter for paymentRequestID
 	 */
 	 public String getPaymentRequestID() {
-	 	return PaymentRequestID;
+	 	return paymentRequestID;
 	 }
 	 
 	/**
-	 * Setter for PaymentRequestID
+	 * Setter for paymentRequestID
 	 */
-	 public void setPaymentRequestID(String PaymentRequestID) {
-	 	this.PaymentRequestID = PaymentRequestID;
+	 public void setPaymentRequestID(String paymentRequestID) {
+	 	this.paymentRequestID = paymentRequestID;
 	 }
 	 
 	/**
-	 * Getter for OrderURL
+	 * Getter for orderURL
 	 */
 	 public String getOrderURL() {
-	 	return OrderURL;
+	 	return orderURL;
 	 }
 	 
 	/**
-	 * Setter for OrderURL
+	 * Setter for orderURL
 	 */
-	 public void setOrderURL(String OrderURL) {
-	 	this.OrderURL = OrderURL;
+	 public void setOrderURL(String orderURL) {
+	 	this.orderURL = orderURL;
 	 }
 	 
 	/**
-	 * Getter for SoftDescriptor
+	 * Getter for softDescriptor
 	 */
 	 public String getSoftDescriptor() {
-	 	return SoftDescriptor;
+	 	return softDescriptor;
 	 }
 	 
 	/**
-	 * Setter for SoftDescriptor
+	 * Setter for softDescriptor
 	 */
-	 public void setSoftDescriptor(String SoftDescriptor) {
-	 	this.SoftDescriptor = SoftDescriptor;
+	 public void setSoftDescriptor(String softDescriptor) {
+	 	this.softDescriptor = softDescriptor;
 	 }
 	 
 	/**
-	 * Getter for BranchLevel
+	 * Getter for branchLevel
 	 */
 	 public Integer getBranchLevel() {
-	 	return BranchLevel;
+	 	return branchLevel;
 	 }
 	 
 	/**
-	 * Setter for BranchLevel
+	 * Setter for branchLevel
 	 */
-	 public void setBranchLevel(Integer BranchLevel) {
-	 	this.BranchLevel = BranchLevel;
+	 public void setBranchLevel(Integer branchLevel) {
+	 	this.branchLevel = branchLevel;
 	 }
 	 
 	/**
-	 * Getter for OfferDetails
+	 * Getter for offerDetails
 	 */
 	 public OfferDetailsType getOfferDetails() {
-	 	return OfferDetails;
+	 	return offerDetails;
 	 }
 	 
 	/**
-	 * Setter for OfferDetails
+	 * Setter for offerDetails
 	 */
-	 public void setOfferDetails(OfferDetailsType OfferDetails) {
-	 	this.OfferDetails = OfferDetails;
+	 public void setOfferDetails(OfferDetailsType offerDetails) {
+	 	this.offerDetails = offerDetails;
 	 }
 	 
 	/**
-	 * Getter for Recurring
+	 * Getter for recurring
 	 */
 	 public RecurringFlagType getRecurring() {
-	 	return Recurring;
+	 	return recurring;
 	 }
 	 
 	/**
-	 * Setter for Recurring
+	 * Setter for recurring
 	 */
-	 public void setRecurring(RecurringFlagType Recurring) {
-	 	this.Recurring = Recurring;
+	 public void setRecurring(RecurringFlagType recurring) {
+	 	this.recurring = recurring;
 	 }
 	 
 	/**
-	 * Getter for PaymentReason
+	 * Getter for paymentReason
 	 */
 	 public PaymentReasonType getPaymentReason() {
-	 	return PaymentReason;
+	 	return paymentReason;
 	 }
 	 
 	/**
-	 * Setter for PaymentReason
+	 * Setter for paymentReason
 	 */
-	 public void setPaymentReason(PaymentReasonType PaymentReason) {
-	 	this.PaymentReason = PaymentReason;
+	 public void setPaymentReason(PaymentReasonType paymentReason) {
+	 	this.paymentReason = paymentReason;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(OrderTotal != null) {
-			sb.append("<ebl:OrderTotal");
-			sb.append(OrderTotal.toXMLString());
-			sb.append("</ebl:OrderTotal>");
-		}
-		if(ItemTotal != null) {
-			sb.append("<ebl:ItemTotal");
-			sb.append(ItemTotal.toXMLString());
-			sb.append("</ebl:ItemTotal>");
-		}
-		if(ShippingTotal != null) {
-			sb.append("<ebl:ShippingTotal");
-			sb.append(ShippingTotal.toXMLString());
-			sb.append("</ebl:ShippingTotal>");
-		}
-		if(HandlingTotal != null) {
-			sb.append("<ebl:HandlingTotal");
-			sb.append(HandlingTotal.toXMLString());
-			sb.append("</ebl:HandlingTotal>");
-		}
-		if(TaxTotal != null) {
-			sb.append("<ebl:TaxTotal");
-			sb.append(TaxTotal.toXMLString());
-			sb.append("</ebl:TaxTotal>");
-		}
-		if(OrderDescription != null) {
-			sb.append("<ebl:OrderDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(OrderDescription));
-			sb.append("</ebl:OrderDescription>");
-		}
-		if(Custom != null) {
-			sb.append("<ebl:Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(Custom));
-			sb.append("</ebl:Custom>");
-		}
-		if(InvoiceID != null) {
-			sb.append("<ebl:InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(InvoiceID));
-			sb.append("</ebl:InvoiceID>");
-		}
-		if(ButtonSource != null) {
-			sb.append("<ebl:ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonSource));
-			sb.append("</ebl:ButtonSource>");
-		}
-		if(NotifyURL != null) {
-			sb.append("<ebl:NotifyURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(NotifyURL));
-			sb.append("</ebl:NotifyURL>");
-		}
-		if(ShipToAddress != null) {
-			sb.append("<ebl:ShipToAddress>");
-			sb.append(ShipToAddress.toXMLString());
-			sb.append("</ebl:ShipToAddress>");
-		}
-		if(FulfillmentReferenceNumber != null) {
-			sb.append("<ebl:FulfillmentReferenceNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(FulfillmentReferenceNumber));
-			sb.append("</ebl:FulfillmentReferenceNumber>");
-		}
-		if(FulfillmentAddress != null) {
-			sb.append("<ebl:FulfillmentAddress>");
-			sb.append(FulfillmentAddress.toXMLString());
-			sb.append("</ebl:FulfillmentAddress>");
-		}
-		if(PaymentCategoryType != null) {
-			sb.append("<ebl:PaymentCategoryType>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentCategoryType.getValue()));
-			sb.append("</ebl:PaymentCategoryType>");
-		}
-		if(ShippingMethod != null) {
-			sb.append("<ebl:ShippingMethod>").append(SDKUtil.escapeInvalidXmlCharsRegex(ShippingMethod.getValue()));
-			sb.append("</ebl:ShippingMethod>");
-		}
-		if(ProfileAddressChangeDate != null) {
-			sb.append("<ebl:ProfileAddressChangeDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProfileAddressChangeDate));
-			sb.append("</ebl:ProfileAddressChangeDate>");
-		}
-		if(PaymentDetailsItem != null) {
-			for(int i=0; i < PaymentDetailsItem.size(); i++) {
-				sb.append("<ebl:PaymentDetailsItem>");
-				sb.append(PaymentDetailsItem.get(i).toXMLString());
-				sb.append("</ebl:PaymentDetailsItem>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
 			}
 		}
-		if(InsuranceTotal != null) {
-			sb.append("<ebl:InsuranceTotal");
-			sb.append(InsuranceTotal.toXMLString());
-			sb.append("</ebl:InsuranceTotal>");
+		if(orderTotal != null) {
+			sb.append(orderTotal.toXMLString(preferredPrefix,"OrderTotal"));
 		}
-		if(ShippingDiscount != null) {
-			sb.append("<ebl:ShippingDiscount");
-			sb.append(ShippingDiscount.toXMLString());
-			sb.append("</ebl:ShippingDiscount>");
+		if(itemTotal != null) {
+			sb.append(itemTotal.toXMLString(preferredPrefix,"ItemTotal"));
 		}
-		if(InsuranceOptionOffered != null) {
-			sb.append("<ebl:InsuranceOptionOffered>").append(SDKUtil.escapeInvalidXmlCharsRegex(InsuranceOptionOffered));
-			sb.append("</ebl:InsuranceOptionOffered>");
+		if(shippingTotal != null) {
+			sb.append(shippingTotal.toXMLString(preferredPrefix,"ShippingTotal"));
 		}
-		if(AllowedPaymentMethod != null) {
-			sb.append("<ebl:AllowedPaymentMethod>").append(SDKUtil.escapeInvalidXmlCharsRegex(AllowedPaymentMethod.getValue()));
-			sb.append("</ebl:AllowedPaymentMethod>");
+		if(handlingTotal != null) {
+			sb.append(handlingTotal.toXMLString(preferredPrefix,"HandlingTotal"));
 		}
-		if(EnhancedPaymentData != null) {
-			sb.append("<ebl:EnhancedPaymentData>");
-			sb.append(EnhancedPaymentData.toXMLString());
-			sb.append("</ebl:EnhancedPaymentData>");
+		if(taxTotal != null) {
+			sb.append(taxTotal.toXMLString(preferredPrefix,"TaxTotal"));
 		}
-		if(SellerDetails != null) {
-			sb.append("<ebl:SellerDetails>");
-			sb.append(SellerDetails.toXMLString());
-			sb.append("</ebl:SellerDetails>");
+		if(orderDescription != null) {
+			sb.append("<").append(preferredPrefix).append(":OrderDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(orderDescription));
+			sb.append("</").append(preferredPrefix).append(":OrderDescription>");
 		}
-		if(NoteText != null) {
-			sb.append("<ebl:NoteText>").append(SDKUtil.escapeInvalidXmlCharsRegex(NoteText));
-			sb.append("</ebl:NoteText>");
+		if(custom != null) {
+			sb.append("<").append(preferredPrefix).append(":Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(custom));
+			sb.append("</").append(preferredPrefix).append(":Custom>");
 		}
-		if(TransactionId != null) {
-			sb.append("<ebl:TransactionId>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionId));
-			sb.append("</ebl:TransactionId>");
+		if(invoiceID != null) {
+			sb.append("<").append(preferredPrefix).append(":InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(invoiceID));
+			sb.append("</").append(preferredPrefix).append(":InvoiceID>");
 		}
-		if(PaymentAction != null) {
-			sb.append("<ebl:PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentAction.getValue()));
-			sb.append("</ebl:PaymentAction>");
+		if(buttonSource != null) {
+			sb.append("<").append(preferredPrefix).append(":ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonSource));
+			sb.append("</").append(preferredPrefix).append(":ButtonSource>");
 		}
-		if(PaymentRequestID != null) {
-			sb.append("<ebl:PaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentRequestID));
-			sb.append("</ebl:PaymentRequestID>");
+		if(notifyURL != null) {
+			sb.append("<").append(preferredPrefix).append(":NotifyURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(notifyURL));
+			sb.append("</").append(preferredPrefix).append(":NotifyURL>");
 		}
-		if(OrderURL != null) {
-			sb.append("<ebl:OrderURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(OrderURL));
-			sb.append("</ebl:OrderURL>");
+		if(shipToAddress != null) {
+			sb.append(shipToAddress.toXMLString(preferredPrefix,"ShipToAddress"));
 		}
-		if(SoftDescriptor != null) {
-			sb.append("<ebl:SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(SoftDescriptor));
-			sb.append("</ebl:SoftDescriptor>");
+		if(fulfillmentReferenceNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":FulfillmentReferenceNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(fulfillmentReferenceNumber));
+			sb.append("</").append(preferredPrefix).append(":FulfillmentReferenceNumber>");
 		}
-		if(BranchLevel != null) {
-			sb.append("<ebl:BranchLevel>").append(SDKUtil.escapeInvalidXmlCharsRegex(BranchLevel));
-			sb.append("</ebl:BranchLevel>");
+		if(fulfillmentAddress != null) {
+			sb.append(fulfillmentAddress.toXMLString(preferredPrefix,"FulfillmentAddress"));
 		}
-		if(OfferDetails != null) {
-			sb.append("<ebl:OfferDetails>");
-			sb.append(OfferDetails.toXMLString());
-			sb.append("</ebl:OfferDetails>");
+		if(paymentCategoryType != null) {
+			sb.append("<").append(preferredPrefix).append(":PaymentCategoryType>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentCategoryType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":PaymentCategoryType>");
 		}
-		if(Recurring != null) {
-			sb.append("<ebl:Recurring>").append(SDKUtil.escapeInvalidXmlCharsRegex(Recurring.getValue()));
-			sb.append("</ebl:Recurring>");
+		if(shippingMethod != null) {
+			sb.append("<").append(preferredPrefix).append(":ShippingMethod>").append(SDKUtil.escapeInvalidXmlCharsRegex(shippingMethod.getValue()));
+			sb.append("</").append(preferredPrefix).append(":ShippingMethod>");
 		}
-		if(PaymentReason != null) {
-			sb.append("<ebl:PaymentReason>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentReason.getValue()));
-			sb.append("</ebl:PaymentReason>");
+		if(profileAddressChangeDate != null) {
+			sb.append("<").append(preferredPrefix).append(":ProfileAddressChangeDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(profileAddressChangeDate));
+			sb.append("</").append(preferredPrefix).append(":ProfileAddressChangeDate>");
+		}
+		if(paymentDetailsItem != null) {
+			for(int i=0; i < paymentDetailsItem.size(); i++) {
+				sb.append(paymentDetailsItem.get(i).toXMLString(preferredPrefix,"PaymentDetailsItem"));
+			}
+		}
+		if(insuranceTotal != null) {
+			sb.append(insuranceTotal.toXMLString(preferredPrefix,"InsuranceTotal"));
+		}
+		if(shippingDiscount != null) {
+			sb.append(shippingDiscount.toXMLString(preferredPrefix,"ShippingDiscount"));
+		}
+		if(insuranceOptionOffered != null) {
+			sb.append("<").append(preferredPrefix).append(":InsuranceOptionOffered>").append(SDKUtil.escapeInvalidXmlCharsRegex(insuranceOptionOffered));
+			sb.append("</").append(preferredPrefix).append(":InsuranceOptionOffered>");
+		}
+		if(allowedPaymentMethod != null) {
+			sb.append("<").append(preferredPrefix).append(":AllowedPaymentMethod>").append(SDKUtil.escapeInvalidXmlCharsRegex(allowedPaymentMethod.getValue()));
+			sb.append("</").append(preferredPrefix).append(":AllowedPaymentMethod>");
+		}
+		if(enhancedPaymentData != null) {
+			sb.append(enhancedPaymentData.toXMLString(preferredPrefix,"EnhancedPaymentData"));
+		}
+		if(sellerDetails != null) {
+			sb.append(sellerDetails.toXMLString(preferredPrefix,"SellerDetails"));
+		}
+		if(noteText != null) {
+			sb.append("<").append(preferredPrefix).append(":NoteText>").append(SDKUtil.escapeInvalidXmlCharsRegex(noteText));
+			sb.append("</").append(preferredPrefix).append(":NoteText>");
+		}
+		if(transactionId != null) {
+			sb.append("<").append(preferredPrefix).append(":TransactionId>").append(SDKUtil.escapeInvalidXmlCharsRegex(transactionId));
+			sb.append("</").append(preferredPrefix).append(":TransactionId>");
+		}
+		if(paymentAction != null) {
+			sb.append("<").append(preferredPrefix).append(":PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentAction.getValue()));
+			sb.append("</").append(preferredPrefix).append(":PaymentAction>");
+		}
+		if(paymentRequestID != null) {
+			sb.append("<").append(preferredPrefix).append(":PaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentRequestID));
+			sb.append("</").append(preferredPrefix).append(":PaymentRequestID>");
+		}
+		if(orderURL != null) {
+			sb.append("<").append(preferredPrefix).append(":OrderURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(orderURL));
+			sb.append("</").append(preferredPrefix).append(":OrderURL>");
+		}
+		if(softDescriptor != null) {
+			sb.append("<").append(preferredPrefix).append(":SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(softDescriptor));
+			sb.append("</").append(preferredPrefix).append(":SoftDescriptor>");
+		}
+		if(branchLevel != null) {
+			sb.append("<").append(preferredPrefix).append(":BranchLevel>").append(SDKUtil.escapeInvalidXmlCharsRegex(branchLevel));
+			sb.append("</").append(preferredPrefix).append(":BranchLevel>");
+		}
+		if(offerDetails != null) {
+			sb.append(offerDetails.toXMLString(preferredPrefix,"OfferDetails"));
+		}
+		if(recurring != null) {
+			sb.append("<").append(preferredPrefix).append(":Recurring>").append(SDKUtil.escapeInvalidXmlCharsRegex(recurring.getValue()));
+			sb.append("</").append(preferredPrefix).append(":Recurring>");
+		}
+		if(paymentReason != null) {
+			sb.append("<").append(preferredPrefix).append(":PaymentReason>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentReason.getValue()));
+			sb.append("</").append(preferredPrefix).append(":PaymentReason>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -908,152 +900,152 @@ public class PaymentDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("OrderTotal", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OrderTotal =  new BasicAmountType(childNode);
+		    this.orderTotal =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("ItemTotal", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ItemTotal =  new BasicAmountType(childNode);
+		    this.itemTotal =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("ShippingTotal", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ShippingTotal =  new BasicAmountType(childNode);
+		    this.shippingTotal =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("HandlingTotal", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.HandlingTotal =  new BasicAmountType(childNode);
+		    this.handlingTotal =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("TaxTotal", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TaxTotal =  new BasicAmountType(childNode);
+		    this.taxTotal =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("OrderDescription", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OrderDescription = childNode.getTextContent();
+		    this.orderDescription = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Custom", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Custom = childNode.getTextContent();
+		    this.custom = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("InvoiceID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.InvoiceID = childNode.getTextContent();
+		    this.invoiceID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ButtonSource", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ButtonSource = childNode.getTextContent();
+		    this.buttonSource = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("NotifyURL", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.NotifyURL = childNode.getTextContent();
+		    this.notifyURL = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ShipToAddress", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ShipToAddress =  new AddressType(childNode);
+		    this.shipToAddress =  new AddressType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("FulfillmentReferenceNumber", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.FulfillmentReferenceNumber = childNode.getTextContent();
+		    this.fulfillmentReferenceNumber = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("FulfillmentAddress", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.FulfillmentAddress =  new AddressType(childNode);
+		    this.fulfillmentAddress =  new AddressType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("PaymentCategoryType", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentCategoryType = PaymentCategoryType.fromValue(childNode.getTextContent());
+		    this.paymentCategoryType = PaymentCategoryType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("ShippingMethod", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ShippingMethod = ShippingServiceCodeType.fromValue(childNode.getTextContent());
+		    this.shippingMethod = ShippingServiceCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("ProfileAddressChangeDate", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ProfileAddressChangeDate = childNode.getTextContent();
+		    this.profileAddressChangeDate = childNode.getTextContent();
 		}
 	
         nodeList = (NodeList) xpath.evaluate("PaymentDetailsItem", node, XPathConstants.NODESET);
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.PaymentDetailsItem.add(new PaymentDetailsItemType(subNode));
+				this.paymentDetailsItem.add(new PaymentDetailsItemType(subNode));
 			}
 		}
 		childNode = (Node) xpath.evaluate("InsuranceTotal", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.InsuranceTotal =  new BasicAmountType(childNode);
+		    this.insuranceTotal =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("ShippingDiscount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ShippingDiscount =  new BasicAmountType(childNode);
+		    this.shippingDiscount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("InsuranceOptionOffered", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.InsuranceOptionOffered = childNode.getTextContent();
+		    this.insuranceOptionOffered = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("AllowedPaymentMethod", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AllowedPaymentMethod = AllowedPaymentMethodType.fromValue(childNode.getTextContent());
+		    this.allowedPaymentMethod = AllowedPaymentMethodType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("EnhancedPaymentData", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.EnhancedPaymentData =  new EnhancedPaymentDataType(childNode);
+		    this.enhancedPaymentData =  new EnhancedPaymentDataType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("SellerDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SellerDetails =  new SellerDetailsType(childNode);
+		    this.sellerDetails =  new SellerDetailsType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("NoteText", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.NoteText = childNode.getTextContent();
+		    this.noteText = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("TransactionId", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TransactionId = childNode.getTextContent();
+		    this.transactionId = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PaymentAction", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentAction = PaymentActionCodeType.fromValue(childNode.getTextContent());
+		    this.paymentAction = PaymentActionCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("PaymentRequestID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentRequestID = childNode.getTextContent();
+		    this.paymentRequestID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("OrderURL", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OrderURL = childNode.getTextContent();
+		    this.orderURL = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("SoftDescriptor", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SoftDescriptor = childNode.getTextContent();
+		    this.softDescriptor = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("BranchLevel", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.BranchLevel = Integer.valueOf(childNode.getTextContent());
+			this.branchLevel = Integer.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("OfferDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OfferDetails =  new OfferDetailsType(childNode);
+		    this.offerDetails =  new OfferDetailsType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("Recurring", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Recurring = RecurringFlagType.fromValue(childNode.getTextContent());
+		    this.recurring = RecurringFlagType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("PaymentReason", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentReason = PaymentReasonType.fromValue(childNode.getTextContent());
+		    this.paymentReason = PaymentReasonType.fromValue(childNode.getTextContent());
 		}
 	}
  

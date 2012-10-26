@@ -29,13 +29,13 @@ public class ReverseTransactionResponseDetailsType{
 	 * created. Character length and limitations:17 single-byte
 	 * characters 	 
 	 */ 
-	private String ReverseTransactionID;
+	private String reverseTransactionID;
 
 	/**
 	 * Status of reversal request. Required 	  
 	 *@Required	 
 	 */ 
-	private String Status;
+	private String status;
 
 	
 
@@ -46,31 +46,31 @@ public class ReverseTransactionResponseDetailsType{
 	}	
 
 	/**
-	 * Getter for ReverseTransactionID
+	 * Getter for reverseTransactionID
 	 */
 	 public String getReverseTransactionID() {
-	 	return ReverseTransactionID;
+	 	return reverseTransactionID;
 	 }
 	 
 	/**
-	 * Setter for ReverseTransactionID
+	 * Setter for reverseTransactionID
 	 */
-	 public void setReverseTransactionID(String ReverseTransactionID) {
-	 	this.ReverseTransactionID = ReverseTransactionID;
+	 public void setReverseTransactionID(String reverseTransactionID) {
+	 	this.reverseTransactionID = reverseTransactionID;
 	 }
 	 
 	/**
-	 * Getter for Status
+	 * Getter for status
 	 */
 	 public String getStatus() {
-	 	return Status;
+	 	return status;
 	 }
 	 
 	/**
-	 * Setter for Status
+	 * Setter for status
 	 */
-	 public void setStatus(String Status) {
-	 	this.Status = Status;
+	 public void setStatus(String status) {
+	 	this.status = status;
 	 }
 	 
 
@@ -94,12 +94,12 @@ public class ReverseTransactionResponseDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("ReverseTransactionID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ReverseTransactionID = childNode.getTextContent();
+		    this.reverseTransactionID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Status", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Status = childNode.getTextContent();
+		    this.status = childNode.getTextContent();
 		}
 	
 	}

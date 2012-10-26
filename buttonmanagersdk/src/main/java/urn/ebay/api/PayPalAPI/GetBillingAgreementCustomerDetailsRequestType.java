@@ -7,20 +7,22 @@ import com.paypal.core.SDKUtil;
  */
 public class GetBillingAgreementCustomerDetailsRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String Token;
+	private String token;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public GetBillingAgreementCustomerDetailsRequestType (String Token){
-		this.Token = Token;
+	public GetBillingAgreementCustomerDetailsRequestType (String token){
+		this.token = token;
 	}	
 
 	/**
@@ -30,27 +32,43 @@ public class GetBillingAgreementCustomerDetailsRequestType extends AbstractReque
 	}	
 
 	/**
-	 * Getter for Token
+	 * Getter for token
 	 */
 	 public String getToken() {
-	 	return Token;
+	 	return token;
 	 }
 	 
 	/**
-	 * Setter for Token
+	 * Setter for token
 	 */
-	 public void setToken(String Token) {
-	 	this.Token = Token;
+	 public void setToken(String token) {
+	 	this.token = token;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(Token != null) {
-			sb.append("<urn:Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(Token));
-			sb.append("</urn:Token>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		sb.append(super.toXMLString(prefix, null));
+		if(token != null) {
+			sb.append("<").append(preferredPrefix).append(":Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(token));
+			sb.append("</").append(preferredPrefix).append(":Token>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

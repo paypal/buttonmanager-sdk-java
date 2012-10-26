@@ -29,13 +29,13 @@ public class GetMobileStatusResponseType extends AbstractResponseType {
 	 * 	  
 	 *@Required	 
 	 */ 
-	private Integer IsActivated;
+	private Integer isActivated;
 
 	/**
 	 * Indicates whether there is a payment pending from the phone 	  
 	 *@Required	 
 	 */ 
-	private Integer PaymentPending;
+	private Integer paymentPending;
 
 	
 
@@ -46,31 +46,31 @@ public class GetMobileStatusResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for IsActivated
+	 * Getter for isActivated
 	 */
 	 public Integer getIsActivated() {
-	 	return IsActivated;
+	 	return isActivated;
 	 }
 	 
 	/**
-	 * Setter for IsActivated
+	 * Setter for isActivated
 	 */
-	 public void setIsActivated(Integer IsActivated) {
-	 	this.IsActivated = IsActivated;
+	 public void setIsActivated(Integer isActivated) {
+	 	this.isActivated = isActivated;
 	 }
 	 
 	/**
-	 * Getter for PaymentPending
+	 * Getter for paymentPending
 	 */
 	 public Integer getPaymentPending() {
-	 	return PaymentPending;
+	 	return paymentPending;
 	 }
 	 
 	/**
-	 * Setter for PaymentPending
+	 * Setter for paymentPending
 	 */
-	 public void setPaymentPending(Integer PaymentPending) {
-	 	this.PaymentPending = PaymentPending;
+	 public void setPaymentPending(Integer paymentPending) {
+	 	this.paymentPending = paymentPending;
 	 }
 	 
 
@@ -95,12 +95,12 @@ public class GetMobileStatusResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("IsActivated", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.IsActivated = Integer.valueOf(childNode.getTextContent());
+			this.isActivated = Integer.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("PaymentPending", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.PaymentPending = Integer.valueOf(childNode.getTextContent());
+			this.paymentPending = Integer.valueOf(childNode.getTextContent());
 		}
 	
 	}

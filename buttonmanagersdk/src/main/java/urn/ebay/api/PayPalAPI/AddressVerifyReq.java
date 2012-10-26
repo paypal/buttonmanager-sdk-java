@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class AddressVerifyReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private AddressVerifyRequestType AddressVerifyRequest;
+	private AddressVerifyRequestType addressVerifyRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class AddressVerifyReq{
 	}	
 
 	/**
-	 * Getter for AddressVerifyRequest
+	 * Getter for addressVerifyRequest
 	 */
 	 public AddressVerifyRequestType getAddressVerifyRequest() {
-	 	return AddressVerifyRequest;
+	 	return addressVerifyRequest;
 	 }
 	 
 	/**
-	 * Setter for AddressVerifyRequest
+	 * Setter for addressVerifyRequest
 	 */
-	 public void setAddressVerifyRequest(AddressVerifyRequestType AddressVerifyRequest) {
-	 	this.AddressVerifyRequest = AddressVerifyRequest;
+	 public void setAddressVerifyRequest(AddressVerifyRequestType addressVerifyRequest) {
+	 	this.addressVerifyRequest = addressVerifyRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:AddressVerifyReq>");
-		if(AddressVerifyRequest != null) {
-			sb.append("<urn:AddressVerifyRequest>");
-			sb.append(AddressVerifyRequest.toXMLString());
-			sb.append("</urn:AddressVerifyRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:AddressVerifyReq>");
+		if(addressVerifyRequest != null) {
+			sb.append(addressVerifyRequest.toXMLString(null,"AddressVerifyRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

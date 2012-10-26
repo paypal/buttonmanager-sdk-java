@@ -9,17 +9,19 @@ import com.paypal.core.SDKUtil;
  */
 public class IncentiveInfoType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Incentive redemption code. 	 
 	 */ 
-	private String IncentiveCode;
+	private String incentiveCode;
 
 	/**
 	 * Defines which bucket or item that the incentive should be
 	 * applied to. 	 
 	 */ 
-	private List<IncentiveApplyIndicationType> ApplyIndication = new ArrayList<IncentiveApplyIndicationType>();
+	private List<IncentiveApplyIndicationType> applyIndication = new ArrayList<IncentiveApplyIndicationType>();
 
 	
 
@@ -30,46 +32,60 @@ public class IncentiveInfoType{
 	}	
 
 	/**
-	 * Getter for IncentiveCode
+	 * Getter for incentiveCode
 	 */
 	 public String getIncentiveCode() {
-	 	return IncentiveCode;
+	 	return incentiveCode;
 	 }
 	 
 	/**
-	 * Setter for IncentiveCode
+	 * Setter for incentiveCode
 	 */
-	 public void setIncentiveCode(String IncentiveCode) {
-	 	this.IncentiveCode = IncentiveCode;
+	 public void setIncentiveCode(String incentiveCode) {
+	 	this.incentiveCode = incentiveCode;
 	 }
 	 
 	/**
-	 * Getter for ApplyIndication
+	 * Getter for applyIndication
 	 */
 	 public List<IncentiveApplyIndicationType> getApplyIndication() {
-	 	return ApplyIndication;
+	 	return applyIndication;
 	 }
 	 
 	/**
-	 * Setter for ApplyIndication
+	 * Setter for applyIndication
 	 */
-	 public void setApplyIndication(List<IncentiveApplyIndicationType> ApplyIndication) {
-	 	this.ApplyIndication = ApplyIndication;
+	 public void setApplyIndication(List<IncentiveApplyIndicationType> applyIndication) {
+	 	this.applyIndication = applyIndication;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(IncentiveCode != null) {
-			sb.append("<ebl:IncentiveCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(IncentiveCode));
-			sb.append("</ebl:IncentiveCode>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ApplyIndication != null) {
-			for(int i=0; i < ApplyIndication.size(); i++) {
-				sb.append("<ebl:ApplyIndication>");
-				sb.append(ApplyIndication.get(i).toXMLString());
-				sb.append("</ebl:ApplyIndication>");
+		if(incentiveCode != null) {
+			sb.append("<").append(preferredPrefix).append(":IncentiveCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(incentiveCode));
+			sb.append("</").append(preferredPrefix).append(":IncentiveCode>");
+		}
+		if(applyIndication != null) {
+			for(int i=0; i < applyIndication.size(); i++) {
+				sb.append(applyIndication.get(i).toXMLString(preferredPrefix,"ApplyIndication"));
+			}
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
 			}
 		}
 		return sb.toString();

@@ -7,6 +7,8 @@ import com.paypal.core.SDKUtil;
  */
 public class ExternalRememberMeOwnerDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * A discriminant that tells SetEC what kind of data the
@@ -19,7 +21,7 @@ public class ExternalRememberMeOwnerDetailsType{
 	 * SecureMerchantAccountID, the owner id is a string
 	 * representing the secure merchant account ID 	 
 	 */ 
-	private String ExternalRememberMeOwnerIDType;
+	private String externalRememberMeOwnerIDType;
 
 	/**
 	 * When opting in to bypass login via remember me, this
@@ -29,7 +31,7 @@ public class ExternalRememberMeOwnerDetailsType{
 	 * to be a 3rd party merchant account. If the Owner ID Type
 	 * field is not present or "None", this parameter is ignored. 	 
 	 */ 
-	private String ExternalRememberMeOwnerID;
+	private String externalRememberMeOwnerID;
 
 	
 
@@ -40,44 +42,60 @@ public class ExternalRememberMeOwnerDetailsType{
 	}	
 
 	/**
-	 * Getter for ExternalRememberMeOwnerIDType
+	 * Getter for externalRememberMeOwnerIDType
 	 */
 	 public String getExternalRememberMeOwnerIDType() {
-	 	return ExternalRememberMeOwnerIDType;
+	 	return externalRememberMeOwnerIDType;
 	 }
 	 
 	/**
-	 * Setter for ExternalRememberMeOwnerIDType
+	 * Setter for externalRememberMeOwnerIDType
 	 */
-	 public void setExternalRememberMeOwnerIDType(String ExternalRememberMeOwnerIDType) {
-	 	this.ExternalRememberMeOwnerIDType = ExternalRememberMeOwnerIDType;
+	 public void setExternalRememberMeOwnerIDType(String externalRememberMeOwnerIDType) {
+	 	this.externalRememberMeOwnerIDType = externalRememberMeOwnerIDType;
 	 }
 	 
 	/**
-	 * Getter for ExternalRememberMeOwnerID
+	 * Getter for externalRememberMeOwnerID
 	 */
 	 public String getExternalRememberMeOwnerID() {
-	 	return ExternalRememberMeOwnerID;
+	 	return externalRememberMeOwnerID;
 	 }
 	 
 	/**
-	 * Setter for ExternalRememberMeOwnerID
+	 * Setter for externalRememberMeOwnerID
 	 */
-	 public void setExternalRememberMeOwnerID(String ExternalRememberMeOwnerID) {
-	 	this.ExternalRememberMeOwnerID = ExternalRememberMeOwnerID;
+	 public void setExternalRememberMeOwnerID(String externalRememberMeOwnerID) {
+	 	this.externalRememberMeOwnerID = externalRememberMeOwnerID;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(ExternalRememberMeOwnerIDType != null) {
-			sb.append("<ebl:ExternalRememberMeOwnerIDType>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExternalRememberMeOwnerIDType));
-			sb.append("</ebl:ExternalRememberMeOwnerIDType>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ExternalRememberMeOwnerID != null) {
-			sb.append("<ebl:ExternalRememberMeOwnerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExternalRememberMeOwnerID));
-			sb.append("</ebl:ExternalRememberMeOwnerID>");
+		if(externalRememberMeOwnerIDType != null) {
+			sb.append("<").append(preferredPrefix).append(":ExternalRememberMeOwnerIDType>").append(SDKUtil.escapeInvalidXmlCharsRegex(externalRememberMeOwnerIDType));
+			sb.append("</").append(preferredPrefix).append(":ExternalRememberMeOwnerIDType>");
+		}
+		if(externalRememberMeOwnerID != null) {
+			sb.append("<").append(preferredPrefix).append(":ExternalRememberMeOwnerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(externalRememberMeOwnerID));
+			sb.append("</").append(preferredPrefix).append(":ExternalRememberMeOwnerID>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

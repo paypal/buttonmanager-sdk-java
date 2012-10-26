@@ -11,11 +11,13 @@ import com.paypal.core.SDKUtil;
  */
 public class CreateMobilePaymentRequestDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Type of the payment Required 	 
 	 */ 
-	private MobilePaymentCodeType PaymentType;
+	private MobilePaymentCodeType paymentType;
 
 	/**
 	 * How you want to obtain payment. Defaults to Sale. Optional
@@ -24,81 +26,81 @@ public class CreateMobilePaymentRequestDetailsType{
 	 * Authorization and Capture. Sale indicates that this is a
 	 * final sale for which you are requesting payment. 	 
 	 */ 
-	private PaymentActionCodeType PaymentAction;
+	private PaymentActionCodeType paymentAction;
 
 	/**
 	 * Phone number of the user making the payment. Required 	 
 	 */ 
-	private PhoneNumberType SenderPhone;
+	private PhoneNumberType senderPhone;
 
 	/**
 	 * Type of recipient specified, i.e., phone number or email
 	 * address Required 	 
 	 */ 
-	private MobileRecipientCodeType RecipientType;
+	private MobileRecipientCodeType recipientType;
 
 	/**
 	 * Email address of the recipient 	 
 	 */ 
-	private String RecipientEmail;
+	private String recipientEmail;
 
 	/**
 	 * Phone number of the recipipent Required 	 
 	 */ 
-	private PhoneNumberType RecipientPhone;
+	private PhoneNumberType recipientPhone;
 
 	/**
 	 * Amount of item before tax and shipping 	 
 	 */ 
-	private BasicAmountType ItemAmount;
+	private BasicAmountType itemAmount;
 
 	/**
 	 * The tax charged on the transactionTax Optional 	 
 	 */ 
-	private BasicAmountType Tax;
+	private BasicAmountType tax;
 
 	/**
 	 * Per-transaction shipping charge Optional 	 
 	 */ 
-	private BasicAmountType Shipping;
+	private BasicAmountType shipping;
 
 	/**
 	 * Name of the item being ordered Optional Character length and
 	 * limitations: 255 single-byte alphanumeric characters 	 
 	 */ 
-	private String ItemName;
+	private String itemName;
 
 	/**
 	 * SKU of the item being ordered Optional Character length and
 	 * limitations: 255 single-byte alphanumeric characters 	 
 	 */ 
-	private String ItemNumber;
+	private String itemNumber;
 
 	/**
 	 * Memo entered by sender in PayPal Website Payments note
 	 * field. Optional Character length and limitations: 255
 	 * single-byte alphanumeric characters 	 
 	 */ 
-	private String Note;
+	private String note;
 
 	/**
 	 * Unique ID for the order. Required for non-P2P transactions
 	 * Optional Character length and limitations: 255 single-byte
 	 * alphanumeric characters 	 
 	 */ 
-	private String CustomID;
+	private String customID;
 
 	/**
 	 * Indicates whether the sender's phone number will be shared
 	 * with recipient Optional 	 
 	 */ 
-	private Integer SharePhoneNumber;
+	private Integer sharePhoneNumber;
 
 	/**
 	 * Indicates whether the sender's home address will be shared
 	 * with recipient Optional 	 
 	 */ 
-	private Integer ShareHomeAddress;
+	private Integer shareHomeAddress;
 
 	
 
@@ -109,283 +111,289 @@ public class CreateMobilePaymentRequestDetailsType{
 	}	
 
 	/**
-	 * Getter for PaymentType
+	 * Getter for paymentType
 	 */
 	 public MobilePaymentCodeType getPaymentType() {
-	 	return PaymentType;
+	 	return paymentType;
 	 }
 	 
 	/**
-	 * Setter for PaymentType
+	 * Setter for paymentType
 	 */
-	 public void setPaymentType(MobilePaymentCodeType PaymentType) {
-	 	this.PaymentType = PaymentType;
+	 public void setPaymentType(MobilePaymentCodeType paymentType) {
+	 	this.paymentType = paymentType;
 	 }
 	 
 	/**
-	 * Getter for PaymentAction
+	 * Getter for paymentAction
 	 */
 	 public PaymentActionCodeType getPaymentAction() {
-	 	return PaymentAction;
+	 	return paymentAction;
 	 }
 	 
 	/**
-	 * Setter for PaymentAction
+	 * Setter for paymentAction
 	 */
-	 public void setPaymentAction(PaymentActionCodeType PaymentAction) {
-	 	this.PaymentAction = PaymentAction;
+	 public void setPaymentAction(PaymentActionCodeType paymentAction) {
+	 	this.paymentAction = paymentAction;
 	 }
 	 
 	/**
-	 * Getter for SenderPhone
+	 * Getter for senderPhone
 	 */
 	 public PhoneNumberType getSenderPhone() {
-	 	return SenderPhone;
+	 	return senderPhone;
 	 }
 	 
 	/**
-	 * Setter for SenderPhone
+	 * Setter for senderPhone
 	 */
-	 public void setSenderPhone(PhoneNumberType SenderPhone) {
-	 	this.SenderPhone = SenderPhone;
+	 public void setSenderPhone(PhoneNumberType senderPhone) {
+	 	this.senderPhone = senderPhone;
 	 }
 	 
 	/**
-	 * Getter for RecipientType
+	 * Getter for recipientType
 	 */
 	 public MobileRecipientCodeType getRecipientType() {
-	 	return RecipientType;
+	 	return recipientType;
 	 }
 	 
 	/**
-	 * Setter for RecipientType
+	 * Setter for recipientType
 	 */
-	 public void setRecipientType(MobileRecipientCodeType RecipientType) {
-	 	this.RecipientType = RecipientType;
+	 public void setRecipientType(MobileRecipientCodeType recipientType) {
+	 	this.recipientType = recipientType;
 	 }
 	 
 	/**
-	 * Getter for RecipientEmail
+	 * Getter for recipientEmail
 	 */
 	 public String getRecipientEmail() {
-	 	return RecipientEmail;
+	 	return recipientEmail;
 	 }
 	 
 	/**
-	 * Setter for RecipientEmail
+	 * Setter for recipientEmail
 	 */
-	 public void setRecipientEmail(String RecipientEmail) {
-	 	this.RecipientEmail = RecipientEmail;
+	 public void setRecipientEmail(String recipientEmail) {
+	 	this.recipientEmail = recipientEmail;
 	 }
 	 
 	/**
-	 * Getter for RecipientPhone
+	 * Getter for recipientPhone
 	 */
 	 public PhoneNumberType getRecipientPhone() {
-	 	return RecipientPhone;
+	 	return recipientPhone;
 	 }
 	 
 	/**
-	 * Setter for RecipientPhone
+	 * Setter for recipientPhone
 	 */
-	 public void setRecipientPhone(PhoneNumberType RecipientPhone) {
-	 	this.RecipientPhone = RecipientPhone;
+	 public void setRecipientPhone(PhoneNumberType recipientPhone) {
+	 	this.recipientPhone = recipientPhone;
 	 }
 	 
 	/**
-	 * Getter for ItemAmount
+	 * Getter for itemAmount
 	 */
 	 public BasicAmountType getItemAmount() {
-	 	return ItemAmount;
+	 	return itemAmount;
 	 }
 	 
 	/**
-	 * Setter for ItemAmount
+	 * Setter for itemAmount
 	 */
-	 public void setItemAmount(BasicAmountType ItemAmount) {
-	 	this.ItemAmount = ItemAmount;
+	 public void setItemAmount(BasicAmountType itemAmount) {
+	 	this.itemAmount = itemAmount;
 	 }
 	 
 	/**
-	 * Getter for Tax
+	 * Getter for tax
 	 */
 	 public BasicAmountType getTax() {
-	 	return Tax;
+	 	return tax;
 	 }
 	 
 	/**
-	 * Setter for Tax
+	 * Setter for tax
 	 */
-	 public void setTax(BasicAmountType Tax) {
-	 	this.Tax = Tax;
+	 public void setTax(BasicAmountType tax) {
+	 	this.tax = tax;
 	 }
 	 
 	/**
-	 * Getter for Shipping
+	 * Getter for shipping
 	 */
 	 public BasicAmountType getShipping() {
-	 	return Shipping;
+	 	return shipping;
 	 }
 	 
 	/**
-	 * Setter for Shipping
+	 * Setter for shipping
 	 */
-	 public void setShipping(BasicAmountType Shipping) {
-	 	this.Shipping = Shipping;
+	 public void setShipping(BasicAmountType shipping) {
+	 	this.shipping = shipping;
 	 }
 	 
 	/**
-	 * Getter for ItemName
+	 * Getter for itemName
 	 */
 	 public String getItemName() {
-	 	return ItemName;
+	 	return itemName;
 	 }
 	 
 	/**
-	 * Setter for ItemName
+	 * Setter for itemName
 	 */
-	 public void setItemName(String ItemName) {
-	 	this.ItemName = ItemName;
+	 public void setItemName(String itemName) {
+	 	this.itemName = itemName;
 	 }
 	 
 	/**
-	 * Getter for ItemNumber
+	 * Getter for itemNumber
 	 */
 	 public String getItemNumber() {
-	 	return ItemNumber;
+	 	return itemNumber;
 	 }
 	 
 	/**
-	 * Setter for ItemNumber
+	 * Setter for itemNumber
 	 */
-	 public void setItemNumber(String ItemNumber) {
-	 	this.ItemNumber = ItemNumber;
+	 public void setItemNumber(String itemNumber) {
+	 	this.itemNumber = itemNumber;
 	 }
 	 
 	/**
-	 * Getter for Note
+	 * Getter for note
 	 */
 	 public String getNote() {
-	 	return Note;
+	 	return note;
 	 }
 	 
 	/**
-	 * Setter for Note
+	 * Setter for note
 	 */
-	 public void setNote(String Note) {
-	 	this.Note = Note;
+	 public void setNote(String note) {
+	 	this.note = note;
 	 }
 	 
 	/**
-	 * Getter for CustomID
+	 * Getter for customID
 	 */
 	 public String getCustomID() {
-	 	return CustomID;
+	 	return customID;
 	 }
 	 
 	/**
-	 * Setter for CustomID
+	 * Setter for customID
 	 */
-	 public void setCustomID(String CustomID) {
-	 	this.CustomID = CustomID;
+	 public void setCustomID(String customID) {
+	 	this.customID = customID;
 	 }
 	 
 	/**
-	 * Getter for SharePhoneNumber
+	 * Getter for sharePhoneNumber
 	 */
 	 public Integer getSharePhoneNumber() {
-	 	return SharePhoneNumber;
+	 	return sharePhoneNumber;
 	 }
 	 
 	/**
-	 * Setter for SharePhoneNumber
+	 * Setter for sharePhoneNumber
 	 */
-	 public void setSharePhoneNumber(Integer SharePhoneNumber) {
-	 	this.SharePhoneNumber = SharePhoneNumber;
+	 public void setSharePhoneNumber(Integer sharePhoneNumber) {
+	 	this.sharePhoneNumber = sharePhoneNumber;
 	 }
 	 
 	/**
-	 * Getter for ShareHomeAddress
+	 * Getter for shareHomeAddress
 	 */
 	 public Integer getShareHomeAddress() {
-	 	return ShareHomeAddress;
+	 	return shareHomeAddress;
 	 }
 	 
 	/**
-	 * Setter for ShareHomeAddress
+	 * Setter for shareHomeAddress
 	 */
-	 public void setShareHomeAddress(Integer ShareHomeAddress) {
-	 	this.ShareHomeAddress = ShareHomeAddress;
+	 public void setShareHomeAddress(Integer shareHomeAddress) {
+	 	this.shareHomeAddress = shareHomeAddress;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(PaymentType != null) {
-			sb.append("<ebl:PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentType.getValue()));
-			sb.append("</ebl:PaymentType>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(PaymentAction != null) {
-			sb.append("<ebl:PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentAction.getValue()));
-			sb.append("</ebl:PaymentAction>");
+		if(paymentType != null) {
+			sb.append("<").append(preferredPrefix).append(":PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":PaymentType>");
 		}
-		if(SenderPhone != null) {
-			sb.append("<ebl:SenderPhone>");
-			sb.append(SenderPhone.toXMLString());
-			sb.append("</ebl:SenderPhone>");
+		if(paymentAction != null) {
+			sb.append("<").append(preferredPrefix).append(":PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentAction.getValue()));
+			sb.append("</").append(preferredPrefix).append(":PaymentAction>");
 		}
-		if(RecipientType != null) {
-			sb.append("<ebl:RecipientType>").append(SDKUtil.escapeInvalidXmlCharsRegex(RecipientType.getValue()));
-			sb.append("</ebl:RecipientType>");
+		if(senderPhone != null) {
+			sb.append(senderPhone.toXMLString(preferredPrefix,"SenderPhone"));
 		}
-		if(RecipientEmail != null) {
-			sb.append("<ebl:RecipientEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(RecipientEmail));
-			sb.append("</ebl:RecipientEmail>");
+		if(recipientType != null) {
+			sb.append("<").append(preferredPrefix).append(":RecipientType>").append(SDKUtil.escapeInvalidXmlCharsRegex(recipientType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":RecipientType>");
 		}
-		if(RecipientPhone != null) {
-			sb.append("<ebl:RecipientPhone>");
-			sb.append(RecipientPhone.toXMLString());
-			sb.append("</ebl:RecipientPhone>");
+		if(recipientEmail != null) {
+			sb.append("<").append(preferredPrefix).append(":RecipientEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(recipientEmail));
+			sb.append("</").append(preferredPrefix).append(":RecipientEmail>");
 		}
-		if(ItemAmount != null) {
-			sb.append("<ebl:ItemAmount");
-			sb.append(ItemAmount.toXMLString());
-			sb.append("</ebl:ItemAmount>");
+		if(recipientPhone != null) {
+			sb.append(recipientPhone.toXMLString(preferredPrefix,"RecipientPhone"));
 		}
-		if(Tax != null) {
-			sb.append("<ebl:Tax");
-			sb.append(Tax.toXMLString());
-			sb.append("</ebl:Tax>");
+		if(itemAmount != null) {
+			sb.append(itemAmount.toXMLString(preferredPrefix,"ItemAmount"));
 		}
-		if(Shipping != null) {
-			sb.append("<ebl:Shipping");
-			sb.append(Shipping.toXMLString());
-			sb.append("</ebl:Shipping>");
+		if(tax != null) {
+			sb.append(tax.toXMLString(preferredPrefix,"Tax"));
 		}
-		if(ItemName != null) {
-			sb.append("<ebl:ItemName>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemName));
-			sb.append("</ebl:ItemName>");
+		if(shipping != null) {
+			sb.append(shipping.toXMLString(preferredPrefix,"Shipping"));
 		}
-		if(ItemNumber != null) {
-			sb.append("<ebl:ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemNumber));
-			sb.append("</ebl:ItemNumber>");
+		if(itemName != null) {
+			sb.append("<").append(preferredPrefix).append(":ItemName>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemName));
+			sb.append("</").append(preferredPrefix).append(":ItemName>");
 		}
-		if(Note != null) {
-			sb.append("<ebl:Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(Note));
-			sb.append("</ebl:Note>");
+		if(itemNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemNumber));
+			sb.append("</").append(preferredPrefix).append(":ItemNumber>");
 		}
-		if(CustomID != null) {
-			sb.append("<ebl:CustomID>").append(SDKUtil.escapeInvalidXmlCharsRegex(CustomID));
-			sb.append("</ebl:CustomID>");
+		if(note != null) {
+			sb.append("<").append(preferredPrefix).append(":Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(note));
+			sb.append("</").append(preferredPrefix).append(":Note>");
 		}
-		if(SharePhoneNumber != null) {
-			sb.append("<ebl:SharePhoneNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(SharePhoneNumber));
-			sb.append("</ebl:SharePhoneNumber>");
+		if(customID != null) {
+			sb.append("<").append(preferredPrefix).append(":CustomID>").append(SDKUtil.escapeInvalidXmlCharsRegex(customID));
+			sb.append("</").append(preferredPrefix).append(":CustomID>");
 		}
-		if(ShareHomeAddress != null) {
-			sb.append("<ebl:ShareHomeAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(ShareHomeAddress));
-			sb.append("</ebl:ShareHomeAddress>");
+		if(sharePhoneNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":SharePhoneNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(sharePhoneNumber));
+			sb.append("</").append(preferredPrefix).append(":SharePhoneNumber>");
+		}
+		if(shareHomeAddress != null) {
+			sb.append("<").append(preferredPrefix).append(":ShareHomeAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(shareHomeAddress));
+			sb.append("</").append(preferredPrefix).append(":ShareHomeAddress>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

@@ -34,34 +34,34 @@ public class IncentiveDetailsType{
 	 * friendly descripotion, incentive type, campaign code,
 	 * incenitve application order and site redeemed on. 	 
 	 */ 
-	private String UniqueIdentifier;
+	private String uniqueIdentifier;
 
 	/**
 	 * Defines if the incentive has been applied on Ebay or PayPal.
 	 * 	 
 	 */ 
-	private IncentiveSiteAppliedOnType SiteAppliedOn;
+	private IncentiveSiteAppliedOnType siteAppliedOn;
 
 	/**
 	 * The total discount amount for the incentive, summation of
 	 * discounts up across all the buckets/items. 	 
 	 */ 
-	private BasicAmountType TotalDiscountAmount;
+	private BasicAmountType totalDiscountAmount;
 
 	/**
 	 * Status of incentive processing. Sussess or Error. 	 
 	 */ 
-	private IncentiveAppliedStatusType Status;
+	private IncentiveAppliedStatusType status;
 
 	/**
 	 * Error code if there are any errors. Zero otherwise. 	 
 	 */ 
-	private Integer ErrorCode;
+	private Integer errorCode;
 
 	/**
 	 * Details of incentive application on individual bucket/item. 	 
 	 */ 
-	private List<IncentiveAppliedDetailsType> IncentiveAppliedDetails = new ArrayList<IncentiveAppliedDetailsType>();
+	private List<IncentiveAppliedDetailsType> incentiveAppliedDetails = new ArrayList<IncentiveAppliedDetailsType>();
 
 	
 
@@ -72,87 +72,87 @@ public class IncentiveDetailsType{
 	}	
 
 	/**
-	 * Getter for UniqueIdentifier
+	 * Getter for uniqueIdentifier
 	 */
 	 public String getUniqueIdentifier() {
-	 	return UniqueIdentifier;
+	 	return uniqueIdentifier;
 	 }
 	 
 	/**
-	 * Setter for UniqueIdentifier
+	 * Setter for uniqueIdentifier
 	 */
-	 public void setUniqueIdentifier(String UniqueIdentifier) {
-	 	this.UniqueIdentifier = UniqueIdentifier;
+	 public void setUniqueIdentifier(String uniqueIdentifier) {
+	 	this.uniqueIdentifier = uniqueIdentifier;
 	 }
 	 
 	/**
-	 * Getter for SiteAppliedOn
+	 * Getter for siteAppliedOn
 	 */
 	 public IncentiveSiteAppliedOnType getSiteAppliedOn() {
-	 	return SiteAppliedOn;
+	 	return siteAppliedOn;
 	 }
 	 
 	/**
-	 * Setter for SiteAppliedOn
+	 * Setter for siteAppliedOn
 	 */
-	 public void setSiteAppliedOn(IncentiveSiteAppliedOnType SiteAppliedOn) {
-	 	this.SiteAppliedOn = SiteAppliedOn;
+	 public void setSiteAppliedOn(IncentiveSiteAppliedOnType siteAppliedOn) {
+	 	this.siteAppliedOn = siteAppliedOn;
 	 }
 	 
 	/**
-	 * Getter for TotalDiscountAmount
+	 * Getter for totalDiscountAmount
 	 */
 	 public BasicAmountType getTotalDiscountAmount() {
-	 	return TotalDiscountAmount;
+	 	return totalDiscountAmount;
 	 }
 	 
 	/**
-	 * Setter for TotalDiscountAmount
+	 * Setter for totalDiscountAmount
 	 */
-	 public void setTotalDiscountAmount(BasicAmountType TotalDiscountAmount) {
-	 	this.TotalDiscountAmount = TotalDiscountAmount;
+	 public void setTotalDiscountAmount(BasicAmountType totalDiscountAmount) {
+	 	this.totalDiscountAmount = totalDiscountAmount;
 	 }
 	 
 	/**
-	 * Getter for Status
+	 * Getter for status
 	 */
 	 public IncentiveAppliedStatusType getStatus() {
-	 	return Status;
+	 	return status;
 	 }
 	 
 	/**
-	 * Setter for Status
+	 * Setter for status
 	 */
-	 public void setStatus(IncentiveAppliedStatusType Status) {
-	 	this.Status = Status;
+	 public void setStatus(IncentiveAppliedStatusType status) {
+	 	this.status = status;
 	 }
 	 
 	/**
-	 * Getter for ErrorCode
+	 * Getter for errorCode
 	 */
 	 public Integer getErrorCode() {
-	 	return ErrorCode;
+	 	return errorCode;
 	 }
 	 
 	/**
-	 * Setter for ErrorCode
+	 * Setter for errorCode
 	 */
-	 public void setErrorCode(Integer ErrorCode) {
-	 	this.ErrorCode = ErrorCode;
+	 public void setErrorCode(Integer errorCode) {
+	 	this.errorCode = errorCode;
 	 }
 	 
 	/**
-	 * Getter for IncentiveAppliedDetails
+	 * Getter for incentiveAppliedDetails
 	 */
 	 public List<IncentiveAppliedDetailsType> getIncentiveAppliedDetails() {
-	 	return IncentiveAppliedDetails;
+	 	return incentiveAppliedDetails;
 	 }
 	 
 	/**
-	 * Setter for IncentiveAppliedDetails
+	 * Setter for incentiveAppliedDetails
 	 */
-	 public void setIncentiveAppliedDetails(List<IncentiveAppliedDetailsType> IncentiveAppliedDetails) {
-	 	this.IncentiveAppliedDetails = IncentiveAppliedDetails;
+	 public void setIncentiveAppliedDetails(List<IncentiveAppliedDetailsType> incentiveAppliedDetails) {
+	 	this.incentiveAppliedDetails = incentiveAppliedDetails;
 	 }
 	 
 
@@ -176,31 +176,31 @@ public class IncentiveDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("UniqueIdentifier", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.UniqueIdentifier = childNode.getTextContent();
+		    this.uniqueIdentifier = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("SiteAppliedOn", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SiteAppliedOn = IncentiveSiteAppliedOnType.fromValue(childNode.getTextContent());
+		    this.siteAppliedOn = IncentiveSiteAppliedOnType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("TotalDiscountAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TotalDiscountAmount =  new BasicAmountType(childNode);
+		    this.totalDiscountAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("Status", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Status = IncentiveAppliedStatusType.fromValue(childNode.getTextContent());
+		    this.status = IncentiveAppliedStatusType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("ErrorCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.ErrorCode = Integer.valueOf(childNode.getTextContent());
+			this.errorCode = Integer.valueOf(childNode.getTextContent());
 		}
 	
         nodeList = (NodeList) xpath.evaluate("IncentiveAppliedDetails", node, XPathConstants.NODESET);
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.IncentiveAppliedDetails.add(new IncentiveAppliedDetailsType(subNode));
+				this.incentiveAppliedDetails.add(new IncentiveAppliedDetailsType(subNode));
 			}
 		}
 	}

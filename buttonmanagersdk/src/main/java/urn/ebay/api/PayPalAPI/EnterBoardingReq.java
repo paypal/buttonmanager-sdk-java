@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class EnterBoardingReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private EnterBoardingRequestType EnterBoardingRequest;
+	private EnterBoardingRequestType enterBoardingRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class EnterBoardingReq{
 	}	
 
 	/**
-	 * Getter for EnterBoardingRequest
+	 * Getter for enterBoardingRequest
 	 */
 	 public EnterBoardingRequestType getEnterBoardingRequest() {
-	 	return EnterBoardingRequest;
+	 	return enterBoardingRequest;
 	 }
 	 
 	/**
-	 * Setter for EnterBoardingRequest
+	 * Setter for enterBoardingRequest
 	 */
-	 public void setEnterBoardingRequest(EnterBoardingRequestType EnterBoardingRequest) {
-	 	this.EnterBoardingRequest = EnterBoardingRequest;
+	 public void setEnterBoardingRequest(EnterBoardingRequestType enterBoardingRequest) {
+	 	this.enterBoardingRequest = enterBoardingRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:EnterBoardingReq>");
-		if(EnterBoardingRequest != null) {
-			sb.append("<urn:EnterBoardingRequest>");
-			sb.append(EnterBoardingRequest.toXMLString());
-			sb.append("</urn:EnterBoardingRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:EnterBoardingReq>");
+		if(enterBoardingRequest != null) {
+			sb.append(enterBoardingRequest.toXMLString(null,"EnterBoardingRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

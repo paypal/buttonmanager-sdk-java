@@ -16,20 +16,22 @@ import com.paypal.core.SDKUtil;
  */
 public class RefundTransactionRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * Unique identifier of the transaction you are refunding.
 	 * Optional Character length and limitations: 17 single-byte
 	 * alphanumeric characters 	 
 	 */ 
-	private String TransactionID;
+	private String transactionID;
 
 	/**
 	 * Encrypted PayPal customer account identification number.
 	 * Optional Character length and limitations: 127 single-byte
 	 * alphanumeric characters	 
 	 */ 
-	private String PayerID;
+	private String payerID;
 
 	/**
 	 * Invoice number corresponding to transaction details for
@@ -39,59 +41,59 @@ public class RefundTransactionRequestType extends AbstractRequestType {
 	 * logic, it is persisted in the DB for transaction reference
 	 * Optional 	 
 	 */ 
-	private String InvoiceID;
+	private String invoiceID;
 
 	/**
 	 * Type of refund you are making Required 	 
 	 */ 
-	private RefundType RefundType;
+	private RefundType refundType;
 
 	/**
 	 * Refund amount. Amount is required if RefundType is Partial.
 	 * NOTE: If RefundType is Full, do not set Amount.	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	/**
 	 * Custom memo about the refund. Optional Character length and
 	 * limitations: 255 single-byte alphanumeric characters	 
 	 */ 
-	private String Memo;
+	private String memo;
 
 	/**
 	 * The maximum time till which refund must be tried. Optional 	 
 	 */ 
-	private String RetryUntil;
+	private String retryUntil;
 
 	/**
 	 * The type of funding source for refund. Optional 	 
 	 */ 
-	private RefundSourceCodeType RefundSource;
+	private RefundSourceCodeType refundSource;
 
 	/**
 	 * Flag to indicate that the customer was already given store
 	 * credit for a given transaction. This will allow us to make
 	 * sure we do not double refund. Optional 	 
 	 */ 
-	private Boolean RefundAdvice;
+	private Boolean refundAdvice;
 
 	/**
 	 * To pass the Merchant store informationOptional 	 
 	 */ 
-	private MerchantStoreDetailsType MerchantStoreDetails;
+	private MerchantStoreDetailsType merchantStoreDetails;
 
 	/**
 	 * Information about the individual details of the items to be
 	 * refunded.Optional 	 
 	 */ 
-	private List<InvoiceItemType> RefundItemDetails = new ArrayList<InvoiceItemType>();
+	private List<InvoiceItemType> refundItemDetails = new ArrayList<InvoiceItemType>();
 
 	/**
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 	 
 	 */ 
-	private String MsgSubID;
+	private String msgSubID;
 
 	
 
@@ -102,230 +104,240 @@ public class RefundTransactionRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for TransactionID
+	 * Getter for transactionID
 	 */
 	 public String getTransactionID() {
-	 	return TransactionID;
+	 	return transactionID;
 	 }
 	 
 	/**
-	 * Setter for TransactionID
+	 * Setter for transactionID
 	 */
-	 public void setTransactionID(String TransactionID) {
-	 	this.TransactionID = TransactionID;
+	 public void setTransactionID(String transactionID) {
+	 	this.transactionID = transactionID;
 	 }
 	 
 	/**
-	 * Getter for PayerID
+	 * Getter for payerID
 	 */
 	 public String getPayerID() {
-	 	return PayerID;
+	 	return payerID;
 	 }
 	 
 	/**
-	 * Setter for PayerID
+	 * Setter for payerID
 	 */
-	 public void setPayerID(String PayerID) {
-	 	this.PayerID = PayerID;
+	 public void setPayerID(String payerID) {
+	 	this.payerID = payerID;
 	 }
 	 
 	/**
-	 * Getter for InvoiceID
+	 * Getter for invoiceID
 	 */
 	 public String getInvoiceID() {
-	 	return InvoiceID;
+	 	return invoiceID;
 	 }
 	 
 	/**
-	 * Setter for InvoiceID
+	 * Setter for invoiceID
 	 */
-	 public void setInvoiceID(String InvoiceID) {
-	 	this.InvoiceID = InvoiceID;
+	 public void setInvoiceID(String invoiceID) {
+	 	this.invoiceID = invoiceID;
 	 }
 	 
 	/**
-	 * Getter for RefundType
+	 * Getter for refundType
 	 */
 	 public RefundType getRefundType() {
-	 	return RefundType;
+	 	return refundType;
 	 }
 	 
 	/**
-	 * Setter for RefundType
+	 * Setter for refundType
 	 */
-	 public void setRefundType(RefundType RefundType) {
-	 	this.RefundType = RefundType;
+	 public void setRefundType(RefundType refundType) {
+	 	this.refundType = refundType;
 	 }
 	 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 	/**
-	 * Getter for Memo
+	 * Getter for memo
 	 */
 	 public String getMemo() {
-	 	return Memo;
+	 	return memo;
 	 }
 	 
 	/**
-	 * Setter for Memo
+	 * Setter for memo
 	 */
-	 public void setMemo(String Memo) {
-	 	this.Memo = Memo;
+	 public void setMemo(String memo) {
+	 	this.memo = memo;
 	 }
 	 
 	/**
-	 * Getter for RetryUntil
+	 * Getter for retryUntil
 	 */
 	 public String getRetryUntil() {
-	 	return RetryUntil;
+	 	return retryUntil;
 	 }
 	 
 	/**
-	 * Setter for RetryUntil
+	 * Setter for retryUntil
 	 */
-	 public void setRetryUntil(String RetryUntil) {
-	 	this.RetryUntil = RetryUntil;
+	 public void setRetryUntil(String retryUntil) {
+	 	this.retryUntil = retryUntil;
 	 }
 	 
 	/**
-	 * Getter for RefundSource
+	 * Getter for refundSource
 	 */
 	 public RefundSourceCodeType getRefundSource() {
-	 	return RefundSource;
+	 	return refundSource;
 	 }
 	 
 	/**
-	 * Setter for RefundSource
+	 * Setter for refundSource
 	 */
-	 public void setRefundSource(RefundSourceCodeType RefundSource) {
-	 	this.RefundSource = RefundSource;
+	 public void setRefundSource(RefundSourceCodeType refundSource) {
+	 	this.refundSource = refundSource;
 	 }
 	 
 	/**
-	 * Getter for RefundAdvice
+	 * Getter for refundAdvice
 	 */
 	 public Boolean getRefundAdvice() {
-	 	return RefundAdvice;
+	 	return refundAdvice;
 	 }
 	 
 	/**
-	 * Setter for RefundAdvice
+	 * Setter for refundAdvice
 	 */
-	 public void setRefundAdvice(Boolean RefundAdvice) {
-	 	this.RefundAdvice = RefundAdvice;
+	 public void setRefundAdvice(Boolean refundAdvice) {
+	 	this.refundAdvice = refundAdvice;
 	 }
 	 
 	/**
-	 * Getter for MerchantStoreDetails
+	 * Getter for merchantStoreDetails
 	 */
 	 public MerchantStoreDetailsType getMerchantStoreDetails() {
-	 	return MerchantStoreDetails;
+	 	return merchantStoreDetails;
 	 }
 	 
 	/**
-	 * Setter for MerchantStoreDetails
+	 * Setter for merchantStoreDetails
 	 */
-	 public void setMerchantStoreDetails(MerchantStoreDetailsType MerchantStoreDetails) {
-	 	this.MerchantStoreDetails = MerchantStoreDetails;
+	 public void setMerchantStoreDetails(MerchantStoreDetailsType merchantStoreDetails) {
+	 	this.merchantStoreDetails = merchantStoreDetails;
 	 }
 	 
 	/**
-	 * Getter for RefundItemDetails
+	 * Getter for refundItemDetails
 	 */
 	 public List<InvoiceItemType> getRefundItemDetails() {
-	 	return RefundItemDetails;
+	 	return refundItemDetails;
 	 }
 	 
 	/**
-	 * Setter for RefundItemDetails
+	 * Setter for refundItemDetails
 	 */
-	 public void setRefundItemDetails(List<InvoiceItemType> RefundItemDetails) {
-	 	this.RefundItemDetails = RefundItemDetails;
+	 public void setRefundItemDetails(List<InvoiceItemType> refundItemDetails) {
+	 	this.refundItemDetails = refundItemDetails;
 	 }
 	 
 	/**
-	 * Getter for MsgSubID
+	 * Getter for msgSubID
 	 */
 	 public String getMsgSubID() {
-	 	return MsgSubID;
+	 	return msgSubID;
 	 }
 	 
 	/**
-	 * Setter for MsgSubID
+	 * Setter for msgSubID
 	 */
-	 public void setMsgSubID(String MsgSubID) {
-	 	this.MsgSubID = MsgSubID;
+	 public void setMsgSubID(String msgSubID) {
+	 	this.msgSubID = msgSubID;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(TransactionID != null) {
-			sb.append("<urn:TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionID));
-			sb.append("</urn:TransactionID>");
-		}
-		if(PayerID != null) {
-			sb.append("<urn:PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(PayerID));
-			sb.append("</urn:PayerID>");
-		}
-		if(InvoiceID != null) {
-			sb.append("<urn:InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(InvoiceID));
-			sb.append("</urn:InvoiceID>");
-		}
-		if(RefundType != null) {
-			sb.append("<urn:RefundType>").append(SDKUtil.escapeInvalidXmlCharsRegex(RefundType.getValue()));
-			sb.append("</urn:RefundType>");
-		}
-		if(Amount != null) {
-			sb.append("<urn:Amount");
-			sb.append(Amount.toXMLString());
-			sb.append("</urn:Amount>");
-		}
-		if(Memo != null) {
-			sb.append("<urn:Memo>").append(SDKUtil.escapeInvalidXmlCharsRegex(Memo));
-			sb.append("</urn:Memo>");
-		}
-		if(RetryUntil != null) {
-			sb.append("<urn:RetryUntil>").append(SDKUtil.escapeInvalidXmlCharsRegex(RetryUntil));
-			sb.append("</urn:RetryUntil>");
-		}
-		if(RefundSource != null) {
-			sb.append("<urn:RefundSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(RefundSource.getValue()));
-			sb.append("</urn:RefundSource>");
-		}
-		if(RefundAdvice != null) {
-			sb.append("<urn:RefundAdvice>").append(SDKUtil.escapeInvalidXmlCharsRegex(RefundAdvice));
-			sb.append("</urn:RefundAdvice>");
-		}
-		if(MerchantStoreDetails != null) {
-			sb.append("<ebl:MerchantStoreDetails>");
-			sb.append(MerchantStoreDetails.toXMLString());
-			sb.append("</ebl:MerchantStoreDetails>");
-		}
-		if(RefundItemDetails != null) {
-			for(int i=0; i < RefundItemDetails.size(); i++) {
-				sb.append("<ebl:RefundItemDetails>");
-				sb.append(RefundItemDetails.get(i).toXMLString());
-				sb.append("</ebl:RefundItemDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
 			}
 		}
-		if(MsgSubID != null) {
-			sb.append("<urn:MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(MsgSubID));
-			sb.append("</urn:MsgSubID>");
+		sb.append(super.toXMLString(prefix, null));
+		if(transactionID != null) {
+			sb.append("<").append(preferredPrefix).append(":TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(transactionID));
+			sb.append("</").append(preferredPrefix).append(":TransactionID>");
+		}
+		if(payerID != null) {
+			sb.append("<").append(preferredPrefix).append(":PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(payerID));
+			sb.append("</").append(preferredPrefix).append(":PayerID>");
+		}
+		if(invoiceID != null) {
+			sb.append("<").append(preferredPrefix).append(":InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(invoiceID));
+			sb.append("</").append(preferredPrefix).append(":InvoiceID>");
+		}
+		if(refundType != null) {
+			sb.append("<").append(preferredPrefix).append(":RefundType>").append(SDKUtil.escapeInvalidXmlCharsRegex(refundType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":RefundType>");
+		}
+		if(amount != null) {
+			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
+		}
+		if(memo != null) {
+			sb.append("<").append(preferredPrefix).append(":Memo>").append(SDKUtil.escapeInvalidXmlCharsRegex(memo));
+			sb.append("</").append(preferredPrefix).append(":Memo>");
+		}
+		if(retryUntil != null) {
+			sb.append("<").append(preferredPrefix).append(":RetryUntil>").append(SDKUtil.escapeInvalidXmlCharsRegex(retryUntil));
+			sb.append("</").append(preferredPrefix).append(":RetryUntil>");
+		}
+		if(refundSource != null) {
+			sb.append("<").append(preferredPrefix).append(":RefundSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(refundSource.getValue()));
+			sb.append("</").append(preferredPrefix).append(":RefundSource>");
+		}
+		if(refundAdvice != null) {
+			sb.append("<").append(preferredPrefix).append(":RefundAdvice>").append(SDKUtil.escapeInvalidXmlCharsRegex(refundAdvice));
+			sb.append("</").append(preferredPrefix).append(":RefundAdvice>");
+		}
+		if(merchantStoreDetails != null) {
+			sb.append(merchantStoreDetails.toXMLString(null,"MerchantStoreDetails"));
+		}
+		if(refundItemDetails != null) {
+			for(int i=0; i < refundItemDetails.size(); i++) {
+				sb.append(refundItemDetails.get(i).toXMLString(null,"RefundItemDetails"));
+			}
+		}
+		if(msgSubID != null) {
+			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(msgSubID));
+			sb.append("</").append(preferredPrefix).append(":MsgSubID>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

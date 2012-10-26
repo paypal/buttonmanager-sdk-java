@@ -29,12 +29,12 @@ public class DoReferenceTransactionResponseType extends AbstractResponseType {
 	 * 	  
 	 *@Required	 
 	 */ 
-	private DoReferenceTransactionResponseDetailsType DoReferenceTransactionResponseDetails;
+	private DoReferenceTransactionResponseDetailsType doReferenceTransactionResponseDetails;
 
 	/**
 	 * 	 
 	 */ 
-	private FMFDetailsType FMFDetails;
+	private FMFDetailsType fMFDetails;
 
 	
 
@@ -45,31 +45,31 @@ public class DoReferenceTransactionResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for DoReferenceTransactionResponseDetails
+	 * Getter for doReferenceTransactionResponseDetails
 	 */
 	 public DoReferenceTransactionResponseDetailsType getDoReferenceTransactionResponseDetails() {
-	 	return DoReferenceTransactionResponseDetails;
+	 	return doReferenceTransactionResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for DoReferenceTransactionResponseDetails
+	 * Setter for doReferenceTransactionResponseDetails
 	 */
-	 public void setDoReferenceTransactionResponseDetails(DoReferenceTransactionResponseDetailsType DoReferenceTransactionResponseDetails) {
-	 	this.DoReferenceTransactionResponseDetails = DoReferenceTransactionResponseDetails;
+	 public void setDoReferenceTransactionResponseDetails(DoReferenceTransactionResponseDetailsType doReferenceTransactionResponseDetails) {
+	 	this.doReferenceTransactionResponseDetails = doReferenceTransactionResponseDetails;
 	 }
 	 
 	/**
-	 * Getter for FMFDetails
+	 * Getter for fMFDetails
 	 */
 	 public FMFDetailsType getFMFDetails() {
-	 	return FMFDetails;
+	 	return fMFDetails;
 	 }
 	 
 	/**
-	 * Setter for FMFDetails
+	 * Setter for fMFDetails
 	 */
-	 public void setFMFDetails(FMFDetailsType FMFDetails) {
-	 	this.FMFDetails = FMFDetails;
+	 public void setFMFDetails(FMFDetailsType fMFDetails) {
+	 	this.fMFDetails = fMFDetails;
 	 }
 	 
 
@@ -94,11 +94,11 @@ public class DoReferenceTransactionResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("DoReferenceTransactionResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.DoReferenceTransactionResponseDetails =  new DoReferenceTransactionResponseDetailsType(childNode);
+		    this.doReferenceTransactionResponseDetails =  new DoReferenceTransactionResponseDetailsType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("FMFDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.FMFDetails =  new FMFDetailsType(childNode);
+		    this.fMFDetails =  new FMFDetailsType(childNode);
 		}
 	}
  

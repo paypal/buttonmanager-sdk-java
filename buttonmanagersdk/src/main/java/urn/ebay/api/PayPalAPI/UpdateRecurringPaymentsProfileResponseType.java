@@ -27,7 +27,7 @@ public class UpdateRecurringPaymentsProfileResponseType extends AbstractResponse
 	/**
 	 * 	 
 	 */ 
-	private UpdateRecurringPaymentsProfileResponseDetailsType UpdateRecurringPaymentsProfileResponseDetails;
+	private UpdateRecurringPaymentsProfileResponseDetailsType updateRecurringPaymentsProfileResponseDetails;
 
 	
 
@@ -38,17 +38,17 @@ public class UpdateRecurringPaymentsProfileResponseType extends AbstractResponse
 	}	
 
 	/**
-	 * Getter for UpdateRecurringPaymentsProfileResponseDetails
+	 * Getter for updateRecurringPaymentsProfileResponseDetails
 	 */
 	 public UpdateRecurringPaymentsProfileResponseDetailsType getUpdateRecurringPaymentsProfileResponseDetails() {
-	 	return UpdateRecurringPaymentsProfileResponseDetails;
+	 	return updateRecurringPaymentsProfileResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for UpdateRecurringPaymentsProfileResponseDetails
+	 * Setter for updateRecurringPaymentsProfileResponseDetails
 	 */
-	 public void setUpdateRecurringPaymentsProfileResponseDetails(UpdateRecurringPaymentsProfileResponseDetailsType UpdateRecurringPaymentsProfileResponseDetails) {
-	 	this.UpdateRecurringPaymentsProfileResponseDetails = UpdateRecurringPaymentsProfileResponseDetails;
+	 public void setUpdateRecurringPaymentsProfileResponseDetails(UpdateRecurringPaymentsProfileResponseDetailsType updateRecurringPaymentsProfileResponseDetails) {
+	 	this.updateRecurringPaymentsProfileResponseDetails = updateRecurringPaymentsProfileResponseDetails;
 	 }
 	 
 
@@ -73,7 +73,7 @@ public class UpdateRecurringPaymentsProfileResponseType extends AbstractResponse
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("UpdateRecurringPaymentsProfileResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.UpdateRecurringPaymentsProfileResponseDetails =  new UpdateRecurringPaymentsProfileResponseDetailsType(childNode);
+		    this.updateRecurringPaymentsProfileResponseDetails =  new UpdateRecurringPaymentsProfileResponseDetailsType(childNode);
 		}
 	}
  

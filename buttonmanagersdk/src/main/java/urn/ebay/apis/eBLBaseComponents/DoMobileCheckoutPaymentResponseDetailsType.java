@@ -33,24 +33,24 @@ public class DoMobileCheckoutPaymentResponseDetailsType{
 	 * Optional Character length and limitations: 256 single-byte
 	 * alphanumeric characters	 
 	 */ 
-	private String Custom;
+	private String custom;
 
 	/**
 	 * Your own unique invoice or tracking number. Optional
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters	 
 	 */ 
-	private String InvoiceID;
+	private String invoiceID;
 
 	/**
 	 * Information about the payer	 
 	 */ 
-	private PayerInfoType PayerInfo;
+	private PayerInfoType payerInfo;
 
 	/**
 	 * Information about the transaction	 
 	 */ 
-	private PaymentInfoType PaymentInfo;
+	private PaymentInfoType paymentInfo;
 
 	
 
@@ -61,59 +61,59 @@ public class DoMobileCheckoutPaymentResponseDetailsType{
 	}	
 
 	/**
-	 * Getter for Custom
+	 * Getter for custom
 	 */
 	 public String getCustom() {
-	 	return Custom;
+	 	return custom;
 	 }
 	 
 	/**
-	 * Setter for Custom
+	 * Setter for custom
 	 */
-	 public void setCustom(String Custom) {
-	 	this.Custom = Custom;
+	 public void setCustom(String custom) {
+	 	this.custom = custom;
 	 }
 	 
 	/**
-	 * Getter for InvoiceID
+	 * Getter for invoiceID
 	 */
 	 public String getInvoiceID() {
-	 	return InvoiceID;
+	 	return invoiceID;
 	 }
 	 
 	/**
-	 * Setter for InvoiceID
+	 * Setter for invoiceID
 	 */
-	 public void setInvoiceID(String InvoiceID) {
-	 	this.InvoiceID = InvoiceID;
+	 public void setInvoiceID(String invoiceID) {
+	 	this.invoiceID = invoiceID;
 	 }
 	 
 	/**
-	 * Getter for PayerInfo
+	 * Getter for payerInfo
 	 */
 	 public PayerInfoType getPayerInfo() {
-	 	return PayerInfo;
+	 	return payerInfo;
 	 }
 	 
 	/**
-	 * Setter for PayerInfo
+	 * Setter for payerInfo
 	 */
-	 public void setPayerInfo(PayerInfoType PayerInfo) {
-	 	this.PayerInfo = PayerInfo;
+	 public void setPayerInfo(PayerInfoType payerInfo) {
+	 	this.payerInfo = payerInfo;
 	 }
 	 
 	/**
-	 * Getter for PaymentInfo
+	 * Getter for paymentInfo
 	 */
 	 public PaymentInfoType getPaymentInfo() {
-	 	return PaymentInfo;
+	 	return paymentInfo;
 	 }
 	 
 	/**
-	 * Setter for PaymentInfo
+	 * Setter for paymentInfo
 	 */
-	 public void setPaymentInfo(PaymentInfoType PaymentInfo) {
-	 	this.PaymentInfo = PaymentInfo;
+	 public void setPaymentInfo(PaymentInfoType paymentInfo) {
+	 	this.paymentInfo = paymentInfo;
 	 }
 	 
 
@@ -137,21 +137,21 @@ public class DoMobileCheckoutPaymentResponseDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Custom", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Custom = childNode.getTextContent();
+		    this.custom = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("InvoiceID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.InvoiceID = childNode.getTextContent();
+		    this.invoiceID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PayerInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PayerInfo =  new PayerInfoType(childNode);
+		    this.payerInfo =  new PayerInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("PaymentInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentInfo =  new PaymentInfoType(childNode);
+		    this.paymentInfo =  new PaymentInfoType(childNode);
 		}
 	}
  

@@ -33,7 +33,7 @@ public class EnterBoardingResponseType extends AbstractResponseType {
 	 * token has the following format:OB-61characterstring	  
 	 *@Required	 
 	 */ 
-	private String Token;
+	private String token;
 
 	
 
@@ -44,17 +44,17 @@ public class EnterBoardingResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for Token
+	 * Getter for token
 	 */
 	 public String getToken() {
-	 	return Token;
+	 	return token;
 	 }
 	 
 	/**
-	 * Setter for Token
+	 * Setter for token
 	 */
-	 public void setToken(String Token) {
-	 	this.Token = Token;
+	 public void setToken(String token) {
+	 	this.token = token;
 	 }
 	 
 
@@ -79,7 +79,7 @@ public class EnterBoardingResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Token", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Token = childNode.getTextContent();
+		    this.token = childNode.getTextContent();
 		}
 	
 	}

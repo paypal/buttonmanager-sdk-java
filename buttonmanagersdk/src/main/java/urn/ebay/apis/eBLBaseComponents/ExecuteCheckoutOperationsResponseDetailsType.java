@@ -28,12 +28,12 @@ public class ExecuteCheckoutOperationsResponseDetailsType{
 	 * 	  
 	 *@Required	 
 	 */ 
-	private SetDataResponseType SetDataResponse;
+	private SetDataResponseType setDataResponse;
 
 	/**
 	 * 	 
 	 */ 
-	private AuthorizationResponseType AuthorizationResponse;
+	private AuthorizationResponseType authorizationResponse;
 
 	
 
@@ -44,31 +44,31 @@ public class ExecuteCheckoutOperationsResponseDetailsType{
 	}	
 
 	/**
-	 * Getter for SetDataResponse
+	 * Getter for setDataResponse
 	 */
 	 public SetDataResponseType getSetDataResponse() {
-	 	return SetDataResponse;
+	 	return setDataResponse;
 	 }
 	 
 	/**
-	 * Setter for SetDataResponse
+	 * Setter for setDataResponse
 	 */
-	 public void setSetDataResponse(SetDataResponseType SetDataResponse) {
-	 	this.SetDataResponse = SetDataResponse;
+	 public void setSetDataResponse(SetDataResponseType setDataResponse) {
+	 	this.setDataResponse = setDataResponse;
 	 }
 	 
 	/**
-	 * Getter for AuthorizationResponse
+	 * Getter for authorizationResponse
 	 */
 	 public AuthorizationResponseType getAuthorizationResponse() {
-	 	return AuthorizationResponse;
+	 	return authorizationResponse;
 	 }
 	 
 	/**
-	 * Setter for AuthorizationResponse
+	 * Setter for authorizationResponse
 	 */
-	 public void setAuthorizationResponse(AuthorizationResponseType AuthorizationResponse) {
-	 	this.AuthorizationResponse = AuthorizationResponse;
+	 public void setAuthorizationResponse(AuthorizationResponseType authorizationResponse) {
+	 	this.authorizationResponse = authorizationResponse;
 	 }
 	 
 
@@ -92,11 +92,11 @@ public class ExecuteCheckoutOperationsResponseDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("SetDataResponse", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SetDataResponse =  new SetDataResponseType(childNode);
+		    this.setDataResponse =  new SetDataResponseType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("AuthorizationResponse", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AuthorizationResponse =  new AuthorizationResponseType(childNode);
+		    this.authorizationResponse =  new AuthorizationResponseType(childNode);
 		}
 	}
  

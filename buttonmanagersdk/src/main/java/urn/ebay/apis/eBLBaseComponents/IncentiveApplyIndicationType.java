@@ -7,16 +7,18 @@ import com.paypal.core.SDKUtil;
  */
 public class IncentiveApplyIndicationType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * The Bucket ID that the incentive is applied to. 	 
 	 */ 
-	private String PaymentRequestID;
+	private String paymentRequestID;
 
 	/**
 	 * The item that the incentive is applied to. 	 
 	 */ 
-	private String ItemId;
+	private String itemId;
 
 	
 
@@ -27,44 +29,60 @@ public class IncentiveApplyIndicationType{
 	}	
 
 	/**
-	 * Getter for PaymentRequestID
+	 * Getter for paymentRequestID
 	 */
 	 public String getPaymentRequestID() {
-	 	return PaymentRequestID;
+	 	return paymentRequestID;
 	 }
 	 
 	/**
-	 * Setter for PaymentRequestID
+	 * Setter for paymentRequestID
 	 */
-	 public void setPaymentRequestID(String PaymentRequestID) {
-	 	this.PaymentRequestID = PaymentRequestID;
+	 public void setPaymentRequestID(String paymentRequestID) {
+	 	this.paymentRequestID = paymentRequestID;
 	 }
 	 
 	/**
-	 * Getter for ItemId
+	 * Getter for itemId
 	 */
 	 public String getItemId() {
-	 	return ItemId;
+	 	return itemId;
 	 }
 	 
 	/**
-	 * Setter for ItemId
+	 * Setter for itemId
 	 */
-	 public void setItemId(String ItemId) {
-	 	this.ItemId = ItemId;
+	 public void setItemId(String itemId) {
+	 	this.itemId = itemId;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(PaymentRequestID != null) {
-			sb.append("<ebl:PaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentRequestID));
-			sb.append("</ebl:PaymentRequestID>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ItemId != null) {
-			sb.append("<ebl:ItemId>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemId));
-			sb.append("</ebl:ItemId>");
+		if(paymentRequestID != null) {
+			sb.append("<").append(preferredPrefix).append(":PaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentRequestID));
+			sb.append("</").append(preferredPrefix).append(":PaymentRequestID>");
+		}
+		if(itemId != null) {
+			sb.append("<").append(preferredPrefix).append(":ItemId>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemId));
+			sb.append("</").append(preferredPrefix).append(":ItemId>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

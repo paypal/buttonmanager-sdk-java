@@ -25,56 +25,58 @@ import org.xml.sax.SAXException;
  */
 public class CreditCardDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	 
 	 */ 
-	private CreditCardTypeType CreditCardType;
+	private CreditCardTypeType creditCardType;
 
 	/**
 	 * 	 
 	 */ 
-	private String CreditCardNumber;
+	private String creditCardNumber;
 
 	/**
 	 * 	 
 	 */ 
-	private Integer ExpMonth;
+	private Integer expMonth;
 
 	/**
 	 * 	 
 	 */ 
-	private Integer ExpYear;
+	private Integer expYear;
 
 	/**
 	 * 	 
 	 */ 
-	private PayerInfoType CardOwner;
+	private PayerInfoType cardOwner;
 
 	/**
 	 * 	 
 	 */ 
-	private String CVV2;
+	private String cVV2;
 
 	/**
 	 * 	 
 	 */ 
-	private Integer StartMonth;
+	private Integer startMonth;
 
 	/**
 	 * 	 
 	 */ 
-	private Integer StartYear;
+	private Integer startYear;
 
 	/**
 	 * 	 
 	 */ 
-	private String IssueNumber;
+	private String issueNumber;
 
 	/**
 	 * 	 
 	 */ 
-	private ThreeDSecureRequestType ThreeDSecureRequest;
+	private ThreeDSecureRequestType threeDSecureRequest;
 
 	
 
@@ -85,190 +87,202 @@ public class CreditCardDetailsType{
 	}	
 
 	/**
-	 * Getter for CreditCardType
+	 * Getter for creditCardType
 	 */
 	 public CreditCardTypeType getCreditCardType() {
-	 	return CreditCardType;
+	 	return creditCardType;
 	 }
 	 
 	/**
-	 * Setter for CreditCardType
+	 * Setter for creditCardType
 	 */
-	 public void setCreditCardType(CreditCardTypeType CreditCardType) {
-	 	this.CreditCardType = CreditCardType;
+	 public void setCreditCardType(CreditCardTypeType creditCardType) {
+	 	this.creditCardType = creditCardType;
 	 }
 	 
 	/**
-	 * Getter for CreditCardNumber
+	 * Getter for creditCardNumber
 	 */
 	 public String getCreditCardNumber() {
-	 	return CreditCardNumber;
+	 	return creditCardNumber;
 	 }
 	 
 	/**
-	 * Setter for CreditCardNumber
+	 * Setter for creditCardNumber
 	 */
-	 public void setCreditCardNumber(String CreditCardNumber) {
-	 	this.CreditCardNumber = CreditCardNumber;
+	 public void setCreditCardNumber(String creditCardNumber) {
+	 	this.creditCardNumber = creditCardNumber;
 	 }
 	 
 	/**
-	 * Getter for ExpMonth
+	 * Getter for expMonth
 	 */
 	 public Integer getExpMonth() {
-	 	return ExpMonth;
+	 	return expMonth;
 	 }
 	 
 	/**
-	 * Setter for ExpMonth
+	 * Setter for expMonth
 	 */
-	 public void setExpMonth(Integer ExpMonth) {
-	 	this.ExpMonth = ExpMonth;
+	 public void setExpMonth(Integer expMonth) {
+	 	this.expMonth = expMonth;
 	 }
 	 
 	/**
-	 * Getter for ExpYear
+	 * Getter for expYear
 	 */
 	 public Integer getExpYear() {
-	 	return ExpYear;
+	 	return expYear;
 	 }
 	 
 	/**
-	 * Setter for ExpYear
+	 * Setter for expYear
 	 */
-	 public void setExpYear(Integer ExpYear) {
-	 	this.ExpYear = ExpYear;
+	 public void setExpYear(Integer expYear) {
+	 	this.expYear = expYear;
 	 }
 	 
 	/**
-	 * Getter for CardOwner
+	 * Getter for cardOwner
 	 */
 	 public PayerInfoType getCardOwner() {
-	 	return CardOwner;
+	 	return cardOwner;
 	 }
 	 
 	/**
-	 * Setter for CardOwner
+	 * Setter for cardOwner
 	 */
-	 public void setCardOwner(PayerInfoType CardOwner) {
-	 	this.CardOwner = CardOwner;
+	 public void setCardOwner(PayerInfoType cardOwner) {
+	 	this.cardOwner = cardOwner;
 	 }
 	 
 	/**
-	 * Getter for CVV2
+	 * Getter for cVV2
 	 */
 	 public String getCVV2() {
-	 	return CVV2;
+	 	return cVV2;
 	 }
 	 
 	/**
-	 * Setter for CVV2
+	 * Setter for cVV2
 	 */
-	 public void setCVV2(String CVV2) {
-	 	this.CVV2 = CVV2;
+	 public void setCVV2(String cVV2) {
+	 	this.cVV2 = cVV2;
 	 }
 	 
 	/**
-	 * Getter for StartMonth
+	 * Getter for startMonth
 	 */
 	 public Integer getStartMonth() {
-	 	return StartMonth;
+	 	return startMonth;
 	 }
 	 
 	/**
-	 * Setter for StartMonth
+	 * Setter for startMonth
 	 */
-	 public void setStartMonth(Integer StartMonth) {
-	 	this.StartMonth = StartMonth;
+	 public void setStartMonth(Integer startMonth) {
+	 	this.startMonth = startMonth;
 	 }
 	 
 	/**
-	 * Getter for StartYear
+	 * Getter for startYear
 	 */
 	 public Integer getStartYear() {
-	 	return StartYear;
+	 	return startYear;
 	 }
 	 
 	/**
-	 * Setter for StartYear
+	 * Setter for startYear
 	 */
-	 public void setStartYear(Integer StartYear) {
-	 	this.StartYear = StartYear;
+	 public void setStartYear(Integer startYear) {
+	 	this.startYear = startYear;
 	 }
 	 
 	/**
-	 * Getter for IssueNumber
+	 * Getter for issueNumber
 	 */
 	 public String getIssueNumber() {
-	 	return IssueNumber;
+	 	return issueNumber;
 	 }
 	 
 	/**
-	 * Setter for IssueNumber
+	 * Setter for issueNumber
 	 */
-	 public void setIssueNumber(String IssueNumber) {
-	 	this.IssueNumber = IssueNumber;
+	 public void setIssueNumber(String issueNumber) {
+	 	this.issueNumber = issueNumber;
 	 }
 	 
 	/**
-	 * Getter for ThreeDSecureRequest
+	 * Getter for threeDSecureRequest
 	 */
 	 public ThreeDSecureRequestType getThreeDSecureRequest() {
-	 	return ThreeDSecureRequest;
+	 	return threeDSecureRequest;
 	 }
 	 
 	/**
-	 * Setter for ThreeDSecureRequest
+	 * Setter for threeDSecureRequest
 	 */
-	 public void setThreeDSecureRequest(ThreeDSecureRequestType ThreeDSecureRequest) {
-	 	this.ThreeDSecureRequest = ThreeDSecureRequest;
+	 public void setThreeDSecureRequest(ThreeDSecureRequestType threeDSecureRequest) {
+	 	this.threeDSecureRequest = threeDSecureRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(CreditCardType != null) {
-			sb.append("<ebl:CreditCardType>").append(SDKUtil.escapeInvalidXmlCharsRegex(CreditCardType.getValue()));
-			sb.append("</ebl:CreditCardType>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(CreditCardNumber != null) {
-			sb.append("<ebl:CreditCardNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(CreditCardNumber));
-			sb.append("</ebl:CreditCardNumber>");
+		if(creditCardType != null) {
+			sb.append("<").append(preferredPrefix).append(":CreditCardType>").append(SDKUtil.escapeInvalidXmlCharsRegex(creditCardType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":CreditCardType>");
 		}
-		if(ExpMonth != null) {
-			sb.append("<ebl:ExpMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExpMonth));
-			sb.append("</ebl:ExpMonth>");
+		if(creditCardNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":CreditCardNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(creditCardNumber));
+			sb.append("</").append(preferredPrefix).append(":CreditCardNumber>");
 		}
-		if(ExpYear != null) {
-			sb.append("<ebl:ExpYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExpYear));
-			sb.append("</ebl:ExpYear>");
+		if(expMonth != null) {
+			sb.append("<").append(preferredPrefix).append(":ExpMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(expMonth));
+			sb.append("</").append(preferredPrefix).append(":ExpMonth>");
 		}
-		if(CardOwner != null) {
-			sb.append("<ebl:CardOwner>");
-			sb.append(CardOwner.toXMLString());
-			sb.append("</ebl:CardOwner>");
+		if(expYear != null) {
+			sb.append("<").append(preferredPrefix).append(":ExpYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(expYear));
+			sb.append("</").append(preferredPrefix).append(":ExpYear>");
 		}
-		if(CVV2 != null) {
-			sb.append("<ebl:CVV2>").append(SDKUtil.escapeInvalidXmlCharsRegex(CVV2));
-			sb.append("</ebl:CVV2>");
+		if(cardOwner != null) {
+			sb.append(cardOwner.toXMLString(preferredPrefix,"CardOwner"));
 		}
-		if(StartMonth != null) {
-			sb.append("<ebl:StartMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(StartMonth));
-			sb.append("</ebl:StartMonth>");
+		if(cVV2 != null) {
+			sb.append("<").append(preferredPrefix).append(":CVV2>").append(SDKUtil.escapeInvalidXmlCharsRegex(cVV2));
+			sb.append("</").append(preferredPrefix).append(":CVV2>");
 		}
-		if(StartYear != null) {
-			sb.append("<ebl:StartYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(StartYear));
-			sb.append("</ebl:StartYear>");
+		if(startMonth != null) {
+			sb.append("<").append(preferredPrefix).append(":StartMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(startMonth));
+			sb.append("</").append(preferredPrefix).append(":StartMonth>");
 		}
-		if(IssueNumber != null) {
-			sb.append("<ebl:IssueNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(IssueNumber));
-			sb.append("</ebl:IssueNumber>");
+		if(startYear != null) {
+			sb.append("<").append(preferredPrefix).append(":StartYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(startYear));
+			sb.append("</").append(preferredPrefix).append(":StartYear>");
 		}
-		if(ThreeDSecureRequest != null) {
-			sb.append("<ebl:ThreeDSecureRequest>");
-			sb.append(ThreeDSecureRequest.toXMLString());
-			sb.append("</ebl:ThreeDSecureRequest>");
+		if(issueNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":IssueNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(issueNumber));
+			sb.append("</").append(preferredPrefix).append(":IssueNumber>");
+		}
+		if(threeDSecureRequest != null) {
+			sb.append(threeDSecureRequest.toXMLString(preferredPrefix,"ThreeDSecureRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -292,50 +306,50 @@ public class CreditCardDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("CreditCardType", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CreditCardType = CreditCardTypeType.fromValue(childNode.getTextContent());
+		    this.creditCardType = CreditCardTypeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("CreditCardNumber", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CreditCardNumber = childNode.getTextContent();
+		    this.creditCardNumber = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ExpMonth", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.ExpMonth = Integer.valueOf(childNode.getTextContent());
+			this.expMonth = Integer.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("ExpYear", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.ExpYear = Integer.valueOf(childNode.getTextContent());
+			this.expYear = Integer.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("CardOwner", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CardOwner =  new PayerInfoType(childNode);
+		    this.cardOwner =  new PayerInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("CVV2", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CVV2 = childNode.getTextContent();
+		    this.cVV2 = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("StartMonth", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.StartMonth = Integer.valueOf(childNode.getTextContent());
+			this.startMonth = Integer.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("StartYear", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.StartYear = Integer.valueOf(childNode.getTextContent());
+			this.startYear = Integer.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("IssueNumber", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.IssueNumber = childNode.getTextContent();
+		    this.issueNumber = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ThreeDSecureRequest", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ThreeDSecureRequest =  new ThreeDSecureRequestType(childNode);
+		    this.threeDSecureRequest =  new ThreeDSecureRequestType(childNode);
 		}
 	}
  

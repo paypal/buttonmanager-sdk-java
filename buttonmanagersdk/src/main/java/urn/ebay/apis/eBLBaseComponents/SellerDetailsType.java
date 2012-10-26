@@ -22,36 +22,38 @@ import org.xml.sax.SAXException;
  */
 public class SellerDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Unique identifier for the seller. Optional 	 
 	 */ 
-	private String SellerId;
+	private String sellerId;
 
 	/**
 	 * The user name of the user at the marketplaces site. Optional
 	 * 	 
 	 */ 
-	private String SellerUserName;
+	private String sellerUserName;
 
 	/**
 	 * Date when the user registered with the marketplace. Optional
 	 * 	 
 	 */ 
-	private String SellerRegistrationDate;
+	private String sellerRegistrationDate;
 
 	/**
 	 * Seller Paypal Account Id contains the seller EmailId or
 	 * PayerId or PhoneNo passed during the Request. 	 
 	 */ 
-	private String PayPalAccountID;
+	private String payPalAccountID;
 
 	/**
 	 * Unique PayPal customer account identification number (of the
 	 * seller). This feild is meant for Response. This field is
 	 * ignored, if passed in the Request. 	 
 	 */ 
-	private String SecureMerchantAccountID;
+	private String secureMerchantAccountID;
 
 	
 
@@ -62,98 +64,114 @@ public class SellerDetailsType{
 	}	
 
 	/**
-	 * Getter for SellerId
+	 * Getter for sellerId
 	 */
 	 public String getSellerId() {
-	 	return SellerId;
+	 	return sellerId;
 	 }
 	 
 	/**
-	 * Setter for SellerId
+	 * Setter for sellerId
 	 */
-	 public void setSellerId(String SellerId) {
-	 	this.SellerId = SellerId;
+	 public void setSellerId(String sellerId) {
+	 	this.sellerId = sellerId;
 	 }
 	 
 	/**
-	 * Getter for SellerUserName
+	 * Getter for sellerUserName
 	 */
 	 public String getSellerUserName() {
-	 	return SellerUserName;
+	 	return sellerUserName;
 	 }
 	 
 	/**
-	 * Setter for SellerUserName
+	 * Setter for sellerUserName
 	 */
-	 public void setSellerUserName(String SellerUserName) {
-	 	this.SellerUserName = SellerUserName;
+	 public void setSellerUserName(String sellerUserName) {
+	 	this.sellerUserName = sellerUserName;
 	 }
 	 
 	/**
-	 * Getter for SellerRegistrationDate
+	 * Getter for sellerRegistrationDate
 	 */
 	 public String getSellerRegistrationDate() {
-	 	return SellerRegistrationDate;
+	 	return sellerRegistrationDate;
 	 }
 	 
 	/**
-	 * Setter for SellerRegistrationDate
+	 * Setter for sellerRegistrationDate
 	 */
-	 public void setSellerRegistrationDate(String SellerRegistrationDate) {
-	 	this.SellerRegistrationDate = SellerRegistrationDate;
+	 public void setSellerRegistrationDate(String sellerRegistrationDate) {
+	 	this.sellerRegistrationDate = sellerRegistrationDate;
 	 }
 	 
 	/**
-	 * Getter for PayPalAccountID
+	 * Getter for payPalAccountID
 	 */
 	 public String getPayPalAccountID() {
-	 	return PayPalAccountID;
+	 	return payPalAccountID;
 	 }
 	 
 	/**
-	 * Setter for PayPalAccountID
+	 * Setter for payPalAccountID
 	 */
-	 public void setPayPalAccountID(String PayPalAccountID) {
-	 	this.PayPalAccountID = PayPalAccountID;
+	 public void setPayPalAccountID(String payPalAccountID) {
+	 	this.payPalAccountID = payPalAccountID;
 	 }
 	 
 	/**
-	 * Getter for SecureMerchantAccountID
+	 * Getter for secureMerchantAccountID
 	 */
 	 public String getSecureMerchantAccountID() {
-	 	return SecureMerchantAccountID;
+	 	return secureMerchantAccountID;
 	 }
 	 
 	/**
-	 * Setter for SecureMerchantAccountID
+	 * Setter for secureMerchantAccountID
 	 */
-	 public void setSecureMerchantAccountID(String SecureMerchantAccountID) {
-	 	this.SecureMerchantAccountID = SecureMerchantAccountID;
+	 public void setSecureMerchantAccountID(String secureMerchantAccountID) {
+	 	this.secureMerchantAccountID = secureMerchantAccountID;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(SellerId != null) {
-			sb.append("<ebl:SellerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(SellerId));
-			sb.append("</ebl:SellerId>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(SellerUserName != null) {
-			sb.append("<ebl:SellerUserName>").append(SDKUtil.escapeInvalidXmlCharsRegex(SellerUserName));
-			sb.append("</ebl:SellerUserName>");
+		if(sellerId != null) {
+			sb.append("<").append(preferredPrefix).append(":SellerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(sellerId));
+			sb.append("</").append(preferredPrefix).append(":SellerId>");
 		}
-		if(SellerRegistrationDate != null) {
-			sb.append("<ebl:SellerRegistrationDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(SellerRegistrationDate));
-			sb.append("</ebl:SellerRegistrationDate>");
+		if(sellerUserName != null) {
+			sb.append("<").append(preferredPrefix).append(":SellerUserName>").append(SDKUtil.escapeInvalidXmlCharsRegex(sellerUserName));
+			sb.append("</").append(preferredPrefix).append(":SellerUserName>");
 		}
-		if(PayPalAccountID != null) {
-			sb.append("<ebl:PayPalAccountID>").append(SDKUtil.escapeInvalidXmlCharsRegex(PayPalAccountID));
-			sb.append("</ebl:PayPalAccountID>");
+		if(sellerRegistrationDate != null) {
+			sb.append("<").append(preferredPrefix).append(":SellerRegistrationDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(sellerRegistrationDate));
+			sb.append("</").append(preferredPrefix).append(":SellerRegistrationDate>");
 		}
-		if(SecureMerchantAccountID != null) {
-			sb.append("<ebl:SecureMerchantAccountID>").append(SDKUtil.escapeInvalidXmlCharsRegex(SecureMerchantAccountID));
-			sb.append("</ebl:SecureMerchantAccountID>");
+		if(payPalAccountID != null) {
+			sb.append("<").append(preferredPrefix).append(":PayPalAccountID>").append(SDKUtil.escapeInvalidXmlCharsRegex(payPalAccountID));
+			sb.append("</").append(preferredPrefix).append(":PayPalAccountID>");
+		}
+		if(secureMerchantAccountID != null) {
+			sb.append("<").append(preferredPrefix).append(":SecureMerchantAccountID>").append(SDKUtil.escapeInvalidXmlCharsRegex(secureMerchantAccountID));
+			sb.append("</").append(preferredPrefix).append(":SecureMerchantAccountID>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -177,27 +195,27 @@ public class SellerDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("SellerId", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SellerId = childNode.getTextContent();
+		    this.sellerId = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("SellerUserName", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SellerUserName = childNode.getTextContent();
+		    this.sellerUserName = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("SellerRegistrationDate", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SellerRegistrationDate = childNode.getTextContent();
+		    this.sellerRegistrationDate = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PayPalAccountID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PayPalAccountID = childNode.getTextContent();
+		    this.payPalAccountID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("SecureMerchantAccountID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SecureMerchantAccountID = childNode.getTextContent();
+		    this.secureMerchantAccountID = childNode.getTextContent();
 		}
 	
 	}

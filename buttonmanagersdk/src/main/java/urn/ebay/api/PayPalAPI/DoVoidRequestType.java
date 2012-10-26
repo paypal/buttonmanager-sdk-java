@@ -12,6 +12,8 @@ import com.paypal.core.SDKUtil;
  */
 public class DoVoidRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * The value of the original authorization identification
@@ -22,7 +24,7 @@ public class DoVoidRequestType extends AbstractRequestType {
 	 * characters	  
 	 *@Required	 
 	 */ 
-	private String AuthorizationID;
+	private String authorizationID;
 
 	/**
 	 * An informational note about this settlement that is
@@ -30,22 +32,22 @@ public class DoVoidRequestType extends AbstractRequestType {
 	 * Optional Character length and limits: 255 single-byte
 	 * characters	 
 	 */ 
-	private String Note;
+	private String note;
 
 	/**
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 	 
 	 */ 
-	private String MsgSubID;
+	private String msgSubID;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public DoVoidRequestType (String AuthorizationID){
-		this.AuthorizationID = AuthorizationID;
+	public DoVoidRequestType (String authorizationID){
+		this.authorizationID = authorizationID;
 	}	
 
 	/**
@@ -55,63 +57,79 @@ public class DoVoidRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for AuthorizationID
+	 * Getter for authorizationID
 	 */
 	 public String getAuthorizationID() {
-	 	return AuthorizationID;
+	 	return authorizationID;
 	 }
 	 
 	/**
-	 * Setter for AuthorizationID
+	 * Setter for authorizationID
 	 */
-	 public void setAuthorizationID(String AuthorizationID) {
-	 	this.AuthorizationID = AuthorizationID;
+	 public void setAuthorizationID(String authorizationID) {
+	 	this.authorizationID = authorizationID;
 	 }
 	 
 	/**
-	 * Getter for Note
+	 * Getter for note
 	 */
 	 public String getNote() {
-	 	return Note;
+	 	return note;
 	 }
 	 
 	/**
-	 * Setter for Note
+	 * Setter for note
 	 */
-	 public void setNote(String Note) {
-	 	this.Note = Note;
+	 public void setNote(String note) {
+	 	this.note = note;
 	 }
 	 
 	/**
-	 * Getter for MsgSubID
+	 * Getter for msgSubID
 	 */
 	 public String getMsgSubID() {
-	 	return MsgSubID;
+	 	return msgSubID;
 	 }
 	 
 	/**
-	 * Setter for MsgSubID
+	 * Setter for msgSubID
 	 */
-	 public void setMsgSubID(String MsgSubID) {
-	 	this.MsgSubID = MsgSubID;
+	 public void setMsgSubID(String msgSubID) {
+	 	this.msgSubID = msgSubID;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(AuthorizationID != null) {
-			sb.append("<urn:AuthorizationID>").append(SDKUtil.escapeInvalidXmlCharsRegex(AuthorizationID));
-			sb.append("</urn:AuthorizationID>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(Note != null) {
-			sb.append("<urn:Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(Note));
-			sb.append("</urn:Note>");
+		sb.append(super.toXMLString(prefix, null));
+		if(authorizationID != null) {
+			sb.append("<").append(preferredPrefix).append(":AuthorizationID>").append(SDKUtil.escapeInvalidXmlCharsRegex(authorizationID));
+			sb.append("</").append(preferredPrefix).append(":AuthorizationID>");
 		}
-		if(MsgSubID != null) {
-			sb.append("<urn:MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(MsgSubID));
-			sb.append("</urn:MsgSubID>");
+		if(note != null) {
+			sb.append("<").append(preferredPrefix).append(":Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(note));
+			sb.append("</").append(preferredPrefix).append(":Note>");
+		}
+		if(msgSubID != null) {
+			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(msgSubID));
+			sb.append("</").append(preferredPrefix).append(":MsgSubID>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

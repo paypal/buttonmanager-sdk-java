@@ -8,20 +8,22 @@ import com.paypal.core.SDKUtil;
  */
 public class GetIncentiveEvaluationRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private GetIncentiveEvaluationRequestDetailsType GetIncentiveEvaluationRequestDetails;
+	private GetIncentiveEvaluationRequestDetailsType getIncentiveEvaluationRequestDetails;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public GetIncentiveEvaluationRequestType (GetIncentiveEvaluationRequestDetailsType GetIncentiveEvaluationRequestDetails){
-		this.GetIncentiveEvaluationRequestDetails = GetIncentiveEvaluationRequestDetails;
+	public GetIncentiveEvaluationRequestType (GetIncentiveEvaluationRequestDetailsType getIncentiveEvaluationRequestDetails){
+		this.getIncentiveEvaluationRequestDetails = getIncentiveEvaluationRequestDetails;
 	}	
 
 	/**
@@ -31,28 +33,42 @@ public class GetIncentiveEvaluationRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for GetIncentiveEvaluationRequestDetails
+	 * Getter for getIncentiveEvaluationRequestDetails
 	 */
 	 public GetIncentiveEvaluationRequestDetailsType getGetIncentiveEvaluationRequestDetails() {
-	 	return GetIncentiveEvaluationRequestDetails;
+	 	return getIncentiveEvaluationRequestDetails;
 	 }
 	 
 	/**
-	 * Setter for GetIncentiveEvaluationRequestDetails
+	 * Setter for getIncentiveEvaluationRequestDetails
 	 */
-	 public void setGetIncentiveEvaluationRequestDetails(GetIncentiveEvaluationRequestDetailsType GetIncentiveEvaluationRequestDetails) {
-	 	this.GetIncentiveEvaluationRequestDetails = GetIncentiveEvaluationRequestDetails;
+	 public void setGetIncentiveEvaluationRequestDetails(GetIncentiveEvaluationRequestDetailsType getIncentiveEvaluationRequestDetails) {
+	 	this.getIncentiveEvaluationRequestDetails = getIncentiveEvaluationRequestDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(GetIncentiveEvaluationRequestDetails != null) {
-			sb.append("<ebl:GetIncentiveEvaluationRequestDetails>");
-			sb.append(GetIncentiveEvaluationRequestDetails.toXMLString());
-			sb.append("</ebl:GetIncentiveEvaluationRequestDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		sb.append(super.toXMLString(prefix, null));
+		if(getIncentiveEvaluationRequestDetails != null) {
+			sb.append(getIncentiveEvaluationRequestDetails.toXMLString(null,"GetIncentiveEvaluationRequestDetails"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

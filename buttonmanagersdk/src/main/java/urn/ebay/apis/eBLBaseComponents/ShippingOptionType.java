@@ -7,21 +7,23 @@ import com.paypal.core.SDKUtil;
  */
 public class ShippingOptionType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	 
 	 */ 
-	private String ShippingOptionIsDefault;
+	private String shippingOptionIsDefault;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType ShippingOptionAmount;
+	private BasicAmountType shippingOptionAmount;
 
 	/**
 	 * 	 
 	 */ 
-	private String ShippingOptionName;
+	private String shippingOptionName;
 
 	
 
@@ -32,63 +34,77 @@ public class ShippingOptionType{
 	}	
 
 	/**
-	 * Getter for ShippingOptionIsDefault
+	 * Getter for shippingOptionIsDefault
 	 */
 	 public String getShippingOptionIsDefault() {
-	 	return ShippingOptionIsDefault;
+	 	return shippingOptionIsDefault;
 	 }
 	 
 	/**
-	 * Setter for ShippingOptionIsDefault
+	 * Setter for shippingOptionIsDefault
 	 */
-	 public void setShippingOptionIsDefault(String ShippingOptionIsDefault) {
-	 	this.ShippingOptionIsDefault = ShippingOptionIsDefault;
+	 public void setShippingOptionIsDefault(String shippingOptionIsDefault) {
+	 	this.shippingOptionIsDefault = shippingOptionIsDefault;
 	 }
 	 
 	/**
-	 * Getter for ShippingOptionAmount
+	 * Getter for shippingOptionAmount
 	 */
 	 public BasicAmountType getShippingOptionAmount() {
-	 	return ShippingOptionAmount;
+	 	return shippingOptionAmount;
 	 }
 	 
 	/**
-	 * Setter for ShippingOptionAmount
+	 * Setter for shippingOptionAmount
 	 */
-	 public void setShippingOptionAmount(BasicAmountType ShippingOptionAmount) {
-	 	this.ShippingOptionAmount = ShippingOptionAmount;
+	 public void setShippingOptionAmount(BasicAmountType shippingOptionAmount) {
+	 	this.shippingOptionAmount = shippingOptionAmount;
 	 }
 	 
 	/**
-	 * Getter for ShippingOptionName
+	 * Getter for shippingOptionName
 	 */
 	 public String getShippingOptionName() {
-	 	return ShippingOptionName;
+	 	return shippingOptionName;
 	 }
 	 
 	/**
-	 * Setter for ShippingOptionName
+	 * Setter for shippingOptionName
 	 */
-	 public void setShippingOptionName(String ShippingOptionName) {
-	 	this.ShippingOptionName = ShippingOptionName;
+	 public void setShippingOptionName(String shippingOptionName) {
+	 	this.shippingOptionName = shippingOptionName;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(ShippingOptionIsDefault != null) {
-			sb.append("<ebl:ShippingOptionIsDefault>").append(SDKUtil.escapeInvalidXmlCharsRegex(ShippingOptionIsDefault));
-			sb.append("</ebl:ShippingOptionIsDefault>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ShippingOptionAmount != null) {
-			sb.append("<ebl:ShippingOptionAmount");
-			sb.append(ShippingOptionAmount.toXMLString());
-			sb.append("</ebl:ShippingOptionAmount>");
+		if(shippingOptionIsDefault != null) {
+			sb.append("<").append(preferredPrefix).append(":ShippingOptionIsDefault>").append(SDKUtil.escapeInvalidXmlCharsRegex(shippingOptionIsDefault));
+			sb.append("</").append(preferredPrefix).append(":ShippingOptionIsDefault>");
 		}
-		if(ShippingOptionName != null) {
-			sb.append("<ebl:ShippingOptionName>").append(SDKUtil.escapeInvalidXmlCharsRegex(ShippingOptionName));
-			sb.append("</ebl:ShippingOptionName>");
+		if(shippingOptionAmount != null) {
+			sb.append(shippingOptionAmount.toXMLString(preferredPrefix,"ShippingOptionAmount"));
+		}
+		if(shippingOptionName != null) {
+			sb.append("<").append(preferredPrefix).append(":ShippingOptionName>").append(SDKUtil.escapeInvalidXmlCharsRegex(shippingOptionName));
+			sb.append("</").append(preferredPrefix).append(":ShippingOptionName>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class DoExpressCheckoutPaymentReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private DoExpressCheckoutPaymentRequestType DoExpressCheckoutPaymentRequest;
+	private DoExpressCheckoutPaymentRequestType doExpressCheckoutPaymentRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class DoExpressCheckoutPaymentReq{
 	}	
 
 	/**
-	 * Getter for DoExpressCheckoutPaymentRequest
+	 * Getter for doExpressCheckoutPaymentRequest
 	 */
 	 public DoExpressCheckoutPaymentRequestType getDoExpressCheckoutPaymentRequest() {
-	 	return DoExpressCheckoutPaymentRequest;
+	 	return doExpressCheckoutPaymentRequest;
 	 }
 	 
 	/**
-	 * Setter for DoExpressCheckoutPaymentRequest
+	 * Setter for doExpressCheckoutPaymentRequest
 	 */
-	 public void setDoExpressCheckoutPaymentRequest(DoExpressCheckoutPaymentRequestType DoExpressCheckoutPaymentRequest) {
-	 	this.DoExpressCheckoutPaymentRequest = DoExpressCheckoutPaymentRequest;
+	 public void setDoExpressCheckoutPaymentRequest(DoExpressCheckoutPaymentRequestType doExpressCheckoutPaymentRequest) {
+	 	this.doExpressCheckoutPaymentRequest = doExpressCheckoutPaymentRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:DoExpressCheckoutPaymentReq>");
-		if(DoExpressCheckoutPaymentRequest != null) {
-			sb.append("<urn:DoExpressCheckoutPaymentRequest>");
-			sb.append(DoExpressCheckoutPaymentRequest.toXMLString());
-			sb.append("</urn:DoExpressCheckoutPaymentRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:DoExpressCheckoutPaymentReq>");
+		if(doExpressCheckoutPaymentRequest != null) {
+			sb.append(doExpressCheckoutPaymentRequest.toXMLString(null,"DoExpressCheckoutPaymentRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

@@ -27,13 +27,13 @@ public class GetPalDetailsResponseType extends AbstractResponseType {
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String Pal;
+	private String pal;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String Locale;
+	private String locale;
 
 	
 
@@ -44,31 +44,31 @@ public class GetPalDetailsResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for Pal
+	 * Getter for pal
 	 */
 	 public String getPal() {
-	 	return Pal;
+	 	return pal;
 	 }
 	 
 	/**
-	 * Setter for Pal
+	 * Setter for pal
 	 */
-	 public void setPal(String Pal) {
-	 	this.Pal = Pal;
+	 public void setPal(String pal) {
+	 	this.pal = pal;
 	 }
 	 
 	/**
-	 * Getter for Locale
+	 * Getter for locale
 	 */
 	 public String getLocale() {
-	 	return Locale;
+	 	return locale;
 	 }
 	 
 	/**
-	 * Setter for Locale
+	 * Setter for locale
 	 */
-	 public void setLocale(String Locale) {
-	 	this.Locale = Locale;
+	 public void setLocale(String locale) {
+	 	this.locale = locale;
 	 }
 	 
 
@@ -93,12 +93,12 @@ public class GetPalDetailsResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Pal", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Pal = childNode.getTextContent();
+		    this.pal = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Locale", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Locale = childNode.getTextContent();
+		    this.locale = childNode.getTextContent();
 		}
 	
 	}

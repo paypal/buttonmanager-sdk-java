@@ -8,11 +8,13 @@ import com.paypal.core.SDKUtil;
  */
 public class ManageRecurringPaymentsProfileStatusRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private ManageRecurringPaymentsProfileStatusRequestDetailsType ManageRecurringPaymentsProfileStatusRequestDetails;
+	private ManageRecurringPaymentsProfileStatusRequestDetailsType manageRecurringPaymentsProfileStatusRequestDetails;
 
 	
 
@@ -23,28 +25,42 @@ public class ManageRecurringPaymentsProfileStatusRequestType extends AbstractReq
 	}	
 
 	/**
-	 * Getter for ManageRecurringPaymentsProfileStatusRequestDetails
+	 * Getter for manageRecurringPaymentsProfileStatusRequestDetails
 	 */
 	 public ManageRecurringPaymentsProfileStatusRequestDetailsType getManageRecurringPaymentsProfileStatusRequestDetails() {
-	 	return ManageRecurringPaymentsProfileStatusRequestDetails;
+	 	return manageRecurringPaymentsProfileStatusRequestDetails;
 	 }
 	 
 	/**
-	 * Setter for ManageRecurringPaymentsProfileStatusRequestDetails
+	 * Setter for manageRecurringPaymentsProfileStatusRequestDetails
 	 */
-	 public void setManageRecurringPaymentsProfileStatusRequestDetails(ManageRecurringPaymentsProfileStatusRequestDetailsType ManageRecurringPaymentsProfileStatusRequestDetails) {
-	 	this.ManageRecurringPaymentsProfileStatusRequestDetails = ManageRecurringPaymentsProfileStatusRequestDetails;
+	 public void setManageRecurringPaymentsProfileStatusRequestDetails(ManageRecurringPaymentsProfileStatusRequestDetailsType manageRecurringPaymentsProfileStatusRequestDetails) {
+	 	this.manageRecurringPaymentsProfileStatusRequestDetails = manageRecurringPaymentsProfileStatusRequestDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(ManageRecurringPaymentsProfileStatusRequestDetails != null) {
-			sb.append("<ebl:ManageRecurringPaymentsProfileStatusRequestDetails>");
-			sb.append(ManageRecurringPaymentsProfileStatusRequestDetails.toXMLString());
-			sb.append("</ebl:ManageRecurringPaymentsProfileStatusRequestDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		sb.append(super.toXMLString(prefix, null));
+		if(manageRecurringPaymentsProfileStatusRequestDetails != null) {
+			sb.append(manageRecurringPaymentsProfileStatusRequestDetails.toXMLString(null,"ManageRecurringPaymentsProfileStatusRequestDetails"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

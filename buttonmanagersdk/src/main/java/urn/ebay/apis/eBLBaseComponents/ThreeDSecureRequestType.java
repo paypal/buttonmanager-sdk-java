@@ -22,31 +22,33 @@ import org.xml.sax.SAXException;
  */
 public class ThreeDSecureRequestType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	 
 	 */ 
-	private String Eci3ds;
+	private String eci3ds;
 
 	/**
 	 * 	 
 	 */ 
-	private String Cavv;
+	private String cavv;
 
 	/**
 	 * 	 
 	 */ 
-	private String Xid;
+	private String xid;
 
 	/**
 	 * 	 
 	 */ 
-	private String MpiVendor3ds;
+	private String mpiVendor3ds;
 
 	/**
 	 * 	 
 	 */ 
-	private String AuthStatus3ds;
+	private String authStatus3ds;
 
 	
 
@@ -57,98 +59,114 @@ public class ThreeDSecureRequestType{
 	}	
 
 	/**
-	 * Getter for Eci3ds
+	 * Getter for eci3ds
 	 */
 	 public String getEci3ds() {
-	 	return Eci3ds;
+	 	return eci3ds;
 	 }
 	 
 	/**
-	 * Setter for Eci3ds
+	 * Setter for eci3ds
 	 */
-	 public void setEci3ds(String Eci3ds) {
-	 	this.Eci3ds = Eci3ds;
+	 public void setEci3ds(String eci3ds) {
+	 	this.eci3ds = eci3ds;
 	 }
 	 
 	/**
-	 * Getter for Cavv
+	 * Getter for cavv
 	 */
 	 public String getCavv() {
-	 	return Cavv;
+	 	return cavv;
 	 }
 	 
 	/**
-	 * Setter for Cavv
+	 * Setter for cavv
 	 */
-	 public void setCavv(String Cavv) {
-	 	this.Cavv = Cavv;
+	 public void setCavv(String cavv) {
+	 	this.cavv = cavv;
 	 }
 	 
 	/**
-	 * Getter for Xid
+	 * Getter for xid
 	 */
 	 public String getXid() {
-	 	return Xid;
+	 	return xid;
 	 }
 	 
 	/**
-	 * Setter for Xid
+	 * Setter for xid
 	 */
-	 public void setXid(String Xid) {
-	 	this.Xid = Xid;
+	 public void setXid(String xid) {
+	 	this.xid = xid;
 	 }
 	 
 	/**
-	 * Getter for MpiVendor3ds
+	 * Getter for mpiVendor3ds
 	 */
 	 public String getMpiVendor3ds() {
-	 	return MpiVendor3ds;
+	 	return mpiVendor3ds;
 	 }
 	 
 	/**
-	 * Setter for MpiVendor3ds
+	 * Setter for mpiVendor3ds
 	 */
-	 public void setMpiVendor3ds(String MpiVendor3ds) {
-	 	this.MpiVendor3ds = MpiVendor3ds;
+	 public void setMpiVendor3ds(String mpiVendor3ds) {
+	 	this.mpiVendor3ds = mpiVendor3ds;
 	 }
 	 
 	/**
-	 * Getter for AuthStatus3ds
+	 * Getter for authStatus3ds
 	 */
 	 public String getAuthStatus3ds() {
-	 	return AuthStatus3ds;
+	 	return authStatus3ds;
 	 }
 	 
 	/**
-	 * Setter for AuthStatus3ds
+	 * Setter for authStatus3ds
 	 */
-	 public void setAuthStatus3ds(String AuthStatus3ds) {
-	 	this.AuthStatus3ds = AuthStatus3ds;
+	 public void setAuthStatus3ds(String authStatus3ds) {
+	 	this.authStatus3ds = authStatus3ds;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(Eci3ds != null) {
-			sb.append("<ebl:Eci3ds>").append(SDKUtil.escapeInvalidXmlCharsRegex(Eci3ds));
-			sb.append("</ebl:Eci3ds>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(Cavv != null) {
-			sb.append("<ebl:Cavv>").append(SDKUtil.escapeInvalidXmlCharsRegex(Cavv));
-			sb.append("</ebl:Cavv>");
+		if(eci3ds != null) {
+			sb.append("<").append(preferredPrefix).append(":Eci3ds>").append(SDKUtil.escapeInvalidXmlCharsRegex(eci3ds));
+			sb.append("</").append(preferredPrefix).append(":Eci3ds>");
 		}
-		if(Xid != null) {
-			sb.append("<ebl:Xid>").append(SDKUtil.escapeInvalidXmlCharsRegex(Xid));
-			sb.append("</ebl:Xid>");
+		if(cavv != null) {
+			sb.append("<").append(preferredPrefix).append(":Cavv>").append(SDKUtil.escapeInvalidXmlCharsRegex(cavv));
+			sb.append("</").append(preferredPrefix).append(":Cavv>");
 		}
-		if(MpiVendor3ds != null) {
-			sb.append("<ebl:MpiVendor3ds>").append(SDKUtil.escapeInvalidXmlCharsRegex(MpiVendor3ds));
-			sb.append("</ebl:MpiVendor3ds>");
+		if(xid != null) {
+			sb.append("<").append(preferredPrefix).append(":Xid>").append(SDKUtil.escapeInvalidXmlCharsRegex(xid));
+			sb.append("</").append(preferredPrefix).append(":Xid>");
 		}
-		if(AuthStatus3ds != null) {
-			sb.append("<ebl:AuthStatus3ds>").append(SDKUtil.escapeInvalidXmlCharsRegex(AuthStatus3ds));
-			sb.append("</ebl:AuthStatus3ds>");
+		if(mpiVendor3ds != null) {
+			sb.append("<").append(preferredPrefix).append(":MpiVendor3ds>").append(SDKUtil.escapeInvalidXmlCharsRegex(mpiVendor3ds));
+			sb.append("</").append(preferredPrefix).append(":MpiVendor3ds>");
+		}
+		if(authStatus3ds != null) {
+			sb.append("<").append(preferredPrefix).append(":AuthStatus3ds>").append(SDKUtil.escapeInvalidXmlCharsRegex(authStatus3ds));
+			sb.append("</").append(preferredPrefix).append(":AuthStatus3ds>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -172,27 +190,27 @@ public class ThreeDSecureRequestType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Eci3ds", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Eci3ds = childNode.getTextContent();
+		    this.eci3ds = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Cavv", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Cavv = childNode.getTextContent();
+		    this.cavv = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Xid", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Xid = childNode.getTextContent();
+		    this.xid = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("MpiVendor3ds", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.MpiVendor3ds = childNode.getTextContent();
+		    this.mpiVendor3ds = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("AuthStatus3ds", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AuthStatus3ds = childNode.getTextContent();
+		    this.authStatus3ds = childNode.getTextContent();
 		}
 	
 	}

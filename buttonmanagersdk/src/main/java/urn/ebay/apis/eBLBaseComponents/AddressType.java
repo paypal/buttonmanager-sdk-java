@@ -26,30 +26,32 @@ import org.xml.sax.SAXException;
  */
 public class AddressType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Person's name associated with this address. Character length
 	 * and limitations: 32 single-byte alphanumeric characters	 
 	 */ 
-	private String Name;
+	private String name;
 
 	/**
 	 * First street address. Character length and limitations: 300
 	 * single-byte alphanumeric characters	 
 	 */ 
-	private String Street1;
+	private String street1;
 
 	/**
 	 * Second street address. Character length and limitations: 300
 	 * single-byte alphanumeric characters	 
 	 */ 
-	private String Street2;
+	private String street2;
 
 	/**
 	 * Name of city. Character length and limitations: 120
 	 * single-byte alphanumeric characters	 
 	 */ 
-	private String CityName;
+	private String cityName;
 
 	/**
 	 * State or province. Character length and limitations: 120
@@ -76,13 +78,13 @@ public class AddressType{
 	 * Wisconsin WI Wyoming WY Armed_Forces_Americas AA
 	 * Armed_Forces AE Armed_Forces_Pacific AP 	 
 	 */ 
-	private String StateOrProvince;
+	private String stateOrProvince;
 
 	/**
 	 * ISO 3166 standard country code Character limit: Two
 	 * single-byte characters. 	 
 	 */ 
-	private CountryCodeType Country;
+	private CountryCodeType country;
 
 	/**
 	 * IMPORTANT: Do not set this element for SetExpressCheckout,
@@ -94,17 +96,17 @@ public class AddressType{
 	 * country using the Country element (which refers to a 
 	 * 2-letter country code). 	 
 	 */ 
-	private String CountryName;
+	private String countryName;
 
 	/**
 	 * Telephone number associated with this address	 
 	 */ 
-	private String Phone;
+	private String phone;
 
 	/**
 	 * 	 
 	 */ 
-	private String PostalCode;
+	private String postalCode;
 
 	/**
 	 * IMPORTANT: Do not set this element for SetExpressCheckout,
@@ -112,7 +114,7 @@ public class AddressType{
 	 * CreateRecurringPaymentsProfile, or
 	 * UpdateRecurringPaymentsProfile.	 
 	 */ 
-	private String AddressID;
+	private String addressID;
 
 	/**
 	 * IMPORTANT: Do not set this element for SetExpressCheckout,
@@ -120,7 +122,7 @@ public class AddressType{
 	 * CreateRecurringPaymentsProfile or
 	 * UpdateRecurringPaymentsProfile.	 
 	 */ 
-	private AddressOwnerCodeType AddressOwner;
+	private AddressOwnerCodeType addressOwner;
 
 	/**
 	 * IMPORTANT: Do not set this element for SetExpressCheckout,
@@ -128,7 +130,7 @@ public class AddressType{
 	 * CreateRecurringPaymentsProfile or
 	 * UpdateRecurringPaymentsProfile.	 
 	 */ 
-	private String ExternalAddressID;
+	private String externalAddressID;
 
 	/**
 	 * IMPORTANT: Do not set this element for SetExpressCheckout,
@@ -138,7 +140,7 @@ public class AddressType{
 	 * SellerPaymentAddress today. Seller's international name that
 	 * is associated with the payment address. 	 
 	 */ 
-	private String InternationalName;
+	private String internationalName;
 
 	/**
 	 * IMPORTANT: Do not set this element for SetExpressCheckout,
@@ -148,7 +150,7 @@ public class AddressType{
 	 * SellerPaymentAddress today. International state and city for
 	 * the seller's payment address. 	 
 	 */ 
-	private String InternationalStateAndCity;
+	private String internationalStateAndCity;
 
 	/**
 	 * IMPORTANT: Do not set this element for SetExpressCheckout,
@@ -158,7 +160,7 @@ public class AddressType{
 	 * SellerPaymentAddress today. Seller's international street
 	 * address that is associated with the payment address. 	 
 	 */ 
-	private String InternationalStreet;
+	private String internationalStreet;
 
 	/**
 	 * Status of the address on file with PayPal. IMPORTANT: Do not
@@ -167,7 +169,7 @@ public class AddressType{
 	 * CreateRecurringPaymentsProfile or
 	 * UpdateRecurringPaymentsProfile. 	 
 	 */ 
-	private AddressStatusCodeType AddressStatus;
+	private AddressStatusCodeType addressStatus;
 
 	
 
@@ -178,296 +180,312 @@ public class AddressType{
 	}	
 
 	/**
-	 * Getter for Name
+	 * Getter for name
 	 */
 	 public String getName() {
-	 	return Name;
+	 	return name;
 	 }
 	 
 	/**
-	 * Setter for Name
+	 * Setter for name
 	 */
-	 public void setName(String Name) {
-	 	this.Name = Name;
+	 public void setName(String name) {
+	 	this.name = name;
 	 }
 	 
 	/**
-	 * Getter for Street1
+	 * Getter for street1
 	 */
 	 public String getStreet1() {
-	 	return Street1;
+	 	return street1;
 	 }
 	 
 	/**
-	 * Setter for Street1
+	 * Setter for street1
 	 */
-	 public void setStreet1(String Street1) {
-	 	this.Street1 = Street1;
+	 public void setStreet1(String street1) {
+	 	this.street1 = street1;
 	 }
 	 
 	/**
-	 * Getter for Street2
+	 * Getter for street2
 	 */
 	 public String getStreet2() {
-	 	return Street2;
+	 	return street2;
 	 }
 	 
 	/**
-	 * Setter for Street2
+	 * Setter for street2
 	 */
-	 public void setStreet2(String Street2) {
-	 	this.Street2 = Street2;
+	 public void setStreet2(String street2) {
+	 	this.street2 = street2;
 	 }
 	 
 	/**
-	 * Getter for CityName
+	 * Getter for cityName
 	 */
 	 public String getCityName() {
-	 	return CityName;
+	 	return cityName;
 	 }
 	 
 	/**
-	 * Setter for CityName
+	 * Setter for cityName
 	 */
-	 public void setCityName(String CityName) {
-	 	this.CityName = CityName;
+	 public void setCityName(String cityName) {
+	 	this.cityName = cityName;
 	 }
 	 
 	/**
-	 * Getter for StateOrProvince
+	 * Getter for stateOrProvince
 	 */
 	 public String getStateOrProvince() {
-	 	return StateOrProvince;
+	 	return stateOrProvince;
 	 }
 	 
 	/**
-	 * Setter for StateOrProvince
+	 * Setter for stateOrProvince
 	 */
-	 public void setStateOrProvince(String StateOrProvince) {
-	 	this.StateOrProvince = StateOrProvince;
+	 public void setStateOrProvince(String stateOrProvince) {
+	 	this.stateOrProvince = stateOrProvince;
 	 }
 	 
 	/**
-	 * Getter for Country
+	 * Getter for country
 	 */
 	 public CountryCodeType getCountry() {
-	 	return Country;
+	 	return country;
 	 }
 	 
 	/**
-	 * Setter for Country
+	 * Setter for country
 	 */
-	 public void setCountry(CountryCodeType Country) {
-	 	this.Country = Country;
+	 public void setCountry(CountryCodeType country) {
+	 	this.country = country;
 	 }
 	 
 	/**
-	 * Getter for CountryName
+	 * Getter for countryName
 	 */
 	 public String getCountryName() {
-	 	return CountryName;
+	 	return countryName;
 	 }
 	 
 	/**
-	 * Setter for CountryName
+	 * Setter for countryName
 	 */
-	 public void setCountryName(String CountryName) {
-	 	this.CountryName = CountryName;
+	 public void setCountryName(String countryName) {
+	 	this.countryName = countryName;
 	 }
 	 
 	/**
-	 * Getter for Phone
+	 * Getter for phone
 	 */
 	 public String getPhone() {
-	 	return Phone;
+	 	return phone;
 	 }
 	 
 	/**
-	 * Setter for Phone
+	 * Setter for phone
 	 */
-	 public void setPhone(String Phone) {
-	 	this.Phone = Phone;
+	 public void setPhone(String phone) {
+	 	this.phone = phone;
 	 }
 	 
 	/**
-	 * Getter for PostalCode
+	 * Getter for postalCode
 	 */
 	 public String getPostalCode() {
-	 	return PostalCode;
+	 	return postalCode;
 	 }
 	 
 	/**
-	 * Setter for PostalCode
+	 * Setter for postalCode
 	 */
-	 public void setPostalCode(String PostalCode) {
-	 	this.PostalCode = PostalCode;
+	 public void setPostalCode(String postalCode) {
+	 	this.postalCode = postalCode;
 	 }
 	 
 	/**
-	 * Getter for AddressID
+	 * Getter for addressID
 	 */
 	 public String getAddressID() {
-	 	return AddressID;
+	 	return addressID;
 	 }
 	 
 	/**
-	 * Setter for AddressID
+	 * Setter for addressID
 	 */
-	 public void setAddressID(String AddressID) {
-	 	this.AddressID = AddressID;
+	 public void setAddressID(String addressID) {
+	 	this.addressID = addressID;
 	 }
 	 
 	/**
-	 * Getter for AddressOwner
+	 * Getter for addressOwner
 	 */
 	 public AddressOwnerCodeType getAddressOwner() {
-	 	return AddressOwner;
+	 	return addressOwner;
 	 }
 	 
 	/**
-	 * Setter for AddressOwner
+	 * Setter for addressOwner
 	 */
-	 public void setAddressOwner(AddressOwnerCodeType AddressOwner) {
-	 	this.AddressOwner = AddressOwner;
+	 public void setAddressOwner(AddressOwnerCodeType addressOwner) {
+	 	this.addressOwner = addressOwner;
 	 }
 	 
 	/**
-	 * Getter for ExternalAddressID
+	 * Getter for externalAddressID
 	 */
 	 public String getExternalAddressID() {
-	 	return ExternalAddressID;
+	 	return externalAddressID;
 	 }
 	 
 	/**
-	 * Setter for ExternalAddressID
+	 * Setter for externalAddressID
 	 */
-	 public void setExternalAddressID(String ExternalAddressID) {
-	 	this.ExternalAddressID = ExternalAddressID;
+	 public void setExternalAddressID(String externalAddressID) {
+	 	this.externalAddressID = externalAddressID;
 	 }
 	 
 	/**
-	 * Getter for InternationalName
+	 * Getter for internationalName
 	 */
 	 public String getInternationalName() {
-	 	return InternationalName;
+	 	return internationalName;
 	 }
 	 
 	/**
-	 * Setter for InternationalName
+	 * Setter for internationalName
 	 */
-	 public void setInternationalName(String InternationalName) {
-	 	this.InternationalName = InternationalName;
+	 public void setInternationalName(String internationalName) {
+	 	this.internationalName = internationalName;
 	 }
 	 
 	/**
-	 * Getter for InternationalStateAndCity
+	 * Getter for internationalStateAndCity
 	 */
 	 public String getInternationalStateAndCity() {
-	 	return InternationalStateAndCity;
+	 	return internationalStateAndCity;
 	 }
 	 
 	/**
-	 * Setter for InternationalStateAndCity
+	 * Setter for internationalStateAndCity
 	 */
-	 public void setInternationalStateAndCity(String InternationalStateAndCity) {
-	 	this.InternationalStateAndCity = InternationalStateAndCity;
+	 public void setInternationalStateAndCity(String internationalStateAndCity) {
+	 	this.internationalStateAndCity = internationalStateAndCity;
 	 }
 	 
 	/**
-	 * Getter for InternationalStreet
+	 * Getter for internationalStreet
 	 */
 	 public String getInternationalStreet() {
-	 	return InternationalStreet;
+	 	return internationalStreet;
 	 }
 	 
 	/**
-	 * Setter for InternationalStreet
+	 * Setter for internationalStreet
 	 */
-	 public void setInternationalStreet(String InternationalStreet) {
-	 	this.InternationalStreet = InternationalStreet;
+	 public void setInternationalStreet(String internationalStreet) {
+	 	this.internationalStreet = internationalStreet;
 	 }
 	 
 	/**
-	 * Getter for AddressStatus
+	 * Getter for addressStatus
 	 */
 	 public AddressStatusCodeType getAddressStatus() {
-	 	return AddressStatus;
+	 	return addressStatus;
 	 }
 	 
 	/**
-	 * Setter for AddressStatus
+	 * Setter for addressStatus
 	 */
-	 public void setAddressStatus(AddressStatusCodeType AddressStatus) {
-	 	this.AddressStatus = AddressStatus;
+	 public void setAddressStatus(AddressStatusCodeType addressStatus) {
+	 	this.addressStatus = addressStatus;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(Name != null) {
-			sb.append("<ebl:Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(Name));
-			sb.append("</ebl:Name>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(Street1 != null) {
-			sb.append("<ebl:Street1>").append(SDKUtil.escapeInvalidXmlCharsRegex(Street1));
-			sb.append("</ebl:Street1>");
+		if(name != null) {
+			sb.append("<").append(preferredPrefix).append(":Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(name));
+			sb.append("</").append(preferredPrefix).append(":Name>");
 		}
-		if(Street2 != null) {
-			sb.append("<ebl:Street2>").append(SDKUtil.escapeInvalidXmlCharsRegex(Street2));
-			sb.append("</ebl:Street2>");
+		if(street1 != null) {
+			sb.append("<").append(preferredPrefix).append(":Street1>").append(SDKUtil.escapeInvalidXmlCharsRegex(street1));
+			sb.append("</").append(preferredPrefix).append(":Street1>");
 		}
-		if(CityName != null) {
-			sb.append("<ebl:CityName>").append(SDKUtil.escapeInvalidXmlCharsRegex(CityName));
-			sb.append("</ebl:CityName>");
+		if(street2 != null) {
+			sb.append("<").append(preferredPrefix).append(":Street2>").append(SDKUtil.escapeInvalidXmlCharsRegex(street2));
+			sb.append("</").append(preferredPrefix).append(":Street2>");
 		}
-		if(StateOrProvince != null) {
-			sb.append("<ebl:StateOrProvince>").append(SDKUtil.escapeInvalidXmlCharsRegex(StateOrProvince));
-			sb.append("</ebl:StateOrProvince>");
+		if(cityName != null) {
+			sb.append("<").append(preferredPrefix).append(":CityName>").append(SDKUtil.escapeInvalidXmlCharsRegex(cityName));
+			sb.append("</").append(preferredPrefix).append(":CityName>");
 		}
-		if(Country != null) {
-			sb.append("<ebl:Country>").append(SDKUtil.escapeInvalidXmlCharsRegex(Country.getValue()));
-			sb.append("</ebl:Country>");
+		if(stateOrProvince != null) {
+			sb.append("<").append(preferredPrefix).append(":StateOrProvince>").append(SDKUtil.escapeInvalidXmlCharsRegex(stateOrProvince));
+			sb.append("</").append(preferredPrefix).append(":StateOrProvince>");
 		}
-		if(CountryName != null) {
-			sb.append("<ebl:CountryName>").append(SDKUtil.escapeInvalidXmlCharsRegex(CountryName));
-			sb.append("</ebl:CountryName>");
+		if(country != null) {
+			sb.append("<").append(preferredPrefix).append(":Country>").append(SDKUtil.escapeInvalidXmlCharsRegex(country.getValue()));
+			sb.append("</").append(preferredPrefix).append(":Country>");
 		}
-		if(Phone != null) {
-			sb.append("<ebl:Phone>").append(SDKUtil.escapeInvalidXmlCharsRegex(Phone));
-			sb.append("</ebl:Phone>");
+		if(countryName != null) {
+			sb.append("<").append(preferredPrefix).append(":CountryName>").append(SDKUtil.escapeInvalidXmlCharsRegex(countryName));
+			sb.append("</").append(preferredPrefix).append(":CountryName>");
 		}
-		if(PostalCode != null) {
-			sb.append("<ebl:PostalCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(PostalCode));
-			sb.append("</ebl:PostalCode>");
+		if(phone != null) {
+			sb.append("<").append(preferredPrefix).append(":Phone>").append(SDKUtil.escapeInvalidXmlCharsRegex(phone));
+			sb.append("</").append(preferredPrefix).append(":Phone>");
 		}
-		if(AddressID != null) {
-			sb.append("<ebl:AddressID>").append(SDKUtil.escapeInvalidXmlCharsRegex(AddressID));
-			sb.append("</ebl:AddressID>");
+		if(postalCode != null) {
+			sb.append("<").append(preferredPrefix).append(":PostalCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(postalCode));
+			sb.append("</").append(preferredPrefix).append(":PostalCode>");
 		}
-		if(AddressOwner != null) {
-			sb.append("<ebl:AddressOwner>").append(SDKUtil.escapeInvalidXmlCharsRegex(AddressOwner.getValue()));
-			sb.append("</ebl:AddressOwner>");
+		if(addressID != null) {
+			sb.append("<").append(preferredPrefix).append(":AddressID>").append(SDKUtil.escapeInvalidXmlCharsRegex(addressID));
+			sb.append("</").append(preferredPrefix).append(":AddressID>");
 		}
-		if(ExternalAddressID != null) {
-			sb.append("<ebl:ExternalAddressID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExternalAddressID));
-			sb.append("</ebl:ExternalAddressID>");
+		if(addressOwner != null) {
+			sb.append("<").append(preferredPrefix).append(":AddressOwner>").append(SDKUtil.escapeInvalidXmlCharsRegex(addressOwner.getValue()));
+			sb.append("</").append(preferredPrefix).append(":AddressOwner>");
 		}
-		if(InternationalName != null) {
-			sb.append("<ebl:InternationalName>").append(SDKUtil.escapeInvalidXmlCharsRegex(InternationalName));
-			sb.append("</ebl:InternationalName>");
+		if(externalAddressID != null) {
+			sb.append("<").append(preferredPrefix).append(":ExternalAddressID>").append(SDKUtil.escapeInvalidXmlCharsRegex(externalAddressID));
+			sb.append("</").append(preferredPrefix).append(":ExternalAddressID>");
 		}
-		if(InternationalStateAndCity != null) {
-			sb.append("<ebl:InternationalStateAndCity>").append(SDKUtil.escapeInvalidXmlCharsRegex(InternationalStateAndCity));
-			sb.append("</ebl:InternationalStateAndCity>");
+		if(internationalName != null) {
+			sb.append("<").append(preferredPrefix).append(":InternationalName>").append(SDKUtil.escapeInvalidXmlCharsRegex(internationalName));
+			sb.append("</").append(preferredPrefix).append(":InternationalName>");
 		}
-		if(InternationalStreet != null) {
-			sb.append("<ebl:InternationalStreet>").append(SDKUtil.escapeInvalidXmlCharsRegex(InternationalStreet));
-			sb.append("</ebl:InternationalStreet>");
+		if(internationalStateAndCity != null) {
+			sb.append("<").append(preferredPrefix).append(":InternationalStateAndCity>").append(SDKUtil.escapeInvalidXmlCharsRegex(internationalStateAndCity));
+			sb.append("</").append(preferredPrefix).append(":InternationalStateAndCity>");
 		}
-		if(AddressStatus != null) {
-			sb.append("<ebl:AddressStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(AddressStatus.getValue()));
-			sb.append("</ebl:AddressStatus>");
+		if(internationalStreet != null) {
+			sb.append("<").append(preferredPrefix).append(":InternationalStreet>").append(SDKUtil.escapeInvalidXmlCharsRegex(internationalStreet));
+			sb.append("</").append(preferredPrefix).append(":InternationalStreet>");
+		}
+		if(addressStatus != null) {
+			sb.append("<").append(preferredPrefix).append(":AddressStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(addressStatus.getValue()));
+			sb.append("</").append(preferredPrefix).append(":AddressStatus>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -491,80 +509,80 @@ public class AddressType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Name", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Name = childNode.getTextContent();
+		    this.name = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Street1", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Street1 = childNode.getTextContent();
+		    this.street1 = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Street2", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Street2 = childNode.getTextContent();
+		    this.street2 = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("CityName", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CityName = childNode.getTextContent();
+		    this.cityName = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("StateOrProvince", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.StateOrProvince = childNode.getTextContent();
+		    this.stateOrProvince = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Country", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Country = CountryCodeType.fromValue(childNode.getTextContent());
+		    this.country = CountryCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("CountryName", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CountryName = childNode.getTextContent();
+		    this.countryName = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Phone", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Phone = childNode.getTextContent();
+		    this.phone = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PostalCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PostalCode = childNode.getTextContent();
+		    this.postalCode = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("AddressID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AddressID = childNode.getTextContent();
+		    this.addressID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("AddressOwner", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AddressOwner = AddressOwnerCodeType.fromValue(childNode.getTextContent());
+		    this.addressOwner = AddressOwnerCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("ExternalAddressID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ExternalAddressID = childNode.getTextContent();
+		    this.externalAddressID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("InternationalName", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.InternationalName = childNode.getTextContent();
+		    this.internationalName = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("InternationalStateAndCity", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.InternationalStateAndCity = childNode.getTextContent();
+		    this.internationalStateAndCity = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("InternationalStreet", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.InternationalStreet = childNode.getTextContent();
+		    this.internationalStreet = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("AddressStatus", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AddressStatus = AddressStatusCodeType.fromValue(childNode.getTextContent());
+		    this.addressStatus = AddressStatusCodeType.fromValue(childNode.getTextContent());
 		}
 	}
  

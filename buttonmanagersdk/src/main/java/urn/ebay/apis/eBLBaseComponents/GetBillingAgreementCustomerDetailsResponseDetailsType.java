@@ -28,7 +28,7 @@ public class GetBillingAgreementCustomerDetailsResponseDetailsType{
 	 * 	  
 	 *@Required	 
 	 */ 
-	private PayerInfoType PayerInfo;
+	private PayerInfoType payerInfo;
 
 	/**
 	 * Customer's billing address. Optional If you have a credit
@@ -37,7 +37,7 @@ public class GetBillingAgreementCustomerDetailsResponseDetailsType{
 	 * primary address as billing address in
 	 * GetBillingAgreementCustomerDetails.	 
 	 */ 
-	private AddressType BillingAddress;
+	private AddressType billingAddress;
 
 	
 
@@ -48,31 +48,31 @@ public class GetBillingAgreementCustomerDetailsResponseDetailsType{
 	}	
 
 	/**
-	 * Getter for PayerInfo
+	 * Getter for payerInfo
 	 */
 	 public PayerInfoType getPayerInfo() {
-	 	return PayerInfo;
+	 	return payerInfo;
 	 }
 	 
 	/**
-	 * Setter for PayerInfo
+	 * Setter for payerInfo
 	 */
-	 public void setPayerInfo(PayerInfoType PayerInfo) {
-	 	this.PayerInfo = PayerInfo;
+	 public void setPayerInfo(PayerInfoType payerInfo) {
+	 	this.payerInfo = payerInfo;
 	 }
 	 
 	/**
-	 * Getter for BillingAddress
+	 * Getter for billingAddress
 	 */
 	 public AddressType getBillingAddress() {
-	 	return BillingAddress;
+	 	return billingAddress;
 	 }
 	 
 	/**
-	 * Setter for BillingAddress
+	 * Setter for billingAddress
 	 */
-	 public void setBillingAddress(AddressType BillingAddress) {
-	 	this.BillingAddress = BillingAddress;
+	 public void setBillingAddress(AddressType billingAddress) {
+	 	this.billingAddress = billingAddress;
 	 }
 	 
 
@@ -96,11 +96,11 @@ public class GetBillingAgreementCustomerDetailsResponseDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("PayerInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PayerInfo =  new PayerInfoType(childNode);
+		    this.payerInfo =  new PayerInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("BillingAddress", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BillingAddress =  new AddressType(childNode);
+		    this.billingAddress =  new AddressType(childNode);
 		}
 	}
  

@@ -8,21 +8,23 @@ import com.paypal.core.SDKUtil;
  */
 public class IncentiveRequestDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	 
 	 */ 
-	private String RequestId;
+	private String requestId;
 
 	/**
 	 * 	 
 	 */ 
-	private IncentiveRequestCodeType RequestType;
+	private IncentiveRequestCodeType requestType;
 
 	/**
 	 * 	 
 	 */ 
-	private IncentiveRequestDetailLevelCodeType RequestDetailLevel;
+	private IncentiveRequestDetailLevelCodeType requestDetailLevel;
 
 	
 
@@ -33,62 +35,78 @@ public class IncentiveRequestDetailsType{
 	}	
 
 	/**
-	 * Getter for RequestId
+	 * Getter for requestId
 	 */
 	 public String getRequestId() {
-	 	return RequestId;
+	 	return requestId;
 	 }
 	 
 	/**
-	 * Setter for RequestId
+	 * Setter for requestId
 	 */
-	 public void setRequestId(String RequestId) {
-	 	this.RequestId = RequestId;
+	 public void setRequestId(String requestId) {
+	 	this.requestId = requestId;
 	 }
 	 
 	/**
-	 * Getter for RequestType
+	 * Getter for requestType
 	 */
 	 public IncentiveRequestCodeType getRequestType() {
-	 	return RequestType;
+	 	return requestType;
 	 }
 	 
 	/**
-	 * Setter for RequestType
+	 * Setter for requestType
 	 */
-	 public void setRequestType(IncentiveRequestCodeType RequestType) {
-	 	this.RequestType = RequestType;
+	 public void setRequestType(IncentiveRequestCodeType requestType) {
+	 	this.requestType = requestType;
 	 }
 	 
 	/**
-	 * Getter for RequestDetailLevel
+	 * Getter for requestDetailLevel
 	 */
 	 public IncentiveRequestDetailLevelCodeType getRequestDetailLevel() {
-	 	return RequestDetailLevel;
+	 	return requestDetailLevel;
 	 }
 	 
 	/**
-	 * Setter for RequestDetailLevel
+	 * Setter for requestDetailLevel
 	 */
-	 public void setRequestDetailLevel(IncentiveRequestDetailLevelCodeType RequestDetailLevel) {
-	 	this.RequestDetailLevel = RequestDetailLevel;
+	 public void setRequestDetailLevel(IncentiveRequestDetailLevelCodeType requestDetailLevel) {
+	 	this.requestDetailLevel = requestDetailLevel;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(RequestId != null) {
-			sb.append("<ebl:RequestId>").append(SDKUtil.escapeInvalidXmlCharsRegex(RequestId));
-			sb.append("</ebl:RequestId>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(RequestType != null) {
-			sb.append("<ebl:RequestType>").append(SDKUtil.escapeInvalidXmlCharsRegex(RequestType.getValue()));
-			sb.append("</ebl:RequestType>");
+		if(requestId != null) {
+			sb.append("<").append(preferredPrefix).append(":RequestId>").append(SDKUtil.escapeInvalidXmlCharsRegex(requestId));
+			sb.append("</").append(preferredPrefix).append(":RequestId>");
 		}
-		if(RequestDetailLevel != null) {
-			sb.append("<ebl:RequestDetailLevel>").append(SDKUtil.escapeInvalidXmlCharsRegex(RequestDetailLevel.getValue()));
-			sb.append("</ebl:RequestDetailLevel>");
+		if(requestType != null) {
+			sb.append("<").append(preferredPrefix).append(":RequestType>").append(SDKUtil.escapeInvalidXmlCharsRegex(requestType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":RequestType>");
+		}
+		if(requestDetailLevel != null) {
+			sb.append("<").append(preferredPrefix).append(":RequestDetailLevel>").append(SDKUtil.escapeInvalidXmlCharsRegex(requestDetailLevel.getValue()));
+			sb.append("</").append(preferredPrefix).append(":RequestDetailLevel>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

@@ -27,17 +27,17 @@ public class PaymentRequestInfoType{
 	/**
 	 * Contains the transaction id of the bucket.  	 
 	 */ 
-	private String TransactionId;
+	private String transactionId;
 
 	/**
 	 * Contains the bucket id.  	 
 	 */ 
-	private String PaymentRequestID;
+	private String paymentRequestID;
 
 	/**
 	 * Contains the error details.  	 
 	 */ 
-	private ErrorType PaymentError;
+	private ErrorType paymentError;
 
 	
 
@@ -48,45 +48,45 @@ public class PaymentRequestInfoType{
 	}	
 
 	/**
-	 * Getter for TransactionId
+	 * Getter for transactionId
 	 */
 	 public String getTransactionId() {
-	 	return TransactionId;
+	 	return transactionId;
 	 }
 	 
 	/**
-	 * Setter for TransactionId
+	 * Setter for transactionId
 	 */
-	 public void setTransactionId(String TransactionId) {
-	 	this.TransactionId = TransactionId;
+	 public void setTransactionId(String transactionId) {
+	 	this.transactionId = transactionId;
 	 }
 	 
 	/**
-	 * Getter for PaymentRequestID
+	 * Getter for paymentRequestID
 	 */
 	 public String getPaymentRequestID() {
-	 	return PaymentRequestID;
+	 	return paymentRequestID;
 	 }
 	 
 	/**
-	 * Setter for PaymentRequestID
+	 * Setter for paymentRequestID
 	 */
-	 public void setPaymentRequestID(String PaymentRequestID) {
-	 	this.PaymentRequestID = PaymentRequestID;
+	 public void setPaymentRequestID(String paymentRequestID) {
+	 	this.paymentRequestID = paymentRequestID;
 	 }
 	 
 	/**
-	 * Getter for PaymentError
+	 * Getter for paymentError
 	 */
 	 public ErrorType getPaymentError() {
-	 	return PaymentError;
+	 	return paymentError;
 	 }
 	 
 	/**
-	 * Setter for PaymentError
+	 * Setter for paymentError
 	 */
-	 public void setPaymentError(ErrorType PaymentError) {
-	 	this.PaymentError = PaymentError;
+	 public void setPaymentError(ErrorType paymentError) {
+	 	this.paymentError = paymentError;
 	 }
 	 
 
@@ -110,17 +110,17 @@ public class PaymentRequestInfoType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("TransactionId", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TransactionId = childNode.getTextContent();
+		    this.transactionId = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PaymentRequestID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentRequestID = childNode.getTextContent();
+		    this.paymentRequestID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PaymentError", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentError =  new ErrorType(childNode);
+		    this.paymentError =  new ErrorType(childNode);
 		}
 	}
  

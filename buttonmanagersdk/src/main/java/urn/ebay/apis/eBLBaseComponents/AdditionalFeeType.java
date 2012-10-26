@@ -23,16 +23,18 @@ import org.xml.sax.SAXException;
  */
 public class AdditionalFeeType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	 
 	 */ 
-	private String Type;
+	private String type;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	
 
@@ -43,45 +45,59 @@ public class AdditionalFeeType{
 	}	
 
 	/**
-	 * Getter for Type
+	 * Getter for type
 	 */
 	 public String getType() {
-	 	return Type;
+	 	return type;
 	 }
 	 
 	/**
-	 * Setter for Type
+	 * Setter for type
 	 */
-	 public void setType(String Type) {
-	 	this.Type = Type;
+	 public void setType(String type) {
+	 	this.type = type;
 	 }
 	 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(Type != null) {
-			sb.append("<ebl:Type>").append(SDKUtil.escapeInvalidXmlCharsRegex(Type));
-			sb.append("</ebl:Type>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(Amount != null) {
-			sb.append("<ebl:Amount");
-			sb.append(Amount.toXMLString());
-			sb.append("</ebl:Amount>");
+		if(type != null) {
+			sb.append("<").append(preferredPrefix).append(":Type>").append(SDKUtil.escapeInvalidXmlCharsRegex(type));
+			sb.append("</").append(preferredPrefix).append(":Type>");
+		}
+		if(amount != null) {
+			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -105,12 +121,12 @@ public class AdditionalFeeType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Type", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Type = childNode.getTextContent();
+		    this.type = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Amount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Amount =  new BasicAmountType(childNode);
+		    this.amount =  new BasicAmountType(childNode);
 		}
 	}
  

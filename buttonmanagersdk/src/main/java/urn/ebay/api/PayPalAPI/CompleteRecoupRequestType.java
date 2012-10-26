@@ -8,20 +8,22 @@ import com.paypal.core.SDKUtil;
  */
 public class CompleteRecoupRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private EnhancedCompleteRecoupRequestDetailsType EnhancedCompleteRecoupRequestDetails;
+	private EnhancedCompleteRecoupRequestDetailsType enhancedCompleteRecoupRequestDetails;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public CompleteRecoupRequestType (EnhancedCompleteRecoupRequestDetailsType EnhancedCompleteRecoupRequestDetails){
-		this.EnhancedCompleteRecoupRequestDetails = EnhancedCompleteRecoupRequestDetails;
+	public CompleteRecoupRequestType (EnhancedCompleteRecoupRequestDetailsType enhancedCompleteRecoupRequestDetails){
+		this.enhancedCompleteRecoupRequestDetails = enhancedCompleteRecoupRequestDetails;
 	}	
 
 	/**
@@ -31,28 +33,42 @@ public class CompleteRecoupRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for EnhancedCompleteRecoupRequestDetails
+	 * Getter for enhancedCompleteRecoupRequestDetails
 	 */
 	 public EnhancedCompleteRecoupRequestDetailsType getEnhancedCompleteRecoupRequestDetails() {
-	 	return EnhancedCompleteRecoupRequestDetails;
+	 	return enhancedCompleteRecoupRequestDetails;
 	 }
 	 
 	/**
-	 * Setter for EnhancedCompleteRecoupRequestDetails
+	 * Setter for enhancedCompleteRecoupRequestDetails
 	 */
-	 public void setEnhancedCompleteRecoupRequestDetails(EnhancedCompleteRecoupRequestDetailsType EnhancedCompleteRecoupRequestDetails) {
-	 	this.EnhancedCompleteRecoupRequestDetails = EnhancedCompleteRecoupRequestDetails;
+	 public void setEnhancedCompleteRecoupRequestDetails(EnhancedCompleteRecoupRequestDetailsType enhancedCompleteRecoupRequestDetails) {
+	 	this.enhancedCompleteRecoupRequestDetails = enhancedCompleteRecoupRequestDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(EnhancedCompleteRecoupRequestDetails != null) {
-			sb.append("<ed:EnhancedCompleteRecoupRequestDetails>");
-			sb.append(EnhancedCompleteRecoupRequestDetails.toXMLString());
-			sb.append("</ed:EnhancedCompleteRecoupRequestDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		sb.append(super.toXMLString(prefix, null));
+		if(enhancedCompleteRecoupRequestDetails != null) {
+			sb.append(enhancedCompleteRecoupRequestDetails.toXMLString(null,"EnhancedCompleteRecoupRequestDetails"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

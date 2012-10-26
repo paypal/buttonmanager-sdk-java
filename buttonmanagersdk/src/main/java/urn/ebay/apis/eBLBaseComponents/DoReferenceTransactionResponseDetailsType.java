@@ -27,43 +27,43 @@ public class DoReferenceTransactionResponseDetailsType{
 	/**
 	 * 	 
 	 */ 
-	private String BillingAgreementID;
+	private String billingAgreementID;
 
 	/**
 	 * 	 
 	 */ 
-	private PaymentInfoType PaymentInfo;
+	private PaymentInfoType paymentInfo;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	/**
 	 * 	 
 	 */ 
-	private String AVSCode;
+	private String aVSCode;
 
 	/**
 	 * 	 
 	 */ 
-	private String CVV2Code;
+	private String cVV2Code;
 
 	/**
 	 * 	 
 	 */ 
-	private String TransactionID;
+	private String transactionID;
 
 	/**
 	 * Response code from the processor when a recurring
 	 * transaction is declined 	 
 	 */ 
-	private String PaymentAdviceCode;
+	private String paymentAdviceCode;
 
 	/**
 	 * Return msgsubid back to merchant 	 
 	 */ 
-	private String MsgSubID;
+	private String msgSubID;
 
 	
 
@@ -74,115 +74,115 @@ public class DoReferenceTransactionResponseDetailsType{
 	}	
 
 	/**
-	 * Getter for BillingAgreementID
+	 * Getter for billingAgreementID
 	 */
 	 public String getBillingAgreementID() {
-	 	return BillingAgreementID;
+	 	return billingAgreementID;
 	 }
 	 
 	/**
-	 * Setter for BillingAgreementID
+	 * Setter for billingAgreementID
 	 */
-	 public void setBillingAgreementID(String BillingAgreementID) {
-	 	this.BillingAgreementID = BillingAgreementID;
+	 public void setBillingAgreementID(String billingAgreementID) {
+	 	this.billingAgreementID = billingAgreementID;
 	 }
 	 
 	/**
-	 * Getter for PaymentInfo
+	 * Getter for paymentInfo
 	 */
 	 public PaymentInfoType getPaymentInfo() {
-	 	return PaymentInfo;
+	 	return paymentInfo;
 	 }
 	 
 	/**
-	 * Setter for PaymentInfo
+	 * Setter for paymentInfo
 	 */
-	 public void setPaymentInfo(PaymentInfoType PaymentInfo) {
-	 	this.PaymentInfo = PaymentInfo;
+	 public void setPaymentInfo(PaymentInfoType paymentInfo) {
+	 	this.paymentInfo = paymentInfo;
 	 }
 	 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 	/**
-	 * Getter for AVSCode
+	 * Getter for aVSCode
 	 */
 	 public String getAVSCode() {
-	 	return AVSCode;
+	 	return aVSCode;
 	 }
 	 
 	/**
-	 * Setter for AVSCode
+	 * Setter for aVSCode
 	 */
-	 public void setAVSCode(String AVSCode) {
-	 	this.AVSCode = AVSCode;
+	 public void setAVSCode(String aVSCode) {
+	 	this.aVSCode = aVSCode;
 	 }
 	 
 	/**
-	 * Getter for CVV2Code
+	 * Getter for cVV2Code
 	 */
 	 public String getCVV2Code() {
-	 	return CVV2Code;
+	 	return cVV2Code;
 	 }
 	 
 	/**
-	 * Setter for CVV2Code
+	 * Setter for cVV2Code
 	 */
-	 public void setCVV2Code(String CVV2Code) {
-	 	this.CVV2Code = CVV2Code;
+	 public void setCVV2Code(String cVV2Code) {
+	 	this.cVV2Code = cVV2Code;
 	 }
 	 
 	/**
-	 * Getter for TransactionID
+	 * Getter for transactionID
 	 */
 	 public String getTransactionID() {
-	 	return TransactionID;
+	 	return transactionID;
 	 }
 	 
 	/**
-	 * Setter for TransactionID
+	 * Setter for transactionID
 	 */
-	 public void setTransactionID(String TransactionID) {
-	 	this.TransactionID = TransactionID;
+	 public void setTransactionID(String transactionID) {
+	 	this.transactionID = transactionID;
 	 }
 	 
 	/**
-	 * Getter for PaymentAdviceCode
+	 * Getter for paymentAdviceCode
 	 */
 	 public String getPaymentAdviceCode() {
-	 	return PaymentAdviceCode;
+	 	return paymentAdviceCode;
 	 }
 	 
 	/**
-	 * Setter for PaymentAdviceCode
+	 * Setter for paymentAdviceCode
 	 */
-	 public void setPaymentAdviceCode(String PaymentAdviceCode) {
-	 	this.PaymentAdviceCode = PaymentAdviceCode;
+	 public void setPaymentAdviceCode(String paymentAdviceCode) {
+	 	this.paymentAdviceCode = paymentAdviceCode;
 	 }
 	 
 	/**
-	 * Getter for MsgSubID
+	 * Getter for msgSubID
 	 */
 	 public String getMsgSubID() {
-	 	return MsgSubID;
+	 	return msgSubID;
 	 }
 	 
 	/**
-	 * Setter for MsgSubID
+	 * Setter for msgSubID
 	 */
-	 public void setMsgSubID(String MsgSubID) {
-	 	this.MsgSubID = MsgSubID;
+	 public void setMsgSubID(String msgSubID) {
+	 	this.msgSubID = msgSubID;
 	 }
 	 
 
@@ -206,40 +206,40 @@ public class DoReferenceTransactionResponseDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("BillingAgreementID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BillingAgreementID = childNode.getTextContent();
+		    this.billingAgreementID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PaymentInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentInfo =  new PaymentInfoType(childNode);
+		    this.paymentInfo =  new PaymentInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("Amount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Amount =  new BasicAmountType(childNode);
+		    this.amount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("AVSCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AVSCode = childNode.getTextContent();
+		    this.aVSCode = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("CVV2Code", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CVV2Code = childNode.getTextContent();
+		    this.cVV2Code = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("TransactionID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TransactionID = childNode.getTextContent();
+		    this.transactionID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PaymentAdviceCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentAdviceCode = childNode.getTextContent();
+		    this.paymentAdviceCode = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("MsgSubID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.MsgSubID = childNode.getTextContent();
+		    this.msgSubID = childNode.getTextContent();
 		}
 	
 	}

@@ -10,51 +10,53 @@ import com.paypal.core.SDKUtil;
  */
 public class IncentiveBucketType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	 
 	 */ 
-	private List<IncentiveItemType> Items = new ArrayList<IncentiveItemType>();
+	private List<IncentiveItemType> items = new ArrayList<IncentiveItemType>();
 
 	/**
 	 * 	 
 	 */ 
-	private String BucketId;
+	private String bucketId;
 
 	/**
 	 * 	 
 	 */ 
-	private String SellerId;
+	private String sellerId;
 
 	/**
 	 * 	 
 	 */ 
-	private String ExternalSellerId;
+	private String externalSellerId;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType BucketSubtotalAmt;
+	private BasicAmountType bucketSubtotalAmt;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType BucketShippingAmt;
+	private BasicAmountType bucketShippingAmt;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType BucketInsuranceAmt;
+	private BasicAmountType bucketInsuranceAmt;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType BucketSalesTaxAmt;
+	private BasicAmountType bucketSalesTaxAmt;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType BucketTotalAmt;
+	private BasicAmountType bucketTotalAmt;
 
 	
 
@@ -65,178 +67,182 @@ public class IncentiveBucketType{
 	}	
 
 	/**
-	 * Getter for Items
+	 * Getter for items
 	 */
 	 public List<IncentiveItemType> getItems() {
-	 	return Items;
+	 	return items;
 	 }
 	 
 	/**
-	 * Setter for Items
+	 * Setter for items
 	 */
-	 public void setItems(List<IncentiveItemType> Items) {
-	 	this.Items = Items;
+	 public void setItems(List<IncentiveItemType> items) {
+	 	this.items = items;
 	 }
 	 
 	/**
-	 * Getter for BucketId
+	 * Getter for bucketId
 	 */
 	 public String getBucketId() {
-	 	return BucketId;
+	 	return bucketId;
 	 }
 	 
 	/**
-	 * Setter for BucketId
+	 * Setter for bucketId
 	 */
-	 public void setBucketId(String BucketId) {
-	 	this.BucketId = BucketId;
+	 public void setBucketId(String bucketId) {
+	 	this.bucketId = bucketId;
 	 }
 	 
 	/**
-	 * Getter for SellerId
+	 * Getter for sellerId
 	 */
 	 public String getSellerId() {
-	 	return SellerId;
+	 	return sellerId;
 	 }
 	 
 	/**
-	 * Setter for SellerId
+	 * Setter for sellerId
 	 */
-	 public void setSellerId(String SellerId) {
-	 	this.SellerId = SellerId;
+	 public void setSellerId(String sellerId) {
+	 	this.sellerId = sellerId;
 	 }
 	 
 	/**
-	 * Getter for ExternalSellerId
+	 * Getter for externalSellerId
 	 */
 	 public String getExternalSellerId() {
-	 	return ExternalSellerId;
+	 	return externalSellerId;
 	 }
 	 
 	/**
-	 * Setter for ExternalSellerId
+	 * Setter for externalSellerId
 	 */
-	 public void setExternalSellerId(String ExternalSellerId) {
-	 	this.ExternalSellerId = ExternalSellerId;
+	 public void setExternalSellerId(String externalSellerId) {
+	 	this.externalSellerId = externalSellerId;
 	 }
 	 
 	/**
-	 * Getter for BucketSubtotalAmt
+	 * Getter for bucketSubtotalAmt
 	 */
 	 public BasicAmountType getBucketSubtotalAmt() {
-	 	return BucketSubtotalAmt;
+	 	return bucketSubtotalAmt;
 	 }
 	 
 	/**
-	 * Setter for BucketSubtotalAmt
+	 * Setter for bucketSubtotalAmt
 	 */
-	 public void setBucketSubtotalAmt(BasicAmountType BucketSubtotalAmt) {
-	 	this.BucketSubtotalAmt = BucketSubtotalAmt;
+	 public void setBucketSubtotalAmt(BasicAmountType bucketSubtotalAmt) {
+	 	this.bucketSubtotalAmt = bucketSubtotalAmt;
 	 }
 	 
 	/**
-	 * Getter for BucketShippingAmt
+	 * Getter for bucketShippingAmt
 	 */
 	 public BasicAmountType getBucketShippingAmt() {
-	 	return BucketShippingAmt;
+	 	return bucketShippingAmt;
 	 }
 	 
 	/**
-	 * Setter for BucketShippingAmt
+	 * Setter for bucketShippingAmt
 	 */
-	 public void setBucketShippingAmt(BasicAmountType BucketShippingAmt) {
-	 	this.BucketShippingAmt = BucketShippingAmt;
+	 public void setBucketShippingAmt(BasicAmountType bucketShippingAmt) {
+	 	this.bucketShippingAmt = bucketShippingAmt;
 	 }
 	 
 	/**
-	 * Getter for BucketInsuranceAmt
+	 * Getter for bucketInsuranceAmt
 	 */
 	 public BasicAmountType getBucketInsuranceAmt() {
-	 	return BucketInsuranceAmt;
+	 	return bucketInsuranceAmt;
 	 }
 	 
 	/**
-	 * Setter for BucketInsuranceAmt
+	 * Setter for bucketInsuranceAmt
 	 */
-	 public void setBucketInsuranceAmt(BasicAmountType BucketInsuranceAmt) {
-	 	this.BucketInsuranceAmt = BucketInsuranceAmt;
+	 public void setBucketInsuranceAmt(BasicAmountType bucketInsuranceAmt) {
+	 	this.bucketInsuranceAmt = bucketInsuranceAmt;
 	 }
 	 
 	/**
-	 * Getter for BucketSalesTaxAmt
+	 * Getter for bucketSalesTaxAmt
 	 */
 	 public BasicAmountType getBucketSalesTaxAmt() {
-	 	return BucketSalesTaxAmt;
+	 	return bucketSalesTaxAmt;
 	 }
 	 
 	/**
-	 * Setter for BucketSalesTaxAmt
+	 * Setter for bucketSalesTaxAmt
 	 */
-	 public void setBucketSalesTaxAmt(BasicAmountType BucketSalesTaxAmt) {
-	 	this.BucketSalesTaxAmt = BucketSalesTaxAmt;
+	 public void setBucketSalesTaxAmt(BasicAmountType bucketSalesTaxAmt) {
+	 	this.bucketSalesTaxAmt = bucketSalesTaxAmt;
 	 }
 	 
 	/**
-	 * Getter for BucketTotalAmt
+	 * Getter for bucketTotalAmt
 	 */
 	 public BasicAmountType getBucketTotalAmt() {
-	 	return BucketTotalAmt;
+	 	return bucketTotalAmt;
 	 }
 	 
 	/**
-	 * Setter for BucketTotalAmt
+	 * Setter for bucketTotalAmt
 	 */
-	 public void setBucketTotalAmt(BasicAmountType BucketTotalAmt) {
-	 	this.BucketTotalAmt = BucketTotalAmt;
+	 public void setBucketTotalAmt(BasicAmountType bucketTotalAmt) {
+	 	this.bucketTotalAmt = bucketTotalAmt;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(Items != null) {
-			for(int i=0; i < Items.size(); i++) {
-				sb.append("<ebl:Items>");
-				sb.append(Items.get(i).toXMLString());
-				sb.append("</ebl:Items>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
 			}
 		}
-		if(BucketId != null) {
-			sb.append("<ebl:BucketId>").append(SDKUtil.escapeInvalidXmlCharsRegex(BucketId));
-			sb.append("</ebl:BucketId>");
+		if(items != null) {
+			for(int i=0; i < items.size(); i++) {
+				sb.append(items.get(i).toXMLString(preferredPrefix,"Items"));
+			}
 		}
-		if(SellerId != null) {
-			sb.append("<ebl:SellerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(SellerId));
-			sb.append("</ebl:SellerId>");
+		if(bucketId != null) {
+			sb.append("<").append(preferredPrefix).append(":BucketId>").append(SDKUtil.escapeInvalidXmlCharsRegex(bucketId));
+			sb.append("</").append(preferredPrefix).append(":BucketId>");
 		}
-		if(ExternalSellerId != null) {
-			sb.append("<ebl:ExternalSellerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExternalSellerId));
-			sb.append("</ebl:ExternalSellerId>");
+		if(sellerId != null) {
+			sb.append("<").append(preferredPrefix).append(":SellerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(sellerId));
+			sb.append("</").append(preferredPrefix).append(":SellerId>");
 		}
-		if(BucketSubtotalAmt != null) {
-			sb.append("<ebl:BucketSubtotalAmt");
-			sb.append(BucketSubtotalAmt.toXMLString());
-			sb.append("</ebl:BucketSubtotalAmt>");
+		if(externalSellerId != null) {
+			sb.append("<").append(preferredPrefix).append(":ExternalSellerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(externalSellerId));
+			sb.append("</").append(preferredPrefix).append(":ExternalSellerId>");
 		}
-		if(BucketShippingAmt != null) {
-			sb.append("<ebl:BucketShippingAmt");
-			sb.append(BucketShippingAmt.toXMLString());
-			sb.append("</ebl:BucketShippingAmt>");
+		if(bucketSubtotalAmt != null) {
+			sb.append(bucketSubtotalAmt.toXMLString(preferredPrefix,"BucketSubtotalAmt"));
 		}
-		if(BucketInsuranceAmt != null) {
-			sb.append("<ebl:BucketInsuranceAmt");
-			sb.append(BucketInsuranceAmt.toXMLString());
-			sb.append("</ebl:BucketInsuranceAmt>");
+		if(bucketShippingAmt != null) {
+			sb.append(bucketShippingAmt.toXMLString(preferredPrefix,"BucketShippingAmt"));
 		}
-		if(BucketSalesTaxAmt != null) {
-			sb.append("<ebl:BucketSalesTaxAmt");
-			sb.append(BucketSalesTaxAmt.toXMLString());
-			sb.append("</ebl:BucketSalesTaxAmt>");
+		if(bucketInsuranceAmt != null) {
+			sb.append(bucketInsuranceAmt.toXMLString(preferredPrefix,"BucketInsuranceAmt"));
 		}
-		if(BucketTotalAmt != null) {
-			sb.append("<ebl:BucketTotalAmt");
-			sb.append(BucketTotalAmt.toXMLString());
-			sb.append("</ebl:BucketTotalAmt>");
+		if(bucketSalesTaxAmt != null) {
+			sb.append(bucketSalesTaxAmt.toXMLString(preferredPrefix,"BucketSalesTaxAmt"));
+		}
+		if(bucketTotalAmt != null) {
+			sb.append(bucketTotalAmt.toXMLString(preferredPrefix,"BucketTotalAmt"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

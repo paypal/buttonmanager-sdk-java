@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class ManagePendingTransactionStatusReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private ManagePendingTransactionStatusRequestType ManagePendingTransactionStatusRequest;
+	private ManagePendingTransactionStatusRequestType managePendingTransactionStatusRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class ManagePendingTransactionStatusReq{
 	}	
 
 	/**
-	 * Getter for ManagePendingTransactionStatusRequest
+	 * Getter for managePendingTransactionStatusRequest
 	 */
 	 public ManagePendingTransactionStatusRequestType getManagePendingTransactionStatusRequest() {
-	 	return ManagePendingTransactionStatusRequest;
+	 	return managePendingTransactionStatusRequest;
 	 }
 	 
 	/**
-	 * Setter for ManagePendingTransactionStatusRequest
+	 * Setter for managePendingTransactionStatusRequest
 	 */
-	 public void setManagePendingTransactionStatusRequest(ManagePendingTransactionStatusRequestType ManagePendingTransactionStatusRequest) {
-	 	this.ManagePendingTransactionStatusRequest = ManagePendingTransactionStatusRequest;
+	 public void setManagePendingTransactionStatusRequest(ManagePendingTransactionStatusRequestType managePendingTransactionStatusRequest) {
+	 	this.managePendingTransactionStatusRequest = managePendingTransactionStatusRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:ManagePendingTransactionStatusReq>");
-		if(ManagePendingTransactionStatusRequest != null) {
-			sb.append("<urn:ManagePendingTransactionStatusRequest>");
-			sb.append(ManagePendingTransactionStatusRequest.toXMLString());
-			sb.append("</urn:ManagePendingTransactionStatusRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:ManagePendingTransactionStatusReq>");
+		if(managePendingTransactionStatusRequest != null) {
+			sb.append(managePendingTransactionStatusRequest.toXMLString(null,"ManagePendingTransactionStatusRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

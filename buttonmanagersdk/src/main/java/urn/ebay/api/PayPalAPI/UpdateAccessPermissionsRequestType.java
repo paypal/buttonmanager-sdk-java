@@ -9,6 +9,8 @@ import com.paypal.core.SDKUtil;
  */
 public class UpdateAccessPermissionsRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * Unique PayPal customer account number, the value of which
@@ -16,15 +18,15 @@ public class UpdateAccessPermissionsRequestType extends AbstractRequestType {
 	 * length and limitations: 20 single-byte characters 	  
 	 *@Required	 
 	 */ 
-	private String PayerID;
+	private String payerID;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public UpdateAccessPermissionsRequestType (String PayerID){
-		this.PayerID = PayerID;
+	public UpdateAccessPermissionsRequestType (String payerID){
+		this.payerID = payerID;
 	}	
 
 	/**
@@ -34,27 +36,43 @@ public class UpdateAccessPermissionsRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for PayerID
+	 * Getter for payerID
 	 */
 	 public String getPayerID() {
-	 	return PayerID;
+	 	return payerID;
 	 }
 	 
 	/**
-	 * Setter for PayerID
+	 * Setter for payerID
 	 */
-	 public void setPayerID(String PayerID) {
-	 	this.PayerID = PayerID;
+	 public void setPayerID(String payerID) {
+	 	this.payerID = payerID;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(PayerID != null) {
-			sb.append("<urn:PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(PayerID));
-			sb.append("</urn:PayerID>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		sb.append(super.toXMLString(prefix, null));
+		if(payerID != null) {
+			sb.append("<").append(preferredPrefix).append(":PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(payerID));
+			sb.append("</").append(preferredPrefix).append(":PayerID>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

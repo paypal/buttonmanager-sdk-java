@@ -15,6 +15,8 @@ import com.paypal.core.SDKUtil;
  */
 public class ExecuteCheckoutOperationsRequestDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * On your first invocation of
@@ -26,28 +28,28 @@ public class ExecuteCheckoutOperationsRequestDetailsType{
 	 * want the customer to edit his shipping address on PayPal.
 	 * Character length and limitations: 20 single-byte characters 	 
 	 */ 
-	private String Token;
+	private String token;
 
 	/**
 	 * All the Data required to initiate the checkout session is
 	 * passed in this element. 	  
 	 *@Required	 
 	 */ 
-	private SetDataRequestType SetDataRequest;
+	private SetDataRequestType setDataRequest;
 
 	/**
 	 * If auto authorization is required, this should be passed in
 	 * with IsRequested set to yes. 	 
 	 */ 
-	private AuthorizationRequestType AuthorizationRequest;
+	private AuthorizationRequestType authorizationRequest;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public ExecuteCheckoutOperationsRequestDetailsType (SetDataRequestType SetDataRequest){
-		this.SetDataRequest = SetDataRequest;
+	public ExecuteCheckoutOperationsRequestDetailsType (SetDataRequestType setDataRequest){
+		this.setDataRequest = setDataRequest;
 	}	
 
 	/**
@@ -57,64 +59,76 @@ public class ExecuteCheckoutOperationsRequestDetailsType{
 	}	
 
 	/**
-	 * Getter for Token
+	 * Getter for token
 	 */
 	 public String getToken() {
-	 	return Token;
+	 	return token;
 	 }
 	 
 	/**
-	 * Setter for Token
+	 * Setter for token
 	 */
-	 public void setToken(String Token) {
-	 	this.Token = Token;
+	 public void setToken(String token) {
+	 	this.token = token;
 	 }
 	 
 	/**
-	 * Getter for SetDataRequest
+	 * Getter for setDataRequest
 	 */
 	 public SetDataRequestType getSetDataRequest() {
-	 	return SetDataRequest;
+	 	return setDataRequest;
 	 }
 	 
 	/**
-	 * Setter for SetDataRequest
+	 * Setter for setDataRequest
 	 */
-	 public void setSetDataRequest(SetDataRequestType SetDataRequest) {
-	 	this.SetDataRequest = SetDataRequest;
+	 public void setSetDataRequest(SetDataRequestType setDataRequest) {
+	 	this.setDataRequest = setDataRequest;
 	 }
 	 
 	/**
-	 * Getter for AuthorizationRequest
+	 * Getter for authorizationRequest
 	 */
 	 public AuthorizationRequestType getAuthorizationRequest() {
-	 	return AuthorizationRequest;
+	 	return authorizationRequest;
 	 }
 	 
 	/**
-	 * Setter for AuthorizationRequest
+	 * Setter for authorizationRequest
 	 */
-	 public void setAuthorizationRequest(AuthorizationRequestType AuthorizationRequest) {
-	 	this.AuthorizationRequest = AuthorizationRequest;
+	 public void setAuthorizationRequest(AuthorizationRequestType authorizationRequest) {
+	 	this.authorizationRequest = authorizationRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(Token != null) {
-			sb.append("<ebl:Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(Token));
-			sb.append("</ebl:Token>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(SetDataRequest != null) {
-			sb.append("<ebl:SetDataRequest>");
-			sb.append(SetDataRequest.toXMLString());
-			sb.append("</ebl:SetDataRequest>");
+		if(token != null) {
+			sb.append("<").append(preferredPrefix).append(":Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(token));
+			sb.append("</").append(preferredPrefix).append(":Token>");
 		}
-		if(AuthorizationRequest != null) {
-			sb.append("<ebl:AuthorizationRequest>");
-			sb.append(AuthorizationRequest.toXMLString());
-			sb.append("</ebl:AuthorizationRequest>");
+		if(setDataRequest != null) {
+			sb.append(setDataRequest.toXMLString(preferredPrefix,"SetDataRequest"));
+		}
+		if(authorizationRequest != null) {
+			sb.append(authorizationRequest.toXMLString(preferredPrefix,"AuthorizationRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

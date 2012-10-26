@@ -31,12 +31,12 @@ public class DoVoidResponseType extends AbstractResponseType {
 	 * characters	  
 	 *@Required	 
 	 */ 
-	private String AuthorizationID;
+	private String authorizationID;
 
 	/**
 	 * Return msgsubid back to merchant	 
 	 */ 
-	private String MsgSubID;
+	private String msgSubID;
 
 	
 
@@ -47,31 +47,31 @@ public class DoVoidResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for AuthorizationID
+	 * Getter for authorizationID
 	 */
 	 public String getAuthorizationID() {
-	 	return AuthorizationID;
+	 	return authorizationID;
 	 }
 	 
 	/**
-	 * Setter for AuthorizationID
+	 * Setter for authorizationID
 	 */
-	 public void setAuthorizationID(String AuthorizationID) {
-	 	this.AuthorizationID = AuthorizationID;
+	 public void setAuthorizationID(String authorizationID) {
+	 	this.authorizationID = authorizationID;
 	 }
 	 
 	/**
-	 * Getter for MsgSubID
+	 * Getter for msgSubID
 	 */
 	 public String getMsgSubID() {
-	 	return MsgSubID;
+	 	return msgSubID;
 	 }
 	 
 	/**
-	 * Setter for MsgSubID
+	 * Setter for msgSubID
 	 */
-	 public void setMsgSubID(String MsgSubID) {
-	 	this.MsgSubID = MsgSubID;
+	 public void setMsgSubID(String msgSubID) {
+	 	this.msgSubID = msgSubID;
 	 }
 	 
 
@@ -96,12 +96,12 @@ public class DoVoidResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("AuthorizationID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AuthorizationID = childNode.getTextContent();
+		    this.authorizationID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("MsgSubID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.MsgSubID = childNode.getTextContent();
+		    this.msgSubID = childNode.getTextContent();
 		}
 	
 	}

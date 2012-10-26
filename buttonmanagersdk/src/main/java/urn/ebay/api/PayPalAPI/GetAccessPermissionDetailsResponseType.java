@@ -28,7 +28,7 @@ public class GetAccessPermissionDetailsResponseType extends AbstractResponseType
 	 * 	  
 	 *@Required	 
 	 */ 
-	private GetAccessPermissionDetailsResponseDetailsType GetAccessPermissionDetailsResponseDetails;
+	private GetAccessPermissionDetailsResponseDetailsType getAccessPermissionDetailsResponseDetails;
 
 	
 
@@ -39,17 +39,17 @@ public class GetAccessPermissionDetailsResponseType extends AbstractResponseType
 	}	
 
 	/**
-	 * Getter for GetAccessPermissionDetailsResponseDetails
+	 * Getter for getAccessPermissionDetailsResponseDetails
 	 */
 	 public GetAccessPermissionDetailsResponseDetailsType getGetAccessPermissionDetailsResponseDetails() {
-	 	return GetAccessPermissionDetailsResponseDetails;
+	 	return getAccessPermissionDetailsResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for GetAccessPermissionDetailsResponseDetails
+	 * Setter for getAccessPermissionDetailsResponseDetails
 	 */
-	 public void setGetAccessPermissionDetailsResponseDetails(GetAccessPermissionDetailsResponseDetailsType GetAccessPermissionDetailsResponseDetails) {
-	 	this.GetAccessPermissionDetailsResponseDetails = GetAccessPermissionDetailsResponseDetails;
+	 public void setGetAccessPermissionDetailsResponseDetails(GetAccessPermissionDetailsResponseDetailsType getAccessPermissionDetailsResponseDetails) {
+	 	this.getAccessPermissionDetailsResponseDetails = getAccessPermissionDetailsResponseDetails;
 	 }
 	 
 
@@ -74,7 +74,7 @@ public class GetAccessPermissionDetailsResponseType extends AbstractResponseType
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("GetAccessPermissionDetailsResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.GetAccessPermissionDetailsResponseDetails =  new GetAccessPermissionDetailsResponseDetailsType(childNode);
+		    this.getAccessPermissionDetailsResponseDetails =  new GetAccessPermissionDetailsResponseDetailsType(childNode);
 		}
 	}
  

@@ -32,12 +32,12 @@ public class AuthorizationResponseType{
 	 * or not. 	  
 	 *@Required	 
 	 */ 
-	private AckCodeType Status;
+	private AckCodeType status;
 
 	/**
 	 * 	 
 	 */ 
-	private List<ErrorType> AuthorizationError = new ArrayList<ErrorType>();
+	private List<ErrorType> authorizationError = new ArrayList<ErrorType>();
 
 	
 
@@ -48,31 +48,31 @@ public class AuthorizationResponseType{
 	}	
 
 	/**
-	 * Getter for Status
+	 * Getter for status
 	 */
 	 public AckCodeType getStatus() {
-	 	return Status;
+	 	return status;
 	 }
 	 
 	/**
-	 * Setter for Status
+	 * Setter for status
 	 */
-	 public void setStatus(AckCodeType Status) {
-	 	this.Status = Status;
+	 public void setStatus(AckCodeType status) {
+	 	this.status = status;
 	 }
 	 
 	/**
-	 * Getter for AuthorizationError
+	 * Getter for authorizationError
 	 */
 	 public List<ErrorType> getAuthorizationError() {
-	 	return AuthorizationError;
+	 	return authorizationError;
 	 }
 	 
 	/**
-	 * Setter for AuthorizationError
+	 * Setter for authorizationError
 	 */
-	 public void setAuthorizationError(List<ErrorType> AuthorizationError) {
-	 	this.AuthorizationError = AuthorizationError;
+	 public void setAuthorizationError(List<ErrorType> authorizationError) {
+	 	this.authorizationError = authorizationError;
 	 }
 	 
 
@@ -96,13 +96,13 @@ public class AuthorizationResponseType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Status", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Status = AckCodeType.fromValue(childNode.getTextContent());
+		    this.status = AckCodeType.fromValue(childNode.getTextContent());
 		}
         nodeList = (NodeList) xpath.evaluate("AuthorizationError", node, XPathConstants.NODESET);
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.AuthorizationError.add(new ErrorType(subNode));
+				this.authorizationError.add(new ErrorType(subNode));
 			}
 		}
 	}

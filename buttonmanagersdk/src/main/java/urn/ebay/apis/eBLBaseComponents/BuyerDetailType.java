@@ -9,13 +9,15 @@ import com.paypal.core.SDKUtil;
  */
 public class BuyerDetailType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Information that is used to indentify the Buyer. This is
 	 * used for auto authorization. Mandatory if Authorization is
 	 * requested.	 
 	 */ 
-	private IdentificationInfoType IdentificationInfo;
+	private IdentificationInfoType identificationInfo;
 
 	
 
@@ -26,27 +28,41 @@ public class BuyerDetailType{
 	}	
 
 	/**
-	 * Getter for IdentificationInfo
+	 * Getter for identificationInfo
 	 */
 	 public IdentificationInfoType getIdentificationInfo() {
-	 	return IdentificationInfo;
+	 	return identificationInfo;
 	 }
 	 
 	/**
-	 * Setter for IdentificationInfo
+	 * Setter for identificationInfo
 	 */
-	 public void setIdentificationInfo(IdentificationInfoType IdentificationInfo) {
-	 	this.IdentificationInfo = IdentificationInfo;
+	 public void setIdentificationInfo(IdentificationInfoType identificationInfo) {
+	 	this.identificationInfo = identificationInfo;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(IdentificationInfo != null) {
-			sb.append("<ebl:IdentificationInfo>");
-			sb.append(IdentificationInfo.toXMLString());
-			sb.append("</ebl:IdentificationInfo>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		if(identificationInfo != null) {
+			sb.append(identificationInfo.toXMLString(preferredPrefix,"IdentificationInfo"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

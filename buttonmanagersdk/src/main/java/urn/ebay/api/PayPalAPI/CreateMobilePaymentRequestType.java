@@ -8,20 +8,22 @@ import com.paypal.core.SDKUtil;
  */
 public class CreateMobilePaymentRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private CreateMobilePaymentRequestDetailsType CreateMobilePaymentRequestDetails;
+	private CreateMobilePaymentRequestDetailsType createMobilePaymentRequestDetails;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public CreateMobilePaymentRequestType (CreateMobilePaymentRequestDetailsType CreateMobilePaymentRequestDetails){
-		this.CreateMobilePaymentRequestDetails = CreateMobilePaymentRequestDetails;
+	public CreateMobilePaymentRequestType (CreateMobilePaymentRequestDetailsType createMobilePaymentRequestDetails){
+		this.createMobilePaymentRequestDetails = createMobilePaymentRequestDetails;
 	}	
 
 	/**
@@ -31,28 +33,42 @@ public class CreateMobilePaymentRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for CreateMobilePaymentRequestDetails
+	 * Getter for createMobilePaymentRequestDetails
 	 */
 	 public CreateMobilePaymentRequestDetailsType getCreateMobilePaymentRequestDetails() {
-	 	return CreateMobilePaymentRequestDetails;
+	 	return createMobilePaymentRequestDetails;
 	 }
 	 
 	/**
-	 * Setter for CreateMobilePaymentRequestDetails
+	 * Setter for createMobilePaymentRequestDetails
 	 */
-	 public void setCreateMobilePaymentRequestDetails(CreateMobilePaymentRequestDetailsType CreateMobilePaymentRequestDetails) {
-	 	this.CreateMobilePaymentRequestDetails = CreateMobilePaymentRequestDetails;
+	 public void setCreateMobilePaymentRequestDetails(CreateMobilePaymentRequestDetailsType createMobilePaymentRequestDetails) {
+	 	this.createMobilePaymentRequestDetails = createMobilePaymentRequestDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(CreateMobilePaymentRequestDetails != null) {
-			sb.append("<ebl:CreateMobilePaymentRequestDetails>");
-			sb.append(CreateMobilePaymentRequestDetails.toXMLString());
-			sb.append("</ebl:CreateMobilePaymentRequestDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		sb.append(super.toXMLString(prefix, null));
+		if(createMobilePaymentRequestDetails != null) {
+			sb.append(createMobilePaymentRequestDetails.toXMLString(null,"CreateMobilePaymentRequestDetails"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

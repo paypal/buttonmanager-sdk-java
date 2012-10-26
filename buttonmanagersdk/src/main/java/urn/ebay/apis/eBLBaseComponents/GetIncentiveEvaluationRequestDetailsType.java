@@ -12,36 +12,38 @@ import com.paypal.core.SDKUtil;
  */
 public class GetIncentiveEvaluationRequestDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	 
 	 */ 
-	private String ExternalBuyerId;
+	private String externalBuyerId;
 
 	/**
 	 * 	 
 	 */ 
-	private List<String> IncentiveCodes = new ArrayList<String>();
+	private List<String> incentiveCodes = new ArrayList<String>();
 
 	/**
 	 * 	 
 	 */ 
-	private List<IncentiveApplyIndicationType> ApplyIndication = new ArrayList<IncentiveApplyIndicationType>();
+	private List<IncentiveApplyIndicationType> applyIndication = new ArrayList<IncentiveApplyIndicationType>();
 
 	/**
 	 * 	 
 	 */ 
-	private List<IncentiveBucketType> Buckets = new ArrayList<IncentiveBucketType>();
+	private List<IncentiveBucketType> buckets = new ArrayList<IncentiveBucketType>();
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType CartTotalAmt;
+	private BasicAmountType cartTotalAmt;
 
 	/**
 	 * 	 
 	 */ 
-	private IncentiveRequestDetailsType RequestDetails;
+	private IncentiveRequestDetailsType requestDetails;
 
 	
 
@@ -52,126 +54,134 @@ public class GetIncentiveEvaluationRequestDetailsType{
 	}	
 
 	/**
-	 * Getter for ExternalBuyerId
+	 * Getter for externalBuyerId
 	 */
 	 public String getExternalBuyerId() {
-	 	return ExternalBuyerId;
+	 	return externalBuyerId;
 	 }
 	 
 	/**
-	 * Setter for ExternalBuyerId
+	 * Setter for externalBuyerId
 	 */
-	 public void setExternalBuyerId(String ExternalBuyerId) {
-	 	this.ExternalBuyerId = ExternalBuyerId;
+	 public void setExternalBuyerId(String externalBuyerId) {
+	 	this.externalBuyerId = externalBuyerId;
 	 }
 	 
 	/**
-	 * Getter for IncentiveCodes
+	 * Getter for incentiveCodes
 	 */
 	 public List<String> getIncentiveCodes() {
-	 	return IncentiveCodes;
+	 	return incentiveCodes;
 	 }
 	 
 	/**
-	 * Setter for IncentiveCodes
+	 * Setter for incentiveCodes
 	 */
-	 public void setIncentiveCodes(List<String> IncentiveCodes) {
-	 	this.IncentiveCodes = IncentiveCodes;
+	 public void setIncentiveCodes(List<String> incentiveCodes) {
+	 	this.incentiveCodes = incentiveCodes;
 	 }
 	 
 	/**
-	 * Getter for ApplyIndication
+	 * Getter for applyIndication
 	 */
 	 public List<IncentiveApplyIndicationType> getApplyIndication() {
-	 	return ApplyIndication;
+	 	return applyIndication;
 	 }
 	 
 	/**
-	 * Setter for ApplyIndication
+	 * Setter for applyIndication
 	 */
-	 public void setApplyIndication(List<IncentiveApplyIndicationType> ApplyIndication) {
-	 	this.ApplyIndication = ApplyIndication;
+	 public void setApplyIndication(List<IncentiveApplyIndicationType> applyIndication) {
+	 	this.applyIndication = applyIndication;
 	 }
 	 
 	/**
-	 * Getter for Buckets
+	 * Getter for buckets
 	 */
 	 public List<IncentiveBucketType> getBuckets() {
-	 	return Buckets;
+	 	return buckets;
 	 }
 	 
 	/**
-	 * Setter for Buckets
+	 * Setter for buckets
 	 */
-	 public void setBuckets(List<IncentiveBucketType> Buckets) {
-	 	this.Buckets = Buckets;
+	 public void setBuckets(List<IncentiveBucketType> buckets) {
+	 	this.buckets = buckets;
 	 }
 	 
 	/**
-	 * Getter for CartTotalAmt
+	 * Getter for cartTotalAmt
 	 */
 	 public BasicAmountType getCartTotalAmt() {
-	 	return CartTotalAmt;
+	 	return cartTotalAmt;
 	 }
 	 
 	/**
-	 * Setter for CartTotalAmt
+	 * Setter for cartTotalAmt
 	 */
-	 public void setCartTotalAmt(BasicAmountType CartTotalAmt) {
-	 	this.CartTotalAmt = CartTotalAmt;
+	 public void setCartTotalAmt(BasicAmountType cartTotalAmt) {
+	 	this.cartTotalAmt = cartTotalAmt;
 	 }
 	 
 	/**
-	 * Getter for RequestDetails
+	 * Getter for requestDetails
 	 */
 	 public IncentiveRequestDetailsType getRequestDetails() {
-	 	return RequestDetails;
+	 	return requestDetails;
 	 }
 	 
 	/**
-	 * Setter for RequestDetails
+	 * Setter for requestDetails
 	 */
-	 public void setRequestDetails(IncentiveRequestDetailsType RequestDetails) {
-	 	this.RequestDetails = RequestDetails;
+	 public void setRequestDetails(IncentiveRequestDetailsType requestDetails) {
+	 	this.requestDetails = requestDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(ExternalBuyerId != null) {
-			sb.append("<ebl:ExternalBuyerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExternalBuyerId));
-			sb.append("</ebl:ExternalBuyerId>");
-		}
-		if(IncentiveCodes != null) {
-			for(int i=0; i < IncentiveCodes.size(); i++) {
-				sb.append("<ebl:IncentiveCodes>").append(SDKUtil.escapeInvalidXmlCharsRegex(IncentiveCodes.get(i)));
-				sb.append("</ebl:IncentiveCodes>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
 			}
 		}
-		if(ApplyIndication != null) {
-			for(int i=0; i < ApplyIndication.size(); i++) {
-				sb.append("<ebl:ApplyIndication>");
-				sb.append(ApplyIndication.get(i).toXMLString());
-				sb.append("</ebl:ApplyIndication>");
+		if(externalBuyerId != null) {
+			sb.append("<").append(preferredPrefix).append(":ExternalBuyerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(externalBuyerId));
+			sb.append("</").append(preferredPrefix).append(":ExternalBuyerId>");
+		}
+		if(incentiveCodes != null) {
+			for(int i=0; i < incentiveCodes.size(); i++) {
+				sb.append("<").append(preferredPrefix).append(":IncentiveCodes>").append(SDKUtil.escapeInvalidXmlCharsRegex(incentiveCodes.get(i)));
+				sb.append("</").append(preferredPrefix).append(":IncentiveCodes>");
 			}
 		}
-		if(Buckets != null) {
-			for(int i=0; i < Buckets.size(); i++) {
-				sb.append("<ebl:Buckets>");
-				sb.append(Buckets.get(i).toXMLString());
-				sb.append("</ebl:Buckets>");
+		if(applyIndication != null) {
+			for(int i=0; i < applyIndication.size(); i++) {
+				sb.append(applyIndication.get(i).toXMLString(preferredPrefix,"ApplyIndication"));
 			}
 		}
-		if(CartTotalAmt != null) {
-			sb.append("<ebl:CartTotalAmt");
-			sb.append(CartTotalAmt.toXMLString());
-			sb.append("</ebl:CartTotalAmt>");
+		if(buckets != null) {
+			for(int i=0; i < buckets.size(); i++) {
+				sb.append(buckets.get(i).toXMLString(preferredPrefix,"Buckets"));
+			}
 		}
-		if(RequestDetails != null) {
-			sb.append("<ebl:RequestDetails>");
-			sb.append(RequestDetails.toXMLString());
-			sb.append("</ebl:RequestDetails>");
+		if(cartTotalAmt != null) {
+			sb.append(cartTotalAmt.toXMLString(preferredPrefix,"CartTotalAmt"));
+		}
+		if(requestDetails != null) {
+			sb.append(requestDetails.toXMLString(preferredPrefix,"RequestDetails"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

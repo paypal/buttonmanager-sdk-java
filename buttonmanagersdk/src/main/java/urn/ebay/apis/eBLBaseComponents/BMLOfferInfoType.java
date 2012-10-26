@@ -22,11 +22,13 @@ import org.xml.sax.SAXException;
  */
 public class BMLOfferInfoType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Unique identification for merchant/buyer/offer combo. 	 
 	 */ 
-	private String OfferTrackingID;
+	private String offerTrackingID;
 
 	
 
@@ -37,26 +39,42 @@ public class BMLOfferInfoType{
 	}	
 
 	/**
-	 * Getter for OfferTrackingID
+	 * Getter for offerTrackingID
 	 */
 	 public String getOfferTrackingID() {
-	 	return OfferTrackingID;
+	 	return offerTrackingID;
 	 }
 	 
 	/**
-	 * Setter for OfferTrackingID
+	 * Setter for offerTrackingID
 	 */
-	 public void setOfferTrackingID(String OfferTrackingID) {
-	 	this.OfferTrackingID = OfferTrackingID;
+	 public void setOfferTrackingID(String offerTrackingID) {
+	 	this.offerTrackingID = offerTrackingID;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(OfferTrackingID != null) {
-			sb.append("<ebl:OfferTrackingID>").append(SDKUtil.escapeInvalidXmlCharsRegex(OfferTrackingID));
-			sb.append("</ebl:OfferTrackingID>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		if(offerTrackingID != null) {
+			sb.append("<").append(preferredPrefix).append(":OfferTrackingID>").append(SDKUtil.escapeInvalidXmlCharsRegex(offerTrackingID));
+			sb.append("</").append(preferredPrefix).append(":OfferTrackingID>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -81,7 +99,7 @@ public class BMLOfferInfoType{
 		childNode = (Node) xpath.evaluate("OfferTrackingID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 			String value = childNode.getTextContent();
-			this.OfferTrackingID = value;
+			this.offerTrackingID = value;
 		}
 	}
  

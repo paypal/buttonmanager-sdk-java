@@ -7,31 +7,33 @@ import com.paypal.core.SDKUtil;
  */
 public class IncentiveItemType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	 
 	 */ 
-	private String ItemId;
+	private String itemId;
 
 	/**
 	 * 	 
 	 */ 
-	private String PurchaseTime;
+	private String purchaseTime;
 
 	/**
 	 * 	 
 	 */ 
-	private String ItemCategoryList;
+	private String itemCategoryList;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType ItemPrice;
+	private BasicAmountType itemPrice;
 
 	/**
 	 * 	 
 	 */ 
-	private Integer ItemQuantity;
+	private Integer itemQuantity;
 
 	
 
@@ -42,99 +44,113 @@ public class IncentiveItemType{
 	}	
 
 	/**
-	 * Getter for ItemId
+	 * Getter for itemId
 	 */
 	 public String getItemId() {
-	 	return ItemId;
+	 	return itemId;
 	 }
 	 
 	/**
-	 * Setter for ItemId
+	 * Setter for itemId
 	 */
-	 public void setItemId(String ItemId) {
-	 	this.ItemId = ItemId;
+	 public void setItemId(String itemId) {
+	 	this.itemId = itemId;
 	 }
 	 
 	/**
-	 * Getter for PurchaseTime
+	 * Getter for purchaseTime
 	 */
 	 public String getPurchaseTime() {
-	 	return PurchaseTime;
+	 	return purchaseTime;
 	 }
 	 
 	/**
-	 * Setter for PurchaseTime
+	 * Setter for purchaseTime
 	 */
-	 public void setPurchaseTime(String PurchaseTime) {
-	 	this.PurchaseTime = PurchaseTime;
+	 public void setPurchaseTime(String purchaseTime) {
+	 	this.purchaseTime = purchaseTime;
 	 }
 	 
 	/**
-	 * Getter for ItemCategoryList
+	 * Getter for itemCategoryList
 	 */
 	 public String getItemCategoryList() {
-	 	return ItemCategoryList;
+	 	return itemCategoryList;
 	 }
 	 
 	/**
-	 * Setter for ItemCategoryList
+	 * Setter for itemCategoryList
 	 */
-	 public void setItemCategoryList(String ItemCategoryList) {
-	 	this.ItemCategoryList = ItemCategoryList;
+	 public void setItemCategoryList(String itemCategoryList) {
+	 	this.itemCategoryList = itemCategoryList;
 	 }
 	 
 	/**
-	 * Getter for ItemPrice
+	 * Getter for itemPrice
 	 */
 	 public BasicAmountType getItemPrice() {
-	 	return ItemPrice;
+	 	return itemPrice;
 	 }
 	 
 	/**
-	 * Setter for ItemPrice
+	 * Setter for itemPrice
 	 */
-	 public void setItemPrice(BasicAmountType ItemPrice) {
-	 	this.ItemPrice = ItemPrice;
+	 public void setItemPrice(BasicAmountType itemPrice) {
+	 	this.itemPrice = itemPrice;
 	 }
 	 
 	/**
-	 * Getter for ItemQuantity
+	 * Getter for itemQuantity
 	 */
 	 public Integer getItemQuantity() {
-	 	return ItemQuantity;
+	 	return itemQuantity;
 	 }
 	 
 	/**
-	 * Setter for ItemQuantity
+	 * Setter for itemQuantity
 	 */
-	 public void setItemQuantity(Integer ItemQuantity) {
-	 	this.ItemQuantity = ItemQuantity;
+	 public void setItemQuantity(Integer itemQuantity) {
+	 	this.itemQuantity = itemQuantity;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(ItemId != null) {
-			sb.append("<ebl:ItemId>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemId));
-			sb.append("</ebl:ItemId>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(PurchaseTime != null) {
-			sb.append("<ebl:PurchaseTime>").append(SDKUtil.escapeInvalidXmlCharsRegex(PurchaseTime));
-			sb.append("</ebl:PurchaseTime>");
+		if(itemId != null) {
+			sb.append("<").append(preferredPrefix).append(":ItemId>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemId));
+			sb.append("</").append(preferredPrefix).append(":ItemId>");
 		}
-		if(ItemCategoryList != null) {
-			sb.append("<ebl:ItemCategoryList>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemCategoryList));
-			sb.append("</ebl:ItemCategoryList>");
+		if(purchaseTime != null) {
+			sb.append("<").append(preferredPrefix).append(":PurchaseTime>").append(SDKUtil.escapeInvalidXmlCharsRegex(purchaseTime));
+			sb.append("</").append(preferredPrefix).append(":PurchaseTime>");
 		}
-		if(ItemPrice != null) {
-			sb.append("<ebl:ItemPrice");
-			sb.append(ItemPrice.toXMLString());
-			sb.append("</ebl:ItemPrice>");
+		if(itemCategoryList != null) {
+			sb.append("<").append(preferredPrefix).append(":ItemCategoryList>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemCategoryList));
+			sb.append("</").append(preferredPrefix).append(":ItemCategoryList>");
 		}
-		if(ItemQuantity != null) {
-			sb.append("<ebl:ItemQuantity>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemQuantity));
-			sb.append("</ebl:ItemQuantity>");
+		if(itemPrice != null) {
+			sb.append(itemPrice.toXMLString(preferredPrefix,"ItemPrice"));
+		}
+		if(itemQuantity != null) {
+			sb.append("<").append(preferredPrefix).append(":ItemQuantity>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemQuantity));
+			sb.append("</").append(preferredPrefix).append(":ItemQuantity>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

@@ -28,12 +28,12 @@ public class GetTransactionDetailsResponseType extends AbstractResponseType {
 	/**
 	 * 	 
 	 */ 
-	private PaymentTransactionType PaymentTransactionDetails;
+	private PaymentTransactionType paymentTransactionDetails;
 
 	/**
 	 * 	 
 	 */ 
-	private ThreeDSecureInfoType ThreeDSecureDetails;
+	private ThreeDSecureInfoType threeDSecureDetails;
 
 	
 
@@ -44,31 +44,31 @@ public class GetTransactionDetailsResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for PaymentTransactionDetails
+	 * Getter for paymentTransactionDetails
 	 */
 	 public PaymentTransactionType getPaymentTransactionDetails() {
-	 	return PaymentTransactionDetails;
+	 	return paymentTransactionDetails;
 	 }
 	 
 	/**
-	 * Setter for PaymentTransactionDetails
+	 * Setter for paymentTransactionDetails
 	 */
-	 public void setPaymentTransactionDetails(PaymentTransactionType PaymentTransactionDetails) {
-	 	this.PaymentTransactionDetails = PaymentTransactionDetails;
+	 public void setPaymentTransactionDetails(PaymentTransactionType paymentTransactionDetails) {
+	 	this.paymentTransactionDetails = paymentTransactionDetails;
 	 }
 	 
 	/**
-	 * Getter for ThreeDSecureDetails
+	 * Getter for threeDSecureDetails
 	 */
 	 public ThreeDSecureInfoType getThreeDSecureDetails() {
-	 	return ThreeDSecureDetails;
+	 	return threeDSecureDetails;
 	 }
 	 
 	/**
-	 * Setter for ThreeDSecureDetails
+	 * Setter for threeDSecureDetails
 	 */
-	 public void setThreeDSecureDetails(ThreeDSecureInfoType ThreeDSecureDetails) {
-	 	this.ThreeDSecureDetails = ThreeDSecureDetails;
+	 public void setThreeDSecureDetails(ThreeDSecureInfoType threeDSecureDetails) {
+	 	this.threeDSecureDetails = threeDSecureDetails;
 	 }
 	 
 
@@ -93,11 +93,11 @@ public class GetTransactionDetailsResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("PaymentTransactionDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentTransactionDetails =  new PaymentTransactionType(childNode);
+		    this.paymentTransactionDetails =  new PaymentTransactionType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("ThreeDSecureDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ThreeDSecureDetails =  new ThreeDSecureInfoType(childNode);
+		    this.threeDSecureDetails =  new ThreeDSecureInfoType(childNode);
 		}
 	}
  

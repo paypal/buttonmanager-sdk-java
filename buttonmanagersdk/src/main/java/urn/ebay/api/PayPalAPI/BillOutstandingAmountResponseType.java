@@ -27,7 +27,7 @@ public class BillOutstandingAmountResponseType extends AbstractResponseType {
 	/**
 	 * 	 
 	 */ 
-	private BillOutstandingAmountResponseDetailsType BillOutstandingAmountResponseDetails;
+	private BillOutstandingAmountResponseDetailsType billOutstandingAmountResponseDetails;
 
 	
 
@@ -38,17 +38,17 @@ public class BillOutstandingAmountResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for BillOutstandingAmountResponseDetails
+	 * Getter for billOutstandingAmountResponseDetails
 	 */
 	 public BillOutstandingAmountResponseDetailsType getBillOutstandingAmountResponseDetails() {
-	 	return BillOutstandingAmountResponseDetails;
+	 	return billOutstandingAmountResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for BillOutstandingAmountResponseDetails
+	 * Setter for billOutstandingAmountResponseDetails
 	 */
-	 public void setBillOutstandingAmountResponseDetails(BillOutstandingAmountResponseDetailsType BillOutstandingAmountResponseDetails) {
-	 	this.BillOutstandingAmountResponseDetails = BillOutstandingAmountResponseDetails;
+	 public void setBillOutstandingAmountResponseDetails(BillOutstandingAmountResponseDetailsType billOutstandingAmountResponseDetails) {
+	 	this.billOutstandingAmountResponseDetails = billOutstandingAmountResponseDetails;
 	 }
 	 
 
@@ -73,7 +73,7 @@ public class BillOutstandingAmountResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("BillOutstandingAmountResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BillOutstandingAmountResponseDetails =  new BillOutstandingAmountResponseDetailsType(childNode);
+		    this.billOutstandingAmountResponseDetails =  new BillOutstandingAmountResponseDetailsType(childNode);
 		}
 	}
  

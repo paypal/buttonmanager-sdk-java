@@ -22,31 +22,33 @@ import org.xml.sax.SAXException;
  */
 public class PersonNameType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	 
 	 */ 
-	private String Salutation;
+	private String salutation;
 
 	/**
 	 * 	 
 	 */ 
-	private String FirstName;
+	private String firstName;
 
 	/**
 	 * 	 
 	 */ 
-	private String MiddleName;
+	private String middleName;
 
 	/**
 	 * 	 
 	 */ 
-	private String LastName;
+	private String lastName;
 
 	/**
 	 * 	 
 	 */ 
-	private String Suffix;
+	private String suffix;
 
 	
 
@@ -57,98 +59,114 @@ public class PersonNameType{
 	}	
 
 	/**
-	 * Getter for Salutation
+	 * Getter for salutation
 	 */
 	 public String getSalutation() {
-	 	return Salutation;
+	 	return salutation;
 	 }
 	 
 	/**
-	 * Setter for Salutation
+	 * Setter for salutation
 	 */
-	 public void setSalutation(String Salutation) {
-	 	this.Salutation = Salutation;
+	 public void setSalutation(String salutation) {
+	 	this.salutation = salutation;
 	 }
 	 
 	/**
-	 * Getter for FirstName
+	 * Getter for firstName
 	 */
 	 public String getFirstName() {
-	 	return FirstName;
+	 	return firstName;
 	 }
 	 
 	/**
-	 * Setter for FirstName
+	 * Setter for firstName
 	 */
-	 public void setFirstName(String FirstName) {
-	 	this.FirstName = FirstName;
+	 public void setFirstName(String firstName) {
+	 	this.firstName = firstName;
 	 }
 	 
 	/**
-	 * Getter for MiddleName
+	 * Getter for middleName
 	 */
 	 public String getMiddleName() {
-	 	return MiddleName;
+	 	return middleName;
 	 }
 	 
 	/**
-	 * Setter for MiddleName
+	 * Setter for middleName
 	 */
-	 public void setMiddleName(String MiddleName) {
-	 	this.MiddleName = MiddleName;
+	 public void setMiddleName(String middleName) {
+	 	this.middleName = middleName;
 	 }
 	 
 	/**
-	 * Getter for LastName
+	 * Getter for lastName
 	 */
 	 public String getLastName() {
-	 	return LastName;
+	 	return lastName;
 	 }
 	 
 	/**
-	 * Setter for LastName
+	 * Setter for lastName
 	 */
-	 public void setLastName(String LastName) {
-	 	this.LastName = LastName;
+	 public void setLastName(String lastName) {
+	 	this.lastName = lastName;
 	 }
 	 
 	/**
-	 * Getter for Suffix
+	 * Getter for suffix
 	 */
 	 public String getSuffix() {
-	 	return Suffix;
+	 	return suffix;
 	 }
 	 
 	/**
-	 * Setter for Suffix
+	 * Setter for suffix
 	 */
-	 public void setSuffix(String Suffix) {
-	 	this.Suffix = Suffix;
+	 public void setSuffix(String suffix) {
+	 	this.suffix = suffix;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(Salutation != null) {
-			sb.append("<ebl:Salutation>").append(SDKUtil.escapeInvalidXmlCharsRegex(Salutation));
-			sb.append("</ebl:Salutation>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(FirstName != null) {
-			sb.append("<ebl:FirstName>").append(SDKUtil.escapeInvalidXmlCharsRegex(FirstName));
-			sb.append("</ebl:FirstName>");
+		if(salutation != null) {
+			sb.append("<").append(preferredPrefix).append(":Salutation>").append(SDKUtil.escapeInvalidXmlCharsRegex(salutation));
+			sb.append("</").append(preferredPrefix).append(":Salutation>");
 		}
-		if(MiddleName != null) {
-			sb.append("<ebl:MiddleName>").append(SDKUtil.escapeInvalidXmlCharsRegex(MiddleName));
-			sb.append("</ebl:MiddleName>");
+		if(firstName != null) {
+			sb.append("<").append(preferredPrefix).append(":FirstName>").append(SDKUtil.escapeInvalidXmlCharsRegex(firstName));
+			sb.append("</").append(preferredPrefix).append(":FirstName>");
 		}
-		if(LastName != null) {
-			sb.append("<ebl:LastName>").append(SDKUtil.escapeInvalidXmlCharsRegex(LastName));
-			sb.append("</ebl:LastName>");
+		if(middleName != null) {
+			sb.append("<").append(preferredPrefix).append(":MiddleName>").append(SDKUtil.escapeInvalidXmlCharsRegex(middleName));
+			sb.append("</").append(preferredPrefix).append(":MiddleName>");
 		}
-		if(Suffix != null) {
-			sb.append("<ebl:Suffix>").append(SDKUtil.escapeInvalidXmlCharsRegex(Suffix));
-			sb.append("</ebl:Suffix>");
+		if(lastName != null) {
+			sb.append("<").append(preferredPrefix).append(":LastName>").append(SDKUtil.escapeInvalidXmlCharsRegex(lastName));
+			sb.append("</").append(preferredPrefix).append(":LastName>");
+		}
+		if(suffix != null) {
+			sb.append("<").append(preferredPrefix).append(":Suffix>").append(SDKUtil.escapeInvalidXmlCharsRegex(suffix));
+			sb.append("</").append(preferredPrefix).append(":Suffix>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -172,27 +190,27 @@ public class PersonNameType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Salutation", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Salutation = childNode.getTextContent();
+		    this.salutation = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("FirstName", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.FirstName = childNode.getTextContent();
+		    this.firstName = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("MiddleName", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.MiddleName = childNode.getTextContent();
+		    this.middleName = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("LastName", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.LastName = childNode.getTextContent();
+		    this.lastName = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Suffix", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Suffix = childNode.getTextContent();
+		    this.suffix = childNode.getTextContent();
 		}
 	
 	}

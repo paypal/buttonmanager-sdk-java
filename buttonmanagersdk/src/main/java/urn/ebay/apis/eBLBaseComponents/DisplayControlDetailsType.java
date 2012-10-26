@@ -7,13 +7,15 @@ import com.paypal.core.SDKUtil;
  */
 public class DisplayControlDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Optional URL to pay button image for the inline checkout
 	 * flow. Currently applicable only to the inline checkout flow
 	 * when the FlowControlDetails/InlineReturnURL is present. 	 
 	 */ 
-	private String InContextPaymentButtonImage;
+	private String inContextPaymentButtonImage;
 
 	
 
@@ -24,26 +26,42 @@ public class DisplayControlDetailsType{
 	}	
 
 	/**
-	 * Getter for InContextPaymentButtonImage
+	 * Getter for inContextPaymentButtonImage
 	 */
 	 public String getInContextPaymentButtonImage() {
-	 	return InContextPaymentButtonImage;
+	 	return inContextPaymentButtonImage;
 	 }
 	 
 	/**
-	 * Setter for InContextPaymentButtonImage
+	 * Setter for inContextPaymentButtonImage
 	 */
-	 public void setInContextPaymentButtonImage(String InContextPaymentButtonImage) {
-	 	this.InContextPaymentButtonImage = InContextPaymentButtonImage;
+	 public void setInContextPaymentButtonImage(String inContextPaymentButtonImage) {
+	 	this.inContextPaymentButtonImage = inContextPaymentButtonImage;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(InContextPaymentButtonImage != null) {
-			sb.append("<ebl:InContextPaymentButtonImage>").append(SDKUtil.escapeInvalidXmlCharsRegex(InContextPaymentButtonImage));
-			sb.append("</ebl:InContextPaymentButtonImage>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		if(inContextPaymentButtonImage != null) {
+			sb.append("<").append(preferredPrefix).append(":InContextPaymentButtonImage>").append(SDKUtil.escapeInvalidXmlCharsRegex(inContextPaymentButtonImage));
+			sb.append("</").append(preferredPrefix).append(":InContextPaymentButtonImage>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

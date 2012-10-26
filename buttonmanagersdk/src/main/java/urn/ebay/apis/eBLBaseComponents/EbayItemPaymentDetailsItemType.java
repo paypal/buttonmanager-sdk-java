@@ -23,30 +23,32 @@ import org.xml.sax.SAXException;
  */
 public class EbayItemPaymentDetailsItemType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Auction ItemNumber. Optional Character length and
 	 * limitations: 765 single-byte characters	 
 	 */ 
-	private String ItemNumber;
+	private String itemNumber;
 
 	/**
 	 * Auction Transaction ID. Optional Character length and
 	 * limitations: 255 single-byte characters	 
 	 */ 
-	private String AuctionTransactionId;
+	private String auctionTransactionId;
 
 	/**
 	 * Ebay Order ID. Optional Character length and limitations: 64
 	 * single-byte characters	 
 	 */ 
-	private String OrderId;
+	private String orderId;
 
 	/**
 	 * Ebay Cart ID. Optional Character length and limitations: 64
 	 * single-byte characters 	 
 	 */ 
-	private String CartID;
+	private String cartID;
 
 	
 
@@ -57,80 +59,96 @@ public class EbayItemPaymentDetailsItemType{
 	}	
 
 	/**
-	 * Getter for ItemNumber
+	 * Getter for itemNumber
 	 */
 	 public String getItemNumber() {
-	 	return ItemNumber;
+	 	return itemNumber;
 	 }
 	 
 	/**
-	 * Setter for ItemNumber
+	 * Setter for itemNumber
 	 */
-	 public void setItemNumber(String ItemNumber) {
-	 	this.ItemNumber = ItemNumber;
+	 public void setItemNumber(String itemNumber) {
+	 	this.itemNumber = itemNumber;
 	 }
 	 
 	/**
-	 * Getter for AuctionTransactionId
+	 * Getter for auctionTransactionId
 	 */
 	 public String getAuctionTransactionId() {
-	 	return AuctionTransactionId;
+	 	return auctionTransactionId;
 	 }
 	 
 	/**
-	 * Setter for AuctionTransactionId
+	 * Setter for auctionTransactionId
 	 */
-	 public void setAuctionTransactionId(String AuctionTransactionId) {
-	 	this.AuctionTransactionId = AuctionTransactionId;
+	 public void setAuctionTransactionId(String auctionTransactionId) {
+	 	this.auctionTransactionId = auctionTransactionId;
 	 }
 	 
 	/**
-	 * Getter for OrderId
+	 * Getter for orderId
 	 */
 	 public String getOrderId() {
-	 	return OrderId;
+	 	return orderId;
 	 }
 	 
 	/**
-	 * Setter for OrderId
+	 * Setter for orderId
 	 */
-	 public void setOrderId(String OrderId) {
-	 	this.OrderId = OrderId;
+	 public void setOrderId(String orderId) {
+	 	this.orderId = orderId;
 	 }
 	 
 	/**
-	 * Getter for CartID
+	 * Getter for cartID
 	 */
 	 public String getCartID() {
-	 	return CartID;
+	 	return cartID;
 	 }
 	 
 	/**
-	 * Setter for CartID
+	 * Setter for cartID
 	 */
-	 public void setCartID(String CartID) {
-	 	this.CartID = CartID;
+	 public void setCartID(String cartID) {
+	 	this.cartID = cartID;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(ItemNumber != null) {
-			sb.append("<ebl:ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemNumber));
-			sb.append("</ebl:ItemNumber>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(AuctionTransactionId != null) {
-			sb.append("<ebl:AuctionTransactionId>").append(SDKUtil.escapeInvalidXmlCharsRegex(AuctionTransactionId));
-			sb.append("</ebl:AuctionTransactionId>");
+		if(itemNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemNumber));
+			sb.append("</").append(preferredPrefix).append(":ItemNumber>");
 		}
-		if(OrderId != null) {
-			sb.append("<ebl:OrderId>").append(SDKUtil.escapeInvalidXmlCharsRegex(OrderId));
-			sb.append("</ebl:OrderId>");
+		if(auctionTransactionId != null) {
+			sb.append("<").append(preferredPrefix).append(":AuctionTransactionId>").append(SDKUtil.escapeInvalidXmlCharsRegex(auctionTransactionId));
+			sb.append("</").append(preferredPrefix).append(":AuctionTransactionId>");
 		}
-		if(CartID != null) {
-			sb.append("<ebl:CartID>").append(SDKUtil.escapeInvalidXmlCharsRegex(CartID));
-			sb.append("</ebl:CartID>");
+		if(orderId != null) {
+			sb.append("<").append(preferredPrefix).append(":OrderId>").append(SDKUtil.escapeInvalidXmlCharsRegex(orderId));
+			sb.append("</").append(preferredPrefix).append(":OrderId>");
+		}
+		if(cartID != null) {
+			sb.append("<").append(preferredPrefix).append(":CartID>").append(SDKUtil.escapeInvalidXmlCharsRegex(cartID));
+			sb.append("</").append(preferredPrefix).append(":CartID>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -154,22 +172,22 @@ public class EbayItemPaymentDetailsItemType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("ItemNumber", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ItemNumber = childNode.getTextContent();
+		    this.itemNumber = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("AuctionTransactionId", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AuctionTransactionId = childNode.getTextContent();
+		    this.auctionTransactionId = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("OrderId", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OrderId = childNode.getTextContent();
+		    this.orderId = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("CartID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CartID = childNode.getTextContent();
+		    this.cartID = childNode.getTextContent();
 		}
 	
 	}

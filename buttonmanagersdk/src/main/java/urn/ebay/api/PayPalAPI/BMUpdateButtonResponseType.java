@@ -27,22 +27,22 @@ public class BMUpdateButtonResponseType extends AbstractResponseType {
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String Website;
+	private String website;
 
 	/**
 	 * 	 
 	 */ 
-	private String Email;
+	private String email;
 
 	/**
 	 * 	 
 	 */ 
-	private String Mobile;
+	private String mobile;
 
 	/**
 	 * 	 
 	 */ 
-	private String HostedButtonID;
+	private String hostedButtonID;
 
 	
 
@@ -53,59 +53,59 @@ public class BMUpdateButtonResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for Website
+	 * Getter for website
 	 */
 	 public String getWebsite() {
-	 	return Website;
+	 	return website;
 	 }
 	 
 	/**
-	 * Setter for Website
+	 * Setter for website
 	 */
-	 public void setWebsite(String Website) {
-	 	this.Website = Website;
+	 public void setWebsite(String website) {
+	 	this.website = website;
 	 }
 	 
 	/**
-	 * Getter for Email
+	 * Getter for email
 	 */
 	 public String getEmail() {
-	 	return Email;
+	 	return email;
 	 }
 	 
 	/**
-	 * Setter for Email
+	 * Setter for email
 	 */
-	 public void setEmail(String Email) {
-	 	this.Email = Email;
+	 public void setEmail(String email) {
+	 	this.email = email;
 	 }
 	 
 	/**
-	 * Getter for Mobile
+	 * Getter for mobile
 	 */
 	 public String getMobile() {
-	 	return Mobile;
+	 	return mobile;
 	 }
 	 
 	/**
-	 * Setter for Mobile
+	 * Setter for mobile
 	 */
-	 public void setMobile(String Mobile) {
-	 	this.Mobile = Mobile;
+	 public void setMobile(String mobile) {
+	 	this.mobile = mobile;
 	 }
 	 
 	/**
-	 * Getter for HostedButtonID
+	 * Getter for hostedButtonID
 	 */
 	 public String getHostedButtonID() {
-	 	return HostedButtonID;
+	 	return hostedButtonID;
 	 }
 	 
 	/**
-	 * Setter for HostedButtonID
+	 * Setter for hostedButtonID
 	 */
-	 public void setHostedButtonID(String HostedButtonID) {
-	 	this.HostedButtonID = HostedButtonID;
+	 public void setHostedButtonID(String hostedButtonID) {
+	 	this.hostedButtonID = hostedButtonID;
 	 }
 	 
 
@@ -130,22 +130,22 @@ public class BMUpdateButtonResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Website", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Website = childNode.getTextContent();
+		    this.website = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Email", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Email = childNode.getTextContent();
+		    this.email = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Mobile", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Mobile = childNode.getTextContent();
+		    this.mobile = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("HostedButtonID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.HostedButtonID = childNode.getTextContent();
+		    this.hostedButtonID = childNode.getTextContent();
 		}
 	
 	}

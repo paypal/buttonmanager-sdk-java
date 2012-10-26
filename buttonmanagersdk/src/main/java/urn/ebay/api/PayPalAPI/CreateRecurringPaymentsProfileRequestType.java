@@ -8,11 +8,13 @@ import com.paypal.core.SDKUtil;
  */
 public class CreateRecurringPaymentsProfileRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private CreateRecurringPaymentsProfileRequestDetailsType CreateRecurringPaymentsProfileRequestDetails;
+	private CreateRecurringPaymentsProfileRequestDetailsType createRecurringPaymentsProfileRequestDetails;
 
 	
 
@@ -23,28 +25,42 @@ public class CreateRecurringPaymentsProfileRequestType extends AbstractRequestTy
 	}	
 
 	/**
-	 * Getter for CreateRecurringPaymentsProfileRequestDetails
+	 * Getter for createRecurringPaymentsProfileRequestDetails
 	 */
 	 public CreateRecurringPaymentsProfileRequestDetailsType getCreateRecurringPaymentsProfileRequestDetails() {
-	 	return CreateRecurringPaymentsProfileRequestDetails;
+	 	return createRecurringPaymentsProfileRequestDetails;
 	 }
 	 
 	/**
-	 * Setter for CreateRecurringPaymentsProfileRequestDetails
+	 * Setter for createRecurringPaymentsProfileRequestDetails
 	 */
-	 public void setCreateRecurringPaymentsProfileRequestDetails(CreateRecurringPaymentsProfileRequestDetailsType CreateRecurringPaymentsProfileRequestDetails) {
-	 	this.CreateRecurringPaymentsProfileRequestDetails = CreateRecurringPaymentsProfileRequestDetails;
+	 public void setCreateRecurringPaymentsProfileRequestDetails(CreateRecurringPaymentsProfileRequestDetailsType createRecurringPaymentsProfileRequestDetails) {
+	 	this.createRecurringPaymentsProfileRequestDetails = createRecurringPaymentsProfileRequestDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(CreateRecurringPaymentsProfileRequestDetails != null) {
-			sb.append("<ebl:CreateRecurringPaymentsProfileRequestDetails>");
-			sb.append(CreateRecurringPaymentsProfileRequestDetails.toXMLString());
-			sb.append("</ebl:CreateRecurringPaymentsProfileRequestDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		sb.append(super.toXMLString(prefix, null));
+		if(createRecurringPaymentsProfileRequestDetails != null) {
+			sb.append(createRecurringPaymentsProfileRequestDetails.toXMLString(null,"CreateRecurringPaymentsProfileRequestDetails"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

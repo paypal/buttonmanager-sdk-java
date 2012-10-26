@@ -7,34 +7,36 @@ import com.paypal.core.SDKUtil;
  */
 public class SetCustomerBillingAgreementRequestDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private BillingAgreementDetailsType BillingAgreementDetails;
+	private BillingAgreementDetailsType billingAgreementDetails;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String ReturnURL;
+	private String returnURL;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String CancelURL;
+	private String cancelURL;
 
 	/**
 	 * 	 
 	 */ 
-	private String LocaleCode;
+	private String localeCode;
 
 	/**
 	 * 	 
 	 */ 
-	private String PageStyle;
+	private String pageStyle;
 
 	/**
 	 * 	 
@@ -59,7 +61,7 @@ public class SetCustomerBillingAgreementRequestDetailsType{
 	/**
 	 * 	 
 	 */ 
-	private String BuyerEmail;
+	private String buyerEmail;
 
 	/**
 	 * The value 1 indicates that you require that the customer's
@@ -67,17 +69,17 @@ public class SetCustomerBillingAgreementRequestDetailsType{
 	 * setting you have specified in Admin. Optional Character
 	 * length and limitations: One single-byte numeric character.	 
 	 */ 
-	private String ReqBillingAddress;
+	private String reqBillingAddress;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public SetCustomerBillingAgreementRequestDetailsType (BillingAgreementDetailsType BillingAgreementDetails, String ReturnURL, String CancelURL){
-		this.BillingAgreementDetails = BillingAgreementDetails;
-		this.ReturnURL = ReturnURL;
-		this.CancelURL = CancelURL;
+	public SetCustomerBillingAgreementRequestDetailsType (BillingAgreementDetailsType billingAgreementDetails, String returnURL, String cancelURL){
+		this.billingAgreementDetails = billingAgreementDetails;
+		this.returnURL = returnURL;
+		this.cancelURL = cancelURL;
 	}	
 
 	/**
@@ -87,73 +89,73 @@ public class SetCustomerBillingAgreementRequestDetailsType{
 	}	
 
 	/**
-	 * Getter for BillingAgreementDetails
+	 * Getter for billingAgreementDetails
 	 */
 	 public BillingAgreementDetailsType getBillingAgreementDetails() {
-	 	return BillingAgreementDetails;
+	 	return billingAgreementDetails;
 	 }
 	 
 	/**
-	 * Setter for BillingAgreementDetails
+	 * Setter for billingAgreementDetails
 	 */
-	 public void setBillingAgreementDetails(BillingAgreementDetailsType BillingAgreementDetails) {
-	 	this.BillingAgreementDetails = BillingAgreementDetails;
+	 public void setBillingAgreementDetails(BillingAgreementDetailsType billingAgreementDetails) {
+	 	this.billingAgreementDetails = billingAgreementDetails;
 	 }
 	 
 	/**
-	 * Getter for ReturnURL
+	 * Getter for returnURL
 	 */
 	 public String getReturnURL() {
-	 	return ReturnURL;
+	 	return returnURL;
 	 }
 	 
 	/**
-	 * Setter for ReturnURL
+	 * Setter for returnURL
 	 */
-	 public void setReturnURL(String ReturnURL) {
-	 	this.ReturnURL = ReturnURL;
+	 public void setReturnURL(String returnURL) {
+	 	this.returnURL = returnURL;
 	 }
 	 
 	/**
-	 * Getter for CancelURL
+	 * Getter for cancelURL
 	 */
 	 public String getCancelURL() {
-	 	return CancelURL;
+	 	return cancelURL;
 	 }
 	 
 	/**
-	 * Setter for CancelURL
+	 * Setter for cancelURL
 	 */
-	 public void setCancelURL(String CancelURL) {
-	 	this.CancelURL = CancelURL;
+	 public void setCancelURL(String cancelURL) {
+	 	this.cancelURL = cancelURL;
 	 }
 	 
 	/**
-	 * Getter for LocaleCode
+	 * Getter for localeCode
 	 */
 	 public String getLocaleCode() {
-	 	return LocaleCode;
+	 	return localeCode;
 	 }
 	 
 	/**
-	 * Setter for LocaleCode
+	 * Setter for localeCode
 	 */
-	 public void setLocaleCode(String LocaleCode) {
-	 	this.LocaleCode = LocaleCode;
+	 public void setLocaleCode(String localeCode) {
+	 	this.localeCode = localeCode;
 	 }
 	 
 	/**
-	 * Getter for PageStyle
+	 * Getter for pageStyle
 	 */
 	 public String getPageStyle() {
-	 	return PageStyle;
+	 	return pageStyle;
 	 }
 	 
 	/**
-	 * Setter for PageStyle
+	 * Setter for pageStyle
 	 */
-	 public void setPageStyle(String PageStyle) {
-	 	this.PageStyle = PageStyle;
+	 public void setPageStyle(String pageStyle) {
+	 	this.pageStyle = pageStyle;
 	 }
 	 
 	/**
@@ -213,81 +215,95 @@ public class SetCustomerBillingAgreementRequestDetailsType{
 	 }
 	 
 	/**
-	 * Getter for BuyerEmail
+	 * Getter for buyerEmail
 	 */
 	 public String getBuyerEmail() {
-	 	return BuyerEmail;
+	 	return buyerEmail;
 	 }
 	 
 	/**
-	 * Setter for BuyerEmail
+	 * Setter for buyerEmail
 	 */
-	 public void setBuyerEmail(String BuyerEmail) {
-	 	this.BuyerEmail = BuyerEmail;
+	 public void setBuyerEmail(String buyerEmail) {
+	 	this.buyerEmail = buyerEmail;
 	 }
 	 
 	/**
-	 * Getter for ReqBillingAddress
+	 * Getter for reqBillingAddress
 	 */
 	 public String getReqBillingAddress() {
-	 	return ReqBillingAddress;
+	 	return reqBillingAddress;
 	 }
 	 
 	/**
-	 * Setter for ReqBillingAddress
+	 * Setter for reqBillingAddress
 	 */
-	 public void setReqBillingAddress(String ReqBillingAddress) {
-	 	this.ReqBillingAddress = ReqBillingAddress;
+	 public void setReqBillingAddress(String reqBillingAddress) {
+	 	this.reqBillingAddress = reqBillingAddress;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(BillingAgreementDetails != null) {
-			sb.append("<ebl:BillingAgreementDetails>");
-			sb.append(BillingAgreementDetails.toXMLString());
-			sb.append("</ebl:BillingAgreementDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ReturnURL != null) {
-			sb.append("<ebl:ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReturnURL));
-			sb.append("</ebl:ReturnURL>");
+		if(billingAgreementDetails != null) {
+			sb.append(billingAgreementDetails.toXMLString(preferredPrefix,"BillingAgreementDetails"));
 		}
-		if(CancelURL != null) {
-			sb.append("<ebl:CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(CancelURL));
-			sb.append("</ebl:CancelURL>");
+		if(returnURL != null) {
+			sb.append("<").append(preferredPrefix).append(":ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(returnURL));
+			sb.append("</").append(preferredPrefix).append(":ReturnURL>");
 		}
-		if(LocaleCode != null) {
-			sb.append("<ebl:LocaleCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(LocaleCode));
-			sb.append("</ebl:LocaleCode>");
+		if(cancelURL != null) {
+			sb.append("<").append(preferredPrefix).append(":CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(cancelURL));
+			sb.append("</").append(preferredPrefix).append(":CancelURL>");
 		}
-		if(PageStyle != null) {
-			sb.append("<ebl:PageStyle>").append(SDKUtil.escapeInvalidXmlCharsRegex(PageStyle));
-			sb.append("</ebl:PageStyle>");
+		if(localeCode != null) {
+			sb.append("<").append(preferredPrefix).append(":LocaleCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(localeCode));
+			sb.append("</").append(preferredPrefix).append(":LocaleCode>");
+		}
+		if(pageStyle != null) {
+			sb.append("<").append(preferredPrefix).append(":PageStyle>").append(SDKUtil.escapeInvalidXmlCharsRegex(pageStyle));
+			sb.append("</").append(preferredPrefix).append(":PageStyle>");
 		}
 		if(cppHeaderImage != null) {
-			sb.append("<ebl:cpp-header-image>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderImage));
-			sb.append("</ebl:cpp-header-image>");
+			sb.append("<").append(preferredPrefix).append(":cpp-header-image>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderImage));
+			sb.append("</").append(preferredPrefix).append(":cpp-header-image>");
 		}
 		if(cppHeaderBorderColor != null) {
-			sb.append("<ebl:cpp-header-border-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBorderColor));
-			sb.append("</ebl:cpp-header-border-color>");
+			sb.append("<").append(preferredPrefix).append(":cpp-header-border-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBorderColor));
+			sb.append("</").append(preferredPrefix).append(":cpp-header-border-color>");
 		}
 		if(cppHeaderBackColor != null) {
-			sb.append("<ebl:cpp-header-back-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBackColor));
-			sb.append("</ebl:cpp-header-back-color>");
+			sb.append("<").append(preferredPrefix).append(":cpp-header-back-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBackColor));
+			sb.append("</").append(preferredPrefix).append(":cpp-header-back-color>");
 		}
 		if(cppPayflowColor != null) {
-			sb.append("<ebl:cpp-payflow-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppPayflowColor));
-			sb.append("</ebl:cpp-payflow-color>");
+			sb.append("<").append(preferredPrefix).append(":cpp-payflow-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppPayflowColor));
+			sb.append("</").append(preferredPrefix).append(":cpp-payflow-color>");
 		}
-		if(BuyerEmail != null) {
-			sb.append("<ebl:BuyerEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(BuyerEmail));
-			sb.append("</ebl:BuyerEmail>");
+		if(buyerEmail != null) {
+			sb.append("<").append(preferredPrefix).append(":BuyerEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(buyerEmail));
+			sb.append("</").append(preferredPrefix).append(":BuyerEmail>");
 		}
-		if(ReqBillingAddress != null) {
-			sb.append("<ebl:ReqBillingAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReqBillingAddress));
-			sb.append("</ebl:ReqBillingAddress>");
+		if(reqBillingAddress != null) {
+			sb.append("<").append(preferredPrefix).append(":ReqBillingAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(reqBillingAddress));
+			sb.append("</").append(preferredPrefix).append(":ReqBillingAddress>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

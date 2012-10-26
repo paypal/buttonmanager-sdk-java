@@ -8,20 +8,22 @@ import com.paypal.core.SDKUtil;
  */
 public class ExecuteCheckoutOperationsRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private ExecuteCheckoutOperationsRequestDetailsType ExecuteCheckoutOperationsRequestDetails;
+	private ExecuteCheckoutOperationsRequestDetailsType executeCheckoutOperationsRequestDetails;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public ExecuteCheckoutOperationsRequestType (ExecuteCheckoutOperationsRequestDetailsType ExecuteCheckoutOperationsRequestDetails){
-		this.ExecuteCheckoutOperationsRequestDetails = ExecuteCheckoutOperationsRequestDetails;
+	public ExecuteCheckoutOperationsRequestType (ExecuteCheckoutOperationsRequestDetailsType executeCheckoutOperationsRequestDetails){
+		this.executeCheckoutOperationsRequestDetails = executeCheckoutOperationsRequestDetails;
 	}	
 
 	/**
@@ -31,28 +33,42 @@ public class ExecuteCheckoutOperationsRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for ExecuteCheckoutOperationsRequestDetails
+	 * Getter for executeCheckoutOperationsRequestDetails
 	 */
 	 public ExecuteCheckoutOperationsRequestDetailsType getExecuteCheckoutOperationsRequestDetails() {
-	 	return ExecuteCheckoutOperationsRequestDetails;
+	 	return executeCheckoutOperationsRequestDetails;
 	 }
 	 
 	/**
-	 * Setter for ExecuteCheckoutOperationsRequestDetails
+	 * Setter for executeCheckoutOperationsRequestDetails
 	 */
-	 public void setExecuteCheckoutOperationsRequestDetails(ExecuteCheckoutOperationsRequestDetailsType ExecuteCheckoutOperationsRequestDetails) {
-	 	this.ExecuteCheckoutOperationsRequestDetails = ExecuteCheckoutOperationsRequestDetails;
+	 public void setExecuteCheckoutOperationsRequestDetails(ExecuteCheckoutOperationsRequestDetailsType executeCheckoutOperationsRequestDetails) {
+	 	this.executeCheckoutOperationsRequestDetails = executeCheckoutOperationsRequestDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(ExecuteCheckoutOperationsRequestDetails != null) {
-			sb.append("<ebl:ExecuteCheckoutOperationsRequestDetails>");
-			sb.append(ExecuteCheckoutOperationsRequestDetails.toXMLString());
-			sb.append("</ebl:ExecuteCheckoutOperationsRequestDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		sb.append(super.toXMLString(prefix, null));
+		if(executeCheckoutOperationsRequestDetails != null) {
+			sb.append(executeCheckoutOperationsRequestDetails.toXMLString(null,"ExecuteCheckoutOperationsRequestDetails"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

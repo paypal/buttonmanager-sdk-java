@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class ExternalRememberMeOptOutReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private ExternalRememberMeOptOutRequestType ExternalRememberMeOptOutRequest;
+	private ExternalRememberMeOptOutRequestType externalRememberMeOptOutRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class ExternalRememberMeOptOutReq{
 	}	
 
 	/**
-	 * Getter for ExternalRememberMeOptOutRequest
+	 * Getter for externalRememberMeOptOutRequest
 	 */
 	 public ExternalRememberMeOptOutRequestType getExternalRememberMeOptOutRequest() {
-	 	return ExternalRememberMeOptOutRequest;
+	 	return externalRememberMeOptOutRequest;
 	 }
 	 
 	/**
-	 * Setter for ExternalRememberMeOptOutRequest
+	 * Setter for externalRememberMeOptOutRequest
 	 */
-	 public void setExternalRememberMeOptOutRequest(ExternalRememberMeOptOutRequestType ExternalRememberMeOptOutRequest) {
-	 	this.ExternalRememberMeOptOutRequest = ExternalRememberMeOptOutRequest;
+	 public void setExternalRememberMeOptOutRequest(ExternalRememberMeOptOutRequestType externalRememberMeOptOutRequest) {
+	 	this.externalRememberMeOptOutRequest = externalRememberMeOptOutRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:ExternalRememberMeOptOutReq>");
-		if(ExternalRememberMeOptOutRequest != null) {
-			sb.append("<urn:ExternalRememberMeOptOutRequest>");
-			sb.append(ExternalRememberMeOptOutRequest.toXMLString());
-			sb.append("</urn:ExternalRememberMeOptOutRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:ExternalRememberMeOptOutReq>");
+		if(externalRememberMeOptOutRequest != null) {
+			sb.append(externalRememberMeOptOutRequest.toXMLString(null,"ExternalRememberMeOptOutRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

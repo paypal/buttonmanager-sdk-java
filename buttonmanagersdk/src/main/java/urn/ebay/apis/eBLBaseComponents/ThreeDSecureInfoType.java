@@ -27,12 +27,12 @@ public class ThreeDSecureInfoType{
 	/**
 	 * 	 
 	 */ 
-	private ThreeDSecureRequestType ThreeDSecureRequest;
+	private ThreeDSecureRequestType threeDSecureRequest;
 
 	/**
 	 * 	 
 	 */ 
-	private ThreeDSecureResponseType ThreeDSecureResponse;
+	private ThreeDSecureResponseType threeDSecureResponse;
 
 	
 
@@ -43,31 +43,31 @@ public class ThreeDSecureInfoType{
 	}	
 
 	/**
-	 * Getter for ThreeDSecureRequest
+	 * Getter for threeDSecureRequest
 	 */
 	 public ThreeDSecureRequestType getThreeDSecureRequest() {
-	 	return ThreeDSecureRequest;
+	 	return threeDSecureRequest;
 	 }
 	 
 	/**
-	 * Setter for ThreeDSecureRequest
+	 * Setter for threeDSecureRequest
 	 */
-	 public void setThreeDSecureRequest(ThreeDSecureRequestType ThreeDSecureRequest) {
-	 	this.ThreeDSecureRequest = ThreeDSecureRequest;
+	 public void setThreeDSecureRequest(ThreeDSecureRequestType threeDSecureRequest) {
+	 	this.threeDSecureRequest = threeDSecureRequest;
 	 }
 	 
 	/**
-	 * Getter for ThreeDSecureResponse
+	 * Getter for threeDSecureResponse
 	 */
 	 public ThreeDSecureResponseType getThreeDSecureResponse() {
-	 	return ThreeDSecureResponse;
+	 	return threeDSecureResponse;
 	 }
 	 
 	/**
-	 * Setter for ThreeDSecureResponse
+	 * Setter for threeDSecureResponse
 	 */
-	 public void setThreeDSecureResponse(ThreeDSecureResponseType ThreeDSecureResponse) {
-	 	this.ThreeDSecureResponse = ThreeDSecureResponse;
+	 public void setThreeDSecureResponse(ThreeDSecureResponseType threeDSecureResponse) {
+	 	this.threeDSecureResponse = threeDSecureResponse;
 	 }
 	 
 
@@ -91,11 +91,11 @@ public class ThreeDSecureInfoType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("ThreeDSecureRequest", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ThreeDSecureRequest =  new ThreeDSecureRequestType(childNode);
+		    this.threeDSecureRequest =  new ThreeDSecureRequestType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("ThreeDSecureResponse", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ThreeDSecureResponse =  new ThreeDSecureResponseType(childNode);
+		    this.threeDSecureResponse =  new ThreeDSecureResponseType(childNode);
 		}
 	}
  

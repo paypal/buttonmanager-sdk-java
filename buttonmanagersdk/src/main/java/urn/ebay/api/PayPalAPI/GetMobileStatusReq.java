@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class GetMobileStatusReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private GetMobileStatusRequestType GetMobileStatusRequest;
+	private GetMobileStatusRequestType getMobileStatusRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class GetMobileStatusReq{
 	}	
 
 	/**
-	 * Getter for GetMobileStatusRequest
+	 * Getter for getMobileStatusRequest
 	 */
 	 public GetMobileStatusRequestType getGetMobileStatusRequest() {
-	 	return GetMobileStatusRequest;
+	 	return getMobileStatusRequest;
 	 }
 	 
 	/**
-	 * Setter for GetMobileStatusRequest
+	 * Setter for getMobileStatusRequest
 	 */
-	 public void setGetMobileStatusRequest(GetMobileStatusRequestType GetMobileStatusRequest) {
-	 	this.GetMobileStatusRequest = GetMobileStatusRequest;
+	 public void setGetMobileStatusRequest(GetMobileStatusRequestType getMobileStatusRequest) {
+	 	this.getMobileStatusRequest = getMobileStatusRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:GetMobileStatusReq>");
-		if(GetMobileStatusRequest != null) {
-			sb.append("<urn:GetMobileStatusRequest>");
-			sb.append(GetMobileStatusRequest.toXMLString());
-			sb.append("</urn:GetMobileStatusRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:GetMobileStatusReq>");
+		if(getMobileStatusRequest != null) {
+			sb.append(getMobileStatusRequest.toXMLString(null,"GetMobileStatusRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

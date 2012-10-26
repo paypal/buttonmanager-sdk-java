@@ -28,62 +28,64 @@ import org.xml.sax.SAXException;
  */
 public class PayerInfoType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Email address of payer Character length and limitations: 127
 	 * single-byte characters	 
 	 */ 
-	private String Payer;
+	private String payer;
 
 	/**
 	 * Unique customer ID Character length and limitations: 17
 	 * single-byte characters	 
 	 */ 
-	private String PayerID;
+	private String payerID;
 
 	/**
 	 * Status of payer's email address 	 
 	 */ 
-	private PayPalUserStatusCodeType PayerStatus;
+	private PayPalUserStatusCodeType payerStatus;
 
 	/**
 	 * Name of payer 	 
 	 */ 
-	private PersonNameType PayerName;
+	private PersonNameType payerName;
 
 	/**
 	 * Payment sender's country of residence using standard
 	 * two-character ISO 3166 country codes. Character length and
 	 * limitations: Two single-byte characters	 
 	 */ 
-	private CountryCodeType PayerCountry;
+	private CountryCodeType payerCountry;
 
 	/**
 	 * Payer's business name. Character length and limitations: 127
 	 * single-byte characters	 
 	 */ 
-	private String PayerBusiness;
+	private String payerBusiness;
 
 	/**
 	 * Payer's business address	 
 	 */ 
-	private AddressType Address;
+	private AddressType address;
 
 	/**
 	 * Business contact telephone number	 
 	 */ 
-	private String ContactPhone;
+	private String contactPhone;
 
 	/**
 	 * Details about payer's tax info. Refer to the
 	 * TaxIdDetailsType for more details. 	 
 	 */ 
-	private TaxIdDetailsType TaxIdDetails;
+	private TaxIdDetailsType taxIdDetails;
 
 	/**
 	 * Holds any enhanced information about the payer	 
 	 */ 
-	private EnhancedPayerInfoType EnhancedPayerInfo;
+	private EnhancedPayerInfoType enhancedPayerInfo;
 
 	
 
@@ -94,192 +96,200 @@ public class PayerInfoType{
 	}	
 
 	/**
-	 * Getter for Payer
+	 * Getter for payer
 	 */
 	 public String getPayer() {
-	 	return Payer;
+	 	return payer;
 	 }
 	 
 	/**
-	 * Setter for Payer
+	 * Setter for payer
 	 */
-	 public void setPayer(String Payer) {
-	 	this.Payer = Payer;
+	 public void setPayer(String payer) {
+	 	this.payer = payer;
 	 }
 	 
 	/**
-	 * Getter for PayerID
+	 * Getter for payerID
 	 */
 	 public String getPayerID() {
-	 	return PayerID;
+	 	return payerID;
 	 }
 	 
 	/**
-	 * Setter for PayerID
+	 * Setter for payerID
 	 */
-	 public void setPayerID(String PayerID) {
-	 	this.PayerID = PayerID;
+	 public void setPayerID(String payerID) {
+	 	this.payerID = payerID;
 	 }
 	 
 	/**
-	 * Getter for PayerStatus
+	 * Getter for payerStatus
 	 */
 	 public PayPalUserStatusCodeType getPayerStatus() {
-	 	return PayerStatus;
+	 	return payerStatus;
 	 }
 	 
 	/**
-	 * Setter for PayerStatus
+	 * Setter for payerStatus
 	 */
-	 public void setPayerStatus(PayPalUserStatusCodeType PayerStatus) {
-	 	this.PayerStatus = PayerStatus;
+	 public void setPayerStatus(PayPalUserStatusCodeType payerStatus) {
+	 	this.payerStatus = payerStatus;
 	 }
 	 
 	/**
-	 * Getter for PayerName
+	 * Getter for payerName
 	 */
 	 public PersonNameType getPayerName() {
-	 	return PayerName;
+	 	return payerName;
 	 }
 	 
 	/**
-	 * Setter for PayerName
+	 * Setter for payerName
 	 */
-	 public void setPayerName(PersonNameType PayerName) {
-	 	this.PayerName = PayerName;
+	 public void setPayerName(PersonNameType payerName) {
+	 	this.payerName = payerName;
 	 }
 	 
 	/**
-	 * Getter for PayerCountry
+	 * Getter for payerCountry
 	 */
 	 public CountryCodeType getPayerCountry() {
-	 	return PayerCountry;
+	 	return payerCountry;
 	 }
 	 
 	/**
-	 * Setter for PayerCountry
+	 * Setter for payerCountry
 	 */
-	 public void setPayerCountry(CountryCodeType PayerCountry) {
-	 	this.PayerCountry = PayerCountry;
+	 public void setPayerCountry(CountryCodeType payerCountry) {
+	 	this.payerCountry = payerCountry;
 	 }
 	 
 	/**
-	 * Getter for PayerBusiness
+	 * Getter for payerBusiness
 	 */
 	 public String getPayerBusiness() {
-	 	return PayerBusiness;
+	 	return payerBusiness;
 	 }
 	 
 	/**
-	 * Setter for PayerBusiness
+	 * Setter for payerBusiness
 	 */
-	 public void setPayerBusiness(String PayerBusiness) {
-	 	this.PayerBusiness = PayerBusiness;
+	 public void setPayerBusiness(String payerBusiness) {
+	 	this.payerBusiness = payerBusiness;
 	 }
 	 
 	/**
-	 * Getter for Address
+	 * Getter for address
 	 */
 	 public AddressType getAddress() {
-	 	return Address;
+	 	return address;
 	 }
 	 
 	/**
-	 * Setter for Address
+	 * Setter for address
 	 */
-	 public void setAddress(AddressType Address) {
-	 	this.Address = Address;
+	 public void setAddress(AddressType address) {
+	 	this.address = address;
 	 }
 	 
 	/**
-	 * Getter for ContactPhone
+	 * Getter for contactPhone
 	 */
 	 public String getContactPhone() {
-	 	return ContactPhone;
+	 	return contactPhone;
 	 }
 	 
 	/**
-	 * Setter for ContactPhone
+	 * Setter for contactPhone
 	 */
-	 public void setContactPhone(String ContactPhone) {
-	 	this.ContactPhone = ContactPhone;
+	 public void setContactPhone(String contactPhone) {
+	 	this.contactPhone = contactPhone;
 	 }
 	 
 	/**
-	 * Getter for TaxIdDetails
+	 * Getter for taxIdDetails
 	 */
 	 public TaxIdDetailsType getTaxIdDetails() {
-	 	return TaxIdDetails;
+	 	return taxIdDetails;
 	 }
 	 
 	/**
-	 * Setter for TaxIdDetails
+	 * Setter for taxIdDetails
 	 */
-	 public void setTaxIdDetails(TaxIdDetailsType TaxIdDetails) {
-	 	this.TaxIdDetails = TaxIdDetails;
+	 public void setTaxIdDetails(TaxIdDetailsType taxIdDetails) {
+	 	this.taxIdDetails = taxIdDetails;
 	 }
 	 
 	/**
-	 * Getter for EnhancedPayerInfo
+	 * Getter for enhancedPayerInfo
 	 */
 	 public EnhancedPayerInfoType getEnhancedPayerInfo() {
-	 	return EnhancedPayerInfo;
+	 	return enhancedPayerInfo;
 	 }
 	 
 	/**
-	 * Setter for EnhancedPayerInfo
+	 * Setter for enhancedPayerInfo
 	 */
-	 public void setEnhancedPayerInfo(EnhancedPayerInfoType EnhancedPayerInfo) {
-	 	this.EnhancedPayerInfo = EnhancedPayerInfo;
+	 public void setEnhancedPayerInfo(EnhancedPayerInfoType enhancedPayerInfo) {
+	 	this.enhancedPayerInfo = enhancedPayerInfo;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(Payer != null) {
-			sb.append("<ebl:Payer>").append(SDKUtil.escapeInvalidXmlCharsRegex(Payer));
-			sb.append("</ebl:Payer>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(PayerID != null) {
-			sb.append("<ebl:PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(PayerID));
-			sb.append("</ebl:PayerID>");
+		if(payer != null) {
+			sb.append("<").append(preferredPrefix).append(":Payer>").append(SDKUtil.escapeInvalidXmlCharsRegex(payer));
+			sb.append("</").append(preferredPrefix).append(":Payer>");
 		}
-		if(PayerStatus != null) {
-			sb.append("<ebl:PayerStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(PayerStatus.getValue()));
-			sb.append("</ebl:PayerStatus>");
+		if(payerID != null) {
+			sb.append("<").append(preferredPrefix).append(":PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(payerID));
+			sb.append("</").append(preferredPrefix).append(":PayerID>");
 		}
-		if(PayerName != null) {
-			sb.append("<ebl:PayerName>");
-			sb.append(PayerName.toXMLString());
-			sb.append("</ebl:PayerName>");
+		if(payerStatus != null) {
+			sb.append("<").append(preferredPrefix).append(":PayerStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(payerStatus.getValue()));
+			sb.append("</").append(preferredPrefix).append(":PayerStatus>");
 		}
-		if(PayerCountry != null) {
-			sb.append("<ebl:PayerCountry>").append(SDKUtil.escapeInvalidXmlCharsRegex(PayerCountry.getValue()));
-			sb.append("</ebl:PayerCountry>");
+		if(payerName != null) {
+			sb.append(payerName.toXMLString(preferredPrefix,"PayerName"));
 		}
-		if(PayerBusiness != null) {
-			sb.append("<ebl:PayerBusiness>").append(SDKUtil.escapeInvalidXmlCharsRegex(PayerBusiness));
-			sb.append("</ebl:PayerBusiness>");
+		if(payerCountry != null) {
+			sb.append("<").append(preferredPrefix).append(":PayerCountry>").append(SDKUtil.escapeInvalidXmlCharsRegex(payerCountry.getValue()));
+			sb.append("</").append(preferredPrefix).append(":PayerCountry>");
 		}
-		if(Address != null) {
-			sb.append("<ebl:Address>");
-			sb.append(Address.toXMLString());
-			sb.append("</ebl:Address>");
+		if(payerBusiness != null) {
+			sb.append("<").append(preferredPrefix).append(":PayerBusiness>").append(SDKUtil.escapeInvalidXmlCharsRegex(payerBusiness));
+			sb.append("</").append(preferredPrefix).append(":PayerBusiness>");
 		}
-		if(ContactPhone != null) {
-			sb.append("<ebl:ContactPhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(ContactPhone));
-			sb.append("</ebl:ContactPhone>");
+		if(address != null) {
+			sb.append(address.toXMLString(preferredPrefix,"Address"));
 		}
-		if(TaxIdDetails != null) {
-			sb.append("<ebl:TaxIdDetails>");
-			sb.append(TaxIdDetails.toXMLString());
-			sb.append("</ebl:TaxIdDetails>");
+		if(contactPhone != null) {
+			sb.append("<").append(preferredPrefix).append(":ContactPhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(contactPhone));
+			sb.append("</").append(preferredPrefix).append(":ContactPhone>");
 		}
-		if(EnhancedPayerInfo != null) {
-			sb.append("<ebl:EnhancedPayerInfo>");
-			sb.append(EnhancedPayerInfo.toXMLString());
-			sb.append("</ebl:EnhancedPayerInfo>");
+		if(taxIdDetails != null) {
+			sb.append(taxIdDetails.toXMLString(preferredPrefix,"TaxIdDetails"));
+		}
+		if(enhancedPayerInfo != null) {
+			sb.append(enhancedPayerInfo.toXMLString(preferredPrefix,"EnhancedPayerInfo"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -303,47 +313,47 @@ public class PayerInfoType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Payer", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Payer = childNode.getTextContent();
+		    this.payer = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PayerID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PayerID = childNode.getTextContent();
+		    this.payerID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PayerStatus", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PayerStatus = PayPalUserStatusCodeType.fromValue(childNode.getTextContent());
+		    this.payerStatus = PayPalUserStatusCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("PayerName", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PayerName =  new PersonNameType(childNode);
+		    this.payerName =  new PersonNameType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("PayerCountry", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PayerCountry = CountryCodeType.fromValue(childNode.getTextContent());
+		    this.payerCountry = CountryCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("PayerBusiness", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PayerBusiness = childNode.getTextContent();
+		    this.payerBusiness = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Address", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Address =  new AddressType(childNode);
+		    this.address =  new AddressType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("ContactPhone", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ContactPhone = childNode.getTextContent();
+		    this.contactPhone = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("TaxIdDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TaxIdDetails =  new TaxIdDetailsType(childNode);
+		    this.taxIdDetails =  new TaxIdDetailsType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("EnhancedPayerInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.EnhancedPayerInfo =  new EnhancedPayerInfoType(childNode);
+		    this.enhancedPayerInfo =  new EnhancedPayerInfoType(childNode);
 		}
 	}
  

@@ -13,6 +13,8 @@ import com.paypal.core.SDKUtil;
  */
 public class DoCaptureRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * The authorization identification number of the payment you
@@ -20,7 +22,7 @@ public class DoCaptureRequestType extends AbstractRequestType {
 	 * single-byte characters maximum	  
 	 *@Required	 
 	 */ 
-	private String AuthorizationID;
+	private String authorizationID;
 
 	/**
 	 * Amount to authorize. You must set the currencyID attribute
@@ -30,7 +32,7 @@ public class DoCaptureRequestType extends AbstractRequestType {
 	 * (,)	  
 	 *@Required	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	/**
 	 * Indicates if this capture is the last capture you intend to
@@ -40,7 +42,7 @@ public class DoCaptureRequestType extends AbstractRequestType {
 	 * length and limits: 12 single-byte alphanumeric characters	  
 	 *@Required	 
 	 */ 
-	private CompleteCodeType CompleteType;
+	private CompleteCodeType completeType;
 
 	/**
 	 * An informational note about this settlement that is
@@ -48,7 +50,7 @@ public class DoCaptureRequestType extends AbstractRequestType {
 	 * Optional Character length and limits: 255 single-byte
 	 * characters	 
 	 */ 
-	private String Note;
+	private String note;
 
 	/**
 	 * Your invoice number or other identification number. The
@@ -57,13 +59,13 @@ public class DoCaptureRequestType extends AbstractRequestType {
 	 * authorization. Optional Character length and limits: 127
 	 * single-byte alphanumeric characters	 
 	 */ 
-	private String InvoiceID;
+	private String invoiceID;
 
 	/**
 	 * Contains enhanced data like airline itinerary information.
 	 * Not Required 	 
 	 */ 
-	private EnhancedDataType EnhancedData;
+	private EnhancedDataType enhancedData;
 
 	/**
 	 * dynamic descriptor Dynamic descriptor is used for merchant
@@ -71,29 +73,29 @@ public class DoCaptureRequestType extends AbstractRequestType {
 	 * Optional Character length and limits: <18 characters
 	 * alphanumeric characters	 
 	 */ 
-	private String Descriptor;
+	private String descriptor;
 
 	/**
 	 * To pass the Merchant store informationOptional 	 
 	 */ 
-	private MerchantStoreDetailsType MerchantStoreDetails;
+	private MerchantStoreDetailsType merchantStoreDetails;
 
 	/**
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 	 
 	 */ 
-	private String MsgSubID;
+	private String msgSubID;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public DoCaptureRequestType (String AuthorizationID, BasicAmountType Amount, CompleteCodeType CompleteType){
-		this.AuthorizationID = AuthorizationID;
-		this.Amount = Amount;
-		this.CompleteType = CompleteType;
+	public DoCaptureRequestType (String authorizationID, BasicAmountType amount, CompleteCodeType completeType){
+		this.authorizationID = authorizationID;
+		this.amount = amount;
+		this.completeType = completeType;
 	}	
 
 	/**
@@ -103,174 +105,184 @@ public class DoCaptureRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for AuthorizationID
+	 * Getter for authorizationID
 	 */
 	 public String getAuthorizationID() {
-	 	return AuthorizationID;
+	 	return authorizationID;
 	 }
 	 
 	/**
-	 * Setter for AuthorizationID
+	 * Setter for authorizationID
 	 */
-	 public void setAuthorizationID(String AuthorizationID) {
-	 	this.AuthorizationID = AuthorizationID;
+	 public void setAuthorizationID(String authorizationID) {
+	 	this.authorizationID = authorizationID;
 	 }
 	 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 	/**
-	 * Getter for CompleteType
+	 * Getter for completeType
 	 */
 	 public CompleteCodeType getCompleteType() {
-	 	return CompleteType;
+	 	return completeType;
 	 }
 	 
 	/**
-	 * Setter for CompleteType
+	 * Setter for completeType
 	 */
-	 public void setCompleteType(CompleteCodeType CompleteType) {
-	 	this.CompleteType = CompleteType;
+	 public void setCompleteType(CompleteCodeType completeType) {
+	 	this.completeType = completeType;
 	 }
 	 
 	/**
-	 * Getter for Note
+	 * Getter for note
 	 */
 	 public String getNote() {
-	 	return Note;
+	 	return note;
 	 }
 	 
 	/**
-	 * Setter for Note
+	 * Setter for note
 	 */
-	 public void setNote(String Note) {
-	 	this.Note = Note;
+	 public void setNote(String note) {
+	 	this.note = note;
 	 }
 	 
 	/**
-	 * Getter for InvoiceID
+	 * Getter for invoiceID
 	 */
 	 public String getInvoiceID() {
-	 	return InvoiceID;
+	 	return invoiceID;
 	 }
 	 
 	/**
-	 * Setter for InvoiceID
+	 * Setter for invoiceID
 	 */
-	 public void setInvoiceID(String InvoiceID) {
-	 	this.InvoiceID = InvoiceID;
+	 public void setInvoiceID(String invoiceID) {
+	 	this.invoiceID = invoiceID;
 	 }
 	 
 	/**
-	 * Getter for EnhancedData
+	 * Getter for enhancedData
 	 */
 	 public EnhancedDataType getEnhancedData() {
-	 	return EnhancedData;
+	 	return enhancedData;
 	 }
 	 
 	/**
-	 * Setter for EnhancedData
+	 * Setter for enhancedData
 	 */
-	 public void setEnhancedData(EnhancedDataType EnhancedData) {
-	 	this.EnhancedData = EnhancedData;
+	 public void setEnhancedData(EnhancedDataType enhancedData) {
+	 	this.enhancedData = enhancedData;
 	 }
 	 
 	/**
-	 * Getter for Descriptor
+	 * Getter for descriptor
 	 */
 	 public String getDescriptor() {
-	 	return Descriptor;
+	 	return descriptor;
 	 }
 	 
 	/**
-	 * Setter for Descriptor
+	 * Setter for descriptor
 	 */
-	 public void setDescriptor(String Descriptor) {
-	 	this.Descriptor = Descriptor;
+	 public void setDescriptor(String descriptor) {
+	 	this.descriptor = descriptor;
 	 }
 	 
 	/**
-	 * Getter for MerchantStoreDetails
+	 * Getter for merchantStoreDetails
 	 */
 	 public MerchantStoreDetailsType getMerchantStoreDetails() {
-	 	return MerchantStoreDetails;
+	 	return merchantStoreDetails;
 	 }
 	 
 	/**
-	 * Setter for MerchantStoreDetails
+	 * Setter for merchantStoreDetails
 	 */
-	 public void setMerchantStoreDetails(MerchantStoreDetailsType MerchantStoreDetails) {
-	 	this.MerchantStoreDetails = MerchantStoreDetails;
+	 public void setMerchantStoreDetails(MerchantStoreDetailsType merchantStoreDetails) {
+	 	this.merchantStoreDetails = merchantStoreDetails;
 	 }
 	 
 	/**
-	 * Getter for MsgSubID
+	 * Getter for msgSubID
 	 */
 	 public String getMsgSubID() {
-	 	return MsgSubID;
+	 	return msgSubID;
 	 }
 	 
 	/**
-	 * Setter for MsgSubID
+	 * Setter for msgSubID
 	 */
-	 public void setMsgSubID(String MsgSubID) {
-	 	this.MsgSubID = MsgSubID;
+	 public void setMsgSubID(String msgSubID) {
+	 	this.msgSubID = msgSubID;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(AuthorizationID != null) {
-			sb.append("<urn:AuthorizationID>").append(SDKUtil.escapeInvalidXmlCharsRegex(AuthorizationID));
-			sb.append("</urn:AuthorizationID>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(Amount != null) {
-			sb.append("<urn:Amount");
-			sb.append(Amount.toXMLString());
-			sb.append("</urn:Amount>");
+		sb.append(super.toXMLString(prefix, null));
+		if(authorizationID != null) {
+			sb.append("<").append(preferredPrefix).append(":AuthorizationID>").append(SDKUtil.escapeInvalidXmlCharsRegex(authorizationID));
+			sb.append("</").append(preferredPrefix).append(":AuthorizationID>");
 		}
-		if(CompleteType != null) {
-			sb.append("<urn:CompleteType>").append(SDKUtil.escapeInvalidXmlCharsRegex(CompleteType.getValue()));
-			sb.append("</urn:CompleteType>");
+		if(amount != null) {
+			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
 		}
-		if(Note != null) {
-			sb.append("<urn:Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(Note));
-			sb.append("</urn:Note>");
+		if(completeType != null) {
+			sb.append("<").append(preferredPrefix).append(":CompleteType>").append(SDKUtil.escapeInvalidXmlCharsRegex(completeType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":CompleteType>");
 		}
-		if(InvoiceID != null) {
-			sb.append("<urn:InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(InvoiceID));
-			sb.append("</urn:InvoiceID>");
+		if(note != null) {
+			sb.append("<").append(preferredPrefix).append(":Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(note));
+			sb.append("</").append(preferredPrefix).append(":Note>");
 		}
-		if(EnhancedData != null) {
-			sb.append("<ebl:EnhancedData>");
-			sb.append(EnhancedData.toXMLString());
-			sb.append("</ebl:EnhancedData>");
+		if(invoiceID != null) {
+			sb.append("<").append(preferredPrefix).append(":InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(invoiceID));
+			sb.append("</").append(preferredPrefix).append(":InvoiceID>");
 		}
-		if(Descriptor != null) {
-			sb.append("<urn:Descriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(Descriptor));
-			sb.append("</urn:Descriptor>");
+		if(enhancedData != null) {
+			sb.append(enhancedData.toXMLString(null,"EnhancedData"));
 		}
-		if(MerchantStoreDetails != null) {
-			sb.append("<ebl:MerchantStoreDetails>");
-			sb.append(MerchantStoreDetails.toXMLString());
-			sb.append("</ebl:MerchantStoreDetails>");
+		if(descriptor != null) {
+			sb.append("<").append(preferredPrefix).append(":Descriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(descriptor));
+			sb.append("</").append(preferredPrefix).append(":Descriptor>");
 		}
-		if(MsgSubID != null) {
-			sb.append("<urn:MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(MsgSubID));
-			sb.append("</urn:MsgSubID>");
+		if(merchantStoreDetails != null) {
+			sb.append(merchantStoreDetails.toXMLString(null,"MerchantStoreDetails"));
+		}
+		if(msgSubID != null) {
+			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(msgSubID));
+			sb.append("</").append(preferredPrefix).append(":MsgSubID>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

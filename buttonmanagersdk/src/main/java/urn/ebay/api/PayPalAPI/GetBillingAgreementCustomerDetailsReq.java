@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class GetBillingAgreementCustomerDetailsReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private GetBillingAgreementCustomerDetailsRequestType GetBillingAgreementCustomerDetailsRequest;
+	private GetBillingAgreementCustomerDetailsRequestType getBillingAgreementCustomerDetailsRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class GetBillingAgreementCustomerDetailsReq{
 	}	
 
 	/**
-	 * Getter for GetBillingAgreementCustomerDetailsRequest
+	 * Getter for getBillingAgreementCustomerDetailsRequest
 	 */
 	 public GetBillingAgreementCustomerDetailsRequestType getGetBillingAgreementCustomerDetailsRequest() {
-	 	return GetBillingAgreementCustomerDetailsRequest;
+	 	return getBillingAgreementCustomerDetailsRequest;
 	 }
 	 
 	/**
-	 * Setter for GetBillingAgreementCustomerDetailsRequest
+	 * Setter for getBillingAgreementCustomerDetailsRequest
 	 */
-	 public void setGetBillingAgreementCustomerDetailsRequest(GetBillingAgreementCustomerDetailsRequestType GetBillingAgreementCustomerDetailsRequest) {
-	 	this.GetBillingAgreementCustomerDetailsRequest = GetBillingAgreementCustomerDetailsRequest;
+	 public void setGetBillingAgreementCustomerDetailsRequest(GetBillingAgreementCustomerDetailsRequestType getBillingAgreementCustomerDetailsRequest) {
+	 	this.getBillingAgreementCustomerDetailsRequest = getBillingAgreementCustomerDetailsRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:GetBillingAgreementCustomerDetailsReq>");
-		if(GetBillingAgreementCustomerDetailsRequest != null) {
-			sb.append("<urn:GetBillingAgreementCustomerDetailsRequest>");
-			sb.append(GetBillingAgreementCustomerDetailsRequest.toXMLString());
-			sb.append("</urn:GetBillingAgreementCustomerDetailsRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:GetBillingAgreementCustomerDetailsReq>");
+		if(getBillingAgreementCustomerDetailsRequest != null) {
+			sb.append(getBillingAgreementCustomerDetailsRequest.toXMLString(null,"GetBillingAgreementCustomerDetailsRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

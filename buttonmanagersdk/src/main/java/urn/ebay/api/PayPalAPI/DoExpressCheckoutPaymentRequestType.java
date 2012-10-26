@@ -9,26 +9,28 @@ import com.paypal.core.SDKUtil;
  */
 public class DoExpressCheckoutPaymentRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private DoExpressCheckoutPaymentRequestDetailsType DoExpressCheckoutPaymentRequestDetails;
+	private DoExpressCheckoutPaymentRequestDetailsType doExpressCheckoutPaymentRequestDetails;
 
 	/**
 	 * This flag indicates that the response should include
 	 * FMFDetails	 
 	 */ 
-	private Integer ReturnFMFDetails;
+	private Integer returnFMFDetails;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public DoExpressCheckoutPaymentRequestType (DoExpressCheckoutPaymentRequestDetailsType DoExpressCheckoutPaymentRequestDetails){
-		this.DoExpressCheckoutPaymentRequestDetails = DoExpressCheckoutPaymentRequestDetails;
+	public DoExpressCheckoutPaymentRequestType (DoExpressCheckoutPaymentRequestDetailsType doExpressCheckoutPaymentRequestDetails){
+		this.doExpressCheckoutPaymentRequestDetails = doExpressCheckoutPaymentRequestDetails;
 	}	
 
 	/**
@@ -38,46 +40,60 @@ public class DoExpressCheckoutPaymentRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for DoExpressCheckoutPaymentRequestDetails
+	 * Getter for doExpressCheckoutPaymentRequestDetails
 	 */
 	 public DoExpressCheckoutPaymentRequestDetailsType getDoExpressCheckoutPaymentRequestDetails() {
-	 	return DoExpressCheckoutPaymentRequestDetails;
+	 	return doExpressCheckoutPaymentRequestDetails;
 	 }
 	 
 	/**
-	 * Setter for DoExpressCheckoutPaymentRequestDetails
+	 * Setter for doExpressCheckoutPaymentRequestDetails
 	 */
-	 public void setDoExpressCheckoutPaymentRequestDetails(DoExpressCheckoutPaymentRequestDetailsType DoExpressCheckoutPaymentRequestDetails) {
-	 	this.DoExpressCheckoutPaymentRequestDetails = DoExpressCheckoutPaymentRequestDetails;
+	 public void setDoExpressCheckoutPaymentRequestDetails(DoExpressCheckoutPaymentRequestDetailsType doExpressCheckoutPaymentRequestDetails) {
+	 	this.doExpressCheckoutPaymentRequestDetails = doExpressCheckoutPaymentRequestDetails;
 	 }
 	 
 	/**
-	 * Getter for ReturnFMFDetails
+	 * Getter for returnFMFDetails
 	 */
 	 public Integer getReturnFMFDetails() {
-	 	return ReturnFMFDetails;
+	 	return returnFMFDetails;
 	 }
 	 
 	/**
-	 * Setter for ReturnFMFDetails
+	 * Setter for returnFMFDetails
 	 */
-	 public void setReturnFMFDetails(Integer ReturnFMFDetails) {
-	 	this.ReturnFMFDetails = ReturnFMFDetails;
+	 public void setReturnFMFDetails(Integer returnFMFDetails) {
+	 	this.returnFMFDetails = returnFMFDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(DoExpressCheckoutPaymentRequestDetails != null) {
-			sb.append("<ebl:DoExpressCheckoutPaymentRequestDetails>");
-			sb.append(DoExpressCheckoutPaymentRequestDetails.toXMLString());
-			sb.append("</ebl:DoExpressCheckoutPaymentRequestDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ReturnFMFDetails != null) {
-			sb.append("<urn:ReturnFMFDetails>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReturnFMFDetails));
-			sb.append("</urn:ReturnFMFDetails>");
+		sb.append(super.toXMLString(prefix, null));
+		if(doExpressCheckoutPaymentRequestDetails != null) {
+			sb.append(doExpressCheckoutPaymentRequestDetails.toXMLString(null,"DoExpressCheckoutPaymentRequestDetails"));
+		}
+		if(returnFMFDetails != null) {
+			sb.append("<").append(preferredPrefix).append(":ReturnFMFDetails>").append(SDKUtil.escapeInvalidXmlCharsRegex(returnFMFDetails));
+			sb.append("</").append(preferredPrefix).append(":ReturnFMFDetails>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

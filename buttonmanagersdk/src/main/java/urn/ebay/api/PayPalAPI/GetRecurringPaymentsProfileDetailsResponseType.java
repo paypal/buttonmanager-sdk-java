@@ -27,7 +27,7 @@ public class GetRecurringPaymentsProfileDetailsResponseType extends AbstractResp
 	/**
 	 * 	 
 	 */ 
-	private GetRecurringPaymentsProfileDetailsResponseDetailsType GetRecurringPaymentsProfileDetailsResponseDetails;
+	private GetRecurringPaymentsProfileDetailsResponseDetailsType getRecurringPaymentsProfileDetailsResponseDetails;
 
 	
 
@@ -38,17 +38,17 @@ public class GetRecurringPaymentsProfileDetailsResponseType extends AbstractResp
 	}	
 
 	/**
-	 * Getter for GetRecurringPaymentsProfileDetailsResponseDetails
+	 * Getter for getRecurringPaymentsProfileDetailsResponseDetails
 	 */
 	 public GetRecurringPaymentsProfileDetailsResponseDetailsType getGetRecurringPaymentsProfileDetailsResponseDetails() {
-	 	return GetRecurringPaymentsProfileDetailsResponseDetails;
+	 	return getRecurringPaymentsProfileDetailsResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for GetRecurringPaymentsProfileDetailsResponseDetails
+	 * Setter for getRecurringPaymentsProfileDetailsResponseDetails
 	 */
-	 public void setGetRecurringPaymentsProfileDetailsResponseDetails(GetRecurringPaymentsProfileDetailsResponseDetailsType GetRecurringPaymentsProfileDetailsResponseDetails) {
-	 	this.GetRecurringPaymentsProfileDetailsResponseDetails = GetRecurringPaymentsProfileDetailsResponseDetails;
+	 public void setGetRecurringPaymentsProfileDetailsResponseDetails(GetRecurringPaymentsProfileDetailsResponseDetailsType getRecurringPaymentsProfileDetailsResponseDetails) {
+	 	this.getRecurringPaymentsProfileDetailsResponseDetails = getRecurringPaymentsProfileDetailsResponseDetails;
 	 }
 	 
 
@@ -73,7 +73,7 @@ public class GetRecurringPaymentsProfileDetailsResponseType extends AbstractResp
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("GetRecurringPaymentsProfileDetailsResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.GetRecurringPaymentsProfileDetailsResponseDetails =  new GetRecurringPaymentsProfileDetailsResponseDetailsType(childNode);
+		    this.getRecurringPaymentsProfileDetailsResponseDetails =  new GetRecurringPaymentsProfileDetailsResponseDetailsType(childNode);
 		}
 	}
  

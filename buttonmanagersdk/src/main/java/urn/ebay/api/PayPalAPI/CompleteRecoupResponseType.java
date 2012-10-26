@@ -28,7 +28,7 @@ public class CompleteRecoupResponseType extends AbstractResponseType {
 	 * 	  
 	 *@Required	 
 	 */ 
-	private EnhancedCompleteRecoupResponseDetailsType EnhancedCompleteRecoupResponseDetails;
+	private EnhancedCompleteRecoupResponseDetailsType enhancedCompleteRecoupResponseDetails;
 
 	
 
@@ -39,17 +39,17 @@ public class CompleteRecoupResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for EnhancedCompleteRecoupResponseDetails
+	 * Getter for enhancedCompleteRecoupResponseDetails
 	 */
 	 public EnhancedCompleteRecoupResponseDetailsType getEnhancedCompleteRecoupResponseDetails() {
-	 	return EnhancedCompleteRecoupResponseDetails;
+	 	return enhancedCompleteRecoupResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for EnhancedCompleteRecoupResponseDetails
+	 * Setter for enhancedCompleteRecoupResponseDetails
 	 */
-	 public void setEnhancedCompleteRecoupResponseDetails(EnhancedCompleteRecoupResponseDetailsType EnhancedCompleteRecoupResponseDetails) {
-	 	this.EnhancedCompleteRecoupResponseDetails = EnhancedCompleteRecoupResponseDetails;
+	 public void setEnhancedCompleteRecoupResponseDetails(EnhancedCompleteRecoupResponseDetailsType enhancedCompleteRecoupResponseDetails) {
+	 	this.enhancedCompleteRecoupResponseDetails = enhancedCompleteRecoupResponseDetails;
 	 }
 	 
 
@@ -74,7 +74,7 @@ public class CompleteRecoupResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("EnhancedCompleteRecoupResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.EnhancedCompleteRecoupResponseDetails =  new EnhancedCompleteRecoupResponseDetailsType(childNode);
+		    this.enhancedCompleteRecoupResponseDetails =  new EnhancedCompleteRecoupResponseDetailsType(childNode);
 		}
 	}
  

@@ -26,7 +26,7 @@ public class DoCancelResponseType extends AbstractResponseType {
 	/**
 	 * Return msgsubid back to merchant	 
 	 */ 
-	private String MsgSubID;
+	private String msgSubID;
 
 	
 
@@ -37,17 +37,17 @@ public class DoCancelResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for MsgSubID
+	 * Getter for msgSubID
 	 */
 	 public String getMsgSubID() {
-	 	return MsgSubID;
+	 	return msgSubID;
 	 }
 	 
 	/**
-	 * Setter for MsgSubID
+	 * Setter for msgSubID
 	 */
-	 public void setMsgSubID(String MsgSubID) {
-	 	this.MsgSubID = MsgSubID;
+	 public void setMsgSubID(String msgSubID) {
+	 	this.msgSubID = msgSubID;
 	 }
 	 
 
@@ -73,7 +73,7 @@ public class DoCancelResponseType extends AbstractResponseType {
 		childNode = (Node) xpath.evaluate("MsgSubID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 			String value = childNode.getTextContent();
-			this.MsgSubID = value;
+			this.msgSubID = value;
 		}
 	}
  

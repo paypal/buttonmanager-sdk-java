@@ -24,6 +24,8 @@ import com.paypal.core.SDKUtil;
  */
 public class DoExpressCheckoutPaymentRequestDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * How you want to obtain payment. Required Authorization
@@ -38,7 +40,7 @@ public class DoExpressCheckoutPaymentRequestDetailsType{
 	 * API, DoExpressCheckoutPaymentRequest. Character length and
 	 * limit: Up to 13 single-byte alphabetic characters	 
 	 */ 
-	private PaymentActionCodeType PaymentAction;
+	private PaymentActionCodeType paymentAction;
 
 	/**
 	 * The timestamped token value that was returned by
@@ -46,7 +48,7 @@ public class DoExpressCheckoutPaymentRequestDetailsType{
 	 * GetExpressCheckoutDetailsRequest. Required Character length
 	 * and limitations: 20 single-byte characters	 
 	 */ 
-	private String Token;
+	private String token;
 
 	/**
 	 * Encrypted PayPal customer account identification number as
@@ -54,99 +56,99 @@ public class DoExpressCheckoutPaymentRequestDetailsType{
 	 * Character length and limitations: 127 single-byte
 	 * characters.	 
 	 */ 
-	private String PayerID;
+	private String payerID;
 
 	/**
 	 * URL on Merchant site pertaining to this invoice. Optional 	 
 	 */ 
-	private String OrderURL;
+	private String orderURL;
 
 	/**
 	 * Information about the payment Required 	 
 	 */ 
-	private List<PaymentDetailsType> PaymentDetails = new ArrayList<PaymentDetailsType>();
+	private List<PaymentDetailsType> paymentDetails = new ArrayList<PaymentDetailsType>();
 
 	/**
 	 * Flag to indicate if previously set promoCode shall be
 	 * overriden. Value 1 indicates overriding.  	 
 	 */ 
-	private String PromoOverrideFlag;
+	private String promoOverrideFlag;
 
 	/**
 	 * Promotional financing code for item. Overrides any previous
 	 * PromoCode setting. 	 
 	 */ 
-	private String PromoCode;
+	private String promoCode;
 
 	/**
 	 * Contains data for enhanced data like Airline Itinerary Data.
 	 * 	 
 	 */ 
-	private EnhancedDataType EnhancedData;
+	private EnhancedDataType enhancedData;
 
 	/**
 	 * Soft Descriptor supported for Sale and Auth in DEC only. For
 	 * Order this will be ignored. 	 
 	 */ 
-	private String SoftDescriptor;
+	private String softDescriptor;
 
 	/**
 	 * Information about the user selected options. 	 
 	 */ 
-	private UserSelectedOptionType UserSelectedOptions;
+	private UserSelectedOptionType userSelectedOptions;
 
 	/**
 	 * Information about the Gift message. 	 
 	 */ 
-	private String GiftMessage;
+	private String giftMessage;
 
 	/**
 	 * Information about the Gift receipt enable. 	 
 	 */ 
-	private String GiftReceiptEnable;
+	private String giftReceiptEnable;
 
 	/**
 	 * Information about the Gift Wrap name. 	 
 	 */ 
-	private String GiftWrapName;
+	private String giftWrapName;
 
 	/**
 	 * Information about the Gift Wrap amount. 	 
 	 */ 
-	private BasicAmountType GiftWrapAmount;
+	private BasicAmountType giftWrapAmount;
 
 	/**
 	 * Information about the Buyer marketing email. 	 
 	 */ 
-	private String BuyerMarketingEmail;
+	private String buyerMarketingEmail;
 
 	/**
 	 * Information about the survey question. 	 
 	 */ 
-	private String SurveyQuestion;
+	private String surveyQuestion;
 
 	/**
 	 * Information about the survey choice selected by the user. 	 
 	 */ 
-	private List<String> SurveyChoiceSelected = new ArrayList<String>();
+	private List<String> surveyChoiceSelected = new ArrayList<String>();
 
 	/**
 	 * An identification code for use by third-party applications
 	 * to identify transactions. Optional Character length and
 	 * limitations: 32 single-byte alphanumeric characters 	 
 	 */ 
-	private String ButtonSource;
+	private String buttonSource;
 
 	/**
 	 * Merchant specified flag which indicates whether to create
 	 * billing agreement as part of DoEC or not. Optional 	 
 	 */ 
-	private Boolean SkipBACreation;
+	private Boolean skipBACreation;
 
 	/**
 	 * Optional element that defines relationship between buckets 	 
 	 */ 
-	private List<CoupledBucketsType> CoupledBuckets = new ArrayList<CoupledBucketsType>();
+	private List<CoupledBucketsType> coupledBuckets = new ArrayList<CoupledBucketsType>();
 
 	
 
@@ -157,378 +159,384 @@ public class DoExpressCheckoutPaymentRequestDetailsType{
 	}	
 
 	/**
-	 * Getter for PaymentAction
+	 * Getter for paymentAction
 	 */
 	 public PaymentActionCodeType getPaymentAction() {
-	 	return PaymentAction;
+	 	return paymentAction;
 	 }
 	 
 	/**
-	 * Setter for PaymentAction
+	 * Setter for paymentAction
 	 */
-	 public void setPaymentAction(PaymentActionCodeType PaymentAction) {
-	 	this.PaymentAction = PaymentAction;
+	 public void setPaymentAction(PaymentActionCodeType paymentAction) {
+	 	this.paymentAction = paymentAction;
 	 }
 	 
 	/**
-	 * Getter for Token
+	 * Getter for token
 	 */
 	 public String getToken() {
-	 	return Token;
+	 	return token;
 	 }
 	 
 	/**
-	 * Setter for Token
+	 * Setter for token
 	 */
-	 public void setToken(String Token) {
-	 	this.Token = Token;
+	 public void setToken(String token) {
+	 	this.token = token;
 	 }
 	 
 	/**
-	 * Getter for PayerID
+	 * Getter for payerID
 	 */
 	 public String getPayerID() {
-	 	return PayerID;
+	 	return payerID;
 	 }
 	 
 	/**
-	 * Setter for PayerID
+	 * Setter for payerID
 	 */
-	 public void setPayerID(String PayerID) {
-	 	this.PayerID = PayerID;
+	 public void setPayerID(String payerID) {
+	 	this.payerID = payerID;
 	 }
 	 
 	/**
-	 * Getter for OrderURL
+	 * Getter for orderURL
 	 */
 	 public String getOrderURL() {
-	 	return OrderURL;
+	 	return orderURL;
 	 }
 	 
 	/**
-	 * Setter for OrderURL
+	 * Setter for orderURL
 	 */
-	 public void setOrderURL(String OrderURL) {
-	 	this.OrderURL = OrderURL;
+	 public void setOrderURL(String orderURL) {
+	 	this.orderURL = orderURL;
 	 }
 	 
 	/**
-	 * Getter for PaymentDetails
+	 * Getter for paymentDetails
 	 */
 	 public List<PaymentDetailsType> getPaymentDetails() {
-	 	return PaymentDetails;
+	 	return paymentDetails;
 	 }
 	 
 	/**
-	 * Setter for PaymentDetails
+	 * Setter for paymentDetails
 	 */
-	 public void setPaymentDetails(List<PaymentDetailsType> PaymentDetails) {
-	 	this.PaymentDetails = PaymentDetails;
+	 public void setPaymentDetails(List<PaymentDetailsType> paymentDetails) {
+	 	this.paymentDetails = paymentDetails;
 	 }
 	 
 	/**
-	 * Getter for PromoOverrideFlag
+	 * Getter for promoOverrideFlag
 	 */
 	 public String getPromoOverrideFlag() {
-	 	return PromoOverrideFlag;
+	 	return promoOverrideFlag;
 	 }
 	 
 	/**
-	 * Setter for PromoOverrideFlag
+	 * Setter for promoOverrideFlag
 	 */
-	 public void setPromoOverrideFlag(String PromoOverrideFlag) {
-	 	this.PromoOverrideFlag = PromoOverrideFlag;
+	 public void setPromoOverrideFlag(String promoOverrideFlag) {
+	 	this.promoOverrideFlag = promoOverrideFlag;
 	 }
 	 
 	/**
-	 * Getter for PromoCode
+	 * Getter for promoCode
 	 */
 	 public String getPromoCode() {
-	 	return PromoCode;
+	 	return promoCode;
 	 }
 	 
 	/**
-	 * Setter for PromoCode
+	 * Setter for promoCode
 	 */
-	 public void setPromoCode(String PromoCode) {
-	 	this.PromoCode = PromoCode;
+	 public void setPromoCode(String promoCode) {
+	 	this.promoCode = promoCode;
 	 }
 	 
 	/**
-	 * Getter for EnhancedData
+	 * Getter for enhancedData
 	 */
 	 public EnhancedDataType getEnhancedData() {
-	 	return EnhancedData;
+	 	return enhancedData;
 	 }
 	 
 	/**
-	 * Setter for EnhancedData
+	 * Setter for enhancedData
 	 */
-	 public void setEnhancedData(EnhancedDataType EnhancedData) {
-	 	this.EnhancedData = EnhancedData;
+	 public void setEnhancedData(EnhancedDataType enhancedData) {
+	 	this.enhancedData = enhancedData;
 	 }
 	 
 	/**
-	 * Getter for SoftDescriptor
+	 * Getter for softDescriptor
 	 */
 	 public String getSoftDescriptor() {
-	 	return SoftDescriptor;
+	 	return softDescriptor;
 	 }
 	 
 	/**
-	 * Setter for SoftDescriptor
+	 * Setter for softDescriptor
 	 */
-	 public void setSoftDescriptor(String SoftDescriptor) {
-	 	this.SoftDescriptor = SoftDescriptor;
+	 public void setSoftDescriptor(String softDescriptor) {
+	 	this.softDescriptor = softDescriptor;
 	 }
 	 
 	/**
-	 * Getter for UserSelectedOptions
+	 * Getter for userSelectedOptions
 	 */
 	 public UserSelectedOptionType getUserSelectedOptions() {
-	 	return UserSelectedOptions;
+	 	return userSelectedOptions;
 	 }
 	 
 	/**
-	 * Setter for UserSelectedOptions
+	 * Setter for userSelectedOptions
 	 */
-	 public void setUserSelectedOptions(UserSelectedOptionType UserSelectedOptions) {
-	 	this.UserSelectedOptions = UserSelectedOptions;
+	 public void setUserSelectedOptions(UserSelectedOptionType userSelectedOptions) {
+	 	this.userSelectedOptions = userSelectedOptions;
 	 }
 	 
 	/**
-	 * Getter for GiftMessage
+	 * Getter for giftMessage
 	 */
 	 public String getGiftMessage() {
-	 	return GiftMessage;
+	 	return giftMessage;
 	 }
 	 
 	/**
-	 * Setter for GiftMessage
+	 * Setter for giftMessage
 	 */
-	 public void setGiftMessage(String GiftMessage) {
-	 	this.GiftMessage = GiftMessage;
+	 public void setGiftMessage(String giftMessage) {
+	 	this.giftMessage = giftMessage;
 	 }
 	 
 	/**
-	 * Getter for GiftReceiptEnable
+	 * Getter for giftReceiptEnable
 	 */
 	 public String getGiftReceiptEnable() {
-	 	return GiftReceiptEnable;
+	 	return giftReceiptEnable;
 	 }
 	 
 	/**
-	 * Setter for GiftReceiptEnable
+	 * Setter for giftReceiptEnable
 	 */
-	 public void setGiftReceiptEnable(String GiftReceiptEnable) {
-	 	this.GiftReceiptEnable = GiftReceiptEnable;
+	 public void setGiftReceiptEnable(String giftReceiptEnable) {
+	 	this.giftReceiptEnable = giftReceiptEnable;
 	 }
 	 
 	/**
-	 * Getter for GiftWrapName
+	 * Getter for giftWrapName
 	 */
 	 public String getGiftWrapName() {
-	 	return GiftWrapName;
+	 	return giftWrapName;
 	 }
 	 
 	/**
-	 * Setter for GiftWrapName
+	 * Setter for giftWrapName
 	 */
-	 public void setGiftWrapName(String GiftWrapName) {
-	 	this.GiftWrapName = GiftWrapName;
+	 public void setGiftWrapName(String giftWrapName) {
+	 	this.giftWrapName = giftWrapName;
 	 }
 	 
 	/**
-	 * Getter for GiftWrapAmount
+	 * Getter for giftWrapAmount
 	 */
 	 public BasicAmountType getGiftWrapAmount() {
-	 	return GiftWrapAmount;
+	 	return giftWrapAmount;
 	 }
 	 
 	/**
-	 * Setter for GiftWrapAmount
+	 * Setter for giftWrapAmount
 	 */
-	 public void setGiftWrapAmount(BasicAmountType GiftWrapAmount) {
-	 	this.GiftWrapAmount = GiftWrapAmount;
+	 public void setGiftWrapAmount(BasicAmountType giftWrapAmount) {
+	 	this.giftWrapAmount = giftWrapAmount;
 	 }
 	 
 	/**
-	 * Getter for BuyerMarketingEmail
+	 * Getter for buyerMarketingEmail
 	 */
 	 public String getBuyerMarketingEmail() {
-	 	return BuyerMarketingEmail;
+	 	return buyerMarketingEmail;
 	 }
 	 
 	/**
-	 * Setter for BuyerMarketingEmail
+	 * Setter for buyerMarketingEmail
 	 */
-	 public void setBuyerMarketingEmail(String BuyerMarketingEmail) {
-	 	this.BuyerMarketingEmail = BuyerMarketingEmail;
+	 public void setBuyerMarketingEmail(String buyerMarketingEmail) {
+	 	this.buyerMarketingEmail = buyerMarketingEmail;
 	 }
 	 
 	/**
-	 * Getter for SurveyQuestion
+	 * Getter for surveyQuestion
 	 */
 	 public String getSurveyQuestion() {
-	 	return SurveyQuestion;
+	 	return surveyQuestion;
 	 }
 	 
 	/**
-	 * Setter for SurveyQuestion
+	 * Setter for surveyQuestion
 	 */
-	 public void setSurveyQuestion(String SurveyQuestion) {
-	 	this.SurveyQuestion = SurveyQuestion;
+	 public void setSurveyQuestion(String surveyQuestion) {
+	 	this.surveyQuestion = surveyQuestion;
 	 }
 	 
 	/**
-	 * Getter for SurveyChoiceSelected
+	 * Getter for surveyChoiceSelected
 	 */
 	 public List<String> getSurveyChoiceSelected() {
-	 	return SurveyChoiceSelected;
+	 	return surveyChoiceSelected;
 	 }
 	 
 	/**
-	 * Setter for SurveyChoiceSelected
+	 * Setter for surveyChoiceSelected
 	 */
-	 public void setSurveyChoiceSelected(List<String> SurveyChoiceSelected) {
-	 	this.SurveyChoiceSelected = SurveyChoiceSelected;
+	 public void setSurveyChoiceSelected(List<String> surveyChoiceSelected) {
+	 	this.surveyChoiceSelected = surveyChoiceSelected;
 	 }
 	 
 	/**
-	 * Getter for ButtonSource
+	 * Getter for buttonSource
 	 */
 	 public String getButtonSource() {
-	 	return ButtonSource;
+	 	return buttonSource;
 	 }
 	 
 	/**
-	 * Setter for ButtonSource
+	 * Setter for buttonSource
 	 */
-	 public void setButtonSource(String ButtonSource) {
-	 	this.ButtonSource = ButtonSource;
+	 public void setButtonSource(String buttonSource) {
+	 	this.buttonSource = buttonSource;
 	 }
 	 
 	/**
-	 * Getter for SkipBACreation
+	 * Getter for skipBACreation
 	 */
 	 public Boolean getSkipBACreation() {
-	 	return SkipBACreation;
+	 	return skipBACreation;
 	 }
 	 
 	/**
-	 * Setter for SkipBACreation
+	 * Setter for skipBACreation
 	 */
-	 public void setSkipBACreation(Boolean SkipBACreation) {
-	 	this.SkipBACreation = SkipBACreation;
+	 public void setSkipBACreation(Boolean skipBACreation) {
+	 	this.skipBACreation = skipBACreation;
 	 }
 	 
 	/**
-	 * Getter for CoupledBuckets
+	 * Getter for coupledBuckets
 	 */
 	 public List<CoupledBucketsType> getCoupledBuckets() {
-	 	return CoupledBuckets;
+	 	return coupledBuckets;
 	 }
 	 
 	/**
-	 * Setter for CoupledBuckets
+	 * Setter for coupledBuckets
 	 */
-	 public void setCoupledBuckets(List<CoupledBucketsType> CoupledBuckets) {
-	 	this.CoupledBuckets = CoupledBuckets;
+	 public void setCoupledBuckets(List<CoupledBucketsType> coupledBuckets) {
+	 	this.coupledBuckets = coupledBuckets;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(PaymentAction != null) {
-			sb.append("<ebl:PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentAction.getValue()));
-			sb.append("</ebl:PaymentAction>");
-		}
-		if(Token != null) {
-			sb.append("<ebl:Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(Token));
-			sb.append("</ebl:Token>");
-		}
-		if(PayerID != null) {
-			sb.append("<ebl:PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(PayerID));
-			sb.append("</ebl:PayerID>");
-		}
-		if(OrderURL != null) {
-			sb.append("<ebl:OrderURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(OrderURL));
-			sb.append("</ebl:OrderURL>");
-		}
-		if(PaymentDetails != null) {
-			for(int i=0; i < PaymentDetails.size(); i++) {
-				sb.append("<ebl:PaymentDetails>");
-				sb.append(PaymentDetails.get(i).toXMLString());
-				sb.append("</ebl:PaymentDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
 			}
 		}
-		if(PromoOverrideFlag != null) {
-			sb.append("<ebl:PromoOverrideFlag>").append(SDKUtil.escapeInvalidXmlCharsRegex(PromoOverrideFlag));
-			sb.append("</ebl:PromoOverrideFlag>");
+		if(paymentAction != null) {
+			sb.append("<").append(preferredPrefix).append(":PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentAction.getValue()));
+			sb.append("</").append(preferredPrefix).append(":PaymentAction>");
 		}
-		if(PromoCode != null) {
-			sb.append("<ebl:PromoCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(PromoCode));
-			sb.append("</ebl:PromoCode>");
+		if(token != null) {
+			sb.append("<").append(preferredPrefix).append(":Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(token));
+			sb.append("</").append(preferredPrefix).append(":Token>");
 		}
-		if(EnhancedData != null) {
-			sb.append("<ebl:EnhancedData>");
-			sb.append(EnhancedData.toXMLString());
-			sb.append("</ebl:EnhancedData>");
+		if(payerID != null) {
+			sb.append("<").append(preferredPrefix).append(":PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(payerID));
+			sb.append("</").append(preferredPrefix).append(":PayerID>");
 		}
-		if(SoftDescriptor != null) {
-			sb.append("<ebl:SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(SoftDescriptor));
-			sb.append("</ebl:SoftDescriptor>");
+		if(orderURL != null) {
+			sb.append("<").append(preferredPrefix).append(":OrderURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(orderURL));
+			sb.append("</").append(preferredPrefix).append(":OrderURL>");
 		}
-		if(UserSelectedOptions != null) {
-			sb.append("<ebl:UserSelectedOptions>");
-			sb.append(UserSelectedOptions.toXMLString());
-			sb.append("</ebl:UserSelectedOptions>");
-		}
-		if(GiftMessage != null) {
-			sb.append("<ebl:GiftMessage>").append(SDKUtil.escapeInvalidXmlCharsRegex(GiftMessage));
-			sb.append("</ebl:GiftMessage>");
-		}
-		if(GiftReceiptEnable != null) {
-			sb.append("<ebl:GiftReceiptEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(GiftReceiptEnable));
-			sb.append("</ebl:GiftReceiptEnable>");
-		}
-		if(GiftWrapName != null) {
-			sb.append("<ebl:GiftWrapName>").append(SDKUtil.escapeInvalidXmlCharsRegex(GiftWrapName));
-			sb.append("</ebl:GiftWrapName>");
-		}
-		if(GiftWrapAmount != null) {
-			sb.append("<ebl:GiftWrapAmount");
-			sb.append(GiftWrapAmount.toXMLString());
-			sb.append("</ebl:GiftWrapAmount>");
-		}
-		if(BuyerMarketingEmail != null) {
-			sb.append("<ebl:BuyerMarketingEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(BuyerMarketingEmail));
-			sb.append("</ebl:BuyerMarketingEmail>");
-		}
-		if(SurveyQuestion != null) {
-			sb.append("<ebl:SurveyQuestion>").append(SDKUtil.escapeInvalidXmlCharsRegex(SurveyQuestion));
-			sb.append("</ebl:SurveyQuestion>");
-		}
-		if(SurveyChoiceSelected != null) {
-			for(int i=0; i < SurveyChoiceSelected.size(); i++) {
-				sb.append("<ebl:SurveyChoiceSelected>").append(SDKUtil.escapeInvalidXmlCharsRegex(SurveyChoiceSelected.get(i)));
-				sb.append("</ebl:SurveyChoiceSelected>");
+		if(paymentDetails != null) {
+			for(int i=0; i < paymentDetails.size(); i++) {
+				sb.append(paymentDetails.get(i).toXMLString(preferredPrefix,"PaymentDetails"));
 			}
 		}
-		if(ButtonSource != null) {
-			sb.append("<ebl:ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonSource));
-			sb.append("</ebl:ButtonSource>");
+		if(promoOverrideFlag != null) {
+			sb.append("<").append(preferredPrefix).append(":PromoOverrideFlag>").append(SDKUtil.escapeInvalidXmlCharsRegex(promoOverrideFlag));
+			sb.append("</").append(preferredPrefix).append(":PromoOverrideFlag>");
 		}
-		if(SkipBACreation != null) {
-			sb.append("<ebl:SkipBACreation>").append(SDKUtil.escapeInvalidXmlCharsRegex(SkipBACreation));
-			sb.append("</ebl:SkipBACreation>");
+		if(promoCode != null) {
+			sb.append("<").append(preferredPrefix).append(":PromoCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(promoCode));
+			sb.append("</").append(preferredPrefix).append(":PromoCode>");
 		}
-		if(CoupledBuckets != null) {
-			for(int i=0; i < CoupledBuckets.size(); i++) {
-				sb.append("<ebl:CoupledBuckets>");
-				sb.append(CoupledBuckets.get(i).toXMLString());
-				sb.append("</ebl:CoupledBuckets>");
+		if(enhancedData != null) {
+			sb.append(enhancedData.toXMLString(preferredPrefix,"EnhancedData"));
+		}
+		if(softDescriptor != null) {
+			sb.append("<").append(preferredPrefix).append(":SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(softDescriptor));
+			sb.append("</").append(preferredPrefix).append(":SoftDescriptor>");
+		}
+		if(userSelectedOptions != null) {
+			sb.append(userSelectedOptions.toXMLString(preferredPrefix,"UserSelectedOptions"));
+		}
+		if(giftMessage != null) {
+			sb.append("<").append(preferredPrefix).append(":GiftMessage>").append(SDKUtil.escapeInvalidXmlCharsRegex(giftMessage));
+			sb.append("</").append(preferredPrefix).append(":GiftMessage>");
+		}
+		if(giftReceiptEnable != null) {
+			sb.append("<").append(preferredPrefix).append(":GiftReceiptEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(giftReceiptEnable));
+			sb.append("</").append(preferredPrefix).append(":GiftReceiptEnable>");
+		}
+		if(giftWrapName != null) {
+			sb.append("<").append(preferredPrefix).append(":GiftWrapName>").append(SDKUtil.escapeInvalidXmlCharsRegex(giftWrapName));
+			sb.append("</").append(preferredPrefix).append(":GiftWrapName>");
+		}
+		if(giftWrapAmount != null) {
+			sb.append(giftWrapAmount.toXMLString(preferredPrefix,"GiftWrapAmount"));
+		}
+		if(buyerMarketingEmail != null) {
+			sb.append("<").append(preferredPrefix).append(":BuyerMarketingEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(buyerMarketingEmail));
+			sb.append("</").append(preferredPrefix).append(":BuyerMarketingEmail>");
+		}
+		if(surveyQuestion != null) {
+			sb.append("<").append(preferredPrefix).append(":SurveyQuestion>").append(SDKUtil.escapeInvalidXmlCharsRegex(surveyQuestion));
+			sb.append("</").append(preferredPrefix).append(":SurveyQuestion>");
+		}
+		if(surveyChoiceSelected != null) {
+			for(int i=0; i < surveyChoiceSelected.size(); i++) {
+				sb.append("<").append(preferredPrefix).append(":SurveyChoiceSelected>").append(SDKUtil.escapeInvalidXmlCharsRegex(surveyChoiceSelected.get(i)));
+				sb.append("</").append(preferredPrefix).append(":SurveyChoiceSelected>");
+			}
+		}
+		if(buttonSource != null) {
+			sb.append("<").append(preferredPrefix).append(":ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonSource));
+			sb.append("</").append(preferredPrefix).append(":ButtonSource>");
+		}
+		if(skipBACreation != null) {
+			sb.append("<").append(preferredPrefix).append(":SkipBACreation>").append(SDKUtil.escapeInvalidXmlCharsRegex(skipBACreation));
+			sb.append("</").append(preferredPrefix).append(":SkipBACreation>");
+		}
+		if(coupledBuckets != null) {
+			for(int i=0; i < coupledBuckets.size(); i++) {
+				sb.append(coupledBuckets.get(i).toXMLString(preferredPrefix,"CoupledBuckets"));
+			}
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
 			}
 		}
 		return sb.toString();

@@ -24,43 +24,45 @@ import org.xml.sax.SAXException;
  */
 public class DiscountType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Item nameOptional Character length and limits: 127
 	 * single-byte characters 	 
 	 */ 
-	private String Name;
+	private String name;
 
 	/**
 	 * description of the discountOptional Character length and
 	 * limits: 127 single-byte characters 	 
 	 */ 
-	private String Description;
+	private String description;
 
 	/**
 	 * amount discountedOptional 	  
 	 *@Required	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	/**
 	 * offer typeOptional 	 
 	 */ 
-	private RedeemedOfferType RedeemedOfferType;
+	private RedeemedOfferType redeemedOfferType;
 
 	/**
 	 * offer IDOptional Character length and limits: 64 single-byte
 	 * characters 	 
 	 */ 
-	private String RedeemedOfferID;
+	private String redeemedOfferID;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public DiscountType (BasicAmountType Amount){
-		this.Amount = Amount;
+	public DiscountType (BasicAmountType amount){
+		this.amount = amount;
 	}	
 
 	/**
@@ -70,99 +72,113 @@ public class DiscountType{
 	}	
 
 	/**
-	 * Getter for Name
+	 * Getter for name
 	 */
 	 public String getName() {
-	 	return Name;
+	 	return name;
 	 }
 	 
 	/**
-	 * Setter for Name
+	 * Setter for name
 	 */
-	 public void setName(String Name) {
-	 	this.Name = Name;
+	 public void setName(String name) {
+	 	this.name = name;
 	 }
 	 
 	/**
-	 * Getter for Description
+	 * Getter for description
 	 */
 	 public String getDescription() {
-	 	return Description;
+	 	return description;
 	 }
 	 
 	/**
-	 * Setter for Description
+	 * Setter for description
 	 */
-	 public void setDescription(String Description) {
-	 	this.Description = Description;
+	 public void setDescription(String description) {
+	 	this.description = description;
 	 }
 	 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 	/**
-	 * Getter for RedeemedOfferType
+	 * Getter for redeemedOfferType
 	 */
 	 public RedeemedOfferType getRedeemedOfferType() {
-	 	return RedeemedOfferType;
+	 	return redeemedOfferType;
 	 }
 	 
 	/**
-	 * Setter for RedeemedOfferType
+	 * Setter for redeemedOfferType
 	 */
-	 public void setRedeemedOfferType(RedeemedOfferType RedeemedOfferType) {
-	 	this.RedeemedOfferType = RedeemedOfferType;
+	 public void setRedeemedOfferType(RedeemedOfferType redeemedOfferType) {
+	 	this.redeemedOfferType = redeemedOfferType;
 	 }
 	 
 	/**
-	 * Getter for RedeemedOfferID
+	 * Getter for redeemedOfferID
 	 */
 	 public String getRedeemedOfferID() {
-	 	return RedeemedOfferID;
+	 	return redeemedOfferID;
 	 }
 	 
 	/**
-	 * Setter for RedeemedOfferID
+	 * Setter for redeemedOfferID
 	 */
-	 public void setRedeemedOfferID(String RedeemedOfferID) {
-	 	this.RedeemedOfferID = RedeemedOfferID;
+	 public void setRedeemedOfferID(String redeemedOfferID) {
+	 	this.redeemedOfferID = redeemedOfferID;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(Name != null) {
-			sb.append("<ebl:Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(Name));
-			sb.append("</ebl:Name>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(Description != null) {
-			sb.append("<ebl:Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(Description));
-			sb.append("</ebl:Description>");
+		if(name != null) {
+			sb.append("<").append(preferredPrefix).append(":Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(name));
+			sb.append("</").append(preferredPrefix).append(":Name>");
 		}
-		if(Amount != null) {
-			sb.append("<ebl:Amount");
-			sb.append(Amount.toXMLString());
-			sb.append("</ebl:Amount>");
+		if(description != null) {
+			sb.append("<").append(preferredPrefix).append(":Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(description));
+			sb.append("</").append(preferredPrefix).append(":Description>");
 		}
-		if(RedeemedOfferType != null) {
-			sb.append("<ebl:RedeemedOfferType>").append(SDKUtil.escapeInvalidXmlCharsRegex(RedeemedOfferType.getValue()));
-			sb.append("</ebl:RedeemedOfferType>");
+		if(amount != null) {
+			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
 		}
-		if(RedeemedOfferID != null) {
-			sb.append("<ebl:RedeemedOfferID>").append(SDKUtil.escapeInvalidXmlCharsRegex(RedeemedOfferID));
-			sb.append("</ebl:RedeemedOfferID>");
+		if(redeemedOfferType != null) {
+			sb.append("<").append(preferredPrefix).append(":RedeemedOfferType>").append(SDKUtil.escapeInvalidXmlCharsRegex(redeemedOfferType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":RedeemedOfferType>");
+		}
+		if(redeemedOfferID != null) {
+			sb.append("<").append(preferredPrefix).append(":RedeemedOfferID>").append(SDKUtil.escapeInvalidXmlCharsRegex(redeemedOfferID));
+			sb.append("</").append(preferredPrefix).append(":RedeemedOfferID>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -186,25 +202,25 @@ public class DiscountType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Name", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Name = childNode.getTextContent();
+		    this.name = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Description", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Description = childNode.getTextContent();
+		    this.description = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Amount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Amount =  new BasicAmountType(childNode);
+		    this.amount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("RedeemedOfferType", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.RedeemedOfferType = RedeemedOfferType.fromValue(childNode.getTextContent());
+		    this.redeemedOfferType = RedeemedOfferType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("RedeemedOfferID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.RedeemedOfferID = childNode.getTextContent();
+		    this.redeemedOfferID = childNode.getTextContent();
 		}
 	
 	}

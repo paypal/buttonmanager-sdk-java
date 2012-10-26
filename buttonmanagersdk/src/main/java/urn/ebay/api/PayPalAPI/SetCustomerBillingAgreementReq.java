@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class SetCustomerBillingAgreementReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private SetCustomerBillingAgreementRequestType SetCustomerBillingAgreementRequest;
+	private SetCustomerBillingAgreementRequestType setCustomerBillingAgreementRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class SetCustomerBillingAgreementReq{
 	}	
 
 	/**
-	 * Getter for SetCustomerBillingAgreementRequest
+	 * Getter for setCustomerBillingAgreementRequest
 	 */
 	 public SetCustomerBillingAgreementRequestType getSetCustomerBillingAgreementRequest() {
-	 	return SetCustomerBillingAgreementRequest;
+	 	return setCustomerBillingAgreementRequest;
 	 }
 	 
 	/**
-	 * Setter for SetCustomerBillingAgreementRequest
+	 * Setter for setCustomerBillingAgreementRequest
 	 */
-	 public void setSetCustomerBillingAgreementRequest(SetCustomerBillingAgreementRequestType SetCustomerBillingAgreementRequest) {
-	 	this.SetCustomerBillingAgreementRequest = SetCustomerBillingAgreementRequest;
+	 public void setSetCustomerBillingAgreementRequest(SetCustomerBillingAgreementRequestType setCustomerBillingAgreementRequest) {
+	 	this.setCustomerBillingAgreementRequest = setCustomerBillingAgreementRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:SetCustomerBillingAgreementReq>");
-		if(SetCustomerBillingAgreementRequest != null) {
-			sb.append("<urn:SetCustomerBillingAgreementRequest>");
-			sb.append(SetCustomerBillingAgreementRequest.toXMLString());
-			sb.append("</urn:SetCustomerBillingAgreementRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:SetCustomerBillingAgreementReq>");
+		if(setCustomerBillingAgreementRequest != null) {
+			sb.append(setCustomerBillingAgreementRequest.toXMLString(null,"SetCustomerBillingAgreementRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

@@ -6,19 +6,21 @@ import com.paypal.core.SDKUtil;
  */
 public class FlowControlDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * The URL to redirect to for an unpayable transaction. This
 	 * field is currently used only for the inline checkout flow. 	 
 	 */ 
-	private String ErrorURL;
+	private String errorURL;
 
 	/**
 	 * The URL to redirect to after a user clicks the "Pay" or
 	 * "Continue" button on the merchant's site. This field is
 	 * currently used only for the inline checkout flow. 	 
 	 */ 
-	private String InContextReturnURL;
+	private String inContextReturnURL;
 
 	
 
@@ -29,44 +31,60 @@ public class FlowControlDetailsType{
 	}	
 
 	/**
-	 * Getter for ErrorURL
+	 * Getter for errorURL
 	 */
 	 public String getErrorURL() {
-	 	return ErrorURL;
+	 	return errorURL;
 	 }
 	 
 	/**
-	 * Setter for ErrorURL
+	 * Setter for errorURL
 	 */
-	 public void setErrorURL(String ErrorURL) {
-	 	this.ErrorURL = ErrorURL;
+	 public void setErrorURL(String errorURL) {
+	 	this.errorURL = errorURL;
 	 }
 	 
 	/**
-	 * Getter for InContextReturnURL
+	 * Getter for inContextReturnURL
 	 */
 	 public String getInContextReturnURL() {
-	 	return InContextReturnURL;
+	 	return inContextReturnURL;
 	 }
 	 
 	/**
-	 * Setter for InContextReturnURL
+	 * Setter for inContextReturnURL
 	 */
-	 public void setInContextReturnURL(String InContextReturnURL) {
-	 	this.InContextReturnURL = InContextReturnURL;
+	 public void setInContextReturnURL(String inContextReturnURL) {
+	 	this.inContextReturnURL = inContextReturnURL;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(ErrorURL != null) {
-			sb.append("<ebl:ErrorURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(ErrorURL));
-			sb.append("</ebl:ErrorURL>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(InContextReturnURL != null) {
-			sb.append("<ebl:InContextReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(InContextReturnURL));
-			sb.append("</ebl:InContextReturnURL>");
+		if(errorURL != null) {
+			sb.append("<").append(preferredPrefix).append(":ErrorURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(errorURL));
+			sb.append("</").append(preferredPrefix).append(":ErrorURL>");
+		}
+		if(inContextReturnURL != null) {
+			sb.append("<").append(preferredPrefix).append(":InContextReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(inContextReturnURL));
+			sb.append("</").append(preferredPrefix).append(":InContextReturnURL>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class SenderDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	 
 	 */ 
-	private DeviceDetailsType DeviceDetails;
+	private DeviceDetailsType deviceDetails;
 
 	
 
@@ -22,27 +24,41 @@ public class SenderDetailsType{
 	}	
 
 	/**
-	 * Getter for DeviceDetails
+	 * Getter for deviceDetails
 	 */
 	 public DeviceDetailsType getDeviceDetails() {
-	 	return DeviceDetails;
+	 	return deviceDetails;
 	 }
 	 
 	/**
-	 * Setter for DeviceDetails
+	 * Setter for deviceDetails
 	 */
-	 public void setDeviceDetails(DeviceDetailsType DeviceDetails) {
-	 	this.DeviceDetails = DeviceDetails;
+	 public void setDeviceDetails(DeviceDetailsType deviceDetails) {
+	 	this.deviceDetails = deviceDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(DeviceDetails != null) {
-			sb.append("<ebl:DeviceDetails>");
-			sb.append(DeviceDetails.toXMLString());
-			sb.append("</ebl:DeviceDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		if(deviceDetails != null) {
+			sb.append(deviceDetails.toXMLString(preferredPrefix,"DeviceDetails"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

@@ -26,19 +26,19 @@ public class RiskFilterDetailsType{
 	 * 	  
 	 *@Required	 
 	 */ 
-	private Integer Id;
+	private Integer id;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String Name;
+	private String name;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String Description;
+	private String description;
 
 	
 
@@ -49,45 +49,45 @@ public class RiskFilterDetailsType{
 	}	
 
 	/**
-	 * Getter for Id
+	 * Getter for id
 	 */
 	 public Integer getId() {
-	 	return Id;
+	 	return id;
 	 }
 	 
 	/**
-	 * Setter for Id
+	 * Setter for id
 	 */
-	 public void setId(Integer Id) {
-	 	this.Id = Id;
+	 public void setId(Integer id) {
+	 	this.id = id;
 	 }
 	 
 	/**
-	 * Getter for Name
+	 * Getter for name
 	 */
 	 public String getName() {
-	 	return Name;
+	 	return name;
 	 }
 	 
 	/**
-	 * Setter for Name
+	 * Setter for name
 	 */
-	 public void setName(String Name) {
-	 	this.Name = Name;
+	 public void setName(String name) {
+	 	this.name = name;
 	 }
 	 
 	/**
-	 * Getter for Description
+	 * Getter for description
 	 */
 	 public String getDescription() {
-	 	return Description;
+	 	return description;
 	 }
 	 
 	/**
-	 * Setter for Description
+	 * Setter for description
 	 */
-	 public void setDescription(String Description) {
-	 	this.Description = Description;
+	 public void setDescription(String description) {
+	 	this.description = description;
 	 }
 	 
 
@@ -111,17 +111,17 @@ public class RiskFilterDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Id", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.Id = Integer.valueOf(childNode.getTextContent());
+			this.id = Integer.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("Name", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Name = childNode.getTextContent();
+		    this.name = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Description", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Description = childNode.getTextContent();
+		    this.description = childNode.getTextContent();
 		}
 	
 	}

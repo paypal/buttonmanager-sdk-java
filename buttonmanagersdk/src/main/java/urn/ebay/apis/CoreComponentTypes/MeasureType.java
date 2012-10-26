@@ -22,6 +22,8 @@ import org.xml.sax.SAXException;
  */
 public class MeasureType{
 
+	private static final String nameSpace="urn:ebay:apis:CoreComponentTypes";
+	private static final String preferredPrefix="cc";
 
 	/**
 	 * 	  
@@ -81,12 +83,28 @@ public class MeasureType{
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name);
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name);
+			}
 		sb.append(getAttributeAsXml());
 		sb.append(">");
+		}
 		if(value != null) {
 			sb.append(SDKUtil.escapeInvalidXmlCharsRegex(value));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

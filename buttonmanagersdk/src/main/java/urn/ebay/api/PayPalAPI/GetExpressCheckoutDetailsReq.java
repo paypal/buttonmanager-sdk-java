@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class GetExpressCheckoutDetailsReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private GetExpressCheckoutDetailsRequestType GetExpressCheckoutDetailsRequest;
+	private GetExpressCheckoutDetailsRequestType getExpressCheckoutDetailsRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class GetExpressCheckoutDetailsReq{
 	}	
 
 	/**
-	 * Getter for GetExpressCheckoutDetailsRequest
+	 * Getter for getExpressCheckoutDetailsRequest
 	 */
 	 public GetExpressCheckoutDetailsRequestType getGetExpressCheckoutDetailsRequest() {
-	 	return GetExpressCheckoutDetailsRequest;
+	 	return getExpressCheckoutDetailsRequest;
 	 }
 	 
 	/**
-	 * Setter for GetExpressCheckoutDetailsRequest
+	 * Setter for getExpressCheckoutDetailsRequest
 	 */
-	 public void setGetExpressCheckoutDetailsRequest(GetExpressCheckoutDetailsRequestType GetExpressCheckoutDetailsRequest) {
-	 	this.GetExpressCheckoutDetailsRequest = GetExpressCheckoutDetailsRequest;
+	 public void setGetExpressCheckoutDetailsRequest(GetExpressCheckoutDetailsRequestType getExpressCheckoutDetailsRequest) {
+	 	this.getExpressCheckoutDetailsRequest = getExpressCheckoutDetailsRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:GetExpressCheckoutDetailsReq>");
-		if(GetExpressCheckoutDetailsRequest != null) {
-			sb.append("<urn:GetExpressCheckoutDetailsRequest>");
-			sb.append(GetExpressCheckoutDetailsRequest.toXMLString());
-			sb.append("</urn:GetExpressCheckoutDetailsRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:GetExpressCheckoutDetailsReq>");
+		if(getExpressCheckoutDetailsRequest != null) {
+			sb.append(getExpressCheckoutDetailsRequest.toXMLString(null,"GetExpressCheckoutDetailsRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

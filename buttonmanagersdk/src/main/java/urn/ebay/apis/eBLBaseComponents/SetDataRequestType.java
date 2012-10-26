@@ -11,24 +11,26 @@ import com.paypal.core.SDKUtil;
  */
 public class SetDataRequestType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Details about Billing Agreements requested to be created. 	 
 	 */ 
-	private List<BillingApprovalDetailsType> BillingApprovalDetails = new ArrayList<BillingApprovalDetailsType>();
+	private List<BillingApprovalDetailsType> billingApprovalDetails = new ArrayList<BillingApprovalDetailsType>();
 
 	/**
 	 * Only needed if Auto Authorization is requested. The
 	 * authentication session token will be passed in here. 	 
 	 */ 
-	private BuyerDetailType BuyerDetail;
+	private BuyerDetailType buyerDetail;
 
 	/**
 	 * Requests for specific buyer information like Billing Address
 	 * to be returned through GetExpressCheckoutDetails should be
 	 * specified under this. 	 
 	 */ 
-	private InfoSharingDirectivesType InfoSharingDirectives;
+	private InfoSharingDirectivesType infoSharingDirectives;
 
 	
 
@@ -39,67 +41,77 @@ public class SetDataRequestType{
 	}	
 
 	/**
-	 * Getter for BillingApprovalDetails
+	 * Getter for billingApprovalDetails
 	 */
 	 public List<BillingApprovalDetailsType> getBillingApprovalDetails() {
-	 	return BillingApprovalDetails;
+	 	return billingApprovalDetails;
 	 }
 	 
 	/**
-	 * Setter for BillingApprovalDetails
+	 * Setter for billingApprovalDetails
 	 */
-	 public void setBillingApprovalDetails(List<BillingApprovalDetailsType> BillingApprovalDetails) {
-	 	this.BillingApprovalDetails = BillingApprovalDetails;
+	 public void setBillingApprovalDetails(List<BillingApprovalDetailsType> billingApprovalDetails) {
+	 	this.billingApprovalDetails = billingApprovalDetails;
 	 }
 	 
 	/**
-	 * Getter for BuyerDetail
+	 * Getter for buyerDetail
 	 */
 	 public BuyerDetailType getBuyerDetail() {
-	 	return BuyerDetail;
+	 	return buyerDetail;
 	 }
 	 
 	/**
-	 * Setter for BuyerDetail
+	 * Setter for buyerDetail
 	 */
-	 public void setBuyerDetail(BuyerDetailType BuyerDetail) {
-	 	this.BuyerDetail = BuyerDetail;
+	 public void setBuyerDetail(BuyerDetailType buyerDetail) {
+	 	this.buyerDetail = buyerDetail;
 	 }
 	 
 	/**
-	 * Getter for InfoSharingDirectives
+	 * Getter for infoSharingDirectives
 	 */
 	 public InfoSharingDirectivesType getInfoSharingDirectives() {
-	 	return InfoSharingDirectives;
+	 	return infoSharingDirectives;
 	 }
 	 
 	/**
-	 * Setter for InfoSharingDirectives
+	 * Setter for infoSharingDirectives
 	 */
-	 public void setInfoSharingDirectives(InfoSharingDirectivesType InfoSharingDirectives) {
-	 	this.InfoSharingDirectives = InfoSharingDirectives;
+	 public void setInfoSharingDirectives(InfoSharingDirectivesType infoSharingDirectives) {
+	 	this.infoSharingDirectives = infoSharingDirectives;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(BillingApprovalDetails != null) {
-			for(int i=0; i < BillingApprovalDetails.size(); i++) {
-				sb.append("<ebl:BillingApprovalDetails>");
-				sb.append(BillingApprovalDetails.get(i).toXMLString());
-				sb.append("</ebl:BillingApprovalDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
 			}
 		}
-		if(BuyerDetail != null) {
-			sb.append("<ebl:BuyerDetail>");
-			sb.append(BuyerDetail.toXMLString());
-			sb.append("</ebl:BuyerDetail>");
+		if(billingApprovalDetails != null) {
+			for(int i=0; i < billingApprovalDetails.size(); i++) {
+				sb.append(billingApprovalDetails.get(i).toXMLString(preferredPrefix,"BillingApprovalDetails"));
+			}
 		}
-		if(InfoSharingDirectives != null) {
-			sb.append("<ebl:InfoSharingDirectives>");
-			sb.append(InfoSharingDirectives.toXMLString());
-			sb.append("</ebl:InfoSharingDirectives>");
+		if(buyerDetail != null) {
+			sb.append(buyerDetail.toXMLString(preferredPrefix,"BuyerDetail"));
+		}
+		if(infoSharingDirectives != null) {
+			sb.append(infoSharingDirectives.toXMLString(preferredPrefix,"InfoSharingDirectives"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

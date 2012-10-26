@@ -29,17 +29,17 @@ public class MerchantPullPaymentResponseType{
 	/**
 	 * information about the customer	 
 	 */ 
-	private PayerInfoType PayerInfo;
+	private PayerInfoType payerInfo;
 
 	/**
 	 * Information about the transaction 	 
 	 */ 
-	private PaymentInfoType PaymentInfo;
+	private PaymentInfoType paymentInfo;
 
 	/**
 	 * Specific information about the preapproved payment 	 
 	 */ 
-	private MerchantPullInfoType MerchantPullInfo;
+	private MerchantPullInfoType merchantPullInfo;
 
 	
 
@@ -50,45 +50,45 @@ public class MerchantPullPaymentResponseType{
 	}	
 
 	/**
-	 * Getter for PayerInfo
+	 * Getter for payerInfo
 	 */
 	 public PayerInfoType getPayerInfo() {
-	 	return PayerInfo;
+	 	return payerInfo;
 	 }
 	 
 	/**
-	 * Setter for PayerInfo
+	 * Setter for payerInfo
 	 */
-	 public void setPayerInfo(PayerInfoType PayerInfo) {
-	 	this.PayerInfo = PayerInfo;
+	 public void setPayerInfo(PayerInfoType payerInfo) {
+	 	this.payerInfo = payerInfo;
 	 }
 	 
 	/**
-	 * Getter for PaymentInfo
+	 * Getter for paymentInfo
 	 */
 	 public PaymentInfoType getPaymentInfo() {
-	 	return PaymentInfo;
+	 	return paymentInfo;
 	 }
 	 
 	/**
-	 * Setter for PaymentInfo
+	 * Setter for paymentInfo
 	 */
-	 public void setPaymentInfo(PaymentInfoType PaymentInfo) {
-	 	this.PaymentInfo = PaymentInfo;
+	 public void setPaymentInfo(PaymentInfoType paymentInfo) {
+	 	this.paymentInfo = paymentInfo;
 	 }
 	 
 	/**
-	 * Getter for MerchantPullInfo
+	 * Getter for merchantPullInfo
 	 */
 	 public MerchantPullInfoType getMerchantPullInfo() {
-	 	return MerchantPullInfo;
+	 	return merchantPullInfo;
 	 }
 	 
 	/**
-	 * Setter for MerchantPullInfo
+	 * Setter for merchantPullInfo
 	 */
-	 public void setMerchantPullInfo(MerchantPullInfoType MerchantPullInfo) {
-	 	this.MerchantPullInfo = MerchantPullInfo;
+	 public void setMerchantPullInfo(MerchantPullInfoType merchantPullInfo) {
+	 	this.merchantPullInfo = merchantPullInfo;
 	 }
 	 
 
@@ -112,15 +112,15 @@ public class MerchantPullPaymentResponseType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("PayerInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PayerInfo =  new PayerInfoType(childNode);
+		    this.payerInfo =  new PayerInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("PaymentInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentInfo =  new PaymentInfoType(childNode);
+		    this.paymentInfo =  new PaymentInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("MerchantPullInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.MerchantPullInfo =  new MerchantPullInfoType(childNode);
+		    this.merchantPullInfo =  new MerchantPullInfoType(childNode);
 		}
 	}
  

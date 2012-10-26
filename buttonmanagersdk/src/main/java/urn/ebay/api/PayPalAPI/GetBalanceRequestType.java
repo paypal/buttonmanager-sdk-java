@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class GetBalanceRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private String ReturnAllCurrencies;
+	private String returnAllCurrencies;
 
 	
 
@@ -22,27 +24,43 @@ public class GetBalanceRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for ReturnAllCurrencies
+	 * Getter for returnAllCurrencies
 	 */
 	 public String getReturnAllCurrencies() {
-	 	return ReturnAllCurrencies;
+	 	return returnAllCurrencies;
 	 }
 	 
 	/**
-	 * Setter for ReturnAllCurrencies
+	 * Setter for returnAllCurrencies
 	 */
-	 public void setReturnAllCurrencies(String ReturnAllCurrencies) {
-	 	this.ReturnAllCurrencies = ReturnAllCurrencies;
+	 public void setReturnAllCurrencies(String returnAllCurrencies) {
+	 	this.returnAllCurrencies = returnAllCurrencies;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(ReturnAllCurrencies != null) {
-			sb.append("<urn:ReturnAllCurrencies>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReturnAllCurrencies));
-			sb.append("</urn:ReturnAllCurrencies>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		sb.append(super.toXMLString(prefix, null));
+		if(returnAllCurrencies != null) {
+			sb.append("<").append(preferredPrefix).append(":ReturnAllCurrencies>").append(SDKUtil.escapeInvalidXmlCharsRegex(returnAllCurrencies));
+			sb.append("</").append(preferredPrefix).append(":ReturnAllCurrencies>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

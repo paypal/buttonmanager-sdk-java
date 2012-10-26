@@ -30,34 +30,34 @@ public class BAUpdateResponseDetailsType{
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String BillingAgreementID;
+	private String billingAgreementID;
 
 	/**
 	 * 	 
 	 */ 
-	private String BillingAgreementDescription;
+	private String billingAgreementDescription;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private MerchantPullStatusCodeType BillingAgreementStatus;
+	private MerchantPullStatusCodeType billingAgreementStatus;
 
 	/**
 	 * 	 
 	 */ 
-	private String BillingAgreementCustom;
+	private String billingAgreementCustom;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private PayerInfoType PayerInfo;
+	private PayerInfoType payerInfo;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType BillingAgreementMax;
+	private BasicAmountType billingAgreementMax;
 
 	/**
 	 * Customer's billing address. Optional If you have credit card
@@ -65,7 +65,7 @@ public class BAUpdateResponseDetailsType{
 	 * card is returned otherwise your primary address is returned
 	 * , PayPal returns this address in BAUpdateResponseDetails. 	 
 	 */ 
-	private AddressType BillingAddress;
+	private AddressType billingAddress;
 
 	
 
@@ -76,101 +76,101 @@ public class BAUpdateResponseDetailsType{
 	}	
 
 	/**
-	 * Getter for BillingAgreementID
+	 * Getter for billingAgreementID
 	 */
 	 public String getBillingAgreementID() {
-	 	return BillingAgreementID;
+	 	return billingAgreementID;
 	 }
 	 
 	/**
-	 * Setter for BillingAgreementID
+	 * Setter for billingAgreementID
 	 */
-	 public void setBillingAgreementID(String BillingAgreementID) {
-	 	this.BillingAgreementID = BillingAgreementID;
+	 public void setBillingAgreementID(String billingAgreementID) {
+	 	this.billingAgreementID = billingAgreementID;
 	 }
 	 
 	/**
-	 * Getter for BillingAgreementDescription
+	 * Getter for billingAgreementDescription
 	 */
 	 public String getBillingAgreementDescription() {
-	 	return BillingAgreementDescription;
+	 	return billingAgreementDescription;
 	 }
 	 
 	/**
-	 * Setter for BillingAgreementDescription
+	 * Setter for billingAgreementDescription
 	 */
-	 public void setBillingAgreementDescription(String BillingAgreementDescription) {
-	 	this.BillingAgreementDescription = BillingAgreementDescription;
+	 public void setBillingAgreementDescription(String billingAgreementDescription) {
+	 	this.billingAgreementDescription = billingAgreementDescription;
 	 }
 	 
 	/**
-	 * Getter for BillingAgreementStatus
+	 * Getter for billingAgreementStatus
 	 */
 	 public MerchantPullStatusCodeType getBillingAgreementStatus() {
-	 	return BillingAgreementStatus;
+	 	return billingAgreementStatus;
 	 }
 	 
 	/**
-	 * Setter for BillingAgreementStatus
+	 * Setter for billingAgreementStatus
 	 */
-	 public void setBillingAgreementStatus(MerchantPullStatusCodeType BillingAgreementStatus) {
-	 	this.BillingAgreementStatus = BillingAgreementStatus;
+	 public void setBillingAgreementStatus(MerchantPullStatusCodeType billingAgreementStatus) {
+	 	this.billingAgreementStatus = billingAgreementStatus;
 	 }
 	 
 	/**
-	 * Getter for BillingAgreementCustom
+	 * Getter for billingAgreementCustom
 	 */
 	 public String getBillingAgreementCustom() {
-	 	return BillingAgreementCustom;
+	 	return billingAgreementCustom;
 	 }
 	 
 	/**
-	 * Setter for BillingAgreementCustom
+	 * Setter for billingAgreementCustom
 	 */
-	 public void setBillingAgreementCustom(String BillingAgreementCustom) {
-	 	this.BillingAgreementCustom = BillingAgreementCustom;
+	 public void setBillingAgreementCustom(String billingAgreementCustom) {
+	 	this.billingAgreementCustom = billingAgreementCustom;
 	 }
 	 
 	/**
-	 * Getter for PayerInfo
+	 * Getter for payerInfo
 	 */
 	 public PayerInfoType getPayerInfo() {
-	 	return PayerInfo;
+	 	return payerInfo;
 	 }
 	 
 	/**
-	 * Setter for PayerInfo
+	 * Setter for payerInfo
 	 */
-	 public void setPayerInfo(PayerInfoType PayerInfo) {
-	 	this.PayerInfo = PayerInfo;
+	 public void setPayerInfo(PayerInfoType payerInfo) {
+	 	this.payerInfo = payerInfo;
 	 }
 	 
 	/**
-	 * Getter for BillingAgreementMax
+	 * Getter for billingAgreementMax
 	 */
 	 public BasicAmountType getBillingAgreementMax() {
-	 	return BillingAgreementMax;
+	 	return billingAgreementMax;
 	 }
 	 
 	/**
-	 * Setter for BillingAgreementMax
+	 * Setter for billingAgreementMax
 	 */
-	 public void setBillingAgreementMax(BasicAmountType BillingAgreementMax) {
-	 	this.BillingAgreementMax = BillingAgreementMax;
+	 public void setBillingAgreementMax(BasicAmountType billingAgreementMax) {
+	 	this.billingAgreementMax = billingAgreementMax;
 	 }
 	 
 	/**
-	 * Getter for BillingAddress
+	 * Getter for billingAddress
 	 */
 	 public AddressType getBillingAddress() {
-	 	return BillingAddress;
+	 	return billingAddress;
 	 }
 	 
 	/**
-	 * Setter for BillingAddress
+	 * Setter for billingAddress
 	 */
-	 public void setBillingAddress(AddressType BillingAddress) {
-	 	this.BillingAddress = BillingAddress;
+	 public void setBillingAddress(AddressType billingAddress) {
+	 	this.billingAddress = billingAddress;
 	 }
 	 
 
@@ -194,34 +194,34 @@ public class BAUpdateResponseDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("BillingAgreementID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BillingAgreementID = childNode.getTextContent();
+		    this.billingAgreementID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("BillingAgreementDescription", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BillingAgreementDescription = childNode.getTextContent();
+		    this.billingAgreementDescription = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("BillingAgreementStatus", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BillingAgreementStatus = MerchantPullStatusCodeType.fromValue(childNode.getTextContent());
+		    this.billingAgreementStatus = MerchantPullStatusCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("BillingAgreementCustom", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BillingAgreementCustom = childNode.getTextContent();
+		    this.billingAgreementCustom = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PayerInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PayerInfo =  new PayerInfoType(childNode);
+		    this.payerInfo =  new PayerInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("BillingAgreementMax", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BillingAgreementMax =  new BasicAmountType(childNode);
+		    this.billingAgreementMax =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("BillingAddress", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BillingAddress =  new AddressType(childNode);
+		    this.billingAddress =  new AddressType(childNode);
 		}
 	}
  

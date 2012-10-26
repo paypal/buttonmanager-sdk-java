@@ -26,22 +26,22 @@ public class IncentiveAppliedToType{
 	/**
 	 * 	 
 	 */ 
-	private String BucketId;
+	private String bucketId;
 
 	/**
 	 * 	 
 	 */ 
-	private String ItemId;
+	private String itemId;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType IncentiveAmount;
+	private BasicAmountType incentiveAmount;
 
 	/**
 	 * 	 
 	 */ 
-	private String SubType;
+	private String subType;
 
 	
 
@@ -52,59 +52,59 @@ public class IncentiveAppliedToType{
 	}	
 
 	/**
-	 * Getter for BucketId
+	 * Getter for bucketId
 	 */
 	 public String getBucketId() {
-	 	return BucketId;
+	 	return bucketId;
 	 }
 	 
 	/**
-	 * Setter for BucketId
+	 * Setter for bucketId
 	 */
-	 public void setBucketId(String BucketId) {
-	 	this.BucketId = BucketId;
+	 public void setBucketId(String bucketId) {
+	 	this.bucketId = bucketId;
 	 }
 	 
 	/**
-	 * Getter for ItemId
+	 * Getter for itemId
 	 */
 	 public String getItemId() {
-	 	return ItemId;
+	 	return itemId;
 	 }
 	 
 	/**
-	 * Setter for ItemId
+	 * Setter for itemId
 	 */
-	 public void setItemId(String ItemId) {
-	 	this.ItemId = ItemId;
+	 public void setItemId(String itemId) {
+	 	this.itemId = itemId;
 	 }
 	 
 	/**
-	 * Getter for IncentiveAmount
+	 * Getter for incentiveAmount
 	 */
 	 public BasicAmountType getIncentiveAmount() {
-	 	return IncentiveAmount;
+	 	return incentiveAmount;
 	 }
 	 
 	/**
-	 * Setter for IncentiveAmount
+	 * Setter for incentiveAmount
 	 */
-	 public void setIncentiveAmount(BasicAmountType IncentiveAmount) {
-	 	this.IncentiveAmount = IncentiveAmount;
+	 public void setIncentiveAmount(BasicAmountType incentiveAmount) {
+	 	this.incentiveAmount = incentiveAmount;
 	 }
 	 
 	/**
-	 * Getter for SubType
+	 * Getter for subType
 	 */
 	 public String getSubType() {
-	 	return SubType;
+	 	return subType;
 	 }
 	 
 	/**
-	 * Setter for SubType
+	 * Setter for subType
 	 */
-	 public void setSubType(String SubType) {
-	 	this.SubType = SubType;
+	 public void setSubType(String subType) {
+	 	this.subType = subType;
 	 }
 	 
 
@@ -128,21 +128,21 @@ public class IncentiveAppliedToType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("BucketId", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BucketId = childNode.getTextContent();
+		    this.bucketId = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ItemId", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ItemId = childNode.getTextContent();
+		    this.itemId = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("IncentiveAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.IncentiveAmount =  new BasicAmountType(childNode);
+		    this.incentiveAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("SubType", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SubType = childNode.getTextContent();
+		    this.subType = childNode.getTextContent();
 		}
 	
 	}

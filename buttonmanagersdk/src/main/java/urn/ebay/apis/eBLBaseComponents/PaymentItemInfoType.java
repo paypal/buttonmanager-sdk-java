@@ -32,43 +32,43 @@ public class PaymentItemInfoType{
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters 	 
 	 */ 
-	private String InvoiceID;
+	private String invoiceID;
 
 	/**
 	 * Custom field you set in the original transaction. Character
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters	 
 	 */ 
-	private String Custom;
+	private String custom;
 
 	/**
 	 * Memo entered by your customer in PayPal Website Payments
 	 * note field. Character length and limitations: 255
 	 * single-byte alphanumeric characters	 
 	 */ 
-	private String Memo;
+	private String memo;
 
 	/**
 	 * Amount of tax charged on transaction	 
 	 */ 
-	private String SalesTax;
+	private String salesTax;
 
 	/**
 	 * Details about the indivudal purchased item	 
 	 */ 
-	private List<PaymentItemType> PaymentItem = new ArrayList<PaymentItemType>();
+	private List<PaymentItemType> paymentItem = new ArrayList<PaymentItemType>();
 
 	/**
 	 * Information about the transaction if it was created via
 	 * PayPal Subcriptions	 
 	 */ 
-	private SubscriptionInfoType Subscription;
+	private SubscriptionInfoType subscription;
 
 	/**
 	 * Information about the transaction if it was created via an
 	 * auction	 
 	 */ 
-	private AuctionInfoType Auction;
+	private AuctionInfoType auction;
 
 	
 
@@ -79,101 +79,101 @@ public class PaymentItemInfoType{
 	}	
 
 	/**
-	 * Getter for InvoiceID
+	 * Getter for invoiceID
 	 */
 	 public String getInvoiceID() {
-	 	return InvoiceID;
+	 	return invoiceID;
 	 }
 	 
 	/**
-	 * Setter for InvoiceID
+	 * Setter for invoiceID
 	 */
-	 public void setInvoiceID(String InvoiceID) {
-	 	this.InvoiceID = InvoiceID;
+	 public void setInvoiceID(String invoiceID) {
+	 	this.invoiceID = invoiceID;
 	 }
 	 
 	/**
-	 * Getter for Custom
+	 * Getter for custom
 	 */
 	 public String getCustom() {
-	 	return Custom;
+	 	return custom;
 	 }
 	 
 	/**
-	 * Setter for Custom
+	 * Setter for custom
 	 */
-	 public void setCustom(String Custom) {
-	 	this.Custom = Custom;
+	 public void setCustom(String custom) {
+	 	this.custom = custom;
 	 }
 	 
 	/**
-	 * Getter for Memo
+	 * Getter for memo
 	 */
 	 public String getMemo() {
-	 	return Memo;
+	 	return memo;
 	 }
 	 
 	/**
-	 * Setter for Memo
+	 * Setter for memo
 	 */
-	 public void setMemo(String Memo) {
-	 	this.Memo = Memo;
+	 public void setMemo(String memo) {
+	 	this.memo = memo;
 	 }
 	 
 	/**
-	 * Getter for SalesTax
+	 * Getter for salesTax
 	 */
 	 public String getSalesTax() {
-	 	return SalesTax;
+	 	return salesTax;
 	 }
 	 
 	/**
-	 * Setter for SalesTax
+	 * Setter for salesTax
 	 */
-	 public void setSalesTax(String SalesTax) {
-	 	this.SalesTax = SalesTax;
+	 public void setSalesTax(String salesTax) {
+	 	this.salesTax = salesTax;
 	 }
 	 
 	/**
-	 * Getter for PaymentItem
+	 * Getter for paymentItem
 	 */
 	 public List<PaymentItemType> getPaymentItem() {
-	 	return PaymentItem;
+	 	return paymentItem;
 	 }
 	 
 	/**
-	 * Setter for PaymentItem
+	 * Setter for paymentItem
 	 */
-	 public void setPaymentItem(List<PaymentItemType> PaymentItem) {
-	 	this.PaymentItem = PaymentItem;
+	 public void setPaymentItem(List<PaymentItemType> paymentItem) {
+	 	this.paymentItem = paymentItem;
 	 }
 	 
 	/**
-	 * Getter for Subscription
+	 * Getter for subscription
 	 */
 	 public SubscriptionInfoType getSubscription() {
-	 	return Subscription;
+	 	return subscription;
 	 }
 	 
 	/**
-	 * Setter for Subscription
+	 * Setter for subscription
 	 */
-	 public void setSubscription(SubscriptionInfoType Subscription) {
-	 	this.Subscription = Subscription;
+	 public void setSubscription(SubscriptionInfoType subscription) {
+	 	this.subscription = subscription;
 	 }
 	 
 	/**
-	 * Getter for Auction
+	 * Getter for auction
 	 */
 	 public AuctionInfoType getAuction() {
-	 	return Auction;
+	 	return auction;
 	 }
 	 
 	/**
-	 * Setter for Auction
+	 * Setter for auction
 	 */
-	 public void setAuction(AuctionInfoType Auction) {
-	 	this.Auction = Auction;
+	 public void setAuction(AuctionInfoType auction) {
+	 	this.auction = auction;
 	 }
 	 
 
@@ -197,38 +197,38 @@ public class PaymentItemInfoType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("InvoiceID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.InvoiceID = childNode.getTextContent();
+		    this.invoiceID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Custom", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Custom = childNode.getTextContent();
+		    this.custom = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Memo", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Memo = childNode.getTextContent();
+		    this.memo = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("SalesTax", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SalesTax = childNode.getTextContent();
+		    this.salesTax = childNode.getTextContent();
 		}
 	
         nodeList = (NodeList) xpath.evaluate("PaymentItem", node, XPathConstants.NODESET);
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.PaymentItem.add(new PaymentItemType(subNode));
+				this.paymentItem.add(new PaymentItemType(subNode));
 			}
 		}
 		childNode = (Node) xpath.evaluate("Subscription", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Subscription =  new SubscriptionInfoType(childNode);
+		    this.subscription =  new SubscriptionInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("Auction", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Auction =  new AuctionInfoType(childNode);
+		    this.auction =  new AuctionInfoType(childNode);
 		}
 	}
  

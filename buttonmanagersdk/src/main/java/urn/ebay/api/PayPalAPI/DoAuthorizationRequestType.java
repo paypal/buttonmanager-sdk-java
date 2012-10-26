@@ -11,6 +11,8 @@ import com.paypal.core.SDKUtil;
  */
 public class DoAuthorizationRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * The value of the order’s transaction identification number
@@ -18,14 +20,14 @@ public class DoAuthorizationRequestType extends AbstractRequestType {
 	 * limits: 19 single-byte characters maximum	  
 	 *@Required	 
 	 */ 
-	private String TransactionID;
+	private String transactionID;
 
 	/**
 	 * Type of transaction to authorize. The only allowable value
 	 * is Order, which means that the transaction represents a
 	 * customer order that can be fulfilled over 29 days. Optional	 
 	 */ 
-	private TransactionEntityType TransactionEntity;
+	private TransactionEntityType transactionEntity;
 
 	/**
 	 * Amount to authorize. Required Limitations: Must not exceed
@@ -34,23 +36,23 @@ public class DoAuthorizationRequestType extends AbstractRequestType {
 	 * must be a comma (,).	  
 	 *@Required	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	/**
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 	 
 	 */ 
-	private String MsgSubID;
+	private String msgSubID;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public DoAuthorizationRequestType (String TransactionID, BasicAmountType Amount){
-		this.TransactionID = TransactionID;
-		this.Amount = Amount;
+	public DoAuthorizationRequestType (String transactionID, BasicAmountType amount){
+		this.transactionID = transactionID;
+		this.amount = amount;
 	}	
 
 	/**
@@ -60,82 +62,96 @@ public class DoAuthorizationRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for TransactionID
+	 * Getter for transactionID
 	 */
 	 public String getTransactionID() {
-	 	return TransactionID;
+	 	return transactionID;
 	 }
 	 
 	/**
-	 * Setter for TransactionID
+	 * Setter for transactionID
 	 */
-	 public void setTransactionID(String TransactionID) {
-	 	this.TransactionID = TransactionID;
+	 public void setTransactionID(String transactionID) {
+	 	this.transactionID = transactionID;
 	 }
 	 
 	/**
-	 * Getter for TransactionEntity
+	 * Getter for transactionEntity
 	 */
 	 public TransactionEntityType getTransactionEntity() {
-	 	return TransactionEntity;
+	 	return transactionEntity;
 	 }
 	 
 	/**
-	 * Setter for TransactionEntity
+	 * Setter for transactionEntity
 	 */
-	 public void setTransactionEntity(TransactionEntityType TransactionEntity) {
-	 	this.TransactionEntity = TransactionEntity;
+	 public void setTransactionEntity(TransactionEntityType transactionEntity) {
+	 	this.transactionEntity = transactionEntity;
 	 }
 	 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 	/**
-	 * Getter for MsgSubID
+	 * Getter for msgSubID
 	 */
 	 public String getMsgSubID() {
-	 	return MsgSubID;
+	 	return msgSubID;
 	 }
 	 
 	/**
-	 * Setter for MsgSubID
+	 * Setter for msgSubID
 	 */
-	 public void setMsgSubID(String MsgSubID) {
-	 	this.MsgSubID = MsgSubID;
+	 public void setMsgSubID(String msgSubID) {
+	 	this.msgSubID = msgSubID;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(TransactionID != null) {
-			sb.append("<urn:TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionID));
-			sb.append("</urn:TransactionID>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(TransactionEntity != null) {
-			sb.append("<urn:TransactionEntity>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionEntity.getValue()));
-			sb.append("</urn:TransactionEntity>");
+		sb.append(super.toXMLString(prefix, null));
+		if(transactionID != null) {
+			sb.append("<").append(preferredPrefix).append(":TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(transactionID));
+			sb.append("</").append(preferredPrefix).append(":TransactionID>");
 		}
-		if(Amount != null) {
-			sb.append("<urn:Amount");
-			sb.append(Amount.toXMLString());
-			sb.append("</urn:Amount>");
+		if(transactionEntity != null) {
+			sb.append("<").append(preferredPrefix).append(":TransactionEntity>").append(SDKUtil.escapeInvalidXmlCharsRegex(transactionEntity.getValue()));
+			sb.append("</").append(preferredPrefix).append(":TransactionEntity>");
 		}
-		if(MsgSubID != null) {
-			sb.append("<urn:MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(MsgSubID));
-			sb.append("</urn:MsgSubID>");
+		if(amount != null) {
+			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
+		}
+		if(msgSubID != null) {
+			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(msgSubID));
+			sb.append("</").append(preferredPrefix).append(":MsgSubID>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

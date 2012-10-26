@@ -28,7 +28,7 @@ public class GetBillingAgreementCustomerDetailsResponseType extends AbstractResp
 	 * 	  
 	 *@Required	 
 	 */ 
-	private GetBillingAgreementCustomerDetailsResponseDetailsType GetBillingAgreementCustomerDetailsResponseDetails;
+	private GetBillingAgreementCustomerDetailsResponseDetailsType getBillingAgreementCustomerDetailsResponseDetails;
 
 	
 
@@ -39,17 +39,17 @@ public class GetBillingAgreementCustomerDetailsResponseType extends AbstractResp
 	}	
 
 	/**
-	 * Getter for GetBillingAgreementCustomerDetailsResponseDetails
+	 * Getter for getBillingAgreementCustomerDetailsResponseDetails
 	 */
 	 public GetBillingAgreementCustomerDetailsResponseDetailsType getGetBillingAgreementCustomerDetailsResponseDetails() {
-	 	return GetBillingAgreementCustomerDetailsResponseDetails;
+	 	return getBillingAgreementCustomerDetailsResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for GetBillingAgreementCustomerDetailsResponseDetails
+	 * Setter for getBillingAgreementCustomerDetailsResponseDetails
 	 */
-	 public void setGetBillingAgreementCustomerDetailsResponseDetails(GetBillingAgreementCustomerDetailsResponseDetailsType GetBillingAgreementCustomerDetailsResponseDetails) {
-	 	this.GetBillingAgreementCustomerDetailsResponseDetails = GetBillingAgreementCustomerDetailsResponseDetails;
+	 public void setGetBillingAgreementCustomerDetailsResponseDetails(GetBillingAgreementCustomerDetailsResponseDetailsType getBillingAgreementCustomerDetailsResponseDetails) {
+	 	this.getBillingAgreementCustomerDetailsResponseDetails = getBillingAgreementCustomerDetailsResponseDetails;
 	 }
 	 
 
@@ -74,7 +74,7 @@ public class GetBillingAgreementCustomerDetailsResponseType extends AbstractResp
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("GetBillingAgreementCustomerDetailsResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.GetBillingAgreementCustomerDetailsResponseDetails =  new GetBillingAgreementCustomerDetailsResponseDetailsType(childNode);
+		    this.getBillingAgreementCustomerDetailsResponseDetails =  new GetBillingAgreementCustomerDetailsResponseDetailsType(childNode);
 		}
 	}
  

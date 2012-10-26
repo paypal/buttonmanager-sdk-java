@@ -13,6 +13,8 @@ import com.paypal.core.SDKUtil;
  */
 public class DoReauthorizationRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * The value of a previously authorized transaction
@@ -23,7 +25,7 @@ public class DoReauthorizationRequestType extends AbstractRequestType {
 	 * limits: 19 single-byte characters maximum	  
 	 *@Required	 
 	 */ 
-	private String AuthorizationID;
+	private String authorizationID;
 
 	/**
 	 * Amount to reauthorize. Required Limitations: Must not exceed
@@ -32,23 +34,23 @@ public class DoReauthorizationRequestType extends AbstractRequestType {
 	 * must be a comma (,).	  
 	 *@Required	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	/**
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 	 
 	 */ 
-	private String MsgSubID;
+	private String msgSubID;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public DoReauthorizationRequestType (String AuthorizationID, BasicAmountType Amount){
-		this.AuthorizationID = AuthorizationID;
-		this.Amount = Amount;
+	public DoReauthorizationRequestType (String authorizationID, BasicAmountType amount){
+		this.authorizationID = authorizationID;
+		this.amount = amount;
 	}	
 
 	/**
@@ -58,64 +60,78 @@ public class DoReauthorizationRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for AuthorizationID
+	 * Getter for authorizationID
 	 */
 	 public String getAuthorizationID() {
-	 	return AuthorizationID;
+	 	return authorizationID;
 	 }
 	 
 	/**
-	 * Setter for AuthorizationID
+	 * Setter for authorizationID
 	 */
-	 public void setAuthorizationID(String AuthorizationID) {
-	 	this.AuthorizationID = AuthorizationID;
+	 public void setAuthorizationID(String authorizationID) {
+	 	this.authorizationID = authorizationID;
 	 }
 	 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 	/**
-	 * Getter for MsgSubID
+	 * Getter for msgSubID
 	 */
 	 public String getMsgSubID() {
-	 	return MsgSubID;
+	 	return msgSubID;
 	 }
 	 
 	/**
-	 * Setter for MsgSubID
+	 * Setter for msgSubID
 	 */
-	 public void setMsgSubID(String MsgSubID) {
-	 	this.MsgSubID = MsgSubID;
+	 public void setMsgSubID(String msgSubID) {
+	 	this.msgSubID = msgSubID;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(AuthorizationID != null) {
-			sb.append("<urn:AuthorizationID>").append(SDKUtil.escapeInvalidXmlCharsRegex(AuthorizationID));
-			sb.append("</urn:AuthorizationID>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(Amount != null) {
-			sb.append("<urn:Amount");
-			sb.append(Amount.toXMLString());
-			sb.append("</urn:Amount>");
+		sb.append(super.toXMLString(prefix, null));
+		if(authorizationID != null) {
+			sb.append("<").append(preferredPrefix).append(":AuthorizationID>").append(SDKUtil.escapeInvalidXmlCharsRegex(authorizationID));
+			sb.append("</").append(preferredPrefix).append(":AuthorizationID>");
 		}
-		if(MsgSubID != null) {
-			sb.append("<urn:MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(MsgSubID));
-			sb.append("</urn:MsgSubID>");
+		if(amount != null) {
+			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
+		}
+		if(msgSubID != null) {
+			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(msgSubID));
+			sb.append("</").append(preferredPrefix).append(":MsgSubID>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

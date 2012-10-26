@@ -27,26 +27,26 @@ public class GetAuthDetailsResponseDetailsType{
 	 * The first name of the User. Character length and
 	 * limitations: 127 single-byte alphanumeric characters	 
 	 */ 
-	private String FirstName;
+	private String firstName;
 
 	/**
 	 * The Last name of the user. Character length and limitations:
 	 * 127 single-byte alphanumeric characters	 
 	 */ 
-	private String LastName;
+	private String lastName;
 
 	/**
 	 * The email address of the user. Character length and
 	 * limitations: 256 single-byte alphanumeric characters. 	 
 	 */ 
-	private String Email;
+	private String email;
 
 	/**
 	 * Encrypted PayPal customer account identification number.
 	 * Required Character length and limitations: 127 single-byte
 	 * characters.	 
 	 */ 
-	private String PayerID;
+	private String payerID;
 
 	
 
@@ -57,59 +57,59 @@ public class GetAuthDetailsResponseDetailsType{
 	}	
 
 	/**
-	 * Getter for FirstName
+	 * Getter for firstName
 	 */
 	 public String getFirstName() {
-	 	return FirstName;
+	 	return firstName;
 	 }
 	 
 	/**
-	 * Setter for FirstName
+	 * Setter for firstName
 	 */
-	 public void setFirstName(String FirstName) {
-	 	this.FirstName = FirstName;
+	 public void setFirstName(String firstName) {
+	 	this.firstName = firstName;
 	 }
 	 
 	/**
-	 * Getter for LastName
+	 * Getter for lastName
 	 */
 	 public String getLastName() {
-	 	return LastName;
+	 	return lastName;
 	 }
 	 
 	/**
-	 * Setter for LastName
+	 * Setter for lastName
 	 */
-	 public void setLastName(String LastName) {
-	 	this.LastName = LastName;
+	 public void setLastName(String lastName) {
+	 	this.lastName = lastName;
 	 }
 	 
 	/**
-	 * Getter for Email
+	 * Getter for email
 	 */
 	 public String getEmail() {
-	 	return Email;
+	 	return email;
 	 }
 	 
 	/**
-	 * Setter for Email
+	 * Setter for email
 	 */
-	 public void setEmail(String Email) {
-	 	this.Email = Email;
+	 public void setEmail(String email) {
+	 	this.email = email;
 	 }
 	 
 	/**
-	 * Getter for PayerID
+	 * Getter for payerID
 	 */
 	 public String getPayerID() {
-	 	return PayerID;
+	 	return payerID;
 	 }
 	 
 	/**
-	 * Setter for PayerID
+	 * Setter for payerID
 	 */
-	 public void setPayerID(String PayerID) {
-	 	this.PayerID = PayerID;
+	 public void setPayerID(String payerID) {
+	 	this.payerID = payerID;
 	 }
 	 
 
@@ -133,22 +133,22 @@ public class GetAuthDetailsResponseDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("FirstName", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.FirstName = childNode.getTextContent();
+		    this.firstName = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("LastName", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.LastName = childNode.getTextContent();
+		    this.lastName = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Email", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Email = childNode.getTextContent();
+		    this.email = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PayerID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PayerID = childNode.getTextContent();
+		    this.payerID = childNode.getTextContent();
 		}
 	
 	}

@@ -31,49 +31,49 @@ public class BMGetInventoryResponseType extends AbstractResponseType {
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String HostedButtonID;
+	private String hostedButtonID;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String TrackInv;
+	private String trackInv;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String TrackPnl;
+	private String trackPnl;
 
 	/**
 	 * 	 
 	 */ 
-	private ItemTrackingDetailsType ItemTrackingDetails;
+	private ItemTrackingDetailsType itemTrackingDetails;
 
 	/**
 	 * 	 
 	 */ 
-	private String OptionIndex;
+	private String optionIndex;
 
 	/**
 	 * 	 
 	 */ 
-	private String OptionName;
+	private String optionName;
 
 	/**
 	 * 	 
 	 */ 
-	private List<OptionTrackingDetailsType> OptionTrackingDetails = new ArrayList<OptionTrackingDetailsType>();
+	private List<OptionTrackingDetailsType> optionTrackingDetails = new ArrayList<OptionTrackingDetailsType>();
 
 	/**
 	 * 	 
 	 */ 
-	private String SoldoutURL;
+	private String soldoutURL;
 
 	/**
 	 * 	 
 	 */ 
-	private List<String> DigitalDownloadKeys = new ArrayList<String>();
+	private List<String> digitalDownloadKeys = new ArrayList<String>();
 
 	
 
@@ -84,129 +84,129 @@ public class BMGetInventoryResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for HostedButtonID
+	 * Getter for hostedButtonID
 	 */
 	 public String getHostedButtonID() {
-	 	return HostedButtonID;
+	 	return hostedButtonID;
 	 }
 	 
 	/**
-	 * Setter for HostedButtonID
+	 * Setter for hostedButtonID
 	 */
-	 public void setHostedButtonID(String HostedButtonID) {
-	 	this.HostedButtonID = HostedButtonID;
+	 public void setHostedButtonID(String hostedButtonID) {
+	 	this.hostedButtonID = hostedButtonID;
 	 }
 	 
 	/**
-	 * Getter for TrackInv
+	 * Getter for trackInv
 	 */
 	 public String getTrackInv() {
-	 	return TrackInv;
+	 	return trackInv;
 	 }
 	 
 	/**
-	 * Setter for TrackInv
+	 * Setter for trackInv
 	 */
-	 public void setTrackInv(String TrackInv) {
-	 	this.TrackInv = TrackInv;
+	 public void setTrackInv(String trackInv) {
+	 	this.trackInv = trackInv;
 	 }
 	 
 	/**
-	 * Getter for TrackPnl
+	 * Getter for trackPnl
 	 */
 	 public String getTrackPnl() {
-	 	return TrackPnl;
+	 	return trackPnl;
 	 }
 	 
 	/**
-	 * Setter for TrackPnl
+	 * Setter for trackPnl
 	 */
-	 public void setTrackPnl(String TrackPnl) {
-	 	this.TrackPnl = TrackPnl;
+	 public void setTrackPnl(String trackPnl) {
+	 	this.trackPnl = trackPnl;
 	 }
 	 
 	/**
-	 * Getter for ItemTrackingDetails
+	 * Getter for itemTrackingDetails
 	 */
 	 public ItemTrackingDetailsType getItemTrackingDetails() {
-	 	return ItemTrackingDetails;
+	 	return itemTrackingDetails;
 	 }
 	 
 	/**
-	 * Setter for ItemTrackingDetails
+	 * Setter for itemTrackingDetails
 	 */
-	 public void setItemTrackingDetails(ItemTrackingDetailsType ItemTrackingDetails) {
-	 	this.ItemTrackingDetails = ItemTrackingDetails;
+	 public void setItemTrackingDetails(ItemTrackingDetailsType itemTrackingDetails) {
+	 	this.itemTrackingDetails = itemTrackingDetails;
 	 }
 	 
 	/**
-	 * Getter for OptionIndex
+	 * Getter for optionIndex
 	 */
 	 public String getOptionIndex() {
-	 	return OptionIndex;
+	 	return optionIndex;
 	 }
 	 
 	/**
-	 * Setter for OptionIndex
+	 * Setter for optionIndex
 	 */
-	 public void setOptionIndex(String OptionIndex) {
-	 	this.OptionIndex = OptionIndex;
+	 public void setOptionIndex(String optionIndex) {
+	 	this.optionIndex = optionIndex;
 	 }
 	 
 	/**
-	 * Getter for OptionName
+	 * Getter for optionName
 	 */
 	 public String getOptionName() {
-	 	return OptionName;
+	 	return optionName;
 	 }
 	 
 	/**
-	 * Setter for OptionName
+	 * Setter for optionName
 	 */
-	 public void setOptionName(String OptionName) {
-	 	this.OptionName = OptionName;
+	 public void setOptionName(String optionName) {
+	 	this.optionName = optionName;
 	 }
 	 
 	/**
-	 * Getter for OptionTrackingDetails
+	 * Getter for optionTrackingDetails
 	 */
 	 public List<OptionTrackingDetailsType> getOptionTrackingDetails() {
-	 	return OptionTrackingDetails;
+	 	return optionTrackingDetails;
 	 }
 	 
 	/**
-	 * Setter for OptionTrackingDetails
+	 * Setter for optionTrackingDetails
 	 */
-	 public void setOptionTrackingDetails(List<OptionTrackingDetailsType> OptionTrackingDetails) {
-	 	this.OptionTrackingDetails = OptionTrackingDetails;
+	 public void setOptionTrackingDetails(List<OptionTrackingDetailsType> optionTrackingDetails) {
+	 	this.optionTrackingDetails = optionTrackingDetails;
 	 }
 	 
 	/**
-	 * Getter for SoldoutURL
+	 * Getter for soldoutURL
 	 */
 	 public String getSoldoutURL() {
-	 	return SoldoutURL;
+	 	return soldoutURL;
 	 }
 	 
 	/**
-	 * Setter for SoldoutURL
+	 * Setter for soldoutURL
 	 */
-	 public void setSoldoutURL(String SoldoutURL) {
-	 	this.SoldoutURL = SoldoutURL;
+	 public void setSoldoutURL(String soldoutURL) {
+	 	this.soldoutURL = soldoutURL;
 	 }
 	 
 	/**
-	 * Getter for DigitalDownloadKeys
+	 * Getter for digitalDownloadKeys
 	 */
 	 public List<String> getDigitalDownloadKeys() {
-	 	return DigitalDownloadKeys;
+	 	return digitalDownloadKeys;
 	 }
 	 
 	/**
-	 * Setter for DigitalDownloadKeys
+	 * Setter for digitalDownloadKeys
 	 */
-	 public void setDigitalDownloadKeys(List<String> DigitalDownloadKeys) {
-	 	this.DigitalDownloadKeys = DigitalDownloadKeys;
+	 public void setDigitalDownloadKeys(List<String> digitalDownloadKeys) {
+	 	this.digitalDownloadKeys = digitalDownloadKeys;
 	 }
 	 
 
@@ -231,43 +231,43 @@ public class BMGetInventoryResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("HostedButtonID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.HostedButtonID = childNode.getTextContent();
+		    this.hostedButtonID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("TrackInv", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TrackInv = childNode.getTextContent();
+		    this.trackInv = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("TrackPnl", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TrackPnl = childNode.getTextContent();
+		    this.trackPnl = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ItemTrackingDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ItemTrackingDetails =  new ItemTrackingDetailsType(childNode);
+		    this.itemTrackingDetails =  new ItemTrackingDetailsType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("OptionIndex", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OptionIndex = childNode.getTextContent();
+		    this.optionIndex = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("OptionName", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OptionName = childNode.getTextContent();
+		    this.optionName = childNode.getTextContent();
 		}
 	
         nodeList = (NodeList) xpath.evaluate("OptionTrackingDetails", node, XPathConstants.NODESET);
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.OptionTrackingDetails.add(new OptionTrackingDetailsType(subNode));
+				this.optionTrackingDetails.add(new OptionTrackingDetailsType(subNode));
 			}
 		}
 		childNode = (Node) xpath.evaluate("SoldoutURL", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SoldoutURL = childNode.getTextContent();
+		    this.soldoutURL = childNode.getTextContent();
 		}
 	
         nodeList = (NodeList) xpath.evaluate("DigitalDownloadKeys", node, XPathConstants.NODESET);
@@ -275,7 +275,7 @@ public class BMGetInventoryResponseType extends AbstractResponseType {
 			for(int i=0; i < nodeList.getLength(); i++) {
 			    Node subNode = nodeList.item(i);
 			    String value = subNode.getTextContent();
-			    this.DigitalDownloadKeys.add(value);
+			    this.digitalDownloadKeys.add(value);
 					
 			}
 		}

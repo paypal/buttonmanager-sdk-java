@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class BMButtonSearchReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private BMButtonSearchRequestType BMButtonSearchRequest;
+	private BMButtonSearchRequestType bMButtonSearchRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class BMButtonSearchReq{
 	}	
 
 	/**
-	 * Getter for BMButtonSearchRequest
+	 * Getter for bMButtonSearchRequest
 	 */
 	 public BMButtonSearchRequestType getBMButtonSearchRequest() {
-	 	return BMButtonSearchRequest;
+	 	return bMButtonSearchRequest;
 	 }
 	 
 	/**
-	 * Setter for BMButtonSearchRequest
+	 * Setter for bMButtonSearchRequest
 	 */
-	 public void setBMButtonSearchRequest(BMButtonSearchRequestType BMButtonSearchRequest) {
-	 	this.BMButtonSearchRequest = BMButtonSearchRequest;
+	 public void setBMButtonSearchRequest(BMButtonSearchRequestType bMButtonSearchRequest) {
+	 	this.bMButtonSearchRequest = bMButtonSearchRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:BMButtonSearchReq>");
-		if(BMButtonSearchRequest != null) {
-			sb.append("<urn:BMButtonSearchRequest>");
-			sb.append(BMButtonSearchRequest.toXMLString());
-			sb.append("</urn:BMButtonSearchRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:BMButtonSearchReq>");
+		if(bMButtonSearchRequest != null) {
+			sb.append(bMButtonSearchRequest.toXMLString(null,"BMButtonSearchRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

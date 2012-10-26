@@ -42,12 +42,12 @@ public class GetExpressCheckoutDetailsResponseDetailsType{
 	 * GetExpressCheckoutDetailsRequest. Character length and
 	 * limitations: 20 single-byte characters	 
 	 */ 
-	private String Token;
+	private String token;
 
 	/**
 	 * Information about the payer	 
 	 */ 
-	private PayerInfoType PayerInfo;
+	private PayerInfoType payerInfo;
 
 	/**
 	 * A free-form field for your own use, as set by you in the
@@ -55,7 +55,7 @@ public class GetExpressCheckoutDetailsResponseDetailsType{
 	 * length and limitations: 256 single-byte alphanumeric
 	 * characters	 
 	 */ 
-	private String Custom;
+	private String custom;
 
 	/**
 	 * Your own invoice or tracking number, as set by you in the
@@ -63,24 +63,24 @@ public class GetExpressCheckoutDetailsResponseDetailsType{
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters	 
 	 */ 
-	private String InvoiceID;
+	private String invoiceID;
 
 	/**
 	 * Payer's contact telephone number. PayPal returns a contact
 	 * telephone number only if your Merchant account profile
 	 * settings require that the buyer enter one.	 
 	 */ 
-	private String ContactPhone;
+	private String contactPhone;
 
 	/**
 	 * 	 
 	 */ 
-	private Boolean BillingAgreementAcceptedStatus;
+	private Boolean billingAgreementAcceptedStatus;
 
 	/**
 	 * 	 
 	 */ 
-	private String RedirectRequired;
+	private String redirectRequired;
 
 	/**
 	 * Customer's billing address. Optional If you have credit card
@@ -89,19 +89,19 @@ public class GetExpressCheckoutDetailsResponseDetailsType{
 	 * , PayPal returns this address in
 	 * GetExpressCheckoutDetailsResponse.	 
 	 */ 
-	private AddressType BillingAddress;
+	private AddressType billingAddress;
 
 	/**
 	 * Text note entered by the buyer in PayPal flow. 	 
 	 */ 
-	private String Note;
+	private String note;
 
 	/**
 	 * Returns the status of the EC checkout session. Values
 	 * include 'PaymentActionNotInitiated', 'PaymentActionFailed',
 	 * 'PaymentActionInProgress', 'PaymentCompleted'. 	 
 	 */ 
-	private String CheckoutStatus;
+	private String checkoutStatus;
 
 	/**
 	 * PayPal may offer a discount or gift certificate to the
@@ -110,76 +110,76 @@ public class GetExpressCheckoutDetailsResponseDetailsType{
 	 * the current charges, which will be represented as a positive
 	 * amount. 	 
 	 */ 
-	private BasicAmountType PayPalAdjustment;
+	private BasicAmountType payPalAdjustment;
 
 	/**
 	 * Information about the individual purchased items. 	 
 	 */ 
-	private List<PaymentDetailsType> PaymentDetails = new ArrayList<PaymentDetailsType>();
+	private List<PaymentDetailsType> paymentDetails = new ArrayList<PaymentDetailsType>();
 
 	/**
 	 * Information about the user selected options. 	 
 	 */ 
-	private UserSelectedOptionType UserSelectedOptions;
+	private UserSelectedOptionType userSelectedOptions;
 
 	/**
 	 * Information about the incentives that were applied from Ebay
 	 * RYP page and PayPal RYP page. 	 
 	 */ 
-	private List<IncentiveDetailsType> IncentiveDetails = new ArrayList<IncentiveDetailsType>();
+	private List<IncentiveDetailsType> incentiveDetails = new ArrayList<IncentiveDetailsType>();
 
 	/**
 	 * Information about the Gift message. 	 
 	 */ 
-	private String GiftMessage;
+	private String giftMessage;
 
 	/**
 	 * Information about the Gift receipt enable. 	 
 	 */ 
-	private String GiftReceiptEnable;
+	private String giftReceiptEnable;
 
 	/**
 	 * Information about the Gift Wrap name. 	 
 	 */ 
-	private String GiftWrapName;
+	private String giftWrapName;
 
 	/**
 	 * Information about the Gift Wrap amount. 	 
 	 */ 
-	private BasicAmountType GiftWrapAmount;
+	private BasicAmountType giftWrapAmount;
 
 	/**
 	 * Information about the Buyer marketing email. 	 
 	 */ 
-	private String BuyerMarketingEmail;
+	private String buyerMarketingEmail;
 
 	/**
 	 * Information about the survey question. 	 
 	 */ 
-	private String SurveyQuestion;
+	private String surveyQuestion;
 
 	/**
 	 * Information about the survey choice selected by the user. 	 
 	 */ 
-	private List<String> SurveyChoiceSelected = new ArrayList<String>();
+	private List<String> surveyChoiceSelected = new ArrayList<String>();
 
 	/**
 	 * Contains payment request information about each bucket in
 	 * the cart. 	 
 	 */ 
-	private List<PaymentRequestInfoType> PaymentRequestInfo = new ArrayList<PaymentRequestInfoType>();
+	private List<PaymentRequestInfoType> paymentRequestInfo = new ArrayList<PaymentRequestInfoType>();
 
 	/**
 	 * Response information resulting from opt-in operation or
 	 * current login bypass status. 	 
 	 */ 
-	private ExternalRememberMeStatusDetailsType ExternalRememberMeStatusDetails;
+	private ExternalRememberMeStatusDetailsType externalRememberMeStatusDetails;
 
 	/**
 	 * Response information resulting from opt-in operation or
 	 * current login bypass status. 	 
 	 */ 
-	private RefreshTokenStatusDetailsType RefreshTokenStatusDetails;
+	private RefreshTokenStatusDetailsType refreshTokenStatusDetails;
 
 	
 
@@ -190,339 +190,339 @@ public class GetExpressCheckoutDetailsResponseDetailsType{
 	}	
 
 	/**
-	 * Getter for Token
+	 * Getter for token
 	 */
 	 public String getToken() {
-	 	return Token;
+	 	return token;
 	 }
 	 
 	/**
-	 * Setter for Token
+	 * Setter for token
 	 */
-	 public void setToken(String Token) {
-	 	this.Token = Token;
+	 public void setToken(String token) {
+	 	this.token = token;
 	 }
 	 
 	/**
-	 * Getter for PayerInfo
+	 * Getter for payerInfo
 	 */
 	 public PayerInfoType getPayerInfo() {
-	 	return PayerInfo;
+	 	return payerInfo;
 	 }
 	 
 	/**
-	 * Setter for PayerInfo
+	 * Setter for payerInfo
 	 */
-	 public void setPayerInfo(PayerInfoType PayerInfo) {
-	 	this.PayerInfo = PayerInfo;
+	 public void setPayerInfo(PayerInfoType payerInfo) {
+	 	this.payerInfo = payerInfo;
 	 }
 	 
 	/**
-	 * Getter for Custom
+	 * Getter for custom
 	 */
 	 public String getCustom() {
-	 	return Custom;
+	 	return custom;
 	 }
 	 
 	/**
-	 * Setter for Custom
+	 * Setter for custom
 	 */
-	 public void setCustom(String Custom) {
-	 	this.Custom = Custom;
+	 public void setCustom(String custom) {
+	 	this.custom = custom;
 	 }
 	 
 	/**
-	 * Getter for InvoiceID
+	 * Getter for invoiceID
 	 */
 	 public String getInvoiceID() {
-	 	return InvoiceID;
+	 	return invoiceID;
 	 }
 	 
 	/**
-	 * Setter for InvoiceID
+	 * Setter for invoiceID
 	 */
-	 public void setInvoiceID(String InvoiceID) {
-	 	this.InvoiceID = InvoiceID;
+	 public void setInvoiceID(String invoiceID) {
+	 	this.invoiceID = invoiceID;
 	 }
 	 
 	/**
-	 * Getter for ContactPhone
+	 * Getter for contactPhone
 	 */
 	 public String getContactPhone() {
-	 	return ContactPhone;
+	 	return contactPhone;
 	 }
 	 
 	/**
-	 * Setter for ContactPhone
+	 * Setter for contactPhone
 	 */
-	 public void setContactPhone(String ContactPhone) {
-	 	this.ContactPhone = ContactPhone;
+	 public void setContactPhone(String contactPhone) {
+	 	this.contactPhone = contactPhone;
 	 }
 	 
 	/**
-	 * Getter for BillingAgreementAcceptedStatus
+	 * Getter for billingAgreementAcceptedStatus
 	 */
 	 public Boolean getBillingAgreementAcceptedStatus() {
-	 	return BillingAgreementAcceptedStatus;
+	 	return billingAgreementAcceptedStatus;
 	 }
 	 
 	/**
-	 * Setter for BillingAgreementAcceptedStatus
+	 * Setter for billingAgreementAcceptedStatus
 	 */
-	 public void setBillingAgreementAcceptedStatus(Boolean BillingAgreementAcceptedStatus) {
-	 	this.BillingAgreementAcceptedStatus = BillingAgreementAcceptedStatus;
+	 public void setBillingAgreementAcceptedStatus(Boolean billingAgreementAcceptedStatus) {
+	 	this.billingAgreementAcceptedStatus = billingAgreementAcceptedStatus;
 	 }
 	 
 	/**
-	 * Getter for RedirectRequired
+	 * Getter for redirectRequired
 	 */
 	 public String getRedirectRequired() {
-	 	return RedirectRequired;
+	 	return redirectRequired;
 	 }
 	 
 	/**
-	 * Setter for RedirectRequired
+	 * Setter for redirectRequired
 	 */
-	 public void setRedirectRequired(String RedirectRequired) {
-	 	this.RedirectRequired = RedirectRequired;
+	 public void setRedirectRequired(String redirectRequired) {
+	 	this.redirectRequired = redirectRequired;
 	 }
 	 
 	/**
-	 * Getter for BillingAddress
+	 * Getter for billingAddress
 	 */
 	 public AddressType getBillingAddress() {
-	 	return BillingAddress;
+	 	return billingAddress;
 	 }
 	 
 	/**
-	 * Setter for BillingAddress
+	 * Setter for billingAddress
 	 */
-	 public void setBillingAddress(AddressType BillingAddress) {
-	 	this.BillingAddress = BillingAddress;
+	 public void setBillingAddress(AddressType billingAddress) {
+	 	this.billingAddress = billingAddress;
 	 }
 	 
 	/**
-	 * Getter for Note
+	 * Getter for note
 	 */
 	 public String getNote() {
-	 	return Note;
+	 	return note;
 	 }
 	 
 	/**
-	 * Setter for Note
+	 * Setter for note
 	 */
-	 public void setNote(String Note) {
-	 	this.Note = Note;
+	 public void setNote(String note) {
+	 	this.note = note;
 	 }
 	 
 	/**
-	 * Getter for CheckoutStatus
+	 * Getter for checkoutStatus
 	 */
 	 public String getCheckoutStatus() {
-	 	return CheckoutStatus;
+	 	return checkoutStatus;
 	 }
 	 
 	/**
-	 * Setter for CheckoutStatus
+	 * Setter for checkoutStatus
 	 */
-	 public void setCheckoutStatus(String CheckoutStatus) {
-	 	this.CheckoutStatus = CheckoutStatus;
+	 public void setCheckoutStatus(String checkoutStatus) {
+	 	this.checkoutStatus = checkoutStatus;
 	 }
 	 
 	/**
-	 * Getter for PayPalAdjustment
+	 * Getter for payPalAdjustment
 	 */
 	 public BasicAmountType getPayPalAdjustment() {
-	 	return PayPalAdjustment;
+	 	return payPalAdjustment;
 	 }
 	 
 	/**
-	 * Setter for PayPalAdjustment
+	 * Setter for payPalAdjustment
 	 */
-	 public void setPayPalAdjustment(BasicAmountType PayPalAdjustment) {
-	 	this.PayPalAdjustment = PayPalAdjustment;
+	 public void setPayPalAdjustment(BasicAmountType payPalAdjustment) {
+	 	this.payPalAdjustment = payPalAdjustment;
 	 }
 	 
 	/**
-	 * Getter for PaymentDetails
+	 * Getter for paymentDetails
 	 */
 	 public List<PaymentDetailsType> getPaymentDetails() {
-	 	return PaymentDetails;
+	 	return paymentDetails;
 	 }
 	 
 	/**
-	 * Setter for PaymentDetails
+	 * Setter for paymentDetails
 	 */
-	 public void setPaymentDetails(List<PaymentDetailsType> PaymentDetails) {
-	 	this.PaymentDetails = PaymentDetails;
+	 public void setPaymentDetails(List<PaymentDetailsType> paymentDetails) {
+	 	this.paymentDetails = paymentDetails;
 	 }
 	 
 	/**
-	 * Getter for UserSelectedOptions
+	 * Getter for userSelectedOptions
 	 */
 	 public UserSelectedOptionType getUserSelectedOptions() {
-	 	return UserSelectedOptions;
+	 	return userSelectedOptions;
 	 }
 	 
 	/**
-	 * Setter for UserSelectedOptions
+	 * Setter for userSelectedOptions
 	 */
-	 public void setUserSelectedOptions(UserSelectedOptionType UserSelectedOptions) {
-	 	this.UserSelectedOptions = UserSelectedOptions;
+	 public void setUserSelectedOptions(UserSelectedOptionType userSelectedOptions) {
+	 	this.userSelectedOptions = userSelectedOptions;
 	 }
 	 
 	/**
-	 * Getter for IncentiveDetails
+	 * Getter for incentiveDetails
 	 */
 	 public List<IncentiveDetailsType> getIncentiveDetails() {
-	 	return IncentiveDetails;
+	 	return incentiveDetails;
 	 }
 	 
 	/**
-	 * Setter for IncentiveDetails
+	 * Setter for incentiveDetails
 	 */
-	 public void setIncentiveDetails(List<IncentiveDetailsType> IncentiveDetails) {
-	 	this.IncentiveDetails = IncentiveDetails;
+	 public void setIncentiveDetails(List<IncentiveDetailsType> incentiveDetails) {
+	 	this.incentiveDetails = incentiveDetails;
 	 }
 	 
 	/**
-	 * Getter for GiftMessage
+	 * Getter for giftMessage
 	 */
 	 public String getGiftMessage() {
-	 	return GiftMessage;
+	 	return giftMessage;
 	 }
 	 
 	/**
-	 * Setter for GiftMessage
+	 * Setter for giftMessage
 	 */
-	 public void setGiftMessage(String GiftMessage) {
-	 	this.GiftMessage = GiftMessage;
+	 public void setGiftMessage(String giftMessage) {
+	 	this.giftMessage = giftMessage;
 	 }
 	 
 	/**
-	 * Getter for GiftReceiptEnable
+	 * Getter for giftReceiptEnable
 	 */
 	 public String getGiftReceiptEnable() {
-	 	return GiftReceiptEnable;
+	 	return giftReceiptEnable;
 	 }
 	 
 	/**
-	 * Setter for GiftReceiptEnable
+	 * Setter for giftReceiptEnable
 	 */
-	 public void setGiftReceiptEnable(String GiftReceiptEnable) {
-	 	this.GiftReceiptEnable = GiftReceiptEnable;
+	 public void setGiftReceiptEnable(String giftReceiptEnable) {
+	 	this.giftReceiptEnable = giftReceiptEnable;
 	 }
 	 
 	/**
-	 * Getter for GiftWrapName
+	 * Getter for giftWrapName
 	 */
 	 public String getGiftWrapName() {
-	 	return GiftWrapName;
+	 	return giftWrapName;
 	 }
 	 
 	/**
-	 * Setter for GiftWrapName
+	 * Setter for giftWrapName
 	 */
-	 public void setGiftWrapName(String GiftWrapName) {
-	 	this.GiftWrapName = GiftWrapName;
+	 public void setGiftWrapName(String giftWrapName) {
+	 	this.giftWrapName = giftWrapName;
 	 }
 	 
 	/**
-	 * Getter for GiftWrapAmount
+	 * Getter for giftWrapAmount
 	 */
 	 public BasicAmountType getGiftWrapAmount() {
-	 	return GiftWrapAmount;
+	 	return giftWrapAmount;
 	 }
 	 
 	/**
-	 * Setter for GiftWrapAmount
+	 * Setter for giftWrapAmount
 	 */
-	 public void setGiftWrapAmount(BasicAmountType GiftWrapAmount) {
-	 	this.GiftWrapAmount = GiftWrapAmount;
+	 public void setGiftWrapAmount(BasicAmountType giftWrapAmount) {
+	 	this.giftWrapAmount = giftWrapAmount;
 	 }
 	 
 	/**
-	 * Getter for BuyerMarketingEmail
+	 * Getter for buyerMarketingEmail
 	 */
 	 public String getBuyerMarketingEmail() {
-	 	return BuyerMarketingEmail;
+	 	return buyerMarketingEmail;
 	 }
 	 
 	/**
-	 * Setter for BuyerMarketingEmail
+	 * Setter for buyerMarketingEmail
 	 */
-	 public void setBuyerMarketingEmail(String BuyerMarketingEmail) {
-	 	this.BuyerMarketingEmail = BuyerMarketingEmail;
+	 public void setBuyerMarketingEmail(String buyerMarketingEmail) {
+	 	this.buyerMarketingEmail = buyerMarketingEmail;
 	 }
 	 
 	/**
-	 * Getter for SurveyQuestion
+	 * Getter for surveyQuestion
 	 */
 	 public String getSurveyQuestion() {
-	 	return SurveyQuestion;
+	 	return surveyQuestion;
 	 }
 	 
 	/**
-	 * Setter for SurveyQuestion
+	 * Setter for surveyQuestion
 	 */
-	 public void setSurveyQuestion(String SurveyQuestion) {
-	 	this.SurveyQuestion = SurveyQuestion;
+	 public void setSurveyQuestion(String surveyQuestion) {
+	 	this.surveyQuestion = surveyQuestion;
 	 }
 	 
 	/**
-	 * Getter for SurveyChoiceSelected
+	 * Getter for surveyChoiceSelected
 	 */
 	 public List<String> getSurveyChoiceSelected() {
-	 	return SurveyChoiceSelected;
+	 	return surveyChoiceSelected;
 	 }
 	 
 	/**
-	 * Setter for SurveyChoiceSelected
+	 * Setter for surveyChoiceSelected
 	 */
-	 public void setSurveyChoiceSelected(List<String> SurveyChoiceSelected) {
-	 	this.SurveyChoiceSelected = SurveyChoiceSelected;
+	 public void setSurveyChoiceSelected(List<String> surveyChoiceSelected) {
+	 	this.surveyChoiceSelected = surveyChoiceSelected;
 	 }
 	 
 	/**
-	 * Getter for PaymentRequestInfo
+	 * Getter for paymentRequestInfo
 	 */
 	 public List<PaymentRequestInfoType> getPaymentRequestInfo() {
-	 	return PaymentRequestInfo;
+	 	return paymentRequestInfo;
 	 }
 	 
 	/**
-	 * Setter for PaymentRequestInfo
+	 * Setter for paymentRequestInfo
 	 */
-	 public void setPaymentRequestInfo(List<PaymentRequestInfoType> PaymentRequestInfo) {
-	 	this.PaymentRequestInfo = PaymentRequestInfo;
+	 public void setPaymentRequestInfo(List<PaymentRequestInfoType> paymentRequestInfo) {
+	 	this.paymentRequestInfo = paymentRequestInfo;
 	 }
 	 
 	/**
-	 * Getter for ExternalRememberMeStatusDetails
+	 * Getter for externalRememberMeStatusDetails
 	 */
 	 public ExternalRememberMeStatusDetailsType getExternalRememberMeStatusDetails() {
-	 	return ExternalRememberMeStatusDetails;
+	 	return externalRememberMeStatusDetails;
 	 }
 	 
 	/**
-	 * Setter for ExternalRememberMeStatusDetails
+	 * Setter for externalRememberMeStatusDetails
 	 */
-	 public void setExternalRememberMeStatusDetails(ExternalRememberMeStatusDetailsType ExternalRememberMeStatusDetails) {
-	 	this.ExternalRememberMeStatusDetails = ExternalRememberMeStatusDetails;
+	 public void setExternalRememberMeStatusDetails(ExternalRememberMeStatusDetailsType externalRememberMeStatusDetails) {
+	 	this.externalRememberMeStatusDetails = externalRememberMeStatusDetails;
 	 }
 	 
 	/**
-	 * Getter for RefreshTokenStatusDetails
+	 * Getter for refreshTokenStatusDetails
 	 */
 	 public RefreshTokenStatusDetailsType getRefreshTokenStatusDetails() {
-	 	return RefreshTokenStatusDetails;
+	 	return refreshTokenStatusDetails;
 	 }
 	 
 	/**
-	 * Setter for RefreshTokenStatusDetails
+	 * Setter for refreshTokenStatusDetails
 	 */
-	 public void setRefreshTokenStatusDetails(RefreshTokenStatusDetailsType RefreshTokenStatusDetails) {
-	 	this.RefreshTokenStatusDetails = RefreshTokenStatusDetails;
+	 public void setRefreshTokenStatusDetails(RefreshTokenStatusDetailsType refreshTokenStatusDetails) {
+	 	this.refreshTokenStatusDetails = refreshTokenStatusDetails;
 	 }
 	 
 
@@ -546,101 +546,101 @@ public class GetExpressCheckoutDetailsResponseDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Token", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Token = childNode.getTextContent();
+		    this.token = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PayerInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PayerInfo =  new PayerInfoType(childNode);
+		    this.payerInfo =  new PayerInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("Custom", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Custom = childNode.getTextContent();
+		    this.custom = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("InvoiceID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.InvoiceID = childNode.getTextContent();
+		    this.invoiceID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ContactPhone", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ContactPhone = childNode.getTextContent();
+		    this.contactPhone = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("BillingAgreementAcceptedStatus", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.BillingAgreementAcceptedStatus = Boolean.valueOf(childNode.getTextContent());
+			this.billingAgreementAcceptedStatus = Boolean.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("RedirectRequired", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.RedirectRequired = childNode.getTextContent();
+		    this.redirectRequired = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("BillingAddress", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BillingAddress =  new AddressType(childNode);
+		    this.billingAddress =  new AddressType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("Note", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Note = childNode.getTextContent();
+		    this.note = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("CheckoutStatus", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CheckoutStatus = childNode.getTextContent();
+		    this.checkoutStatus = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PayPalAdjustment", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PayPalAdjustment =  new BasicAmountType(childNode);
+		    this.payPalAdjustment =  new BasicAmountType(childNode);
 		}
         nodeList = (NodeList) xpath.evaluate("PaymentDetails", node, XPathConstants.NODESET);
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.PaymentDetails.add(new PaymentDetailsType(subNode));
+				this.paymentDetails.add(new PaymentDetailsType(subNode));
 			}
 		}
 		childNode = (Node) xpath.evaluate("UserSelectedOptions", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.UserSelectedOptions =  new UserSelectedOptionType(childNode);
+		    this.userSelectedOptions =  new UserSelectedOptionType(childNode);
 		}
         nodeList = (NodeList) xpath.evaluate("IncentiveDetails", node, XPathConstants.NODESET);
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.IncentiveDetails.add(new IncentiveDetailsType(subNode));
+				this.incentiveDetails.add(new IncentiveDetailsType(subNode));
 			}
 		}
 		childNode = (Node) xpath.evaluate("GiftMessage", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.GiftMessage = childNode.getTextContent();
+		    this.giftMessage = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("GiftReceiptEnable", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.GiftReceiptEnable = childNode.getTextContent();
+		    this.giftReceiptEnable = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("GiftWrapName", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.GiftWrapName = childNode.getTextContent();
+		    this.giftWrapName = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("GiftWrapAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.GiftWrapAmount =  new BasicAmountType(childNode);
+		    this.giftWrapAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("BuyerMarketingEmail", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BuyerMarketingEmail = childNode.getTextContent();
+		    this.buyerMarketingEmail = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("SurveyQuestion", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SurveyQuestion = childNode.getTextContent();
+		    this.surveyQuestion = childNode.getTextContent();
 		}
 	
         nodeList = (NodeList) xpath.evaluate("SurveyChoiceSelected", node, XPathConstants.NODESET);
@@ -648,7 +648,7 @@ public class GetExpressCheckoutDetailsResponseDetailsType{
 			for(int i=0; i < nodeList.getLength(); i++) {
 			    Node subNode = nodeList.item(i);
 			    String value = subNode.getTextContent();
-			    this.SurveyChoiceSelected.add(value);
+			    this.surveyChoiceSelected.add(value);
 					
 			}
 		}
@@ -656,16 +656,16 @@ public class GetExpressCheckoutDetailsResponseDetailsType{
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.PaymentRequestInfo.add(new PaymentRequestInfoType(subNode));
+				this.paymentRequestInfo.add(new PaymentRequestInfoType(subNode));
 			}
 		}
 		childNode = (Node) xpath.evaluate("ExternalRememberMeStatusDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ExternalRememberMeStatusDetails =  new ExternalRememberMeStatusDetailsType(childNode);
+		    this.externalRememberMeStatusDetails =  new ExternalRememberMeStatusDetailsType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("RefreshTokenStatusDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.RefreshTokenStatusDetails =  new RefreshTokenStatusDetailsType(childNode);
+		    this.refreshTokenStatusDetails =  new RefreshTokenStatusDetailsType(childNode);
 		}
 	}
  

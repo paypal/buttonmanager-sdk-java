@@ -9,48 +9,50 @@ import com.paypal.core.SDKUtil;
  */
 public class ScheduleDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Schedule details for the Recurring Payment 	  
 	 *@Required	 
 	 */ 
-	private String Description;
+	private String description;
 
 	/**
 	 * Trial period of this schedule 	 
 	 */ 
-	private BillingPeriodDetailsType TrialPeriod;
+	private BillingPeriodDetailsType trialPeriod;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private BillingPeriodDetailsType PaymentPeriod;
+	private BillingPeriodDetailsType paymentPeriod;
 
 	/**
 	 * The max number of payments the buyer can fail before this
 	 * Recurring Payments profile is cancelled 	 
 	 */ 
-	private Integer MaxFailedPayments;
+	private Integer maxFailedPayments;
 
 	/**
 	 * 	 
 	 */ 
-	private ActivationDetailsType ActivationDetails;
+	private ActivationDetailsType activationDetails;
 
 	/**
 	 * 	 
 	 */ 
-	private AutoBillType AutoBillOutstandingAmount;
+	private AutoBillType autoBillOutstandingAmount;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public ScheduleDetailsType (String Description, BillingPeriodDetailsType PaymentPeriod){
-		this.Description = Description;
-		this.PaymentPeriod = PaymentPeriod;
+	public ScheduleDetailsType (String description, BillingPeriodDetailsType paymentPeriod){
+		this.description = description;
+		this.paymentPeriod = paymentPeriod;
 	}	
 
 	/**
@@ -60,119 +62,129 @@ public class ScheduleDetailsType{
 	}	
 
 	/**
-	 * Getter for Description
+	 * Getter for description
 	 */
 	 public String getDescription() {
-	 	return Description;
+	 	return description;
 	 }
 	 
 	/**
-	 * Setter for Description
+	 * Setter for description
 	 */
-	 public void setDescription(String Description) {
-	 	this.Description = Description;
+	 public void setDescription(String description) {
+	 	this.description = description;
 	 }
 	 
 	/**
-	 * Getter for TrialPeriod
+	 * Getter for trialPeriod
 	 */
 	 public BillingPeriodDetailsType getTrialPeriod() {
-	 	return TrialPeriod;
+	 	return trialPeriod;
 	 }
 	 
 	/**
-	 * Setter for TrialPeriod
+	 * Setter for trialPeriod
 	 */
-	 public void setTrialPeriod(BillingPeriodDetailsType TrialPeriod) {
-	 	this.TrialPeriod = TrialPeriod;
+	 public void setTrialPeriod(BillingPeriodDetailsType trialPeriod) {
+	 	this.trialPeriod = trialPeriod;
 	 }
 	 
 	/**
-	 * Getter for PaymentPeriod
+	 * Getter for paymentPeriod
 	 */
 	 public BillingPeriodDetailsType getPaymentPeriod() {
-	 	return PaymentPeriod;
+	 	return paymentPeriod;
 	 }
 	 
 	/**
-	 * Setter for PaymentPeriod
+	 * Setter for paymentPeriod
 	 */
-	 public void setPaymentPeriod(BillingPeriodDetailsType PaymentPeriod) {
-	 	this.PaymentPeriod = PaymentPeriod;
+	 public void setPaymentPeriod(BillingPeriodDetailsType paymentPeriod) {
+	 	this.paymentPeriod = paymentPeriod;
 	 }
 	 
 	/**
-	 * Getter for MaxFailedPayments
+	 * Getter for maxFailedPayments
 	 */
 	 public Integer getMaxFailedPayments() {
-	 	return MaxFailedPayments;
+	 	return maxFailedPayments;
 	 }
 	 
 	/**
-	 * Setter for MaxFailedPayments
+	 * Setter for maxFailedPayments
 	 */
-	 public void setMaxFailedPayments(Integer MaxFailedPayments) {
-	 	this.MaxFailedPayments = MaxFailedPayments;
+	 public void setMaxFailedPayments(Integer maxFailedPayments) {
+	 	this.maxFailedPayments = maxFailedPayments;
 	 }
 	 
 	/**
-	 * Getter for ActivationDetails
+	 * Getter for activationDetails
 	 */
 	 public ActivationDetailsType getActivationDetails() {
-	 	return ActivationDetails;
+	 	return activationDetails;
 	 }
 	 
 	/**
-	 * Setter for ActivationDetails
+	 * Setter for activationDetails
 	 */
-	 public void setActivationDetails(ActivationDetailsType ActivationDetails) {
-	 	this.ActivationDetails = ActivationDetails;
+	 public void setActivationDetails(ActivationDetailsType activationDetails) {
+	 	this.activationDetails = activationDetails;
 	 }
 	 
 	/**
-	 * Getter for AutoBillOutstandingAmount
+	 * Getter for autoBillOutstandingAmount
 	 */
 	 public AutoBillType getAutoBillOutstandingAmount() {
-	 	return AutoBillOutstandingAmount;
+	 	return autoBillOutstandingAmount;
 	 }
 	 
 	/**
-	 * Setter for AutoBillOutstandingAmount
+	 * Setter for autoBillOutstandingAmount
 	 */
-	 public void setAutoBillOutstandingAmount(AutoBillType AutoBillOutstandingAmount) {
-	 	this.AutoBillOutstandingAmount = AutoBillOutstandingAmount;
+	 public void setAutoBillOutstandingAmount(AutoBillType autoBillOutstandingAmount) {
+	 	this.autoBillOutstandingAmount = autoBillOutstandingAmount;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(Description != null) {
-			sb.append("<ebl:Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(Description));
-			sb.append("</ebl:Description>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(TrialPeriod != null) {
-			sb.append("<ebl:TrialPeriod>");
-			sb.append(TrialPeriod.toXMLString());
-			sb.append("</ebl:TrialPeriod>");
+		if(description != null) {
+			sb.append("<").append(preferredPrefix).append(":Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(description));
+			sb.append("</").append(preferredPrefix).append(":Description>");
 		}
-		if(PaymentPeriod != null) {
-			sb.append("<ebl:PaymentPeriod>");
-			sb.append(PaymentPeriod.toXMLString());
-			sb.append("</ebl:PaymentPeriod>");
+		if(trialPeriod != null) {
+			sb.append(trialPeriod.toXMLString(preferredPrefix,"TrialPeriod"));
 		}
-		if(MaxFailedPayments != null) {
-			sb.append("<ebl:MaxFailedPayments>").append(SDKUtil.escapeInvalidXmlCharsRegex(MaxFailedPayments));
-			sb.append("</ebl:MaxFailedPayments>");
+		if(paymentPeriod != null) {
+			sb.append(paymentPeriod.toXMLString(preferredPrefix,"PaymentPeriod"));
 		}
-		if(ActivationDetails != null) {
-			sb.append("<ebl:ActivationDetails>");
-			sb.append(ActivationDetails.toXMLString());
-			sb.append("</ebl:ActivationDetails>");
+		if(maxFailedPayments != null) {
+			sb.append("<").append(preferredPrefix).append(":MaxFailedPayments>").append(SDKUtil.escapeInvalidXmlCharsRegex(maxFailedPayments));
+			sb.append("</").append(preferredPrefix).append(":MaxFailedPayments>");
 		}
-		if(AutoBillOutstandingAmount != null) {
-			sb.append("<ebl:AutoBillOutstandingAmount>").append(SDKUtil.escapeInvalidXmlCharsRegex(AutoBillOutstandingAmount.getValue()));
-			sb.append("</ebl:AutoBillOutstandingAmount>");
+		if(activationDetails != null) {
+			sb.append(activationDetails.toXMLString(preferredPrefix,"ActivationDetails"));
+		}
+		if(autoBillOutstandingAmount != null) {
+			sb.append("<").append(preferredPrefix).append(":AutoBillOutstandingAmount>").append(SDKUtil.escapeInvalidXmlCharsRegex(autoBillOutstandingAmount.getValue()));
+			sb.append("</").append(preferredPrefix).append(":AutoBillOutstandingAmount>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

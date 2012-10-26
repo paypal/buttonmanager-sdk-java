@@ -7,6 +7,8 @@ import com.paypal.core.SDKUtil;
  */
 public class MassPayRequestItemType{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * Email address of recipient. Required You must specify
@@ -15,7 +17,7 @@ public class MassPayRequestItemType{
 	 * recipients. Character length and limitations: 127
 	 * single-byte characters maximum.	 
 	 */ 
-	private String ReceiverEmail;
+	private String receiverEmail;
 
 	/**
 	 * Phone number of recipient. Required You must specify
@@ -23,7 +25,7 @@ public class MassPayRequestItemType{
 	 * MassPayItems in a request must use the same field to specify
 	 * recipients.	 
 	 */ 
-	private String ReceiverPhone;
+	private String receiverPhone;
 
 	/**
 	 * Unique PayPal customer account number. This value
@@ -34,7 +36,7 @@ public class MassPayRequestItemType{
 	 * recipients. Character length and limitations: 17 single-byte
 	 * characters maximum.	 
 	 */ 
-	private String ReceiverID;
+	private String receiverID;
 
 	/**
 	 * Payment amount. You must set the currencyID attribute to one
@@ -44,7 +46,7 @@ public class MassPayRequestItemType{
 	 * include items that are of the same currency.	  
 	 *@Required	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	/**
 	 * Transaction-specific identification number for tracking in
@@ -52,21 +54,21 @@ public class MassPayRequestItemType{
 	 * limitations: 30 single-byte characters. No whitespace
 	 * allowed.	 
 	 */ 
-	private String UniqueId;
+	private String uniqueId;
 
 	/**
 	 * Custom note for each recipient. Optional Character length
 	 * and limitations: 4,000 single-byte alphanumeric characters	 
 	 */ 
-	private String Note;
+	private String note;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public MassPayRequestItemType (BasicAmountType Amount){
-		this.Amount = Amount;
+	public MassPayRequestItemType (BasicAmountType amount){
+		this.amount = amount;
 	}	
 
 	/**
@@ -76,117 +78,131 @@ public class MassPayRequestItemType{
 	}	
 
 	/**
-	 * Getter for ReceiverEmail
+	 * Getter for receiverEmail
 	 */
 	 public String getReceiverEmail() {
-	 	return ReceiverEmail;
+	 	return receiverEmail;
 	 }
 	 
 	/**
-	 * Setter for ReceiverEmail
+	 * Setter for receiverEmail
 	 */
-	 public void setReceiverEmail(String ReceiverEmail) {
-	 	this.ReceiverEmail = ReceiverEmail;
+	 public void setReceiverEmail(String receiverEmail) {
+	 	this.receiverEmail = receiverEmail;
 	 }
 	 
 	/**
-	 * Getter for ReceiverPhone
+	 * Getter for receiverPhone
 	 */
 	 public String getReceiverPhone() {
-	 	return ReceiverPhone;
+	 	return receiverPhone;
 	 }
 	 
 	/**
-	 * Setter for ReceiverPhone
+	 * Setter for receiverPhone
 	 */
-	 public void setReceiverPhone(String ReceiverPhone) {
-	 	this.ReceiverPhone = ReceiverPhone;
+	 public void setReceiverPhone(String receiverPhone) {
+	 	this.receiverPhone = receiverPhone;
 	 }
 	 
 	/**
-	 * Getter for ReceiverID
+	 * Getter for receiverID
 	 */
 	 public String getReceiverID() {
-	 	return ReceiverID;
+	 	return receiverID;
 	 }
 	 
 	/**
-	 * Setter for ReceiverID
+	 * Setter for receiverID
 	 */
-	 public void setReceiverID(String ReceiverID) {
-	 	this.ReceiverID = ReceiverID;
+	 public void setReceiverID(String receiverID) {
+	 	this.receiverID = receiverID;
 	 }
 	 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 	/**
-	 * Getter for UniqueId
+	 * Getter for uniqueId
 	 */
 	 public String getUniqueId() {
-	 	return UniqueId;
+	 	return uniqueId;
 	 }
 	 
 	/**
-	 * Setter for UniqueId
+	 * Setter for uniqueId
 	 */
-	 public void setUniqueId(String UniqueId) {
-	 	this.UniqueId = UniqueId;
+	 public void setUniqueId(String uniqueId) {
+	 	this.uniqueId = uniqueId;
 	 }
 	 
 	/**
-	 * Getter for Note
+	 * Getter for note
 	 */
 	 public String getNote() {
-	 	return Note;
+	 	return note;
 	 }
 	 
 	/**
-	 * Setter for Note
+	 * Setter for note
 	 */
-	 public void setNote(String Note) {
-	 	this.Note = Note;
+	 public void setNote(String note) {
+	 	this.note = note;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(ReceiverEmail != null) {
-			sb.append("<urn:ReceiverEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReceiverEmail));
-			sb.append("</urn:ReceiverEmail>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ReceiverPhone != null) {
-			sb.append("<urn:ReceiverPhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReceiverPhone));
-			sb.append("</urn:ReceiverPhone>");
+		if(receiverEmail != null) {
+			sb.append("<").append(preferredPrefix).append(":ReceiverEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(receiverEmail));
+			sb.append("</").append(preferredPrefix).append(":ReceiverEmail>");
 		}
-		if(ReceiverID != null) {
-			sb.append("<urn:ReceiverID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReceiverID));
-			sb.append("</urn:ReceiverID>");
+		if(receiverPhone != null) {
+			sb.append("<").append(preferredPrefix).append(":ReceiverPhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(receiverPhone));
+			sb.append("</").append(preferredPrefix).append(":ReceiverPhone>");
 		}
-		if(Amount != null) {
-			sb.append("<urn:Amount");
-			sb.append(Amount.toXMLString());
-			sb.append("</urn:Amount>");
+		if(receiverID != null) {
+			sb.append("<").append(preferredPrefix).append(":ReceiverID>").append(SDKUtil.escapeInvalidXmlCharsRegex(receiverID));
+			sb.append("</").append(preferredPrefix).append(":ReceiverID>");
 		}
-		if(UniqueId != null) {
-			sb.append("<urn:UniqueId>").append(SDKUtil.escapeInvalidXmlCharsRegex(UniqueId));
-			sb.append("</urn:UniqueId>");
+		if(amount != null) {
+			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
 		}
-		if(Note != null) {
-			sb.append("<urn:Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(Note));
-			sb.append("</urn:Note>");
+		if(uniqueId != null) {
+			sb.append("<").append(preferredPrefix).append(":UniqueId>").append(SDKUtil.escapeInvalidXmlCharsRegex(uniqueId));
+			sb.append("</").append(preferredPrefix).append(":UniqueId>");
+		}
+		if(note != null) {
+			sb.append("<").append(preferredPrefix).append(":Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(note));
+			sb.append("</").append(preferredPrefix).append(":Note>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

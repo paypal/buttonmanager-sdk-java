@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class DoAuthorizationReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private DoAuthorizationRequestType DoAuthorizationRequest;
+	private DoAuthorizationRequestType doAuthorizationRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class DoAuthorizationReq{
 	}	
 
 	/**
-	 * Getter for DoAuthorizationRequest
+	 * Getter for doAuthorizationRequest
 	 */
 	 public DoAuthorizationRequestType getDoAuthorizationRequest() {
-	 	return DoAuthorizationRequest;
+	 	return doAuthorizationRequest;
 	 }
 	 
 	/**
-	 * Setter for DoAuthorizationRequest
+	 * Setter for doAuthorizationRequest
 	 */
-	 public void setDoAuthorizationRequest(DoAuthorizationRequestType DoAuthorizationRequest) {
-	 	this.DoAuthorizationRequest = DoAuthorizationRequest;
+	 public void setDoAuthorizationRequest(DoAuthorizationRequestType doAuthorizationRequest) {
+	 	this.doAuthorizationRequest = doAuthorizationRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:DoAuthorizationReq>");
-		if(DoAuthorizationRequest != null) {
-			sb.append("<urn:DoAuthorizationRequest>");
-			sb.append(DoAuthorizationRequest.toXMLString());
-			sb.append("</urn:DoAuthorizationRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:DoAuthorizationReq>");
+		if(doAuthorizationRequest != null) {
+			sb.append(doAuthorizationRequest.toXMLString(null,"DoAuthorizationRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

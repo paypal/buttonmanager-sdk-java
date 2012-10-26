@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class GetRecurringPaymentsProfileDetailsReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private GetRecurringPaymentsProfileDetailsRequestType GetRecurringPaymentsProfileDetailsRequest;
+	private GetRecurringPaymentsProfileDetailsRequestType getRecurringPaymentsProfileDetailsRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class GetRecurringPaymentsProfileDetailsReq{
 	}	
 
 	/**
-	 * Getter for GetRecurringPaymentsProfileDetailsRequest
+	 * Getter for getRecurringPaymentsProfileDetailsRequest
 	 */
 	 public GetRecurringPaymentsProfileDetailsRequestType getGetRecurringPaymentsProfileDetailsRequest() {
-	 	return GetRecurringPaymentsProfileDetailsRequest;
+	 	return getRecurringPaymentsProfileDetailsRequest;
 	 }
 	 
 	/**
-	 * Setter for GetRecurringPaymentsProfileDetailsRequest
+	 * Setter for getRecurringPaymentsProfileDetailsRequest
 	 */
-	 public void setGetRecurringPaymentsProfileDetailsRequest(GetRecurringPaymentsProfileDetailsRequestType GetRecurringPaymentsProfileDetailsRequest) {
-	 	this.GetRecurringPaymentsProfileDetailsRequest = GetRecurringPaymentsProfileDetailsRequest;
+	 public void setGetRecurringPaymentsProfileDetailsRequest(GetRecurringPaymentsProfileDetailsRequestType getRecurringPaymentsProfileDetailsRequest) {
+	 	this.getRecurringPaymentsProfileDetailsRequest = getRecurringPaymentsProfileDetailsRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:GetRecurringPaymentsProfileDetailsReq>");
-		if(GetRecurringPaymentsProfileDetailsRequest != null) {
-			sb.append("<urn:GetRecurringPaymentsProfileDetailsRequest>");
-			sb.append(GetRecurringPaymentsProfileDetailsRequest.toXMLString());
-			sb.append("</urn:GetRecurringPaymentsProfileDetailsRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:GetRecurringPaymentsProfileDetailsReq>");
+		if(getRecurringPaymentsProfileDetailsRequest != null) {
+			sb.append(getRecurringPaymentsProfileDetailsRequest.toXMLString(null,"GetRecurringPaymentsProfileDetailsRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

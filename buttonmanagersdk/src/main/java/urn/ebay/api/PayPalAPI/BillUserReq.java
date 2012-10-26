@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class BillUserReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private BillUserRequestType BillUserRequest;
+	private BillUserRequestType billUserRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class BillUserReq{
 	}	
 
 	/**
-	 * Getter for BillUserRequest
+	 * Getter for billUserRequest
 	 */
 	 public BillUserRequestType getBillUserRequest() {
-	 	return BillUserRequest;
+	 	return billUserRequest;
 	 }
 	 
 	/**
-	 * Setter for BillUserRequest
+	 * Setter for billUserRequest
 	 */
-	 public void setBillUserRequest(BillUserRequestType BillUserRequest) {
-	 	this.BillUserRequest = BillUserRequest;
+	 public void setBillUserRequest(BillUserRequestType billUserRequest) {
+	 	this.billUserRequest = billUserRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:BillUserReq>");
-		if(BillUserRequest != null) {
-			sb.append("<urn:BillUserRequest>");
-			sb.append(BillUserRequest.toXMLString());
-			sb.append("</urn:BillUserRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:BillUserReq>");
+		if(billUserRequest != null) {
+			sb.append(billUserRequest.toXMLString(null,"BillUserRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

@@ -38,20 +38,20 @@ public class RefreshTokenStatusDetailsType{
 	 * represent any valid value of the status. 	  
 	 *@Required	 
 	 */ 
-	private Integer RefreshTokenStatus;
+	private Integer refreshTokenStatus;
 
 	/**
 	 * Identifier returned on external-remember-me-opt-in to allow
 	 * the merchant to request bypass of PayPal login 	 
 	 */ 
-	private String RefreshToken;
+	private String refreshToken;
 
 	/**
 	 * The immutable_id is the user's unique value per merchant
 	 * that should never ever change for that account. This would
 	 * be the key used to uniquely identify the user 	 
 	 */ 
-	private String ImmutableID;
+	private String immutableID;
 
 	
 
@@ -62,45 +62,45 @@ public class RefreshTokenStatusDetailsType{
 	}	
 
 	/**
-	 * Getter for RefreshTokenStatus
+	 * Getter for refreshTokenStatus
 	 */
 	 public Integer getRefreshTokenStatus() {
-	 	return RefreshTokenStatus;
+	 	return refreshTokenStatus;
 	 }
 	 
 	/**
-	 * Setter for RefreshTokenStatus
+	 * Setter for refreshTokenStatus
 	 */
-	 public void setRefreshTokenStatus(Integer RefreshTokenStatus) {
-	 	this.RefreshTokenStatus = RefreshTokenStatus;
+	 public void setRefreshTokenStatus(Integer refreshTokenStatus) {
+	 	this.refreshTokenStatus = refreshTokenStatus;
 	 }
 	 
 	/**
-	 * Getter for RefreshToken
+	 * Getter for refreshToken
 	 */
 	 public String getRefreshToken() {
-	 	return RefreshToken;
+	 	return refreshToken;
 	 }
 	 
 	/**
-	 * Setter for RefreshToken
+	 * Setter for refreshToken
 	 */
-	 public void setRefreshToken(String RefreshToken) {
-	 	this.RefreshToken = RefreshToken;
+	 public void setRefreshToken(String refreshToken) {
+	 	this.refreshToken = refreshToken;
 	 }
 	 
 	/**
-	 * Getter for ImmutableID
+	 * Getter for immutableID
 	 */
 	 public String getImmutableID() {
-	 	return ImmutableID;
+	 	return immutableID;
 	 }
 	 
 	/**
-	 * Setter for ImmutableID
+	 * Setter for immutableID
 	 */
-	 public void setImmutableID(String ImmutableID) {
-	 	this.ImmutableID = ImmutableID;
+	 public void setImmutableID(String immutableID) {
+	 	this.immutableID = immutableID;
 	 }
 	 
 
@@ -124,17 +124,17 @@ public class RefreshTokenStatusDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("RefreshTokenStatus", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.RefreshTokenStatus = Integer.valueOf(childNode.getTextContent());
+			this.refreshTokenStatus = Integer.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("RefreshToken", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.RefreshToken = childNode.getTextContent();
+		    this.refreshToken = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ImmutableID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ImmutableID = childNode.getTextContent();
+		    this.immutableID = childNode.getTextContent();
 		}
 	
 	}

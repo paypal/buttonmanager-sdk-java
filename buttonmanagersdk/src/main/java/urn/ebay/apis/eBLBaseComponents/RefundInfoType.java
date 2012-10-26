@@ -27,12 +27,12 @@ public class RefundInfoType{
 	/**
 	 * Refund status whether it is Instant or Delayed. 	 
 	 */ 
-	private PaymentStatusCodeType RefundStatus;
+	private PaymentStatusCodeType refundStatus;
 
 	/**
 	 * Tells us the reason when refund payment status is Delayed. 	 
 	 */ 
-	private PendingStatusCodeType PendingReason;
+	private PendingStatusCodeType pendingReason;
 
 	
 
@@ -43,31 +43,31 @@ public class RefundInfoType{
 	}	
 
 	/**
-	 * Getter for RefundStatus
+	 * Getter for refundStatus
 	 */
 	 public PaymentStatusCodeType getRefundStatus() {
-	 	return RefundStatus;
+	 	return refundStatus;
 	 }
 	 
 	/**
-	 * Setter for RefundStatus
+	 * Setter for refundStatus
 	 */
-	 public void setRefundStatus(PaymentStatusCodeType RefundStatus) {
-	 	this.RefundStatus = RefundStatus;
+	 public void setRefundStatus(PaymentStatusCodeType refundStatus) {
+	 	this.refundStatus = refundStatus;
 	 }
 	 
 	/**
-	 * Getter for PendingReason
+	 * Getter for pendingReason
 	 */
 	 public PendingStatusCodeType getPendingReason() {
-	 	return PendingReason;
+	 	return pendingReason;
 	 }
 	 
 	/**
-	 * Setter for PendingReason
+	 * Setter for pendingReason
 	 */
-	 public void setPendingReason(PendingStatusCodeType PendingReason) {
-	 	this.PendingReason = PendingReason;
+	 public void setPendingReason(PendingStatusCodeType pendingReason) {
+	 	this.pendingReason = pendingReason;
 	 }
 	 
 
@@ -91,11 +91,11 @@ public class RefundInfoType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("RefundStatus", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.RefundStatus = PaymentStatusCodeType.fromValue(childNode.getTextContent());
+		    this.refundStatus = PaymentStatusCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("PendingReason", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PendingReason = PendingStatusCodeType.fromValue(childNode.getTextContent());
+		    this.pendingReason = PendingStatusCodeType.fromValue(childNode.getTextContent());
 		}
 	}
  

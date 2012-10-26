@@ -10,6 +10,8 @@ import com.paypal.core.SDKUtil;
  */
 public class FundingSourceDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Allowable values: 0,1 The value 1 indicates that the
@@ -17,7 +19,7 @@ public class FundingSourceDetailsType{
 	 * Optional Character length and limitations: One single-byte
 	 * numeric character. 	 
 	 */ 
-	private String AllowPushFunding;
+	private String allowPushFunding;
 
 	/**
 	 * Allowable values: ELV, CreditCard, ChinaUnionPay, BML This
@@ -25,7 +27,7 @@ public class FundingSourceDetailsType{
 	 * for a guest users. It has effect only if LandingPage element
 	 * is set to Billing. Otherwise it will be ignored. 	 
 	 */ 
-	private UserSelectedFundingSourceType UserSelectedFundingSource;
+	private UserSelectedFundingSourceType userSelectedFundingSource;
 
 	
 
@@ -36,44 +38,60 @@ public class FundingSourceDetailsType{
 	}	
 
 	/**
-	 * Getter for AllowPushFunding
+	 * Getter for allowPushFunding
 	 */
 	 public String getAllowPushFunding() {
-	 	return AllowPushFunding;
+	 	return allowPushFunding;
 	 }
 	 
 	/**
-	 * Setter for AllowPushFunding
+	 * Setter for allowPushFunding
 	 */
-	 public void setAllowPushFunding(String AllowPushFunding) {
-	 	this.AllowPushFunding = AllowPushFunding;
+	 public void setAllowPushFunding(String allowPushFunding) {
+	 	this.allowPushFunding = allowPushFunding;
 	 }
 	 
 	/**
-	 * Getter for UserSelectedFundingSource
+	 * Getter for userSelectedFundingSource
 	 */
 	 public UserSelectedFundingSourceType getUserSelectedFundingSource() {
-	 	return UserSelectedFundingSource;
+	 	return userSelectedFundingSource;
 	 }
 	 
 	/**
-	 * Setter for UserSelectedFundingSource
+	 * Setter for userSelectedFundingSource
 	 */
-	 public void setUserSelectedFundingSource(UserSelectedFundingSourceType UserSelectedFundingSource) {
-	 	this.UserSelectedFundingSource = UserSelectedFundingSource;
+	 public void setUserSelectedFundingSource(UserSelectedFundingSourceType userSelectedFundingSource) {
+	 	this.userSelectedFundingSource = userSelectedFundingSource;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(AllowPushFunding != null) {
-			sb.append("<ebl:AllowPushFunding>").append(SDKUtil.escapeInvalidXmlCharsRegex(AllowPushFunding));
-			sb.append("</ebl:AllowPushFunding>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(UserSelectedFundingSource != null) {
-			sb.append("<ebl:UserSelectedFundingSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(UserSelectedFundingSource.getValue()));
-			sb.append("</ebl:UserSelectedFundingSource>");
+		if(allowPushFunding != null) {
+			sb.append("<").append(preferredPrefix).append(":AllowPushFunding>").append(SDKUtil.escapeInvalidXmlCharsRegex(allowPushFunding));
+			sb.append("</").append(preferredPrefix).append(":AllowPushFunding>");
+		}
+		if(userSelectedFundingSource != null) {
+			sb.append("<").append(preferredPrefix).append(":UserSelectedFundingSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(userSelectedFundingSource.getValue()));
+			sb.append("</").append(preferredPrefix).append(":UserSelectedFundingSource>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class GetBoardingDetailsReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private GetBoardingDetailsRequestType GetBoardingDetailsRequest;
+	private GetBoardingDetailsRequestType getBoardingDetailsRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class GetBoardingDetailsReq{
 	}	
 
 	/**
-	 * Getter for GetBoardingDetailsRequest
+	 * Getter for getBoardingDetailsRequest
 	 */
 	 public GetBoardingDetailsRequestType getGetBoardingDetailsRequest() {
-	 	return GetBoardingDetailsRequest;
+	 	return getBoardingDetailsRequest;
 	 }
 	 
 	/**
-	 * Setter for GetBoardingDetailsRequest
+	 * Setter for getBoardingDetailsRequest
 	 */
-	 public void setGetBoardingDetailsRequest(GetBoardingDetailsRequestType GetBoardingDetailsRequest) {
-	 	this.GetBoardingDetailsRequest = GetBoardingDetailsRequest;
+	 public void setGetBoardingDetailsRequest(GetBoardingDetailsRequestType getBoardingDetailsRequest) {
+	 	this.getBoardingDetailsRequest = getBoardingDetailsRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:GetBoardingDetailsReq>");
-		if(GetBoardingDetailsRequest != null) {
-			sb.append("<urn:GetBoardingDetailsRequest>");
-			sb.append(GetBoardingDetailsRequest.toXMLString());
-			sb.append("</urn:GetBoardingDetailsRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:GetBoardingDetailsReq>");
+		if(getBoardingDetailsRequest != null) {
+			sb.append(getBoardingDetailsRequest.toXMLString(null,"GetBoardingDetailsRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

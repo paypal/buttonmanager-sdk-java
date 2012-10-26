@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class CreateBillingAgreementReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private CreateBillingAgreementRequestType CreateBillingAgreementRequest;
+	private CreateBillingAgreementRequestType createBillingAgreementRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class CreateBillingAgreementReq{
 	}	
 
 	/**
-	 * Getter for CreateBillingAgreementRequest
+	 * Getter for createBillingAgreementRequest
 	 */
 	 public CreateBillingAgreementRequestType getCreateBillingAgreementRequest() {
-	 	return CreateBillingAgreementRequest;
+	 	return createBillingAgreementRequest;
 	 }
 	 
 	/**
-	 * Setter for CreateBillingAgreementRequest
+	 * Setter for createBillingAgreementRequest
 	 */
-	 public void setCreateBillingAgreementRequest(CreateBillingAgreementRequestType CreateBillingAgreementRequest) {
-	 	this.CreateBillingAgreementRequest = CreateBillingAgreementRequest;
+	 public void setCreateBillingAgreementRequest(CreateBillingAgreementRequestType createBillingAgreementRequest) {
+	 	this.createBillingAgreementRequest = createBillingAgreementRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:CreateBillingAgreementReq>");
-		if(CreateBillingAgreementRequest != null) {
-			sb.append("<urn:CreateBillingAgreementRequest>");
-			sb.append(CreateBillingAgreementRequest.toXMLString());
-			sb.append("</urn:CreateBillingAgreementRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:CreateBillingAgreementReq>");
+		if(createBillingAgreementRequest != null) {
+			sb.append(createBillingAgreementRequest.toXMLString(null,"CreateBillingAgreementRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

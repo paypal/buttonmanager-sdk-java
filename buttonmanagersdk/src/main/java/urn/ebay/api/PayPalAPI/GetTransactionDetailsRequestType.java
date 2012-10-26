@@ -11,6 +11,8 @@ import com.paypal.core.SDKUtil;
  */
 public class GetTransactionDetailsRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * Unique identifier of a transaction. RequiredThe details for
@@ -19,7 +21,7 @@ public class GetTransactionDetailsRequestType extends AbstractRequestType {
 	 * bank transfer withdrawals, for example. Character length and
 	 * limitations: 17 single-byte alphanumeric characters	 
 	 */ 
-	private String TransactionID;
+	private String transactionID;
 
 	
 
@@ -30,27 +32,43 @@ public class GetTransactionDetailsRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for TransactionID
+	 * Getter for transactionID
 	 */
 	 public String getTransactionID() {
-	 	return TransactionID;
+	 	return transactionID;
 	 }
 	 
 	/**
-	 * Setter for TransactionID
+	 * Setter for transactionID
 	 */
-	 public void setTransactionID(String TransactionID) {
-	 	this.TransactionID = TransactionID;
+	 public void setTransactionID(String transactionID) {
+	 	this.transactionID = transactionID;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(TransactionID != null) {
-			sb.append("<urn:TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionID));
-			sb.append("</urn:TransactionID>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		sb.append(super.toXMLString(prefix, null));
+		if(transactionID != null) {
+			sb.append("<").append(preferredPrefix).append(":TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(transactionID));
+			sb.append("</").append(preferredPrefix).append(":TransactionID>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

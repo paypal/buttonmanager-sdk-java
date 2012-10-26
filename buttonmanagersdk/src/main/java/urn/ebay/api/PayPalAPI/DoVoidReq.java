@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class DoVoidReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private DoVoidRequestType DoVoidRequest;
+	private DoVoidRequestType doVoidRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class DoVoidReq{
 	}	
 
 	/**
-	 * Getter for DoVoidRequest
+	 * Getter for doVoidRequest
 	 */
 	 public DoVoidRequestType getDoVoidRequest() {
-	 	return DoVoidRequest;
+	 	return doVoidRequest;
 	 }
 	 
 	/**
-	 * Setter for DoVoidRequest
+	 * Setter for doVoidRequest
 	 */
-	 public void setDoVoidRequest(DoVoidRequestType DoVoidRequest) {
-	 	this.DoVoidRequest = DoVoidRequest;
+	 public void setDoVoidRequest(DoVoidRequestType doVoidRequest) {
+	 	this.doVoidRequest = doVoidRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:DoVoidReq>");
-		if(DoVoidRequest != null) {
-			sb.append("<urn:DoVoidRequest>");
-			sb.append(DoVoidRequest.toXMLString());
-			sb.append("</urn:DoVoidRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:DoVoidReq>");
+		if(doVoidRequest != null) {
+			sb.append(doVoidRequest.toXMLString(null,"DoVoidRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

@@ -25,7 +25,7 @@ public class ErrorParameterType{
 	/**
 	 * Value of the application-specific error parameter.  	 
 	 */ 
-	private String Value;
+	private String value;
 
 	
 
@@ -36,17 +36,17 @@ public class ErrorParameterType{
 	}	
 
 	/**
-	 * Getter for Value
+	 * Getter for value
 	 */
 	 public String getValue() {
-	 	return Value;
+	 	return value;
 	 }
 	 
 	/**
-	 * Setter for Value
+	 * Setter for value
 	 */
-	 public void setValue(String Value) {
-	 	this.Value = Value;
+	 public void setValue(String value) {
+	 	this.value = value;
 	 }
 	 
 
@@ -71,7 +71,7 @@ public class ErrorParameterType{
 		childNode = (Node) xpath.evaluate("Value", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 			String value = childNode.getTextContent();
-			this.Value = value;
+			this.value = value;
 		}
 	}
  

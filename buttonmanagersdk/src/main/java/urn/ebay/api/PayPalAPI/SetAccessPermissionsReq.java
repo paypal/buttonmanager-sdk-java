@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class SetAccessPermissionsReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private SetAccessPermissionsRequestType SetAccessPermissionsRequest;
+	private SetAccessPermissionsRequestType setAccessPermissionsRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class SetAccessPermissionsReq{
 	}	
 
 	/**
-	 * Getter for SetAccessPermissionsRequest
+	 * Getter for setAccessPermissionsRequest
 	 */
 	 public SetAccessPermissionsRequestType getSetAccessPermissionsRequest() {
-	 	return SetAccessPermissionsRequest;
+	 	return setAccessPermissionsRequest;
 	 }
 	 
 	/**
-	 * Setter for SetAccessPermissionsRequest
+	 * Setter for setAccessPermissionsRequest
 	 */
-	 public void setSetAccessPermissionsRequest(SetAccessPermissionsRequestType SetAccessPermissionsRequest) {
-	 	this.SetAccessPermissionsRequest = SetAccessPermissionsRequest;
+	 public void setSetAccessPermissionsRequest(SetAccessPermissionsRequestType setAccessPermissionsRequest) {
+	 	this.setAccessPermissionsRequest = setAccessPermissionsRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:SetAccessPermissionsReq>");
-		if(SetAccessPermissionsRequest != null) {
-			sb.append("<urn:SetAccessPermissionsRequest>");
-			sb.append(SetAccessPermissionsRequest.toXMLString());
-			sb.append("</urn:SetAccessPermissionsRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:SetAccessPermissionsReq>");
+		if(setAccessPermissionsRequest != null) {
+			sb.append(setAccessPermissionsRequest.toXMLString(null,"SetAccessPermissionsRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

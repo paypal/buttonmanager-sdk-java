@@ -25,12 +25,12 @@ public class ThreeDSecureResponseType{
 	/**
 	 * 	 
 	 */ 
-	private String Vpas;
+	private String vpas;
 
 	/**
 	 * 	 
 	 */ 
-	private String EciSubmitted3DS;
+	private String eciSubmitted3DS;
 
 	
 
@@ -41,31 +41,31 @@ public class ThreeDSecureResponseType{
 	}	
 
 	/**
-	 * Getter for Vpas
+	 * Getter for vpas
 	 */
 	 public String getVpas() {
-	 	return Vpas;
+	 	return vpas;
 	 }
 	 
 	/**
-	 * Setter for Vpas
+	 * Setter for vpas
 	 */
-	 public void setVpas(String Vpas) {
-	 	this.Vpas = Vpas;
+	 public void setVpas(String vpas) {
+	 	this.vpas = vpas;
 	 }
 	 
 	/**
-	 * Getter for EciSubmitted3DS
+	 * Getter for eciSubmitted3DS
 	 */
 	 public String getEciSubmitted3DS() {
-	 	return EciSubmitted3DS;
+	 	return eciSubmitted3DS;
 	 }
 	 
 	/**
-	 * Setter for EciSubmitted3DS
+	 * Setter for eciSubmitted3DS
 	 */
-	 public void setEciSubmitted3DS(String EciSubmitted3DS) {
-	 	this.EciSubmitted3DS = EciSubmitted3DS;
+	 public void setEciSubmitted3DS(String eciSubmitted3DS) {
+	 	this.eciSubmitted3DS = eciSubmitted3DS;
 	 }
 	 
 
@@ -89,12 +89,12 @@ public class ThreeDSecureResponseType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Vpas", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Vpas = childNode.getTextContent();
+		    this.vpas = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("EciSubmitted3DS", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.EciSubmitted3DS = childNode.getTextContent();
+		    this.eciSubmitted3DS = childNode.getTextContent();
 		}
 	
 	}

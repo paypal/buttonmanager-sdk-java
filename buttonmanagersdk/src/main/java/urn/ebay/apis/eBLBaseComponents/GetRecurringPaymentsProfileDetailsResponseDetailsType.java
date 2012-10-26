@@ -33,88 +33,88 @@ public class GetRecurringPaymentsProfileDetailsResponseDetailsType{
 	 * Recurring Billing Profile ID 	  
 	 *@Required	 
 	 */ 
-	private String ProfileID;
+	private String profileID;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private RecurringPaymentsProfileStatusType ProfileStatus;
+	private RecurringPaymentsProfileStatusType profileStatus;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String Description;
+	private String description;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private AutoBillType AutoBillOutstandingAmount;
+	private AutoBillType autoBillOutstandingAmount;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private Integer MaxFailedPayments;
+	private Integer maxFailedPayments;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private RecurringPaymentsProfileDetailsType RecurringPaymentsProfileDetails;
+	private RecurringPaymentsProfileDetailsType recurringPaymentsProfileDetails;
 
 	/**
 	 * 	 
 	 */ 
-	private BillingPeriodDetailsType CurrentRecurringPaymentsPeriod;
+	private BillingPeriodDetailsType currentRecurringPaymentsPeriod;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private RecurringPaymentsSummaryType RecurringPaymentsSummary;
+	private RecurringPaymentsSummaryType recurringPaymentsSummary;
 
 	/**
 	 * 	 
 	 */ 
-	private CreditCardDetailsType CreditCard;
+	private CreditCardDetailsType creditCard;
 
 	/**
 	 * 	 
 	 */ 
-	private BillingPeriodDetailsType TrialRecurringPaymentsPeriod;
+	private BillingPeriodDetailsType trialRecurringPaymentsPeriod;
 
 	/**
 	 * 	 
 	 */ 
-	private BillingPeriodDetailsType RegularRecurringPaymentsPeriod;
+	private BillingPeriodDetailsType regularRecurringPaymentsPeriod;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType TrialAmountPaid;
+	private BasicAmountType trialAmountPaid;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType RegularAmountPaid;
+	private BasicAmountType regularAmountPaid;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType AggregateAmount;
+	private BasicAmountType aggregateAmount;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType AggregateOptionalAmount;
+	private BasicAmountType aggregateOptionalAmount;
 
 	/**
 	 * 	 
 	 */ 
-	private String FinalPaymentDueDate;
+	private String finalPaymentDueDate;
 
 	
 
@@ -125,227 +125,227 @@ public class GetRecurringPaymentsProfileDetailsResponseDetailsType{
 	}	
 
 	/**
-	 * Getter for ProfileID
+	 * Getter for profileID
 	 */
 	 public String getProfileID() {
-	 	return ProfileID;
+	 	return profileID;
 	 }
 	 
 	/**
-	 * Setter for ProfileID
+	 * Setter for profileID
 	 */
-	 public void setProfileID(String ProfileID) {
-	 	this.ProfileID = ProfileID;
+	 public void setProfileID(String profileID) {
+	 	this.profileID = profileID;
 	 }
 	 
 	/**
-	 * Getter for ProfileStatus
+	 * Getter for profileStatus
 	 */
 	 public RecurringPaymentsProfileStatusType getProfileStatus() {
-	 	return ProfileStatus;
+	 	return profileStatus;
 	 }
 	 
 	/**
-	 * Setter for ProfileStatus
+	 * Setter for profileStatus
 	 */
-	 public void setProfileStatus(RecurringPaymentsProfileStatusType ProfileStatus) {
-	 	this.ProfileStatus = ProfileStatus;
+	 public void setProfileStatus(RecurringPaymentsProfileStatusType profileStatus) {
+	 	this.profileStatus = profileStatus;
 	 }
 	 
 	/**
-	 * Getter for Description
+	 * Getter for description
 	 */
 	 public String getDescription() {
-	 	return Description;
+	 	return description;
 	 }
 	 
 	/**
-	 * Setter for Description
+	 * Setter for description
 	 */
-	 public void setDescription(String Description) {
-	 	this.Description = Description;
+	 public void setDescription(String description) {
+	 	this.description = description;
 	 }
 	 
 	/**
-	 * Getter for AutoBillOutstandingAmount
+	 * Getter for autoBillOutstandingAmount
 	 */
 	 public AutoBillType getAutoBillOutstandingAmount() {
-	 	return AutoBillOutstandingAmount;
+	 	return autoBillOutstandingAmount;
 	 }
 	 
 	/**
-	 * Setter for AutoBillOutstandingAmount
+	 * Setter for autoBillOutstandingAmount
 	 */
-	 public void setAutoBillOutstandingAmount(AutoBillType AutoBillOutstandingAmount) {
-	 	this.AutoBillOutstandingAmount = AutoBillOutstandingAmount;
+	 public void setAutoBillOutstandingAmount(AutoBillType autoBillOutstandingAmount) {
+	 	this.autoBillOutstandingAmount = autoBillOutstandingAmount;
 	 }
 	 
 	/**
-	 * Getter for MaxFailedPayments
+	 * Getter for maxFailedPayments
 	 */
 	 public Integer getMaxFailedPayments() {
-	 	return MaxFailedPayments;
+	 	return maxFailedPayments;
 	 }
 	 
 	/**
-	 * Setter for MaxFailedPayments
+	 * Setter for maxFailedPayments
 	 */
-	 public void setMaxFailedPayments(Integer MaxFailedPayments) {
-	 	this.MaxFailedPayments = MaxFailedPayments;
+	 public void setMaxFailedPayments(Integer maxFailedPayments) {
+	 	this.maxFailedPayments = maxFailedPayments;
 	 }
 	 
 	/**
-	 * Getter for RecurringPaymentsProfileDetails
+	 * Getter for recurringPaymentsProfileDetails
 	 */
 	 public RecurringPaymentsProfileDetailsType getRecurringPaymentsProfileDetails() {
-	 	return RecurringPaymentsProfileDetails;
+	 	return recurringPaymentsProfileDetails;
 	 }
 	 
 	/**
-	 * Setter for RecurringPaymentsProfileDetails
+	 * Setter for recurringPaymentsProfileDetails
 	 */
-	 public void setRecurringPaymentsProfileDetails(RecurringPaymentsProfileDetailsType RecurringPaymentsProfileDetails) {
-	 	this.RecurringPaymentsProfileDetails = RecurringPaymentsProfileDetails;
+	 public void setRecurringPaymentsProfileDetails(RecurringPaymentsProfileDetailsType recurringPaymentsProfileDetails) {
+	 	this.recurringPaymentsProfileDetails = recurringPaymentsProfileDetails;
 	 }
 	 
 	/**
-	 * Getter for CurrentRecurringPaymentsPeriod
+	 * Getter for currentRecurringPaymentsPeriod
 	 */
 	 public BillingPeriodDetailsType getCurrentRecurringPaymentsPeriod() {
-	 	return CurrentRecurringPaymentsPeriod;
+	 	return currentRecurringPaymentsPeriod;
 	 }
 	 
 	/**
-	 * Setter for CurrentRecurringPaymentsPeriod
+	 * Setter for currentRecurringPaymentsPeriod
 	 */
-	 public void setCurrentRecurringPaymentsPeriod(BillingPeriodDetailsType CurrentRecurringPaymentsPeriod) {
-	 	this.CurrentRecurringPaymentsPeriod = CurrentRecurringPaymentsPeriod;
+	 public void setCurrentRecurringPaymentsPeriod(BillingPeriodDetailsType currentRecurringPaymentsPeriod) {
+	 	this.currentRecurringPaymentsPeriod = currentRecurringPaymentsPeriod;
 	 }
 	 
 	/**
-	 * Getter for RecurringPaymentsSummary
+	 * Getter for recurringPaymentsSummary
 	 */
 	 public RecurringPaymentsSummaryType getRecurringPaymentsSummary() {
-	 	return RecurringPaymentsSummary;
+	 	return recurringPaymentsSummary;
 	 }
 	 
 	/**
-	 * Setter for RecurringPaymentsSummary
+	 * Setter for recurringPaymentsSummary
 	 */
-	 public void setRecurringPaymentsSummary(RecurringPaymentsSummaryType RecurringPaymentsSummary) {
-	 	this.RecurringPaymentsSummary = RecurringPaymentsSummary;
+	 public void setRecurringPaymentsSummary(RecurringPaymentsSummaryType recurringPaymentsSummary) {
+	 	this.recurringPaymentsSummary = recurringPaymentsSummary;
 	 }
 	 
 	/**
-	 * Getter for CreditCard
+	 * Getter for creditCard
 	 */
 	 public CreditCardDetailsType getCreditCard() {
-	 	return CreditCard;
+	 	return creditCard;
 	 }
 	 
 	/**
-	 * Setter for CreditCard
+	 * Setter for creditCard
 	 */
-	 public void setCreditCard(CreditCardDetailsType CreditCard) {
-	 	this.CreditCard = CreditCard;
+	 public void setCreditCard(CreditCardDetailsType creditCard) {
+	 	this.creditCard = creditCard;
 	 }
 	 
 	/**
-	 * Getter for TrialRecurringPaymentsPeriod
+	 * Getter for trialRecurringPaymentsPeriod
 	 */
 	 public BillingPeriodDetailsType getTrialRecurringPaymentsPeriod() {
-	 	return TrialRecurringPaymentsPeriod;
+	 	return trialRecurringPaymentsPeriod;
 	 }
 	 
 	/**
-	 * Setter for TrialRecurringPaymentsPeriod
+	 * Setter for trialRecurringPaymentsPeriod
 	 */
-	 public void setTrialRecurringPaymentsPeriod(BillingPeriodDetailsType TrialRecurringPaymentsPeriod) {
-	 	this.TrialRecurringPaymentsPeriod = TrialRecurringPaymentsPeriod;
+	 public void setTrialRecurringPaymentsPeriod(BillingPeriodDetailsType trialRecurringPaymentsPeriod) {
+	 	this.trialRecurringPaymentsPeriod = trialRecurringPaymentsPeriod;
 	 }
 	 
 	/**
-	 * Getter for RegularRecurringPaymentsPeriod
+	 * Getter for regularRecurringPaymentsPeriod
 	 */
 	 public BillingPeriodDetailsType getRegularRecurringPaymentsPeriod() {
-	 	return RegularRecurringPaymentsPeriod;
+	 	return regularRecurringPaymentsPeriod;
 	 }
 	 
 	/**
-	 * Setter for RegularRecurringPaymentsPeriod
+	 * Setter for regularRecurringPaymentsPeriod
 	 */
-	 public void setRegularRecurringPaymentsPeriod(BillingPeriodDetailsType RegularRecurringPaymentsPeriod) {
-	 	this.RegularRecurringPaymentsPeriod = RegularRecurringPaymentsPeriod;
+	 public void setRegularRecurringPaymentsPeriod(BillingPeriodDetailsType regularRecurringPaymentsPeriod) {
+	 	this.regularRecurringPaymentsPeriod = regularRecurringPaymentsPeriod;
 	 }
 	 
 	/**
-	 * Getter for TrialAmountPaid
+	 * Getter for trialAmountPaid
 	 */
 	 public BasicAmountType getTrialAmountPaid() {
-	 	return TrialAmountPaid;
+	 	return trialAmountPaid;
 	 }
 	 
 	/**
-	 * Setter for TrialAmountPaid
+	 * Setter for trialAmountPaid
 	 */
-	 public void setTrialAmountPaid(BasicAmountType TrialAmountPaid) {
-	 	this.TrialAmountPaid = TrialAmountPaid;
+	 public void setTrialAmountPaid(BasicAmountType trialAmountPaid) {
+	 	this.trialAmountPaid = trialAmountPaid;
 	 }
 	 
 	/**
-	 * Getter for RegularAmountPaid
+	 * Getter for regularAmountPaid
 	 */
 	 public BasicAmountType getRegularAmountPaid() {
-	 	return RegularAmountPaid;
+	 	return regularAmountPaid;
 	 }
 	 
 	/**
-	 * Setter for RegularAmountPaid
+	 * Setter for regularAmountPaid
 	 */
-	 public void setRegularAmountPaid(BasicAmountType RegularAmountPaid) {
-	 	this.RegularAmountPaid = RegularAmountPaid;
+	 public void setRegularAmountPaid(BasicAmountType regularAmountPaid) {
+	 	this.regularAmountPaid = regularAmountPaid;
 	 }
 	 
 	/**
-	 * Getter for AggregateAmount
+	 * Getter for aggregateAmount
 	 */
 	 public BasicAmountType getAggregateAmount() {
-	 	return AggregateAmount;
+	 	return aggregateAmount;
 	 }
 	 
 	/**
-	 * Setter for AggregateAmount
+	 * Setter for aggregateAmount
 	 */
-	 public void setAggregateAmount(BasicAmountType AggregateAmount) {
-	 	this.AggregateAmount = AggregateAmount;
+	 public void setAggregateAmount(BasicAmountType aggregateAmount) {
+	 	this.aggregateAmount = aggregateAmount;
 	 }
 	 
 	/**
-	 * Getter for AggregateOptionalAmount
+	 * Getter for aggregateOptionalAmount
 	 */
 	 public BasicAmountType getAggregateOptionalAmount() {
-	 	return AggregateOptionalAmount;
+	 	return aggregateOptionalAmount;
 	 }
 	 
 	/**
-	 * Setter for AggregateOptionalAmount
+	 * Setter for aggregateOptionalAmount
 	 */
-	 public void setAggregateOptionalAmount(BasicAmountType AggregateOptionalAmount) {
-	 	this.AggregateOptionalAmount = AggregateOptionalAmount;
+	 public void setAggregateOptionalAmount(BasicAmountType aggregateOptionalAmount) {
+	 	this.aggregateOptionalAmount = aggregateOptionalAmount;
 	 }
 	 
 	/**
-	 * Getter for FinalPaymentDueDate
+	 * Getter for finalPaymentDueDate
 	 */
 	 public String getFinalPaymentDueDate() {
-	 	return FinalPaymentDueDate;
+	 	return finalPaymentDueDate;
 	 }
 	 
 	/**
-	 * Setter for FinalPaymentDueDate
+	 * Setter for finalPaymentDueDate
 	 */
-	 public void setFinalPaymentDueDate(String FinalPaymentDueDate) {
-	 	this.FinalPaymentDueDate = FinalPaymentDueDate;
+	 public void setFinalPaymentDueDate(String finalPaymentDueDate) {
+	 	this.finalPaymentDueDate = finalPaymentDueDate;
 	 }
 	 
 
@@ -369,70 +369,70 @@ public class GetRecurringPaymentsProfileDetailsResponseDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("ProfileID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ProfileID = childNode.getTextContent();
+		    this.profileID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ProfileStatus", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ProfileStatus = RecurringPaymentsProfileStatusType.fromValue(childNode.getTextContent());
+		    this.profileStatus = RecurringPaymentsProfileStatusType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("Description", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Description = childNode.getTextContent();
+		    this.description = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("AutoBillOutstandingAmount", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AutoBillOutstandingAmount = AutoBillType.fromValue(childNode.getTextContent());
+		    this.autoBillOutstandingAmount = AutoBillType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("MaxFailedPayments", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.MaxFailedPayments = Integer.valueOf(childNode.getTextContent());
+			this.maxFailedPayments = Integer.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("RecurringPaymentsProfileDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.RecurringPaymentsProfileDetails =  new RecurringPaymentsProfileDetailsType(childNode);
+		    this.recurringPaymentsProfileDetails =  new RecurringPaymentsProfileDetailsType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("CurrentRecurringPaymentsPeriod", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CurrentRecurringPaymentsPeriod =  new BillingPeriodDetailsType(childNode);
+		    this.currentRecurringPaymentsPeriod =  new BillingPeriodDetailsType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("RecurringPaymentsSummary", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.RecurringPaymentsSummary =  new RecurringPaymentsSummaryType(childNode);
+		    this.recurringPaymentsSummary =  new RecurringPaymentsSummaryType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("CreditCard", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CreditCard =  new CreditCardDetailsType(childNode);
+		    this.creditCard =  new CreditCardDetailsType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("TrialRecurringPaymentsPeriod", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TrialRecurringPaymentsPeriod =  new BillingPeriodDetailsType(childNode);
+		    this.trialRecurringPaymentsPeriod =  new BillingPeriodDetailsType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("RegularRecurringPaymentsPeriod", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.RegularRecurringPaymentsPeriod =  new BillingPeriodDetailsType(childNode);
+		    this.regularRecurringPaymentsPeriod =  new BillingPeriodDetailsType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("TrialAmountPaid", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TrialAmountPaid =  new BasicAmountType(childNode);
+		    this.trialAmountPaid =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("RegularAmountPaid", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.RegularAmountPaid =  new BasicAmountType(childNode);
+		    this.regularAmountPaid =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("AggregateAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AggregateAmount =  new BasicAmountType(childNode);
+		    this.aggregateAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("AggregateOptionalAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AggregateOptionalAmount =  new BasicAmountType(childNode);
+		    this.aggregateOptionalAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("FinalPaymentDueDate", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.FinalPaymentDueDate = childNode.getTextContent();
+		    this.finalPaymentDueDate = childNode.getTextContent();
 		}
 	
 	}

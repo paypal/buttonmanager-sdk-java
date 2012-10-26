@@ -8,20 +8,22 @@ import com.paypal.core.SDKUtil;
  */
 public class SetCustomerBillingAgreementRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private SetCustomerBillingAgreementRequestDetailsType SetCustomerBillingAgreementRequestDetails;
+	private SetCustomerBillingAgreementRequestDetailsType setCustomerBillingAgreementRequestDetails;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public SetCustomerBillingAgreementRequestType (SetCustomerBillingAgreementRequestDetailsType SetCustomerBillingAgreementRequestDetails){
-		this.SetCustomerBillingAgreementRequestDetails = SetCustomerBillingAgreementRequestDetails;
+	public SetCustomerBillingAgreementRequestType (SetCustomerBillingAgreementRequestDetailsType setCustomerBillingAgreementRequestDetails){
+		this.setCustomerBillingAgreementRequestDetails = setCustomerBillingAgreementRequestDetails;
 	}	
 
 	/**
@@ -31,28 +33,42 @@ public class SetCustomerBillingAgreementRequestType extends AbstractRequestType 
 	}	
 
 	/**
-	 * Getter for SetCustomerBillingAgreementRequestDetails
+	 * Getter for setCustomerBillingAgreementRequestDetails
 	 */
 	 public SetCustomerBillingAgreementRequestDetailsType getSetCustomerBillingAgreementRequestDetails() {
-	 	return SetCustomerBillingAgreementRequestDetails;
+	 	return setCustomerBillingAgreementRequestDetails;
 	 }
 	 
 	/**
-	 * Setter for SetCustomerBillingAgreementRequestDetails
+	 * Setter for setCustomerBillingAgreementRequestDetails
 	 */
-	 public void setSetCustomerBillingAgreementRequestDetails(SetCustomerBillingAgreementRequestDetailsType SetCustomerBillingAgreementRequestDetails) {
-	 	this.SetCustomerBillingAgreementRequestDetails = SetCustomerBillingAgreementRequestDetails;
+	 public void setSetCustomerBillingAgreementRequestDetails(SetCustomerBillingAgreementRequestDetailsType setCustomerBillingAgreementRequestDetails) {
+	 	this.setCustomerBillingAgreementRequestDetails = setCustomerBillingAgreementRequestDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(SetCustomerBillingAgreementRequestDetails != null) {
-			sb.append("<ebl:SetCustomerBillingAgreementRequestDetails>");
-			sb.append(SetCustomerBillingAgreementRequestDetails.toXMLString());
-			sb.append("</ebl:SetCustomerBillingAgreementRequestDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		sb.append(super.toXMLString(prefix, null));
+		if(setCustomerBillingAgreementRequestDetails != null) {
+			sb.append(setCustomerBillingAgreementRequestDetails.toXMLString(null,"SetCustomerBillingAgreementRequestDetails"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

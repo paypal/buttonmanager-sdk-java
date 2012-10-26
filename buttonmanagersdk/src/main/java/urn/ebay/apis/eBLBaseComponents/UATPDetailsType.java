@@ -22,21 +22,23 @@ import org.xml.sax.SAXException;
  */
 public class UATPDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * UATP Card Number	 
 	 */ 
-	private String UATPNumber;
+	private String uATPNumber;
 
 	/**
 	 * UATP Card expirty month	 
 	 */ 
-	private Integer ExpMonth;
+	private Integer expMonth;
 
 	/**
 	 * UATP Card expirty year	 
 	 */ 
-	private Integer ExpYear;
+	private Integer expYear;
 
 	
 
@@ -47,62 +49,78 @@ public class UATPDetailsType{
 	}	
 
 	/**
-	 * Getter for UATPNumber
+	 * Getter for uATPNumber
 	 */
 	 public String getUATPNumber() {
-	 	return UATPNumber;
+	 	return uATPNumber;
 	 }
 	 
 	/**
-	 * Setter for UATPNumber
+	 * Setter for uATPNumber
 	 */
-	 public void setUATPNumber(String UATPNumber) {
-	 	this.UATPNumber = UATPNumber;
+	 public void setUATPNumber(String uATPNumber) {
+	 	this.uATPNumber = uATPNumber;
 	 }
 	 
 	/**
-	 * Getter for ExpMonth
+	 * Getter for expMonth
 	 */
 	 public Integer getExpMonth() {
-	 	return ExpMonth;
+	 	return expMonth;
 	 }
 	 
 	/**
-	 * Setter for ExpMonth
+	 * Setter for expMonth
 	 */
-	 public void setExpMonth(Integer ExpMonth) {
-	 	this.ExpMonth = ExpMonth;
+	 public void setExpMonth(Integer expMonth) {
+	 	this.expMonth = expMonth;
 	 }
 	 
 	/**
-	 * Getter for ExpYear
+	 * Getter for expYear
 	 */
 	 public Integer getExpYear() {
-	 	return ExpYear;
+	 	return expYear;
 	 }
 	 
 	/**
-	 * Setter for ExpYear
+	 * Setter for expYear
 	 */
-	 public void setExpYear(Integer ExpYear) {
-	 	this.ExpYear = ExpYear;
+	 public void setExpYear(Integer expYear) {
+	 	this.expYear = expYear;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(UATPNumber != null) {
-			sb.append("<ebl:UATPNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(UATPNumber));
-			sb.append("</ebl:UATPNumber>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ExpMonth != null) {
-			sb.append("<ebl:ExpMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExpMonth));
-			sb.append("</ebl:ExpMonth>");
+		if(uATPNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":UATPNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(uATPNumber));
+			sb.append("</").append(preferredPrefix).append(":UATPNumber>");
 		}
-		if(ExpYear != null) {
-			sb.append("<ebl:ExpYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExpYear));
-			sb.append("</ebl:ExpYear>");
+		if(expMonth != null) {
+			sb.append("<").append(preferredPrefix).append(":ExpMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(expMonth));
+			sb.append("</").append(preferredPrefix).append(":ExpMonth>");
+		}
+		if(expYear != null) {
+			sb.append("<").append(preferredPrefix).append(":ExpYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(expYear));
+			sb.append("</").append(preferredPrefix).append(":ExpYear>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -126,17 +144,17 @@ public class UATPDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("UATPNumber", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.UATPNumber = childNode.getTextContent();
+		    this.uATPNumber = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ExpMonth", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.ExpMonth = Integer.valueOf(childNode.getTextContent());
+			this.expMonth = Integer.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("ExpYear", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.ExpYear = Integer.valueOf(childNode.getTextContent());
+			this.expYear = Integer.valueOf(childNode.getTextContent());
 		}
 	
 	}

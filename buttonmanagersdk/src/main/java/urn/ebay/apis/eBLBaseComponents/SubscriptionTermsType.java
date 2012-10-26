@@ -26,7 +26,7 @@ public class SubscriptionTermsType{
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	
 
@@ -37,17 +37,17 @@ public class SubscriptionTermsType{
 	}	
 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 
@@ -71,7 +71,7 @@ public class SubscriptionTermsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Amount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Amount =  new BasicAmountType(childNode);
+		    this.amount =  new BasicAmountType(childNode);
 		}
 	}
  

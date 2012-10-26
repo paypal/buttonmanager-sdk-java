@@ -26,41 +26,41 @@ public class RecurringPaymentsSummaryType{
 	/**
 	 * 	 
 	 */ 
-	private String NextBillingDate;
+	private String nextBillingDate;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private Integer NumberCyclesCompleted;
+	private Integer numberCyclesCompleted;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private Integer NumberCyclesRemaining;
+	private Integer numberCyclesRemaining;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private BasicAmountType OutstandingBalance;
+	private BasicAmountType outstandingBalance;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private Integer FailedPaymentCount;
+	private Integer failedPaymentCount;
 
 	/**
 	 * 	 
 	 */ 
-	private String LastPaymentDate;
+	private String lastPaymentDate;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType LastPaymentAmount;
+	private BasicAmountType lastPaymentAmount;
 
 	
 
@@ -71,101 +71,101 @@ public class RecurringPaymentsSummaryType{
 	}	
 
 	/**
-	 * Getter for NextBillingDate
+	 * Getter for nextBillingDate
 	 */
 	 public String getNextBillingDate() {
-	 	return NextBillingDate;
+	 	return nextBillingDate;
 	 }
 	 
 	/**
-	 * Setter for NextBillingDate
+	 * Setter for nextBillingDate
 	 */
-	 public void setNextBillingDate(String NextBillingDate) {
-	 	this.NextBillingDate = NextBillingDate;
+	 public void setNextBillingDate(String nextBillingDate) {
+	 	this.nextBillingDate = nextBillingDate;
 	 }
 	 
 	/**
-	 * Getter for NumberCyclesCompleted
+	 * Getter for numberCyclesCompleted
 	 */
 	 public Integer getNumberCyclesCompleted() {
-	 	return NumberCyclesCompleted;
+	 	return numberCyclesCompleted;
 	 }
 	 
 	/**
-	 * Setter for NumberCyclesCompleted
+	 * Setter for numberCyclesCompleted
 	 */
-	 public void setNumberCyclesCompleted(Integer NumberCyclesCompleted) {
-	 	this.NumberCyclesCompleted = NumberCyclesCompleted;
+	 public void setNumberCyclesCompleted(Integer numberCyclesCompleted) {
+	 	this.numberCyclesCompleted = numberCyclesCompleted;
 	 }
 	 
 	/**
-	 * Getter for NumberCyclesRemaining
+	 * Getter for numberCyclesRemaining
 	 */
 	 public Integer getNumberCyclesRemaining() {
-	 	return NumberCyclesRemaining;
+	 	return numberCyclesRemaining;
 	 }
 	 
 	/**
-	 * Setter for NumberCyclesRemaining
+	 * Setter for numberCyclesRemaining
 	 */
-	 public void setNumberCyclesRemaining(Integer NumberCyclesRemaining) {
-	 	this.NumberCyclesRemaining = NumberCyclesRemaining;
+	 public void setNumberCyclesRemaining(Integer numberCyclesRemaining) {
+	 	this.numberCyclesRemaining = numberCyclesRemaining;
 	 }
 	 
 	/**
-	 * Getter for OutstandingBalance
+	 * Getter for outstandingBalance
 	 */
 	 public BasicAmountType getOutstandingBalance() {
-	 	return OutstandingBalance;
+	 	return outstandingBalance;
 	 }
 	 
 	/**
-	 * Setter for OutstandingBalance
+	 * Setter for outstandingBalance
 	 */
-	 public void setOutstandingBalance(BasicAmountType OutstandingBalance) {
-	 	this.OutstandingBalance = OutstandingBalance;
+	 public void setOutstandingBalance(BasicAmountType outstandingBalance) {
+	 	this.outstandingBalance = outstandingBalance;
 	 }
 	 
 	/**
-	 * Getter for FailedPaymentCount
+	 * Getter for failedPaymentCount
 	 */
 	 public Integer getFailedPaymentCount() {
-	 	return FailedPaymentCount;
+	 	return failedPaymentCount;
 	 }
 	 
 	/**
-	 * Setter for FailedPaymentCount
+	 * Setter for failedPaymentCount
 	 */
-	 public void setFailedPaymentCount(Integer FailedPaymentCount) {
-	 	this.FailedPaymentCount = FailedPaymentCount;
+	 public void setFailedPaymentCount(Integer failedPaymentCount) {
+	 	this.failedPaymentCount = failedPaymentCount;
 	 }
 	 
 	/**
-	 * Getter for LastPaymentDate
+	 * Getter for lastPaymentDate
 	 */
 	 public String getLastPaymentDate() {
-	 	return LastPaymentDate;
+	 	return lastPaymentDate;
 	 }
 	 
 	/**
-	 * Setter for LastPaymentDate
+	 * Setter for lastPaymentDate
 	 */
-	 public void setLastPaymentDate(String LastPaymentDate) {
-	 	this.LastPaymentDate = LastPaymentDate;
+	 public void setLastPaymentDate(String lastPaymentDate) {
+	 	this.lastPaymentDate = lastPaymentDate;
 	 }
 	 
 	/**
-	 * Getter for LastPaymentAmount
+	 * Getter for lastPaymentAmount
 	 */
 	 public BasicAmountType getLastPaymentAmount() {
-	 	return LastPaymentAmount;
+	 	return lastPaymentAmount;
 	 }
 	 
 	/**
-	 * Setter for LastPaymentAmount
+	 * Setter for lastPaymentAmount
 	 */
-	 public void setLastPaymentAmount(BasicAmountType LastPaymentAmount) {
-	 	this.LastPaymentAmount = LastPaymentAmount;
+	 public void setLastPaymentAmount(BasicAmountType lastPaymentAmount) {
+	 	this.lastPaymentAmount = lastPaymentAmount;
 	 }
 	 
 
@@ -189,36 +189,36 @@ public class RecurringPaymentsSummaryType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("NextBillingDate", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.NextBillingDate = childNode.getTextContent();
+		    this.nextBillingDate = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("NumberCyclesCompleted", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.NumberCyclesCompleted = Integer.valueOf(childNode.getTextContent());
+			this.numberCyclesCompleted = Integer.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("NumberCyclesRemaining", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.NumberCyclesRemaining = Integer.valueOf(childNode.getTextContent());
+			this.numberCyclesRemaining = Integer.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("OutstandingBalance", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OutstandingBalance =  new BasicAmountType(childNode);
+		    this.outstandingBalance =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("FailedPaymentCount", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.FailedPaymentCount = Integer.valueOf(childNode.getTextContent());
+			this.failedPaymentCount = Integer.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("LastPaymentDate", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.LastPaymentDate = childNode.getTextContent();
+		    this.lastPaymentDate = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("LastPaymentAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.LastPaymentAmount =  new BasicAmountType(childNode);
+		    this.lastPaymentAmount =  new BasicAmountType(childNode);
 		}
 	}
  

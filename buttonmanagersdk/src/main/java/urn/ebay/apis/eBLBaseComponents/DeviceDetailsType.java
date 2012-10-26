@@ -8,13 +8,15 @@ import com.paypal.core.SDKUtil;
  */
 public class DeviceDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Device ID Optional  Character length and limits: 256
 	 * single-byte characters DeviceID length morethan 256 is
 	 * truncated  	 
 	 */ 
-	private String DeviceID;
+	private String deviceID;
 
 	
 
@@ -25,26 +27,42 @@ public class DeviceDetailsType{
 	}	
 
 	/**
-	 * Getter for DeviceID
+	 * Getter for deviceID
 	 */
 	 public String getDeviceID() {
-	 	return DeviceID;
+	 	return deviceID;
 	 }
 	 
 	/**
-	 * Setter for DeviceID
+	 * Setter for deviceID
 	 */
-	 public void setDeviceID(String DeviceID) {
-	 	this.DeviceID = DeviceID;
+	 public void setDeviceID(String deviceID) {
+	 	this.deviceID = deviceID;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(DeviceID != null) {
-			sb.append("<ebl:DeviceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(DeviceID));
-			sb.append("</ebl:DeviceID>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		if(deviceID != null) {
+			sb.append("<").append(preferredPrefix).append(":DeviceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(deviceID));
+			sb.append("</").append(preferredPrefix).append(":DeviceID>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

@@ -25,25 +25,27 @@ import org.xml.sax.SAXException;
  */
 public class OptionDetailsType{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * Option Name. Optional 	  
 	 *@Required	 
 	 */ 
-	private String OptionName;
+	private String optionName;
 
 	/**
 	 * 	 
 	 */ 
-	private List<OptionSelectionDetailsType> OptionSelectionDetails = new ArrayList<OptionSelectionDetailsType>();
+	private List<OptionSelectionDetailsType> optionSelectionDetails = new ArrayList<OptionSelectionDetailsType>();
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public OptionDetailsType (String OptionName){
-		this.OptionName = OptionName;
+	public OptionDetailsType (String optionName){
+		this.optionName = optionName;
 	}	
 
 	/**
@@ -53,46 +55,60 @@ public class OptionDetailsType{
 	}	
 
 	/**
-	 * Getter for OptionName
+	 * Getter for optionName
 	 */
 	 public String getOptionName() {
-	 	return OptionName;
+	 	return optionName;
 	 }
 	 
 	/**
-	 * Setter for OptionName
+	 * Setter for optionName
 	 */
-	 public void setOptionName(String OptionName) {
-	 	this.OptionName = OptionName;
+	 public void setOptionName(String optionName) {
+	 	this.optionName = optionName;
 	 }
 	 
 	/**
-	 * Getter for OptionSelectionDetails
+	 * Getter for optionSelectionDetails
 	 */
 	 public List<OptionSelectionDetailsType> getOptionSelectionDetails() {
-	 	return OptionSelectionDetails;
+	 	return optionSelectionDetails;
 	 }
 	 
 	/**
-	 * Setter for OptionSelectionDetails
+	 * Setter for optionSelectionDetails
 	 */
-	 public void setOptionSelectionDetails(List<OptionSelectionDetailsType> OptionSelectionDetails) {
-	 	this.OptionSelectionDetails = OptionSelectionDetails;
+	 public void setOptionSelectionDetails(List<OptionSelectionDetailsType> optionSelectionDetails) {
+	 	this.optionSelectionDetails = optionSelectionDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(OptionName != null) {
-			sb.append("<urn:OptionName>").append(SDKUtil.escapeInvalidXmlCharsRegex(OptionName));
-			sb.append("</urn:OptionName>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(OptionSelectionDetails != null) {
-			for(int i=0; i < OptionSelectionDetails.size(); i++) {
-				sb.append("<urn:OptionSelectionDetails>");
-				sb.append(OptionSelectionDetails.get(i).toXMLString());
-				sb.append("</urn:OptionSelectionDetails>");
+		if(optionName != null) {
+			sb.append("<").append(preferredPrefix).append(":OptionName>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionName));
+			sb.append("</").append(preferredPrefix).append(":OptionName>");
+		}
+		if(optionSelectionDetails != null) {
+			for(int i=0; i < optionSelectionDetails.size(); i++) {
+				sb.append(optionSelectionDetails.get(i).toXMLString(preferredPrefix,"OptionSelectionDetails"));
+			}
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
 			}
 		}
 		return sb.toString();
@@ -117,14 +133,14 @@ public class OptionDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("OptionName", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OptionName = childNode.getTextContent();
+		    this.optionName = childNode.getTextContent();
 		}
 	
         nodeList = (NodeList) xpath.evaluate("OptionSelectionDetails", node, XPathConstants.NODESET);
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.OptionSelectionDetails.add(new OptionSelectionDetailsType(subNode));
+				this.optionSelectionDetails.add(new OptionSelectionDetailsType(subNode));
 			}
 		}
 	}

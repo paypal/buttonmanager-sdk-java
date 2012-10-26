@@ -33,87 +33,87 @@ public class GetBoardingDetailsResponseDetailsType{
 	 * CompletedCancelledPending Character length and limitations:
 	 * Eight alphabetic characters	 
 	 */ 
-	private BoardingStatusType Status;
+	private BoardingStatusType status;
 
 	/**
 	 * Date the boarding process started	 
 	 */ 
-	private String StartDate;
+	private String startDate;
 
 	/**
 	 * Date the merchant’s status or progress was last updated	 
 	 */ 
-	private String LastUpdated;
+	private String lastUpdated;
 
 	/**
 	 * Reason for merchant’s cancellation of sign-up. Character
 	 * length and limitations: 1,024 alphanumeric characters	 
 	 */ 
-	private String Reason;
+	private String reason;
 
 	/**
 	 * 	 
 	 */ 
-	private String ProgramName;
+	private String programName;
 
 	/**
 	 * 	 
 	 */ 
-	private String ProgramCode;
+	private String programCode;
 
 	/**
 	 * 	 
 	 */ 
-	private String CampaignID;
+	private String campaignID;
 
 	/**
 	 * Indicates if there is a limitation on the amount of money
 	 * the business can withdraw from PayPal	 
 	 */ 
-	private UserWithdrawalLimitTypeType UserWithdrawalLimit;
+	private UserWithdrawalLimitTypeType userWithdrawalLimit;
 
 	/**
 	 * Custom information you set on the EnterBoarding API call
 	 * Character length and limitations: 256 alphanumeric
 	 * characters	 
 	 */ 
-	private String PartnerCustom;
+	private String partnerCustom;
 
 	/**
 	 * Details about the owner of the account	 
 	 */ 
-	private PayerInfoType AccountOwner;
+	private PayerInfoType accountOwner;
 
 	/**
 	 * Merchant’s PayPal API credentials	 
 	 */ 
-	private APICredentialsType Credentials;
+	private APICredentialsType credentials;
 
 	/**
 	 * The APIs that this merchant has granted the business partner
 	 * permission to call on his behalf. For example:
 	 * SetExpressCheckout,GetExpressCheckoutDetails,DoExpressCheckoutPayment	 
 	 */ 
-	private String ConfigureAPIs;
+	private String configureAPIs;
 
 	/**
 	 * Primary email verification status. Confirmed, Unconfirmed	 
 	 */ 
-	private String EmailVerificationStatus;
+	private String emailVerificationStatus;
 
 	/**
 	 * Gives VettingStatus - Pending, Cancelled, Approved,
 	 * UnderReview Character length and limitations: 256
 	 * alphanumeric characters	 
 	 */ 
-	private String VettingStatus;
+	private String vettingStatus;
 
 	/**
 	 * Gives BankAccountVerificationStatus - Added, Confirmed
 	 * Character length and limitations: 256 alphanumeric
 	 * characters	 
 	 */ 
-	private String BankAccountVerificationStatus;
+	private String bankAccountVerificationStatus;
 
 	
 
@@ -124,213 +124,213 @@ public class GetBoardingDetailsResponseDetailsType{
 	}	
 
 	/**
-	 * Getter for Status
+	 * Getter for status
 	 */
 	 public BoardingStatusType getStatus() {
-	 	return Status;
+	 	return status;
 	 }
 	 
 	/**
-	 * Setter for Status
+	 * Setter for status
 	 */
-	 public void setStatus(BoardingStatusType Status) {
-	 	this.Status = Status;
+	 public void setStatus(BoardingStatusType status) {
+	 	this.status = status;
 	 }
 	 
 	/**
-	 * Getter for StartDate
+	 * Getter for startDate
 	 */
 	 public String getStartDate() {
-	 	return StartDate;
+	 	return startDate;
 	 }
 	 
 	/**
-	 * Setter for StartDate
+	 * Setter for startDate
 	 */
-	 public void setStartDate(String StartDate) {
-	 	this.StartDate = StartDate;
+	 public void setStartDate(String startDate) {
+	 	this.startDate = startDate;
 	 }
 	 
 	/**
-	 * Getter for LastUpdated
+	 * Getter for lastUpdated
 	 */
 	 public String getLastUpdated() {
-	 	return LastUpdated;
+	 	return lastUpdated;
 	 }
 	 
 	/**
-	 * Setter for LastUpdated
+	 * Setter for lastUpdated
 	 */
-	 public void setLastUpdated(String LastUpdated) {
-	 	this.LastUpdated = LastUpdated;
+	 public void setLastUpdated(String lastUpdated) {
+	 	this.lastUpdated = lastUpdated;
 	 }
 	 
 	/**
-	 * Getter for Reason
+	 * Getter for reason
 	 */
 	 public String getReason() {
-	 	return Reason;
+	 	return reason;
 	 }
 	 
 	/**
-	 * Setter for Reason
+	 * Setter for reason
 	 */
-	 public void setReason(String Reason) {
-	 	this.Reason = Reason;
+	 public void setReason(String reason) {
+	 	this.reason = reason;
 	 }
 	 
 	/**
-	 * Getter for ProgramName
+	 * Getter for programName
 	 */
 	 public String getProgramName() {
-	 	return ProgramName;
+	 	return programName;
 	 }
 	 
 	/**
-	 * Setter for ProgramName
+	 * Setter for programName
 	 */
-	 public void setProgramName(String ProgramName) {
-	 	this.ProgramName = ProgramName;
+	 public void setProgramName(String programName) {
+	 	this.programName = programName;
 	 }
 	 
 	/**
-	 * Getter for ProgramCode
+	 * Getter for programCode
 	 */
 	 public String getProgramCode() {
-	 	return ProgramCode;
+	 	return programCode;
 	 }
 	 
 	/**
-	 * Setter for ProgramCode
+	 * Setter for programCode
 	 */
-	 public void setProgramCode(String ProgramCode) {
-	 	this.ProgramCode = ProgramCode;
+	 public void setProgramCode(String programCode) {
+	 	this.programCode = programCode;
 	 }
 	 
 	/**
-	 * Getter for CampaignID
+	 * Getter for campaignID
 	 */
 	 public String getCampaignID() {
-	 	return CampaignID;
+	 	return campaignID;
 	 }
 	 
 	/**
-	 * Setter for CampaignID
+	 * Setter for campaignID
 	 */
-	 public void setCampaignID(String CampaignID) {
-	 	this.CampaignID = CampaignID;
+	 public void setCampaignID(String campaignID) {
+	 	this.campaignID = campaignID;
 	 }
 	 
 	/**
-	 * Getter for UserWithdrawalLimit
+	 * Getter for userWithdrawalLimit
 	 */
 	 public UserWithdrawalLimitTypeType getUserWithdrawalLimit() {
-	 	return UserWithdrawalLimit;
+	 	return userWithdrawalLimit;
 	 }
 	 
 	/**
-	 * Setter for UserWithdrawalLimit
+	 * Setter for userWithdrawalLimit
 	 */
-	 public void setUserWithdrawalLimit(UserWithdrawalLimitTypeType UserWithdrawalLimit) {
-	 	this.UserWithdrawalLimit = UserWithdrawalLimit;
+	 public void setUserWithdrawalLimit(UserWithdrawalLimitTypeType userWithdrawalLimit) {
+	 	this.userWithdrawalLimit = userWithdrawalLimit;
 	 }
 	 
 	/**
-	 * Getter for PartnerCustom
+	 * Getter for partnerCustom
 	 */
 	 public String getPartnerCustom() {
-	 	return PartnerCustom;
+	 	return partnerCustom;
 	 }
 	 
 	/**
-	 * Setter for PartnerCustom
+	 * Setter for partnerCustom
 	 */
-	 public void setPartnerCustom(String PartnerCustom) {
-	 	this.PartnerCustom = PartnerCustom;
+	 public void setPartnerCustom(String partnerCustom) {
+	 	this.partnerCustom = partnerCustom;
 	 }
 	 
 	/**
-	 * Getter for AccountOwner
+	 * Getter for accountOwner
 	 */
 	 public PayerInfoType getAccountOwner() {
-	 	return AccountOwner;
+	 	return accountOwner;
 	 }
 	 
 	/**
-	 * Setter for AccountOwner
+	 * Setter for accountOwner
 	 */
-	 public void setAccountOwner(PayerInfoType AccountOwner) {
-	 	this.AccountOwner = AccountOwner;
+	 public void setAccountOwner(PayerInfoType accountOwner) {
+	 	this.accountOwner = accountOwner;
 	 }
 	 
 	/**
-	 * Getter for Credentials
+	 * Getter for credentials
 	 */
 	 public APICredentialsType getCredentials() {
-	 	return Credentials;
+	 	return credentials;
 	 }
 	 
 	/**
-	 * Setter for Credentials
+	 * Setter for credentials
 	 */
-	 public void setCredentials(APICredentialsType Credentials) {
-	 	this.Credentials = Credentials;
+	 public void setCredentials(APICredentialsType credentials) {
+	 	this.credentials = credentials;
 	 }
 	 
 	/**
-	 * Getter for ConfigureAPIs
+	 * Getter for configureAPIs
 	 */
 	 public String getConfigureAPIs() {
-	 	return ConfigureAPIs;
+	 	return configureAPIs;
 	 }
 	 
 	/**
-	 * Setter for ConfigureAPIs
+	 * Setter for configureAPIs
 	 */
-	 public void setConfigureAPIs(String ConfigureAPIs) {
-	 	this.ConfigureAPIs = ConfigureAPIs;
+	 public void setConfigureAPIs(String configureAPIs) {
+	 	this.configureAPIs = configureAPIs;
 	 }
 	 
 	/**
-	 * Getter for EmailVerificationStatus
+	 * Getter for emailVerificationStatus
 	 */
 	 public String getEmailVerificationStatus() {
-	 	return EmailVerificationStatus;
+	 	return emailVerificationStatus;
 	 }
 	 
 	/**
-	 * Setter for EmailVerificationStatus
+	 * Setter for emailVerificationStatus
 	 */
-	 public void setEmailVerificationStatus(String EmailVerificationStatus) {
-	 	this.EmailVerificationStatus = EmailVerificationStatus;
+	 public void setEmailVerificationStatus(String emailVerificationStatus) {
+	 	this.emailVerificationStatus = emailVerificationStatus;
 	 }
 	 
 	/**
-	 * Getter for VettingStatus
+	 * Getter for vettingStatus
 	 */
 	 public String getVettingStatus() {
-	 	return VettingStatus;
+	 	return vettingStatus;
 	 }
 	 
 	/**
-	 * Setter for VettingStatus
+	 * Setter for vettingStatus
 	 */
-	 public void setVettingStatus(String VettingStatus) {
-	 	this.VettingStatus = VettingStatus;
+	 public void setVettingStatus(String vettingStatus) {
+	 	this.vettingStatus = vettingStatus;
 	 }
 	 
 	/**
-	 * Getter for BankAccountVerificationStatus
+	 * Getter for bankAccountVerificationStatus
 	 */
 	 public String getBankAccountVerificationStatus() {
-	 	return BankAccountVerificationStatus;
+	 	return bankAccountVerificationStatus;
 	 }
 	 
 	/**
-	 * Setter for BankAccountVerificationStatus
+	 * Setter for bankAccountVerificationStatus
 	 */
-	 public void setBankAccountVerificationStatus(String BankAccountVerificationStatus) {
-	 	this.BankAccountVerificationStatus = BankAccountVerificationStatus;
+	 public void setBankAccountVerificationStatus(String bankAccountVerificationStatus) {
+	 	this.bankAccountVerificationStatus = bankAccountVerificationStatus;
 	 }
 	 
 
@@ -354,73 +354,73 @@ public class GetBoardingDetailsResponseDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Status", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Status = BoardingStatusType.fromValue(childNode.getTextContent());
+		    this.status = BoardingStatusType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("StartDate", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.StartDate = childNode.getTextContent();
+		    this.startDate = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("LastUpdated", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.LastUpdated = childNode.getTextContent();
+		    this.lastUpdated = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Reason", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Reason = childNode.getTextContent();
+		    this.reason = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ProgramName", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ProgramName = childNode.getTextContent();
+		    this.programName = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ProgramCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ProgramCode = childNode.getTextContent();
+		    this.programCode = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("CampaignID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CampaignID = childNode.getTextContent();
+		    this.campaignID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("UserWithdrawalLimit", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.UserWithdrawalLimit = UserWithdrawalLimitTypeType.fromValue(childNode.getTextContent());
+		    this.userWithdrawalLimit = UserWithdrawalLimitTypeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("PartnerCustom", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PartnerCustom = childNode.getTextContent();
+		    this.partnerCustom = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("AccountOwner", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AccountOwner =  new PayerInfoType(childNode);
+		    this.accountOwner =  new PayerInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("Credentials", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Credentials =  new APICredentialsType(childNode);
+		    this.credentials =  new APICredentialsType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("ConfigureAPIs", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ConfigureAPIs = childNode.getTextContent();
+		    this.configureAPIs = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("EmailVerificationStatus", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.EmailVerificationStatus = childNode.getTextContent();
+		    this.emailVerificationStatus = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("VettingStatus", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.VettingStatus = childNode.getTextContent();
+		    this.vettingStatus = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("BankAccountVerificationStatus", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BankAccountVerificationStatus = childNode.getTextContent();
+		    this.bankAccountVerificationStatus = childNode.getTextContent();
 		}
 	
 	}

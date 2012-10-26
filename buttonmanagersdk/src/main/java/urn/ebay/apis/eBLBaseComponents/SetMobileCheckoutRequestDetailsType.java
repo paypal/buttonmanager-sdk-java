@@ -10,12 +10,14 @@ import com.paypal.core.SDKUtil;
  */
 public class SetMobileCheckoutRequestDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * The phone number of the buyer's mobile device, if available.
 	 * Optional 	 
 	 */ 
-	private PhoneNumberType BuyerPhone;
+	private PhoneNumberType buyerPhone;
 
 	/**
 	 * Cost of this item before tax and shipping.You must set the
@@ -23,21 +25,21 @@ public class SetMobileCheckoutRequestDetailsType{
 	 * codes for any of the supported PayPal currencies. Required	  
 	 *@Required	 
 	 */ 
-	private BasicAmountType ItemAmount;
+	private BasicAmountType itemAmount;
 
 	/**
 	 * Tax amount for this item.You must set the currencyID
 	 * attribute to one of the three-character currency codes for
 	 * any of the supported PayPal currencies. Optional	 
 	 */ 
-	private BasicAmountType Tax;
+	private BasicAmountType tax;
 
 	/**
 	 * Shipping amount for this item.You must set the currencyID
 	 * attribute to one of the three-character currency codes for
 	 * any of the supported PayPal currencies. Optional	 
 	 */ 
-	private BasicAmountType Shipping;
+	private BasicAmountType shipping;
 
 	/**
 	 * Description of the item that the customer is purchasing.
@@ -45,14 +47,14 @@ public class SetMobileCheckoutRequestDetailsType{
 	 * alphanumeric characters	  
 	 *@Required	 
 	 */ 
-	private String ItemName;
+	private String itemName;
 
 	/**
 	 * Reference number of the item that the customer is
 	 * purchasing. Optional Character length and limitations: 127
 	 * single-byte alphanumeric characters	 
 	 */ 
-	private String ItemNumber;
+	private String itemNumber;
 
 	/**
 	 * A free-form field for your own use, such as a tracking
@@ -60,14 +62,14 @@ public class SetMobileCheckoutRequestDetailsType{
 	 * Optional Character length and limitations: 256 single-byte
 	 * alphanumeric characters	 
 	 */ 
-	private String Custom;
+	private String custom;
 
 	/**
 	 * Your own unique invoice or tracking number. Optional
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters	 
 	 */ 
-	private String InvoiceID;
+	private String invoiceID;
 
 	/**
 	 * URL to which the customer's browser is returned after
@@ -77,7 +79,7 @@ public class SetMobileCheckoutRequestDetailsType{
 	 * length and limitations: no limit. 	  
 	 *@Required	 
 	 */ 
-	private String ReturnURL;
+	private String returnURL;
 
 	/**
 	 * URL to which the customer is returned if he does not approve
@@ -86,7 +88,7 @@ public class SetMobileCheckoutRequestDetailsType{
 	 * customer chose to pay with PayPal. Optional Character length
 	 * and limitations: no limit	 
 	 */ 
-	private String CancelURL;
+	private String cancelURL;
 
 	/**
 	 * The value 1 indicates that you require that the customer's
@@ -94,19 +96,19 @@ public class SetMobileCheckoutRequestDetailsType{
 	 * Setting this element overrides the setting you have
 	 * specified in your Merchant Account Profile. Optional	 
 	 */ 
-	private Integer AddressDisplayOptions;
+	private Integer addressDisplayOptions;
 
 	/**
 	 * The value 1 indicates that you require that the customer
 	 * specifies a contact phone for the transactxion. Default is 0
 	 * / none required. Optional	 
 	 */ 
-	private Integer SharePhone;
+	private Integer sharePhone;
 
 	/**
 	 * Customer's shipping address. Optional	 
 	 */ 
-	private AddressType ShipToAddress;
+	private AddressType shipToAddress;
 
 	/**
 	 * Email address of the buyer as entered during checkout.
@@ -114,17 +116,17 @@ public class SetMobileCheckoutRequestDetailsType{
 	 * PayPal login page. Optional Character length and limit: 127
 	 * single-byte alphanumeric characters 	 
 	 */ 
-	private String BuyerEmail;
+	private String buyerEmail;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public SetMobileCheckoutRequestDetailsType (BasicAmountType ItemAmount, String ItemName, String ReturnURL){
-		this.ItemAmount = ItemAmount;
-		this.ItemName = ItemName;
-		this.ReturnURL = ReturnURL;
+	public SetMobileCheckoutRequestDetailsType (BasicAmountType itemAmount, String itemName, String returnURL){
+		this.itemAmount = itemAmount;
+		this.itemName = itemName;
+		this.returnURL = returnURL;
 	}	
 
 	/**
@@ -134,265 +136,271 @@ public class SetMobileCheckoutRequestDetailsType{
 	}	
 
 	/**
-	 * Getter for BuyerPhone
+	 * Getter for buyerPhone
 	 */
 	 public PhoneNumberType getBuyerPhone() {
-	 	return BuyerPhone;
+	 	return buyerPhone;
 	 }
 	 
 	/**
-	 * Setter for BuyerPhone
+	 * Setter for buyerPhone
 	 */
-	 public void setBuyerPhone(PhoneNumberType BuyerPhone) {
-	 	this.BuyerPhone = BuyerPhone;
+	 public void setBuyerPhone(PhoneNumberType buyerPhone) {
+	 	this.buyerPhone = buyerPhone;
 	 }
 	 
 	/**
-	 * Getter for ItemAmount
+	 * Getter for itemAmount
 	 */
 	 public BasicAmountType getItemAmount() {
-	 	return ItemAmount;
+	 	return itemAmount;
 	 }
 	 
 	/**
-	 * Setter for ItemAmount
+	 * Setter for itemAmount
 	 */
-	 public void setItemAmount(BasicAmountType ItemAmount) {
-	 	this.ItemAmount = ItemAmount;
+	 public void setItemAmount(BasicAmountType itemAmount) {
+	 	this.itemAmount = itemAmount;
 	 }
 	 
 	/**
-	 * Getter for Tax
+	 * Getter for tax
 	 */
 	 public BasicAmountType getTax() {
-	 	return Tax;
+	 	return tax;
 	 }
 	 
 	/**
-	 * Setter for Tax
+	 * Setter for tax
 	 */
-	 public void setTax(BasicAmountType Tax) {
-	 	this.Tax = Tax;
+	 public void setTax(BasicAmountType tax) {
+	 	this.tax = tax;
 	 }
 	 
 	/**
-	 * Getter for Shipping
+	 * Getter for shipping
 	 */
 	 public BasicAmountType getShipping() {
-	 	return Shipping;
+	 	return shipping;
 	 }
 	 
 	/**
-	 * Setter for Shipping
+	 * Setter for shipping
 	 */
-	 public void setShipping(BasicAmountType Shipping) {
-	 	this.Shipping = Shipping;
+	 public void setShipping(BasicAmountType shipping) {
+	 	this.shipping = shipping;
 	 }
 	 
 	/**
-	 * Getter for ItemName
+	 * Getter for itemName
 	 */
 	 public String getItemName() {
-	 	return ItemName;
+	 	return itemName;
 	 }
 	 
 	/**
-	 * Setter for ItemName
+	 * Setter for itemName
 	 */
-	 public void setItemName(String ItemName) {
-	 	this.ItemName = ItemName;
+	 public void setItemName(String itemName) {
+	 	this.itemName = itemName;
 	 }
 	 
 	/**
-	 * Getter for ItemNumber
+	 * Getter for itemNumber
 	 */
 	 public String getItemNumber() {
-	 	return ItemNumber;
+	 	return itemNumber;
 	 }
 	 
 	/**
-	 * Setter for ItemNumber
+	 * Setter for itemNumber
 	 */
-	 public void setItemNumber(String ItemNumber) {
-	 	this.ItemNumber = ItemNumber;
+	 public void setItemNumber(String itemNumber) {
+	 	this.itemNumber = itemNumber;
 	 }
 	 
 	/**
-	 * Getter for Custom
+	 * Getter for custom
 	 */
 	 public String getCustom() {
-	 	return Custom;
+	 	return custom;
 	 }
 	 
 	/**
-	 * Setter for Custom
+	 * Setter for custom
 	 */
-	 public void setCustom(String Custom) {
-	 	this.Custom = Custom;
+	 public void setCustom(String custom) {
+	 	this.custom = custom;
 	 }
 	 
 	/**
-	 * Getter for InvoiceID
+	 * Getter for invoiceID
 	 */
 	 public String getInvoiceID() {
-	 	return InvoiceID;
+	 	return invoiceID;
 	 }
 	 
 	/**
-	 * Setter for InvoiceID
+	 * Setter for invoiceID
 	 */
-	 public void setInvoiceID(String InvoiceID) {
-	 	this.InvoiceID = InvoiceID;
+	 public void setInvoiceID(String invoiceID) {
+	 	this.invoiceID = invoiceID;
 	 }
 	 
 	/**
-	 * Getter for ReturnURL
+	 * Getter for returnURL
 	 */
 	 public String getReturnURL() {
-	 	return ReturnURL;
+	 	return returnURL;
 	 }
 	 
 	/**
-	 * Setter for ReturnURL
+	 * Setter for returnURL
 	 */
-	 public void setReturnURL(String ReturnURL) {
-	 	this.ReturnURL = ReturnURL;
+	 public void setReturnURL(String returnURL) {
+	 	this.returnURL = returnURL;
 	 }
 	 
 	/**
-	 * Getter for CancelURL
+	 * Getter for cancelURL
 	 */
 	 public String getCancelURL() {
-	 	return CancelURL;
+	 	return cancelURL;
 	 }
 	 
 	/**
-	 * Setter for CancelURL
+	 * Setter for cancelURL
 	 */
-	 public void setCancelURL(String CancelURL) {
-	 	this.CancelURL = CancelURL;
+	 public void setCancelURL(String cancelURL) {
+	 	this.cancelURL = cancelURL;
 	 }
 	 
 	/**
-	 * Getter for AddressDisplayOptions
+	 * Getter for addressDisplayOptions
 	 */
 	 public Integer getAddressDisplayOptions() {
-	 	return AddressDisplayOptions;
+	 	return addressDisplayOptions;
 	 }
 	 
 	/**
-	 * Setter for AddressDisplayOptions
+	 * Setter for addressDisplayOptions
 	 */
-	 public void setAddressDisplayOptions(Integer AddressDisplayOptions) {
-	 	this.AddressDisplayOptions = AddressDisplayOptions;
+	 public void setAddressDisplayOptions(Integer addressDisplayOptions) {
+	 	this.addressDisplayOptions = addressDisplayOptions;
 	 }
 	 
 	/**
-	 * Getter for SharePhone
+	 * Getter for sharePhone
 	 */
 	 public Integer getSharePhone() {
-	 	return SharePhone;
+	 	return sharePhone;
 	 }
 	 
 	/**
-	 * Setter for SharePhone
+	 * Setter for sharePhone
 	 */
-	 public void setSharePhone(Integer SharePhone) {
-	 	this.SharePhone = SharePhone;
+	 public void setSharePhone(Integer sharePhone) {
+	 	this.sharePhone = sharePhone;
 	 }
 	 
 	/**
-	 * Getter for ShipToAddress
+	 * Getter for shipToAddress
 	 */
 	 public AddressType getShipToAddress() {
-	 	return ShipToAddress;
+	 	return shipToAddress;
 	 }
 	 
 	/**
-	 * Setter for ShipToAddress
+	 * Setter for shipToAddress
 	 */
-	 public void setShipToAddress(AddressType ShipToAddress) {
-	 	this.ShipToAddress = ShipToAddress;
+	 public void setShipToAddress(AddressType shipToAddress) {
+	 	this.shipToAddress = shipToAddress;
 	 }
 	 
 	/**
-	 * Getter for BuyerEmail
+	 * Getter for buyerEmail
 	 */
 	 public String getBuyerEmail() {
-	 	return BuyerEmail;
+	 	return buyerEmail;
 	 }
 	 
 	/**
-	 * Setter for BuyerEmail
+	 * Setter for buyerEmail
 	 */
-	 public void setBuyerEmail(String BuyerEmail) {
-	 	this.BuyerEmail = BuyerEmail;
+	 public void setBuyerEmail(String buyerEmail) {
+	 	this.buyerEmail = buyerEmail;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(BuyerPhone != null) {
-			sb.append("<ebl:BuyerPhone>");
-			sb.append(BuyerPhone.toXMLString());
-			sb.append("</ebl:BuyerPhone>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ItemAmount != null) {
-			sb.append("<ebl:ItemAmount");
-			sb.append(ItemAmount.toXMLString());
-			sb.append("</ebl:ItemAmount>");
+		if(buyerPhone != null) {
+			sb.append(buyerPhone.toXMLString(preferredPrefix,"BuyerPhone"));
 		}
-		if(Tax != null) {
-			sb.append("<ebl:Tax");
-			sb.append(Tax.toXMLString());
-			sb.append("</ebl:Tax>");
+		if(itemAmount != null) {
+			sb.append(itemAmount.toXMLString(preferredPrefix,"ItemAmount"));
 		}
-		if(Shipping != null) {
-			sb.append("<ebl:Shipping");
-			sb.append(Shipping.toXMLString());
-			sb.append("</ebl:Shipping>");
+		if(tax != null) {
+			sb.append(tax.toXMLString(preferredPrefix,"Tax"));
 		}
-		if(ItemName != null) {
-			sb.append("<ebl:ItemName>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemName));
-			sb.append("</ebl:ItemName>");
+		if(shipping != null) {
+			sb.append(shipping.toXMLString(preferredPrefix,"Shipping"));
 		}
-		if(ItemNumber != null) {
-			sb.append("<ebl:ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemNumber));
-			sb.append("</ebl:ItemNumber>");
+		if(itemName != null) {
+			sb.append("<").append(preferredPrefix).append(":ItemName>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemName));
+			sb.append("</").append(preferredPrefix).append(":ItemName>");
 		}
-		if(Custom != null) {
-			sb.append("<ebl:Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(Custom));
-			sb.append("</ebl:Custom>");
+		if(itemNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemNumber));
+			sb.append("</").append(preferredPrefix).append(":ItemNumber>");
 		}
-		if(InvoiceID != null) {
-			sb.append("<ebl:InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(InvoiceID));
-			sb.append("</ebl:InvoiceID>");
+		if(custom != null) {
+			sb.append("<").append(preferredPrefix).append(":Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(custom));
+			sb.append("</").append(preferredPrefix).append(":Custom>");
 		}
-		if(ReturnURL != null) {
-			sb.append("<ebl:ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReturnURL));
-			sb.append("</ebl:ReturnURL>");
+		if(invoiceID != null) {
+			sb.append("<").append(preferredPrefix).append(":InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(invoiceID));
+			sb.append("</").append(preferredPrefix).append(":InvoiceID>");
 		}
-		if(CancelURL != null) {
-			sb.append("<ebl:CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(CancelURL));
-			sb.append("</ebl:CancelURL>");
+		if(returnURL != null) {
+			sb.append("<").append(preferredPrefix).append(":ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(returnURL));
+			sb.append("</").append(preferredPrefix).append(":ReturnURL>");
 		}
-		if(AddressDisplayOptions != null) {
-			sb.append("<ebl:AddressDisplayOptions>").append(SDKUtil.escapeInvalidXmlCharsRegex(AddressDisplayOptions));
-			sb.append("</ebl:AddressDisplayOptions>");
+		if(cancelURL != null) {
+			sb.append("<").append(preferredPrefix).append(":CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(cancelURL));
+			sb.append("</").append(preferredPrefix).append(":CancelURL>");
 		}
-		if(SharePhone != null) {
-			sb.append("<ebl:SharePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(SharePhone));
-			sb.append("</ebl:SharePhone>");
+		if(addressDisplayOptions != null) {
+			sb.append("<").append(preferredPrefix).append(":AddressDisplayOptions>").append(SDKUtil.escapeInvalidXmlCharsRegex(addressDisplayOptions));
+			sb.append("</").append(preferredPrefix).append(":AddressDisplayOptions>");
 		}
-		if(ShipToAddress != null) {
-			sb.append("<ebl:ShipToAddress>");
-			sb.append(ShipToAddress.toXMLString());
-			sb.append("</ebl:ShipToAddress>");
+		if(sharePhone != null) {
+			sb.append("<").append(preferredPrefix).append(":SharePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(sharePhone));
+			sb.append("</").append(preferredPrefix).append(":SharePhone>");
 		}
-		if(BuyerEmail != null) {
-			sb.append("<ebl:BuyerEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(BuyerEmail));
-			sb.append("</ebl:BuyerEmail>");
+		if(shipToAddress != null) {
+			sb.append(shipToAddress.toXMLString(preferredPrefix,"ShipToAddress"));
+		}
+		if(buyerEmail != null) {
+			sb.append("<").append(preferredPrefix).append(":BuyerEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(buyerEmail));
+			sb.append("</").append(preferredPrefix).append(":BuyerEmail>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

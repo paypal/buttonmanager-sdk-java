@@ -25,12 +25,12 @@ public class AuctionInfoType{
 	/**
 	 * Customer's auction ID 	 
 	 */ 
-	private String BuyerID;
+	private String buyerID;
 
 	/**
 	 * Auction's close date 	 
 	 */ 
-	private String ClosingDate;
+	private String closingDate;
 
 	
 
@@ -41,31 +41,31 @@ public class AuctionInfoType{
 	}	
 
 	/**
-	 * Getter for BuyerID
+	 * Getter for buyerID
 	 */
 	 public String getBuyerID() {
-	 	return BuyerID;
+	 	return buyerID;
 	 }
 	 
 	/**
-	 * Setter for BuyerID
+	 * Setter for buyerID
 	 */
-	 public void setBuyerID(String BuyerID) {
-	 	this.BuyerID = BuyerID;
+	 public void setBuyerID(String buyerID) {
+	 	this.buyerID = buyerID;
 	 }
 	 
 	/**
-	 * Getter for ClosingDate
+	 * Getter for closingDate
 	 */
 	 public String getClosingDate() {
-	 	return ClosingDate;
+	 	return closingDate;
 	 }
 	 
 	/**
-	 * Setter for ClosingDate
+	 * Setter for closingDate
 	 */
-	 public void setClosingDate(String ClosingDate) {
-	 	this.ClosingDate = ClosingDate;
+	 public void setClosingDate(String closingDate) {
+	 	this.closingDate = closingDate;
 	 }
 	 
 
@@ -89,12 +89,12 @@ public class AuctionInfoType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("BuyerID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BuyerID = childNode.getTextContent();
+		    this.buyerID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ClosingDate", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ClosingDate = childNode.getTextContent();
+		    this.closingDate = childNode.getTextContent();
 		}
 	
 	}

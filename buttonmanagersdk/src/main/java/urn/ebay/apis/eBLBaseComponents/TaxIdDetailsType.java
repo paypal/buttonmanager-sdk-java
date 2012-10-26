@@ -23,16 +23,18 @@ import org.xml.sax.SAXException;
  */
 public class TaxIdDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * The payer's Tax ID type; CNPJ/CPF for BR country. 	 
 	 */ 
-	private String TaxIdType;
+	private String taxIdType;
 
 	/**
 	 * The payer's Tax ID 	 
 	 */ 
-	private String TaxId;
+	private String taxId;
 
 	
 
@@ -43,44 +45,60 @@ public class TaxIdDetailsType{
 	}	
 
 	/**
-	 * Getter for TaxIdType
+	 * Getter for taxIdType
 	 */
 	 public String getTaxIdType() {
-	 	return TaxIdType;
+	 	return taxIdType;
 	 }
 	 
 	/**
-	 * Setter for TaxIdType
+	 * Setter for taxIdType
 	 */
-	 public void setTaxIdType(String TaxIdType) {
-	 	this.TaxIdType = TaxIdType;
+	 public void setTaxIdType(String taxIdType) {
+	 	this.taxIdType = taxIdType;
 	 }
 	 
 	/**
-	 * Getter for TaxId
+	 * Getter for taxId
 	 */
 	 public String getTaxId() {
-	 	return TaxId;
+	 	return taxId;
 	 }
 	 
 	/**
-	 * Setter for TaxId
+	 * Setter for taxId
 	 */
-	 public void setTaxId(String TaxId) {
-	 	this.TaxId = TaxId;
+	 public void setTaxId(String taxId) {
+	 	this.taxId = taxId;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(TaxIdType != null) {
-			sb.append("<ebl:TaxIdType>").append(SDKUtil.escapeInvalidXmlCharsRegex(TaxIdType));
-			sb.append("</ebl:TaxIdType>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(TaxId != null) {
-			sb.append("<ebl:TaxId>").append(SDKUtil.escapeInvalidXmlCharsRegex(TaxId));
-			sb.append("</ebl:TaxId>");
+		if(taxIdType != null) {
+			sb.append("<").append(preferredPrefix).append(":TaxIdType>").append(SDKUtil.escapeInvalidXmlCharsRegex(taxIdType));
+			sb.append("</").append(preferredPrefix).append(":TaxIdType>");
+		}
+		if(taxId != null) {
+			sb.append("<").append(preferredPrefix).append(":TaxId>").append(SDKUtil.escapeInvalidXmlCharsRegex(taxId));
+			sb.append("</").append(preferredPrefix).append(":TaxId>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -104,12 +122,12 @@ public class TaxIdDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("TaxIdType", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TaxIdType = childNode.getTextContent();
+		    this.taxIdType = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("TaxId", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TaxId = childNode.getTextContent();
+		    this.taxId = childNode.getTextContent();
 		}
 	
 	}

@@ -25,14 +25,14 @@ public class CoupledPaymentInfoType{
 	/**
 	 * ID received in the Coupled Payment Request	 
 	 */ 
-	private String CoupledPaymentRequestID;
+	private String coupledPaymentRequestID;
 
 	/**
 	 * ID that uniquely identifies this CoupledPayment. Generated
 	 * by PP in Response	  
 	 *@Required	 
 	 */ 
-	private String CoupledPaymentID;
+	private String coupledPaymentID;
 
 	
 
@@ -43,31 +43,31 @@ public class CoupledPaymentInfoType{
 	}	
 
 	/**
-	 * Getter for CoupledPaymentRequestID
+	 * Getter for coupledPaymentRequestID
 	 */
 	 public String getCoupledPaymentRequestID() {
-	 	return CoupledPaymentRequestID;
+	 	return coupledPaymentRequestID;
 	 }
 	 
 	/**
-	 * Setter for CoupledPaymentRequestID
+	 * Setter for coupledPaymentRequestID
 	 */
-	 public void setCoupledPaymentRequestID(String CoupledPaymentRequestID) {
-	 	this.CoupledPaymentRequestID = CoupledPaymentRequestID;
+	 public void setCoupledPaymentRequestID(String coupledPaymentRequestID) {
+	 	this.coupledPaymentRequestID = coupledPaymentRequestID;
 	 }
 	 
 	/**
-	 * Getter for CoupledPaymentID
+	 * Getter for coupledPaymentID
 	 */
 	 public String getCoupledPaymentID() {
-	 	return CoupledPaymentID;
+	 	return coupledPaymentID;
 	 }
 	 
 	/**
-	 * Setter for CoupledPaymentID
+	 * Setter for coupledPaymentID
 	 */
-	 public void setCoupledPaymentID(String CoupledPaymentID) {
-	 	this.CoupledPaymentID = CoupledPaymentID;
+	 public void setCoupledPaymentID(String coupledPaymentID) {
+	 	this.coupledPaymentID = coupledPaymentID;
 	 }
 	 
 
@@ -91,12 +91,12 @@ public class CoupledPaymentInfoType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("CoupledPaymentRequestID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CoupledPaymentRequestID = childNode.getTextContent();
+		    this.coupledPaymentRequestID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("CoupledPaymentID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CoupledPaymentID = childNode.getTextContent();
+		    this.coupledPaymentID = childNode.getTextContent();
 		}
 	
 	}

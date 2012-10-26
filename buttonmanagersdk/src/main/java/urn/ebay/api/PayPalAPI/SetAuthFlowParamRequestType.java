@@ -8,20 +8,22 @@ import com.paypal.core.SDKUtil;
  */
 public class SetAuthFlowParamRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private SetAuthFlowParamRequestDetailsType SetAuthFlowParamRequestDetails;
+	private SetAuthFlowParamRequestDetailsType setAuthFlowParamRequestDetails;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public SetAuthFlowParamRequestType (SetAuthFlowParamRequestDetailsType SetAuthFlowParamRequestDetails){
-		this.SetAuthFlowParamRequestDetails = SetAuthFlowParamRequestDetails;
+	public SetAuthFlowParamRequestType (SetAuthFlowParamRequestDetailsType setAuthFlowParamRequestDetails){
+		this.setAuthFlowParamRequestDetails = setAuthFlowParamRequestDetails;
 	}	
 
 	/**
@@ -31,28 +33,42 @@ public class SetAuthFlowParamRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for SetAuthFlowParamRequestDetails
+	 * Getter for setAuthFlowParamRequestDetails
 	 */
 	 public SetAuthFlowParamRequestDetailsType getSetAuthFlowParamRequestDetails() {
-	 	return SetAuthFlowParamRequestDetails;
+	 	return setAuthFlowParamRequestDetails;
 	 }
 	 
 	/**
-	 * Setter for SetAuthFlowParamRequestDetails
+	 * Setter for setAuthFlowParamRequestDetails
 	 */
-	 public void setSetAuthFlowParamRequestDetails(SetAuthFlowParamRequestDetailsType SetAuthFlowParamRequestDetails) {
-	 	this.SetAuthFlowParamRequestDetails = SetAuthFlowParamRequestDetails;
+	 public void setSetAuthFlowParamRequestDetails(SetAuthFlowParamRequestDetailsType setAuthFlowParamRequestDetails) {
+	 	this.setAuthFlowParamRequestDetails = setAuthFlowParamRequestDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(SetAuthFlowParamRequestDetails != null) {
-			sb.append("<ebl:SetAuthFlowParamRequestDetails>");
-			sb.append(SetAuthFlowParamRequestDetails.toXMLString());
-			sb.append("</ebl:SetAuthFlowParamRequestDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		sb.append(super.toXMLString(prefix, null));
+		if(setAuthFlowParamRequestDetails != null) {
+			sb.append(setAuthFlowParamRequestDetails.toXMLString(null,"SetAuthFlowParamRequestDetails"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

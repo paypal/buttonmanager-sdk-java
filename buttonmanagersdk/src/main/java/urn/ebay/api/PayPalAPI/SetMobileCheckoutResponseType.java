@@ -33,7 +33,7 @@ public class SetMobileCheckoutResponseType extends AbstractResponseType {
 	 * 20 single-byte characters	  
 	 *@Required	 
 	 */ 
-	private String Token;
+	private String token;
 
 	
 
@@ -44,17 +44,17 @@ public class SetMobileCheckoutResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for Token
+	 * Getter for token
 	 */
 	 public String getToken() {
-	 	return Token;
+	 	return token;
 	 }
 	 
 	/**
-	 * Setter for Token
+	 * Setter for token
 	 */
-	 public void setToken(String Token) {
-	 	this.Token = Token;
+	 public void setToken(String token) {
+	 	this.token = token;
 	 }
 	 
 
@@ -80,7 +80,7 @@ public class SetMobileCheckoutResponseType extends AbstractResponseType {
 		childNode = (Node) xpath.evaluate("Token", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 			String value = childNode.getTextContent();
-			this.Token = value;
+			this.token = value;
 		}
 	}
  

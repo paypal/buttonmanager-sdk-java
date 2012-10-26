@@ -31,23 +31,23 @@ public class DoAuthorizationResponseType extends AbstractResponseType {
 	 * limits: 19 single-byte characters	  
 	 *@Required	 
 	 */ 
-	private String TransactionID;
+	private String transactionID;
 
 	/**
 	 * The amount and currency you specified in the request. 	  
 	 *@Required	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	/**
 	 * 	 
 	 */ 
-	private AuthorizationInfoType AuthorizationInfo;
+	private AuthorizationInfoType authorizationInfo;
 
 	/**
 	 * Return msgsubid back to merchant	 
 	 */ 
-	private String MsgSubID;
+	private String msgSubID;
 
 	
 
@@ -58,59 +58,59 @@ public class DoAuthorizationResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for TransactionID
+	 * Getter for transactionID
 	 */
 	 public String getTransactionID() {
-	 	return TransactionID;
+	 	return transactionID;
 	 }
 	 
 	/**
-	 * Setter for TransactionID
+	 * Setter for transactionID
 	 */
-	 public void setTransactionID(String TransactionID) {
-	 	this.TransactionID = TransactionID;
+	 public void setTransactionID(String transactionID) {
+	 	this.transactionID = transactionID;
 	 }
 	 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 	/**
-	 * Getter for AuthorizationInfo
+	 * Getter for authorizationInfo
 	 */
 	 public AuthorizationInfoType getAuthorizationInfo() {
-	 	return AuthorizationInfo;
+	 	return authorizationInfo;
 	 }
 	 
 	/**
-	 * Setter for AuthorizationInfo
+	 * Setter for authorizationInfo
 	 */
-	 public void setAuthorizationInfo(AuthorizationInfoType AuthorizationInfo) {
-	 	this.AuthorizationInfo = AuthorizationInfo;
+	 public void setAuthorizationInfo(AuthorizationInfoType authorizationInfo) {
+	 	this.authorizationInfo = authorizationInfo;
 	 }
 	 
 	/**
-	 * Getter for MsgSubID
+	 * Getter for msgSubID
 	 */
 	 public String getMsgSubID() {
-	 	return MsgSubID;
+	 	return msgSubID;
 	 }
 	 
 	/**
-	 * Setter for MsgSubID
+	 * Setter for msgSubID
 	 */
-	 public void setMsgSubID(String MsgSubID) {
-	 	this.MsgSubID = MsgSubID;
+	 public void setMsgSubID(String msgSubID) {
+	 	this.msgSubID = msgSubID;
 	 }
 	 
 
@@ -135,20 +135,20 @@ public class DoAuthorizationResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("TransactionID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TransactionID = childNode.getTextContent();
+		    this.transactionID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Amount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Amount =  new BasicAmountType(childNode);
+		    this.amount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("AuthorizationInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AuthorizationInfo =  new AuthorizationInfoType(childNode);
+		    this.authorizationInfo =  new AuthorizationInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("MsgSubID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.MsgSubID = childNode.getTextContent();
+		    this.msgSubID = childNode.getTextContent();
 		}
 	
 	}

@@ -30,18 +30,18 @@ public class GetBalanceResponseType extends AbstractResponseType {
 	 * 	  
 	 *@Required	 
 	 */ 
-	private BasicAmountType Balance;
+	private BasicAmountType balance;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String BalanceTimeStamp;
+	private String balanceTimeStamp;
 
 	/**
 	 * 	 
 	 */ 
-	private List<BasicAmountType> BalanceHoldings = new ArrayList<BasicAmountType>();
+	private List<BasicAmountType> balanceHoldings = new ArrayList<BasicAmountType>();
 
 	
 
@@ -52,45 +52,45 @@ public class GetBalanceResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for Balance
+	 * Getter for balance
 	 */
 	 public BasicAmountType getBalance() {
-	 	return Balance;
+	 	return balance;
 	 }
 	 
 	/**
-	 * Setter for Balance
+	 * Setter for balance
 	 */
-	 public void setBalance(BasicAmountType Balance) {
-	 	this.Balance = Balance;
+	 public void setBalance(BasicAmountType balance) {
+	 	this.balance = balance;
 	 }
 	 
 	/**
-	 * Getter for BalanceTimeStamp
+	 * Getter for balanceTimeStamp
 	 */
 	 public String getBalanceTimeStamp() {
-	 	return BalanceTimeStamp;
+	 	return balanceTimeStamp;
 	 }
 	 
 	/**
-	 * Setter for BalanceTimeStamp
+	 * Setter for balanceTimeStamp
 	 */
-	 public void setBalanceTimeStamp(String BalanceTimeStamp) {
-	 	this.BalanceTimeStamp = BalanceTimeStamp;
+	 public void setBalanceTimeStamp(String balanceTimeStamp) {
+	 	this.balanceTimeStamp = balanceTimeStamp;
 	 }
 	 
 	/**
-	 * Getter for BalanceHoldings
+	 * Getter for balanceHoldings
 	 */
 	 public List<BasicAmountType> getBalanceHoldings() {
-	 	return BalanceHoldings;
+	 	return balanceHoldings;
 	 }
 	 
 	/**
-	 * Setter for BalanceHoldings
+	 * Setter for balanceHoldings
 	 */
-	 public void setBalanceHoldings(List<BasicAmountType> BalanceHoldings) {
-	 	this.BalanceHoldings = BalanceHoldings;
+	 public void setBalanceHoldings(List<BasicAmountType> balanceHoldings) {
+	 	this.balanceHoldings = balanceHoldings;
 	 }
 	 
 
@@ -115,18 +115,18 @@ public class GetBalanceResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Balance", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Balance =  new BasicAmountType(childNode);
+		    this.balance =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("BalanceTimeStamp", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BalanceTimeStamp = childNode.getTextContent();
+		    this.balanceTimeStamp = childNode.getTextContent();
 		}
 	
         nodeList = (NodeList) xpath.evaluate("BalanceHoldings", node, XPathConstants.NODESET);
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.BalanceHoldings.add(new BasicAmountType(subNode));
+				this.balanceHoldings.add(new BasicAmountType(subNode));
 			}
 		}
 	}

@@ -13,51 +13,53 @@ import com.paypal.core.SDKUtil;
  */
 public class TransactionSearchRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * The earliest transaction date at which to start the search.
 	 * No wildcards are allowed. Required	  
 	 *@Required	 
 	 */ 
-	private String StartDate;
+	private String startDate;
 
 	/**
 	 * The latest transaction date to be included in the search
 	 * Optional	 
 	 */ 
-	private String EndDate;
+	private String endDate;
 
 	/**
 	 * Search by the buyer's email address OptionalCharacter length
 	 * and limitations: 127 single-byte alphanumeric characters	 
 	 */ 
-	private String Payer;
+	private String payer;
 
 	/**
 	 * Search by the receiver's email address. If the merchant
 	 * account has only one email, this is the primary email. Can
 	 * also be a non-primary email.Optional	 
 	 */ 
-	private String Receiver;
+	private String receiver;
 
 	/**
 	 * Search by the PayPal Account Optional receipt IDOptional	 
 	 */ 
-	private String ReceiptID;
+	private String receiptID;
 
 	/**
 	 * Search by the transaction ID. OptionalThe returned results
 	 * are from the merchant's transaction records. Character
 	 * length and limitations: 19 single-byte characters maximum	 
 	 */ 
-	private String TransactionID;
+	private String transactionID;
 
 	/**
 	 * Search by Recurring Payment Profile id. The ProfileID is
 	 * returned as part of the CreateRecurringPaymentsProfile API
 	 * response. Optional	 
 	 */ 
-	private String ProfileID;
+	private String profileID;
 
 	/**
 	 * Search by the buyer's name OptionalSalutation: 20
@@ -66,7 +68,7 @@ public class TransactionSearchRequestType extends AbstractRequestType {
 	 * limit.LastName: 25 single-byte character limit.Suffix: 12
 	 * single-byte character limit.	 
 	 */ 
-	private PersonNameType PayerName;
+	private PersonNameType payerName;
 
 	/**
 	 * Search by item number of the purchased goods.OptionalTo
@@ -75,7 +77,7 @@ public class TransactionSearchRequestType extends AbstractRequestType {
 	 * item_number variable set in the shopping cart for the
 	 * original transaction.	 
 	 */ 
-	private String AuctionItemNumber;
+	private String auctionItemNumber;
 
 	/**
 	 * Search by invoice identification key, as set by you for the
@@ -86,12 +88,12 @@ public class TransactionSearchRequestType extends AbstractRequestType {
 	 * Character length and limitations: 127 single-byte characters
 	 * maximum	 
 	 */ 
-	private String InvoiceID;
+	private String invoiceID;
 
 	/**
 	 * 	 
 	 */ 
-	private String CardNumber;
+	private String cardNumber;
 
 	/**
 	 * Search by classification of transaction. Some kinds of
@@ -118,19 +120,19 @@ public class TransactionSearchRequestType extends AbstractRequestType {
 	 * post transaction.NonReferencedRefunds: non-referenced
 	 * refunds.	 
 	 */ 
-	private PaymentTransactionClassCodeType TransactionClass;
+	private PaymentTransactionClassCodeType transactionClass;
 
 	/**
 	 * Search by transaction amount OptionalYou must set the
 	 * currencyID attribute to one of the three-character currency
 	 * codes for any of the supported PayPal currencies. 	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	/**
 	 * Search by currency codeOptional	 
 	 */ 
-	private CurrencyCodeType CurrencyCode;
+	private CurrencyCodeType currencyCode;
 
 	/**
 	 * Search by transaction status OptionalPending: The payment is
@@ -145,15 +147,15 @@ public class TransactionSearchRequestType extends AbstractRequestType {
 	 * reversal. The funds have been removed from your account
 	 * balance and returned to the buyer.	 
 	 */ 
-	private PaymentTransactionStatusCodeType Status;
+	private PaymentTransactionStatusCodeType status;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public TransactionSearchRequestType (String StartDate){
-		this.StartDate = StartDate;
+	public TransactionSearchRequestType (String startDate){
+		this.startDate = startDate;
 	}	
 
 	/**
@@ -163,281 +165,293 @@ public class TransactionSearchRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for StartDate
+	 * Getter for startDate
 	 */
 	 public String getStartDate() {
-	 	return StartDate;
+	 	return startDate;
 	 }
 	 
 	/**
-	 * Setter for StartDate
+	 * Setter for startDate
 	 */
-	 public void setStartDate(String StartDate) {
-	 	this.StartDate = StartDate;
+	 public void setStartDate(String startDate) {
+	 	this.startDate = startDate;
 	 }
 	 
 	/**
-	 * Getter for EndDate
+	 * Getter for endDate
 	 */
 	 public String getEndDate() {
-	 	return EndDate;
+	 	return endDate;
 	 }
 	 
 	/**
-	 * Setter for EndDate
+	 * Setter for endDate
 	 */
-	 public void setEndDate(String EndDate) {
-	 	this.EndDate = EndDate;
+	 public void setEndDate(String endDate) {
+	 	this.endDate = endDate;
 	 }
 	 
 	/**
-	 * Getter for Payer
+	 * Getter for payer
 	 */
 	 public String getPayer() {
-	 	return Payer;
+	 	return payer;
 	 }
 	 
 	/**
-	 * Setter for Payer
+	 * Setter for payer
 	 */
-	 public void setPayer(String Payer) {
-	 	this.Payer = Payer;
+	 public void setPayer(String payer) {
+	 	this.payer = payer;
 	 }
 	 
 	/**
-	 * Getter for Receiver
+	 * Getter for receiver
 	 */
 	 public String getReceiver() {
-	 	return Receiver;
+	 	return receiver;
 	 }
 	 
 	/**
-	 * Setter for Receiver
+	 * Setter for receiver
 	 */
-	 public void setReceiver(String Receiver) {
-	 	this.Receiver = Receiver;
+	 public void setReceiver(String receiver) {
+	 	this.receiver = receiver;
 	 }
 	 
 	/**
-	 * Getter for ReceiptID
+	 * Getter for receiptID
 	 */
 	 public String getReceiptID() {
-	 	return ReceiptID;
+	 	return receiptID;
 	 }
 	 
 	/**
-	 * Setter for ReceiptID
+	 * Setter for receiptID
 	 */
-	 public void setReceiptID(String ReceiptID) {
-	 	this.ReceiptID = ReceiptID;
+	 public void setReceiptID(String receiptID) {
+	 	this.receiptID = receiptID;
 	 }
 	 
 	/**
-	 * Getter for TransactionID
+	 * Getter for transactionID
 	 */
 	 public String getTransactionID() {
-	 	return TransactionID;
+	 	return transactionID;
 	 }
 	 
 	/**
-	 * Setter for TransactionID
+	 * Setter for transactionID
 	 */
-	 public void setTransactionID(String TransactionID) {
-	 	this.TransactionID = TransactionID;
+	 public void setTransactionID(String transactionID) {
+	 	this.transactionID = transactionID;
 	 }
 	 
 	/**
-	 * Getter for ProfileID
+	 * Getter for profileID
 	 */
 	 public String getProfileID() {
-	 	return ProfileID;
+	 	return profileID;
 	 }
 	 
 	/**
-	 * Setter for ProfileID
+	 * Setter for profileID
 	 */
-	 public void setProfileID(String ProfileID) {
-	 	this.ProfileID = ProfileID;
+	 public void setProfileID(String profileID) {
+	 	this.profileID = profileID;
 	 }
 	 
 	/**
-	 * Getter for PayerName
+	 * Getter for payerName
 	 */
 	 public PersonNameType getPayerName() {
-	 	return PayerName;
+	 	return payerName;
 	 }
 	 
 	/**
-	 * Setter for PayerName
+	 * Setter for payerName
 	 */
-	 public void setPayerName(PersonNameType PayerName) {
-	 	this.PayerName = PayerName;
+	 public void setPayerName(PersonNameType payerName) {
+	 	this.payerName = payerName;
 	 }
 	 
 	/**
-	 * Getter for AuctionItemNumber
+	 * Getter for auctionItemNumber
 	 */
 	 public String getAuctionItemNumber() {
-	 	return AuctionItemNumber;
+	 	return auctionItemNumber;
 	 }
 	 
 	/**
-	 * Setter for AuctionItemNumber
+	 * Setter for auctionItemNumber
 	 */
-	 public void setAuctionItemNumber(String AuctionItemNumber) {
-	 	this.AuctionItemNumber = AuctionItemNumber;
+	 public void setAuctionItemNumber(String auctionItemNumber) {
+	 	this.auctionItemNumber = auctionItemNumber;
 	 }
 	 
 	/**
-	 * Getter for InvoiceID
+	 * Getter for invoiceID
 	 */
 	 public String getInvoiceID() {
-	 	return InvoiceID;
+	 	return invoiceID;
 	 }
 	 
 	/**
-	 * Setter for InvoiceID
+	 * Setter for invoiceID
 	 */
-	 public void setInvoiceID(String InvoiceID) {
-	 	this.InvoiceID = InvoiceID;
+	 public void setInvoiceID(String invoiceID) {
+	 	this.invoiceID = invoiceID;
 	 }
 	 
 	/**
-	 * Getter for CardNumber
+	 * Getter for cardNumber
 	 */
 	 public String getCardNumber() {
-	 	return CardNumber;
+	 	return cardNumber;
 	 }
 	 
 	/**
-	 * Setter for CardNumber
+	 * Setter for cardNumber
 	 */
-	 public void setCardNumber(String CardNumber) {
-	 	this.CardNumber = CardNumber;
+	 public void setCardNumber(String cardNumber) {
+	 	this.cardNumber = cardNumber;
 	 }
 	 
 	/**
-	 * Getter for TransactionClass
+	 * Getter for transactionClass
 	 */
 	 public PaymentTransactionClassCodeType getTransactionClass() {
-	 	return TransactionClass;
+	 	return transactionClass;
 	 }
 	 
 	/**
-	 * Setter for TransactionClass
+	 * Setter for transactionClass
 	 */
-	 public void setTransactionClass(PaymentTransactionClassCodeType TransactionClass) {
-	 	this.TransactionClass = TransactionClass;
+	 public void setTransactionClass(PaymentTransactionClassCodeType transactionClass) {
+	 	this.transactionClass = transactionClass;
 	 }
 	 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 	/**
-	 * Getter for CurrencyCode
+	 * Getter for currencyCode
 	 */
 	 public CurrencyCodeType getCurrencyCode() {
-	 	return CurrencyCode;
+	 	return currencyCode;
 	 }
 	 
 	/**
-	 * Setter for CurrencyCode
+	 * Setter for currencyCode
 	 */
-	 public void setCurrencyCode(CurrencyCodeType CurrencyCode) {
-	 	this.CurrencyCode = CurrencyCode;
+	 public void setCurrencyCode(CurrencyCodeType currencyCode) {
+	 	this.currencyCode = currencyCode;
 	 }
 	 
 	/**
-	 * Getter for Status
+	 * Getter for status
 	 */
 	 public PaymentTransactionStatusCodeType getStatus() {
-	 	return Status;
+	 	return status;
 	 }
 	 
 	/**
-	 * Setter for Status
+	 * Setter for status
 	 */
-	 public void setStatus(PaymentTransactionStatusCodeType Status) {
-	 	this.Status = Status;
+	 public void setStatus(PaymentTransactionStatusCodeType status) {
+	 	this.status = status;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(StartDate != null) {
-			sb.append("<urn:StartDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(StartDate));
-			sb.append("</urn:StartDate>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(EndDate != null) {
-			sb.append("<urn:EndDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(EndDate));
-			sb.append("</urn:EndDate>");
+		sb.append(super.toXMLString(prefix, null));
+		if(startDate != null) {
+			sb.append("<").append(preferredPrefix).append(":StartDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(startDate));
+			sb.append("</").append(preferredPrefix).append(":StartDate>");
 		}
-		if(Payer != null) {
-			sb.append("<urn:Payer>").append(SDKUtil.escapeInvalidXmlCharsRegex(Payer));
-			sb.append("</urn:Payer>");
+		if(endDate != null) {
+			sb.append("<").append(preferredPrefix).append(":EndDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(endDate));
+			sb.append("</").append(preferredPrefix).append(":EndDate>");
 		}
-		if(Receiver != null) {
-			sb.append("<urn:Receiver>").append(SDKUtil.escapeInvalidXmlCharsRegex(Receiver));
-			sb.append("</urn:Receiver>");
+		if(payer != null) {
+			sb.append("<").append(preferredPrefix).append(":Payer>").append(SDKUtil.escapeInvalidXmlCharsRegex(payer));
+			sb.append("</").append(preferredPrefix).append(":Payer>");
 		}
-		if(ReceiptID != null) {
-			sb.append("<urn:ReceiptID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReceiptID));
-			sb.append("</urn:ReceiptID>");
+		if(receiver != null) {
+			sb.append("<").append(preferredPrefix).append(":Receiver>").append(SDKUtil.escapeInvalidXmlCharsRegex(receiver));
+			sb.append("</").append(preferredPrefix).append(":Receiver>");
 		}
-		if(TransactionID != null) {
-			sb.append("<urn:TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionID));
-			sb.append("</urn:TransactionID>");
+		if(receiptID != null) {
+			sb.append("<").append(preferredPrefix).append(":ReceiptID>").append(SDKUtil.escapeInvalidXmlCharsRegex(receiptID));
+			sb.append("</").append(preferredPrefix).append(":ReceiptID>");
 		}
-		if(ProfileID != null) {
-			sb.append("<urn:ProfileID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProfileID));
-			sb.append("</urn:ProfileID>");
+		if(transactionID != null) {
+			sb.append("<").append(preferredPrefix).append(":TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(transactionID));
+			sb.append("</").append(preferredPrefix).append(":TransactionID>");
 		}
-		if(PayerName != null) {
-			sb.append("<urn:PayerName>");
-			sb.append(PayerName.toXMLString());
-			sb.append("</urn:PayerName>");
+		if(profileID != null) {
+			sb.append("<").append(preferredPrefix).append(":ProfileID>").append(SDKUtil.escapeInvalidXmlCharsRegex(profileID));
+			sb.append("</").append(preferredPrefix).append(":ProfileID>");
 		}
-		if(AuctionItemNumber != null) {
-			sb.append("<urn:AuctionItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(AuctionItemNumber));
-			sb.append("</urn:AuctionItemNumber>");
+		if(payerName != null) {
+			sb.append(payerName.toXMLString(preferredPrefix,"PayerName"));
 		}
-		if(InvoiceID != null) {
-			sb.append("<urn:InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(InvoiceID));
-			sb.append("</urn:InvoiceID>");
+		if(auctionItemNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":AuctionItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(auctionItemNumber));
+			sb.append("</").append(preferredPrefix).append(":AuctionItemNumber>");
 		}
-		if(CardNumber != null) {
-			sb.append("<urn:CardNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(CardNumber));
-			sb.append("</urn:CardNumber>");
+		if(invoiceID != null) {
+			sb.append("<").append(preferredPrefix).append(":InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(invoiceID));
+			sb.append("</").append(preferredPrefix).append(":InvoiceID>");
 		}
-		if(TransactionClass != null) {
-			sb.append("<urn:TransactionClass>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionClass.getValue()));
-			sb.append("</urn:TransactionClass>");
+		if(cardNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":CardNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(cardNumber));
+			sb.append("</").append(preferredPrefix).append(":CardNumber>");
 		}
-		if(Amount != null) {
-			sb.append("<urn:Amount");
-			sb.append(Amount.toXMLString());
-			sb.append("</urn:Amount>");
+		if(transactionClass != null) {
+			sb.append("<").append(preferredPrefix).append(":TransactionClass>").append(SDKUtil.escapeInvalidXmlCharsRegex(transactionClass.getValue()));
+			sb.append("</").append(preferredPrefix).append(":TransactionClass>");
 		}
-		if(CurrencyCode != null) {
-			sb.append("<urn:CurrencyCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(CurrencyCode.getValue()));
-			sb.append("</urn:CurrencyCode>");
+		if(amount != null) {
+			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
 		}
-		if(Status != null) {
-			sb.append("<urn:Status>").append(SDKUtil.escapeInvalidXmlCharsRegex(Status.getValue()));
-			sb.append("</urn:Status>");
+		if(currencyCode != null) {
+			sb.append("<").append(preferredPrefix).append(":CurrencyCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(currencyCode.getValue()));
+			sb.append("</").append(preferredPrefix).append(":CurrencyCode>");
+		}
+		if(status != null) {
+			sb.append("<").append(preferredPrefix).append(":Status>").append(SDKUtil.escapeInvalidXmlCharsRegex(status.getValue()));
+			sb.append("</").append(preferredPrefix).append(":Status>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

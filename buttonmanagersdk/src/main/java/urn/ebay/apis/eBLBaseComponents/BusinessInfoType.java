@@ -14,38 +14,40 @@ import com.paypal.core.SDKUtil;
  */
 public class BusinessInfoType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Type of business, such as corporation or sole proprietorship	 
 	 */ 
-	private BusinessTypeType Type;
+	private BusinessTypeType type;
 
 	/**
 	 * Official name of business Character length and limitations:
 	 * 75 alphanumeric characters	 
 	 */ 
-	private String Name;
+	private String name;
 
 	/**
 	 * Merchant’s business postal address	 
 	 */ 
-	private AddressType Address;
+	private AddressType address;
 
 	/**
 	 * Business’s primary telephone number Character length and
 	 * limitations: 20 alphanumeric characters	 
 	 */ 
-	private String WorkPhone;
+	private String workPhone;
 
 	/**
 	 * Line of business, as defined in the enumerations	 
 	 */ 
-	private BusinessCategoryType Category;
+	private BusinessCategoryType category;
 
 	/**
 	 * Business sub-category, as defined in the enumerations	 
 	 */ 
-	private BusinessSubCategoryType SubCategory;
+	private BusinessSubCategoryType subCategory;
 
 	/**
 	 * Average transaction price, as defined by the enumerations.
@@ -61,7 +63,7 @@ public class BusinessInfoType{
 	 * AverageTransactionPrice-Range9 $5,000 USD to $10,000 USD
 	 * AverageTransactionPrice-Range10 More than $10,000 USD 	 
 	 */ 
-	private AverageTransactionPriceType AveragePrice;
+	private AverageTransactionPriceType averagePrice;
 
 	/**
 	 * Average monthly sales volume, as defined by the
@@ -74,18 +76,18 @@ public class BusinessInfoType{
 	 * AverageMonthlyVolume-Range5 $100,000 USD to $1,000,000 USD
 	 * AverageMonthlyVolume-Range6 More than $1,000,000 USD 	 
 	 */ 
-	private AverageMonthlyVolumeType AverageMonthlyVolume;
+	private AverageMonthlyVolumeType averageMonthlyVolume;
 
 	/**
 	 * Main sales venue, such as eBay	 
 	 */ 
-	private SalesVenueType SalesVenue;
+	private SalesVenueType salesVenue;
 
 	/**
 	 * Primary URL of business Character length and limitations:
 	 * 2,048 alphanumeric characters	 
 	 */ 
-	private String Website;
+	private String website;
 
 	/**
 	 * Percentage of revenue attributable to online sales, as
@@ -96,25 +98,25 @@ public class BusinessInfoType{
 	 * PercentageRevenueFromOnlineSales-Range3 50% to 75%
 	 * PercentageRevenueFromOnlineSales-Range4 75% to 100% 	 
 	 */ 
-	private PercentageRevenueFromOnlineSalesType RevenueFromOnlineSales;
+	private PercentageRevenueFromOnlineSalesType revenueFromOnlineSales;
 
 	/**
 	 * Date the merchant’s business was established	 
 	 */ 
-	private String BusinessEstablished;
+	private String businessEstablished;
 
 	/**
 	 * Email address to contact business’s customer service
 	 * Character length and limitations: 127 alphanumeric
 	 * characters	 
 	 */ 
-	private String CustomerServiceEmail;
+	private String customerServiceEmail;
 
 	/**
 	 * Telephone number to contact business’s customer service
 	 * Character length and limitations: 32 alphanumeric characters	 
 	 */ 
-	private String CustomerServicePhone;
+	private String customerServicePhone;
 
 	
 
@@ -125,261 +127,275 @@ public class BusinessInfoType{
 	}	
 
 	/**
-	 * Getter for Type
+	 * Getter for type
 	 */
 	 public BusinessTypeType getType() {
-	 	return Type;
+	 	return type;
 	 }
 	 
 	/**
-	 * Setter for Type
+	 * Setter for type
 	 */
-	 public void setType(BusinessTypeType Type) {
-	 	this.Type = Type;
+	 public void setType(BusinessTypeType type) {
+	 	this.type = type;
 	 }
 	 
 	/**
-	 * Getter for Name
+	 * Getter for name
 	 */
 	 public String getName() {
-	 	return Name;
+	 	return name;
 	 }
 	 
 	/**
-	 * Setter for Name
+	 * Setter for name
 	 */
-	 public void setName(String Name) {
-	 	this.Name = Name;
+	 public void setName(String name) {
+	 	this.name = name;
 	 }
 	 
 	/**
-	 * Getter for Address
+	 * Getter for address
 	 */
 	 public AddressType getAddress() {
-	 	return Address;
+	 	return address;
 	 }
 	 
 	/**
-	 * Setter for Address
+	 * Setter for address
 	 */
-	 public void setAddress(AddressType Address) {
-	 	this.Address = Address;
+	 public void setAddress(AddressType address) {
+	 	this.address = address;
 	 }
 	 
 	/**
-	 * Getter for WorkPhone
+	 * Getter for workPhone
 	 */
 	 public String getWorkPhone() {
-	 	return WorkPhone;
+	 	return workPhone;
 	 }
 	 
 	/**
-	 * Setter for WorkPhone
+	 * Setter for workPhone
 	 */
-	 public void setWorkPhone(String WorkPhone) {
-	 	this.WorkPhone = WorkPhone;
+	 public void setWorkPhone(String workPhone) {
+	 	this.workPhone = workPhone;
 	 }
 	 
 	/**
-	 * Getter for Category
+	 * Getter for category
 	 */
 	 public BusinessCategoryType getCategory() {
-	 	return Category;
+	 	return category;
 	 }
 	 
 	/**
-	 * Setter for Category
+	 * Setter for category
 	 */
-	 public void setCategory(BusinessCategoryType Category) {
-	 	this.Category = Category;
+	 public void setCategory(BusinessCategoryType category) {
+	 	this.category = category;
 	 }
 	 
 	/**
-	 * Getter for SubCategory
+	 * Getter for subCategory
 	 */
 	 public BusinessSubCategoryType getSubCategory() {
-	 	return SubCategory;
+	 	return subCategory;
 	 }
 	 
 	/**
-	 * Setter for SubCategory
+	 * Setter for subCategory
 	 */
-	 public void setSubCategory(BusinessSubCategoryType SubCategory) {
-	 	this.SubCategory = SubCategory;
+	 public void setSubCategory(BusinessSubCategoryType subCategory) {
+	 	this.subCategory = subCategory;
 	 }
 	 
 	/**
-	 * Getter for AveragePrice
+	 * Getter for averagePrice
 	 */
 	 public AverageTransactionPriceType getAveragePrice() {
-	 	return AveragePrice;
+	 	return averagePrice;
 	 }
 	 
 	/**
-	 * Setter for AveragePrice
+	 * Setter for averagePrice
 	 */
-	 public void setAveragePrice(AverageTransactionPriceType AveragePrice) {
-	 	this.AveragePrice = AveragePrice;
+	 public void setAveragePrice(AverageTransactionPriceType averagePrice) {
+	 	this.averagePrice = averagePrice;
 	 }
 	 
 	/**
-	 * Getter for AverageMonthlyVolume
+	 * Getter for averageMonthlyVolume
 	 */
 	 public AverageMonthlyVolumeType getAverageMonthlyVolume() {
-	 	return AverageMonthlyVolume;
+	 	return averageMonthlyVolume;
 	 }
 	 
 	/**
-	 * Setter for AverageMonthlyVolume
+	 * Setter for averageMonthlyVolume
 	 */
-	 public void setAverageMonthlyVolume(AverageMonthlyVolumeType AverageMonthlyVolume) {
-	 	this.AverageMonthlyVolume = AverageMonthlyVolume;
+	 public void setAverageMonthlyVolume(AverageMonthlyVolumeType averageMonthlyVolume) {
+	 	this.averageMonthlyVolume = averageMonthlyVolume;
 	 }
 	 
 	/**
-	 * Getter for SalesVenue
+	 * Getter for salesVenue
 	 */
 	 public SalesVenueType getSalesVenue() {
-	 	return SalesVenue;
+	 	return salesVenue;
 	 }
 	 
 	/**
-	 * Setter for SalesVenue
+	 * Setter for salesVenue
 	 */
-	 public void setSalesVenue(SalesVenueType SalesVenue) {
-	 	this.SalesVenue = SalesVenue;
+	 public void setSalesVenue(SalesVenueType salesVenue) {
+	 	this.salesVenue = salesVenue;
 	 }
 	 
 	/**
-	 * Getter for Website
+	 * Getter for website
 	 */
 	 public String getWebsite() {
-	 	return Website;
+	 	return website;
 	 }
 	 
 	/**
-	 * Setter for Website
+	 * Setter for website
 	 */
-	 public void setWebsite(String Website) {
-	 	this.Website = Website;
+	 public void setWebsite(String website) {
+	 	this.website = website;
 	 }
 	 
 	/**
-	 * Getter for RevenueFromOnlineSales
+	 * Getter for revenueFromOnlineSales
 	 */
 	 public PercentageRevenueFromOnlineSalesType getRevenueFromOnlineSales() {
-	 	return RevenueFromOnlineSales;
+	 	return revenueFromOnlineSales;
 	 }
 	 
 	/**
-	 * Setter for RevenueFromOnlineSales
+	 * Setter for revenueFromOnlineSales
 	 */
-	 public void setRevenueFromOnlineSales(PercentageRevenueFromOnlineSalesType RevenueFromOnlineSales) {
-	 	this.RevenueFromOnlineSales = RevenueFromOnlineSales;
+	 public void setRevenueFromOnlineSales(PercentageRevenueFromOnlineSalesType revenueFromOnlineSales) {
+	 	this.revenueFromOnlineSales = revenueFromOnlineSales;
 	 }
 	 
 	/**
-	 * Getter for BusinessEstablished
+	 * Getter for businessEstablished
 	 */
 	 public String getBusinessEstablished() {
-	 	return BusinessEstablished;
+	 	return businessEstablished;
 	 }
 	 
 	/**
-	 * Setter for BusinessEstablished
+	 * Setter for businessEstablished
 	 */
-	 public void setBusinessEstablished(String BusinessEstablished) {
-	 	this.BusinessEstablished = BusinessEstablished;
+	 public void setBusinessEstablished(String businessEstablished) {
+	 	this.businessEstablished = businessEstablished;
 	 }
 	 
 	/**
-	 * Getter for CustomerServiceEmail
+	 * Getter for customerServiceEmail
 	 */
 	 public String getCustomerServiceEmail() {
-	 	return CustomerServiceEmail;
+	 	return customerServiceEmail;
 	 }
 	 
 	/**
-	 * Setter for CustomerServiceEmail
+	 * Setter for customerServiceEmail
 	 */
-	 public void setCustomerServiceEmail(String CustomerServiceEmail) {
-	 	this.CustomerServiceEmail = CustomerServiceEmail;
+	 public void setCustomerServiceEmail(String customerServiceEmail) {
+	 	this.customerServiceEmail = customerServiceEmail;
 	 }
 	 
 	/**
-	 * Getter for CustomerServicePhone
+	 * Getter for customerServicePhone
 	 */
 	 public String getCustomerServicePhone() {
-	 	return CustomerServicePhone;
+	 	return customerServicePhone;
 	 }
 	 
 	/**
-	 * Setter for CustomerServicePhone
+	 * Setter for customerServicePhone
 	 */
-	 public void setCustomerServicePhone(String CustomerServicePhone) {
-	 	this.CustomerServicePhone = CustomerServicePhone;
+	 public void setCustomerServicePhone(String customerServicePhone) {
+	 	this.customerServicePhone = customerServicePhone;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(Type != null) {
-			sb.append("<ebl:Type>").append(SDKUtil.escapeInvalidXmlCharsRegex(Type.getValue()));
-			sb.append("</ebl:Type>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(Name != null) {
-			sb.append("<ebl:Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(Name));
-			sb.append("</ebl:Name>");
+		if(type != null) {
+			sb.append("<").append(preferredPrefix).append(":Type>").append(SDKUtil.escapeInvalidXmlCharsRegex(type.getValue()));
+			sb.append("</").append(preferredPrefix).append(":Type>");
 		}
-		if(Address != null) {
-			sb.append("<ebl:Address>");
-			sb.append(Address.toXMLString());
-			sb.append("</ebl:Address>");
+		if(name != null) {
+			sb.append("<").append(preferredPrefix).append(":Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(name));
+			sb.append("</").append(preferredPrefix).append(":Name>");
 		}
-		if(WorkPhone != null) {
-			sb.append("<ebl:WorkPhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(WorkPhone));
-			sb.append("</ebl:WorkPhone>");
+		if(address != null) {
+			sb.append(address.toXMLString(preferredPrefix,"Address"));
 		}
-		if(Category != null) {
-			sb.append("<ebl:Category>").append(SDKUtil.escapeInvalidXmlCharsRegex(Category.getValue()));
-			sb.append("</ebl:Category>");
+		if(workPhone != null) {
+			sb.append("<").append(preferredPrefix).append(":WorkPhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(workPhone));
+			sb.append("</").append(preferredPrefix).append(":WorkPhone>");
 		}
-		if(SubCategory != null) {
-			sb.append("<ebl:SubCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(SubCategory.getValue()));
-			sb.append("</ebl:SubCategory>");
+		if(category != null) {
+			sb.append("<").append(preferredPrefix).append(":Category>").append(SDKUtil.escapeInvalidXmlCharsRegex(category.getValue()));
+			sb.append("</").append(preferredPrefix).append(":Category>");
 		}
-		if(AveragePrice != null) {
-			sb.append("<ebl:AveragePrice>").append(SDKUtil.escapeInvalidXmlCharsRegex(AveragePrice.getValue()));
-			sb.append("</ebl:AveragePrice>");
+		if(subCategory != null) {
+			sb.append("<").append(preferredPrefix).append(":SubCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(subCategory.getValue()));
+			sb.append("</").append(preferredPrefix).append(":SubCategory>");
 		}
-		if(AverageMonthlyVolume != null) {
-			sb.append("<ebl:AverageMonthlyVolume>").append(SDKUtil.escapeInvalidXmlCharsRegex(AverageMonthlyVolume.getValue()));
-			sb.append("</ebl:AverageMonthlyVolume>");
+		if(averagePrice != null) {
+			sb.append("<").append(preferredPrefix).append(":AveragePrice>").append(SDKUtil.escapeInvalidXmlCharsRegex(averagePrice.getValue()));
+			sb.append("</").append(preferredPrefix).append(":AveragePrice>");
 		}
-		if(SalesVenue != null) {
-			sb.append("<ebl:SalesVenue>").append(SDKUtil.escapeInvalidXmlCharsRegex(SalesVenue.getValue()));
-			sb.append("</ebl:SalesVenue>");
+		if(averageMonthlyVolume != null) {
+			sb.append("<").append(preferredPrefix).append(":AverageMonthlyVolume>").append(SDKUtil.escapeInvalidXmlCharsRegex(averageMonthlyVolume.getValue()));
+			sb.append("</").append(preferredPrefix).append(":AverageMonthlyVolume>");
 		}
-		if(Website != null) {
-			sb.append("<ebl:Website>").append(SDKUtil.escapeInvalidXmlCharsRegex(Website));
-			sb.append("</ebl:Website>");
+		if(salesVenue != null) {
+			sb.append("<").append(preferredPrefix).append(":SalesVenue>").append(SDKUtil.escapeInvalidXmlCharsRegex(salesVenue.getValue()));
+			sb.append("</").append(preferredPrefix).append(":SalesVenue>");
 		}
-		if(RevenueFromOnlineSales != null) {
-			sb.append("<ebl:RevenueFromOnlineSales>").append(SDKUtil.escapeInvalidXmlCharsRegex(RevenueFromOnlineSales.getValue()));
-			sb.append("</ebl:RevenueFromOnlineSales>");
+		if(website != null) {
+			sb.append("<").append(preferredPrefix).append(":Website>").append(SDKUtil.escapeInvalidXmlCharsRegex(website));
+			sb.append("</").append(preferredPrefix).append(":Website>");
 		}
-		if(BusinessEstablished != null) {
-			sb.append("<ebl:BusinessEstablished>").append(SDKUtil.escapeInvalidXmlCharsRegex(BusinessEstablished));
-			sb.append("</ebl:BusinessEstablished>");
+		if(revenueFromOnlineSales != null) {
+			sb.append("<").append(preferredPrefix).append(":RevenueFromOnlineSales>").append(SDKUtil.escapeInvalidXmlCharsRegex(revenueFromOnlineSales.getValue()));
+			sb.append("</").append(preferredPrefix).append(":RevenueFromOnlineSales>");
 		}
-		if(CustomerServiceEmail != null) {
-			sb.append("<ebl:CustomerServiceEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(CustomerServiceEmail));
-			sb.append("</ebl:CustomerServiceEmail>");
+		if(businessEstablished != null) {
+			sb.append("<").append(preferredPrefix).append(":BusinessEstablished>").append(SDKUtil.escapeInvalidXmlCharsRegex(businessEstablished));
+			sb.append("</").append(preferredPrefix).append(":BusinessEstablished>");
 		}
-		if(CustomerServicePhone != null) {
-			sb.append("<ebl:CustomerServicePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(CustomerServicePhone));
-			sb.append("</ebl:CustomerServicePhone>");
+		if(customerServiceEmail != null) {
+			sb.append("<").append(preferredPrefix).append(":CustomerServiceEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(customerServiceEmail));
+			sb.append("</").append(preferredPrefix).append(":CustomerServiceEmail>");
+		}
+		if(customerServicePhone != null) {
+			sb.append("<").append(preferredPrefix).append(":CustomerServicePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(customerServicePhone));
+			sb.append("</").append(preferredPrefix).append(":CustomerServicePhone>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

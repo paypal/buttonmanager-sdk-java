@@ -15,6 +15,8 @@ import com.paypal.core.SDKUtil;
  */
 public class DoDirectPaymentRequestDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * How you want to obtain payment. Required Authorization
@@ -25,17 +27,17 @@ public class DoDirectPaymentRequestDetailsType{
 	 * Payment. Character length and limit: Up to 13 single-byte
 	 * alphabetic characters	 
 	 */ 
-	private PaymentActionCodeType PaymentAction;
+	private PaymentActionCodeType paymentAction;
 
 	/**
 	 * Information about the payment Required 	 
 	 */ 
-	private PaymentDetailsType PaymentDetails;
+	private PaymentDetailsType paymentDetails;
 
 	/**
 	 * Information about the credit card to be charged. Required 	 
 	 */ 
-	private CreditCardDetailsType CreditCard;
+	private CreditCardDetailsType creditCard;
 
 	/**
 	 * IP address of the payer's browser as recorded in its HTTP
@@ -44,7 +46,7 @@ public class DoDirectPaymentRequestDetailsType{
 	 * and limitations: 15 single-byte characters, including
 	 * periods, in dotted-quad format: ???.???.???.???	 
 	 */ 
-	private String IPAddress;
+	private String iPAddress;
 
 	/**
 	 * Your customer session identification token. PayPal records
@@ -52,12 +54,12 @@ public class DoDirectPaymentRequestDetailsType{
 	 * means to detect possible fraud. Optional Character length
 	 * and limitations: 64 single-byte numeric characters	 
 	 */ 
-	private String MerchantSessionId;
+	private String merchantSessionId;
 
 	/**
 	 * 	 
 	 */ 
-	private Boolean ReturnFMFDetails;
+	private Boolean returnFMFDetails;
 
 	
 
@@ -68,118 +70,130 @@ public class DoDirectPaymentRequestDetailsType{
 	}	
 
 	/**
-	 * Getter for PaymentAction
+	 * Getter for paymentAction
 	 */
 	 public PaymentActionCodeType getPaymentAction() {
-	 	return PaymentAction;
+	 	return paymentAction;
 	 }
 	 
 	/**
-	 * Setter for PaymentAction
+	 * Setter for paymentAction
 	 */
-	 public void setPaymentAction(PaymentActionCodeType PaymentAction) {
-	 	this.PaymentAction = PaymentAction;
+	 public void setPaymentAction(PaymentActionCodeType paymentAction) {
+	 	this.paymentAction = paymentAction;
 	 }
 	 
 	/**
-	 * Getter for PaymentDetails
+	 * Getter for paymentDetails
 	 */
 	 public PaymentDetailsType getPaymentDetails() {
-	 	return PaymentDetails;
+	 	return paymentDetails;
 	 }
 	 
 	/**
-	 * Setter for PaymentDetails
+	 * Setter for paymentDetails
 	 */
-	 public void setPaymentDetails(PaymentDetailsType PaymentDetails) {
-	 	this.PaymentDetails = PaymentDetails;
+	 public void setPaymentDetails(PaymentDetailsType paymentDetails) {
+	 	this.paymentDetails = paymentDetails;
 	 }
 	 
 	/**
-	 * Getter for CreditCard
+	 * Getter for creditCard
 	 */
 	 public CreditCardDetailsType getCreditCard() {
-	 	return CreditCard;
+	 	return creditCard;
 	 }
 	 
 	/**
-	 * Setter for CreditCard
+	 * Setter for creditCard
 	 */
-	 public void setCreditCard(CreditCardDetailsType CreditCard) {
-	 	this.CreditCard = CreditCard;
+	 public void setCreditCard(CreditCardDetailsType creditCard) {
+	 	this.creditCard = creditCard;
 	 }
 	 
 	/**
-	 * Getter for IPAddress
+	 * Getter for iPAddress
 	 */
 	 public String getIPAddress() {
-	 	return IPAddress;
+	 	return iPAddress;
 	 }
 	 
 	/**
-	 * Setter for IPAddress
+	 * Setter for iPAddress
 	 */
-	 public void setIPAddress(String IPAddress) {
-	 	this.IPAddress = IPAddress;
+	 public void setIPAddress(String iPAddress) {
+	 	this.iPAddress = iPAddress;
 	 }
 	 
 	/**
-	 * Getter for MerchantSessionId
+	 * Getter for merchantSessionId
 	 */
 	 public String getMerchantSessionId() {
-	 	return MerchantSessionId;
+	 	return merchantSessionId;
 	 }
 	 
 	/**
-	 * Setter for MerchantSessionId
+	 * Setter for merchantSessionId
 	 */
-	 public void setMerchantSessionId(String MerchantSessionId) {
-	 	this.MerchantSessionId = MerchantSessionId;
+	 public void setMerchantSessionId(String merchantSessionId) {
+	 	this.merchantSessionId = merchantSessionId;
 	 }
 	 
 	/**
-	 * Getter for ReturnFMFDetails
+	 * Getter for returnFMFDetails
 	 */
 	 public Boolean getReturnFMFDetails() {
-	 	return ReturnFMFDetails;
+	 	return returnFMFDetails;
 	 }
 	 
 	/**
-	 * Setter for ReturnFMFDetails
+	 * Setter for returnFMFDetails
 	 */
-	 public void setReturnFMFDetails(Boolean ReturnFMFDetails) {
-	 	this.ReturnFMFDetails = ReturnFMFDetails;
+	 public void setReturnFMFDetails(Boolean returnFMFDetails) {
+	 	this.returnFMFDetails = returnFMFDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(PaymentAction != null) {
-			sb.append("<ebl:PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentAction.getValue()));
-			sb.append("</ebl:PaymentAction>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(PaymentDetails != null) {
-			sb.append("<ebl:PaymentDetails>");
-			sb.append(PaymentDetails.toXMLString());
-			sb.append("</ebl:PaymentDetails>");
+		if(paymentAction != null) {
+			sb.append("<").append(preferredPrefix).append(":PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentAction.getValue()));
+			sb.append("</").append(preferredPrefix).append(":PaymentAction>");
 		}
-		if(CreditCard != null) {
-			sb.append("<ebl:CreditCard>");
-			sb.append(CreditCard.toXMLString());
-			sb.append("</ebl:CreditCard>");
+		if(paymentDetails != null) {
+			sb.append(paymentDetails.toXMLString(preferredPrefix,"PaymentDetails"));
 		}
-		if(IPAddress != null) {
-			sb.append("<ebl:IPAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(IPAddress));
-			sb.append("</ebl:IPAddress>");
+		if(creditCard != null) {
+			sb.append(creditCard.toXMLString(preferredPrefix,"CreditCard"));
 		}
-		if(MerchantSessionId != null) {
-			sb.append("<ebl:MerchantSessionId>").append(SDKUtil.escapeInvalidXmlCharsRegex(MerchantSessionId));
-			sb.append("</ebl:MerchantSessionId>");
+		if(iPAddress != null) {
+			sb.append("<").append(preferredPrefix).append(":IPAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(iPAddress));
+			sb.append("</").append(preferredPrefix).append(":IPAddress>");
 		}
-		if(ReturnFMFDetails != null) {
-			sb.append("<ebl:ReturnFMFDetails>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReturnFMFDetails));
-			sb.append("</ebl:ReturnFMFDetails>");
+		if(merchantSessionId != null) {
+			sb.append("<").append(preferredPrefix).append(":MerchantSessionId>").append(SDKUtil.escapeInvalidXmlCharsRegex(merchantSessionId));
+			sb.append("</").append(preferredPrefix).append(":MerchantSessionId>");
+		}
+		if(returnFMFDetails != null) {
+			sb.append("<").append(preferredPrefix).append(":ReturnFMFDetails>").append(SDKUtil.escapeInvalidXmlCharsRegex(returnFMFDetails));
+			sb.append("</").append(preferredPrefix).append(":ReturnFMFDetails>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class GetAuthDetailsReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private GetAuthDetailsRequestType GetAuthDetailsRequest;
+	private GetAuthDetailsRequestType getAuthDetailsRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class GetAuthDetailsReq{
 	}	
 
 	/**
-	 * Getter for GetAuthDetailsRequest
+	 * Getter for getAuthDetailsRequest
 	 */
 	 public GetAuthDetailsRequestType getGetAuthDetailsRequest() {
-	 	return GetAuthDetailsRequest;
+	 	return getAuthDetailsRequest;
 	 }
 	 
 	/**
-	 * Setter for GetAuthDetailsRequest
+	 * Setter for getAuthDetailsRequest
 	 */
-	 public void setGetAuthDetailsRequest(GetAuthDetailsRequestType GetAuthDetailsRequest) {
-	 	this.GetAuthDetailsRequest = GetAuthDetailsRequest;
+	 public void setGetAuthDetailsRequest(GetAuthDetailsRequestType getAuthDetailsRequest) {
+	 	this.getAuthDetailsRequest = getAuthDetailsRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:GetAuthDetailsReq>");
-		if(GetAuthDetailsRequest != null) {
-			sb.append("<urn:GetAuthDetailsRequest>");
-			sb.append(GetAuthDetailsRequest.toXMLString());
-			sb.append("</urn:GetAuthDetailsRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:GetAuthDetailsReq>");
+		if(getAuthDetailsRequest != null) {
+			sb.append(getAuthDetailsRequest.toXMLString(null,"GetAuthDetailsRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

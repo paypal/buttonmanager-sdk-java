@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class UpdateAccessPermissionsReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private UpdateAccessPermissionsRequestType UpdateAccessPermissionsRequest;
+	private UpdateAccessPermissionsRequestType updateAccessPermissionsRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class UpdateAccessPermissionsReq{
 	}	
 
 	/**
-	 * Getter for UpdateAccessPermissionsRequest
+	 * Getter for updateAccessPermissionsRequest
 	 */
 	 public UpdateAccessPermissionsRequestType getUpdateAccessPermissionsRequest() {
-	 	return UpdateAccessPermissionsRequest;
+	 	return updateAccessPermissionsRequest;
 	 }
 	 
 	/**
-	 * Setter for UpdateAccessPermissionsRequest
+	 * Setter for updateAccessPermissionsRequest
 	 */
-	 public void setUpdateAccessPermissionsRequest(UpdateAccessPermissionsRequestType UpdateAccessPermissionsRequest) {
-	 	this.UpdateAccessPermissionsRequest = UpdateAccessPermissionsRequest;
+	 public void setUpdateAccessPermissionsRequest(UpdateAccessPermissionsRequestType updateAccessPermissionsRequest) {
+	 	this.updateAccessPermissionsRequest = updateAccessPermissionsRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:UpdateAccessPermissionsReq>");
-		if(UpdateAccessPermissionsRequest != null) {
-			sb.append("<urn:UpdateAccessPermissionsRequest>");
-			sb.append(UpdateAccessPermissionsRequest.toXMLString());
-			sb.append("</urn:UpdateAccessPermissionsRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:UpdateAccessPermissionsReq>");
+		if(updateAccessPermissionsRequest != null) {
+			sb.append(updateAccessPermissionsRequest.toXMLString(null,"UpdateAccessPermissionsRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

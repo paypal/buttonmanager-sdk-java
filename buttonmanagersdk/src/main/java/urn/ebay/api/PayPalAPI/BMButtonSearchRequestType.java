@@ -8,18 +8,20 @@ import com.paypal.core.SDKUtil;
  */
 public class BMButtonSearchRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * The earliest transaction date at which to start the search.
 	 * No wildcards are allowed. Required 	 
 	 */ 
-	private String StartDate;
+	private String startDate;
 
 	/**
 	 * The latest transaction date to be included in the search
 	 * Optional 	 
 	 */ 
-	private String EndDate;
+	private String endDate;
 
 	
 
@@ -30,45 +32,61 @@ public class BMButtonSearchRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for StartDate
+	 * Getter for startDate
 	 */
 	 public String getStartDate() {
-	 	return StartDate;
+	 	return startDate;
 	 }
 	 
 	/**
-	 * Setter for StartDate
+	 * Setter for startDate
 	 */
-	 public void setStartDate(String StartDate) {
-	 	this.StartDate = StartDate;
+	 public void setStartDate(String startDate) {
+	 	this.startDate = startDate;
 	 }
 	 
 	/**
-	 * Getter for EndDate
+	 * Getter for endDate
 	 */
 	 public String getEndDate() {
-	 	return EndDate;
+	 	return endDate;
 	 }
 	 
 	/**
-	 * Setter for EndDate
+	 * Setter for endDate
 	 */
-	 public void setEndDate(String EndDate) {
-	 	this.EndDate = EndDate;
+	 public void setEndDate(String endDate) {
+	 	this.endDate = endDate;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(StartDate != null) {
-			sb.append("<urn:StartDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(StartDate));
-			sb.append("</urn:StartDate>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(EndDate != null) {
-			sb.append("<urn:EndDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(EndDate));
-			sb.append("</urn:EndDate>");
+		sb.append(super.toXMLString(prefix, null));
+		if(startDate != null) {
+			sb.append("<").append(preferredPrefix).append(":StartDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(startDate));
+			sb.append("</").append(preferredPrefix).append(":StartDate>");
+		}
+		if(endDate != null) {
+			sb.append("<").append(preferredPrefix).append(":EndDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(endDate));
+			sb.append("</").append(preferredPrefix).append(":EndDate>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

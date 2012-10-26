@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class PaymentDirectivesType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Type of the Payment is it Instant or Echeck or Any.	 
 	 */ 
-	private MerchantPullPaymentCodeType PaymentType;
+	private MerchantPullPaymentCodeType paymentType;
 
 	
 
@@ -22,26 +24,42 @@ public class PaymentDirectivesType{
 	}	
 
 	/**
-	 * Getter for PaymentType
+	 * Getter for paymentType
 	 */
 	 public MerchantPullPaymentCodeType getPaymentType() {
-	 	return PaymentType;
+	 	return paymentType;
 	 }
 	 
 	/**
-	 * Setter for PaymentType
+	 * Setter for paymentType
 	 */
-	 public void setPaymentType(MerchantPullPaymentCodeType PaymentType) {
-	 	this.PaymentType = PaymentType;
+	 public void setPaymentType(MerchantPullPaymentCodeType paymentType) {
+	 	this.paymentType = paymentType;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(PaymentType != null) {
-			sb.append("<ebl:PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentType.getValue()));
-			sb.append("</ebl:PaymentType>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		if(paymentType != null) {
+			sb.append("<").append(preferredPrefix).append(":PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":PaymentType>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

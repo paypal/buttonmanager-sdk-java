@@ -10,12 +10,14 @@ import com.paypal.core.SDKUtil;
  */
 public class ExternalRememberMeOptInDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 1 = opt in to external remember me. 0 or omitted = no opt-in
 	 * Other values are invalid 	 
 	 */ 
-	private String ExternalRememberMeOptIn;
+	private String externalRememberMeOptIn;
 
 	/**
 	 * E-mail address or secure merchant account ID of merchant to
@@ -24,7 +26,7 @@ public class ExternalRememberMeOptInDetailsType{
 	 * future, we may allow the owner to be a 3rd party merchant
 	 * account. 	 
 	 */ 
-	private ExternalRememberMeOwnerDetailsType ExternalRememberMeOwnerDetails;
+	private ExternalRememberMeOwnerDetailsType externalRememberMeOwnerDetails;
 
 	
 
@@ -35,45 +37,59 @@ public class ExternalRememberMeOptInDetailsType{
 	}	
 
 	/**
-	 * Getter for ExternalRememberMeOptIn
+	 * Getter for externalRememberMeOptIn
 	 */
 	 public String getExternalRememberMeOptIn() {
-	 	return ExternalRememberMeOptIn;
+	 	return externalRememberMeOptIn;
 	 }
 	 
 	/**
-	 * Setter for ExternalRememberMeOptIn
+	 * Setter for externalRememberMeOptIn
 	 */
-	 public void setExternalRememberMeOptIn(String ExternalRememberMeOptIn) {
-	 	this.ExternalRememberMeOptIn = ExternalRememberMeOptIn;
+	 public void setExternalRememberMeOptIn(String externalRememberMeOptIn) {
+	 	this.externalRememberMeOptIn = externalRememberMeOptIn;
 	 }
 	 
 	/**
-	 * Getter for ExternalRememberMeOwnerDetails
+	 * Getter for externalRememberMeOwnerDetails
 	 */
 	 public ExternalRememberMeOwnerDetailsType getExternalRememberMeOwnerDetails() {
-	 	return ExternalRememberMeOwnerDetails;
+	 	return externalRememberMeOwnerDetails;
 	 }
 	 
 	/**
-	 * Setter for ExternalRememberMeOwnerDetails
+	 * Setter for externalRememberMeOwnerDetails
 	 */
-	 public void setExternalRememberMeOwnerDetails(ExternalRememberMeOwnerDetailsType ExternalRememberMeOwnerDetails) {
-	 	this.ExternalRememberMeOwnerDetails = ExternalRememberMeOwnerDetails;
+	 public void setExternalRememberMeOwnerDetails(ExternalRememberMeOwnerDetailsType externalRememberMeOwnerDetails) {
+	 	this.externalRememberMeOwnerDetails = externalRememberMeOwnerDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(ExternalRememberMeOptIn != null) {
-			sb.append("<ebl:ExternalRememberMeOptIn>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExternalRememberMeOptIn));
-			sb.append("</ebl:ExternalRememberMeOptIn>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ExternalRememberMeOwnerDetails != null) {
-			sb.append("<ebl:ExternalRememberMeOwnerDetails>");
-			sb.append(ExternalRememberMeOwnerDetails.toXMLString());
-			sb.append("</ebl:ExternalRememberMeOwnerDetails>");
+		if(externalRememberMeOptIn != null) {
+			sb.append("<").append(preferredPrefix).append(":ExternalRememberMeOptIn>").append(SDKUtil.escapeInvalidXmlCharsRegex(externalRememberMeOptIn));
+			sb.append("</").append(preferredPrefix).append(":ExternalRememberMeOptIn>");
+		}
+		if(externalRememberMeOwnerDetails != null) {
+			sb.append(externalRememberMeOwnerDetails.toXMLString(preferredPrefix,"ExternalRememberMeOwnerDetails"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

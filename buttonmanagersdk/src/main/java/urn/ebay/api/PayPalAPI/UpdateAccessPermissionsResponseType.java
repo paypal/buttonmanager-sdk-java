@@ -29,7 +29,7 @@ public class UpdateAccessPermissionsResponseType extends AbstractResponseType {
 	 * length and limitations: 20 single-byte characters 	  
 	 *@Required	 
 	 */ 
-	private String Status;
+	private String status;
 
 	
 
@@ -40,17 +40,17 @@ public class UpdateAccessPermissionsResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for Status
+	 * Getter for status
 	 */
 	 public String getStatus() {
-	 	return Status;
+	 	return status;
 	 }
 	 
 	/**
-	 * Setter for Status
+	 * Setter for status
 	 */
-	 public void setStatus(String Status) {
-	 	this.Status = Status;
+	 public void setStatus(String status) {
+	 	this.status = status;
 	 }
 	 
 
@@ -76,7 +76,7 @@ public class UpdateAccessPermissionsResponseType extends AbstractResponseType {
 		childNode = (Node) xpath.evaluate("Status", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 			String value = childNode.getTextContent();
-			this.Status = value;
+			this.status = value;
 		}
 	}
  

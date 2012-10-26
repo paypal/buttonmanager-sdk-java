@@ -29,42 +29,42 @@ public class IncentiveDetailType{
 	/**
 	 * 	 
 	 */ 
-	private String RedemptionCode;
+	private String redemptionCode;
 
 	/**
 	 * 	 
 	 */ 
-	private String DisplayCode;
+	private String displayCode;
 
 	/**
 	 * 	 
 	 */ 
-	private String ProgramId;
+	private String programId;
 
 	/**
 	 * 	 
 	 */ 
-	private IncentiveTypeCodeType IncentiveType;
+	private IncentiveTypeCodeType incentiveType;
 
 	/**
 	 * 	 
 	 */ 
-	private String IncentiveDescription;
+	private String incentiveDescription;
 
 	/**
 	 * 	 
 	 */ 
-	private List<IncentiveAppliedToType> AppliedTo = new ArrayList<IncentiveAppliedToType>();
+	private List<IncentiveAppliedToType> appliedTo = new ArrayList<IncentiveAppliedToType>();
 
 	/**
 	 * 	 
 	 */ 
-	private String Status;
+	private String status;
 
 	/**
 	 * 	 
 	 */ 
-	private String ErrorCode;
+	private String errorCode;
 
 	
 
@@ -75,115 +75,115 @@ public class IncentiveDetailType{
 	}	
 
 	/**
-	 * Getter for RedemptionCode
+	 * Getter for redemptionCode
 	 */
 	 public String getRedemptionCode() {
-	 	return RedemptionCode;
+	 	return redemptionCode;
 	 }
 	 
 	/**
-	 * Setter for RedemptionCode
+	 * Setter for redemptionCode
 	 */
-	 public void setRedemptionCode(String RedemptionCode) {
-	 	this.RedemptionCode = RedemptionCode;
+	 public void setRedemptionCode(String redemptionCode) {
+	 	this.redemptionCode = redemptionCode;
 	 }
 	 
 	/**
-	 * Getter for DisplayCode
+	 * Getter for displayCode
 	 */
 	 public String getDisplayCode() {
-	 	return DisplayCode;
+	 	return displayCode;
 	 }
 	 
 	/**
-	 * Setter for DisplayCode
+	 * Setter for displayCode
 	 */
-	 public void setDisplayCode(String DisplayCode) {
-	 	this.DisplayCode = DisplayCode;
+	 public void setDisplayCode(String displayCode) {
+	 	this.displayCode = displayCode;
 	 }
 	 
 	/**
-	 * Getter for ProgramId
+	 * Getter for programId
 	 */
 	 public String getProgramId() {
-	 	return ProgramId;
+	 	return programId;
 	 }
 	 
 	/**
-	 * Setter for ProgramId
+	 * Setter for programId
 	 */
-	 public void setProgramId(String ProgramId) {
-	 	this.ProgramId = ProgramId;
+	 public void setProgramId(String programId) {
+	 	this.programId = programId;
 	 }
 	 
 	/**
-	 * Getter for IncentiveType
+	 * Getter for incentiveType
 	 */
 	 public IncentiveTypeCodeType getIncentiveType() {
-	 	return IncentiveType;
+	 	return incentiveType;
 	 }
 	 
 	/**
-	 * Setter for IncentiveType
+	 * Setter for incentiveType
 	 */
-	 public void setIncentiveType(IncentiveTypeCodeType IncentiveType) {
-	 	this.IncentiveType = IncentiveType;
+	 public void setIncentiveType(IncentiveTypeCodeType incentiveType) {
+	 	this.incentiveType = incentiveType;
 	 }
 	 
 	/**
-	 * Getter for IncentiveDescription
+	 * Getter for incentiveDescription
 	 */
 	 public String getIncentiveDescription() {
-	 	return IncentiveDescription;
+	 	return incentiveDescription;
 	 }
 	 
 	/**
-	 * Setter for IncentiveDescription
+	 * Setter for incentiveDescription
 	 */
-	 public void setIncentiveDescription(String IncentiveDescription) {
-	 	this.IncentiveDescription = IncentiveDescription;
+	 public void setIncentiveDescription(String incentiveDescription) {
+	 	this.incentiveDescription = incentiveDescription;
 	 }
 	 
 	/**
-	 * Getter for AppliedTo
+	 * Getter for appliedTo
 	 */
 	 public List<IncentiveAppliedToType> getAppliedTo() {
-	 	return AppliedTo;
+	 	return appliedTo;
 	 }
 	 
 	/**
-	 * Setter for AppliedTo
+	 * Setter for appliedTo
 	 */
-	 public void setAppliedTo(List<IncentiveAppliedToType> AppliedTo) {
-	 	this.AppliedTo = AppliedTo;
+	 public void setAppliedTo(List<IncentiveAppliedToType> appliedTo) {
+	 	this.appliedTo = appliedTo;
 	 }
 	 
 	/**
-	 * Getter for Status
+	 * Getter for status
 	 */
 	 public String getStatus() {
-	 	return Status;
+	 	return status;
 	 }
 	 
 	/**
-	 * Setter for Status
+	 * Setter for status
 	 */
-	 public void setStatus(String Status) {
-	 	this.Status = Status;
+	 public void setStatus(String status) {
+	 	this.status = status;
 	 }
 	 
 	/**
-	 * Getter for ErrorCode
+	 * Getter for errorCode
 	 */
 	 public String getErrorCode() {
-	 	return ErrorCode;
+	 	return errorCode;
 	 }
 	 
 	/**
-	 * Setter for ErrorCode
+	 * Setter for errorCode
 	 */
-	 public void setErrorCode(String ErrorCode) {
-	 	this.ErrorCode = ErrorCode;
+	 public void setErrorCode(String errorCode) {
+	 	this.errorCode = errorCode;
 	 }
 	 
 
@@ -207,43 +207,43 @@ public class IncentiveDetailType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("RedemptionCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.RedemptionCode = childNode.getTextContent();
+		    this.redemptionCode = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("DisplayCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.DisplayCode = childNode.getTextContent();
+		    this.displayCode = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ProgramId", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ProgramId = childNode.getTextContent();
+		    this.programId = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("IncentiveType", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.IncentiveType = IncentiveTypeCodeType.fromValue(childNode.getTextContent());
+		    this.incentiveType = IncentiveTypeCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("IncentiveDescription", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.IncentiveDescription = childNode.getTextContent();
+		    this.incentiveDescription = childNode.getTextContent();
 		}
 	
         nodeList = (NodeList) xpath.evaluate("AppliedTo", node, XPathConstants.NODESET);
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.AppliedTo.add(new IncentiveAppliedToType(subNode));
+				this.appliedTo.add(new IncentiveAppliedToType(subNode));
 			}
 		}
 		childNode = (Node) xpath.evaluate("Status", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Status = childNode.getTextContent();
+		    this.status = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ErrorCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ErrorCode = childNode.getTextContent();
+		    this.errorCode = childNode.getTextContent();
 		}
 	
 	}

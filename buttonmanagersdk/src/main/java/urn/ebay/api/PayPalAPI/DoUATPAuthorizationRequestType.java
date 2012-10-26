@@ -10,19 +10,21 @@ import com.paypal.core.SDKUtil;
  */
 public class DoUATPAuthorizationRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * UATP card details Required 	  
 	 *@Required	 
 	 */ 
-	private UATPDetailsType UATPDetails;
+	private UATPDetailsType uATPDetails;
 
 	/**
 	 * Type of transaction to authorize. The only allowable value
 	 * is Order, which means that the transaction represents a
 	 * customer order that can be fulfilled over 29 days. Optional	 
 	 */ 
-	private TransactionEntityType TransactionEntity;
+	private TransactionEntityType transactionEntity;
 
 	/**
 	 * Amount to authorize. Required Limitations: Must not exceed
@@ -31,28 +33,28 @@ public class DoUATPAuthorizationRequestType extends AbstractRequestType {
 	 * must be a comma (,).	  
 	 *@Required	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	/**
 	 * Invoice ID. A pass through. 	 
 	 */ 
-	private String InvoiceID;
+	private String invoiceID;
 
 	/**
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 	 
 	 */ 
-	private String MsgSubID;
+	private String msgSubID;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public DoUATPAuthorizationRequestType (UATPDetailsType UATPDetails, BasicAmountType Amount){
-		this.UATPDetails = UATPDetails;
-		this.Amount = Amount;
+	public DoUATPAuthorizationRequestType (UATPDetailsType uATPDetails, BasicAmountType amount){
+		this.uATPDetails = uATPDetails;
+		this.amount = amount;
 	}	
 
 	/**
@@ -62,101 +64,113 @@ public class DoUATPAuthorizationRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for UATPDetails
+	 * Getter for uATPDetails
 	 */
 	 public UATPDetailsType getUATPDetails() {
-	 	return UATPDetails;
+	 	return uATPDetails;
 	 }
 	 
 	/**
-	 * Setter for UATPDetails
+	 * Setter for uATPDetails
 	 */
-	 public void setUATPDetails(UATPDetailsType UATPDetails) {
-	 	this.UATPDetails = UATPDetails;
+	 public void setUATPDetails(UATPDetailsType uATPDetails) {
+	 	this.uATPDetails = uATPDetails;
 	 }
 	 
 	/**
-	 * Getter for TransactionEntity
+	 * Getter for transactionEntity
 	 */
 	 public TransactionEntityType getTransactionEntity() {
-	 	return TransactionEntity;
+	 	return transactionEntity;
 	 }
 	 
 	/**
-	 * Setter for TransactionEntity
+	 * Setter for transactionEntity
 	 */
-	 public void setTransactionEntity(TransactionEntityType TransactionEntity) {
-	 	this.TransactionEntity = TransactionEntity;
+	 public void setTransactionEntity(TransactionEntityType transactionEntity) {
+	 	this.transactionEntity = transactionEntity;
 	 }
 	 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 	/**
-	 * Getter for InvoiceID
+	 * Getter for invoiceID
 	 */
 	 public String getInvoiceID() {
-	 	return InvoiceID;
+	 	return invoiceID;
 	 }
 	 
 	/**
-	 * Setter for InvoiceID
+	 * Setter for invoiceID
 	 */
-	 public void setInvoiceID(String InvoiceID) {
-	 	this.InvoiceID = InvoiceID;
+	 public void setInvoiceID(String invoiceID) {
+	 	this.invoiceID = invoiceID;
 	 }
 	 
 	/**
-	 * Getter for MsgSubID
+	 * Getter for msgSubID
 	 */
 	 public String getMsgSubID() {
-	 	return MsgSubID;
+	 	return msgSubID;
 	 }
 	 
 	/**
-	 * Setter for MsgSubID
+	 * Setter for msgSubID
 	 */
-	 public void setMsgSubID(String MsgSubID) {
-	 	this.MsgSubID = MsgSubID;
+	 public void setMsgSubID(String msgSubID) {
+	 	this.msgSubID = msgSubID;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(UATPDetails != null) {
-			sb.append("<ebl:UATPDetails>");
-			sb.append(UATPDetails.toXMLString());
-			sb.append("</ebl:UATPDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(TransactionEntity != null) {
-			sb.append("<urn:TransactionEntity>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionEntity.getValue()));
-			sb.append("</urn:TransactionEntity>");
+		sb.append(super.toXMLString(prefix, null));
+		if(uATPDetails != null) {
+			sb.append(uATPDetails.toXMLString(null,"UATPDetails"));
 		}
-		if(Amount != null) {
-			sb.append("<urn:Amount");
-			sb.append(Amount.toXMLString());
-			sb.append("</urn:Amount>");
+		if(transactionEntity != null) {
+			sb.append("<").append(preferredPrefix).append(":TransactionEntity>").append(SDKUtil.escapeInvalidXmlCharsRegex(transactionEntity.getValue()));
+			sb.append("</").append(preferredPrefix).append(":TransactionEntity>");
 		}
-		if(InvoiceID != null) {
-			sb.append("<urn:InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(InvoiceID));
-			sb.append("</urn:InvoiceID>");
+		if(amount != null) {
+			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
 		}
-		if(MsgSubID != null) {
-			sb.append("<urn:MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(MsgSubID));
-			sb.append("</urn:MsgSubID>");
+		if(invoiceID != null) {
+			sb.append("<").append(preferredPrefix).append(":InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(invoiceID));
+			sb.append("</").append(preferredPrefix).append(":InvoiceID>");
+		}
+		if(msgSubID != null) {
+			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(msgSubID));
+			sb.append("</").append(preferredPrefix).append(":MsgSubID>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

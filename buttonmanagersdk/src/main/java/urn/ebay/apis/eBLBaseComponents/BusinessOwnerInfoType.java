@@ -7,29 +7,31 @@ import com.paypal.core.SDKUtil;
  */
 public class BusinessOwnerInfoType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Details about the business owner	 
 	 */ 
-	private PayerInfoType Owner;
+	private PayerInfoType owner;
 
 	/**
 	 * Business owner’s home telephone number Character length
 	 * and limitations: 32 alphanumeric characters	 
 	 */ 
-	private String HomePhone;
+	private String homePhone;
 
 	/**
 	 * Business owner’s mobile telephone number Character length
 	 * and limitations: 32 alphanumeric characters	 
 	 */ 
-	private String MobilePhone;
+	private String mobilePhone;
 
 	/**
 	 * Business owner’s social security number Character length
 	 * and limitations: 9 alphanumeric characters	 
 	 */ 
-	private String SSN;
+	private String sSN;
 
 	
 
@@ -40,81 +42,95 @@ public class BusinessOwnerInfoType{
 	}	
 
 	/**
-	 * Getter for Owner
+	 * Getter for owner
 	 */
 	 public PayerInfoType getOwner() {
-	 	return Owner;
+	 	return owner;
 	 }
 	 
 	/**
-	 * Setter for Owner
+	 * Setter for owner
 	 */
-	 public void setOwner(PayerInfoType Owner) {
-	 	this.Owner = Owner;
+	 public void setOwner(PayerInfoType owner) {
+	 	this.owner = owner;
 	 }
 	 
 	/**
-	 * Getter for HomePhone
+	 * Getter for homePhone
 	 */
 	 public String getHomePhone() {
-	 	return HomePhone;
+	 	return homePhone;
 	 }
 	 
 	/**
-	 * Setter for HomePhone
+	 * Setter for homePhone
 	 */
-	 public void setHomePhone(String HomePhone) {
-	 	this.HomePhone = HomePhone;
+	 public void setHomePhone(String homePhone) {
+	 	this.homePhone = homePhone;
 	 }
 	 
 	/**
-	 * Getter for MobilePhone
+	 * Getter for mobilePhone
 	 */
 	 public String getMobilePhone() {
-	 	return MobilePhone;
+	 	return mobilePhone;
 	 }
 	 
 	/**
-	 * Setter for MobilePhone
+	 * Setter for mobilePhone
 	 */
-	 public void setMobilePhone(String MobilePhone) {
-	 	this.MobilePhone = MobilePhone;
+	 public void setMobilePhone(String mobilePhone) {
+	 	this.mobilePhone = mobilePhone;
 	 }
 	 
 	/**
-	 * Getter for SSN
+	 * Getter for sSN
 	 */
 	 public String getSSN() {
-	 	return SSN;
+	 	return sSN;
 	 }
 	 
 	/**
-	 * Setter for SSN
+	 * Setter for sSN
 	 */
-	 public void setSSN(String SSN) {
-	 	this.SSN = SSN;
+	 public void setSSN(String sSN) {
+	 	this.sSN = sSN;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(Owner != null) {
-			sb.append("<ebl:Owner>");
-			sb.append(Owner.toXMLString());
-			sb.append("</ebl:Owner>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(HomePhone != null) {
-			sb.append("<ebl:HomePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(HomePhone));
-			sb.append("</ebl:HomePhone>");
+		if(owner != null) {
+			sb.append(owner.toXMLString(preferredPrefix,"Owner"));
 		}
-		if(MobilePhone != null) {
-			sb.append("<ebl:MobilePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(MobilePhone));
-			sb.append("</ebl:MobilePhone>");
+		if(homePhone != null) {
+			sb.append("<").append(preferredPrefix).append(":HomePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(homePhone));
+			sb.append("</").append(preferredPrefix).append(":HomePhone>");
 		}
-		if(SSN != null) {
-			sb.append("<ebl:SSN>").append(SDKUtil.escapeInvalidXmlCharsRegex(SSN));
-			sb.append("</ebl:SSN>");
+		if(mobilePhone != null) {
+			sb.append("<").append(preferredPrefix).append(":MobilePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(mobilePhone));
+			sb.append("</").append(preferredPrefix).append(":MobilePhone>");
+		}
+		if(sSN != null) {
+			sb.append("<").append(preferredPrefix).append(":SSN>").append(SDKUtil.escapeInvalidXmlCharsRegex(sSN));
+			sb.append("</").append(preferredPrefix).append(":SSN>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

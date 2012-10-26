@@ -8,20 +8,22 @@ import com.paypal.core.SDKUtil;
  */
 public class ReverseTransactionRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private ReverseTransactionRequestDetailsType ReverseTransactionRequestDetails;
+	private ReverseTransactionRequestDetailsType reverseTransactionRequestDetails;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public ReverseTransactionRequestType (ReverseTransactionRequestDetailsType ReverseTransactionRequestDetails){
-		this.ReverseTransactionRequestDetails = ReverseTransactionRequestDetails;
+	public ReverseTransactionRequestType (ReverseTransactionRequestDetailsType reverseTransactionRequestDetails){
+		this.reverseTransactionRequestDetails = reverseTransactionRequestDetails;
 	}	
 
 	/**
@@ -31,28 +33,42 @@ public class ReverseTransactionRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for ReverseTransactionRequestDetails
+	 * Getter for reverseTransactionRequestDetails
 	 */
 	 public ReverseTransactionRequestDetailsType getReverseTransactionRequestDetails() {
-	 	return ReverseTransactionRequestDetails;
+	 	return reverseTransactionRequestDetails;
 	 }
 	 
 	/**
-	 * Setter for ReverseTransactionRequestDetails
+	 * Setter for reverseTransactionRequestDetails
 	 */
-	 public void setReverseTransactionRequestDetails(ReverseTransactionRequestDetailsType ReverseTransactionRequestDetails) {
-	 	this.ReverseTransactionRequestDetails = ReverseTransactionRequestDetails;
+	 public void setReverseTransactionRequestDetails(ReverseTransactionRequestDetailsType reverseTransactionRequestDetails) {
+	 	this.reverseTransactionRequestDetails = reverseTransactionRequestDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(ReverseTransactionRequestDetails != null) {
-			sb.append("<ebl:ReverseTransactionRequestDetails>");
-			sb.append(ReverseTransactionRequestDetails.toXMLString());
-			sb.append("</ebl:ReverseTransactionRequestDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		sb.append(super.toXMLString(prefix, null));
+		if(reverseTransactionRequestDetails != null) {
+			sb.append(reverseTransactionRequestDetails.toXMLString(null,"ReverseTransactionRequestDetails"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

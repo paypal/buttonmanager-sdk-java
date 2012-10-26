@@ -8,27 +8,29 @@ import com.paypal.core.SDKUtil;
  */
 public class ManagePendingTransactionStatusRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String TransactionID;
+	private String transactionID;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private FMFPendingTransactionActionType Action;
+	private FMFPendingTransactionActionType action;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public ManagePendingTransactionStatusRequestType (String TransactionID, FMFPendingTransactionActionType Action){
-		this.TransactionID = TransactionID;
-		this.Action = Action;
+	public ManagePendingTransactionStatusRequestType (String transactionID, FMFPendingTransactionActionType action){
+		this.transactionID = transactionID;
+		this.action = action;
 	}	
 
 	/**
@@ -38,45 +40,61 @@ public class ManagePendingTransactionStatusRequestType extends AbstractRequestTy
 	}	
 
 	/**
-	 * Getter for TransactionID
+	 * Getter for transactionID
 	 */
 	 public String getTransactionID() {
-	 	return TransactionID;
+	 	return transactionID;
 	 }
 	 
 	/**
-	 * Setter for TransactionID
+	 * Setter for transactionID
 	 */
-	 public void setTransactionID(String TransactionID) {
-	 	this.TransactionID = TransactionID;
+	 public void setTransactionID(String transactionID) {
+	 	this.transactionID = transactionID;
 	 }
 	 
 	/**
-	 * Getter for Action
+	 * Getter for action
 	 */
 	 public FMFPendingTransactionActionType getAction() {
-	 	return Action;
+	 	return action;
 	 }
 	 
 	/**
-	 * Setter for Action
+	 * Setter for action
 	 */
-	 public void setAction(FMFPendingTransactionActionType Action) {
-	 	this.Action = Action;
+	 public void setAction(FMFPendingTransactionActionType action) {
+	 	this.action = action;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(TransactionID != null) {
-			sb.append("<urn:TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(TransactionID));
-			sb.append("</urn:TransactionID>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(Action != null) {
-			sb.append("<urn:Action>").append(SDKUtil.escapeInvalidXmlCharsRegex(Action.getValue()));
-			sb.append("</urn:Action>");
+		sb.append(super.toXMLString(prefix, null));
+		if(transactionID != null) {
+			sb.append("<").append(preferredPrefix).append(":TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(transactionID));
+			sb.append("</").append(preferredPrefix).append(":TransactionID>");
+		}
+		if(action != null) {
+			sb.append("<").append(preferredPrefix).append(":Action>").append(SDKUtil.escapeInvalidXmlCharsRegex(action.getValue()));
+			sb.append("</").append(preferredPrefix).append(":Action>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class DoReauthorizationReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private DoReauthorizationRequestType DoReauthorizationRequest;
+	private DoReauthorizationRequestType doReauthorizationRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class DoReauthorizationReq{
 	}	
 
 	/**
-	 * Getter for DoReauthorizationRequest
+	 * Getter for doReauthorizationRequest
 	 */
 	 public DoReauthorizationRequestType getDoReauthorizationRequest() {
-	 	return DoReauthorizationRequest;
+	 	return doReauthorizationRequest;
 	 }
 	 
 	/**
-	 * Setter for DoReauthorizationRequest
+	 * Setter for doReauthorizationRequest
 	 */
-	 public void setDoReauthorizationRequest(DoReauthorizationRequestType DoReauthorizationRequest) {
-	 	this.DoReauthorizationRequest = DoReauthorizationRequest;
+	 public void setDoReauthorizationRequest(DoReauthorizationRequestType doReauthorizationRequest) {
+	 	this.doReauthorizationRequest = doReauthorizationRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:DoReauthorizationReq>");
-		if(DoReauthorizationRequest != null) {
-			sb.append("<urn:DoReauthorizationRequest>");
-			sb.append(DoReauthorizationRequest.toXMLString());
-			sb.append("</urn:DoReauthorizationRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:DoReauthorizationReq>");
+		if(doReauthorizationRequest != null) {
+			sb.append(doReauthorizationRequest.toXMLString(null,"DoReauthorizationRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

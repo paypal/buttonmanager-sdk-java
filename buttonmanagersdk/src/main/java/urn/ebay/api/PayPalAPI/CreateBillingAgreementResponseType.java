@@ -27,7 +27,7 @@ public class CreateBillingAgreementResponseType extends AbstractResponseType {
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String BillingAgreementID;
+	private String billingAgreementID;
 
 	
 
@@ -38,17 +38,17 @@ public class CreateBillingAgreementResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for BillingAgreementID
+	 * Getter for billingAgreementID
 	 */
 	 public String getBillingAgreementID() {
-	 	return BillingAgreementID;
+	 	return billingAgreementID;
 	 }
 	 
 	/**
-	 * Setter for BillingAgreementID
+	 * Setter for billingAgreementID
 	 */
-	 public void setBillingAgreementID(String BillingAgreementID) {
-	 	this.BillingAgreementID = BillingAgreementID;
+	 public void setBillingAgreementID(String billingAgreementID) {
+	 	this.billingAgreementID = billingAgreementID;
 	 }
 	 
 
@@ -74,7 +74,7 @@ public class CreateBillingAgreementResponseType extends AbstractResponseType {
 		childNode = (Node) xpath.evaluate("BillingAgreementID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 			String value = childNode.getTextContent();
-			this.BillingAgreementID = value;
+			this.billingAgreementID = value;
 		}
 	}
  

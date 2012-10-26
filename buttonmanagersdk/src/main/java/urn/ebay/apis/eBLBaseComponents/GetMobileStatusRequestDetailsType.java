@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class GetMobileStatusRequestDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Phone number for status inquiry 	 
 	 */ 
-	private PhoneNumberType Phone;
+	private PhoneNumberType phone;
 
 	
 
@@ -22,27 +24,41 @@ public class GetMobileStatusRequestDetailsType{
 	}	
 
 	/**
-	 * Getter for Phone
+	 * Getter for phone
 	 */
 	 public PhoneNumberType getPhone() {
-	 	return Phone;
+	 	return phone;
 	 }
 	 
 	/**
-	 * Setter for Phone
+	 * Setter for phone
 	 */
-	 public void setPhone(PhoneNumberType Phone) {
-	 	this.Phone = Phone;
+	 public void setPhone(PhoneNumberType phone) {
+	 	this.phone = phone;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(Phone != null) {
-			sb.append("<ebl:Phone>");
-			sb.append(Phone.toXMLString());
-			sb.append("</ebl:Phone>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		if(phone != null) {
+			sb.append(phone.toXMLString(preferredPrefix,"Phone"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

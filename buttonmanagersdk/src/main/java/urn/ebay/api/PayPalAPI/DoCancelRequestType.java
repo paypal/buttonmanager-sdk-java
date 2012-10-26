@@ -8,34 +8,36 @@ import com.paypal.core.SDKUtil;
  */
 public class DoCancelRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * Msg Sub Id that was used for the orginal operation. 	  
 	 *@Required	 
 	 */ 
-	private String CancelMsgSubID;
+	private String cancelMsgSubID;
 
 	/**
 	 * Original API's type	  
 	 *@Required	 
 	 */ 
-	private APIType APIType;
+	private APIType aPIType;
 
 	/**
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 	 
 	 */ 
-	private String MsgSubID;
+	private String msgSubID;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public DoCancelRequestType (String CancelMsgSubID, APIType APIType){
-		this.CancelMsgSubID = CancelMsgSubID;
-		this.APIType = APIType;
+	public DoCancelRequestType (String cancelMsgSubID, APIType aPIType){
+		this.cancelMsgSubID = cancelMsgSubID;
+		this.aPIType = aPIType;
 	}	
 
 	/**
@@ -45,63 +47,79 @@ public class DoCancelRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for CancelMsgSubID
+	 * Getter for cancelMsgSubID
 	 */
 	 public String getCancelMsgSubID() {
-	 	return CancelMsgSubID;
+	 	return cancelMsgSubID;
 	 }
 	 
 	/**
-	 * Setter for CancelMsgSubID
+	 * Setter for cancelMsgSubID
 	 */
-	 public void setCancelMsgSubID(String CancelMsgSubID) {
-	 	this.CancelMsgSubID = CancelMsgSubID;
+	 public void setCancelMsgSubID(String cancelMsgSubID) {
+	 	this.cancelMsgSubID = cancelMsgSubID;
 	 }
 	 
 	/**
-	 * Getter for APIType
+	 * Getter for aPIType
 	 */
 	 public APIType getAPIType() {
-	 	return APIType;
+	 	return aPIType;
 	 }
 	 
 	/**
-	 * Setter for APIType
+	 * Setter for aPIType
 	 */
-	 public void setAPIType(APIType APIType) {
-	 	this.APIType = APIType;
+	 public void setAPIType(APIType aPIType) {
+	 	this.aPIType = aPIType;
 	 }
 	 
 	/**
-	 * Getter for MsgSubID
+	 * Getter for msgSubID
 	 */
 	 public String getMsgSubID() {
-	 	return MsgSubID;
+	 	return msgSubID;
 	 }
 	 
 	/**
-	 * Setter for MsgSubID
+	 * Setter for msgSubID
 	 */
-	 public void setMsgSubID(String MsgSubID) {
-	 	this.MsgSubID = MsgSubID;
+	 public void setMsgSubID(String msgSubID) {
+	 	this.msgSubID = msgSubID;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(CancelMsgSubID != null) {
-			sb.append("<urn:CancelMsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(CancelMsgSubID));
-			sb.append("</urn:CancelMsgSubID>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(APIType != null) {
-			sb.append("<urn:APIType>").append(SDKUtil.escapeInvalidXmlCharsRegex(APIType.getValue()));
-			sb.append("</urn:APIType>");
+		sb.append(super.toXMLString(prefix, null));
+		if(cancelMsgSubID != null) {
+			sb.append("<").append(preferredPrefix).append(":CancelMsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(cancelMsgSubID));
+			sb.append("</").append(preferredPrefix).append(":CancelMsgSubID>");
 		}
-		if(MsgSubID != null) {
-			sb.append("<urn:MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(MsgSubID));
-			sb.append("</urn:MsgSubID>");
+		if(aPIType != null) {
+			sb.append("<").append(preferredPrefix).append(":APIType>").append(SDKUtil.escapeInvalidXmlCharsRegex(aPIType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":APIType>");
+		}
+		if(msgSubID != null) {
+			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(msgSubID));
+			sb.append("</").append(preferredPrefix).append(":MsgSubID>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

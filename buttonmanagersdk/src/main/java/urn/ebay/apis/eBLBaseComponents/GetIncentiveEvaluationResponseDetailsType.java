@@ -28,12 +28,12 @@ public class GetIncentiveEvaluationResponseDetailsType{
 	/**
 	 * 	 
 	 */ 
-	private List<IncentiveDetailType> IncentiveDetails = new ArrayList<IncentiveDetailType>();
+	private List<IncentiveDetailType> incentiveDetails = new ArrayList<IncentiveDetailType>();
 
 	/**
 	 * 	 
 	 */ 
-	private String RequestId;
+	private String requestId;
 
 	
 
@@ -44,31 +44,31 @@ public class GetIncentiveEvaluationResponseDetailsType{
 	}	
 
 	/**
-	 * Getter for IncentiveDetails
+	 * Getter for incentiveDetails
 	 */
 	 public List<IncentiveDetailType> getIncentiveDetails() {
-	 	return IncentiveDetails;
+	 	return incentiveDetails;
 	 }
 	 
 	/**
-	 * Setter for IncentiveDetails
+	 * Setter for incentiveDetails
 	 */
-	 public void setIncentiveDetails(List<IncentiveDetailType> IncentiveDetails) {
-	 	this.IncentiveDetails = IncentiveDetails;
+	 public void setIncentiveDetails(List<IncentiveDetailType> incentiveDetails) {
+	 	this.incentiveDetails = incentiveDetails;
 	 }
 	 
 	/**
-	 * Getter for RequestId
+	 * Getter for requestId
 	 */
 	 public String getRequestId() {
-	 	return RequestId;
+	 	return requestId;
 	 }
 	 
 	/**
-	 * Setter for RequestId
+	 * Setter for requestId
 	 */
-	 public void setRequestId(String RequestId) {
-	 	this.RequestId = RequestId;
+	 public void setRequestId(String requestId) {
+	 	this.requestId = requestId;
 	 }
 	 
 
@@ -94,12 +94,12 @@ public class GetIncentiveEvaluationResponseDetailsType{
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.IncentiveDetails.add(new IncentiveDetailType(subNode));
+				this.incentiveDetails.add(new IncentiveDetailType(subNode));
 			}
 		}
 		childNode = (Node) xpath.evaluate("RequestId", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.RequestId = childNode.getTextContent();
+		    this.requestId = childNode.getTextContent();
 		}
 	
 	}

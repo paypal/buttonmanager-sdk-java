@@ -8,20 +8,22 @@ import com.paypal.core.SDKUtil;
  */
 public class SetAccessPermissionsRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private SetAccessPermissionsRequestDetailsType SetAccessPermissionsRequestDetails;
+	private SetAccessPermissionsRequestDetailsType setAccessPermissionsRequestDetails;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public SetAccessPermissionsRequestType (SetAccessPermissionsRequestDetailsType SetAccessPermissionsRequestDetails){
-		this.SetAccessPermissionsRequestDetails = SetAccessPermissionsRequestDetails;
+	public SetAccessPermissionsRequestType (SetAccessPermissionsRequestDetailsType setAccessPermissionsRequestDetails){
+		this.setAccessPermissionsRequestDetails = setAccessPermissionsRequestDetails;
 	}	
 
 	/**
@@ -31,28 +33,42 @@ public class SetAccessPermissionsRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for SetAccessPermissionsRequestDetails
+	 * Getter for setAccessPermissionsRequestDetails
 	 */
 	 public SetAccessPermissionsRequestDetailsType getSetAccessPermissionsRequestDetails() {
-	 	return SetAccessPermissionsRequestDetails;
+	 	return setAccessPermissionsRequestDetails;
 	 }
 	 
 	/**
-	 * Setter for SetAccessPermissionsRequestDetails
+	 * Setter for setAccessPermissionsRequestDetails
 	 */
-	 public void setSetAccessPermissionsRequestDetails(SetAccessPermissionsRequestDetailsType SetAccessPermissionsRequestDetails) {
-	 	this.SetAccessPermissionsRequestDetails = SetAccessPermissionsRequestDetails;
+	 public void setSetAccessPermissionsRequestDetails(SetAccessPermissionsRequestDetailsType setAccessPermissionsRequestDetails) {
+	 	this.setAccessPermissionsRequestDetails = setAccessPermissionsRequestDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(SetAccessPermissionsRequestDetails != null) {
-			sb.append("<ebl:SetAccessPermissionsRequestDetails>");
-			sb.append(SetAccessPermissionsRequestDetails.toXMLString());
-			sb.append("</ebl:SetAccessPermissionsRequestDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		sb.append(super.toXMLString(prefix, null));
+		if(setAccessPermissionsRequestDetails != null) {
+			sb.append(setAccessPermissionsRequestDetails.toXMLString(null,"SetAccessPermissionsRequestDetails"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

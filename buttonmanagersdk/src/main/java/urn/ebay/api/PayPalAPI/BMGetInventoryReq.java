@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class BMGetInventoryReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private BMGetInventoryRequestType BMGetInventoryRequest;
+	private BMGetInventoryRequestType bMGetInventoryRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class BMGetInventoryReq{
 	}	
 
 	/**
-	 * Getter for BMGetInventoryRequest
+	 * Getter for bMGetInventoryRequest
 	 */
 	 public BMGetInventoryRequestType getBMGetInventoryRequest() {
-	 	return BMGetInventoryRequest;
+	 	return bMGetInventoryRequest;
 	 }
 	 
 	/**
-	 * Setter for BMGetInventoryRequest
+	 * Setter for bMGetInventoryRequest
 	 */
-	 public void setBMGetInventoryRequest(BMGetInventoryRequestType BMGetInventoryRequest) {
-	 	this.BMGetInventoryRequest = BMGetInventoryRequest;
+	 public void setBMGetInventoryRequest(BMGetInventoryRequestType bMGetInventoryRequest) {
+	 	this.bMGetInventoryRequest = bMGetInventoryRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:BMGetInventoryReq>");
-		if(BMGetInventoryRequest != null) {
-			sb.append("<urn:BMGetInventoryRequest>");
-			sb.append(BMGetInventoryRequest.toXMLString());
-			sb.append("</urn:BMGetInventoryRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:BMGetInventoryReq>");
+		if(bMGetInventoryRequest != null) {
+			sb.append(bMGetInventoryRequest.toXMLString(null,"BMGetInventoryRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

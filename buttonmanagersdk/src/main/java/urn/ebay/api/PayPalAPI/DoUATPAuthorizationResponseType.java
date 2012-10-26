@@ -28,25 +28,25 @@ public class DoUATPAuthorizationResponseType extends DoAuthorizationResponseType
 	 * 	  
 	 *@Required	 
 	 */ 
-	private UATPDetailsType UATPDetails;
+	private UATPDetailsType uATPDetails;
 
 	/**
 	 * Auth Authorization Code. 	  
 	 *@Required	 
 	 */ 
-	private String AuthorizationCode;
+	private String authorizationCode;
 
 	/**
 	 * Invoice ID. A pass through. 	 
 	 */ 
-	private String InvoiceID;
+	private String invoiceID;
 
 	/**
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 	 
 	 */ 
-	private String MsgSubID;
+	private String msgSubID;
 
 	
 
@@ -57,59 +57,59 @@ public class DoUATPAuthorizationResponseType extends DoAuthorizationResponseType
 	}	
 
 	/**
-	 * Getter for UATPDetails
+	 * Getter for uATPDetails
 	 */
 	 public UATPDetailsType getUATPDetails() {
-	 	return UATPDetails;
+	 	return uATPDetails;
 	 }
 	 
 	/**
-	 * Setter for UATPDetails
+	 * Setter for uATPDetails
 	 */
-	 public void setUATPDetails(UATPDetailsType UATPDetails) {
-	 	this.UATPDetails = UATPDetails;
+	 public void setUATPDetails(UATPDetailsType uATPDetails) {
+	 	this.uATPDetails = uATPDetails;
 	 }
 	 
 	/**
-	 * Getter for AuthorizationCode
+	 * Getter for authorizationCode
 	 */
 	 public String getAuthorizationCode() {
-	 	return AuthorizationCode;
+	 	return authorizationCode;
 	 }
 	 
 	/**
-	 * Setter for AuthorizationCode
+	 * Setter for authorizationCode
 	 */
-	 public void setAuthorizationCode(String AuthorizationCode) {
-	 	this.AuthorizationCode = AuthorizationCode;
+	 public void setAuthorizationCode(String authorizationCode) {
+	 	this.authorizationCode = authorizationCode;
 	 }
 	 
 	/**
-	 * Getter for InvoiceID
+	 * Getter for invoiceID
 	 */
 	 public String getInvoiceID() {
-	 	return InvoiceID;
+	 	return invoiceID;
 	 }
 	 
 	/**
-	 * Setter for InvoiceID
+	 * Setter for invoiceID
 	 */
-	 public void setInvoiceID(String InvoiceID) {
-	 	this.InvoiceID = InvoiceID;
+	 public void setInvoiceID(String invoiceID) {
+	 	this.invoiceID = invoiceID;
 	 }
 	 
 	/**
-	 * Getter for MsgSubID
+	 * Getter for msgSubID
 	 */
 	 public String getMsgSubID() {
-	 	return MsgSubID;
+	 	return msgSubID;
 	 }
 	 
 	/**
-	 * Setter for MsgSubID
+	 * Setter for msgSubID
 	 */
-	 public void setMsgSubID(String MsgSubID) {
-	 	this.MsgSubID = MsgSubID;
+	 public void setMsgSubID(String msgSubID) {
+	 	this.msgSubID = msgSubID;
 	 }
 	 
 
@@ -134,21 +134,21 @@ public class DoUATPAuthorizationResponseType extends DoAuthorizationResponseType
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("UATPDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.UATPDetails =  new UATPDetailsType(childNode);
+		    this.uATPDetails =  new UATPDetailsType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("AuthorizationCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AuthorizationCode = childNode.getTextContent();
+		    this.authorizationCode = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("InvoiceID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.InvoiceID = childNode.getTextContent();
+		    this.invoiceID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("MsgSubID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.MsgSubID = childNode.getTextContent();
+		    this.msgSubID = childNode.getTextContent();
 		}
 	
 	}

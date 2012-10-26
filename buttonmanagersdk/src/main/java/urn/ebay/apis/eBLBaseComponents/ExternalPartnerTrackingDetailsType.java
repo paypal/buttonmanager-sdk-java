@@ -7,6 +7,8 @@ import com.paypal.core.SDKUtil;
  */
 public class ExternalPartnerTrackingDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * PayPal will just log this string. There will NOT be any
@@ -20,7 +22,7 @@ public class ExternalPartnerTrackingDetailsType{
 	 * control the value of what gets passed and we take that value
 	 * as is and generate data based on it. Optional 	 
 	 */ 
-	private String ExternalPartnerSegmentID;
+	private String externalPartnerSegmentID;
 
 	
 
@@ -31,26 +33,42 @@ public class ExternalPartnerTrackingDetailsType{
 	}	
 
 	/**
-	 * Getter for ExternalPartnerSegmentID
+	 * Getter for externalPartnerSegmentID
 	 */
 	 public String getExternalPartnerSegmentID() {
-	 	return ExternalPartnerSegmentID;
+	 	return externalPartnerSegmentID;
 	 }
 	 
 	/**
-	 * Setter for ExternalPartnerSegmentID
+	 * Setter for externalPartnerSegmentID
 	 */
-	 public void setExternalPartnerSegmentID(String ExternalPartnerSegmentID) {
-	 	this.ExternalPartnerSegmentID = ExternalPartnerSegmentID;
+	 public void setExternalPartnerSegmentID(String externalPartnerSegmentID) {
+	 	this.externalPartnerSegmentID = externalPartnerSegmentID;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(ExternalPartnerSegmentID != null) {
-			sb.append("<ebl:ExternalPartnerSegmentID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ExternalPartnerSegmentID));
-			sb.append("</ebl:ExternalPartnerSegmentID>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		if(externalPartnerSegmentID != null) {
+			sb.append("<").append(preferredPrefix).append(":ExternalPartnerSegmentID>").append(SDKUtil.escapeInvalidXmlCharsRegex(externalPartnerSegmentID));
+			sb.append("</").append(preferredPrefix).append(":ExternalPartnerSegmentID>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

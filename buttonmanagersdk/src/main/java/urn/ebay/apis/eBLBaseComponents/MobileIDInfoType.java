@@ -6,11 +6,13 @@ import com.paypal.core.SDKUtil;
  */
 public class MobileIDInfoType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * The Session token returned during buyer authentication.	 
 	 */ 
-	private String SessionToken;
+	private String sessionToken;
 
 	
 
@@ -21,26 +23,42 @@ public class MobileIDInfoType{
 	}	
 
 	/**
-	 * Getter for SessionToken
+	 * Getter for sessionToken
 	 */
 	 public String getSessionToken() {
-	 	return SessionToken;
+	 	return sessionToken;
 	 }
 	 
 	/**
-	 * Setter for SessionToken
+	 * Setter for sessionToken
 	 */
-	 public void setSessionToken(String SessionToken) {
-	 	this.SessionToken = SessionToken;
+	 public void setSessionToken(String sessionToken) {
+	 	this.sessionToken = sessionToken;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(SessionToken != null) {
-			sb.append("<ebl:SessionToken>").append(SDKUtil.escapeInvalidXmlCharsRegex(SessionToken));
-			sb.append("</ebl:SessionToken>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		if(sessionToken != null) {
+			sb.append("<").append(preferredPrefix).append(":SessionToken>").append(SDKUtil.escapeInvalidXmlCharsRegex(sessionToken));
+			sb.append("</").append(preferredPrefix).append(":SessionToken>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

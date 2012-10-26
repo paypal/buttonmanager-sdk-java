@@ -36,44 +36,44 @@ public class DoExpressCheckoutPaymentResponseDetailsType{
 	 * GetExpressCheckoutDetailsRequest. Character length and
 	 * limitations:20 single-byte characters	 
 	 */ 
-	private String Token;
+	private String token;
 
 	/**
 	 * Information about the transaction 	 
 	 */ 
-	private List<PaymentInfoType> PaymentInfo = new ArrayList<PaymentInfoType>();
+	private List<PaymentInfoType> paymentInfo = new ArrayList<PaymentInfoType>();
 
 	/**
 	 * 	 
 	 */ 
-	private String BillingAgreementID;
+	private String billingAgreementID;
 
 	/**
 	 * 	 
 	 */ 
-	private String RedirectRequired;
+	private String redirectRequired;
 
 	/**
 	 * Memo entered by sender in PayPal Review Page note field.
 	 * Optional Character length and limitations: 255 single-byte
 	 * alphanumeric characters 	 
 	 */ 
-	private String Note;
+	private String note;
 
 	/**
 	 * Redirect back to PayPal, PayPal can host the success page. 	 
 	 */ 
-	private String SuccessPageRedirectRequested;
+	private String successPageRedirectRequested;
 
 	/**
 	 * Information about the user selected options. 	 
 	 */ 
-	private UserSelectedOptionType UserSelectedOptions;
+	private UserSelectedOptionType userSelectedOptions;
 
 	/**
 	 * Information about Coupled Payment transactions. 	 
 	 */ 
-	private List<CoupledPaymentInfoType> CoupledPaymentInfo = new ArrayList<CoupledPaymentInfoType>();
+	private List<CoupledPaymentInfoType> coupledPaymentInfo = new ArrayList<CoupledPaymentInfoType>();
 
 	
 
@@ -84,115 +84,115 @@ public class DoExpressCheckoutPaymentResponseDetailsType{
 	}	
 
 	/**
-	 * Getter for Token
+	 * Getter for token
 	 */
 	 public String getToken() {
-	 	return Token;
+	 	return token;
 	 }
 	 
 	/**
-	 * Setter for Token
+	 * Setter for token
 	 */
-	 public void setToken(String Token) {
-	 	this.Token = Token;
+	 public void setToken(String token) {
+	 	this.token = token;
 	 }
 	 
 	/**
-	 * Getter for PaymentInfo
+	 * Getter for paymentInfo
 	 */
 	 public List<PaymentInfoType> getPaymentInfo() {
-	 	return PaymentInfo;
+	 	return paymentInfo;
 	 }
 	 
 	/**
-	 * Setter for PaymentInfo
+	 * Setter for paymentInfo
 	 */
-	 public void setPaymentInfo(List<PaymentInfoType> PaymentInfo) {
-	 	this.PaymentInfo = PaymentInfo;
+	 public void setPaymentInfo(List<PaymentInfoType> paymentInfo) {
+	 	this.paymentInfo = paymentInfo;
 	 }
 	 
 	/**
-	 * Getter for BillingAgreementID
+	 * Getter for billingAgreementID
 	 */
 	 public String getBillingAgreementID() {
-	 	return BillingAgreementID;
+	 	return billingAgreementID;
 	 }
 	 
 	/**
-	 * Setter for BillingAgreementID
+	 * Setter for billingAgreementID
 	 */
-	 public void setBillingAgreementID(String BillingAgreementID) {
-	 	this.BillingAgreementID = BillingAgreementID;
+	 public void setBillingAgreementID(String billingAgreementID) {
+	 	this.billingAgreementID = billingAgreementID;
 	 }
 	 
 	/**
-	 * Getter for RedirectRequired
+	 * Getter for redirectRequired
 	 */
 	 public String getRedirectRequired() {
-	 	return RedirectRequired;
+	 	return redirectRequired;
 	 }
 	 
 	/**
-	 * Setter for RedirectRequired
+	 * Setter for redirectRequired
 	 */
-	 public void setRedirectRequired(String RedirectRequired) {
-	 	this.RedirectRequired = RedirectRequired;
+	 public void setRedirectRequired(String redirectRequired) {
+	 	this.redirectRequired = redirectRequired;
 	 }
 	 
 	/**
-	 * Getter for Note
+	 * Getter for note
 	 */
 	 public String getNote() {
-	 	return Note;
+	 	return note;
 	 }
 	 
 	/**
-	 * Setter for Note
+	 * Setter for note
 	 */
-	 public void setNote(String Note) {
-	 	this.Note = Note;
+	 public void setNote(String note) {
+	 	this.note = note;
 	 }
 	 
 	/**
-	 * Getter for SuccessPageRedirectRequested
+	 * Getter for successPageRedirectRequested
 	 */
 	 public String getSuccessPageRedirectRequested() {
-	 	return SuccessPageRedirectRequested;
+	 	return successPageRedirectRequested;
 	 }
 	 
 	/**
-	 * Setter for SuccessPageRedirectRequested
+	 * Setter for successPageRedirectRequested
 	 */
-	 public void setSuccessPageRedirectRequested(String SuccessPageRedirectRequested) {
-	 	this.SuccessPageRedirectRequested = SuccessPageRedirectRequested;
+	 public void setSuccessPageRedirectRequested(String successPageRedirectRequested) {
+	 	this.successPageRedirectRequested = successPageRedirectRequested;
 	 }
 	 
 	/**
-	 * Getter for UserSelectedOptions
+	 * Getter for userSelectedOptions
 	 */
 	 public UserSelectedOptionType getUserSelectedOptions() {
-	 	return UserSelectedOptions;
+	 	return userSelectedOptions;
 	 }
 	 
 	/**
-	 * Setter for UserSelectedOptions
+	 * Setter for userSelectedOptions
 	 */
-	 public void setUserSelectedOptions(UserSelectedOptionType UserSelectedOptions) {
-	 	this.UserSelectedOptions = UserSelectedOptions;
+	 public void setUserSelectedOptions(UserSelectedOptionType userSelectedOptions) {
+	 	this.userSelectedOptions = userSelectedOptions;
 	 }
 	 
 	/**
-	 * Getter for CoupledPaymentInfo
+	 * Getter for coupledPaymentInfo
 	 */
 	 public List<CoupledPaymentInfoType> getCoupledPaymentInfo() {
-	 	return CoupledPaymentInfo;
+	 	return coupledPaymentInfo;
 	 }
 	 
 	/**
-	 * Setter for CoupledPaymentInfo
+	 * Setter for coupledPaymentInfo
 	 */
-	 public void setCoupledPaymentInfo(List<CoupledPaymentInfoType> CoupledPaymentInfo) {
-	 	this.CoupledPaymentInfo = CoupledPaymentInfo;
+	 public void setCoupledPaymentInfo(List<CoupledPaymentInfoType> coupledPaymentInfo) {
+	 	this.coupledPaymentInfo = coupledPaymentInfo;
 	 }
 	 
 
@@ -216,45 +216,45 @@ public class DoExpressCheckoutPaymentResponseDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Token", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Token = childNode.getTextContent();
+		    this.token = childNode.getTextContent();
 		}
 	
         nodeList = (NodeList) xpath.evaluate("PaymentInfo", node, XPathConstants.NODESET);
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.PaymentInfo.add(new PaymentInfoType(subNode));
+				this.paymentInfo.add(new PaymentInfoType(subNode));
 			}
 		}
 		childNode = (Node) xpath.evaluate("BillingAgreementID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BillingAgreementID = childNode.getTextContent();
+		    this.billingAgreementID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("RedirectRequired", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.RedirectRequired = childNode.getTextContent();
+		    this.redirectRequired = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Note", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Note = childNode.getTextContent();
+		    this.note = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("SuccessPageRedirectRequested", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SuccessPageRedirectRequested = childNode.getTextContent();
+		    this.successPageRedirectRequested = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("UserSelectedOptions", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.UserSelectedOptions =  new UserSelectedOptionType(childNode);
+		    this.userSelectedOptions =  new UserSelectedOptionType(childNode);
 		}
         nodeList = (NodeList) xpath.evaluate("CoupledPaymentInfo", node, XPathConstants.NODESET);
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.CoupledPaymentInfo.add(new CoupledPaymentInfoType(subNode));
+				this.coupledPaymentInfo.add(new CoupledPaymentInfoType(subNode));
 			}
 		}
 	}

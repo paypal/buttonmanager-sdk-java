@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class EnhancedDataType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	 
 	 */ 
-	private AirlineItineraryType AirlineItinerary;
+	private AirlineItineraryType airlineItinerary;
 
 	
 
@@ -22,27 +24,41 @@ public class EnhancedDataType{
 	}	
 
 	/**
-	 * Getter for AirlineItinerary
+	 * Getter for airlineItinerary
 	 */
 	 public AirlineItineraryType getAirlineItinerary() {
-	 	return AirlineItinerary;
+	 	return airlineItinerary;
 	 }
 	 
 	/**
-	 * Setter for AirlineItinerary
+	 * Setter for airlineItinerary
 	 */
-	 public void setAirlineItinerary(AirlineItineraryType AirlineItinerary) {
-	 	this.AirlineItinerary = AirlineItinerary;
+	 public void setAirlineItinerary(AirlineItineraryType airlineItinerary) {
+	 	this.airlineItinerary = airlineItinerary;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(AirlineItinerary != null) {
-			sb.append("<ebl:AirlineItinerary>");
-			sb.append(AirlineItinerary.toXMLString());
-			sb.append("</ebl:AirlineItinerary>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		if(airlineItinerary != null) {
+			sb.append(airlineItinerary.toXMLString(preferredPrefix,"AirlineItinerary"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

@@ -28,7 +28,7 @@ public class ExecuteCheckoutOperationsResponseType extends AbstractResponseType 
 	 * 	  
 	 *@Required	 
 	 */ 
-	private ExecuteCheckoutOperationsResponseDetailsType ExecuteCheckoutOperationsResponseDetails;
+	private ExecuteCheckoutOperationsResponseDetailsType executeCheckoutOperationsResponseDetails;
 
 	
 
@@ -39,17 +39,17 @@ public class ExecuteCheckoutOperationsResponseType extends AbstractResponseType 
 	}	
 
 	/**
-	 * Getter for ExecuteCheckoutOperationsResponseDetails
+	 * Getter for executeCheckoutOperationsResponseDetails
 	 */
 	 public ExecuteCheckoutOperationsResponseDetailsType getExecuteCheckoutOperationsResponseDetails() {
-	 	return ExecuteCheckoutOperationsResponseDetails;
+	 	return executeCheckoutOperationsResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for ExecuteCheckoutOperationsResponseDetails
+	 * Setter for executeCheckoutOperationsResponseDetails
 	 */
-	 public void setExecuteCheckoutOperationsResponseDetails(ExecuteCheckoutOperationsResponseDetailsType ExecuteCheckoutOperationsResponseDetails) {
-	 	this.ExecuteCheckoutOperationsResponseDetails = ExecuteCheckoutOperationsResponseDetails;
+	 public void setExecuteCheckoutOperationsResponseDetails(ExecuteCheckoutOperationsResponseDetailsType executeCheckoutOperationsResponseDetails) {
+	 	this.executeCheckoutOperationsResponseDetails = executeCheckoutOperationsResponseDetails;
 	 }
 	 
 
@@ -74,7 +74,7 @@ public class ExecuteCheckoutOperationsResponseType extends AbstractResponseType 
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("ExecuteCheckoutOperationsResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ExecuteCheckoutOperationsResponseDetails =  new ExecuteCheckoutOperationsResponseDetailsType(childNode);
+		    this.executeCheckoutOperationsResponseDetails =  new ExecuteCheckoutOperationsResponseDetailsType(childNode);
 		}
 	}
  

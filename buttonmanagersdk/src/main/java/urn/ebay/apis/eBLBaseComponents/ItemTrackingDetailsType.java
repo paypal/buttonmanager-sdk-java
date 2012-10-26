@@ -22,31 +22,33 @@ import org.xml.sax.SAXException;
  */
 public class ItemTrackingDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Item Number. Required 	 
 	 */ 
-	private String ItemNumber;
+	private String itemNumber;
 
 	/**
 	 * Option Quantity. Optional 	 
 	 */ 
-	private String ItemQty;
+	private String itemQty;
 
 	/**
 	 * Item Quantity Delta. Optional 	 
 	 */ 
-	private String ItemQtyDelta;
+	private String itemQtyDelta;
 
 	/**
 	 * Item Alert. Optional 	 
 	 */ 
-	private String ItemAlert;
+	private String itemAlert;
 
 	/**
 	 * Item Cost. Optional 	 
 	 */ 
-	private String ItemCost;
+	private String itemCost;
 
 	
 
@@ -57,98 +59,114 @@ public class ItemTrackingDetailsType{
 	}	
 
 	/**
-	 * Getter for ItemNumber
+	 * Getter for itemNumber
 	 */
 	 public String getItemNumber() {
-	 	return ItemNumber;
+	 	return itemNumber;
 	 }
 	 
 	/**
-	 * Setter for ItemNumber
+	 * Setter for itemNumber
 	 */
-	 public void setItemNumber(String ItemNumber) {
-	 	this.ItemNumber = ItemNumber;
+	 public void setItemNumber(String itemNumber) {
+	 	this.itemNumber = itemNumber;
 	 }
 	 
 	/**
-	 * Getter for ItemQty
+	 * Getter for itemQty
 	 */
 	 public String getItemQty() {
-	 	return ItemQty;
+	 	return itemQty;
 	 }
 	 
 	/**
-	 * Setter for ItemQty
+	 * Setter for itemQty
 	 */
-	 public void setItemQty(String ItemQty) {
-	 	this.ItemQty = ItemQty;
+	 public void setItemQty(String itemQty) {
+	 	this.itemQty = itemQty;
 	 }
 	 
 	/**
-	 * Getter for ItemQtyDelta
+	 * Getter for itemQtyDelta
 	 */
 	 public String getItemQtyDelta() {
-	 	return ItemQtyDelta;
+	 	return itemQtyDelta;
 	 }
 	 
 	/**
-	 * Setter for ItemQtyDelta
+	 * Setter for itemQtyDelta
 	 */
-	 public void setItemQtyDelta(String ItemQtyDelta) {
-	 	this.ItemQtyDelta = ItemQtyDelta;
+	 public void setItemQtyDelta(String itemQtyDelta) {
+	 	this.itemQtyDelta = itemQtyDelta;
 	 }
 	 
 	/**
-	 * Getter for ItemAlert
+	 * Getter for itemAlert
 	 */
 	 public String getItemAlert() {
-	 	return ItemAlert;
+	 	return itemAlert;
 	 }
 	 
 	/**
-	 * Setter for ItemAlert
+	 * Setter for itemAlert
 	 */
-	 public void setItemAlert(String ItemAlert) {
-	 	this.ItemAlert = ItemAlert;
+	 public void setItemAlert(String itemAlert) {
+	 	this.itemAlert = itemAlert;
 	 }
 	 
 	/**
-	 * Getter for ItemCost
+	 * Getter for itemCost
 	 */
 	 public String getItemCost() {
-	 	return ItemCost;
+	 	return itemCost;
 	 }
 	 
 	/**
-	 * Setter for ItemCost
+	 * Setter for itemCost
 	 */
-	 public void setItemCost(String ItemCost) {
-	 	this.ItemCost = ItemCost;
+	 public void setItemCost(String itemCost) {
+	 	this.itemCost = itemCost;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(ItemNumber != null) {
-			sb.append("<ebl:ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemNumber));
-			sb.append("</ebl:ItemNumber>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ItemQty != null) {
-			sb.append("<ebl:ItemQty>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemQty));
-			sb.append("</ebl:ItemQty>");
+		if(itemNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemNumber));
+			sb.append("</").append(preferredPrefix).append(":ItemNumber>");
 		}
-		if(ItemQtyDelta != null) {
-			sb.append("<ebl:ItemQtyDelta>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemQtyDelta));
-			sb.append("</ebl:ItemQtyDelta>");
+		if(itemQty != null) {
+			sb.append("<").append(preferredPrefix).append(":ItemQty>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemQty));
+			sb.append("</").append(preferredPrefix).append(":ItemQty>");
 		}
-		if(ItemAlert != null) {
-			sb.append("<ebl:ItemAlert>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemAlert));
-			sb.append("</ebl:ItemAlert>");
+		if(itemQtyDelta != null) {
+			sb.append("<").append(preferredPrefix).append(":ItemQtyDelta>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemQtyDelta));
+			sb.append("</").append(preferredPrefix).append(":ItemQtyDelta>");
 		}
-		if(ItemCost != null) {
-			sb.append("<ebl:ItemCost>").append(SDKUtil.escapeInvalidXmlCharsRegex(ItemCost));
-			sb.append("</ebl:ItemCost>");
+		if(itemAlert != null) {
+			sb.append("<").append(preferredPrefix).append(":ItemAlert>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemAlert));
+			sb.append("</").append(preferredPrefix).append(":ItemAlert>");
+		}
+		if(itemCost != null) {
+			sb.append("<").append(preferredPrefix).append(":ItemCost>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemCost));
+			sb.append("</").append(preferredPrefix).append(":ItemCost>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -172,27 +190,27 @@ public class ItemTrackingDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("ItemNumber", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ItemNumber = childNode.getTextContent();
+		    this.itemNumber = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ItemQty", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ItemQty = childNode.getTextContent();
+		    this.itemQty = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ItemQtyDelta", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ItemQtyDelta = childNode.getTextContent();
+		    this.itemQtyDelta = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ItemAlert", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ItemAlert = childNode.getTextContent();
+		    this.itemAlert = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ItemCost", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ItemCost = childNode.getTextContent();
+		    this.itemCost = childNode.getTextContent();
 		}
 	
 	}

@@ -27,40 +27,40 @@ public class MerchantPullInfoType{
 	/**
 	 * Current status of billing agreement 	 
 	 */ 
-	private MerchantPullStatusCodeType MpStatus;
+	private MerchantPullStatusCodeType mpStatus;
 
 	/**
 	 * Monthly maximum payment amount	 
 	 */ 
-	private BasicAmountType MpMax;
+	private BasicAmountType mpMax;
 
 	/**
 	 * The value of the mp_custom variable that you specified in a
 	 * FORM submission to PayPal during the creation or updating of
 	 * a customer billing agreement 	 
 	 */ 
-	private String MpCustom;
+	private String mpCustom;
 
 	/**
 	 * The value of the mp_desc variable (description of goods or
 	 * services) associated with the billing agreement 	 
 	 */ 
-	private String Desc;
+	private String desc;
 
 	/**
 	 * Invoice value as set by BillUserRequest API call 	 
 	 */ 
-	private String Invoice;
+	private String invoice;
 
 	/**
 	 * Custom field as set by BillUserRequest API call 	 
 	 */ 
-	private String Custom;
+	private String custom;
 
 	/**
 	 * Note: This field is no longer used and is always empty.	 
 	 */ 
-	private String PaymentSourceID;
+	private String paymentSourceID;
 
 	
 
@@ -71,101 +71,101 @@ public class MerchantPullInfoType{
 	}	
 
 	/**
-	 * Getter for MpStatus
+	 * Getter for mpStatus
 	 */
 	 public MerchantPullStatusCodeType getMpStatus() {
-	 	return MpStatus;
+	 	return mpStatus;
 	 }
 	 
 	/**
-	 * Setter for MpStatus
+	 * Setter for mpStatus
 	 */
-	 public void setMpStatus(MerchantPullStatusCodeType MpStatus) {
-	 	this.MpStatus = MpStatus;
+	 public void setMpStatus(MerchantPullStatusCodeType mpStatus) {
+	 	this.mpStatus = mpStatus;
 	 }
 	 
 	/**
-	 * Getter for MpMax
+	 * Getter for mpMax
 	 */
 	 public BasicAmountType getMpMax() {
-	 	return MpMax;
+	 	return mpMax;
 	 }
 	 
 	/**
-	 * Setter for MpMax
+	 * Setter for mpMax
 	 */
-	 public void setMpMax(BasicAmountType MpMax) {
-	 	this.MpMax = MpMax;
+	 public void setMpMax(BasicAmountType mpMax) {
+	 	this.mpMax = mpMax;
 	 }
 	 
 	/**
-	 * Getter for MpCustom
+	 * Getter for mpCustom
 	 */
 	 public String getMpCustom() {
-	 	return MpCustom;
+	 	return mpCustom;
 	 }
 	 
 	/**
-	 * Setter for MpCustom
+	 * Setter for mpCustom
 	 */
-	 public void setMpCustom(String MpCustom) {
-	 	this.MpCustom = MpCustom;
+	 public void setMpCustom(String mpCustom) {
+	 	this.mpCustom = mpCustom;
 	 }
 	 
 	/**
-	 * Getter for Desc
+	 * Getter for desc
 	 */
 	 public String getDesc() {
-	 	return Desc;
+	 	return desc;
 	 }
 	 
 	/**
-	 * Setter for Desc
+	 * Setter for desc
 	 */
-	 public void setDesc(String Desc) {
-	 	this.Desc = Desc;
+	 public void setDesc(String desc) {
+	 	this.desc = desc;
 	 }
 	 
 	/**
-	 * Getter for Invoice
+	 * Getter for invoice
 	 */
 	 public String getInvoice() {
-	 	return Invoice;
+	 	return invoice;
 	 }
 	 
 	/**
-	 * Setter for Invoice
+	 * Setter for invoice
 	 */
-	 public void setInvoice(String Invoice) {
-	 	this.Invoice = Invoice;
+	 public void setInvoice(String invoice) {
+	 	this.invoice = invoice;
 	 }
 	 
 	/**
-	 * Getter for Custom
+	 * Getter for custom
 	 */
 	 public String getCustom() {
-	 	return Custom;
+	 	return custom;
 	 }
 	 
 	/**
-	 * Setter for Custom
+	 * Setter for custom
 	 */
-	 public void setCustom(String Custom) {
-	 	this.Custom = Custom;
+	 public void setCustom(String custom) {
+	 	this.custom = custom;
 	 }
 	 
 	/**
-	 * Getter for PaymentSourceID
+	 * Getter for paymentSourceID
 	 */
 	 public String getPaymentSourceID() {
-	 	return PaymentSourceID;
+	 	return paymentSourceID;
 	 }
 	 
 	/**
-	 * Setter for PaymentSourceID
+	 * Setter for paymentSourceID
 	 */
-	 public void setPaymentSourceID(String PaymentSourceID) {
-	 	this.PaymentSourceID = PaymentSourceID;
+	 public void setPaymentSourceID(String paymentSourceID) {
+	 	this.paymentSourceID = paymentSourceID;
 	 }
 	 
 
@@ -189,35 +189,35 @@ public class MerchantPullInfoType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("MpStatus", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.MpStatus = MerchantPullStatusCodeType.fromValue(childNode.getTextContent());
+		    this.mpStatus = MerchantPullStatusCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("MpMax", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.MpMax =  new BasicAmountType(childNode);
+		    this.mpMax =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("MpCustom", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.MpCustom = childNode.getTextContent();
+		    this.mpCustom = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Desc", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Desc = childNode.getTextContent();
+		    this.desc = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Invoice", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Invoice = childNode.getTextContent();
+		    this.invoice = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Custom", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Custom = childNode.getTextContent();
+		    this.custom = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PaymentSourceID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentSourceID = childNode.getTextContent();
+		    this.paymentSourceID = childNode.getTextContent();
 		}
 	
 	}

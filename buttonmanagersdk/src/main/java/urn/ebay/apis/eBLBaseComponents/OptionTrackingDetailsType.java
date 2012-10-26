@@ -22,36 +22,38 @@ import org.xml.sax.SAXException;
  */
 public class OptionTrackingDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Option Number. Optional 	 
 	 */ 
-	private String OptionNumber;
+	private String optionNumber;
 
 	/**
 	 * Option Quantity. Optional 	 
 	 */ 
-	private String OptionQty;
+	private String optionQty;
 
 	/**
 	 * Option Select Name. Optional 	 
 	 */ 
-	private String OptionSelect;
+	private String optionSelect;
 
 	/**
 	 * Option Quantity Delta. Optional 	 
 	 */ 
-	private String OptionQtyDelta;
+	private String optionQtyDelta;
 
 	/**
 	 * Option Alert. Optional 	 
 	 */ 
-	private String OptionAlert;
+	private String optionAlert;
 
 	/**
 	 * Option Cost. Optional 	 
 	 */ 
-	private String OptionCost;
+	private String optionCost;
 
 	
 
@@ -62,116 +64,132 @@ public class OptionTrackingDetailsType{
 	}	
 
 	/**
-	 * Getter for OptionNumber
+	 * Getter for optionNumber
 	 */
 	 public String getOptionNumber() {
-	 	return OptionNumber;
+	 	return optionNumber;
 	 }
 	 
 	/**
-	 * Setter for OptionNumber
+	 * Setter for optionNumber
 	 */
-	 public void setOptionNumber(String OptionNumber) {
-	 	this.OptionNumber = OptionNumber;
+	 public void setOptionNumber(String optionNumber) {
+	 	this.optionNumber = optionNumber;
 	 }
 	 
 	/**
-	 * Getter for OptionQty
+	 * Getter for optionQty
 	 */
 	 public String getOptionQty() {
-	 	return OptionQty;
+	 	return optionQty;
 	 }
 	 
 	/**
-	 * Setter for OptionQty
+	 * Setter for optionQty
 	 */
-	 public void setOptionQty(String OptionQty) {
-	 	this.OptionQty = OptionQty;
+	 public void setOptionQty(String optionQty) {
+	 	this.optionQty = optionQty;
 	 }
 	 
 	/**
-	 * Getter for OptionSelect
+	 * Getter for optionSelect
 	 */
 	 public String getOptionSelect() {
-	 	return OptionSelect;
+	 	return optionSelect;
 	 }
 	 
 	/**
-	 * Setter for OptionSelect
+	 * Setter for optionSelect
 	 */
-	 public void setOptionSelect(String OptionSelect) {
-	 	this.OptionSelect = OptionSelect;
+	 public void setOptionSelect(String optionSelect) {
+	 	this.optionSelect = optionSelect;
 	 }
 	 
 	/**
-	 * Getter for OptionQtyDelta
+	 * Getter for optionQtyDelta
 	 */
 	 public String getOptionQtyDelta() {
-	 	return OptionQtyDelta;
+	 	return optionQtyDelta;
 	 }
 	 
 	/**
-	 * Setter for OptionQtyDelta
+	 * Setter for optionQtyDelta
 	 */
-	 public void setOptionQtyDelta(String OptionQtyDelta) {
-	 	this.OptionQtyDelta = OptionQtyDelta;
+	 public void setOptionQtyDelta(String optionQtyDelta) {
+	 	this.optionQtyDelta = optionQtyDelta;
 	 }
 	 
 	/**
-	 * Getter for OptionAlert
+	 * Getter for optionAlert
 	 */
 	 public String getOptionAlert() {
-	 	return OptionAlert;
+	 	return optionAlert;
 	 }
 	 
 	/**
-	 * Setter for OptionAlert
+	 * Setter for optionAlert
 	 */
-	 public void setOptionAlert(String OptionAlert) {
-	 	this.OptionAlert = OptionAlert;
+	 public void setOptionAlert(String optionAlert) {
+	 	this.optionAlert = optionAlert;
 	 }
 	 
 	/**
-	 * Getter for OptionCost
+	 * Getter for optionCost
 	 */
 	 public String getOptionCost() {
-	 	return OptionCost;
+	 	return optionCost;
 	 }
 	 
 	/**
-	 * Setter for OptionCost
+	 * Setter for optionCost
 	 */
-	 public void setOptionCost(String OptionCost) {
-	 	this.OptionCost = OptionCost;
+	 public void setOptionCost(String optionCost) {
+	 	this.optionCost = optionCost;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(OptionNumber != null) {
-			sb.append("<ebl:OptionNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(OptionNumber));
-			sb.append("</ebl:OptionNumber>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(OptionQty != null) {
-			sb.append("<ebl:OptionQty>").append(SDKUtil.escapeInvalidXmlCharsRegex(OptionQty));
-			sb.append("</ebl:OptionQty>");
+		if(optionNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":OptionNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionNumber));
+			sb.append("</").append(preferredPrefix).append(":OptionNumber>");
 		}
-		if(OptionSelect != null) {
-			sb.append("<ebl:OptionSelect>").append(SDKUtil.escapeInvalidXmlCharsRegex(OptionSelect));
-			sb.append("</ebl:OptionSelect>");
+		if(optionQty != null) {
+			sb.append("<").append(preferredPrefix).append(":OptionQty>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionQty));
+			sb.append("</").append(preferredPrefix).append(":OptionQty>");
 		}
-		if(OptionQtyDelta != null) {
-			sb.append("<ebl:OptionQtyDelta>").append(SDKUtil.escapeInvalidXmlCharsRegex(OptionQtyDelta));
-			sb.append("</ebl:OptionQtyDelta>");
+		if(optionSelect != null) {
+			sb.append("<").append(preferredPrefix).append(":OptionSelect>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionSelect));
+			sb.append("</").append(preferredPrefix).append(":OptionSelect>");
 		}
-		if(OptionAlert != null) {
-			sb.append("<ebl:OptionAlert>").append(SDKUtil.escapeInvalidXmlCharsRegex(OptionAlert));
-			sb.append("</ebl:OptionAlert>");
+		if(optionQtyDelta != null) {
+			sb.append("<").append(preferredPrefix).append(":OptionQtyDelta>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionQtyDelta));
+			sb.append("</").append(preferredPrefix).append(":OptionQtyDelta>");
 		}
-		if(OptionCost != null) {
-			sb.append("<ebl:OptionCost>").append(SDKUtil.escapeInvalidXmlCharsRegex(OptionCost));
-			sb.append("</ebl:OptionCost>");
+		if(optionAlert != null) {
+			sb.append("<").append(preferredPrefix).append(":OptionAlert>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionAlert));
+			sb.append("</").append(preferredPrefix).append(":OptionAlert>");
+		}
+		if(optionCost != null) {
+			sb.append("<").append(preferredPrefix).append(":OptionCost>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionCost));
+			sb.append("</").append(preferredPrefix).append(":OptionCost>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -195,32 +213,32 @@ public class OptionTrackingDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("OptionNumber", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OptionNumber = childNode.getTextContent();
+		    this.optionNumber = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("OptionQty", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OptionQty = childNode.getTextContent();
+		    this.optionQty = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("OptionSelect", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OptionSelect = childNode.getTextContent();
+		    this.optionSelect = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("OptionQtyDelta", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OptionQtyDelta = childNode.getTextContent();
+		    this.optionQtyDelta = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("OptionAlert", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OptionAlert = childNode.getTextContent();
+		    this.optionAlert = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("OptionCost", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OptionCost = childNode.getTextContent();
+		    this.optionCost = childNode.getTextContent();
 		}
 	
 	}

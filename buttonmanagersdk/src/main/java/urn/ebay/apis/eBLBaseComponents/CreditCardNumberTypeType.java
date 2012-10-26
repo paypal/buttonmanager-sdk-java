@@ -7,16 +7,18 @@ import com.paypal.core.SDKUtil;
  */
 public class CreditCardNumberTypeType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	 
 	 */ 
-	private CreditCardTypeType CreditCardType;
+	private CreditCardTypeType creditCardType;
 
 	/**
 	 * 	 
 	 */ 
-	private String CreditCardNumber;
+	private String creditCardNumber;
 
 	
 
@@ -27,44 +29,60 @@ public class CreditCardNumberTypeType{
 	}	
 
 	/**
-	 * Getter for CreditCardType
+	 * Getter for creditCardType
 	 */
 	 public CreditCardTypeType getCreditCardType() {
-	 	return CreditCardType;
+	 	return creditCardType;
 	 }
 	 
 	/**
-	 * Setter for CreditCardType
+	 * Setter for creditCardType
 	 */
-	 public void setCreditCardType(CreditCardTypeType CreditCardType) {
-	 	this.CreditCardType = CreditCardType;
+	 public void setCreditCardType(CreditCardTypeType creditCardType) {
+	 	this.creditCardType = creditCardType;
 	 }
 	 
 	/**
-	 * Getter for CreditCardNumber
+	 * Getter for creditCardNumber
 	 */
 	 public String getCreditCardNumber() {
-	 	return CreditCardNumber;
+	 	return creditCardNumber;
 	 }
 	 
 	/**
-	 * Setter for CreditCardNumber
+	 * Setter for creditCardNumber
 	 */
-	 public void setCreditCardNumber(String CreditCardNumber) {
-	 	this.CreditCardNumber = CreditCardNumber;
+	 public void setCreditCardNumber(String creditCardNumber) {
+	 	this.creditCardNumber = creditCardNumber;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(CreditCardType != null) {
-			sb.append("<ebl:CreditCardType>").append(SDKUtil.escapeInvalidXmlCharsRegex(CreditCardType.getValue()));
-			sb.append("</ebl:CreditCardType>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(CreditCardNumber != null) {
-			sb.append("<ebl:CreditCardNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(CreditCardNumber));
-			sb.append("</ebl:CreditCardNumber>");
+		if(creditCardType != null) {
+			sb.append("<").append(preferredPrefix).append(":CreditCardType>").append(SDKUtil.escapeInvalidXmlCharsRegex(creditCardType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":CreditCardType>");
+		}
+		if(creditCardNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":CreditCardNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(creditCardNumber));
+			sb.append("</").append(preferredPrefix).append(":CreditCardNumber>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

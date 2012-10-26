@@ -9,13 +9,15 @@ import com.paypal.core.SDKUtil;
  */
 public class AddressVerifyRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * Email address of buyer to be verified. Required Maximum
 	 * string length: 255 single-byte characters Input mask: ?@?.??	  
 	 *@Required	 
 	 */ 
-	private String Email;
+	private String email;
 
 	/**
 	 * First line of buyer’s billing or shipping street address
@@ -27,7 +29,7 @@ public class AddressVerifyRequestType extends AbstractRequestType {
 	 * value are ignored.	  
 	 *@Required	 
 	 */ 
-	private String Street;
+	private String street;
 
 	/**
 	 * Postal code to be verified. Required For verification, input
@@ -37,17 +39,17 @@ public class AddressVerifyRequestType extends AbstractRequestType {
 	 * Whitespace and case of input value are ignored.	  
 	 *@Required	 
 	 */ 
-	private String Zip;
+	private String zip;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public AddressVerifyRequestType (String Email, String Street, String Zip){
-		this.Email = Email;
-		this.Street = Street;
-		this.Zip = Zip;
+	public AddressVerifyRequestType (String email, String street, String zip){
+		this.email = email;
+		this.street = street;
+		this.zip = zip;
 	}	
 
 	/**
@@ -57,63 +59,79 @@ public class AddressVerifyRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for Email
+	 * Getter for email
 	 */
 	 public String getEmail() {
-	 	return Email;
+	 	return email;
 	 }
 	 
 	/**
-	 * Setter for Email
+	 * Setter for email
 	 */
-	 public void setEmail(String Email) {
-	 	this.Email = Email;
+	 public void setEmail(String email) {
+	 	this.email = email;
 	 }
 	 
 	/**
-	 * Getter for Street
+	 * Getter for street
 	 */
 	 public String getStreet() {
-	 	return Street;
+	 	return street;
 	 }
 	 
 	/**
-	 * Setter for Street
+	 * Setter for street
 	 */
-	 public void setStreet(String Street) {
-	 	this.Street = Street;
+	 public void setStreet(String street) {
+	 	this.street = street;
 	 }
 	 
 	/**
-	 * Getter for Zip
+	 * Getter for zip
 	 */
 	 public String getZip() {
-	 	return Zip;
+	 	return zip;
 	 }
 	 
 	/**
-	 * Setter for Zip
+	 * Setter for zip
 	 */
-	 public void setZip(String Zip) {
-	 	this.Zip = Zip;
+	 public void setZip(String zip) {
+	 	this.zip = zip;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(Email != null) {
-			sb.append("<urn:Email>").append(SDKUtil.escapeInvalidXmlCharsRegex(Email));
-			sb.append("</urn:Email>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(Street != null) {
-			sb.append("<urn:Street>").append(SDKUtil.escapeInvalidXmlCharsRegex(Street));
-			sb.append("</urn:Street>");
+		sb.append(super.toXMLString(prefix, null));
+		if(email != null) {
+			sb.append("<").append(preferredPrefix).append(":Email>").append(SDKUtil.escapeInvalidXmlCharsRegex(email));
+			sb.append("</").append(preferredPrefix).append(":Email>");
 		}
-		if(Zip != null) {
-			sb.append("<urn:Zip>").append(SDKUtil.escapeInvalidXmlCharsRegex(Zip));
-			sb.append("</urn:Zip>");
+		if(street != null) {
+			sb.append("<").append(preferredPrefix).append(":Street>").append(SDKUtil.escapeInvalidXmlCharsRegex(street));
+			sb.append("</").append(preferredPrefix).append(":Street>");
+		}
+		if(zip != null) {
+			sb.append("<").append(preferredPrefix).append(":Zip>").append(SDKUtil.escapeInvalidXmlCharsRegex(zip));
+			sb.append("</").append(preferredPrefix).append(":Zip>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

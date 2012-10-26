@@ -26,22 +26,22 @@ public class OfferCouponInfoType{
 	/**
 	 * Type of the incentive 	 
 	 */ 
-	private String Type;
+	private String type;
 
 	/**
 	 * ID of the Incentive used in transaction	 
 	 */ 
-	private String ID;
+	private String iD;
 
 	/**
 	 * Amount used on transaction	 
 	 */ 
-	private String Amount;
+	private String amount;
 
 	/**
 	 * Amount Currency	 
 	 */ 
-	private String AmountCurrency;
+	private String amountCurrency;
 
 	
 
@@ -52,59 +52,59 @@ public class OfferCouponInfoType{
 	}	
 
 	/**
-	 * Getter for Type
+	 * Getter for type
 	 */
 	 public String getType() {
-	 	return Type;
+	 	return type;
 	 }
 	 
 	/**
-	 * Setter for Type
+	 * Setter for type
 	 */
-	 public void setType(String Type) {
-	 	this.Type = Type;
+	 public void setType(String type) {
+	 	this.type = type;
 	 }
 	 
 	/**
-	 * Getter for ID
+	 * Getter for iD
 	 */
 	 public String getID() {
-	 	return ID;
+	 	return iD;
 	 }
 	 
 	/**
-	 * Setter for ID
+	 * Setter for iD
 	 */
-	 public void setID(String ID) {
-	 	this.ID = ID;
+	 public void setID(String iD) {
+	 	this.iD = iD;
 	 }
 	 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public String getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(String Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(String amount) {
+	 	this.amount = amount;
 	 }
 	 
 	/**
-	 * Getter for AmountCurrency
+	 * Getter for amountCurrency
 	 */
 	 public String getAmountCurrency() {
-	 	return AmountCurrency;
+	 	return amountCurrency;
 	 }
 	 
 	/**
-	 * Setter for AmountCurrency
+	 * Setter for amountCurrency
 	 */
-	 public void setAmountCurrency(String AmountCurrency) {
-	 	this.AmountCurrency = AmountCurrency;
+	 public void setAmountCurrency(String amountCurrency) {
+	 	this.amountCurrency = amountCurrency;
 	 }
 	 
 
@@ -128,22 +128,22 @@ public class OfferCouponInfoType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Type", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Type = childNode.getTextContent();
+		    this.type = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ID = childNode.getTextContent();
+		    this.iD = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Amount", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Amount = childNode.getTextContent();
+		    this.amount = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("AmountCurrency", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AmountCurrency = childNode.getTextContent();
+		    this.amountCurrency = childNode.getTextContent();
 		}
 	
 	}

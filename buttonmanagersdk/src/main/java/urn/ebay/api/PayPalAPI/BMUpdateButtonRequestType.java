@@ -19,6 +19,8 @@ import com.paypal.core.SDKUtil;
  */
 public class BMUpdateButtonRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * Hosted Button id of the button to update.  Required
@@ -26,87 +28,87 @@ public class BMUpdateButtonRequestType extends AbstractRequestType {
 	 * characters 	  
 	 *@Required	 
 	 */ 
-	private String HostedButtonID;
+	private String hostedButtonID;
 
 	/**
 	 * Type of Button to create.  Required Must be one of the
 	 * following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
 	 * PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE 	 
 	 */ 
-	private ButtonTypeType ButtonType;
+	private ButtonTypeType buttonType;
 
 	/**
 	 * button code.  optional Must be one of the following: hosted,
 	 * encrypted or cleartext 	 
 	 */ 
-	private ButtonCodeType ButtonCode;
+	private ButtonCodeType buttonCode;
 
 	/**
 	 * Button sub type.  optional for button types buynow and cart
 	 * only Must Be either PRODUCTS or SERVICES 	 
 	 */ 
-	private ButtonSubTypeType ButtonSubType;
+	private ButtonSubTypeType buttonSubType;
 
 	/**
 	 * Button Variable information  At least one required recurring
 	 * Character length and limitations: 63 single-byte
 	 * alphanumeric characters 	 
 	 */ 
-	private List<String> ButtonVar = new ArrayList<String>();
+	private List<String> buttonVar = new ArrayList<String>();
 
 	/**
 	 * 	 
 	 */ 
-	private List<OptionDetailsType> OptionDetails = new ArrayList<OptionDetailsType>();
+	private List<OptionDetailsType> optionDetails = new ArrayList<OptionDetailsType>();
 
 	/**
 	 * Details of each option for the button.  Optional 	 
 	 */ 
-	private List<String> TextBox = new ArrayList<String>();
+	private List<String> textBox = new ArrayList<String>();
 
 	/**
 	 * Button image to use.  Optional Must be one of: REG, SML, or
 	 * CC 	 
 	 */ 
-	private ButtonImageType ButtonImage;
+	private ButtonImageType buttonImage;
 
 	/**
 	 * Button URL for custom button image.  Optional Character
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters 	 
 	 */ 
-	private String ButtonImageURL;
+	private String buttonImageURL;
 
 	/**
 	 * Text to use on Buy Now Button.  Optional Must be either
 	 * BUYNOW or PAYNOW 	 
 	 */ 
-	private BuyNowTextType BuyNowText;
+	private BuyNowTextType buyNowText;
 
 	/**
 	 * Text to use on Subscribe button.  Optional Must be either
 	 * BUYNOW or SUBSCRIBE 	 
 	 */ 
-	private SubscribeTextType SubscribeText;
+	private SubscribeTextType subscribeText;
 
 	/**
 	 * Button Country.  Optional Must be valid ISO country code 	 
 	 */ 
-	private CountryCodeType ButtonCountry;
+	private CountryCodeType buttonCountry;
 
 	/**
 	 * Button language code.  Optional Character length and
 	 * limitations: 2 single-byte alphanumeric characters 	 
 	 */ 
-	private String ButtonLanguage;
+	private String buttonLanguage;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public BMUpdateButtonRequestType (String HostedButtonID){
-		this.HostedButtonID = HostedButtonID;
+	public BMUpdateButtonRequestType (String hostedButtonID){
+		this.hostedButtonID = hostedButtonID;
 	}	
 
 	/**
@@ -116,250 +118,264 @@ public class BMUpdateButtonRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for HostedButtonID
+	 * Getter for hostedButtonID
 	 */
 	 public String getHostedButtonID() {
-	 	return HostedButtonID;
+	 	return hostedButtonID;
 	 }
 	 
 	/**
-	 * Setter for HostedButtonID
+	 * Setter for hostedButtonID
 	 */
-	 public void setHostedButtonID(String HostedButtonID) {
-	 	this.HostedButtonID = HostedButtonID;
+	 public void setHostedButtonID(String hostedButtonID) {
+	 	this.hostedButtonID = hostedButtonID;
 	 }
 	 
 	/**
-	 * Getter for ButtonType
+	 * Getter for buttonType
 	 */
 	 public ButtonTypeType getButtonType() {
-	 	return ButtonType;
+	 	return buttonType;
 	 }
 	 
 	/**
-	 * Setter for ButtonType
+	 * Setter for buttonType
 	 */
-	 public void setButtonType(ButtonTypeType ButtonType) {
-	 	this.ButtonType = ButtonType;
+	 public void setButtonType(ButtonTypeType buttonType) {
+	 	this.buttonType = buttonType;
 	 }
 	 
 	/**
-	 * Getter for ButtonCode
+	 * Getter for buttonCode
 	 */
 	 public ButtonCodeType getButtonCode() {
-	 	return ButtonCode;
+	 	return buttonCode;
 	 }
 	 
 	/**
-	 * Setter for ButtonCode
+	 * Setter for buttonCode
 	 */
-	 public void setButtonCode(ButtonCodeType ButtonCode) {
-	 	this.ButtonCode = ButtonCode;
+	 public void setButtonCode(ButtonCodeType buttonCode) {
+	 	this.buttonCode = buttonCode;
 	 }
 	 
 	/**
-	 * Getter for ButtonSubType
+	 * Getter for buttonSubType
 	 */
 	 public ButtonSubTypeType getButtonSubType() {
-	 	return ButtonSubType;
+	 	return buttonSubType;
 	 }
 	 
 	/**
-	 * Setter for ButtonSubType
+	 * Setter for buttonSubType
 	 */
-	 public void setButtonSubType(ButtonSubTypeType ButtonSubType) {
-	 	this.ButtonSubType = ButtonSubType;
+	 public void setButtonSubType(ButtonSubTypeType buttonSubType) {
+	 	this.buttonSubType = buttonSubType;
 	 }
 	 
 	/**
-	 * Getter for ButtonVar
+	 * Getter for buttonVar
 	 */
 	 public List<String> getButtonVar() {
-	 	return ButtonVar;
+	 	return buttonVar;
 	 }
 	 
 	/**
-	 * Setter for ButtonVar
+	 * Setter for buttonVar
 	 */
-	 public void setButtonVar(List<String> ButtonVar) {
-	 	this.ButtonVar = ButtonVar;
+	 public void setButtonVar(List<String> buttonVar) {
+	 	this.buttonVar = buttonVar;
 	 }
 	 
 	/**
-	 * Getter for OptionDetails
+	 * Getter for optionDetails
 	 */
 	 public List<OptionDetailsType> getOptionDetails() {
-	 	return OptionDetails;
+	 	return optionDetails;
 	 }
 	 
 	/**
-	 * Setter for OptionDetails
+	 * Setter for optionDetails
 	 */
-	 public void setOptionDetails(List<OptionDetailsType> OptionDetails) {
-	 	this.OptionDetails = OptionDetails;
+	 public void setOptionDetails(List<OptionDetailsType> optionDetails) {
+	 	this.optionDetails = optionDetails;
 	 }
 	 
 	/**
-	 * Getter for TextBox
+	 * Getter for textBox
 	 */
 	 public List<String> getTextBox() {
-	 	return TextBox;
+	 	return textBox;
 	 }
 	 
 	/**
-	 * Setter for TextBox
+	 * Setter for textBox
 	 */
-	 public void setTextBox(List<String> TextBox) {
-	 	this.TextBox = TextBox;
+	 public void setTextBox(List<String> textBox) {
+	 	this.textBox = textBox;
 	 }
 	 
 	/**
-	 * Getter for ButtonImage
+	 * Getter for buttonImage
 	 */
 	 public ButtonImageType getButtonImage() {
-	 	return ButtonImage;
+	 	return buttonImage;
 	 }
 	 
 	/**
-	 * Setter for ButtonImage
+	 * Setter for buttonImage
 	 */
-	 public void setButtonImage(ButtonImageType ButtonImage) {
-	 	this.ButtonImage = ButtonImage;
+	 public void setButtonImage(ButtonImageType buttonImage) {
+	 	this.buttonImage = buttonImage;
 	 }
 	 
 	/**
-	 * Getter for ButtonImageURL
+	 * Getter for buttonImageURL
 	 */
 	 public String getButtonImageURL() {
-	 	return ButtonImageURL;
+	 	return buttonImageURL;
 	 }
 	 
 	/**
-	 * Setter for ButtonImageURL
+	 * Setter for buttonImageURL
 	 */
-	 public void setButtonImageURL(String ButtonImageURL) {
-	 	this.ButtonImageURL = ButtonImageURL;
+	 public void setButtonImageURL(String buttonImageURL) {
+	 	this.buttonImageURL = buttonImageURL;
 	 }
 	 
 	/**
-	 * Getter for BuyNowText
+	 * Getter for buyNowText
 	 */
 	 public BuyNowTextType getBuyNowText() {
-	 	return BuyNowText;
+	 	return buyNowText;
 	 }
 	 
 	/**
-	 * Setter for BuyNowText
+	 * Setter for buyNowText
 	 */
-	 public void setBuyNowText(BuyNowTextType BuyNowText) {
-	 	this.BuyNowText = BuyNowText;
+	 public void setBuyNowText(BuyNowTextType buyNowText) {
+	 	this.buyNowText = buyNowText;
 	 }
 	 
 	/**
-	 * Getter for SubscribeText
+	 * Getter for subscribeText
 	 */
 	 public SubscribeTextType getSubscribeText() {
-	 	return SubscribeText;
+	 	return subscribeText;
 	 }
 	 
 	/**
-	 * Setter for SubscribeText
+	 * Setter for subscribeText
 	 */
-	 public void setSubscribeText(SubscribeTextType SubscribeText) {
-	 	this.SubscribeText = SubscribeText;
+	 public void setSubscribeText(SubscribeTextType subscribeText) {
+	 	this.subscribeText = subscribeText;
 	 }
 	 
 	/**
-	 * Getter for ButtonCountry
+	 * Getter for buttonCountry
 	 */
 	 public CountryCodeType getButtonCountry() {
-	 	return ButtonCountry;
+	 	return buttonCountry;
 	 }
 	 
 	/**
-	 * Setter for ButtonCountry
+	 * Setter for buttonCountry
 	 */
-	 public void setButtonCountry(CountryCodeType ButtonCountry) {
-	 	this.ButtonCountry = ButtonCountry;
+	 public void setButtonCountry(CountryCodeType buttonCountry) {
+	 	this.buttonCountry = buttonCountry;
 	 }
 	 
 	/**
-	 * Getter for ButtonLanguage
+	 * Getter for buttonLanguage
 	 */
 	 public String getButtonLanguage() {
-	 	return ButtonLanguage;
+	 	return buttonLanguage;
 	 }
 	 
 	/**
-	 * Setter for ButtonLanguage
+	 * Setter for buttonLanguage
 	 */
-	 public void setButtonLanguage(String ButtonLanguage) {
-	 	this.ButtonLanguage = ButtonLanguage;
+	 public void setButtonLanguage(String buttonLanguage) {
+	 	this.buttonLanguage = buttonLanguage;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(HostedButtonID != null) {
-			sb.append("<urn:HostedButtonID>").append(SDKUtil.escapeInvalidXmlCharsRegex(HostedButtonID));
-			sb.append("</urn:HostedButtonID>");
-		}
-		if(ButtonType != null) {
-			sb.append("<urn:ButtonType>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonType.getValue()));
-			sb.append("</urn:ButtonType>");
-		}
-		if(ButtonCode != null) {
-			sb.append("<urn:ButtonCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonCode.getValue()));
-			sb.append("</urn:ButtonCode>");
-		}
-		if(ButtonSubType != null) {
-			sb.append("<urn:ButtonSubType>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonSubType.getValue()));
-			sb.append("</urn:ButtonSubType>");
-		}
-		if(ButtonVar != null) {
-			for(int i=0; i < ButtonVar.size(); i++) {
-				sb.append("<urn:ButtonVar>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonVar.get(i)));
-				sb.append("</urn:ButtonVar>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
 			}
 		}
-		if(OptionDetails != null) {
-			for(int i=0; i < OptionDetails.size(); i++) {
-				sb.append("<urn:OptionDetails>");
-				sb.append(OptionDetails.get(i).toXMLString());
-				sb.append("</urn:OptionDetails>");
+		sb.append(super.toXMLString(prefix, null));
+		if(hostedButtonID != null) {
+			sb.append("<").append(preferredPrefix).append(":HostedButtonID>").append(SDKUtil.escapeInvalidXmlCharsRegex(hostedButtonID));
+			sb.append("</").append(preferredPrefix).append(":HostedButtonID>");
+		}
+		if(buttonType != null) {
+			sb.append("<").append(preferredPrefix).append(":ButtonType>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":ButtonType>");
+		}
+		if(buttonCode != null) {
+			sb.append("<").append(preferredPrefix).append(":ButtonCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonCode.getValue()));
+			sb.append("</").append(preferredPrefix).append(":ButtonCode>");
+		}
+		if(buttonSubType != null) {
+			sb.append("<").append(preferredPrefix).append(":ButtonSubType>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonSubType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":ButtonSubType>");
+		}
+		if(buttonVar != null) {
+			for(int i=0; i < buttonVar.size(); i++) {
+				sb.append("<").append(preferredPrefix).append(":ButtonVar>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonVar.get(i)));
+				sb.append("</").append(preferredPrefix).append(":ButtonVar>");
 			}
 		}
-		if(TextBox != null) {
-			for(int i=0; i < TextBox.size(); i++) {
-				sb.append("<urn:TextBox>").append(SDKUtil.escapeInvalidXmlCharsRegex(TextBox.get(i)));
-				sb.append("</urn:TextBox>");
+		if(optionDetails != null) {
+			for(int i=0; i < optionDetails.size(); i++) {
+				sb.append(optionDetails.get(i).toXMLString(preferredPrefix,"OptionDetails"));
 			}
 		}
-		if(ButtonImage != null) {
-			sb.append("<urn:ButtonImage>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonImage.getValue()));
-			sb.append("</urn:ButtonImage>");
+		if(textBox != null) {
+			for(int i=0; i < textBox.size(); i++) {
+				sb.append("<").append(preferredPrefix).append(":TextBox>").append(SDKUtil.escapeInvalidXmlCharsRegex(textBox.get(i)));
+				sb.append("</").append(preferredPrefix).append(":TextBox>");
+			}
 		}
-		if(ButtonImageURL != null) {
-			sb.append("<urn:ButtonImageURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonImageURL));
-			sb.append("</urn:ButtonImageURL>");
+		if(buttonImage != null) {
+			sb.append("<").append(preferredPrefix).append(":ButtonImage>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonImage.getValue()));
+			sb.append("</").append(preferredPrefix).append(":ButtonImage>");
 		}
-		if(BuyNowText != null) {
-			sb.append("<urn:BuyNowText>").append(SDKUtil.escapeInvalidXmlCharsRegex(BuyNowText.getValue()));
-			sb.append("</urn:BuyNowText>");
+		if(buttonImageURL != null) {
+			sb.append("<").append(preferredPrefix).append(":ButtonImageURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonImageURL));
+			sb.append("</").append(preferredPrefix).append(":ButtonImageURL>");
 		}
-		if(SubscribeText != null) {
-			sb.append("<urn:SubscribeText>").append(SDKUtil.escapeInvalidXmlCharsRegex(SubscribeText.getValue()));
-			sb.append("</urn:SubscribeText>");
+		if(buyNowText != null) {
+			sb.append("<").append(preferredPrefix).append(":BuyNowText>").append(SDKUtil.escapeInvalidXmlCharsRegex(buyNowText.getValue()));
+			sb.append("</").append(preferredPrefix).append(":BuyNowText>");
 		}
-		if(ButtonCountry != null) {
-			sb.append("<urn:ButtonCountry>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonCountry.getValue()));
-			sb.append("</urn:ButtonCountry>");
+		if(subscribeText != null) {
+			sb.append("<").append(preferredPrefix).append(":SubscribeText>").append(SDKUtil.escapeInvalidXmlCharsRegex(subscribeText.getValue()));
+			sb.append("</").append(preferredPrefix).append(":SubscribeText>");
 		}
-		if(ButtonLanguage != null) {
-			sb.append("<urn:ButtonLanguage>").append(SDKUtil.escapeInvalidXmlCharsRegex(ButtonLanguage));
-			sb.append("</urn:ButtonLanguage>");
+		if(buttonCountry != null) {
+			sb.append("<").append(preferredPrefix).append(":ButtonCountry>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonCountry.getValue()));
+			sb.append("</").append(preferredPrefix).append(":ButtonCountry>");
+		}
+		if(buttonLanguage != null) {
+			sb.append("<").append(preferredPrefix).append(":ButtonLanguage>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonLanguage));
+			sb.append("</").append(preferredPrefix).append(":ButtonLanguage>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

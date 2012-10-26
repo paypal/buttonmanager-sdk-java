@@ -10,76 +10,78 @@ import com.paypal.core.SDKUtil;
  */
 public class AirlineItineraryType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	 
 	 */ 
-	private String PassengerName;
+	private String passengerName;
 
 	/**
 	 * 	 
 	 */ 
-	private String IssueDate;
+	private String issueDate;
 
 	/**
 	 * 	 
 	 */ 
-	private String TravelAgencyName;
+	private String travelAgencyName;
 
 	/**
 	 * 	 
 	 */ 
-	private String TravelAgencyCode;
+	private String travelAgencyCode;
 
 	/**
 	 * 	 
 	 */ 
-	private String TicketNumber;
+	private String ticketNumber;
 
 	/**
 	 * 	 
 	 */ 
-	private String IssuingCarrierCode;
+	private String issuingCarrierCode;
 
 	/**
 	 * 	 
 	 */ 
-	private String CustomerCode;
+	private String customerCode;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType TotalFare;
+	private BasicAmountType totalFare;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType TotalTaxes;
+	private BasicAmountType totalTaxes;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType TotalFee;
+	private BasicAmountType totalFee;
 
 	/**
 	 * 	 
 	 */ 
-	private String RestrictedTicket;
+	private String restrictedTicket;
 
 	/**
 	 * 	 
 	 */ 
-	private String ClearingSequence;
+	private String clearingSequence;
 
 	/**
 	 * 	 
 	 */ 
-	private String ClearingCount;
+	private String clearingCount;
 
 	/**
 	 * 	 
 	 */ 
-	private List<FlightDetailsType> FlightDetails = new ArrayList<FlightDetailsType>();
+	private List<FlightDetailsType> flightDetails = new ArrayList<FlightDetailsType>();
 
 	
 
@@ -90,265 +92,273 @@ public class AirlineItineraryType{
 	}	
 
 	/**
-	 * Getter for PassengerName
+	 * Getter for passengerName
 	 */
 	 public String getPassengerName() {
-	 	return PassengerName;
+	 	return passengerName;
 	 }
 	 
 	/**
-	 * Setter for PassengerName
+	 * Setter for passengerName
 	 */
-	 public void setPassengerName(String PassengerName) {
-	 	this.PassengerName = PassengerName;
+	 public void setPassengerName(String passengerName) {
+	 	this.passengerName = passengerName;
 	 }
 	 
 	/**
-	 * Getter for IssueDate
+	 * Getter for issueDate
 	 */
 	 public String getIssueDate() {
-	 	return IssueDate;
+	 	return issueDate;
 	 }
 	 
 	/**
-	 * Setter for IssueDate
+	 * Setter for issueDate
 	 */
-	 public void setIssueDate(String IssueDate) {
-	 	this.IssueDate = IssueDate;
+	 public void setIssueDate(String issueDate) {
+	 	this.issueDate = issueDate;
 	 }
 	 
 	/**
-	 * Getter for TravelAgencyName
+	 * Getter for travelAgencyName
 	 */
 	 public String getTravelAgencyName() {
-	 	return TravelAgencyName;
+	 	return travelAgencyName;
 	 }
 	 
 	/**
-	 * Setter for TravelAgencyName
+	 * Setter for travelAgencyName
 	 */
-	 public void setTravelAgencyName(String TravelAgencyName) {
-	 	this.TravelAgencyName = TravelAgencyName;
+	 public void setTravelAgencyName(String travelAgencyName) {
+	 	this.travelAgencyName = travelAgencyName;
 	 }
 	 
 	/**
-	 * Getter for TravelAgencyCode
+	 * Getter for travelAgencyCode
 	 */
 	 public String getTravelAgencyCode() {
-	 	return TravelAgencyCode;
+	 	return travelAgencyCode;
 	 }
 	 
 	/**
-	 * Setter for TravelAgencyCode
+	 * Setter for travelAgencyCode
 	 */
-	 public void setTravelAgencyCode(String TravelAgencyCode) {
-	 	this.TravelAgencyCode = TravelAgencyCode;
+	 public void setTravelAgencyCode(String travelAgencyCode) {
+	 	this.travelAgencyCode = travelAgencyCode;
 	 }
 	 
 	/**
-	 * Getter for TicketNumber
+	 * Getter for ticketNumber
 	 */
 	 public String getTicketNumber() {
-	 	return TicketNumber;
+	 	return ticketNumber;
 	 }
 	 
 	/**
-	 * Setter for TicketNumber
+	 * Setter for ticketNumber
 	 */
-	 public void setTicketNumber(String TicketNumber) {
-	 	this.TicketNumber = TicketNumber;
+	 public void setTicketNumber(String ticketNumber) {
+	 	this.ticketNumber = ticketNumber;
 	 }
 	 
 	/**
-	 * Getter for IssuingCarrierCode
+	 * Getter for issuingCarrierCode
 	 */
 	 public String getIssuingCarrierCode() {
-	 	return IssuingCarrierCode;
+	 	return issuingCarrierCode;
 	 }
 	 
 	/**
-	 * Setter for IssuingCarrierCode
+	 * Setter for issuingCarrierCode
 	 */
-	 public void setIssuingCarrierCode(String IssuingCarrierCode) {
-	 	this.IssuingCarrierCode = IssuingCarrierCode;
+	 public void setIssuingCarrierCode(String issuingCarrierCode) {
+	 	this.issuingCarrierCode = issuingCarrierCode;
 	 }
 	 
 	/**
-	 * Getter for CustomerCode
+	 * Getter for customerCode
 	 */
 	 public String getCustomerCode() {
-	 	return CustomerCode;
+	 	return customerCode;
 	 }
 	 
 	/**
-	 * Setter for CustomerCode
+	 * Setter for customerCode
 	 */
-	 public void setCustomerCode(String CustomerCode) {
-	 	this.CustomerCode = CustomerCode;
+	 public void setCustomerCode(String customerCode) {
+	 	this.customerCode = customerCode;
 	 }
 	 
 	/**
-	 * Getter for TotalFare
+	 * Getter for totalFare
 	 */
 	 public BasicAmountType getTotalFare() {
-	 	return TotalFare;
+	 	return totalFare;
 	 }
 	 
 	/**
-	 * Setter for TotalFare
+	 * Setter for totalFare
 	 */
-	 public void setTotalFare(BasicAmountType TotalFare) {
-	 	this.TotalFare = TotalFare;
+	 public void setTotalFare(BasicAmountType totalFare) {
+	 	this.totalFare = totalFare;
 	 }
 	 
 	/**
-	 * Getter for TotalTaxes
+	 * Getter for totalTaxes
 	 */
 	 public BasicAmountType getTotalTaxes() {
-	 	return TotalTaxes;
+	 	return totalTaxes;
 	 }
 	 
 	/**
-	 * Setter for TotalTaxes
+	 * Setter for totalTaxes
 	 */
-	 public void setTotalTaxes(BasicAmountType TotalTaxes) {
-	 	this.TotalTaxes = TotalTaxes;
+	 public void setTotalTaxes(BasicAmountType totalTaxes) {
+	 	this.totalTaxes = totalTaxes;
 	 }
 	 
 	/**
-	 * Getter for TotalFee
+	 * Getter for totalFee
 	 */
 	 public BasicAmountType getTotalFee() {
-	 	return TotalFee;
+	 	return totalFee;
 	 }
 	 
 	/**
-	 * Setter for TotalFee
+	 * Setter for totalFee
 	 */
-	 public void setTotalFee(BasicAmountType TotalFee) {
-	 	this.TotalFee = TotalFee;
+	 public void setTotalFee(BasicAmountType totalFee) {
+	 	this.totalFee = totalFee;
 	 }
 	 
 	/**
-	 * Getter for RestrictedTicket
+	 * Getter for restrictedTicket
 	 */
 	 public String getRestrictedTicket() {
-	 	return RestrictedTicket;
+	 	return restrictedTicket;
 	 }
 	 
 	/**
-	 * Setter for RestrictedTicket
+	 * Setter for restrictedTicket
 	 */
-	 public void setRestrictedTicket(String RestrictedTicket) {
-	 	this.RestrictedTicket = RestrictedTicket;
+	 public void setRestrictedTicket(String restrictedTicket) {
+	 	this.restrictedTicket = restrictedTicket;
 	 }
 	 
 	/**
-	 * Getter for ClearingSequence
+	 * Getter for clearingSequence
 	 */
 	 public String getClearingSequence() {
-	 	return ClearingSequence;
+	 	return clearingSequence;
 	 }
 	 
 	/**
-	 * Setter for ClearingSequence
+	 * Setter for clearingSequence
 	 */
-	 public void setClearingSequence(String ClearingSequence) {
-	 	this.ClearingSequence = ClearingSequence;
+	 public void setClearingSequence(String clearingSequence) {
+	 	this.clearingSequence = clearingSequence;
 	 }
 	 
 	/**
-	 * Getter for ClearingCount
+	 * Getter for clearingCount
 	 */
 	 public String getClearingCount() {
-	 	return ClearingCount;
+	 	return clearingCount;
 	 }
 	 
 	/**
-	 * Setter for ClearingCount
+	 * Setter for clearingCount
 	 */
-	 public void setClearingCount(String ClearingCount) {
-	 	this.ClearingCount = ClearingCount;
+	 public void setClearingCount(String clearingCount) {
+	 	this.clearingCount = clearingCount;
 	 }
 	 
 	/**
-	 * Getter for FlightDetails
+	 * Getter for flightDetails
 	 */
 	 public List<FlightDetailsType> getFlightDetails() {
-	 	return FlightDetails;
+	 	return flightDetails;
 	 }
 	 
 	/**
-	 * Setter for FlightDetails
+	 * Setter for flightDetails
 	 */
-	 public void setFlightDetails(List<FlightDetailsType> FlightDetails) {
-	 	this.FlightDetails = FlightDetails;
+	 public void setFlightDetails(List<FlightDetailsType> flightDetails) {
+	 	this.flightDetails = flightDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(PassengerName != null) {
-			sb.append("<ebl:PassengerName>").append(SDKUtil.escapeInvalidXmlCharsRegex(PassengerName));
-			sb.append("</ebl:PassengerName>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(IssueDate != null) {
-			sb.append("<ebl:IssueDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(IssueDate));
-			sb.append("</ebl:IssueDate>");
+		if(passengerName != null) {
+			sb.append("<").append(preferredPrefix).append(":PassengerName>").append(SDKUtil.escapeInvalidXmlCharsRegex(passengerName));
+			sb.append("</").append(preferredPrefix).append(":PassengerName>");
 		}
-		if(TravelAgencyName != null) {
-			sb.append("<ebl:TravelAgencyName>").append(SDKUtil.escapeInvalidXmlCharsRegex(TravelAgencyName));
-			sb.append("</ebl:TravelAgencyName>");
+		if(issueDate != null) {
+			sb.append("<").append(preferredPrefix).append(":IssueDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(issueDate));
+			sb.append("</").append(preferredPrefix).append(":IssueDate>");
 		}
-		if(TravelAgencyCode != null) {
-			sb.append("<ebl:TravelAgencyCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(TravelAgencyCode));
-			sb.append("</ebl:TravelAgencyCode>");
+		if(travelAgencyName != null) {
+			sb.append("<").append(preferredPrefix).append(":TravelAgencyName>").append(SDKUtil.escapeInvalidXmlCharsRegex(travelAgencyName));
+			sb.append("</").append(preferredPrefix).append(":TravelAgencyName>");
 		}
-		if(TicketNumber != null) {
-			sb.append("<ebl:TicketNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(TicketNumber));
-			sb.append("</ebl:TicketNumber>");
+		if(travelAgencyCode != null) {
+			sb.append("<").append(preferredPrefix).append(":TravelAgencyCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(travelAgencyCode));
+			sb.append("</").append(preferredPrefix).append(":TravelAgencyCode>");
 		}
-		if(IssuingCarrierCode != null) {
-			sb.append("<ebl:IssuingCarrierCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(IssuingCarrierCode));
-			sb.append("</ebl:IssuingCarrierCode>");
+		if(ticketNumber != null) {
+			sb.append("<").append(preferredPrefix).append(":TicketNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(ticketNumber));
+			sb.append("</").append(preferredPrefix).append(":TicketNumber>");
 		}
-		if(CustomerCode != null) {
-			sb.append("<ebl:CustomerCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(CustomerCode));
-			sb.append("</ebl:CustomerCode>");
+		if(issuingCarrierCode != null) {
+			sb.append("<").append(preferredPrefix).append(":IssuingCarrierCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(issuingCarrierCode));
+			sb.append("</").append(preferredPrefix).append(":IssuingCarrierCode>");
 		}
-		if(TotalFare != null) {
-			sb.append("<ebl:TotalFare");
-			sb.append(TotalFare.toXMLString());
-			sb.append("</ebl:TotalFare>");
+		if(customerCode != null) {
+			sb.append("<").append(preferredPrefix).append(":CustomerCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(customerCode));
+			sb.append("</").append(preferredPrefix).append(":CustomerCode>");
 		}
-		if(TotalTaxes != null) {
-			sb.append("<ebl:TotalTaxes");
-			sb.append(TotalTaxes.toXMLString());
-			sb.append("</ebl:TotalTaxes>");
+		if(totalFare != null) {
+			sb.append(totalFare.toXMLString(preferredPrefix,"TotalFare"));
 		}
-		if(TotalFee != null) {
-			sb.append("<ebl:TotalFee");
-			sb.append(TotalFee.toXMLString());
-			sb.append("</ebl:TotalFee>");
+		if(totalTaxes != null) {
+			sb.append(totalTaxes.toXMLString(preferredPrefix,"TotalTaxes"));
 		}
-		if(RestrictedTicket != null) {
-			sb.append("<ebl:RestrictedTicket>").append(SDKUtil.escapeInvalidXmlCharsRegex(RestrictedTicket));
-			sb.append("</ebl:RestrictedTicket>");
+		if(totalFee != null) {
+			sb.append(totalFee.toXMLString(preferredPrefix,"TotalFee"));
 		}
-		if(ClearingSequence != null) {
-			sb.append("<ebl:ClearingSequence>").append(SDKUtil.escapeInvalidXmlCharsRegex(ClearingSequence));
-			sb.append("</ebl:ClearingSequence>");
+		if(restrictedTicket != null) {
+			sb.append("<").append(preferredPrefix).append(":RestrictedTicket>").append(SDKUtil.escapeInvalidXmlCharsRegex(restrictedTicket));
+			sb.append("</").append(preferredPrefix).append(":RestrictedTicket>");
 		}
-		if(ClearingCount != null) {
-			sb.append("<ebl:ClearingCount>").append(SDKUtil.escapeInvalidXmlCharsRegex(ClearingCount));
-			sb.append("</ebl:ClearingCount>");
+		if(clearingSequence != null) {
+			sb.append("<").append(preferredPrefix).append(":ClearingSequence>").append(SDKUtil.escapeInvalidXmlCharsRegex(clearingSequence));
+			sb.append("</").append(preferredPrefix).append(":ClearingSequence>");
 		}
-		if(FlightDetails != null) {
-			for(int i=0; i < FlightDetails.size(); i++) {
-				sb.append("<ebl:FlightDetails>");
-				sb.append(FlightDetails.get(i).toXMLString());
-				sb.append("</ebl:FlightDetails>");
+		if(clearingCount != null) {
+			sb.append("<").append(preferredPrefix).append(":ClearingCount>").append(SDKUtil.escapeInvalidXmlCharsRegex(clearingCount));
+			sb.append("</").append(preferredPrefix).append(":ClearingCount>");
+		}
+		if(flightDetails != null) {
+			for(int i=0; i < flightDetails.size(); i++) {
+				sb.append(flightDetails.get(i).toXMLString(preferredPrefix,"FlightDetails"));
+			}
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
 			}
 		}
 		return sb.toString();

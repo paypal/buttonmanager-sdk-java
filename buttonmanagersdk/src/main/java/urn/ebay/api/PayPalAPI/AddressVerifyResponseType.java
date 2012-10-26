@@ -40,7 +40,7 @@ public class AddressVerifyResponseType extends AbstractResponseType {
 	 * responds that the postal address is unconfirmed	  
 	 *@Required	 
 	 */ 
-	private AddressStatusCodeType ConfirmationCode;
+	private AddressStatusCodeType confirmationCode;
 
 	/**
 	 * PayPal has compared the postal address you want to verify
@@ -53,7 +53,7 @@ public class AddressVerifyResponseType extends AbstractResponseType {
 	 * does not match the street address on file at PayPal. 	  
 	 *@Required	 
 	 */ 
-	private MatchStatusCodeType StreetMatch;
+	private MatchStatusCodeType streetMatch;
 
 	/**
 	 * PayPal has compared the zip code you want to verify with the
@@ -63,13 +63,13 @@ public class AddressVerifyResponseType extends AbstractResponseType {
 	 * code on file at PayPal. Unmatched: The zip code does not
 	 * match the zip code on file at PayPal. 	 
 	 */ 
-	private MatchStatusCodeType ZipMatch;
+	private MatchStatusCodeType zipMatch;
 
 	/**
 	 * Two-character country code (ISO 3166) on file for the PayPal
 	 * email address. 	 
 	 */ 
-	private CountryCodeType CountryCode;
+	private CountryCodeType countryCode;
 
 	/**
 	 * The token prevents a buyer from using any street address
@@ -83,7 +83,7 @@ public class AddressVerifyResponseType extends AbstractResponseType {
 	 * is valid for 24 hours. Character length and limitations: 94
 	 * single-byte characters 	 
 	 */ 
-	private String PayPalToken;
+	private String payPalToken;
 
 	
 
@@ -94,73 +94,73 @@ public class AddressVerifyResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for ConfirmationCode
+	 * Getter for confirmationCode
 	 */
 	 public AddressStatusCodeType getConfirmationCode() {
-	 	return ConfirmationCode;
+	 	return confirmationCode;
 	 }
 	 
 	/**
-	 * Setter for ConfirmationCode
+	 * Setter for confirmationCode
 	 */
-	 public void setConfirmationCode(AddressStatusCodeType ConfirmationCode) {
-	 	this.ConfirmationCode = ConfirmationCode;
+	 public void setConfirmationCode(AddressStatusCodeType confirmationCode) {
+	 	this.confirmationCode = confirmationCode;
 	 }
 	 
 	/**
-	 * Getter for StreetMatch
+	 * Getter for streetMatch
 	 */
 	 public MatchStatusCodeType getStreetMatch() {
-	 	return StreetMatch;
+	 	return streetMatch;
 	 }
 	 
 	/**
-	 * Setter for StreetMatch
+	 * Setter for streetMatch
 	 */
-	 public void setStreetMatch(MatchStatusCodeType StreetMatch) {
-	 	this.StreetMatch = StreetMatch;
+	 public void setStreetMatch(MatchStatusCodeType streetMatch) {
+	 	this.streetMatch = streetMatch;
 	 }
 	 
 	/**
-	 * Getter for ZipMatch
+	 * Getter for zipMatch
 	 */
 	 public MatchStatusCodeType getZipMatch() {
-	 	return ZipMatch;
+	 	return zipMatch;
 	 }
 	 
 	/**
-	 * Setter for ZipMatch
+	 * Setter for zipMatch
 	 */
-	 public void setZipMatch(MatchStatusCodeType ZipMatch) {
-	 	this.ZipMatch = ZipMatch;
+	 public void setZipMatch(MatchStatusCodeType zipMatch) {
+	 	this.zipMatch = zipMatch;
 	 }
 	 
 	/**
-	 * Getter for CountryCode
+	 * Getter for countryCode
 	 */
 	 public CountryCodeType getCountryCode() {
-	 	return CountryCode;
+	 	return countryCode;
 	 }
 	 
 	/**
-	 * Setter for CountryCode
+	 * Setter for countryCode
 	 */
-	 public void setCountryCode(CountryCodeType CountryCode) {
-	 	this.CountryCode = CountryCode;
+	 public void setCountryCode(CountryCodeType countryCode) {
+	 	this.countryCode = countryCode;
 	 }
 	 
 	/**
-	 * Getter for PayPalToken
+	 * Getter for payPalToken
 	 */
 	 public String getPayPalToken() {
-	 	return PayPalToken;
+	 	return payPalToken;
 	 }
 	 
 	/**
-	 * Setter for PayPalToken
+	 * Setter for payPalToken
 	 */
-	 public void setPayPalToken(String PayPalToken) {
-	 	this.PayPalToken = PayPalToken;
+	 public void setPayPalToken(String payPalToken) {
+	 	this.payPalToken = payPalToken;
 	 }
 	 
 
@@ -185,23 +185,23 @@ public class AddressVerifyResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("ConfirmationCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ConfirmationCode = AddressStatusCodeType.fromValue(childNode.getTextContent());
+		    this.confirmationCode = AddressStatusCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("StreetMatch", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.StreetMatch = MatchStatusCodeType.fromValue(childNode.getTextContent());
+		    this.streetMatch = MatchStatusCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("ZipMatch", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ZipMatch = MatchStatusCodeType.fromValue(childNode.getTextContent());
+		    this.zipMatch = MatchStatusCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("CountryCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CountryCode = CountryCodeType.fromValue(childNode.getTextContent());
+		    this.countryCode = CountryCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("PayPalToken", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PayPalToken = childNode.getTextContent();
+		    this.payPalToken = childNode.getTextContent();
 		}
 	
 	}

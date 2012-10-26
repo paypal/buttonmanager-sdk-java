@@ -28,7 +28,7 @@ public class DoCaptureResponseType extends AbstractResponseType {
 	 * 	  
 	 *@Required	 
 	 */ 
-	private DoCaptureResponseDetailsType DoCaptureResponseDetails;
+	private DoCaptureResponseDetailsType doCaptureResponseDetails;
 
 	
 
@@ -39,17 +39,17 @@ public class DoCaptureResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for DoCaptureResponseDetails
+	 * Getter for doCaptureResponseDetails
 	 */
 	 public DoCaptureResponseDetailsType getDoCaptureResponseDetails() {
-	 	return DoCaptureResponseDetails;
+	 	return doCaptureResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for DoCaptureResponseDetails
+	 * Setter for doCaptureResponseDetails
 	 */
-	 public void setDoCaptureResponseDetails(DoCaptureResponseDetailsType DoCaptureResponseDetails) {
-	 	this.DoCaptureResponseDetails = DoCaptureResponseDetails;
+	 public void setDoCaptureResponseDetails(DoCaptureResponseDetailsType doCaptureResponseDetails) {
+	 	this.doCaptureResponseDetails = doCaptureResponseDetails;
 	 }
 	 
 
@@ -74,7 +74,7 @@ public class DoCaptureResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("DoCaptureResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.DoCaptureResponseDetails =  new DoCaptureResponseDetailsType(childNode);
+		    this.doCaptureResponseDetails =  new DoCaptureResponseDetailsType(childNode);
 		}
 	}
  

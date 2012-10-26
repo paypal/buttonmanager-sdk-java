@@ -9,21 +9,23 @@ import com.paypal.core.SDKUtil;
  */
 public class IdentificationInfoType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Mobile specific buyer identification.	 
 	 */ 
-	private MobileIDInfoType MobileIDInfo;
+	private MobileIDInfoType mobileIDInfo;
 
 	/**
 	 * Contains login bypass information.	 
 	 */ 
-	private RememberMeIDInfoType RememberMeIDInfo;
+	private RememberMeIDInfoType rememberMeIDInfo;
 
 	/**
 	 * Identity Access Token.	 
 	 */ 
-	private IdentityTokenInfoType IdentityTokenInfo;
+	private IdentityTokenInfoType identityTokenInfo;
 
 	
 
@@ -34,65 +36,75 @@ public class IdentificationInfoType{
 	}	
 
 	/**
-	 * Getter for MobileIDInfo
+	 * Getter for mobileIDInfo
 	 */
 	 public MobileIDInfoType getMobileIDInfo() {
-	 	return MobileIDInfo;
+	 	return mobileIDInfo;
 	 }
 	 
 	/**
-	 * Setter for MobileIDInfo
+	 * Setter for mobileIDInfo
 	 */
-	 public void setMobileIDInfo(MobileIDInfoType MobileIDInfo) {
-	 	this.MobileIDInfo = MobileIDInfo;
+	 public void setMobileIDInfo(MobileIDInfoType mobileIDInfo) {
+	 	this.mobileIDInfo = mobileIDInfo;
 	 }
 	 
 	/**
-	 * Getter for RememberMeIDInfo
+	 * Getter for rememberMeIDInfo
 	 */
 	 public RememberMeIDInfoType getRememberMeIDInfo() {
-	 	return RememberMeIDInfo;
+	 	return rememberMeIDInfo;
 	 }
 	 
 	/**
-	 * Setter for RememberMeIDInfo
+	 * Setter for rememberMeIDInfo
 	 */
-	 public void setRememberMeIDInfo(RememberMeIDInfoType RememberMeIDInfo) {
-	 	this.RememberMeIDInfo = RememberMeIDInfo;
+	 public void setRememberMeIDInfo(RememberMeIDInfoType rememberMeIDInfo) {
+	 	this.rememberMeIDInfo = rememberMeIDInfo;
 	 }
 	 
 	/**
-	 * Getter for IdentityTokenInfo
+	 * Getter for identityTokenInfo
 	 */
 	 public IdentityTokenInfoType getIdentityTokenInfo() {
-	 	return IdentityTokenInfo;
+	 	return identityTokenInfo;
 	 }
 	 
 	/**
-	 * Setter for IdentityTokenInfo
+	 * Setter for identityTokenInfo
 	 */
-	 public void setIdentityTokenInfo(IdentityTokenInfoType IdentityTokenInfo) {
-	 	this.IdentityTokenInfo = IdentityTokenInfo;
+	 public void setIdentityTokenInfo(IdentityTokenInfoType identityTokenInfo) {
+	 	this.identityTokenInfo = identityTokenInfo;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(MobileIDInfo != null) {
-			sb.append("<ebl:MobileIDInfo>");
-			sb.append(MobileIDInfo.toXMLString());
-			sb.append("</ebl:MobileIDInfo>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(RememberMeIDInfo != null) {
-			sb.append("<ebl:RememberMeIDInfo>");
-			sb.append(RememberMeIDInfo.toXMLString());
-			sb.append("</ebl:RememberMeIDInfo>");
+		if(mobileIDInfo != null) {
+			sb.append(mobileIDInfo.toXMLString(preferredPrefix,"MobileIDInfo"));
 		}
-		if(IdentityTokenInfo != null) {
-			sb.append("<ebl:IdentityTokenInfo>");
-			sb.append(IdentityTokenInfo.toXMLString());
-			sb.append("</ebl:IdentityTokenInfo>");
+		if(rememberMeIDInfo != null) {
+			sb.append(rememberMeIDInfo.toXMLString(preferredPrefix,"RememberMeIDInfo"));
+		}
+		if(identityTokenInfo != null) {
+			sb.append(identityTokenInfo.toXMLString(preferredPrefix,"IdentityTokenInfo"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

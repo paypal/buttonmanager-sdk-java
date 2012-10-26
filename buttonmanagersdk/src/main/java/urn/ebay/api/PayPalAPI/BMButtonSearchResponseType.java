@@ -29,7 +29,7 @@ public class BMButtonSearchResponseType extends AbstractResponseType {
 	/**
 	 * 	 
 	 */ 
-	private List<ButtonSearchResultType> ButtonSearchResult = new ArrayList<ButtonSearchResultType>();
+	private List<ButtonSearchResultType> buttonSearchResult = new ArrayList<ButtonSearchResultType>();
 
 	
 
@@ -40,17 +40,17 @@ public class BMButtonSearchResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for ButtonSearchResult
+	 * Getter for buttonSearchResult
 	 */
 	 public List<ButtonSearchResultType> getButtonSearchResult() {
-	 	return ButtonSearchResult;
+	 	return buttonSearchResult;
 	 }
 	 
 	/**
-	 * Setter for ButtonSearchResult
+	 * Setter for buttonSearchResult
 	 */
-	 public void setButtonSearchResult(List<ButtonSearchResultType> ButtonSearchResult) {
-	 	this.ButtonSearchResult = ButtonSearchResult;
+	 public void setButtonSearchResult(List<ButtonSearchResultType> buttonSearchResult) {
+	 	this.buttonSearchResult = buttonSearchResult;
 	 }
 	 
 
@@ -77,7 +77,7 @@ public class BMButtonSearchResponseType extends AbstractResponseType {
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.ButtonSearchResult.add(new ButtonSearchResultType(subNode));
+				this.buttonSearchResult.add(new ButtonSearchResultType(subNode));
 			}
 		}
 	}

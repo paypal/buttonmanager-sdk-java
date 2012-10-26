@@ -27,19 +27,19 @@ public class APICredentialsType{
 	 * Merchant’s PayPal API usernameCharacter length and
 	 * limitations: 128 alphanumeric characters	 
 	 */ 
-	private String Username;
+	private String username;
 
 	/**
 	 * Merchant’s PayPal API passwordCharacter length and
 	 * limitations: 40 alphanumeric characters	 
 	 */ 
-	private String Password;
+	private String password;
 
 	/**
 	 * Merchant’s PayPal API signature, if one exists. Character
 	 * length and limitations: 256 alphanumeric characters	 
 	 */ 
-	private String Signature;
+	private String signature;
 
 	/**
 	 * Merchant’s PayPal API certificate in PEM format, if one
@@ -48,7 +48,7 @@ public class APICredentialsType{
 	 * Character length and limitations: 6,048 alphanumeric
 	 * characters	 
 	 */ 
-	private String Certificate;
+	private String certificate;
 
 	/**
 	 * Merchant’s PayPal API authentication mechanism. Auth-None:
@@ -56,7 +56,7 @@ public class APICredentialsType{
 	 * Sign: API signature Character length and limitations: 9
 	 * alphanumeric characters	 
 	 */ 
-	private APIAuthenticationType Type;
+	private APIAuthenticationType type;
 
 	
 
@@ -67,73 +67,73 @@ public class APICredentialsType{
 	}	
 
 	/**
-	 * Getter for Username
+	 * Getter for username
 	 */
 	 public String getUsername() {
-	 	return Username;
+	 	return username;
 	 }
 	 
 	/**
-	 * Setter for Username
+	 * Setter for username
 	 */
-	 public void setUsername(String Username) {
-	 	this.Username = Username;
+	 public void setUsername(String username) {
+	 	this.username = username;
 	 }
 	 
 	/**
-	 * Getter for Password
+	 * Getter for password
 	 */
 	 public String getPassword() {
-	 	return Password;
+	 	return password;
 	 }
 	 
 	/**
-	 * Setter for Password
+	 * Setter for password
 	 */
-	 public void setPassword(String Password) {
-	 	this.Password = Password;
+	 public void setPassword(String password) {
+	 	this.password = password;
 	 }
 	 
 	/**
-	 * Getter for Signature
+	 * Getter for signature
 	 */
 	 public String getSignature() {
-	 	return Signature;
+	 	return signature;
 	 }
 	 
 	/**
-	 * Setter for Signature
+	 * Setter for signature
 	 */
-	 public void setSignature(String Signature) {
-	 	this.Signature = Signature;
+	 public void setSignature(String signature) {
+	 	this.signature = signature;
 	 }
 	 
 	/**
-	 * Getter for Certificate
+	 * Getter for certificate
 	 */
 	 public String getCertificate() {
-	 	return Certificate;
+	 	return certificate;
 	 }
 	 
 	/**
-	 * Setter for Certificate
+	 * Setter for certificate
 	 */
-	 public void setCertificate(String Certificate) {
-	 	this.Certificate = Certificate;
+	 public void setCertificate(String certificate) {
+	 	this.certificate = certificate;
 	 }
 	 
 	/**
-	 * Getter for Type
+	 * Getter for type
 	 */
 	 public APIAuthenticationType getType() {
-	 	return Type;
+	 	return type;
 	 }
 	 
 	/**
-	 * Setter for Type
+	 * Setter for type
 	 */
-	 public void setType(APIAuthenticationType Type) {
-	 	this.Type = Type;
+	 public void setType(APIAuthenticationType type) {
+	 	this.type = type;
 	 }
 	 
 
@@ -157,27 +157,27 @@ public class APICredentialsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Username", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Username = childNode.getTextContent();
+		    this.username = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Password", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Password = childNode.getTextContent();
+		    this.password = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Signature", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Signature = childNode.getTextContent();
+		    this.signature = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Certificate", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Certificate = childNode.getTextContent();
+		    this.certificate = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Type", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Type = APIAuthenticationType.fromValue(childNode.getTextContent());
+		    this.type = APIAuthenticationType.fromValue(childNode.getTextContent());
 		}
 	}
  

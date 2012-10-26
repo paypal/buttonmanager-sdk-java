@@ -8,20 +8,22 @@ import com.paypal.core.SDKUtil;
  */
 public class SetMobileCheckoutRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private SetMobileCheckoutRequestDetailsType SetMobileCheckoutRequestDetails;
+	private SetMobileCheckoutRequestDetailsType setMobileCheckoutRequestDetails;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public SetMobileCheckoutRequestType (SetMobileCheckoutRequestDetailsType SetMobileCheckoutRequestDetails){
-		this.SetMobileCheckoutRequestDetails = SetMobileCheckoutRequestDetails;
+	public SetMobileCheckoutRequestType (SetMobileCheckoutRequestDetailsType setMobileCheckoutRequestDetails){
+		this.setMobileCheckoutRequestDetails = setMobileCheckoutRequestDetails;
 	}	
 
 	/**
@@ -31,28 +33,42 @@ public class SetMobileCheckoutRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for SetMobileCheckoutRequestDetails
+	 * Getter for setMobileCheckoutRequestDetails
 	 */
 	 public SetMobileCheckoutRequestDetailsType getSetMobileCheckoutRequestDetails() {
-	 	return SetMobileCheckoutRequestDetails;
+	 	return setMobileCheckoutRequestDetails;
 	 }
 	 
 	/**
-	 * Setter for SetMobileCheckoutRequestDetails
+	 * Setter for setMobileCheckoutRequestDetails
 	 */
-	 public void setSetMobileCheckoutRequestDetails(SetMobileCheckoutRequestDetailsType SetMobileCheckoutRequestDetails) {
-	 	this.SetMobileCheckoutRequestDetails = SetMobileCheckoutRequestDetails;
+	 public void setSetMobileCheckoutRequestDetails(SetMobileCheckoutRequestDetailsType setMobileCheckoutRequestDetails) {
+	 	this.setMobileCheckoutRequestDetails = setMobileCheckoutRequestDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(SetMobileCheckoutRequestDetails != null) {
-			sb.append("<ebl:SetMobileCheckoutRequestDetails>");
-			sb.append(SetMobileCheckoutRequestDetails.toXMLString());
-			sb.append("</ebl:SetMobileCheckoutRequestDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		sb.append(super.toXMLString(prefix, null));
+		if(setMobileCheckoutRequestDetails != null) {
+			sb.append(setMobileCheckoutRequestDetails.toXMLString(null,"SetMobileCheckoutRequestDetails"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

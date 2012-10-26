@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class UpdateRecurringPaymentsProfileReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private UpdateRecurringPaymentsProfileRequestType UpdateRecurringPaymentsProfileRequest;
+	private UpdateRecurringPaymentsProfileRequestType updateRecurringPaymentsProfileRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class UpdateRecurringPaymentsProfileReq{
 	}	
 
 	/**
-	 * Getter for UpdateRecurringPaymentsProfileRequest
+	 * Getter for updateRecurringPaymentsProfileRequest
 	 */
 	 public UpdateRecurringPaymentsProfileRequestType getUpdateRecurringPaymentsProfileRequest() {
-	 	return UpdateRecurringPaymentsProfileRequest;
+	 	return updateRecurringPaymentsProfileRequest;
 	 }
 	 
 	/**
-	 * Setter for UpdateRecurringPaymentsProfileRequest
+	 * Setter for updateRecurringPaymentsProfileRequest
 	 */
-	 public void setUpdateRecurringPaymentsProfileRequest(UpdateRecurringPaymentsProfileRequestType UpdateRecurringPaymentsProfileRequest) {
-	 	this.UpdateRecurringPaymentsProfileRequest = UpdateRecurringPaymentsProfileRequest;
+	 public void setUpdateRecurringPaymentsProfileRequest(UpdateRecurringPaymentsProfileRequestType updateRecurringPaymentsProfileRequest) {
+	 	this.updateRecurringPaymentsProfileRequest = updateRecurringPaymentsProfileRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:UpdateRecurringPaymentsProfileReq>");
-		if(UpdateRecurringPaymentsProfileRequest != null) {
-			sb.append("<urn:UpdateRecurringPaymentsProfileRequest>");
-			sb.append(UpdateRecurringPaymentsProfileRequest.toXMLString());
-			sb.append("</urn:UpdateRecurringPaymentsProfileRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:UpdateRecurringPaymentsProfileReq>");
+		if(updateRecurringPaymentsProfileRequest != null) {
+			sb.append(updateRecurringPaymentsProfileRequest.toXMLString(null,"UpdateRecurringPaymentsProfileRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

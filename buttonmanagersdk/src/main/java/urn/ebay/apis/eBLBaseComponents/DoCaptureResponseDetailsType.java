@@ -30,17 +30,17 @@ public class DoCaptureResponseDetailsType{
 	 * request. Character length and limits: 19 single-byte
 	 * characters maximum	 
 	 */ 
-	private String AuthorizationID;
+	private String authorizationID;
 
 	/**
 	 * Information about the transaction 	 
 	 */ 
-	private PaymentInfoType PaymentInfo;
+	private PaymentInfoType paymentInfo;
 
 	/**
 	 * Return msgsubid back to merchant 	 
 	 */ 
-	private String MsgSubID;
+	private String msgSubID;
 
 	
 
@@ -51,45 +51,45 @@ public class DoCaptureResponseDetailsType{
 	}	
 
 	/**
-	 * Getter for AuthorizationID
+	 * Getter for authorizationID
 	 */
 	 public String getAuthorizationID() {
-	 	return AuthorizationID;
+	 	return authorizationID;
 	 }
 	 
 	/**
-	 * Setter for AuthorizationID
+	 * Setter for authorizationID
 	 */
-	 public void setAuthorizationID(String AuthorizationID) {
-	 	this.AuthorizationID = AuthorizationID;
+	 public void setAuthorizationID(String authorizationID) {
+	 	this.authorizationID = authorizationID;
 	 }
 	 
 	/**
-	 * Getter for PaymentInfo
+	 * Getter for paymentInfo
 	 */
 	 public PaymentInfoType getPaymentInfo() {
-	 	return PaymentInfo;
+	 	return paymentInfo;
 	 }
 	 
 	/**
-	 * Setter for PaymentInfo
+	 * Setter for paymentInfo
 	 */
-	 public void setPaymentInfo(PaymentInfoType PaymentInfo) {
-	 	this.PaymentInfo = PaymentInfo;
+	 public void setPaymentInfo(PaymentInfoType paymentInfo) {
+	 	this.paymentInfo = paymentInfo;
 	 }
 	 
 	/**
-	 * Getter for MsgSubID
+	 * Getter for msgSubID
 	 */
 	 public String getMsgSubID() {
-	 	return MsgSubID;
+	 	return msgSubID;
 	 }
 	 
 	/**
-	 * Setter for MsgSubID
+	 * Setter for msgSubID
 	 */
-	 public void setMsgSubID(String MsgSubID) {
-	 	this.MsgSubID = MsgSubID;
+	 public void setMsgSubID(String msgSubID) {
+	 	this.msgSubID = msgSubID;
 	 }
 	 
 
@@ -113,16 +113,16 @@ public class DoCaptureResponseDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("AuthorizationID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.AuthorizationID = childNode.getTextContent();
+		    this.authorizationID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PaymentInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentInfo =  new PaymentInfoType(childNode);
+		    this.paymentInfo =  new PaymentInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("MsgSubID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.MsgSubID = childNode.getTextContent();
+		    this.msgSubID = childNode.getTextContent();
 		}
 	
 	}

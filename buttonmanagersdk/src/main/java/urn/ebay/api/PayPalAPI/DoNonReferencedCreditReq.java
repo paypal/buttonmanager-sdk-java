@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class DoNonReferencedCreditReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private DoNonReferencedCreditRequestType DoNonReferencedCreditRequest;
+	private DoNonReferencedCreditRequestType doNonReferencedCreditRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class DoNonReferencedCreditReq{
 	}	
 
 	/**
-	 * Getter for DoNonReferencedCreditRequest
+	 * Getter for doNonReferencedCreditRequest
 	 */
 	 public DoNonReferencedCreditRequestType getDoNonReferencedCreditRequest() {
-	 	return DoNonReferencedCreditRequest;
+	 	return doNonReferencedCreditRequest;
 	 }
 	 
 	/**
-	 * Setter for DoNonReferencedCreditRequest
+	 * Setter for doNonReferencedCreditRequest
 	 */
-	 public void setDoNonReferencedCreditRequest(DoNonReferencedCreditRequestType DoNonReferencedCreditRequest) {
-	 	this.DoNonReferencedCreditRequest = DoNonReferencedCreditRequest;
+	 public void setDoNonReferencedCreditRequest(DoNonReferencedCreditRequestType doNonReferencedCreditRequest) {
+	 	this.doNonReferencedCreditRequest = doNonReferencedCreditRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:DoNonReferencedCreditReq>");
-		if(DoNonReferencedCreditRequest != null) {
-			sb.append("<urn:DoNonReferencedCreditRequest>");
-			sb.append(DoNonReferencedCreditRequest.toXMLString());
-			sb.append("</urn:DoNonReferencedCreditRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:DoNonReferencedCreditReq>");
+		if(doNonReferencedCreditRequest != null) {
+			sb.append(doNonReferencedCreditRequest.toXMLString(null,"DoNonReferencedCreditRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

@@ -29,7 +29,7 @@ public class TransactionSearchResponseType extends AbstractResponseType {
 	/**
 	 * Results of a Transaction Search.	 
 	 */ 
-	private List<PaymentTransactionSearchResultType> PaymentTransactions = new ArrayList<PaymentTransactionSearchResultType>();
+	private List<PaymentTransactionSearchResultType> paymentTransactions = new ArrayList<PaymentTransactionSearchResultType>();
 
 	
 
@@ -40,17 +40,17 @@ public class TransactionSearchResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for PaymentTransactions
+	 * Getter for paymentTransactions
 	 */
 	 public List<PaymentTransactionSearchResultType> getPaymentTransactions() {
-	 	return PaymentTransactions;
+	 	return paymentTransactions;
 	 }
 	 
 	/**
-	 * Setter for PaymentTransactions
+	 * Setter for paymentTransactions
 	 */
-	 public void setPaymentTransactions(List<PaymentTransactionSearchResultType> PaymentTransactions) {
-	 	this.PaymentTransactions = PaymentTransactions;
+	 public void setPaymentTransactions(List<PaymentTransactionSearchResultType> paymentTransactions) {
+	 	this.paymentTransactions = paymentTransactions;
 	 }
 	 
 
@@ -77,7 +77,7 @@ public class TransactionSearchResponseType extends AbstractResponseType {
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.PaymentTransactions.add(new PaymentTransactionSearchResultType(subNode));
+				this.paymentTransactions.add(new PaymentTransactionSearchResultType(subNode));
 			}
 		}
 	}

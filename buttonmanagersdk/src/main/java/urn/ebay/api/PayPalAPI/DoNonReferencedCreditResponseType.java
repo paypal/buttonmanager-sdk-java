@@ -28,7 +28,7 @@ public class DoNonReferencedCreditResponseType extends AbstractResponseType {
 	 * 	  
 	 *@Required	 
 	 */ 
-	private DoNonReferencedCreditResponseDetailsType DoNonReferencedCreditResponseDetails;
+	private DoNonReferencedCreditResponseDetailsType doNonReferencedCreditResponseDetails;
 
 	
 
@@ -39,17 +39,17 @@ public class DoNonReferencedCreditResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for DoNonReferencedCreditResponseDetails
+	 * Getter for doNonReferencedCreditResponseDetails
 	 */
 	 public DoNonReferencedCreditResponseDetailsType getDoNonReferencedCreditResponseDetails() {
-	 	return DoNonReferencedCreditResponseDetails;
+	 	return doNonReferencedCreditResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for DoNonReferencedCreditResponseDetails
+	 * Setter for doNonReferencedCreditResponseDetails
 	 */
-	 public void setDoNonReferencedCreditResponseDetails(DoNonReferencedCreditResponseDetailsType DoNonReferencedCreditResponseDetails) {
-	 	this.DoNonReferencedCreditResponseDetails = DoNonReferencedCreditResponseDetails;
+	 public void setDoNonReferencedCreditResponseDetails(DoNonReferencedCreditResponseDetailsType doNonReferencedCreditResponseDetails) {
+	 	this.doNonReferencedCreditResponseDetails = doNonReferencedCreditResponseDetails;
 	 }
 	 
 
@@ -74,7 +74,7 @@ public class DoNonReferencedCreditResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("DoNonReferencedCreditResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.DoNonReferencedCreditResponseDetails =  new DoNonReferencedCreditResponseDetailsType(childNode);
+		    this.doNonReferencedCreditResponseDetails =  new DoNonReferencedCreditResponseDetailsType(childNode);
 		}
 	}
  

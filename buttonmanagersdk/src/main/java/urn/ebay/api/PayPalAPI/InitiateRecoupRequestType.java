@@ -8,20 +8,22 @@ import com.paypal.core.SDKUtil;
  */
 public class InitiateRecoupRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private EnhancedInitiateRecoupRequestDetailsType EnhancedInitiateRecoupRequestDetails;
+	private EnhancedInitiateRecoupRequestDetailsType enhancedInitiateRecoupRequestDetails;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public InitiateRecoupRequestType (EnhancedInitiateRecoupRequestDetailsType EnhancedInitiateRecoupRequestDetails){
-		this.EnhancedInitiateRecoupRequestDetails = EnhancedInitiateRecoupRequestDetails;
+	public InitiateRecoupRequestType (EnhancedInitiateRecoupRequestDetailsType enhancedInitiateRecoupRequestDetails){
+		this.enhancedInitiateRecoupRequestDetails = enhancedInitiateRecoupRequestDetails;
 	}	
 
 	/**
@@ -31,28 +33,42 @@ public class InitiateRecoupRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for EnhancedInitiateRecoupRequestDetails
+	 * Getter for enhancedInitiateRecoupRequestDetails
 	 */
 	 public EnhancedInitiateRecoupRequestDetailsType getEnhancedInitiateRecoupRequestDetails() {
-	 	return EnhancedInitiateRecoupRequestDetails;
+	 	return enhancedInitiateRecoupRequestDetails;
 	 }
 	 
 	/**
-	 * Setter for EnhancedInitiateRecoupRequestDetails
+	 * Setter for enhancedInitiateRecoupRequestDetails
 	 */
-	 public void setEnhancedInitiateRecoupRequestDetails(EnhancedInitiateRecoupRequestDetailsType EnhancedInitiateRecoupRequestDetails) {
-	 	this.EnhancedInitiateRecoupRequestDetails = EnhancedInitiateRecoupRequestDetails;
+	 public void setEnhancedInitiateRecoupRequestDetails(EnhancedInitiateRecoupRequestDetailsType enhancedInitiateRecoupRequestDetails) {
+	 	this.enhancedInitiateRecoupRequestDetails = enhancedInitiateRecoupRequestDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(EnhancedInitiateRecoupRequestDetails != null) {
-			sb.append("<ed:EnhancedInitiateRecoupRequestDetails>");
-			sb.append(EnhancedInitiateRecoupRequestDetails.toXMLString());
-			sb.append("</ed:EnhancedInitiateRecoupRequestDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		sb.append(super.toXMLString(prefix, null));
+		if(enhancedInitiateRecoupRequestDetails != null) {
+			sb.append(enhancedInitiateRecoupRequestDetails.toXMLString(null,"EnhancedInitiateRecoupRequestDetails"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

@@ -27,7 +27,7 @@ public class ManageRecurringPaymentsProfileStatusResponseType extends AbstractRe
 	/**
 	 * 	 
 	 */ 
-	private ManageRecurringPaymentsProfileStatusResponseDetailsType ManageRecurringPaymentsProfileStatusResponseDetails;
+	private ManageRecurringPaymentsProfileStatusResponseDetailsType manageRecurringPaymentsProfileStatusResponseDetails;
 
 	
 
@@ -38,17 +38,17 @@ public class ManageRecurringPaymentsProfileStatusResponseType extends AbstractRe
 	}	
 
 	/**
-	 * Getter for ManageRecurringPaymentsProfileStatusResponseDetails
+	 * Getter for manageRecurringPaymentsProfileStatusResponseDetails
 	 */
 	 public ManageRecurringPaymentsProfileStatusResponseDetailsType getManageRecurringPaymentsProfileStatusResponseDetails() {
-	 	return ManageRecurringPaymentsProfileStatusResponseDetails;
+	 	return manageRecurringPaymentsProfileStatusResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for ManageRecurringPaymentsProfileStatusResponseDetails
+	 * Setter for manageRecurringPaymentsProfileStatusResponseDetails
 	 */
-	 public void setManageRecurringPaymentsProfileStatusResponseDetails(ManageRecurringPaymentsProfileStatusResponseDetailsType ManageRecurringPaymentsProfileStatusResponseDetails) {
-	 	this.ManageRecurringPaymentsProfileStatusResponseDetails = ManageRecurringPaymentsProfileStatusResponseDetails;
+	 public void setManageRecurringPaymentsProfileStatusResponseDetails(ManageRecurringPaymentsProfileStatusResponseDetailsType manageRecurringPaymentsProfileStatusResponseDetails) {
+	 	this.manageRecurringPaymentsProfileStatusResponseDetails = manageRecurringPaymentsProfileStatusResponseDetails;
 	 }
 	 
 
@@ -73,7 +73,7 @@ public class ManageRecurringPaymentsProfileStatusResponseType extends AbstractRe
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("ManageRecurringPaymentsProfileStatusResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ManageRecurringPaymentsProfileStatusResponseDetails =  new ManageRecurringPaymentsProfileStatusResponseDetailsType(childNode);
+		    this.manageRecurringPaymentsProfileStatusResponseDetails =  new ManageRecurringPaymentsProfileStatusResponseDetailsType(childNode);
 		}
 	}
  

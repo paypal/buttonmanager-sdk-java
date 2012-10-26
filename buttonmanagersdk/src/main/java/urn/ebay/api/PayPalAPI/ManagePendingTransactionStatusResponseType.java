@@ -27,12 +27,12 @@ public class ManagePendingTransactionStatusResponseType extends AbstractResponse
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String TransactionID;
+	private String transactionID;
 
 	/**
 	 * 	 
 	 */ 
-	private String Status;
+	private String status;
 
 	
 
@@ -43,31 +43,31 @@ public class ManagePendingTransactionStatusResponseType extends AbstractResponse
 	}	
 
 	/**
-	 * Getter for TransactionID
+	 * Getter for transactionID
 	 */
 	 public String getTransactionID() {
-	 	return TransactionID;
+	 	return transactionID;
 	 }
 	 
 	/**
-	 * Setter for TransactionID
+	 * Setter for transactionID
 	 */
-	 public void setTransactionID(String TransactionID) {
-	 	this.TransactionID = TransactionID;
+	 public void setTransactionID(String transactionID) {
+	 	this.transactionID = transactionID;
 	 }
 	 
 	/**
-	 * Getter for Status
+	 * Getter for status
 	 */
 	 public String getStatus() {
-	 	return Status;
+	 	return status;
 	 }
 	 
 	/**
-	 * Setter for Status
+	 * Setter for status
 	 */
-	 public void setStatus(String Status) {
-	 	this.Status = Status;
+	 public void setStatus(String status) {
+	 	this.status = status;
 	 }
 	 
 
@@ -92,12 +92,12 @@ public class ManagePendingTransactionStatusResponseType extends AbstractResponse
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("TransactionID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TransactionID = childNode.getTextContent();
+		    this.transactionID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Status", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Status = childNode.getTextContent();
+		    this.status = childNode.getTextContent();
 		}
 	
 	}

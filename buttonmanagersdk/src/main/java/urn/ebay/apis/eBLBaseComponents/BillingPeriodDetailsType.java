@@ -24,49 +24,51 @@ import org.xml.sax.SAXException;
  */
 public class BillingPeriodDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Unit of meausre for billing cycle 	  
 	 *@Required	 
 	 */ 
-	private BillingPeriodType BillingPeriod;
+	private BillingPeriodType billingPeriod;
 
 	/**
 	 * Number of BillingPeriod that make up one billing cycle 	  
 	 *@Required	 
 	 */ 
-	private Integer BillingFrequency;
+	private Integer billingFrequency;
 
 	/**
 	 * Total billing cycles in this portion of the schedule 	 
 	 */ 
-	private Integer TotalBillingCycles;
+	private Integer totalBillingCycles;
 
 	/**
 	 * Amount to charge 	  
 	 *@Required	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	/**
 	 * Additional shipping amount to charge 	 
 	 */ 
-	private BasicAmountType ShippingAmount;
+	private BasicAmountType shippingAmount;
 
 	/**
 	 * Additional tax amount to charge 	 
 	 */ 
-	private BasicAmountType TaxAmount;
+	private BasicAmountType taxAmount;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public BillingPeriodDetailsType (BillingPeriodType BillingPeriod, Integer BillingFrequency, BasicAmountType Amount){
-		this.BillingPeriod = BillingPeriod;
-		this.BillingFrequency = BillingFrequency;
-		this.Amount = Amount;
+	public BillingPeriodDetailsType (BillingPeriodType billingPeriod, Integer billingFrequency, BasicAmountType amount){
+		this.billingPeriod = billingPeriod;
+		this.billingFrequency = billingFrequency;
+		this.amount = amount;
 	}	
 
 	/**
@@ -76,119 +78,129 @@ public class BillingPeriodDetailsType{
 	}	
 
 	/**
-	 * Getter for BillingPeriod
+	 * Getter for billingPeriod
 	 */
 	 public BillingPeriodType getBillingPeriod() {
-	 	return BillingPeriod;
+	 	return billingPeriod;
 	 }
 	 
 	/**
-	 * Setter for BillingPeriod
+	 * Setter for billingPeriod
 	 */
-	 public void setBillingPeriod(BillingPeriodType BillingPeriod) {
-	 	this.BillingPeriod = BillingPeriod;
+	 public void setBillingPeriod(BillingPeriodType billingPeriod) {
+	 	this.billingPeriod = billingPeriod;
 	 }
 	 
 	/**
-	 * Getter for BillingFrequency
+	 * Getter for billingFrequency
 	 */
 	 public Integer getBillingFrequency() {
-	 	return BillingFrequency;
+	 	return billingFrequency;
 	 }
 	 
 	/**
-	 * Setter for BillingFrequency
+	 * Setter for billingFrequency
 	 */
-	 public void setBillingFrequency(Integer BillingFrequency) {
-	 	this.BillingFrequency = BillingFrequency;
+	 public void setBillingFrequency(Integer billingFrequency) {
+	 	this.billingFrequency = billingFrequency;
 	 }
 	 
 	/**
-	 * Getter for TotalBillingCycles
+	 * Getter for totalBillingCycles
 	 */
 	 public Integer getTotalBillingCycles() {
-	 	return TotalBillingCycles;
+	 	return totalBillingCycles;
 	 }
 	 
 	/**
-	 * Setter for TotalBillingCycles
+	 * Setter for totalBillingCycles
 	 */
-	 public void setTotalBillingCycles(Integer TotalBillingCycles) {
-	 	this.TotalBillingCycles = TotalBillingCycles;
+	 public void setTotalBillingCycles(Integer totalBillingCycles) {
+	 	this.totalBillingCycles = totalBillingCycles;
 	 }
 	 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 	/**
-	 * Getter for ShippingAmount
+	 * Getter for shippingAmount
 	 */
 	 public BasicAmountType getShippingAmount() {
-	 	return ShippingAmount;
+	 	return shippingAmount;
 	 }
 	 
 	/**
-	 * Setter for ShippingAmount
+	 * Setter for shippingAmount
 	 */
-	 public void setShippingAmount(BasicAmountType ShippingAmount) {
-	 	this.ShippingAmount = ShippingAmount;
+	 public void setShippingAmount(BasicAmountType shippingAmount) {
+	 	this.shippingAmount = shippingAmount;
 	 }
 	 
 	/**
-	 * Getter for TaxAmount
+	 * Getter for taxAmount
 	 */
 	 public BasicAmountType getTaxAmount() {
-	 	return TaxAmount;
+	 	return taxAmount;
 	 }
 	 
 	/**
-	 * Setter for TaxAmount
+	 * Setter for taxAmount
 	 */
-	 public void setTaxAmount(BasicAmountType TaxAmount) {
-	 	this.TaxAmount = TaxAmount;
+	 public void setTaxAmount(BasicAmountType taxAmount) {
+	 	this.taxAmount = taxAmount;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(BillingPeriod != null) {
-			sb.append("<ebl:BillingPeriod>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingPeriod.getValue()));
-			sb.append("</ebl:BillingPeriod>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(BillingFrequency != null) {
-			sb.append("<ebl:BillingFrequency>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingFrequency));
-			sb.append("</ebl:BillingFrequency>");
+		if(billingPeriod != null) {
+			sb.append("<").append(preferredPrefix).append(":BillingPeriod>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingPeriod.getValue()));
+			sb.append("</").append(preferredPrefix).append(":BillingPeriod>");
 		}
-		if(TotalBillingCycles != null) {
-			sb.append("<ebl:TotalBillingCycles>").append(SDKUtil.escapeInvalidXmlCharsRegex(TotalBillingCycles));
-			sb.append("</ebl:TotalBillingCycles>");
+		if(billingFrequency != null) {
+			sb.append("<").append(preferredPrefix).append(":BillingFrequency>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingFrequency));
+			sb.append("</").append(preferredPrefix).append(":BillingFrequency>");
 		}
-		if(Amount != null) {
-			sb.append("<ebl:Amount");
-			sb.append(Amount.toXMLString());
-			sb.append("</ebl:Amount>");
+		if(totalBillingCycles != null) {
+			sb.append("<").append(preferredPrefix).append(":TotalBillingCycles>").append(SDKUtil.escapeInvalidXmlCharsRegex(totalBillingCycles));
+			sb.append("</").append(preferredPrefix).append(":TotalBillingCycles>");
 		}
-		if(ShippingAmount != null) {
-			sb.append("<ebl:ShippingAmount");
-			sb.append(ShippingAmount.toXMLString());
-			sb.append("</ebl:ShippingAmount>");
+		if(amount != null) {
+			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
 		}
-		if(TaxAmount != null) {
-			sb.append("<ebl:TaxAmount");
-			sb.append(TaxAmount.toXMLString());
-			sb.append("</ebl:TaxAmount>");
+		if(shippingAmount != null) {
+			sb.append(shippingAmount.toXMLString(preferredPrefix,"ShippingAmount"));
+		}
+		if(taxAmount != null) {
+			sb.append(taxAmount.toXMLString(preferredPrefix,"TaxAmount"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -212,29 +224,29 @@ public class BillingPeriodDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("BillingPeriod", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BillingPeriod = BillingPeriodType.fromValue(childNode.getTextContent());
+		    this.billingPeriod = BillingPeriodType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("BillingFrequency", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.BillingFrequency = Integer.valueOf(childNode.getTextContent());
+			this.billingFrequency = Integer.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("TotalBillingCycles", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.TotalBillingCycles = Integer.valueOf(childNode.getTextContent());
+			this.totalBillingCycles = Integer.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("Amount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Amount =  new BasicAmountType(childNode);
+		    this.amount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("ShippingAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ShippingAmount =  new BasicAmountType(childNode);
+		    this.shippingAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("TaxAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TaxAmount =  new BasicAmountType(childNode);
+		    this.taxAmount =  new BasicAmountType(childNode);
 		}
 	}
  

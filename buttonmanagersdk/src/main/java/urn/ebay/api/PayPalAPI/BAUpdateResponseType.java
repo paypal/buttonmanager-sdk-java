@@ -27,7 +27,7 @@ public class BAUpdateResponseType extends AbstractResponseType {
 	/**
 	 * 	 
 	 */ 
-	private BAUpdateResponseDetailsType BAUpdateResponseDetails;
+	private BAUpdateResponseDetailsType bAUpdateResponseDetails;
 
 	
 
@@ -38,17 +38,17 @@ public class BAUpdateResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for BAUpdateResponseDetails
+	 * Getter for bAUpdateResponseDetails
 	 */
 	 public BAUpdateResponseDetailsType getBAUpdateResponseDetails() {
-	 	return BAUpdateResponseDetails;
+	 	return bAUpdateResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for BAUpdateResponseDetails
+	 * Setter for bAUpdateResponseDetails
 	 */
-	 public void setBAUpdateResponseDetails(BAUpdateResponseDetailsType BAUpdateResponseDetails) {
-	 	this.BAUpdateResponseDetails = BAUpdateResponseDetails;
+	 public void setBAUpdateResponseDetails(BAUpdateResponseDetailsType bAUpdateResponseDetails) {
+	 	this.bAUpdateResponseDetails = bAUpdateResponseDetails;
 	 }
 	 
 
@@ -73,7 +73,7 @@ public class BAUpdateResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("BAUpdateResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BAUpdateResponseDetails =  new BAUpdateResponseDetailsType(childNode);
+		    this.bAUpdateResponseDetails =  new BAUpdateResponseDetailsType(childNode);
 		}
 	}
  

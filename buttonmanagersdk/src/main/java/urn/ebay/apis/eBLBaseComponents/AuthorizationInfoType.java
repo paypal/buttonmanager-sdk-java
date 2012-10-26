@@ -28,7 +28,7 @@ public class AuthorizationInfoType{
 	 * The status of the payment: Pending: The payment is pending.
 	 * See "PendingReason" for more information.	 
 	 */ 
-	private PaymentStatusCodeType PaymentStatus;
+	private PaymentStatusCodeType paymentStatus;
 
 	/**
 	 * The reason the payment is pending:none: No pending reason
@@ -61,18 +61,18 @@ public class AuthorizationInfoType{
 	 * listed above. For more information, contact PayPal Customer
 	 * Service.	 
 	 */ 
-	private PendingStatusCodeType PendingReason;
+	private PendingStatusCodeType pendingReason;
 
 	/**
 	 * Protection Eligibility for this Transaction - None, SPP or
 	 * ESPP 	 
 	 */ 
-	private String ProtectionEligibility;
+	private String protectionEligibility;
 
 	/**
 	 * Protection Eligibility Type for this Transaction 	 
 	 */ 
-	private String ProtectionEligibilityType;
+	private String protectionEligibilityType;
 
 	
 
@@ -83,59 +83,59 @@ public class AuthorizationInfoType{
 	}	
 
 	/**
-	 * Getter for PaymentStatus
+	 * Getter for paymentStatus
 	 */
 	 public PaymentStatusCodeType getPaymentStatus() {
-	 	return PaymentStatus;
+	 	return paymentStatus;
 	 }
 	 
 	/**
-	 * Setter for PaymentStatus
+	 * Setter for paymentStatus
 	 */
-	 public void setPaymentStatus(PaymentStatusCodeType PaymentStatus) {
-	 	this.PaymentStatus = PaymentStatus;
+	 public void setPaymentStatus(PaymentStatusCodeType paymentStatus) {
+	 	this.paymentStatus = paymentStatus;
 	 }
 	 
 	/**
-	 * Getter for PendingReason
+	 * Getter for pendingReason
 	 */
 	 public PendingStatusCodeType getPendingReason() {
-	 	return PendingReason;
+	 	return pendingReason;
 	 }
 	 
 	/**
-	 * Setter for PendingReason
+	 * Setter for pendingReason
 	 */
-	 public void setPendingReason(PendingStatusCodeType PendingReason) {
-	 	this.PendingReason = PendingReason;
+	 public void setPendingReason(PendingStatusCodeType pendingReason) {
+	 	this.pendingReason = pendingReason;
 	 }
 	 
 	/**
-	 * Getter for ProtectionEligibility
+	 * Getter for protectionEligibility
 	 */
 	 public String getProtectionEligibility() {
-	 	return ProtectionEligibility;
+	 	return protectionEligibility;
 	 }
 	 
 	/**
-	 * Setter for ProtectionEligibility
+	 * Setter for protectionEligibility
 	 */
-	 public void setProtectionEligibility(String ProtectionEligibility) {
-	 	this.ProtectionEligibility = ProtectionEligibility;
+	 public void setProtectionEligibility(String protectionEligibility) {
+	 	this.protectionEligibility = protectionEligibility;
 	 }
 	 
 	/**
-	 * Getter for ProtectionEligibilityType
+	 * Getter for protectionEligibilityType
 	 */
 	 public String getProtectionEligibilityType() {
-	 	return ProtectionEligibilityType;
+	 	return protectionEligibilityType;
 	 }
 	 
 	/**
-	 * Setter for ProtectionEligibilityType
+	 * Setter for protectionEligibilityType
 	 */
-	 public void setProtectionEligibilityType(String ProtectionEligibilityType) {
-	 	this.ProtectionEligibilityType = ProtectionEligibilityType;
+	 public void setProtectionEligibilityType(String protectionEligibilityType) {
+	 	this.protectionEligibilityType = protectionEligibilityType;
 	 }
 	 
 
@@ -159,20 +159,20 @@ public class AuthorizationInfoType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("PaymentStatus", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentStatus = PaymentStatusCodeType.fromValue(childNode.getTextContent());
+		    this.paymentStatus = PaymentStatusCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("PendingReason", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PendingReason = PendingStatusCodeType.fromValue(childNode.getTextContent());
+		    this.pendingReason = PendingStatusCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("ProtectionEligibility", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ProtectionEligibility = childNode.getTextContent();
+		    this.protectionEligibility = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ProtectionEligibilityType", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ProtectionEligibilityType = childNode.getTextContent();
+		    this.protectionEligibilityType = childNode.getTextContent();
 		}
 	
 	}

@@ -30,12 +30,12 @@ public class SetDataResponseType{
 	 * If Checkout session was initialized successfully, the
 	 * corresponding token is returned in this element. 	 
 	 */ 
-	private String Token;
+	private String token;
 
 	/**
 	 * 	 
 	 */ 
-	private List<ErrorType> SetDataError = new ArrayList<ErrorType>();
+	private List<ErrorType> setDataError = new ArrayList<ErrorType>();
 
 	
 
@@ -46,31 +46,31 @@ public class SetDataResponseType{
 	}	
 
 	/**
-	 * Getter for Token
+	 * Getter for token
 	 */
 	 public String getToken() {
-	 	return Token;
+	 	return token;
 	 }
 	 
 	/**
-	 * Setter for Token
+	 * Setter for token
 	 */
-	 public void setToken(String Token) {
-	 	this.Token = Token;
+	 public void setToken(String token) {
+	 	this.token = token;
 	 }
 	 
 	/**
-	 * Getter for SetDataError
+	 * Getter for setDataError
 	 */
 	 public List<ErrorType> getSetDataError() {
-	 	return SetDataError;
+	 	return setDataError;
 	 }
 	 
 	/**
-	 * Setter for SetDataError
+	 * Setter for setDataError
 	 */
-	 public void setSetDataError(List<ErrorType> SetDataError) {
-	 	this.SetDataError = SetDataError;
+	 public void setSetDataError(List<ErrorType> setDataError) {
+	 	this.setDataError = setDataError;
 	 }
 	 
 
@@ -94,14 +94,14 @@ public class SetDataResponseType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Token", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Token = childNode.getTextContent();
+		    this.token = childNode.getTextContent();
 		}
 	
         nodeList = (NodeList) xpath.evaluate("SetDataError", node, XPathConstants.NODESET);
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.SetDataError.add(new ErrorType(subNode));
+				this.setDataError.add(new ErrorType(subNode));
 			}
 		}
 	}

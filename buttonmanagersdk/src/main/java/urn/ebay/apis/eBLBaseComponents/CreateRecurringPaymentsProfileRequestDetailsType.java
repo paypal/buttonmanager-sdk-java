@@ -12,43 +12,45 @@ import com.paypal.core.SDKUtil;
  */
 public class CreateRecurringPaymentsProfileRequestDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Billing Agreement token (required if Express Checkout) 	 
 	 */ 
-	private String Token;
+	private String token;
 
 	/**
 	 * Information about the credit card to be charged (required if
 	 * Direct Payment) 	 
 	 */ 
-	private CreditCardDetailsType CreditCard;
+	private CreditCardDetailsType creditCard;
 
 	/**
 	 * Customer Information for this Recurring Payments 	  
 	 *@Required	 
 	 */ 
-	private RecurringPaymentsProfileDetailsType RecurringPaymentsProfileDetails;
+	private RecurringPaymentsProfileDetailsType recurringPaymentsProfileDetails;
 
 	/**
 	 * Schedule Information for this Recurring Payments 	  
 	 *@Required	 
 	 */ 
-	private ScheduleDetailsType ScheduleDetails;
+	private ScheduleDetailsType scheduleDetails;
 
 	/**
 	 * Information about the Item Details. 	 
 	 */ 
-	private List<PaymentDetailsItemType> PaymentDetailsItem = new ArrayList<PaymentDetailsItemType>();
+	private List<PaymentDetailsItemType> paymentDetailsItem = new ArrayList<PaymentDetailsItemType>();
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public CreateRecurringPaymentsProfileRequestDetailsType (RecurringPaymentsProfileDetailsType RecurringPaymentsProfileDetails, ScheduleDetailsType ScheduleDetails){
-		this.RecurringPaymentsProfileDetails = RecurringPaymentsProfileDetails;
-		this.ScheduleDetails = ScheduleDetails;
+	public CreateRecurringPaymentsProfileRequestDetailsType (RecurringPaymentsProfileDetailsType recurringPaymentsProfileDetails, ScheduleDetailsType scheduleDetails){
+		this.recurringPaymentsProfileDetails = recurringPaymentsProfileDetails;
+		this.scheduleDetails = scheduleDetails;
 	}	
 
 	/**
@@ -58,103 +60,111 @@ public class CreateRecurringPaymentsProfileRequestDetailsType{
 	}	
 
 	/**
-	 * Getter for Token
+	 * Getter for token
 	 */
 	 public String getToken() {
-	 	return Token;
+	 	return token;
 	 }
 	 
 	/**
-	 * Setter for Token
+	 * Setter for token
 	 */
-	 public void setToken(String Token) {
-	 	this.Token = Token;
+	 public void setToken(String token) {
+	 	this.token = token;
 	 }
 	 
 	/**
-	 * Getter for CreditCard
+	 * Getter for creditCard
 	 */
 	 public CreditCardDetailsType getCreditCard() {
-	 	return CreditCard;
+	 	return creditCard;
 	 }
 	 
 	/**
-	 * Setter for CreditCard
+	 * Setter for creditCard
 	 */
-	 public void setCreditCard(CreditCardDetailsType CreditCard) {
-	 	this.CreditCard = CreditCard;
+	 public void setCreditCard(CreditCardDetailsType creditCard) {
+	 	this.creditCard = creditCard;
 	 }
 	 
 	/**
-	 * Getter for RecurringPaymentsProfileDetails
+	 * Getter for recurringPaymentsProfileDetails
 	 */
 	 public RecurringPaymentsProfileDetailsType getRecurringPaymentsProfileDetails() {
-	 	return RecurringPaymentsProfileDetails;
+	 	return recurringPaymentsProfileDetails;
 	 }
 	 
 	/**
-	 * Setter for RecurringPaymentsProfileDetails
+	 * Setter for recurringPaymentsProfileDetails
 	 */
-	 public void setRecurringPaymentsProfileDetails(RecurringPaymentsProfileDetailsType RecurringPaymentsProfileDetails) {
-	 	this.RecurringPaymentsProfileDetails = RecurringPaymentsProfileDetails;
+	 public void setRecurringPaymentsProfileDetails(RecurringPaymentsProfileDetailsType recurringPaymentsProfileDetails) {
+	 	this.recurringPaymentsProfileDetails = recurringPaymentsProfileDetails;
 	 }
 	 
 	/**
-	 * Getter for ScheduleDetails
+	 * Getter for scheduleDetails
 	 */
 	 public ScheduleDetailsType getScheduleDetails() {
-	 	return ScheduleDetails;
+	 	return scheduleDetails;
 	 }
 	 
 	/**
-	 * Setter for ScheduleDetails
+	 * Setter for scheduleDetails
 	 */
-	 public void setScheduleDetails(ScheduleDetailsType ScheduleDetails) {
-	 	this.ScheduleDetails = ScheduleDetails;
+	 public void setScheduleDetails(ScheduleDetailsType scheduleDetails) {
+	 	this.scheduleDetails = scheduleDetails;
 	 }
 	 
 	/**
-	 * Getter for PaymentDetailsItem
+	 * Getter for paymentDetailsItem
 	 */
 	 public List<PaymentDetailsItemType> getPaymentDetailsItem() {
-	 	return PaymentDetailsItem;
+	 	return paymentDetailsItem;
 	 }
 	 
 	/**
-	 * Setter for PaymentDetailsItem
+	 * Setter for paymentDetailsItem
 	 */
-	 public void setPaymentDetailsItem(List<PaymentDetailsItemType> PaymentDetailsItem) {
-	 	this.PaymentDetailsItem = PaymentDetailsItem;
+	 public void setPaymentDetailsItem(List<PaymentDetailsItemType> paymentDetailsItem) {
+	 	this.paymentDetailsItem = paymentDetailsItem;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(Token != null) {
-			sb.append("<ebl:Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(Token));
-			sb.append("</ebl:Token>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(CreditCard != null) {
-			sb.append("<ebl:CreditCard>");
-			sb.append(CreditCard.toXMLString());
-			sb.append("</ebl:CreditCard>");
+		if(token != null) {
+			sb.append("<").append(preferredPrefix).append(":Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(token));
+			sb.append("</").append(preferredPrefix).append(":Token>");
 		}
-		if(RecurringPaymentsProfileDetails != null) {
-			sb.append("<ebl:RecurringPaymentsProfileDetails>");
-			sb.append(RecurringPaymentsProfileDetails.toXMLString());
-			sb.append("</ebl:RecurringPaymentsProfileDetails>");
+		if(creditCard != null) {
+			sb.append(creditCard.toXMLString(preferredPrefix,"CreditCard"));
 		}
-		if(ScheduleDetails != null) {
-			sb.append("<ebl:ScheduleDetails>");
-			sb.append(ScheduleDetails.toXMLString());
-			sb.append("</ebl:ScheduleDetails>");
+		if(recurringPaymentsProfileDetails != null) {
+			sb.append(recurringPaymentsProfileDetails.toXMLString(preferredPrefix,"RecurringPaymentsProfileDetails"));
 		}
-		if(PaymentDetailsItem != null) {
-			for(int i=0; i < PaymentDetailsItem.size(); i++) {
-				sb.append("<ebl:PaymentDetailsItem>");
-				sb.append(PaymentDetailsItem.get(i).toXMLString());
-				sb.append("</ebl:PaymentDetailsItem>");
+		if(scheduleDetails != null) {
+			sb.append(scheduleDetails.toXMLString(preferredPrefix,"ScheduleDetails"));
+		}
+		if(paymentDetailsItem != null) {
+			for(int i=0; i < paymentDetailsItem.size(); i++) {
+				sb.append(paymentDetailsItem.get(i).toXMLString(preferredPrefix,"PaymentDetailsItem"));
+			}
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
 			}
 		}
 		return sb.toString();

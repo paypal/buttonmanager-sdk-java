@@ -23,17 +23,19 @@ import org.xml.sax.SAXException;
  */
 public class OfferDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Code used to identify the promotion offer. 	 
 	 */ 
-	private String OfferCode;
+	private String offerCode;
 
 	/**
 	 * Specific infromation for BML, Similar structure could be
 	 * added for sepcific  promotion needs like CrossPromotions 	 
 	 */ 
-	private BMLOfferInfoType BMLOfferInfo;
+	private BMLOfferInfoType bMLOfferInfo;
 
 	
 
@@ -44,45 +46,59 @@ public class OfferDetailsType{
 	}	
 
 	/**
-	 * Getter for OfferCode
+	 * Getter for offerCode
 	 */
 	 public String getOfferCode() {
-	 	return OfferCode;
+	 	return offerCode;
 	 }
 	 
 	/**
-	 * Setter for OfferCode
+	 * Setter for offerCode
 	 */
-	 public void setOfferCode(String OfferCode) {
-	 	this.OfferCode = OfferCode;
+	 public void setOfferCode(String offerCode) {
+	 	this.offerCode = offerCode;
 	 }
 	 
 	/**
-	 * Getter for BMLOfferInfo
+	 * Getter for bMLOfferInfo
 	 */
 	 public BMLOfferInfoType getBMLOfferInfo() {
-	 	return BMLOfferInfo;
+	 	return bMLOfferInfo;
 	 }
 	 
 	/**
-	 * Setter for BMLOfferInfo
+	 * Setter for bMLOfferInfo
 	 */
-	 public void setBMLOfferInfo(BMLOfferInfoType BMLOfferInfo) {
-	 	this.BMLOfferInfo = BMLOfferInfo;
+	 public void setBMLOfferInfo(BMLOfferInfoType bMLOfferInfo) {
+	 	this.bMLOfferInfo = bMLOfferInfo;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(OfferCode != null) {
-			sb.append("<ebl:OfferCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(OfferCode));
-			sb.append("</ebl:OfferCode>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(BMLOfferInfo != null) {
-			sb.append("<ebl:BMLOfferInfo>");
-			sb.append(BMLOfferInfo.toXMLString());
-			sb.append("</ebl:BMLOfferInfo>");
+		if(offerCode != null) {
+			sb.append("<").append(preferredPrefix).append(":OfferCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(offerCode));
+			sb.append("</").append(preferredPrefix).append(":OfferCode>");
+		}
+		if(bMLOfferInfo != null) {
+			sb.append(bMLOfferInfo.toXMLString(preferredPrefix,"BMLOfferInfo"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -106,12 +122,12 @@ public class OfferDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("OfferCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OfferCode = childNode.getTextContent();
+		    this.offerCode = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("BMLOfferInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BMLOfferInfo =  new BMLOfferInfoType(childNode);
+		    this.bMLOfferInfo =  new BMLOfferInfoType(childNode);
 		}
 	}
  

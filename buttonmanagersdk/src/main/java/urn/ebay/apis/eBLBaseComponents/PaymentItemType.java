@@ -31,81 +31,81 @@ public class PaymentItemType{
 	 * eBay Auction Transaction ID of the Item Optional Character
 	 * length and limitations: 255 single-byte characters 	 
 	 */ 
-	private String EbayItemTxnId;
+	private String ebayItemTxnId;
 
 	/**
 	 * Item name set by you or entered by the customer. Character
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters	 
 	 */ 
-	private String Name;
+	private String name;
 
 	/**
 	 * Item number set by you. Character length and limitations:
 	 * 127 single-byte alphanumeric characters	 
 	 */ 
-	private String Number;
+	private String number;
 
 	/**
 	 * Quantity set by you or entered by the customer. Character
 	 * length and limitations: no limit	 
 	 */ 
-	private String Quantity;
+	private String quantity;
 
 	/**
 	 * Amount of tax charged on payment 	 
 	 */ 
-	private String SalesTax;
+	private String salesTax;
 
 	/**
 	 * Amount of shipping charged on payment 	 
 	 */ 
-	private String ShippingAmount;
+	private String shippingAmount;
 
 	/**
 	 * Amount of handling charged on payment 	 
 	 */ 
-	private String HandlingAmount;
+	private String handlingAmount;
 
 	/**
 	 * Invoice item details 	 
 	 */ 
-	private InvoiceItemType InvoiceItemDetails;
+	private InvoiceItemType invoiceItemDetails;
 
 	/**
 	 * Coupon ID Number 	 
 	 */ 
-	private String CouponID;
+	private String couponID;
 
 	/**
 	 * Amount Value of The Coupon 	 
 	 */ 
-	private String CouponAmount;
+	private String couponAmount;
 
 	/**
 	 * Currency of the Coupon Amount 	 
 	 */ 
-	private String CouponAmountCurrency;
+	private String couponAmountCurrency;
 
 	/**
 	 * Amount of Discount on this Loyalty Card	 
 	 */ 
-	private String LoyaltyCardDiscountAmount;
+	private String loyaltyCardDiscountAmount;
 
 	/**
 	 * Currency of the Discount	 
 	 */ 
-	private String LoyaltyCardDiscountCurrency;
+	private String loyaltyCardDiscountCurrency;
 
 	/**
 	 * Cost of item 	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	/**
 	 * Item options selected in PayPal shopping cart 	 
 	 */ 
-	private List<OptionType> Options = new ArrayList<OptionType>();
+	private List<OptionType> options = new ArrayList<OptionType>();
 
 	
 
@@ -116,213 +116,213 @@ public class PaymentItemType{
 	}	
 
 	/**
-	 * Getter for EbayItemTxnId
+	 * Getter for ebayItemTxnId
 	 */
 	 public String getEbayItemTxnId() {
-	 	return EbayItemTxnId;
+	 	return ebayItemTxnId;
 	 }
 	 
 	/**
-	 * Setter for EbayItemTxnId
+	 * Setter for ebayItemTxnId
 	 */
-	 public void setEbayItemTxnId(String EbayItemTxnId) {
-	 	this.EbayItemTxnId = EbayItemTxnId;
+	 public void setEbayItemTxnId(String ebayItemTxnId) {
+	 	this.ebayItemTxnId = ebayItemTxnId;
 	 }
 	 
 	/**
-	 * Getter for Name
+	 * Getter for name
 	 */
 	 public String getName() {
-	 	return Name;
+	 	return name;
 	 }
 	 
 	/**
-	 * Setter for Name
+	 * Setter for name
 	 */
-	 public void setName(String Name) {
-	 	this.Name = Name;
+	 public void setName(String name) {
+	 	this.name = name;
 	 }
 	 
 	/**
-	 * Getter for Number
+	 * Getter for number
 	 */
 	 public String getNumber() {
-	 	return Number;
+	 	return number;
 	 }
 	 
 	/**
-	 * Setter for Number
+	 * Setter for number
 	 */
-	 public void setNumber(String Number) {
-	 	this.Number = Number;
+	 public void setNumber(String number) {
+	 	this.number = number;
 	 }
 	 
 	/**
-	 * Getter for Quantity
+	 * Getter for quantity
 	 */
 	 public String getQuantity() {
-	 	return Quantity;
+	 	return quantity;
 	 }
 	 
 	/**
-	 * Setter for Quantity
+	 * Setter for quantity
 	 */
-	 public void setQuantity(String Quantity) {
-	 	this.Quantity = Quantity;
+	 public void setQuantity(String quantity) {
+	 	this.quantity = quantity;
 	 }
 	 
 	/**
-	 * Getter for SalesTax
+	 * Getter for salesTax
 	 */
 	 public String getSalesTax() {
-	 	return SalesTax;
+	 	return salesTax;
 	 }
 	 
 	/**
-	 * Setter for SalesTax
+	 * Setter for salesTax
 	 */
-	 public void setSalesTax(String SalesTax) {
-	 	this.SalesTax = SalesTax;
+	 public void setSalesTax(String salesTax) {
+	 	this.salesTax = salesTax;
 	 }
 	 
 	/**
-	 * Getter for ShippingAmount
+	 * Getter for shippingAmount
 	 */
 	 public String getShippingAmount() {
-	 	return ShippingAmount;
+	 	return shippingAmount;
 	 }
 	 
 	/**
-	 * Setter for ShippingAmount
+	 * Setter for shippingAmount
 	 */
-	 public void setShippingAmount(String ShippingAmount) {
-	 	this.ShippingAmount = ShippingAmount;
+	 public void setShippingAmount(String shippingAmount) {
+	 	this.shippingAmount = shippingAmount;
 	 }
 	 
 	/**
-	 * Getter for HandlingAmount
+	 * Getter for handlingAmount
 	 */
 	 public String getHandlingAmount() {
-	 	return HandlingAmount;
+	 	return handlingAmount;
 	 }
 	 
 	/**
-	 * Setter for HandlingAmount
+	 * Setter for handlingAmount
 	 */
-	 public void setHandlingAmount(String HandlingAmount) {
-	 	this.HandlingAmount = HandlingAmount;
+	 public void setHandlingAmount(String handlingAmount) {
+	 	this.handlingAmount = handlingAmount;
 	 }
 	 
 	/**
-	 * Getter for InvoiceItemDetails
+	 * Getter for invoiceItemDetails
 	 */
 	 public InvoiceItemType getInvoiceItemDetails() {
-	 	return InvoiceItemDetails;
+	 	return invoiceItemDetails;
 	 }
 	 
 	/**
-	 * Setter for InvoiceItemDetails
+	 * Setter for invoiceItemDetails
 	 */
-	 public void setInvoiceItemDetails(InvoiceItemType InvoiceItemDetails) {
-	 	this.InvoiceItemDetails = InvoiceItemDetails;
+	 public void setInvoiceItemDetails(InvoiceItemType invoiceItemDetails) {
+	 	this.invoiceItemDetails = invoiceItemDetails;
 	 }
 	 
 	/**
-	 * Getter for CouponID
+	 * Getter for couponID
 	 */
 	 public String getCouponID() {
-	 	return CouponID;
+	 	return couponID;
 	 }
 	 
 	/**
-	 * Setter for CouponID
+	 * Setter for couponID
 	 */
-	 public void setCouponID(String CouponID) {
-	 	this.CouponID = CouponID;
+	 public void setCouponID(String couponID) {
+	 	this.couponID = couponID;
 	 }
 	 
 	/**
-	 * Getter for CouponAmount
+	 * Getter for couponAmount
 	 */
 	 public String getCouponAmount() {
-	 	return CouponAmount;
+	 	return couponAmount;
 	 }
 	 
 	/**
-	 * Setter for CouponAmount
+	 * Setter for couponAmount
 	 */
-	 public void setCouponAmount(String CouponAmount) {
-	 	this.CouponAmount = CouponAmount;
+	 public void setCouponAmount(String couponAmount) {
+	 	this.couponAmount = couponAmount;
 	 }
 	 
 	/**
-	 * Getter for CouponAmountCurrency
+	 * Getter for couponAmountCurrency
 	 */
 	 public String getCouponAmountCurrency() {
-	 	return CouponAmountCurrency;
+	 	return couponAmountCurrency;
 	 }
 	 
 	/**
-	 * Setter for CouponAmountCurrency
+	 * Setter for couponAmountCurrency
 	 */
-	 public void setCouponAmountCurrency(String CouponAmountCurrency) {
-	 	this.CouponAmountCurrency = CouponAmountCurrency;
+	 public void setCouponAmountCurrency(String couponAmountCurrency) {
+	 	this.couponAmountCurrency = couponAmountCurrency;
 	 }
 	 
 	/**
-	 * Getter for LoyaltyCardDiscountAmount
+	 * Getter for loyaltyCardDiscountAmount
 	 */
 	 public String getLoyaltyCardDiscountAmount() {
-	 	return LoyaltyCardDiscountAmount;
+	 	return loyaltyCardDiscountAmount;
 	 }
 	 
 	/**
-	 * Setter for LoyaltyCardDiscountAmount
+	 * Setter for loyaltyCardDiscountAmount
 	 */
-	 public void setLoyaltyCardDiscountAmount(String LoyaltyCardDiscountAmount) {
-	 	this.LoyaltyCardDiscountAmount = LoyaltyCardDiscountAmount;
+	 public void setLoyaltyCardDiscountAmount(String loyaltyCardDiscountAmount) {
+	 	this.loyaltyCardDiscountAmount = loyaltyCardDiscountAmount;
 	 }
 	 
 	/**
-	 * Getter for LoyaltyCardDiscountCurrency
+	 * Getter for loyaltyCardDiscountCurrency
 	 */
 	 public String getLoyaltyCardDiscountCurrency() {
-	 	return LoyaltyCardDiscountCurrency;
+	 	return loyaltyCardDiscountCurrency;
 	 }
 	 
 	/**
-	 * Setter for LoyaltyCardDiscountCurrency
+	 * Setter for loyaltyCardDiscountCurrency
 	 */
-	 public void setLoyaltyCardDiscountCurrency(String LoyaltyCardDiscountCurrency) {
-	 	this.LoyaltyCardDiscountCurrency = LoyaltyCardDiscountCurrency;
+	 public void setLoyaltyCardDiscountCurrency(String loyaltyCardDiscountCurrency) {
+	 	this.loyaltyCardDiscountCurrency = loyaltyCardDiscountCurrency;
 	 }
 	 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 	/**
-	 * Getter for Options
+	 * Getter for options
 	 */
 	 public List<OptionType> getOptions() {
-	 	return Options;
+	 	return options;
 	 }
 	 
 	/**
-	 * Setter for Options
+	 * Setter for options
 	 */
-	 public void setOptions(List<OptionType> Options) {
-	 	this.Options = Options;
+	 public void setOptions(List<OptionType> options) {
+	 	this.options = options;
 	 }
 	 
 
@@ -346,77 +346,77 @@ public class PaymentItemType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("EbayItemTxnId", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.EbayItemTxnId = childNode.getTextContent();
+		    this.ebayItemTxnId = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Name", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Name = childNode.getTextContent();
+		    this.name = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Number", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Number = childNode.getTextContent();
+		    this.number = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Quantity", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Quantity = childNode.getTextContent();
+		    this.quantity = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("SalesTax", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SalesTax = childNode.getTextContent();
+		    this.salesTax = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ShippingAmount", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ShippingAmount = childNode.getTextContent();
+		    this.shippingAmount = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("HandlingAmount", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.HandlingAmount = childNode.getTextContent();
+		    this.handlingAmount = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("InvoiceItemDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.InvoiceItemDetails =  new InvoiceItemType(childNode);
+		    this.invoiceItemDetails =  new InvoiceItemType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("CouponID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CouponID = childNode.getTextContent();
+		    this.couponID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("CouponAmount", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CouponAmount = childNode.getTextContent();
+		    this.couponAmount = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("CouponAmountCurrency", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.CouponAmountCurrency = childNode.getTextContent();
+		    this.couponAmountCurrency = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("LoyaltyCardDiscountAmount", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.LoyaltyCardDiscountAmount = childNode.getTextContent();
+		    this.loyaltyCardDiscountAmount = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("LoyaltyCardDiscountCurrency", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.LoyaltyCardDiscountCurrency = childNode.getTextContent();
+		    this.loyaltyCardDiscountCurrency = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Amount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Amount =  new BasicAmountType(childNode);
+		    this.amount =  new BasicAmountType(childNode);
 		}
         nodeList = (NodeList) xpath.evaluate("Options", node, XPathConstants.NODESET);
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.Options.add(new OptionType(subNode));
+				this.options.add(new OptionType(subNode));
 			}
 		}
 	}

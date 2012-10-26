@@ -8,20 +8,22 @@ import com.paypal.core.SDKUtil;
  */
 public class DoNonReferencedCreditRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private DoNonReferencedCreditRequestDetailsType DoNonReferencedCreditRequestDetails;
+	private DoNonReferencedCreditRequestDetailsType doNonReferencedCreditRequestDetails;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public DoNonReferencedCreditRequestType (DoNonReferencedCreditRequestDetailsType DoNonReferencedCreditRequestDetails){
-		this.DoNonReferencedCreditRequestDetails = DoNonReferencedCreditRequestDetails;
+	public DoNonReferencedCreditRequestType (DoNonReferencedCreditRequestDetailsType doNonReferencedCreditRequestDetails){
+		this.doNonReferencedCreditRequestDetails = doNonReferencedCreditRequestDetails;
 	}	
 
 	/**
@@ -31,28 +33,42 @@ public class DoNonReferencedCreditRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for DoNonReferencedCreditRequestDetails
+	 * Getter for doNonReferencedCreditRequestDetails
 	 */
 	 public DoNonReferencedCreditRequestDetailsType getDoNonReferencedCreditRequestDetails() {
-	 	return DoNonReferencedCreditRequestDetails;
+	 	return doNonReferencedCreditRequestDetails;
 	 }
 	 
 	/**
-	 * Setter for DoNonReferencedCreditRequestDetails
+	 * Setter for doNonReferencedCreditRequestDetails
 	 */
-	 public void setDoNonReferencedCreditRequestDetails(DoNonReferencedCreditRequestDetailsType DoNonReferencedCreditRequestDetails) {
-	 	this.DoNonReferencedCreditRequestDetails = DoNonReferencedCreditRequestDetails;
+	 public void setDoNonReferencedCreditRequestDetails(DoNonReferencedCreditRequestDetailsType doNonReferencedCreditRequestDetails) {
+	 	this.doNonReferencedCreditRequestDetails = doNonReferencedCreditRequestDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(DoNonReferencedCreditRequestDetails != null) {
-			sb.append("<ebl:DoNonReferencedCreditRequestDetails>");
-			sb.append(DoNonReferencedCreditRequestDetails.toXMLString());
-			sb.append("</ebl:DoNonReferencedCreditRequestDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		sb.append(super.toXMLString(prefix, null));
+		if(doNonReferencedCreditRequestDetails != null) {
+			sb.append(doNonReferencedCreditRequestDetails.toXMLString(null,"DoNonReferencedCreditRequestDetails"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

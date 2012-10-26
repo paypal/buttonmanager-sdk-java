@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class ManageRecurringPaymentsProfileStatusReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private ManageRecurringPaymentsProfileStatusRequestType ManageRecurringPaymentsProfileStatusRequest;
+	private ManageRecurringPaymentsProfileStatusRequestType manageRecurringPaymentsProfileStatusRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class ManageRecurringPaymentsProfileStatusReq{
 	}	
 
 	/**
-	 * Getter for ManageRecurringPaymentsProfileStatusRequest
+	 * Getter for manageRecurringPaymentsProfileStatusRequest
 	 */
 	 public ManageRecurringPaymentsProfileStatusRequestType getManageRecurringPaymentsProfileStatusRequest() {
-	 	return ManageRecurringPaymentsProfileStatusRequest;
+	 	return manageRecurringPaymentsProfileStatusRequest;
 	 }
 	 
 	/**
-	 * Setter for ManageRecurringPaymentsProfileStatusRequest
+	 * Setter for manageRecurringPaymentsProfileStatusRequest
 	 */
-	 public void setManageRecurringPaymentsProfileStatusRequest(ManageRecurringPaymentsProfileStatusRequestType ManageRecurringPaymentsProfileStatusRequest) {
-	 	this.ManageRecurringPaymentsProfileStatusRequest = ManageRecurringPaymentsProfileStatusRequest;
+	 public void setManageRecurringPaymentsProfileStatusRequest(ManageRecurringPaymentsProfileStatusRequestType manageRecurringPaymentsProfileStatusRequest) {
+	 	this.manageRecurringPaymentsProfileStatusRequest = manageRecurringPaymentsProfileStatusRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:ManageRecurringPaymentsProfileStatusReq>");
-		if(ManageRecurringPaymentsProfileStatusRequest != null) {
-			sb.append("<urn:ManageRecurringPaymentsProfileStatusRequest>");
-			sb.append(ManageRecurringPaymentsProfileStatusRequest.toXMLString());
-			sb.append("</urn:ManageRecurringPaymentsProfileStatusRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:ManageRecurringPaymentsProfileStatusReq>");
+		if(manageRecurringPaymentsProfileStatusRequest != null) {
+			sb.append(manageRecurringPaymentsProfileStatusRequest.toXMLString(null,"ManageRecurringPaymentsProfileStatusRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

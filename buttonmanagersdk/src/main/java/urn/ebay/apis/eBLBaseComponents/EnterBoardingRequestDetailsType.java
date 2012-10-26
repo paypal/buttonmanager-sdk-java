@@ -12,12 +12,14 @@ import com.paypal.core.SDKUtil;
  */
 public class EnterBoardingRequestDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Onboarding program code given to you by PayPal. Required
 	 * Character length and limitations: 64 alphanumeric characters	 
 	 */ 
-	private String ProgramCode;
+	private String programCode;
 
 	/**
 	 * A list of comma-separated values that indicate the PayPal
@@ -33,42 +35,42 @@ public class EnterBoardingRequestDetailsType{
 	 * details, refunding, and mass payments. Required Character
 	 * length and limitations: 64 alphanumeric characters	 
 	 */ 
-	private String ProductList;
+	private String productList;
 
 	/**
 	 * Any custom information you want to store for this partner
 	 * Optional Character length and limitations: 256 alphanumeric
 	 * characters	 
 	 */ 
-	private String PartnerCustom;
+	private String partnerCustom;
 
 	/**
 	 * The URL for the logo displayed on the PayPal Partner Welcome
 	 * Page. Optional Character length and limitations: 2,048
 	 * alphanumeric characters	 
 	 */ 
-	private String ImageUrl;
+	private String imageUrl;
 
 	/**
 	 * Marketing category tha configures the graphic displayed n
 	 * the PayPal Partner Welcome page.	 
 	 */ 
-	private MarketingCategoryType MarketingCategory;
+	private MarketingCategoryType marketingCategory;
 
 	/**
 	 * Information about the merchant’s business	 
 	 */ 
-	private BusinessInfoType BusinessInfo;
+	private BusinessInfoType businessInfo;
 
 	/**
 	 * Information about the merchant (the business owner)	 
 	 */ 
-	private BusinessOwnerInfoType OwnerInfo;
+	private BusinessOwnerInfoType ownerInfo;
 
 	/**
 	 * Information about the merchant's bank account	 
 	 */ 
-	private BankAccountDetailsType BankAccount;
+	private BankAccountDetailsType bankAccount;
 
 	
 
@@ -79,155 +81,165 @@ public class EnterBoardingRequestDetailsType{
 	}	
 
 	/**
-	 * Getter for ProgramCode
+	 * Getter for programCode
 	 */
 	 public String getProgramCode() {
-	 	return ProgramCode;
+	 	return programCode;
 	 }
 	 
 	/**
-	 * Setter for ProgramCode
+	 * Setter for programCode
 	 */
-	 public void setProgramCode(String ProgramCode) {
-	 	this.ProgramCode = ProgramCode;
+	 public void setProgramCode(String programCode) {
+	 	this.programCode = programCode;
 	 }
 	 
 	/**
-	 * Getter for ProductList
+	 * Getter for productList
 	 */
 	 public String getProductList() {
-	 	return ProductList;
+	 	return productList;
 	 }
 	 
 	/**
-	 * Setter for ProductList
+	 * Setter for productList
 	 */
-	 public void setProductList(String ProductList) {
-	 	this.ProductList = ProductList;
+	 public void setProductList(String productList) {
+	 	this.productList = productList;
 	 }
 	 
 	/**
-	 * Getter for PartnerCustom
+	 * Getter for partnerCustom
 	 */
 	 public String getPartnerCustom() {
-	 	return PartnerCustom;
+	 	return partnerCustom;
 	 }
 	 
 	/**
-	 * Setter for PartnerCustom
+	 * Setter for partnerCustom
 	 */
-	 public void setPartnerCustom(String PartnerCustom) {
-	 	this.PartnerCustom = PartnerCustom;
+	 public void setPartnerCustom(String partnerCustom) {
+	 	this.partnerCustom = partnerCustom;
 	 }
 	 
 	/**
-	 * Getter for ImageUrl
+	 * Getter for imageUrl
 	 */
 	 public String getImageUrl() {
-	 	return ImageUrl;
+	 	return imageUrl;
 	 }
 	 
 	/**
-	 * Setter for ImageUrl
+	 * Setter for imageUrl
 	 */
-	 public void setImageUrl(String ImageUrl) {
-	 	this.ImageUrl = ImageUrl;
+	 public void setImageUrl(String imageUrl) {
+	 	this.imageUrl = imageUrl;
 	 }
 	 
 	/**
-	 * Getter for MarketingCategory
+	 * Getter for marketingCategory
 	 */
 	 public MarketingCategoryType getMarketingCategory() {
-	 	return MarketingCategory;
+	 	return marketingCategory;
 	 }
 	 
 	/**
-	 * Setter for MarketingCategory
+	 * Setter for marketingCategory
 	 */
-	 public void setMarketingCategory(MarketingCategoryType MarketingCategory) {
-	 	this.MarketingCategory = MarketingCategory;
+	 public void setMarketingCategory(MarketingCategoryType marketingCategory) {
+	 	this.marketingCategory = marketingCategory;
 	 }
 	 
 	/**
-	 * Getter for BusinessInfo
+	 * Getter for businessInfo
 	 */
 	 public BusinessInfoType getBusinessInfo() {
-	 	return BusinessInfo;
+	 	return businessInfo;
 	 }
 	 
 	/**
-	 * Setter for BusinessInfo
+	 * Setter for businessInfo
 	 */
-	 public void setBusinessInfo(BusinessInfoType BusinessInfo) {
-	 	this.BusinessInfo = BusinessInfo;
+	 public void setBusinessInfo(BusinessInfoType businessInfo) {
+	 	this.businessInfo = businessInfo;
 	 }
 	 
 	/**
-	 * Getter for OwnerInfo
+	 * Getter for ownerInfo
 	 */
 	 public BusinessOwnerInfoType getOwnerInfo() {
-	 	return OwnerInfo;
+	 	return ownerInfo;
 	 }
 	 
 	/**
-	 * Setter for OwnerInfo
+	 * Setter for ownerInfo
 	 */
-	 public void setOwnerInfo(BusinessOwnerInfoType OwnerInfo) {
-	 	this.OwnerInfo = OwnerInfo;
+	 public void setOwnerInfo(BusinessOwnerInfoType ownerInfo) {
+	 	this.ownerInfo = ownerInfo;
 	 }
 	 
 	/**
-	 * Getter for BankAccount
+	 * Getter for bankAccount
 	 */
 	 public BankAccountDetailsType getBankAccount() {
-	 	return BankAccount;
+	 	return bankAccount;
 	 }
 	 
 	/**
-	 * Setter for BankAccount
+	 * Setter for bankAccount
 	 */
-	 public void setBankAccount(BankAccountDetailsType BankAccount) {
-	 	this.BankAccount = BankAccount;
+	 public void setBankAccount(BankAccountDetailsType bankAccount) {
+	 	this.bankAccount = bankAccount;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(ProgramCode != null) {
-			sb.append("<ebl:ProgramCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProgramCode));
-			sb.append("</ebl:ProgramCode>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ProductList != null) {
-			sb.append("<ebl:ProductList>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProductList));
-			sb.append("</ebl:ProductList>");
+		if(programCode != null) {
+			sb.append("<").append(preferredPrefix).append(":ProgramCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(programCode));
+			sb.append("</").append(preferredPrefix).append(":ProgramCode>");
 		}
-		if(PartnerCustom != null) {
-			sb.append("<ebl:PartnerCustom>").append(SDKUtil.escapeInvalidXmlCharsRegex(PartnerCustom));
-			sb.append("</ebl:PartnerCustom>");
+		if(productList != null) {
+			sb.append("<").append(preferredPrefix).append(":ProductList>").append(SDKUtil.escapeInvalidXmlCharsRegex(productList));
+			sb.append("</").append(preferredPrefix).append(":ProductList>");
 		}
-		if(ImageUrl != null) {
-			sb.append("<ebl:ImageUrl>").append(SDKUtil.escapeInvalidXmlCharsRegex(ImageUrl));
-			sb.append("</ebl:ImageUrl>");
+		if(partnerCustom != null) {
+			sb.append("<").append(preferredPrefix).append(":PartnerCustom>").append(SDKUtil.escapeInvalidXmlCharsRegex(partnerCustom));
+			sb.append("</").append(preferredPrefix).append(":PartnerCustom>");
 		}
-		if(MarketingCategory != null) {
-			sb.append("<ebl:MarketingCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(MarketingCategory.getValue()));
-			sb.append("</ebl:MarketingCategory>");
+		if(imageUrl != null) {
+			sb.append("<").append(preferredPrefix).append(":ImageUrl>").append(SDKUtil.escapeInvalidXmlCharsRegex(imageUrl));
+			sb.append("</").append(preferredPrefix).append(":ImageUrl>");
 		}
-		if(BusinessInfo != null) {
-			sb.append("<ebl:BusinessInfo>");
-			sb.append(BusinessInfo.toXMLString());
-			sb.append("</ebl:BusinessInfo>");
+		if(marketingCategory != null) {
+			sb.append("<").append(preferredPrefix).append(":MarketingCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(marketingCategory.getValue()));
+			sb.append("</").append(preferredPrefix).append(":MarketingCategory>");
 		}
-		if(OwnerInfo != null) {
-			sb.append("<ebl:OwnerInfo>");
-			sb.append(OwnerInfo.toXMLString());
-			sb.append("</ebl:OwnerInfo>");
+		if(businessInfo != null) {
+			sb.append(businessInfo.toXMLString(preferredPrefix,"BusinessInfo"));
 		}
-		if(BankAccount != null) {
-			sb.append("<ebl:BankAccount>");
-			sb.append(BankAccount.toXMLString());
-			sb.append("</ebl:BankAccount>");
+		if(ownerInfo != null) {
+			sb.append(ownerInfo.toXMLString(preferredPrefix,"OwnerInfo"));
+		}
+		if(bankAccount != null) {
+			sb.append(bankAccount.toXMLString(preferredPrefix,"BankAccount"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

@@ -9,17 +9,19 @@ import com.paypal.core.SDKUtil;
  */
 public class BillUserRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private MerchantPullPaymentType MerchantPullPaymentDetails;
+	private MerchantPullPaymentType merchantPullPaymentDetails;
 
 	/**
 	 * This flag indicates that the response should include
 	 * FMFDetails	 
 	 */ 
-	private Integer ReturnFMFDetails;
+	private Integer returnFMFDetails;
 
 	
 
@@ -30,46 +32,60 @@ public class BillUserRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for MerchantPullPaymentDetails
+	 * Getter for merchantPullPaymentDetails
 	 */
 	 public MerchantPullPaymentType getMerchantPullPaymentDetails() {
-	 	return MerchantPullPaymentDetails;
+	 	return merchantPullPaymentDetails;
 	 }
 	 
 	/**
-	 * Setter for MerchantPullPaymentDetails
+	 * Setter for merchantPullPaymentDetails
 	 */
-	 public void setMerchantPullPaymentDetails(MerchantPullPaymentType MerchantPullPaymentDetails) {
-	 	this.MerchantPullPaymentDetails = MerchantPullPaymentDetails;
+	 public void setMerchantPullPaymentDetails(MerchantPullPaymentType merchantPullPaymentDetails) {
+	 	this.merchantPullPaymentDetails = merchantPullPaymentDetails;
 	 }
 	 
 	/**
-	 * Getter for ReturnFMFDetails
+	 * Getter for returnFMFDetails
 	 */
 	 public Integer getReturnFMFDetails() {
-	 	return ReturnFMFDetails;
+	 	return returnFMFDetails;
 	 }
 	 
 	/**
-	 * Setter for ReturnFMFDetails
+	 * Setter for returnFMFDetails
 	 */
-	 public void setReturnFMFDetails(Integer ReturnFMFDetails) {
-	 	this.ReturnFMFDetails = ReturnFMFDetails;
+	 public void setReturnFMFDetails(Integer returnFMFDetails) {
+	 	this.returnFMFDetails = returnFMFDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(MerchantPullPaymentDetails != null) {
-			sb.append("<ebl:MerchantPullPaymentDetails>");
-			sb.append(MerchantPullPaymentDetails.toXMLString());
-			sb.append("</ebl:MerchantPullPaymentDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ReturnFMFDetails != null) {
-			sb.append("<urn:ReturnFMFDetails>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReturnFMFDetails));
-			sb.append("</urn:ReturnFMFDetails>");
+		sb.append(super.toXMLString(prefix, null));
+		if(merchantPullPaymentDetails != null) {
+			sb.append(merchantPullPaymentDetails.toXMLString(null,"MerchantPullPaymentDetails"));
+		}
+		if(returnFMFDetails != null) {
+			sb.append("<").append(preferredPrefix).append(":ReturnFMFDetails>").append(SDKUtil.escapeInvalidXmlCharsRegex(returnFMFDetails));
+			sb.append("</").append(preferredPrefix).append(":ReturnFMFDetails>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

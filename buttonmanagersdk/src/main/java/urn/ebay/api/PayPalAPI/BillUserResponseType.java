@@ -28,12 +28,12 @@ public class BillUserResponseType extends AbstractResponseType {
 	/**
 	 * 	 
 	 */ 
-	private MerchantPullPaymentResponseType BillUserResponseDetails;
+	private MerchantPullPaymentResponseType billUserResponseDetails;
 
 	/**
 	 * 	 
 	 */ 
-	private FMFDetailsType FMFDetails;
+	private FMFDetailsType fMFDetails;
 
 	
 
@@ -44,31 +44,31 @@ public class BillUserResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for BillUserResponseDetails
+	 * Getter for billUserResponseDetails
 	 */
 	 public MerchantPullPaymentResponseType getBillUserResponseDetails() {
-	 	return BillUserResponseDetails;
+	 	return billUserResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for BillUserResponseDetails
+	 * Setter for billUserResponseDetails
 	 */
-	 public void setBillUserResponseDetails(MerchantPullPaymentResponseType BillUserResponseDetails) {
-	 	this.BillUserResponseDetails = BillUserResponseDetails;
+	 public void setBillUserResponseDetails(MerchantPullPaymentResponseType billUserResponseDetails) {
+	 	this.billUserResponseDetails = billUserResponseDetails;
 	 }
 	 
 	/**
-	 * Getter for FMFDetails
+	 * Getter for fMFDetails
 	 */
 	 public FMFDetailsType getFMFDetails() {
-	 	return FMFDetails;
+	 	return fMFDetails;
 	 }
 	 
 	/**
-	 * Setter for FMFDetails
+	 * Setter for fMFDetails
 	 */
-	 public void setFMFDetails(FMFDetailsType FMFDetails) {
-	 	this.FMFDetails = FMFDetails;
+	 public void setFMFDetails(FMFDetailsType fMFDetails) {
+	 	this.fMFDetails = fMFDetails;
 	 }
 	 
 
@@ -93,11 +93,11 @@ public class BillUserResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("BillUserResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BillUserResponseDetails =  new MerchantPullPaymentResponseType(childNode);
+		    this.billUserResponseDetails =  new MerchantPullPaymentResponseType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("FMFDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.FMFDetails =  new FMFDetailsType(childNode);
+		    this.fMFDetails =  new FMFDetailsType(childNode);
 		}
 	}
  

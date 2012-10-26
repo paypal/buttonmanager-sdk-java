@@ -8,35 +8,37 @@ import com.paypal.core.SDKUtil;
  */
 public class BAUpdateRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String ReferenceID;
+	private String referenceID;
 
 	/**
 	 * 	 
 	 */ 
-	private String BillingAgreementDescription;
+	private String billingAgreementDescription;
 
 	/**
 	 * 	 
 	 */ 
-	private MerchantPullStatusCodeType BillingAgreementStatus;
+	private MerchantPullStatusCodeType billingAgreementStatus;
 
 	/**
 	 * 	 
 	 */ 
-	private String BillingAgreementCustom;
+	private String billingAgreementCustom;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public BAUpdateRequestType (String ReferenceID){
-		this.ReferenceID = ReferenceID;
+	public BAUpdateRequestType (String referenceID){
+		this.referenceID = referenceID;
 	}	
 
 	/**
@@ -46,81 +48,97 @@ public class BAUpdateRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for ReferenceID
+	 * Getter for referenceID
 	 */
 	 public String getReferenceID() {
-	 	return ReferenceID;
+	 	return referenceID;
 	 }
 	 
 	/**
-	 * Setter for ReferenceID
+	 * Setter for referenceID
 	 */
-	 public void setReferenceID(String ReferenceID) {
-	 	this.ReferenceID = ReferenceID;
+	 public void setReferenceID(String referenceID) {
+	 	this.referenceID = referenceID;
 	 }
 	 
 	/**
-	 * Getter for BillingAgreementDescription
+	 * Getter for billingAgreementDescription
 	 */
 	 public String getBillingAgreementDescription() {
-	 	return BillingAgreementDescription;
+	 	return billingAgreementDescription;
 	 }
 	 
 	/**
-	 * Setter for BillingAgreementDescription
+	 * Setter for billingAgreementDescription
 	 */
-	 public void setBillingAgreementDescription(String BillingAgreementDescription) {
-	 	this.BillingAgreementDescription = BillingAgreementDescription;
+	 public void setBillingAgreementDescription(String billingAgreementDescription) {
+	 	this.billingAgreementDescription = billingAgreementDescription;
 	 }
 	 
 	/**
-	 * Getter for BillingAgreementStatus
+	 * Getter for billingAgreementStatus
 	 */
 	 public MerchantPullStatusCodeType getBillingAgreementStatus() {
-	 	return BillingAgreementStatus;
+	 	return billingAgreementStatus;
 	 }
 	 
 	/**
-	 * Setter for BillingAgreementStatus
+	 * Setter for billingAgreementStatus
 	 */
-	 public void setBillingAgreementStatus(MerchantPullStatusCodeType BillingAgreementStatus) {
-	 	this.BillingAgreementStatus = BillingAgreementStatus;
+	 public void setBillingAgreementStatus(MerchantPullStatusCodeType billingAgreementStatus) {
+	 	this.billingAgreementStatus = billingAgreementStatus;
 	 }
 	 
 	/**
-	 * Getter for BillingAgreementCustom
+	 * Getter for billingAgreementCustom
 	 */
 	 public String getBillingAgreementCustom() {
-	 	return BillingAgreementCustom;
+	 	return billingAgreementCustom;
 	 }
 	 
 	/**
-	 * Setter for BillingAgreementCustom
+	 * Setter for billingAgreementCustom
 	 */
-	 public void setBillingAgreementCustom(String BillingAgreementCustom) {
-	 	this.BillingAgreementCustom = BillingAgreementCustom;
+	 public void setBillingAgreementCustom(String billingAgreementCustom) {
+	 	this.billingAgreementCustom = billingAgreementCustom;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(ReferenceID != null) {
-			sb.append("<urn:ReferenceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReferenceID));
-			sb.append("</urn:ReferenceID>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(BillingAgreementDescription != null) {
-			sb.append("<urn:BillingAgreementDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingAgreementDescription));
-			sb.append("</urn:BillingAgreementDescription>");
+		sb.append(super.toXMLString(prefix, null));
+		if(referenceID != null) {
+			sb.append("<").append(preferredPrefix).append(":ReferenceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(referenceID));
+			sb.append("</").append(preferredPrefix).append(":ReferenceID>");
 		}
-		if(BillingAgreementStatus != null) {
-			sb.append("<urn:BillingAgreementStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingAgreementStatus.getValue()));
-			sb.append("</urn:BillingAgreementStatus>");
+		if(billingAgreementDescription != null) {
+			sb.append("<").append(preferredPrefix).append(":BillingAgreementDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingAgreementDescription));
+			sb.append("</").append(preferredPrefix).append(":BillingAgreementDescription>");
 		}
-		if(BillingAgreementCustom != null) {
-			sb.append("<urn:BillingAgreementCustom>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingAgreementCustom));
-			sb.append("</urn:BillingAgreementCustom>");
+		if(billingAgreementStatus != null) {
+			sb.append("<").append(preferredPrefix).append(":BillingAgreementStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingAgreementStatus.getValue()));
+			sb.append("</").append(preferredPrefix).append(":BillingAgreementStatus>");
+		}
+		if(billingAgreementCustom != null) {
+			sb.append("<").append(preferredPrefix).append(":BillingAgreementCustom>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingAgreementCustom));
+			sb.append("</").append(preferredPrefix).append(":BillingAgreementCustom>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

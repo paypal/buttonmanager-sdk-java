@@ -9,26 +9,28 @@ import com.paypal.core.SDKUtil;
  */
 public class DoDirectPaymentRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private DoDirectPaymentRequestDetailsType DoDirectPaymentRequestDetails;
+	private DoDirectPaymentRequestDetailsType doDirectPaymentRequestDetails;
 
 	/**
 	 * This flag indicates that the response should include
 	 * FMFDetails	 
 	 */ 
-	private Integer ReturnFMFDetails;
+	private Integer returnFMFDetails;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public DoDirectPaymentRequestType (DoDirectPaymentRequestDetailsType DoDirectPaymentRequestDetails){
-		this.DoDirectPaymentRequestDetails = DoDirectPaymentRequestDetails;
+	public DoDirectPaymentRequestType (DoDirectPaymentRequestDetailsType doDirectPaymentRequestDetails){
+		this.doDirectPaymentRequestDetails = doDirectPaymentRequestDetails;
 	}	
 
 	/**
@@ -38,46 +40,60 @@ public class DoDirectPaymentRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for DoDirectPaymentRequestDetails
+	 * Getter for doDirectPaymentRequestDetails
 	 */
 	 public DoDirectPaymentRequestDetailsType getDoDirectPaymentRequestDetails() {
-	 	return DoDirectPaymentRequestDetails;
+	 	return doDirectPaymentRequestDetails;
 	 }
 	 
 	/**
-	 * Setter for DoDirectPaymentRequestDetails
+	 * Setter for doDirectPaymentRequestDetails
 	 */
-	 public void setDoDirectPaymentRequestDetails(DoDirectPaymentRequestDetailsType DoDirectPaymentRequestDetails) {
-	 	this.DoDirectPaymentRequestDetails = DoDirectPaymentRequestDetails;
+	 public void setDoDirectPaymentRequestDetails(DoDirectPaymentRequestDetailsType doDirectPaymentRequestDetails) {
+	 	this.doDirectPaymentRequestDetails = doDirectPaymentRequestDetails;
 	 }
 	 
 	/**
-	 * Getter for ReturnFMFDetails
+	 * Getter for returnFMFDetails
 	 */
 	 public Integer getReturnFMFDetails() {
-	 	return ReturnFMFDetails;
+	 	return returnFMFDetails;
 	 }
 	 
 	/**
-	 * Setter for ReturnFMFDetails
+	 * Setter for returnFMFDetails
 	 */
-	 public void setReturnFMFDetails(Integer ReturnFMFDetails) {
-	 	this.ReturnFMFDetails = ReturnFMFDetails;
+	 public void setReturnFMFDetails(Integer returnFMFDetails) {
+	 	this.returnFMFDetails = returnFMFDetails;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(DoDirectPaymentRequestDetails != null) {
-			sb.append("<ebl:DoDirectPaymentRequestDetails>");
-			sb.append(DoDirectPaymentRequestDetails.toXMLString());
-			sb.append("</ebl:DoDirectPaymentRequestDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ReturnFMFDetails != null) {
-			sb.append("<urn:ReturnFMFDetails>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReturnFMFDetails));
-			sb.append("</urn:ReturnFMFDetails>");
+		sb.append(super.toXMLString(prefix, null));
+		if(doDirectPaymentRequestDetails != null) {
+			sb.append(doDirectPaymentRequestDetails.toXMLString(null,"DoDirectPaymentRequestDetails"));
+		}
+		if(returnFMFDetails != null) {
+			sb.append("<").append(preferredPrefix).append(":ReturnFMFDetails>").append(SDKUtil.escapeInvalidXmlCharsRegex(returnFMFDetails));
+			sb.append("</").append(preferredPrefix).append(":ReturnFMFDetails>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

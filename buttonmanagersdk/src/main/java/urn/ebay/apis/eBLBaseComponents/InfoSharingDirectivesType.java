@@ -8,13 +8,15 @@ import com.paypal.core.SDKUtil;
  */
 public class InfoSharingDirectivesType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * If Billing Address should be returned in
 	 * GetExpressCheckoutDetails response, this parameter should be
 	 * set to yes here	 
 	 */ 
-	private String ReqBillingAddress;
+	private String reqBillingAddress;
 
 	
 
@@ -25,26 +27,42 @@ public class InfoSharingDirectivesType{
 	}	
 
 	/**
-	 * Getter for ReqBillingAddress
+	 * Getter for reqBillingAddress
 	 */
 	 public String getReqBillingAddress() {
-	 	return ReqBillingAddress;
+	 	return reqBillingAddress;
 	 }
 	 
 	/**
-	 * Setter for ReqBillingAddress
+	 * Setter for reqBillingAddress
 	 */
-	 public void setReqBillingAddress(String ReqBillingAddress) {
-	 	this.ReqBillingAddress = ReqBillingAddress;
+	 public void setReqBillingAddress(String reqBillingAddress) {
+	 	this.reqBillingAddress = reqBillingAddress;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(ReqBillingAddress != null) {
-			sb.append("<ebl:ReqBillingAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReqBillingAddress));
-			sb.append("</ebl:ReqBillingAddress>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
+		if(reqBillingAddress != null) {
+			sb.append("<").append(preferredPrefix).append(":ReqBillingAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(reqBillingAddress));
+			sb.append("</").append(preferredPrefix).append(":ReqBillingAddress>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

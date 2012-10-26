@@ -7,17 +7,19 @@ import com.paypal.core.SDKUtil;
  */
 public class OrderDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Description of the Order.	 
 	 */ 
-	private String Description;
+	private String description;
 
 	/**
 	 * Expected maximum amount that the merchant may pull using
 	 * DoReferenceTransaction	 
 	 */ 
-	private BasicAmountType MaxAmount;
+	private BasicAmountType maxAmount;
 
 	
 
@@ -28,45 +30,59 @@ public class OrderDetailsType{
 	}	
 
 	/**
-	 * Getter for Description
+	 * Getter for description
 	 */
 	 public String getDescription() {
-	 	return Description;
+	 	return description;
 	 }
 	 
 	/**
-	 * Setter for Description
+	 * Setter for description
 	 */
-	 public void setDescription(String Description) {
-	 	this.Description = Description;
+	 public void setDescription(String description) {
+	 	this.description = description;
 	 }
 	 
 	/**
-	 * Getter for MaxAmount
+	 * Getter for maxAmount
 	 */
 	 public BasicAmountType getMaxAmount() {
-	 	return MaxAmount;
+	 	return maxAmount;
 	 }
 	 
 	/**
-	 * Setter for MaxAmount
+	 * Setter for maxAmount
 	 */
-	 public void setMaxAmount(BasicAmountType MaxAmount) {
-	 	this.MaxAmount = MaxAmount;
+	 public void setMaxAmount(BasicAmountType maxAmount) {
+	 	this.maxAmount = maxAmount;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(Description != null) {
-			sb.append("<ebl:Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(Description));
-			sb.append("</ebl:Description>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(MaxAmount != null) {
-			sb.append("<ebl:MaxAmount");
-			sb.append(MaxAmount.toXMLString());
-			sb.append("</ebl:MaxAmount>");
+		if(description != null) {
+			sb.append("<").append(preferredPrefix).append(":Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(description));
+			sb.append("</").append(preferredPrefix).append(":Description>");
+		}
+		if(maxAmount != null) {
+			sb.append(maxAmount.toXMLString(preferredPrefix,"MaxAmount"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

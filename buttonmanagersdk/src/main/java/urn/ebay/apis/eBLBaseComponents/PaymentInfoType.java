@@ -40,13 +40,13 @@ public class PaymentInfoType{
 	 * A transaction identification number. Character length and
 	 * limits: 19 single-byte characters maximum	 
 	 */ 
-	private String TransactionID;
+	private String transactionID;
 
 	/**
 	 * Its Ebay transaction id. EbayTransactionID will returned for
 	 * immediate pay item transaction in ECA 	 
 	 */ 
-	private String EbayTransactionID;
+	private String ebayTransactionID;
 
 	/**
 	 * Parent or related transaction identification number. This
@@ -60,13 +60,13 @@ public class PaymentInfoType{
 	 * Character length and limits: 19 single-byte characters
 	 * maximum	 
 	 */ 
-	private String ParentTransactionID;
+	private String parentTransactionID;
 
 	/**
 	 * Receipt ID Character length and limitations: 16 digits in
 	 * xxxx-xxxx-xxxx-xxxx format	 
 	 */ 
-	private String ReceiptID;
+	private String receiptID;
 
 	/**
 	 * The type of transaction cart: Transaction created via the
@@ -83,38 +83,38 @@ public class PaymentInfoType{
 	 * via merchant virtual terminal. credit: Transaction created
 	 * via merchant virtual terminal or API to credit a customer.	 
 	 */ 
-	private PaymentTransactionCodeType TransactionType;
+	private PaymentTransactionCodeType transactionType;
 
 	/**
 	 * The type of payment	 
 	 */ 
-	private PaymentCodeType PaymentType;
+	private PaymentCodeType paymentType;
 
 	/**
 	 * The type of funding source	 
 	 */ 
-	private RefundSourceCodeType RefundSourceCodeType;
+	private RefundSourceCodeType refundSourceCodeType;
 
 	/**
 	 * eCheck latest expected clear date 	 
 	 */ 
-	private String ExpectedeCheckClearDate;
+	private String expectedeCheckClearDate;
 
 	/**
 	 * Date and time of payment 	 
 	 */ 
-	private String PaymentDate;
+	private String paymentDate;
 
 	/**
 	 * Full amount of the customer's payment, before transaction
 	 * fee is subtracted	 
 	 */ 
-	private BasicAmountType GrossAmount;
+	private BasicAmountType grossAmount;
 
 	/**
 	 * Transaction fee associated with the payment 	 
 	 */ 
-	private BasicAmountType FeeAmount;
+	private BasicAmountType feeAmount;
 
 	/**
 	 * Amount deposited into the account's primary balance after a
@@ -123,17 +123,17 @@ public class PaymentInfoType{
 	 * manually accepting a payment. This amount is calculated
 	 * after fees and taxes have been assessed. 	 
 	 */ 
-	private BasicAmountType SettleAmount;
+	private BasicAmountType settleAmount;
 
 	/**
 	 * Amount of tax for transaction 	 
 	 */ 
-	private BasicAmountType TaxAmount;
+	private BasicAmountType taxAmount;
 
 	/**
 	 * Exchange rate for transaction 	 
 	 */ 
-	private String ExchangeRate;
+	private String exchangeRate;
 
 	/**
 	 * The status of the payment: None: No status Created: A
@@ -163,7 +163,7 @@ public class PaymentInfoType{
 	 * your pending balance. See the "HoldDecision" field for more
 	 * information.	 
 	 */ 
-	private PaymentStatusCodeType PaymentStatus;
+	private PaymentStatusCodeType paymentStatus;
 
 	/**
 	 * The reason the payment is pending: none: No pending reason
@@ -195,7 +195,7 @@ public class PaymentInfoType{
 	 * other than those listed above. For more information, contact
 	 * PayPal Customer Service.	 
 	 */ 
-	private PendingStatusCodeType PendingReason;
+	private PendingStatusCodeType pendingReason;
 
 	/**
 	 * The reason for a reversal if TransactionType is reversal:
@@ -210,7 +210,7 @@ public class PaymentInfoType{
 	 * occurred on this transaction due to a reason not listed
 	 * above.	 
 	 */ 
-	private ReversalReasonCodeType ReasonCode;
+	private ReversalReasonCodeType reasonCode;
 
 	/**
 	 * HoldDecision is returned in the response only if
@@ -219,28 +219,28 @@ public class PaymentInfoType{
 	 * seller is new. paymenthold: A hold is placed on your
 	 * transaction due to a reason not listed above. 	 
 	 */ 
-	private String HoldDecision;
+	private String holdDecision;
 
 	/**
 	 * Shipping method selected by the user during check-out. 	 
 	 */ 
-	private String ShippingMethod;
+	private String shippingMethod;
 
 	/**
 	 * Protection Eligibility for this Transaction - None, SPP or
 	 * ESPP 	 
 	 */ 
-	private String ProtectionEligibility;
+	private String protectionEligibility;
 
 	/**
 	 * Protection Eligibility details for this Transaction 	 
 	 */ 
-	private String ProtectionEligibilityType;
+	private String protectionEligibilityType;
 
 	/**
 	 * Receipt Reference Number for this Transaction 	 
 	 */ 
-	private String ReceiptReferenceNumber;
+	private String receiptReferenceNumber;
 
 	/**
 	 * The type of POS transaction F: Forced post transaction. POS
@@ -248,81 +248,81 @@ public class PaymentInfoType{
 	 * connectivity is lost. S: Single call checkout, and this is
 	 * to identify PayPal Lite API usage. 	 
 	 */ 
-	private POSTransactionCodeType POSTransactionType;
+	private POSTransactionCodeType pOSTransactionType;
 
 	/**
 	 * Amount of shipping charged on transaction	 
 	 */ 
-	private String ShipAmount;
+	private String shipAmount;
 
 	/**
 	 * Amount of ship handling charged on transaction	 
 	 */ 
-	private String ShipHandleAmount;
+	private String shipHandleAmount;
 
 	/**
 	 * Amount of shipping discount on transaction	 
 	 */ 
-	private String ShipDiscount;
+	private String shipDiscount;
 
 	/**
 	 * Amount of Insurance amount on transaction	 
 	 */ 
-	private String InsuranceAmount;
+	private String insuranceAmount;
 
 	/**
 	 * Subject as entered in the transaction	 
 	 */ 
-	private String Subject;
+	private String subject;
 
 	/**
 	 * StoreID as entered in the transaction	 
 	 */ 
-	private String StoreID;
+	private String storeID;
 
 	/**
 	 * TerminalID as entered in the transaction	 
 	 */ 
-	private String TerminalID;
+	private String terminalID;
 
 	/**
 	 * Details about the seller. Optional 	 
 	 */ 
-	private SellerDetailsType SellerDetails;
+	private SellerDetailsType sellerDetails;
 
 	/**
 	 * Unique identifier and mandatory for each bucket in case of
 	 * split payement 	 
 	 */ 
-	private String PaymentRequestID;
+	private String paymentRequestID;
 
 	/**
 	 * Thes are filters that could result in accept/deny/pending
 	 * action. 	 
 	 */ 
-	private FMFDetailsType FMFDetails;
+	private FMFDetailsType fMFDetails;
 
 	/**
 	 * This will be enhanced info for the payment: Example: UATP
 	 * details 	 
 	 */ 
-	private EnhancedPaymentInfoType EnhancedPaymentInfo;
+	private EnhancedPaymentInfoType enhancedPaymentInfo;
 
 	/**
 	 * This will indicate the payment status for individual payment
 	 * request in case of split payment 	 
 	 */ 
-	private ErrorType PaymentError;
+	private ErrorType paymentError;
 
 	/**
 	 * Type of the payment instrument. 	 
 	 */ 
-	private InstrumentDetailsType InstrumentDetails;
+	private InstrumentDetailsType instrumentDetails;
 
 	/**
 	 * Offer Details. 	 
 	 */ 
-	private OfferDetailsType OfferDetails;
+	private OfferDetailsType offerDetails;
 
 	
 
@@ -333,521 +333,521 @@ public class PaymentInfoType{
 	}	
 
 	/**
-	 * Getter for TransactionID
+	 * Getter for transactionID
 	 */
 	 public String getTransactionID() {
-	 	return TransactionID;
+	 	return transactionID;
 	 }
 	 
 	/**
-	 * Setter for TransactionID
+	 * Setter for transactionID
 	 */
-	 public void setTransactionID(String TransactionID) {
-	 	this.TransactionID = TransactionID;
+	 public void setTransactionID(String transactionID) {
+	 	this.transactionID = transactionID;
 	 }
 	 
 	/**
-	 * Getter for EbayTransactionID
+	 * Getter for ebayTransactionID
 	 */
 	 public String getEbayTransactionID() {
-	 	return EbayTransactionID;
+	 	return ebayTransactionID;
 	 }
 	 
 	/**
-	 * Setter for EbayTransactionID
+	 * Setter for ebayTransactionID
 	 */
-	 public void setEbayTransactionID(String EbayTransactionID) {
-	 	this.EbayTransactionID = EbayTransactionID;
+	 public void setEbayTransactionID(String ebayTransactionID) {
+	 	this.ebayTransactionID = ebayTransactionID;
 	 }
 	 
 	/**
-	 * Getter for ParentTransactionID
+	 * Getter for parentTransactionID
 	 */
 	 public String getParentTransactionID() {
-	 	return ParentTransactionID;
+	 	return parentTransactionID;
 	 }
 	 
 	/**
-	 * Setter for ParentTransactionID
+	 * Setter for parentTransactionID
 	 */
-	 public void setParentTransactionID(String ParentTransactionID) {
-	 	this.ParentTransactionID = ParentTransactionID;
+	 public void setParentTransactionID(String parentTransactionID) {
+	 	this.parentTransactionID = parentTransactionID;
 	 }
 	 
 	/**
-	 * Getter for ReceiptID
+	 * Getter for receiptID
 	 */
 	 public String getReceiptID() {
-	 	return ReceiptID;
+	 	return receiptID;
 	 }
 	 
 	/**
-	 * Setter for ReceiptID
+	 * Setter for receiptID
 	 */
-	 public void setReceiptID(String ReceiptID) {
-	 	this.ReceiptID = ReceiptID;
+	 public void setReceiptID(String receiptID) {
+	 	this.receiptID = receiptID;
 	 }
 	 
 	/**
-	 * Getter for TransactionType
+	 * Getter for transactionType
 	 */
 	 public PaymentTransactionCodeType getTransactionType() {
-	 	return TransactionType;
+	 	return transactionType;
 	 }
 	 
 	/**
-	 * Setter for TransactionType
+	 * Setter for transactionType
 	 */
-	 public void setTransactionType(PaymentTransactionCodeType TransactionType) {
-	 	this.TransactionType = TransactionType;
+	 public void setTransactionType(PaymentTransactionCodeType transactionType) {
+	 	this.transactionType = transactionType;
 	 }
 	 
 	/**
-	 * Getter for PaymentType
+	 * Getter for paymentType
 	 */
 	 public PaymentCodeType getPaymentType() {
-	 	return PaymentType;
+	 	return paymentType;
 	 }
 	 
 	/**
-	 * Setter for PaymentType
+	 * Setter for paymentType
 	 */
-	 public void setPaymentType(PaymentCodeType PaymentType) {
-	 	this.PaymentType = PaymentType;
+	 public void setPaymentType(PaymentCodeType paymentType) {
+	 	this.paymentType = paymentType;
 	 }
 	 
 	/**
-	 * Getter for RefundSourceCodeType
+	 * Getter for refundSourceCodeType
 	 */
 	 public RefundSourceCodeType getRefundSourceCodeType() {
-	 	return RefundSourceCodeType;
+	 	return refundSourceCodeType;
 	 }
 	 
 	/**
-	 * Setter for RefundSourceCodeType
+	 * Setter for refundSourceCodeType
 	 */
-	 public void setRefundSourceCodeType(RefundSourceCodeType RefundSourceCodeType) {
-	 	this.RefundSourceCodeType = RefundSourceCodeType;
+	 public void setRefundSourceCodeType(RefundSourceCodeType refundSourceCodeType) {
+	 	this.refundSourceCodeType = refundSourceCodeType;
 	 }
 	 
 	/**
-	 * Getter for ExpectedeCheckClearDate
+	 * Getter for expectedeCheckClearDate
 	 */
 	 public String getExpectedeCheckClearDate() {
-	 	return ExpectedeCheckClearDate;
+	 	return expectedeCheckClearDate;
 	 }
 	 
 	/**
-	 * Setter for ExpectedeCheckClearDate
+	 * Setter for expectedeCheckClearDate
 	 */
-	 public void setExpectedeCheckClearDate(String ExpectedeCheckClearDate) {
-	 	this.ExpectedeCheckClearDate = ExpectedeCheckClearDate;
+	 public void setExpectedeCheckClearDate(String expectedeCheckClearDate) {
+	 	this.expectedeCheckClearDate = expectedeCheckClearDate;
 	 }
 	 
 	/**
-	 * Getter for PaymentDate
+	 * Getter for paymentDate
 	 */
 	 public String getPaymentDate() {
-	 	return PaymentDate;
+	 	return paymentDate;
 	 }
 	 
 	/**
-	 * Setter for PaymentDate
+	 * Setter for paymentDate
 	 */
-	 public void setPaymentDate(String PaymentDate) {
-	 	this.PaymentDate = PaymentDate;
+	 public void setPaymentDate(String paymentDate) {
+	 	this.paymentDate = paymentDate;
 	 }
 	 
 	/**
-	 * Getter for GrossAmount
+	 * Getter for grossAmount
 	 */
 	 public BasicAmountType getGrossAmount() {
-	 	return GrossAmount;
+	 	return grossAmount;
 	 }
 	 
 	/**
-	 * Setter for GrossAmount
+	 * Setter for grossAmount
 	 */
-	 public void setGrossAmount(BasicAmountType GrossAmount) {
-	 	this.GrossAmount = GrossAmount;
+	 public void setGrossAmount(BasicAmountType grossAmount) {
+	 	this.grossAmount = grossAmount;
 	 }
 	 
 	/**
-	 * Getter for FeeAmount
+	 * Getter for feeAmount
 	 */
 	 public BasicAmountType getFeeAmount() {
-	 	return FeeAmount;
+	 	return feeAmount;
 	 }
 	 
 	/**
-	 * Setter for FeeAmount
+	 * Setter for feeAmount
 	 */
-	 public void setFeeAmount(BasicAmountType FeeAmount) {
-	 	this.FeeAmount = FeeAmount;
+	 public void setFeeAmount(BasicAmountType feeAmount) {
+	 	this.feeAmount = feeAmount;
 	 }
 	 
 	/**
-	 * Getter for SettleAmount
+	 * Getter for settleAmount
 	 */
 	 public BasicAmountType getSettleAmount() {
-	 	return SettleAmount;
+	 	return settleAmount;
 	 }
 	 
 	/**
-	 * Setter for SettleAmount
+	 * Setter for settleAmount
 	 */
-	 public void setSettleAmount(BasicAmountType SettleAmount) {
-	 	this.SettleAmount = SettleAmount;
+	 public void setSettleAmount(BasicAmountType settleAmount) {
+	 	this.settleAmount = settleAmount;
 	 }
 	 
 	/**
-	 * Getter for TaxAmount
+	 * Getter for taxAmount
 	 */
 	 public BasicAmountType getTaxAmount() {
-	 	return TaxAmount;
+	 	return taxAmount;
 	 }
 	 
 	/**
-	 * Setter for TaxAmount
+	 * Setter for taxAmount
 	 */
-	 public void setTaxAmount(BasicAmountType TaxAmount) {
-	 	this.TaxAmount = TaxAmount;
+	 public void setTaxAmount(BasicAmountType taxAmount) {
+	 	this.taxAmount = taxAmount;
 	 }
 	 
 	/**
-	 * Getter for ExchangeRate
+	 * Getter for exchangeRate
 	 */
 	 public String getExchangeRate() {
-	 	return ExchangeRate;
+	 	return exchangeRate;
 	 }
 	 
 	/**
-	 * Setter for ExchangeRate
+	 * Setter for exchangeRate
 	 */
-	 public void setExchangeRate(String ExchangeRate) {
-	 	this.ExchangeRate = ExchangeRate;
+	 public void setExchangeRate(String exchangeRate) {
+	 	this.exchangeRate = exchangeRate;
 	 }
 	 
 	/**
-	 * Getter for PaymentStatus
+	 * Getter for paymentStatus
 	 */
 	 public PaymentStatusCodeType getPaymentStatus() {
-	 	return PaymentStatus;
+	 	return paymentStatus;
 	 }
 	 
 	/**
-	 * Setter for PaymentStatus
+	 * Setter for paymentStatus
 	 */
-	 public void setPaymentStatus(PaymentStatusCodeType PaymentStatus) {
-	 	this.PaymentStatus = PaymentStatus;
+	 public void setPaymentStatus(PaymentStatusCodeType paymentStatus) {
+	 	this.paymentStatus = paymentStatus;
 	 }
 	 
 	/**
-	 * Getter for PendingReason
+	 * Getter for pendingReason
 	 */
 	 public PendingStatusCodeType getPendingReason() {
-	 	return PendingReason;
+	 	return pendingReason;
 	 }
 	 
 	/**
-	 * Setter for PendingReason
+	 * Setter for pendingReason
 	 */
-	 public void setPendingReason(PendingStatusCodeType PendingReason) {
-	 	this.PendingReason = PendingReason;
+	 public void setPendingReason(PendingStatusCodeType pendingReason) {
+	 	this.pendingReason = pendingReason;
 	 }
 	 
 	/**
-	 * Getter for ReasonCode
+	 * Getter for reasonCode
 	 */
 	 public ReversalReasonCodeType getReasonCode() {
-	 	return ReasonCode;
+	 	return reasonCode;
 	 }
 	 
 	/**
-	 * Setter for ReasonCode
+	 * Setter for reasonCode
 	 */
-	 public void setReasonCode(ReversalReasonCodeType ReasonCode) {
-	 	this.ReasonCode = ReasonCode;
+	 public void setReasonCode(ReversalReasonCodeType reasonCode) {
+	 	this.reasonCode = reasonCode;
 	 }
 	 
 	/**
-	 * Getter for HoldDecision
+	 * Getter for holdDecision
 	 */
 	 public String getHoldDecision() {
-	 	return HoldDecision;
+	 	return holdDecision;
 	 }
 	 
 	/**
-	 * Setter for HoldDecision
+	 * Setter for holdDecision
 	 */
-	 public void setHoldDecision(String HoldDecision) {
-	 	this.HoldDecision = HoldDecision;
+	 public void setHoldDecision(String holdDecision) {
+	 	this.holdDecision = holdDecision;
 	 }
 	 
 	/**
-	 * Getter for ShippingMethod
+	 * Getter for shippingMethod
 	 */
 	 public String getShippingMethod() {
-	 	return ShippingMethod;
+	 	return shippingMethod;
 	 }
 	 
 	/**
-	 * Setter for ShippingMethod
+	 * Setter for shippingMethod
 	 */
-	 public void setShippingMethod(String ShippingMethod) {
-	 	this.ShippingMethod = ShippingMethod;
+	 public void setShippingMethod(String shippingMethod) {
+	 	this.shippingMethod = shippingMethod;
 	 }
 	 
 	/**
-	 * Getter for ProtectionEligibility
+	 * Getter for protectionEligibility
 	 */
 	 public String getProtectionEligibility() {
-	 	return ProtectionEligibility;
+	 	return protectionEligibility;
 	 }
 	 
 	/**
-	 * Setter for ProtectionEligibility
+	 * Setter for protectionEligibility
 	 */
-	 public void setProtectionEligibility(String ProtectionEligibility) {
-	 	this.ProtectionEligibility = ProtectionEligibility;
+	 public void setProtectionEligibility(String protectionEligibility) {
+	 	this.protectionEligibility = protectionEligibility;
 	 }
 	 
 	/**
-	 * Getter for ProtectionEligibilityType
+	 * Getter for protectionEligibilityType
 	 */
 	 public String getProtectionEligibilityType() {
-	 	return ProtectionEligibilityType;
+	 	return protectionEligibilityType;
 	 }
 	 
 	/**
-	 * Setter for ProtectionEligibilityType
+	 * Setter for protectionEligibilityType
 	 */
-	 public void setProtectionEligibilityType(String ProtectionEligibilityType) {
-	 	this.ProtectionEligibilityType = ProtectionEligibilityType;
+	 public void setProtectionEligibilityType(String protectionEligibilityType) {
+	 	this.protectionEligibilityType = protectionEligibilityType;
 	 }
 	 
 	/**
-	 * Getter for ReceiptReferenceNumber
+	 * Getter for receiptReferenceNumber
 	 */
 	 public String getReceiptReferenceNumber() {
-	 	return ReceiptReferenceNumber;
+	 	return receiptReferenceNumber;
 	 }
 	 
 	/**
-	 * Setter for ReceiptReferenceNumber
+	 * Setter for receiptReferenceNumber
 	 */
-	 public void setReceiptReferenceNumber(String ReceiptReferenceNumber) {
-	 	this.ReceiptReferenceNumber = ReceiptReferenceNumber;
+	 public void setReceiptReferenceNumber(String receiptReferenceNumber) {
+	 	this.receiptReferenceNumber = receiptReferenceNumber;
 	 }
 	 
 	/**
-	 * Getter for POSTransactionType
+	 * Getter for pOSTransactionType
 	 */
 	 public POSTransactionCodeType getPOSTransactionType() {
-	 	return POSTransactionType;
+	 	return pOSTransactionType;
 	 }
 	 
 	/**
-	 * Setter for POSTransactionType
+	 * Setter for pOSTransactionType
 	 */
-	 public void setPOSTransactionType(POSTransactionCodeType POSTransactionType) {
-	 	this.POSTransactionType = POSTransactionType;
+	 public void setPOSTransactionType(POSTransactionCodeType pOSTransactionType) {
+	 	this.pOSTransactionType = pOSTransactionType;
 	 }
 	 
 	/**
-	 * Getter for ShipAmount
+	 * Getter for shipAmount
 	 */
 	 public String getShipAmount() {
-	 	return ShipAmount;
+	 	return shipAmount;
 	 }
 	 
 	/**
-	 * Setter for ShipAmount
+	 * Setter for shipAmount
 	 */
-	 public void setShipAmount(String ShipAmount) {
-	 	this.ShipAmount = ShipAmount;
+	 public void setShipAmount(String shipAmount) {
+	 	this.shipAmount = shipAmount;
 	 }
 	 
 	/**
-	 * Getter for ShipHandleAmount
+	 * Getter for shipHandleAmount
 	 */
 	 public String getShipHandleAmount() {
-	 	return ShipHandleAmount;
+	 	return shipHandleAmount;
 	 }
 	 
 	/**
-	 * Setter for ShipHandleAmount
+	 * Setter for shipHandleAmount
 	 */
-	 public void setShipHandleAmount(String ShipHandleAmount) {
-	 	this.ShipHandleAmount = ShipHandleAmount;
+	 public void setShipHandleAmount(String shipHandleAmount) {
+	 	this.shipHandleAmount = shipHandleAmount;
 	 }
 	 
 	/**
-	 * Getter for ShipDiscount
+	 * Getter for shipDiscount
 	 */
 	 public String getShipDiscount() {
-	 	return ShipDiscount;
+	 	return shipDiscount;
 	 }
 	 
 	/**
-	 * Setter for ShipDiscount
+	 * Setter for shipDiscount
 	 */
-	 public void setShipDiscount(String ShipDiscount) {
-	 	this.ShipDiscount = ShipDiscount;
+	 public void setShipDiscount(String shipDiscount) {
+	 	this.shipDiscount = shipDiscount;
 	 }
 	 
 	/**
-	 * Getter for InsuranceAmount
+	 * Getter for insuranceAmount
 	 */
 	 public String getInsuranceAmount() {
-	 	return InsuranceAmount;
+	 	return insuranceAmount;
 	 }
 	 
 	/**
-	 * Setter for InsuranceAmount
+	 * Setter for insuranceAmount
 	 */
-	 public void setInsuranceAmount(String InsuranceAmount) {
-	 	this.InsuranceAmount = InsuranceAmount;
+	 public void setInsuranceAmount(String insuranceAmount) {
+	 	this.insuranceAmount = insuranceAmount;
 	 }
 	 
 	/**
-	 * Getter for Subject
+	 * Getter for subject
 	 */
 	 public String getSubject() {
-	 	return Subject;
+	 	return subject;
 	 }
 	 
 	/**
-	 * Setter for Subject
+	 * Setter for subject
 	 */
-	 public void setSubject(String Subject) {
-	 	this.Subject = Subject;
+	 public void setSubject(String subject) {
+	 	this.subject = subject;
 	 }
 	 
 	/**
-	 * Getter for StoreID
+	 * Getter for storeID
 	 */
 	 public String getStoreID() {
-	 	return StoreID;
+	 	return storeID;
 	 }
 	 
 	/**
-	 * Setter for StoreID
+	 * Setter for storeID
 	 */
-	 public void setStoreID(String StoreID) {
-	 	this.StoreID = StoreID;
+	 public void setStoreID(String storeID) {
+	 	this.storeID = storeID;
 	 }
 	 
 	/**
-	 * Getter for TerminalID
+	 * Getter for terminalID
 	 */
 	 public String getTerminalID() {
-	 	return TerminalID;
+	 	return terminalID;
 	 }
 	 
 	/**
-	 * Setter for TerminalID
+	 * Setter for terminalID
 	 */
-	 public void setTerminalID(String TerminalID) {
-	 	this.TerminalID = TerminalID;
+	 public void setTerminalID(String terminalID) {
+	 	this.terminalID = terminalID;
 	 }
 	 
 	/**
-	 * Getter for SellerDetails
+	 * Getter for sellerDetails
 	 */
 	 public SellerDetailsType getSellerDetails() {
-	 	return SellerDetails;
+	 	return sellerDetails;
 	 }
 	 
 	/**
-	 * Setter for SellerDetails
+	 * Setter for sellerDetails
 	 */
-	 public void setSellerDetails(SellerDetailsType SellerDetails) {
-	 	this.SellerDetails = SellerDetails;
+	 public void setSellerDetails(SellerDetailsType sellerDetails) {
+	 	this.sellerDetails = sellerDetails;
 	 }
 	 
 	/**
-	 * Getter for PaymentRequestID
+	 * Getter for paymentRequestID
 	 */
 	 public String getPaymentRequestID() {
-	 	return PaymentRequestID;
+	 	return paymentRequestID;
 	 }
 	 
 	/**
-	 * Setter for PaymentRequestID
+	 * Setter for paymentRequestID
 	 */
-	 public void setPaymentRequestID(String PaymentRequestID) {
-	 	this.PaymentRequestID = PaymentRequestID;
+	 public void setPaymentRequestID(String paymentRequestID) {
+	 	this.paymentRequestID = paymentRequestID;
 	 }
 	 
 	/**
-	 * Getter for FMFDetails
+	 * Getter for fMFDetails
 	 */
 	 public FMFDetailsType getFMFDetails() {
-	 	return FMFDetails;
+	 	return fMFDetails;
 	 }
 	 
 	/**
-	 * Setter for FMFDetails
+	 * Setter for fMFDetails
 	 */
-	 public void setFMFDetails(FMFDetailsType FMFDetails) {
-	 	this.FMFDetails = FMFDetails;
+	 public void setFMFDetails(FMFDetailsType fMFDetails) {
+	 	this.fMFDetails = fMFDetails;
 	 }
 	 
 	/**
-	 * Getter for EnhancedPaymentInfo
+	 * Getter for enhancedPaymentInfo
 	 */
 	 public EnhancedPaymentInfoType getEnhancedPaymentInfo() {
-	 	return EnhancedPaymentInfo;
+	 	return enhancedPaymentInfo;
 	 }
 	 
 	/**
-	 * Setter for EnhancedPaymentInfo
+	 * Setter for enhancedPaymentInfo
 	 */
-	 public void setEnhancedPaymentInfo(EnhancedPaymentInfoType EnhancedPaymentInfo) {
-	 	this.EnhancedPaymentInfo = EnhancedPaymentInfo;
+	 public void setEnhancedPaymentInfo(EnhancedPaymentInfoType enhancedPaymentInfo) {
+	 	this.enhancedPaymentInfo = enhancedPaymentInfo;
 	 }
 	 
 	/**
-	 * Getter for PaymentError
+	 * Getter for paymentError
 	 */
 	 public ErrorType getPaymentError() {
-	 	return PaymentError;
+	 	return paymentError;
 	 }
 	 
 	/**
-	 * Setter for PaymentError
+	 * Setter for paymentError
 	 */
-	 public void setPaymentError(ErrorType PaymentError) {
-	 	this.PaymentError = PaymentError;
+	 public void setPaymentError(ErrorType paymentError) {
+	 	this.paymentError = paymentError;
 	 }
 	 
 	/**
-	 * Getter for InstrumentDetails
+	 * Getter for instrumentDetails
 	 */
 	 public InstrumentDetailsType getInstrumentDetails() {
-	 	return InstrumentDetails;
+	 	return instrumentDetails;
 	 }
 	 
 	/**
-	 * Setter for InstrumentDetails
+	 * Setter for instrumentDetails
 	 */
-	 public void setInstrumentDetails(InstrumentDetailsType InstrumentDetails) {
-	 	this.InstrumentDetails = InstrumentDetails;
+	 public void setInstrumentDetails(InstrumentDetailsType instrumentDetails) {
+	 	this.instrumentDetails = instrumentDetails;
 	 }
 	 
 	/**
-	 * Getter for OfferDetails
+	 * Getter for offerDetails
 	 */
 	 public OfferDetailsType getOfferDetails() {
-	 	return OfferDetails;
+	 	return offerDetails;
 	 }
 	 
 	/**
-	 * Setter for OfferDetails
+	 * Setter for offerDetails
 	 */
-	 public void setOfferDetails(OfferDetailsType OfferDetails) {
-	 	this.OfferDetails = OfferDetails;
+	 public void setOfferDetails(OfferDetailsType offerDetails) {
+	 	this.offerDetails = offerDetails;
 	 }
 	 
 
@@ -871,171 +871,171 @@ public class PaymentInfoType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("TransactionID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TransactionID = childNode.getTextContent();
+		    this.transactionID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("EbayTransactionID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.EbayTransactionID = childNode.getTextContent();
+		    this.ebayTransactionID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ParentTransactionID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ParentTransactionID = childNode.getTextContent();
+		    this.parentTransactionID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ReceiptID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ReceiptID = childNode.getTextContent();
+		    this.receiptID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("TransactionType", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TransactionType = PaymentTransactionCodeType.fromValue(childNode.getTextContent());
+		    this.transactionType = PaymentTransactionCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("PaymentType", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentType = PaymentCodeType.fromValue(childNode.getTextContent());
+		    this.paymentType = PaymentCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("RefundSourceCodeType", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.RefundSourceCodeType = RefundSourceCodeType.fromValue(childNode.getTextContent());
+		    this.refundSourceCodeType = RefundSourceCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("ExpectedeCheckClearDate", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ExpectedeCheckClearDate = childNode.getTextContent();
+		    this.expectedeCheckClearDate = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PaymentDate", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentDate = childNode.getTextContent();
+		    this.paymentDate = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("GrossAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.GrossAmount =  new BasicAmountType(childNode);
+		    this.grossAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("FeeAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.FeeAmount =  new BasicAmountType(childNode);
+		    this.feeAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("SettleAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SettleAmount =  new BasicAmountType(childNode);
+		    this.settleAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("TaxAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TaxAmount =  new BasicAmountType(childNode);
+		    this.taxAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("ExchangeRate", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ExchangeRate = childNode.getTextContent();
+		    this.exchangeRate = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PaymentStatus", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentStatus = PaymentStatusCodeType.fromValue(childNode.getTextContent());
+		    this.paymentStatus = PaymentStatusCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("PendingReason", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PendingReason = PendingStatusCodeType.fromValue(childNode.getTextContent());
+		    this.pendingReason = PendingStatusCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("ReasonCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ReasonCode = ReversalReasonCodeType.fromValue(childNode.getTextContent());
+		    this.reasonCode = ReversalReasonCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("HoldDecision", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.HoldDecision = childNode.getTextContent();
+		    this.holdDecision = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ShippingMethod", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ShippingMethod = childNode.getTextContent();
+		    this.shippingMethod = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ProtectionEligibility", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ProtectionEligibility = childNode.getTextContent();
+		    this.protectionEligibility = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ProtectionEligibilityType", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ProtectionEligibilityType = childNode.getTextContent();
+		    this.protectionEligibilityType = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ReceiptReferenceNumber", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ReceiptReferenceNumber = childNode.getTextContent();
+		    this.receiptReferenceNumber = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("POSTransactionType", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.POSTransactionType = POSTransactionCodeType.fromValue(childNode.getTextContent());
+		    this.pOSTransactionType = POSTransactionCodeType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("ShipAmount", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ShipAmount = childNode.getTextContent();
+		    this.shipAmount = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ShipHandleAmount", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ShipHandleAmount = childNode.getTextContent();
+		    this.shipHandleAmount = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ShipDiscount", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ShipDiscount = childNode.getTextContent();
+		    this.shipDiscount = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("InsuranceAmount", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.InsuranceAmount = childNode.getTextContent();
+		    this.insuranceAmount = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Subject", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Subject = childNode.getTextContent();
+		    this.subject = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("StoreID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.StoreID = childNode.getTextContent();
+		    this.storeID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("TerminalID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TerminalID = childNode.getTextContent();
+		    this.terminalID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("SellerDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SellerDetails =  new SellerDetailsType(childNode);
+		    this.sellerDetails =  new SellerDetailsType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("PaymentRequestID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentRequestID = childNode.getTextContent();
+		    this.paymentRequestID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("FMFDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.FMFDetails =  new FMFDetailsType(childNode);
+		    this.fMFDetails =  new FMFDetailsType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("EnhancedPaymentInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.EnhancedPaymentInfo =  new EnhancedPaymentInfoType(childNode);
+		    this.enhancedPaymentInfo =  new EnhancedPaymentInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("PaymentError", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentError =  new ErrorType(childNode);
+		    this.paymentError =  new ErrorType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("InstrumentDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.InstrumentDetails =  new InstrumentDetailsType(childNode);
+		    this.instrumentDetails =  new InstrumentDetailsType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("OfferDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OfferDetails =  new OfferDetailsType(childNode);
+		    this.offerDetails =  new OfferDetailsType(childNode);
 		}
 	}
  

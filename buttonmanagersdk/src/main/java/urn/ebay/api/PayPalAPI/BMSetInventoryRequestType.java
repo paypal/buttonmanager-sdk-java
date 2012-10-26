@@ -13,6 +13,8 @@ import com.paypal.core.SDKUtil;
  */
 public class BMSetInventoryRequestType extends AbstractRequestType {
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * Hosted Button ID of button you wish to change.  Required
@@ -20,54 +22,54 @@ public class BMSetInventoryRequestType extends AbstractRequestType {
 	 * characters 	  
 	 *@Required	 
 	 */ 
-	private String HostedButtonID;
+	private String hostedButtonID;
 
 	/**
 	 * Is Inventory tracked.  Required 0 or 1 	  
 	 *@Required	 
 	 */ 
-	private String TrackInv;
+	private String trackInv;
 
 	/**
 	 * Is PNL Tracked.  Required 0 or 1 	  
 	 *@Required	 
 	 */ 
-	private String TrackPnl;
+	private String trackPnl;
 
 	/**
 	 * 	 
 	 */ 
-	private ItemTrackingDetailsType ItemTrackingDetails;
+	private ItemTrackingDetailsType itemTrackingDetails;
 
 	/**
 	 * Option Index.  Optional Character length and limitations: 1
 	 * single-byte alphanumeric characters 	 
 	 */ 
-	private String OptionIndex;
+	private String optionIndex;
 
 	/**
 	 * 	 
 	 */ 
-	private List<OptionTrackingDetailsType> OptionTrackingDetails = new ArrayList<OptionTrackingDetailsType>();
+	private List<OptionTrackingDetailsType> optionTrackingDetails = new ArrayList<OptionTrackingDetailsType>();
 
 	/**
 	 * URL of page to display when an item is soldout.  Optional
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters 	 
 	 */ 
-	private String SoldoutURL;
+	private String soldoutURL;
 
 	/**
 	 * Whether to use the same digital download key repeatedly. 
 	 * Optional 	 
 	 */ 
-	private String ReuseDigitalDownloadKeys;
+	private String reuseDigitalDownloadKeys;
 
 	/**
 	 * Whether to append these keys to the list or not (replace). 
 	 * Optional 	 
 	 */ 
-	private String AppendDigitalDownloadKeys;
+	private String appendDigitalDownloadKeys;
 
 	/**
 	 * Zero or more digital download keys to distribute to
@@ -75,17 +77,17 @@ public class BMSetInventoryRequestType extends AbstractRequestType {
 	 * Character length and limitations: 1000 single-byte
 	 * alphanumeric characters 	 
 	 */ 
-	private List<String> DigitalDownloadKeys = new ArrayList<String>();
+	private List<String> digitalDownloadKeys = new ArrayList<String>();
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public BMSetInventoryRequestType (String HostedButtonID, String TrackInv, String TrackPnl){
-		this.HostedButtonID = HostedButtonID;
-		this.TrackInv = TrackInv;
-		this.TrackPnl = TrackPnl;
+	public BMSetInventoryRequestType (String hostedButtonID, String trackInv, String trackPnl){
+		this.hostedButtonID = hostedButtonID;
+		this.trackInv = trackInv;
+		this.trackPnl = trackPnl;
 	}	
 
 	/**
@@ -95,194 +97,206 @@ public class BMSetInventoryRequestType extends AbstractRequestType {
 	}	
 
 	/**
-	 * Getter for HostedButtonID
+	 * Getter for hostedButtonID
 	 */
 	 public String getHostedButtonID() {
-	 	return HostedButtonID;
+	 	return hostedButtonID;
 	 }
 	 
 	/**
-	 * Setter for HostedButtonID
+	 * Setter for hostedButtonID
 	 */
-	 public void setHostedButtonID(String HostedButtonID) {
-	 	this.HostedButtonID = HostedButtonID;
+	 public void setHostedButtonID(String hostedButtonID) {
+	 	this.hostedButtonID = hostedButtonID;
 	 }
 	 
 	/**
-	 * Getter for TrackInv
+	 * Getter for trackInv
 	 */
 	 public String getTrackInv() {
-	 	return TrackInv;
+	 	return trackInv;
 	 }
 	 
 	/**
-	 * Setter for TrackInv
+	 * Setter for trackInv
 	 */
-	 public void setTrackInv(String TrackInv) {
-	 	this.TrackInv = TrackInv;
+	 public void setTrackInv(String trackInv) {
+	 	this.trackInv = trackInv;
 	 }
 	 
 	/**
-	 * Getter for TrackPnl
+	 * Getter for trackPnl
 	 */
 	 public String getTrackPnl() {
-	 	return TrackPnl;
+	 	return trackPnl;
 	 }
 	 
 	/**
-	 * Setter for TrackPnl
+	 * Setter for trackPnl
 	 */
-	 public void setTrackPnl(String TrackPnl) {
-	 	this.TrackPnl = TrackPnl;
+	 public void setTrackPnl(String trackPnl) {
+	 	this.trackPnl = trackPnl;
 	 }
 	 
 	/**
-	 * Getter for ItemTrackingDetails
+	 * Getter for itemTrackingDetails
 	 */
 	 public ItemTrackingDetailsType getItemTrackingDetails() {
-	 	return ItemTrackingDetails;
+	 	return itemTrackingDetails;
 	 }
 	 
 	/**
-	 * Setter for ItemTrackingDetails
+	 * Setter for itemTrackingDetails
 	 */
-	 public void setItemTrackingDetails(ItemTrackingDetailsType ItemTrackingDetails) {
-	 	this.ItemTrackingDetails = ItemTrackingDetails;
+	 public void setItemTrackingDetails(ItemTrackingDetailsType itemTrackingDetails) {
+	 	this.itemTrackingDetails = itemTrackingDetails;
 	 }
 	 
 	/**
-	 * Getter for OptionIndex
+	 * Getter for optionIndex
 	 */
 	 public String getOptionIndex() {
-	 	return OptionIndex;
+	 	return optionIndex;
 	 }
 	 
 	/**
-	 * Setter for OptionIndex
+	 * Setter for optionIndex
 	 */
-	 public void setOptionIndex(String OptionIndex) {
-	 	this.OptionIndex = OptionIndex;
+	 public void setOptionIndex(String optionIndex) {
+	 	this.optionIndex = optionIndex;
 	 }
 	 
 	/**
-	 * Getter for OptionTrackingDetails
+	 * Getter for optionTrackingDetails
 	 */
 	 public List<OptionTrackingDetailsType> getOptionTrackingDetails() {
-	 	return OptionTrackingDetails;
+	 	return optionTrackingDetails;
 	 }
 	 
 	/**
-	 * Setter for OptionTrackingDetails
+	 * Setter for optionTrackingDetails
 	 */
-	 public void setOptionTrackingDetails(List<OptionTrackingDetailsType> OptionTrackingDetails) {
-	 	this.OptionTrackingDetails = OptionTrackingDetails;
+	 public void setOptionTrackingDetails(List<OptionTrackingDetailsType> optionTrackingDetails) {
+	 	this.optionTrackingDetails = optionTrackingDetails;
 	 }
 	 
 	/**
-	 * Getter for SoldoutURL
+	 * Getter for soldoutURL
 	 */
 	 public String getSoldoutURL() {
-	 	return SoldoutURL;
+	 	return soldoutURL;
 	 }
 	 
 	/**
-	 * Setter for SoldoutURL
+	 * Setter for soldoutURL
 	 */
-	 public void setSoldoutURL(String SoldoutURL) {
-	 	this.SoldoutURL = SoldoutURL;
+	 public void setSoldoutURL(String soldoutURL) {
+	 	this.soldoutURL = soldoutURL;
 	 }
 	 
 	/**
-	 * Getter for ReuseDigitalDownloadKeys
+	 * Getter for reuseDigitalDownloadKeys
 	 */
 	 public String getReuseDigitalDownloadKeys() {
-	 	return ReuseDigitalDownloadKeys;
+	 	return reuseDigitalDownloadKeys;
 	 }
 	 
 	/**
-	 * Setter for ReuseDigitalDownloadKeys
+	 * Setter for reuseDigitalDownloadKeys
 	 */
-	 public void setReuseDigitalDownloadKeys(String ReuseDigitalDownloadKeys) {
-	 	this.ReuseDigitalDownloadKeys = ReuseDigitalDownloadKeys;
+	 public void setReuseDigitalDownloadKeys(String reuseDigitalDownloadKeys) {
+	 	this.reuseDigitalDownloadKeys = reuseDigitalDownloadKeys;
 	 }
 	 
 	/**
-	 * Getter for AppendDigitalDownloadKeys
+	 * Getter for appendDigitalDownloadKeys
 	 */
 	 public String getAppendDigitalDownloadKeys() {
-	 	return AppendDigitalDownloadKeys;
+	 	return appendDigitalDownloadKeys;
 	 }
 	 
 	/**
-	 * Setter for AppendDigitalDownloadKeys
+	 * Setter for appendDigitalDownloadKeys
 	 */
-	 public void setAppendDigitalDownloadKeys(String AppendDigitalDownloadKeys) {
-	 	this.AppendDigitalDownloadKeys = AppendDigitalDownloadKeys;
+	 public void setAppendDigitalDownloadKeys(String appendDigitalDownloadKeys) {
+	 	this.appendDigitalDownloadKeys = appendDigitalDownloadKeys;
 	 }
 	 
 	/**
-	 * Getter for DigitalDownloadKeys
+	 * Getter for digitalDownloadKeys
 	 */
 	 public List<String> getDigitalDownloadKeys() {
-	 	return DigitalDownloadKeys;
+	 	return digitalDownloadKeys;
 	 }
 	 
 	/**
-	 * Setter for DigitalDownloadKeys
+	 * Setter for digitalDownloadKeys
 	 */
-	 public void setDigitalDownloadKeys(List<String> DigitalDownloadKeys) {
-	 	this.DigitalDownloadKeys = DigitalDownloadKeys;
+	 public void setDigitalDownloadKeys(List<String> digitalDownloadKeys) {
+	 	this.digitalDownloadKeys = digitalDownloadKeys;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(super.toXMLString());
-		if(HostedButtonID != null) {
-			sb.append("<urn:HostedButtonID>").append(SDKUtil.escapeInvalidXmlCharsRegex(HostedButtonID));
-			sb.append("</urn:HostedButtonID>");
-		}
-		if(TrackInv != null) {
-			sb.append("<urn:TrackInv>").append(SDKUtil.escapeInvalidXmlCharsRegex(TrackInv));
-			sb.append("</urn:TrackInv>");
-		}
-		if(TrackPnl != null) {
-			sb.append("<urn:TrackPnl>").append(SDKUtil.escapeInvalidXmlCharsRegex(TrackPnl));
-			sb.append("</urn:TrackPnl>");
-		}
-		if(ItemTrackingDetails != null) {
-			sb.append("<ebl:ItemTrackingDetails>");
-			sb.append(ItemTrackingDetails.toXMLString());
-			sb.append("</ebl:ItemTrackingDetails>");
-		}
-		if(OptionIndex != null) {
-			sb.append("<urn:OptionIndex>").append(SDKUtil.escapeInvalidXmlCharsRegex(OptionIndex));
-			sb.append("</urn:OptionIndex>");
-		}
-		if(OptionTrackingDetails != null) {
-			for(int i=0; i < OptionTrackingDetails.size(); i++) {
-				sb.append("<ebl:OptionTrackingDetails>");
-				sb.append(OptionTrackingDetails.get(i).toXMLString());
-				sb.append("</ebl:OptionTrackingDetails>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
 			}
 		}
-		if(SoldoutURL != null) {
-			sb.append("<urn:SoldoutURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(SoldoutURL));
-			sb.append("</urn:SoldoutURL>");
+		sb.append(super.toXMLString(prefix, null));
+		if(hostedButtonID != null) {
+			sb.append("<").append(preferredPrefix).append(":HostedButtonID>").append(SDKUtil.escapeInvalidXmlCharsRegex(hostedButtonID));
+			sb.append("</").append(preferredPrefix).append(":HostedButtonID>");
 		}
-		if(ReuseDigitalDownloadKeys != null) {
-			sb.append("<urn:ReuseDigitalDownloadKeys>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReuseDigitalDownloadKeys));
-			sb.append("</urn:ReuseDigitalDownloadKeys>");
+		if(trackInv != null) {
+			sb.append("<").append(preferredPrefix).append(":TrackInv>").append(SDKUtil.escapeInvalidXmlCharsRegex(trackInv));
+			sb.append("</").append(preferredPrefix).append(":TrackInv>");
 		}
-		if(AppendDigitalDownloadKeys != null) {
-			sb.append("<urn:AppendDigitalDownloadKeys>").append(SDKUtil.escapeInvalidXmlCharsRegex(AppendDigitalDownloadKeys));
-			sb.append("</urn:AppendDigitalDownloadKeys>");
+		if(trackPnl != null) {
+			sb.append("<").append(preferredPrefix).append(":TrackPnl>").append(SDKUtil.escapeInvalidXmlCharsRegex(trackPnl));
+			sb.append("</").append(preferredPrefix).append(":TrackPnl>");
 		}
-		if(DigitalDownloadKeys != null) {
-			for(int i=0; i < DigitalDownloadKeys.size(); i++) {
-				sb.append("<urn:DigitalDownloadKeys>").append(SDKUtil.escapeInvalidXmlCharsRegex(DigitalDownloadKeys.get(i)));
-				sb.append("</urn:DigitalDownloadKeys>");
+		if(itemTrackingDetails != null) {
+			sb.append(itemTrackingDetails.toXMLString(null,"ItemTrackingDetails"));
+		}
+		if(optionIndex != null) {
+			sb.append("<").append(preferredPrefix).append(":OptionIndex>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionIndex));
+			sb.append("</").append(preferredPrefix).append(":OptionIndex>");
+		}
+		if(optionTrackingDetails != null) {
+			for(int i=0; i < optionTrackingDetails.size(); i++) {
+				sb.append(optionTrackingDetails.get(i).toXMLString(null,"OptionTrackingDetails"));
+			}
+		}
+		if(soldoutURL != null) {
+			sb.append("<").append(preferredPrefix).append(":SoldoutURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(soldoutURL));
+			sb.append("</").append(preferredPrefix).append(":SoldoutURL>");
+		}
+		if(reuseDigitalDownloadKeys != null) {
+			sb.append("<").append(preferredPrefix).append(":ReuseDigitalDownloadKeys>").append(SDKUtil.escapeInvalidXmlCharsRegex(reuseDigitalDownloadKeys));
+			sb.append("</").append(preferredPrefix).append(":ReuseDigitalDownloadKeys>");
+		}
+		if(appendDigitalDownloadKeys != null) {
+			sb.append("<").append(preferredPrefix).append(":AppendDigitalDownloadKeys>").append(SDKUtil.escapeInvalidXmlCharsRegex(appendDigitalDownloadKeys));
+			sb.append("</").append(preferredPrefix).append(":AppendDigitalDownloadKeys>");
+		}
+		if(digitalDownloadKeys != null) {
+			for(int i=0; i < digitalDownloadKeys.size(); i++) {
+				sb.append("<").append(preferredPrefix).append(":DigitalDownloadKeys>").append(SDKUtil.escapeInvalidXmlCharsRegex(digitalDownloadKeys.get(i)));
+				sb.append("</").append(preferredPrefix).append(":DigitalDownloadKeys>");
+			}
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
 			}
 		}
 		return sb.toString();

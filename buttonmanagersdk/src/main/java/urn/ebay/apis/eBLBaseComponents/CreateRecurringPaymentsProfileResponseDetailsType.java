@@ -27,27 +27,27 @@ public class CreateRecurringPaymentsProfileResponseDetailsType{
 	 * Recurring Billing Profile ID 	  
 	 *@Required	 
 	 */ 
-	private String ProfileID;
+	private String profileID;
 
 	/**
 	 * Recurring Billing Profile Status 	 
 	 */ 
-	private RecurringPaymentsProfileStatusType ProfileStatus;
+	private RecurringPaymentsProfileStatusType profileStatus;
 
 	/**
 	 * Transaction id from DCC initial payment 	 
 	 */ 
-	private String TransactionID;
+	private String transactionID;
 
 	/**
 	 * Response from DCC initial payment 	 
 	 */ 
-	private String DCCProcessorResponse;
+	private String dCCProcessorResponse;
 
 	/**
 	 * Return code if DCC initial payment fails 	 
 	 */ 
-	private String DCCReturnCode;
+	private String dCCReturnCode;
 
 	
 
@@ -58,73 +58,73 @@ public class CreateRecurringPaymentsProfileResponseDetailsType{
 	}	
 
 	/**
-	 * Getter for ProfileID
+	 * Getter for profileID
 	 */
 	 public String getProfileID() {
-	 	return ProfileID;
+	 	return profileID;
 	 }
 	 
 	/**
-	 * Setter for ProfileID
+	 * Setter for profileID
 	 */
-	 public void setProfileID(String ProfileID) {
-	 	this.ProfileID = ProfileID;
+	 public void setProfileID(String profileID) {
+	 	this.profileID = profileID;
 	 }
 	 
 	/**
-	 * Getter for ProfileStatus
+	 * Getter for profileStatus
 	 */
 	 public RecurringPaymentsProfileStatusType getProfileStatus() {
-	 	return ProfileStatus;
+	 	return profileStatus;
 	 }
 	 
 	/**
-	 * Setter for ProfileStatus
+	 * Setter for profileStatus
 	 */
-	 public void setProfileStatus(RecurringPaymentsProfileStatusType ProfileStatus) {
-	 	this.ProfileStatus = ProfileStatus;
+	 public void setProfileStatus(RecurringPaymentsProfileStatusType profileStatus) {
+	 	this.profileStatus = profileStatus;
 	 }
 	 
 	/**
-	 * Getter for TransactionID
+	 * Getter for transactionID
 	 */
 	 public String getTransactionID() {
-	 	return TransactionID;
+	 	return transactionID;
 	 }
 	 
 	/**
-	 * Setter for TransactionID
+	 * Setter for transactionID
 	 */
-	 public void setTransactionID(String TransactionID) {
-	 	this.TransactionID = TransactionID;
+	 public void setTransactionID(String transactionID) {
+	 	this.transactionID = transactionID;
 	 }
 	 
 	/**
-	 * Getter for DCCProcessorResponse
+	 * Getter for dCCProcessorResponse
 	 */
 	 public String getDCCProcessorResponse() {
-	 	return DCCProcessorResponse;
+	 	return dCCProcessorResponse;
 	 }
 	 
 	/**
-	 * Setter for DCCProcessorResponse
+	 * Setter for dCCProcessorResponse
 	 */
-	 public void setDCCProcessorResponse(String DCCProcessorResponse) {
-	 	this.DCCProcessorResponse = DCCProcessorResponse;
+	 public void setDCCProcessorResponse(String dCCProcessorResponse) {
+	 	this.dCCProcessorResponse = dCCProcessorResponse;
 	 }
 	 
 	/**
-	 * Getter for DCCReturnCode
+	 * Getter for dCCReturnCode
 	 */
 	 public String getDCCReturnCode() {
-	 	return DCCReturnCode;
+	 	return dCCReturnCode;
 	 }
 	 
 	/**
-	 * Setter for DCCReturnCode
+	 * Setter for dCCReturnCode
 	 */
-	 public void setDCCReturnCode(String DCCReturnCode) {
-	 	this.DCCReturnCode = DCCReturnCode;
+	 public void setDCCReturnCode(String dCCReturnCode) {
+	 	this.dCCReturnCode = dCCReturnCode;
 	 }
 	 
 
@@ -148,26 +148,26 @@ public class CreateRecurringPaymentsProfileResponseDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("ProfileID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ProfileID = childNode.getTextContent();
+		    this.profileID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ProfileStatus", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ProfileStatus = RecurringPaymentsProfileStatusType.fromValue(childNode.getTextContent());
+		    this.profileStatus = RecurringPaymentsProfileStatusType.fromValue(childNode.getTextContent());
 		}
 		childNode = (Node) xpath.evaluate("TransactionID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TransactionID = childNode.getTextContent();
+		    this.transactionID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("DCCProcessorResponse", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.DCCProcessorResponse = childNode.getTextContent();
+		    this.dCCProcessorResponse = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("DCCReturnCode", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.DCCReturnCode = childNode.getTextContent();
+		    this.dCCReturnCode = childNode.getTextContent();
 		}
 	
 	}

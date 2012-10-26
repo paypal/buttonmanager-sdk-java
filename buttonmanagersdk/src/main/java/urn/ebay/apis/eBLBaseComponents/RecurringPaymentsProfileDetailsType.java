@@ -24,39 +24,41 @@ import org.xml.sax.SAXException;
  */
 public class RecurringPaymentsProfileDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Subscriber name - if missing, will use name in buyer's
 	 * account 	 
 	 */ 
-	private String SubscriberName;
+	private String subscriberName;
 
 	/**
 	 * Subscriber address - if missing, will use address in buyer's
 	 * account 	 
 	 */ 
-	private AddressType SubscriberShippingAddress;
+	private AddressType subscriberShippingAddress;
 
 	/**
 	 * When does this Profile begin billing? 	  
 	 *@Required	 
 	 */ 
-	private String BillingStartDate;
+	private String billingStartDate;
 
 	/**
 	 * Your own unique invoice or tracking number. Optional
 	 * Character length and limitations: 127 single-byte
 	 * alphanumeric characters 	 
 	 */ 
-	private String ProfileReference;
+	private String profileReference;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public RecurringPaymentsProfileDetailsType (String BillingStartDate){
-		this.BillingStartDate = BillingStartDate;
+	public RecurringPaymentsProfileDetailsType (String billingStartDate){
+		this.billingStartDate = billingStartDate;
 	}	
 
 	/**
@@ -66,81 +68,95 @@ public class RecurringPaymentsProfileDetailsType{
 	}	
 
 	/**
-	 * Getter for SubscriberName
+	 * Getter for subscriberName
 	 */
 	 public String getSubscriberName() {
-	 	return SubscriberName;
+	 	return subscriberName;
 	 }
 	 
 	/**
-	 * Setter for SubscriberName
+	 * Setter for subscriberName
 	 */
-	 public void setSubscriberName(String SubscriberName) {
-	 	this.SubscriberName = SubscriberName;
+	 public void setSubscriberName(String subscriberName) {
+	 	this.subscriberName = subscriberName;
 	 }
 	 
 	/**
-	 * Getter for SubscriberShippingAddress
+	 * Getter for subscriberShippingAddress
 	 */
 	 public AddressType getSubscriberShippingAddress() {
-	 	return SubscriberShippingAddress;
+	 	return subscriberShippingAddress;
 	 }
 	 
 	/**
-	 * Setter for SubscriberShippingAddress
+	 * Setter for subscriberShippingAddress
 	 */
-	 public void setSubscriberShippingAddress(AddressType SubscriberShippingAddress) {
-	 	this.SubscriberShippingAddress = SubscriberShippingAddress;
+	 public void setSubscriberShippingAddress(AddressType subscriberShippingAddress) {
+	 	this.subscriberShippingAddress = subscriberShippingAddress;
 	 }
 	 
 	/**
-	 * Getter for BillingStartDate
+	 * Getter for billingStartDate
 	 */
 	 public String getBillingStartDate() {
-	 	return BillingStartDate;
+	 	return billingStartDate;
 	 }
 	 
 	/**
-	 * Setter for BillingStartDate
+	 * Setter for billingStartDate
 	 */
-	 public void setBillingStartDate(String BillingStartDate) {
-	 	this.BillingStartDate = BillingStartDate;
+	 public void setBillingStartDate(String billingStartDate) {
+	 	this.billingStartDate = billingStartDate;
 	 }
 	 
 	/**
-	 * Getter for ProfileReference
+	 * Getter for profileReference
 	 */
 	 public String getProfileReference() {
-	 	return ProfileReference;
+	 	return profileReference;
 	 }
 	 
 	/**
-	 * Setter for ProfileReference
+	 * Setter for profileReference
 	 */
-	 public void setProfileReference(String ProfileReference) {
-	 	this.ProfileReference = ProfileReference;
+	 public void setProfileReference(String profileReference) {
+	 	this.profileReference = profileReference;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(SubscriberName != null) {
-			sb.append("<ebl:SubscriberName>").append(SDKUtil.escapeInvalidXmlCharsRegex(SubscriberName));
-			sb.append("</ebl:SubscriberName>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(SubscriberShippingAddress != null) {
-			sb.append("<ebl:SubscriberShippingAddress>");
-			sb.append(SubscriberShippingAddress.toXMLString());
-			sb.append("</ebl:SubscriberShippingAddress>");
+		if(subscriberName != null) {
+			sb.append("<").append(preferredPrefix).append(":SubscriberName>").append(SDKUtil.escapeInvalidXmlCharsRegex(subscriberName));
+			sb.append("</").append(preferredPrefix).append(":SubscriberName>");
 		}
-		if(BillingStartDate != null) {
-			sb.append("<ebl:BillingStartDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingStartDate));
-			sb.append("</ebl:BillingStartDate>");
+		if(subscriberShippingAddress != null) {
+			sb.append(subscriberShippingAddress.toXMLString(preferredPrefix,"SubscriberShippingAddress"));
 		}
-		if(ProfileReference != null) {
-			sb.append("<ebl:ProfileReference>").append(SDKUtil.escapeInvalidXmlCharsRegex(ProfileReference));
-			sb.append("</ebl:ProfileReference>");
+		if(billingStartDate != null) {
+			sb.append("<").append(preferredPrefix).append(":BillingStartDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingStartDate));
+			sb.append("</").append(preferredPrefix).append(":BillingStartDate>");
+		}
+		if(profileReference != null) {
+			sb.append("<").append(preferredPrefix).append(":ProfileReference>").append(SDKUtil.escapeInvalidXmlCharsRegex(profileReference));
+			sb.append("</").append(preferredPrefix).append(":ProfileReference>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}
@@ -164,21 +180,21 @@ public class RecurringPaymentsProfileDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("SubscriberName", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SubscriberName = childNode.getTextContent();
+		    this.subscriberName = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("SubscriberShippingAddress", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SubscriberShippingAddress =  new AddressType(childNode);
+		    this.subscriberShippingAddress =  new AddressType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("BillingStartDate", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BillingStartDate = childNode.getTextContent();
+		    this.billingStartDate = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ProfileReference", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ProfileReference = childNode.getTextContent();
+		    this.profileReference = childNode.getTextContent();
 		}
 	
 	}

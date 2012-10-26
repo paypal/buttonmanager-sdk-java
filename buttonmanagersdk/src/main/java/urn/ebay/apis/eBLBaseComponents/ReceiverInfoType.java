@@ -28,7 +28,7 @@ public class ReceiverInfoType{
 	 * primary account. Character length and limitations: 127
 	 * single-byte alphanumeric characters	 
 	 */ 
-	private String Business;
+	private String business;
 
 	/**
 	 * Primary email address of the payment recipient (the seller).
@@ -38,14 +38,14 @@ public class ReceiverInfoType{
 	 * length and limitations: 127 single-byte alphanumeric
 	 * characters	 
 	 */ 
-	private String Receiver;
+	private String receiver;
 
 	/**
 	 * Unique account ID of the payment recipient (the seller).
 	 * This value is the same as the value of the recipient's
 	 * referral ID. 	 
 	 */ 
-	private String ReceiverID;
+	private String receiverID;
 
 	
 
@@ -56,45 +56,45 @@ public class ReceiverInfoType{
 	}	
 
 	/**
-	 * Getter for Business
+	 * Getter for business
 	 */
 	 public String getBusiness() {
-	 	return Business;
+	 	return business;
 	 }
 	 
 	/**
-	 * Setter for Business
+	 * Setter for business
 	 */
-	 public void setBusiness(String Business) {
-	 	this.Business = Business;
+	 public void setBusiness(String business) {
+	 	this.business = business;
 	 }
 	 
 	/**
-	 * Getter for Receiver
+	 * Getter for receiver
 	 */
 	 public String getReceiver() {
-	 	return Receiver;
+	 	return receiver;
 	 }
 	 
 	/**
-	 * Setter for Receiver
+	 * Setter for receiver
 	 */
-	 public void setReceiver(String Receiver) {
-	 	this.Receiver = Receiver;
+	 public void setReceiver(String receiver) {
+	 	this.receiver = receiver;
 	 }
 	 
 	/**
-	 * Getter for ReceiverID
+	 * Getter for receiverID
 	 */
 	 public String getReceiverID() {
-	 	return ReceiverID;
+	 	return receiverID;
 	 }
 	 
 	/**
-	 * Setter for ReceiverID
+	 * Setter for receiverID
 	 */
-	 public void setReceiverID(String ReceiverID) {
-	 	this.ReceiverID = ReceiverID;
+	 public void setReceiverID(String receiverID) {
+	 	this.receiverID = receiverID;
 	 }
 	 
 
@@ -118,17 +118,17 @@ public class ReceiverInfoType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Business", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Business = childNode.getTextContent();
+		    this.business = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Receiver", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Receiver = childNode.getTextContent();
+		    this.receiver = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("ReceiverID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ReceiverID = childNode.getTextContent();
+		    this.receiverID = childNode.getTextContent();
 		}
 	
 	}

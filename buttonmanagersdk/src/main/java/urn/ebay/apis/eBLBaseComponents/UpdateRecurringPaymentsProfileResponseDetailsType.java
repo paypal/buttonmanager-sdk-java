@@ -26,7 +26,7 @@ public class UpdateRecurringPaymentsProfileResponseDetailsType{
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String ProfileID;
+	private String profileID;
 
 	
 
@@ -37,17 +37,17 @@ public class UpdateRecurringPaymentsProfileResponseDetailsType{
 	}	
 
 	/**
-	 * Getter for ProfileID
+	 * Getter for profileID
 	 */
 	 public String getProfileID() {
-	 	return ProfileID;
+	 	return profileID;
 	 }
 	 
 	/**
-	 * Setter for ProfileID
+	 * Setter for profileID
 	 */
-	 public void setProfileID(String ProfileID) {
-	 	this.ProfileID = ProfileID;
+	 public void setProfileID(String profileID) {
+	 	this.profileID = profileID;
 	 }
 	 
 
@@ -72,7 +72,7 @@ public class UpdateRecurringPaymentsProfileResponseDetailsType{
 		childNode = (Node) xpath.evaluate("ProfileID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 			String value = childNode.getTextContent();
-			this.ProfileID = value;
+			this.profileID = value;
 		}
 	}
  

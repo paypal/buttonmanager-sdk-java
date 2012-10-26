@@ -11,76 +11,78 @@ import com.paypal.core.SDKUtil;
  */
 public class DoReferenceTransactionRequestDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String ReferenceID;
+	private String referenceID;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private PaymentActionCodeType PaymentAction;
+	private PaymentActionCodeType paymentAction;
 
 	/**
 	 * 	 
 	 */ 
-	private MerchantPullPaymentCodeType PaymentType;
+	private MerchantPullPaymentCodeType paymentType;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private PaymentDetailsType PaymentDetails;
+	private PaymentDetailsType paymentDetails;
 
 	/**
 	 * 	 
 	 */ 
-	private ReferenceCreditCardDetailsType CreditCard;
+	private ReferenceCreditCardDetailsType creditCard;
 
 	/**
 	 * 	 
 	 */ 
-	private String IPAddress;
+	private String iPAddress;
 
 	/**
 	 * 	 
 	 */ 
-	private String MerchantSessionId;
+	private String merchantSessionId;
 
 	/**
 	 * 	 
 	 */ 
-	private String ReqConfirmShipping;
+	private String reqConfirmShipping;
 
 	/**
 	 * 	 
 	 */ 
-	private String SoftDescriptor;
+	private String softDescriptor;
 
 	/**
 	 * 	 
 	 */ 
-	private SenderDetailsType SenderDetails;
+	private SenderDetailsType senderDetails;
 
 	/**
 	 * Unique id for each API request to prevent duplicate
 	 * payments. Optional Character length and limits: 38
 	 * single-byte characters maximum. 	 
 	 */ 
-	private String MsgSubID;
+	private String msgSubID;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public DoReferenceTransactionRequestDetailsType (String ReferenceID, PaymentActionCodeType PaymentAction, PaymentDetailsType PaymentDetails){
-		this.ReferenceID = ReferenceID;
-		this.PaymentAction = PaymentAction;
-		this.PaymentDetails = PaymentDetails;
+	public DoReferenceTransactionRequestDetailsType (String referenceID, PaymentActionCodeType paymentAction, PaymentDetailsType paymentDetails){
+		this.referenceID = referenceID;
+		this.paymentAction = paymentAction;
+		this.paymentDetails = paymentDetails;
 	}	
 
 	/**
@@ -90,209 +92,219 @@ public class DoReferenceTransactionRequestDetailsType{
 	}	
 
 	/**
-	 * Getter for ReferenceID
+	 * Getter for referenceID
 	 */
 	 public String getReferenceID() {
-	 	return ReferenceID;
+	 	return referenceID;
 	 }
 	 
 	/**
-	 * Setter for ReferenceID
+	 * Setter for referenceID
 	 */
-	 public void setReferenceID(String ReferenceID) {
-	 	this.ReferenceID = ReferenceID;
+	 public void setReferenceID(String referenceID) {
+	 	this.referenceID = referenceID;
 	 }
 	 
 	/**
-	 * Getter for PaymentAction
+	 * Getter for paymentAction
 	 */
 	 public PaymentActionCodeType getPaymentAction() {
-	 	return PaymentAction;
+	 	return paymentAction;
 	 }
 	 
 	/**
-	 * Setter for PaymentAction
+	 * Setter for paymentAction
 	 */
-	 public void setPaymentAction(PaymentActionCodeType PaymentAction) {
-	 	this.PaymentAction = PaymentAction;
+	 public void setPaymentAction(PaymentActionCodeType paymentAction) {
+	 	this.paymentAction = paymentAction;
 	 }
 	 
 	/**
-	 * Getter for PaymentType
+	 * Getter for paymentType
 	 */
 	 public MerchantPullPaymentCodeType getPaymentType() {
-	 	return PaymentType;
+	 	return paymentType;
 	 }
 	 
 	/**
-	 * Setter for PaymentType
+	 * Setter for paymentType
 	 */
-	 public void setPaymentType(MerchantPullPaymentCodeType PaymentType) {
-	 	this.PaymentType = PaymentType;
+	 public void setPaymentType(MerchantPullPaymentCodeType paymentType) {
+	 	this.paymentType = paymentType;
 	 }
 	 
 	/**
-	 * Getter for PaymentDetails
+	 * Getter for paymentDetails
 	 */
 	 public PaymentDetailsType getPaymentDetails() {
-	 	return PaymentDetails;
+	 	return paymentDetails;
 	 }
 	 
 	/**
-	 * Setter for PaymentDetails
+	 * Setter for paymentDetails
 	 */
-	 public void setPaymentDetails(PaymentDetailsType PaymentDetails) {
-	 	this.PaymentDetails = PaymentDetails;
+	 public void setPaymentDetails(PaymentDetailsType paymentDetails) {
+	 	this.paymentDetails = paymentDetails;
 	 }
 	 
 	/**
-	 * Getter for CreditCard
+	 * Getter for creditCard
 	 */
 	 public ReferenceCreditCardDetailsType getCreditCard() {
-	 	return CreditCard;
+	 	return creditCard;
 	 }
 	 
 	/**
-	 * Setter for CreditCard
+	 * Setter for creditCard
 	 */
-	 public void setCreditCard(ReferenceCreditCardDetailsType CreditCard) {
-	 	this.CreditCard = CreditCard;
+	 public void setCreditCard(ReferenceCreditCardDetailsType creditCard) {
+	 	this.creditCard = creditCard;
 	 }
 	 
 	/**
-	 * Getter for IPAddress
+	 * Getter for iPAddress
 	 */
 	 public String getIPAddress() {
-	 	return IPAddress;
+	 	return iPAddress;
 	 }
 	 
 	/**
-	 * Setter for IPAddress
+	 * Setter for iPAddress
 	 */
-	 public void setIPAddress(String IPAddress) {
-	 	this.IPAddress = IPAddress;
+	 public void setIPAddress(String iPAddress) {
+	 	this.iPAddress = iPAddress;
 	 }
 	 
 	/**
-	 * Getter for MerchantSessionId
+	 * Getter for merchantSessionId
 	 */
 	 public String getMerchantSessionId() {
-	 	return MerchantSessionId;
+	 	return merchantSessionId;
 	 }
 	 
 	/**
-	 * Setter for MerchantSessionId
+	 * Setter for merchantSessionId
 	 */
-	 public void setMerchantSessionId(String MerchantSessionId) {
-	 	this.MerchantSessionId = MerchantSessionId;
+	 public void setMerchantSessionId(String merchantSessionId) {
+	 	this.merchantSessionId = merchantSessionId;
 	 }
 	 
 	/**
-	 * Getter for ReqConfirmShipping
+	 * Getter for reqConfirmShipping
 	 */
 	 public String getReqConfirmShipping() {
-	 	return ReqConfirmShipping;
+	 	return reqConfirmShipping;
 	 }
 	 
 	/**
-	 * Setter for ReqConfirmShipping
+	 * Setter for reqConfirmShipping
 	 */
-	 public void setReqConfirmShipping(String ReqConfirmShipping) {
-	 	this.ReqConfirmShipping = ReqConfirmShipping;
+	 public void setReqConfirmShipping(String reqConfirmShipping) {
+	 	this.reqConfirmShipping = reqConfirmShipping;
 	 }
 	 
 	/**
-	 * Getter for SoftDescriptor
+	 * Getter for softDescriptor
 	 */
 	 public String getSoftDescriptor() {
-	 	return SoftDescriptor;
+	 	return softDescriptor;
 	 }
 	 
 	/**
-	 * Setter for SoftDescriptor
+	 * Setter for softDescriptor
 	 */
-	 public void setSoftDescriptor(String SoftDescriptor) {
-	 	this.SoftDescriptor = SoftDescriptor;
+	 public void setSoftDescriptor(String softDescriptor) {
+	 	this.softDescriptor = softDescriptor;
 	 }
 	 
 	/**
-	 * Getter for SenderDetails
+	 * Getter for senderDetails
 	 */
 	 public SenderDetailsType getSenderDetails() {
-	 	return SenderDetails;
+	 	return senderDetails;
 	 }
 	 
 	/**
-	 * Setter for SenderDetails
+	 * Setter for senderDetails
 	 */
-	 public void setSenderDetails(SenderDetailsType SenderDetails) {
-	 	this.SenderDetails = SenderDetails;
+	 public void setSenderDetails(SenderDetailsType senderDetails) {
+	 	this.senderDetails = senderDetails;
 	 }
 	 
 	/**
-	 * Getter for MsgSubID
+	 * Getter for msgSubID
 	 */
 	 public String getMsgSubID() {
-	 	return MsgSubID;
+	 	return msgSubID;
 	 }
 	 
 	/**
-	 * Setter for MsgSubID
+	 * Setter for msgSubID
 	 */
-	 public void setMsgSubID(String MsgSubID) {
-	 	this.MsgSubID = MsgSubID;
+	 public void setMsgSubID(String msgSubID) {
+	 	this.msgSubID = msgSubID;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(ReferenceID != null) {
-			sb.append("<ebl:ReferenceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReferenceID));
-			sb.append("</ebl:ReferenceID>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(PaymentAction != null) {
-			sb.append("<ebl:PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentAction.getValue()));
-			sb.append("</ebl:PaymentAction>");
+		if(referenceID != null) {
+			sb.append("<").append(preferredPrefix).append(":ReferenceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(referenceID));
+			sb.append("</").append(preferredPrefix).append(":ReferenceID>");
 		}
-		if(PaymentType != null) {
-			sb.append("<ebl:PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentType.getValue()));
-			sb.append("</ebl:PaymentType>");
+		if(paymentAction != null) {
+			sb.append("<").append(preferredPrefix).append(":PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentAction.getValue()));
+			sb.append("</").append(preferredPrefix).append(":PaymentAction>");
 		}
-		if(PaymentDetails != null) {
-			sb.append("<ebl:PaymentDetails>");
-			sb.append(PaymentDetails.toXMLString());
-			sb.append("</ebl:PaymentDetails>");
+		if(paymentType != null) {
+			sb.append("<").append(preferredPrefix).append(":PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":PaymentType>");
 		}
-		if(CreditCard != null) {
-			sb.append("<ebl:CreditCard>");
-			sb.append(CreditCard.toXMLString());
-			sb.append("</ebl:CreditCard>");
+		if(paymentDetails != null) {
+			sb.append(paymentDetails.toXMLString(preferredPrefix,"PaymentDetails"));
 		}
-		if(IPAddress != null) {
-			sb.append("<ebl:IPAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(IPAddress));
-			sb.append("</ebl:IPAddress>");
+		if(creditCard != null) {
+			sb.append(creditCard.toXMLString(preferredPrefix,"CreditCard"));
 		}
-		if(MerchantSessionId != null) {
-			sb.append("<ebl:MerchantSessionId>").append(SDKUtil.escapeInvalidXmlCharsRegex(MerchantSessionId));
-			sb.append("</ebl:MerchantSessionId>");
+		if(iPAddress != null) {
+			sb.append("<").append(preferredPrefix).append(":IPAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(iPAddress));
+			sb.append("</").append(preferredPrefix).append(":IPAddress>");
 		}
-		if(ReqConfirmShipping != null) {
-			sb.append("<ebl:ReqConfirmShipping>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReqConfirmShipping));
-			sb.append("</ebl:ReqConfirmShipping>");
+		if(merchantSessionId != null) {
+			sb.append("<").append(preferredPrefix).append(":MerchantSessionId>").append(SDKUtil.escapeInvalidXmlCharsRegex(merchantSessionId));
+			sb.append("</").append(preferredPrefix).append(":MerchantSessionId>");
 		}
-		if(SoftDescriptor != null) {
-			sb.append("<ebl:SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(SoftDescriptor));
-			sb.append("</ebl:SoftDescriptor>");
+		if(reqConfirmShipping != null) {
+			sb.append("<").append(preferredPrefix).append(":ReqConfirmShipping>").append(SDKUtil.escapeInvalidXmlCharsRegex(reqConfirmShipping));
+			sb.append("</").append(preferredPrefix).append(":ReqConfirmShipping>");
 		}
-		if(SenderDetails != null) {
-			sb.append("<ebl:SenderDetails>");
-			sb.append(SenderDetails.toXMLString());
-			sb.append("</ebl:SenderDetails>");
+		if(softDescriptor != null) {
+			sb.append("<").append(preferredPrefix).append(":SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(softDescriptor));
+			sb.append("</").append(preferredPrefix).append(":SoftDescriptor>");
 		}
-		if(MsgSubID != null) {
-			sb.append("<ebl:MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(MsgSubID));
-			sb.append("</ebl:MsgSubID>");
+		if(senderDetails != null) {
+			sb.append(senderDetails.toXMLString(preferredPrefix,"SenderDetails"));
+		}
+		if(msgSubID != null) {
+			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(msgSubID));
+			sb.append("</").append(preferredPrefix).append(":MsgSubID>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

@@ -7,11 +7,13 @@ import com.paypal.core.SDKUtil;
  */
 public class DoUATPExpressCheckoutPaymentReq{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * 	 
 	 */ 
-	private DoUATPExpressCheckoutPaymentRequestType DoUATPExpressCheckoutPaymentRequest;
+	private DoUATPExpressCheckoutPaymentRequestType doUATPExpressCheckoutPaymentRequest;
 
 	
 
@@ -22,30 +24,42 @@ public class DoUATPExpressCheckoutPaymentReq{
 	}	
 
 	/**
-	 * Getter for DoUATPExpressCheckoutPaymentRequest
+	 * Getter for doUATPExpressCheckoutPaymentRequest
 	 */
 	 public DoUATPExpressCheckoutPaymentRequestType getDoUATPExpressCheckoutPaymentRequest() {
-	 	return DoUATPExpressCheckoutPaymentRequest;
+	 	return doUATPExpressCheckoutPaymentRequest;
 	 }
 	 
 	/**
-	 * Setter for DoUATPExpressCheckoutPaymentRequest
+	 * Setter for doUATPExpressCheckoutPaymentRequest
 	 */
-	 public void setDoUATPExpressCheckoutPaymentRequest(DoUATPExpressCheckoutPaymentRequestType DoUATPExpressCheckoutPaymentRequest) {
-	 	this.DoUATPExpressCheckoutPaymentRequest = DoUATPExpressCheckoutPaymentRequest;
+	 public void setDoUATPExpressCheckoutPaymentRequest(DoUATPExpressCheckoutPaymentRequestType doUATPExpressCheckoutPaymentRequest) {
+	 	this.doUATPExpressCheckoutPaymentRequest = doUATPExpressCheckoutPaymentRequest;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<urn:DoUATPExpressCheckoutPaymentReq>");
-		if(DoUATPExpressCheckoutPaymentRequest != null) {
-			sb.append("<urn:DoUATPExpressCheckoutPaymentRequest>");
-			sb.append(DoUATPExpressCheckoutPaymentRequest.toXMLString());
-			sb.append("</urn:DoUATPExpressCheckoutPaymentRequest>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		sb.append("</urn:DoUATPExpressCheckoutPaymentReq>");
+		if(doUATPExpressCheckoutPaymentRequest != null) {
+			sb.append(doUATPExpressCheckoutPaymentRequest.toXMLString(null,"DoUATPExpressCheckoutPaymentRequest"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
+		}
 		return sb.toString();
 	}
 

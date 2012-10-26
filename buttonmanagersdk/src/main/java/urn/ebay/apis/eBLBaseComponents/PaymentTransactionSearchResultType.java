@@ -28,53 +28,53 @@ public class PaymentTransactionSearchResultType{
 	 * The date and time (in UTC/GMT format) the transaction
 	 * occurred	 
 	 */ 
-	private String Timestamp;
+	private String timestamp;
 
 	/**
 	 * The time zone of the transaction 	 
 	 */ 
-	private String Timezone;
+	private String timezone;
 
 	/**
 	 * The type of the transaction	 
 	 */ 
-	private String Type;
+	private String type;
 
 	/**
 	 * The email address of the payer	 
 	 */ 
-	private String Payer;
+	private String payer;
 
 	/**
 	 * Display name of the payer	 
 	 */ 
-	private String PayerDisplayName;
+	private String payerDisplayName;
 
 	/**
 	 * The transaction ID of the seller	 
 	 */ 
-	private String TransactionID;
+	private String transactionID;
 
 	/**
 	 * The status of the transaction	 
 	 */ 
-	private String Status;
+	private String status;
 
 	/**
 	 * The total gross amount charged, including any profile
 	 * shipping cost and taxes	 
 	 */ 
-	private BasicAmountType GrossAmount;
+	private BasicAmountType grossAmount;
 
 	/**
 	 * The fee that PayPal charged for the transaction 	 
 	 */ 
-	private BasicAmountType FeeAmount;
+	private BasicAmountType feeAmount;
 
 	/**
 	 * The net amount of the transaction 	 
 	 */ 
-	private BasicAmountType NetAmount;
+	private BasicAmountType netAmount;
 
 	
 
@@ -85,143 +85,143 @@ public class PaymentTransactionSearchResultType{
 	}	
 
 	/**
-	 * Getter for Timestamp
+	 * Getter for timestamp
 	 */
 	 public String getTimestamp() {
-	 	return Timestamp;
+	 	return timestamp;
 	 }
 	 
 	/**
-	 * Setter for Timestamp
+	 * Setter for timestamp
 	 */
-	 public void setTimestamp(String Timestamp) {
-	 	this.Timestamp = Timestamp;
+	 public void setTimestamp(String timestamp) {
+	 	this.timestamp = timestamp;
 	 }
 	 
 	/**
-	 * Getter for Timezone
+	 * Getter for timezone
 	 */
 	 public String getTimezone() {
-	 	return Timezone;
+	 	return timezone;
 	 }
 	 
 	/**
-	 * Setter for Timezone
+	 * Setter for timezone
 	 */
-	 public void setTimezone(String Timezone) {
-	 	this.Timezone = Timezone;
+	 public void setTimezone(String timezone) {
+	 	this.timezone = timezone;
 	 }
 	 
 	/**
-	 * Getter for Type
+	 * Getter for type
 	 */
 	 public String getType() {
-	 	return Type;
+	 	return type;
 	 }
 	 
 	/**
-	 * Setter for Type
+	 * Setter for type
 	 */
-	 public void setType(String Type) {
-	 	this.Type = Type;
+	 public void setType(String type) {
+	 	this.type = type;
 	 }
 	 
 	/**
-	 * Getter for Payer
+	 * Getter for payer
 	 */
 	 public String getPayer() {
-	 	return Payer;
+	 	return payer;
 	 }
 	 
 	/**
-	 * Setter for Payer
+	 * Setter for payer
 	 */
-	 public void setPayer(String Payer) {
-	 	this.Payer = Payer;
+	 public void setPayer(String payer) {
+	 	this.payer = payer;
 	 }
 	 
 	/**
-	 * Getter for PayerDisplayName
+	 * Getter for payerDisplayName
 	 */
 	 public String getPayerDisplayName() {
-	 	return PayerDisplayName;
+	 	return payerDisplayName;
 	 }
 	 
 	/**
-	 * Setter for PayerDisplayName
+	 * Setter for payerDisplayName
 	 */
-	 public void setPayerDisplayName(String PayerDisplayName) {
-	 	this.PayerDisplayName = PayerDisplayName;
+	 public void setPayerDisplayName(String payerDisplayName) {
+	 	this.payerDisplayName = payerDisplayName;
 	 }
 	 
 	/**
-	 * Getter for TransactionID
+	 * Getter for transactionID
 	 */
 	 public String getTransactionID() {
-	 	return TransactionID;
+	 	return transactionID;
 	 }
 	 
 	/**
-	 * Setter for TransactionID
+	 * Setter for transactionID
 	 */
-	 public void setTransactionID(String TransactionID) {
-	 	this.TransactionID = TransactionID;
+	 public void setTransactionID(String transactionID) {
+	 	this.transactionID = transactionID;
 	 }
 	 
 	/**
-	 * Getter for Status
+	 * Getter for status
 	 */
 	 public String getStatus() {
-	 	return Status;
+	 	return status;
 	 }
 	 
 	/**
-	 * Setter for Status
+	 * Setter for status
 	 */
-	 public void setStatus(String Status) {
-	 	this.Status = Status;
+	 public void setStatus(String status) {
+	 	this.status = status;
 	 }
 	 
 	/**
-	 * Getter for GrossAmount
+	 * Getter for grossAmount
 	 */
 	 public BasicAmountType getGrossAmount() {
-	 	return GrossAmount;
+	 	return grossAmount;
 	 }
 	 
 	/**
-	 * Setter for GrossAmount
+	 * Setter for grossAmount
 	 */
-	 public void setGrossAmount(BasicAmountType GrossAmount) {
-	 	this.GrossAmount = GrossAmount;
+	 public void setGrossAmount(BasicAmountType grossAmount) {
+	 	this.grossAmount = grossAmount;
 	 }
 	 
 	/**
-	 * Getter for FeeAmount
+	 * Getter for feeAmount
 	 */
 	 public BasicAmountType getFeeAmount() {
-	 	return FeeAmount;
+	 	return feeAmount;
 	 }
 	 
 	/**
-	 * Setter for FeeAmount
+	 * Setter for feeAmount
 	 */
-	 public void setFeeAmount(BasicAmountType FeeAmount) {
-	 	this.FeeAmount = FeeAmount;
+	 public void setFeeAmount(BasicAmountType feeAmount) {
+	 	this.feeAmount = feeAmount;
 	 }
 	 
 	/**
-	 * Getter for NetAmount
+	 * Getter for netAmount
 	 */
 	 public BasicAmountType getNetAmount() {
-	 	return NetAmount;
+	 	return netAmount;
 	 }
 	 
 	/**
-	 * Setter for NetAmount
+	 * Setter for netAmount
 	 */
-	 public void setNetAmount(BasicAmountType NetAmount) {
-	 	this.NetAmount = NetAmount;
+	 public void setNetAmount(BasicAmountType netAmount) {
+	 	this.netAmount = netAmount;
 	 }
 	 
 
@@ -245,50 +245,50 @@ public class PaymentTransactionSearchResultType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Timestamp", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Timestamp = childNode.getTextContent();
+		    this.timestamp = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Timezone", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Timezone = childNode.getTextContent();
+		    this.timezone = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Type", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Type = childNode.getTextContent();
+		    this.type = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Payer", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Payer = childNode.getTextContent();
+		    this.payer = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PayerDisplayName", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PayerDisplayName = childNode.getTextContent();
+		    this.payerDisplayName = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("TransactionID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TransactionID = childNode.getTextContent();
+		    this.transactionID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Status", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Status = childNode.getTextContent();
+		    this.status = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("GrossAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.GrossAmount =  new BasicAmountType(childNode);
+		    this.grossAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("FeeAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.FeeAmount =  new BasicAmountType(childNode);
+		    this.feeAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("NetAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.NetAmount =  new BasicAmountType(childNode);
+		    this.netAmount =  new BasicAmountType(childNode);
 		}
 	}
  

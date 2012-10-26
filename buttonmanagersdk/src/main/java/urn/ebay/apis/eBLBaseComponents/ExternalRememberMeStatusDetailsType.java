@@ -36,7 +36,7 @@ public class ExternalRememberMeStatusDetailsType{
 	 * me status. 	  
 	 *@Required	 
 	 */ 
-	private Integer ExternalRememberMeStatus;
+	private Integer externalRememberMeStatus;
 
 	/**
 	 * Identifier returned on external-remember-me-opt-in to allow
@@ -46,7 +46,7 @@ public class ExternalRememberMeStatusDetailsType{
 	 * alphanumeric (encrypted) string. This field has meaning only
 	 * to the merchant. 	 
 	 */ 
-	private String ExternalRememberMeID;
+	private String externalRememberMeID;
 
 	
 
@@ -57,31 +57,31 @@ public class ExternalRememberMeStatusDetailsType{
 	}	
 
 	/**
-	 * Getter for ExternalRememberMeStatus
+	 * Getter for externalRememberMeStatus
 	 */
 	 public Integer getExternalRememberMeStatus() {
-	 	return ExternalRememberMeStatus;
+	 	return externalRememberMeStatus;
 	 }
 	 
 	/**
-	 * Setter for ExternalRememberMeStatus
+	 * Setter for externalRememberMeStatus
 	 */
-	 public void setExternalRememberMeStatus(Integer ExternalRememberMeStatus) {
-	 	this.ExternalRememberMeStatus = ExternalRememberMeStatus;
+	 public void setExternalRememberMeStatus(Integer externalRememberMeStatus) {
+	 	this.externalRememberMeStatus = externalRememberMeStatus;
 	 }
 	 
 	/**
-	 * Getter for ExternalRememberMeID
+	 * Getter for externalRememberMeID
 	 */
 	 public String getExternalRememberMeID() {
-	 	return ExternalRememberMeID;
+	 	return externalRememberMeID;
 	 }
 	 
 	/**
-	 * Setter for ExternalRememberMeID
+	 * Setter for externalRememberMeID
 	 */
-	 public void setExternalRememberMeID(String ExternalRememberMeID) {
-	 	this.ExternalRememberMeID = ExternalRememberMeID;
+	 public void setExternalRememberMeID(String externalRememberMeID) {
+	 	this.externalRememberMeID = externalRememberMeID;
 	 }
 	 
 
@@ -105,12 +105,12 @@ public class ExternalRememberMeStatusDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("ExternalRememberMeStatus", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			this.ExternalRememberMeStatus = Integer.valueOf(childNode.getTextContent());
+			this.externalRememberMeStatus = Integer.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("ExternalRememberMeID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ExternalRememberMeID = childNode.getTextContent();
+		    this.externalRememberMeID = childNode.getTextContent();
 		}
 	
 	}

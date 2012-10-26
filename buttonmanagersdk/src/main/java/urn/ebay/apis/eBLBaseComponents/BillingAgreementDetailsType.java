@@ -8,35 +8,37 @@ import com.paypal.core.SDKUtil;
  */
 public class BillingAgreementDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private BillingCodeType BillingType;
+	private BillingCodeType billingType;
 
 	/**
 	 * Only needed for AutoBill billinng type. 	 
 	 */ 
-	private String BillingAgreementDescription;
+	private String billingAgreementDescription;
 
 	/**
 	 * 	 
 	 */ 
-	private MerchantPullPaymentCodeType PaymentType;
+	private MerchantPullPaymentCodeType paymentType;
 
 	/**
 	 * Custom annotation field for your exclusive use. 	 
 	 */ 
-	private String BillingAgreementCustom;
+	private String billingAgreementCustom;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public BillingAgreementDetailsType (BillingCodeType BillingType){
-		this.BillingType = BillingType;
+	public BillingAgreementDetailsType (BillingCodeType billingType){
+		this.billingType = billingType;
 	}	
 
 	/**
@@ -46,80 +48,96 @@ public class BillingAgreementDetailsType{
 	}	
 
 	/**
-	 * Getter for BillingType
+	 * Getter for billingType
 	 */
 	 public BillingCodeType getBillingType() {
-	 	return BillingType;
+	 	return billingType;
 	 }
 	 
 	/**
-	 * Setter for BillingType
+	 * Setter for billingType
 	 */
-	 public void setBillingType(BillingCodeType BillingType) {
-	 	this.BillingType = BillingType;
+	 public void setBillingType(BillingCodeType billingType) {
+	 	this.billingType = billingType;
 	 }
 	 
 	/**
-	 * Getter for BillingAgreementDescription
+	 * Getter for billingAgreementDescription
 	 */
 	 public String getBillingAgreementDescription() {
-	 	return BillingAgreementDescription;
+	 	return billingAgreementDescription;
 	 }
 	 
 	/**
-	 * Setter for BillingAgreementDescription
+	 * Setter for billingAgreementDescription
 	 */
-	 public void setBillingAgreementDescription(String BillingAgreementDescription) {
-	 	this.BillingAgreementDescription = BillingAgreementDescription;
+	 public void setBillingAgreementDescription(String billingAgreementDescription) {
+	 	this.billingAgreementDescription = billingAgreementDescription;
 	 }
 	 
 	/**
-	 * Getter for PaymentType
+	 * Getter for paymentType
 	 */
 	 public MerchantPullPaymentCodeType getPaymentType() {
-	 	return PaymentType;
+	 	return paymentType;
 	 }
 	 
 	/**
-	 * Setter for PaymentType
+	 * Setter for paymentType
 	 */
-	 public void setPaymentType(MerchantPullPaymentCodeType PaymentType) {
-	 	this.PaymentType = PaymentType;
+	 public void setPaymentType(MerchantPullPaymentCodeType paymentType) {
+	 	this.paymentType = paymentType;
 	 }
 	 
 	/**
-	 * Getter for BillingAgreementCustom
+	 * Getter for billingAgreementCustom
 	 */
 	 public String getBillingAgreementCustom() {
-	 	return BillingAgreementCustom;
+	 	return billingAgreementCustom;
 	 }
 	 
 	/**
-	 * Setter for BillingAgreementCustom
+	 * Setter for billingAgreementCustom
 	 */
-	 public void setBillingAgreementCustom(String BillingAgreementCustom) {
-	 	this.BillingAgreementCustom = BillingAgreementCustom;
+	 public void setBillingAgreementCustom(String billingAgreementCustom) {
+	 	this.billingAgreementCustom = billingAgreementCustom;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(BillingType != null) {
-			sb.append("<ebl:BillingType>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingType.getValue()));
-			sb.append("</ebl:BillingType>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(BillingAgreementDescription != null) {
-			sb.append("<ebl:BillingAgreementDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingAgreementDescription));
-			sb.append("</ebl:BillingAgreementDescription>");
+		if(billingType != null) {
+			sb.append("<").append(preferredPrefix).append(":BillingType>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":BillingType>");
 		}
-		if(PaymentType != null) {
-			sb.append("<ebl:PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentType.getValue()));
-			sb.append("</ebl:PaymentType>");
+		if(billingAgreementDescription != null) {
+			sb.append("<").append(preferredPrefix).append(":BillingAgreementDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingAgreementDescription));
+			sb.append("</").append(preferredPrefix).append(":BillingAgreementDescription>");
 		}
-		if(BillingAgreementCustom != null) {
-			sb.append("<ebl:BillingAgreementCustom>").append(SDKUtil.escapeInvalidXmlCharsRegex(BillingAgreementCustom));
-			sb.append("</ebl:BillingAgreementCustom>");
+		if(paymentType != null) {
+			sb.append("<").append(preferredPrefix).append(":PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":PaymentType>");
+		}
+		if(billingAgreementCustom != null) {
+			sb.append("<").append(preferredPrefix).append(":BillingAgreementCustom>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingAgreementCustom));
+			sb.append("</").append(preferredPrefix).append(":BillingAgreementCustom>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

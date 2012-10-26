@@ -9,33 +9,35 @@ import com.paypal.core.SDKUtil;
  */
 public class BuyerDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * The client's unique ID for this user. 	 
 	 */ 
-	private String BuyerId;
+	private String buyerId;
 
 	/**
 	 * The user name of the user at the marketplaces site. 	 
 	 */ 
-	private String BuyerUserName;
+	private String buyerUserName;
 
 	/**
 	 * Date when the user registered with the marketplace. 	 
 	 */ 
-	private String BuyerRegistrationDate;
+	private String buyerRegistrationDate;
 
 	/**
 	 * Details about payer's tax info. Refer to the
 	 * TaxIdDetailsType for more details. 	 
 	 */ 
-	private TaxIdDetailsType TaxIdDetails;
+	private TaxIdDetailsType taxIdDetails;
 
 	/**
 	 * Contains information that identifies the buyer. e.g. email
 	 * address or the external remember me id. 	 
 	 */ 
-	private IdentificationInfoType IdentificationInfo;
+	private IdentificationInfoType identificationInfo;
 
 	
 
@@ -46,100 +48,112 @@ public class BuyerDetailsType{
 	}	
 
 	/**
-	 * Getter for BuyerId
+	 * Getter for buyerId
 	 */
 	 public String getBuyerId() {
-	 	return BuyerId;
+	 	return buyerId;
 	 }
 	 
 	/**
-	 * Setter for BuyerId
+	 * Setter for buyerId
 	 */
-	 public void setBuyerId(String BuyerId) {
-	 	this.BuyerId = BuyerId;
+	 public void setBuyerId(String buyerId) {
+	 	this.buyerId = buyerId;
 	 }
 	 
 	/**
-	 * Getter for BuyerUserName
+	 * Getter for buyerUserName
 	 */
 	 public String getBuyerUserName() {
-	 	return BuyerUserName;
+	 	return buyerUserName;
 	 }
 	 
 	/**
-	 * Setter for BuyerUserName
+	 * Setter for buyerUserName
 	 */
-	 public void setBuyerUserName(String BuyerUserName) {
-	 	this.BuyerUserName = BuyerUserName;
+	 public void setBuyerUserName(String buyerUserName) {
+	 	this.buyerUserName = buyerUserName;
 	 }
 	 
 	/**
-	 * Getter for BuyerRegistrationDate
+	 * Getter for buyerRegistrationDate
 	 */
 	 public String getBuyerRegistrationDate() {
-	 	return BuyerRegistrationDate;
+	 	return buyerRegistrationDate;
 	 }
 	 
 	/**
-	 * Setter for BuyerRegistrationDate
+	 * Setter for buyerRegistrationDate
 	 */
-	 public void setBuyerRegistrationDate(String BuyerRegistrationDate) {
-	 	this.BuyerRegistrationDate = BuyerRegistrationDate;
+	 public void setBuyerRegistrationDate(String buyerRegistrationDate) {
+	 	this.buyerRegistrationDate = buyerRegistrationDate;
 	 }
 	 
 	/**
-	 * Getter for TaxIdDetails
+	 * Getter for taxIdDetails
 	 */
 	 public TaxIdDetailsType getTaxIdDetails() {
-	 	return TaxIdDetails;
+	 	return taxIdDetails;
 	 }
 	 
 	/**
-	 * Setter for TaxIdDetails
+	 * Setter for taxIdDetails
 	 */
-	 public void setTaxIdDetails(TaxIdDetailsType TaxIdDetails) {
-	 	this.TaxIdDetails = TaxIdDetails;
+	 public void setTaxIdDetails(TaxIdDetailsType taxIdDetails) {
+	 	this.taxIdDetails = taxIdDetails;
 	 }
 	 
 	/**
-	 * Getter for IdentificationInfo
+	 * Getter for identificationInfo
 	 */
 	 public IdentificationInfoType getIdentificationInfo() {
-	 	return IdentificationInfo;
+	 	return identificationInfo;
 	 }
 	 
 	/**
-	 * Setter for IdentificationInfo
+	 * Setter for identificationInfo
 	 */
-	 public void setIdentificationInfo(IdentificationInfoType IdentificationInfo) {
-	 	this.IdentificationInfo = IdentificationInfo;
+	 public void setIdentificationInfo(IdentificationInfoType identificationInfo) {
+	 	this.identificationInfo = identificationInfo;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(BuyerId != null) {
-			sb.append("<ebl:BuyerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(BuyerId));
-			sb.append("</ebl:BuyerId>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(BuyerUserName != null) {
-			sb.append("<ebl:BuyerUserName>").append(SDKUtil.escapeInvalidXmlCharsRegex(BuyerUserName));
-			sb.append("</ebl:BuyerUserName>");
+		if(buyerId != null) {
+			sb.append("<").append(preferredPrefix).append(":BuyerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(buyerId));
+			sb.append("</").append(preferredPrefix).append(":BuyerId>");
 		}
-		if(BuyerRegistrationDate != null) {
-			sb.append("<ebl:BuyerRegistrationDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(BuyerRegistrationDate));
-			sb.append("</ebl:BuyerRegistrationDate>");
+		if(buyerUserName != null) {
+			sb.append("<").append(preferredPrefix).append(":BuyerUserName>").append(SDKUtil.escapeInvalidXmlCharsRegex(buyerUserName));
+			sb.append("</").append(preferredPrefix).append(":BuyerUserName>");
 		}
-		if(TaxIdDetails != null) {
-			sb.append("<ebl:TaxIdDetails>");
-			sb.append(TaxIdDetails.toXMLString());
-			sb.append("</ebl:TaxIdDetails>");
+		if(buyerRegistrationDate != null) {
+			sb.append("<").append(preferredPrefix).append(":BuyerRegistrationDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(buyerRegistrationDate));
+			sb.append("</").append(preferredPrefix).append(":BuyerRegistrationDate>");
 		}
-		if(IdentificationInfo != null) {
-			sb.append("<ebl:IdentificationInfo>");
-			sb.append(IdentificationInfo.toXMLString());
-			sb.append("</ebl:IdentificationInfo>");
+		if(taxIdDetails != null) {
+			sb.append(taxIdDetails.toXMLString(preferredPrefix,"TaxIdDetails"));
+		}
+		if(identificationInfo != null) {
+			sb.append(identificationInfo.toXMLString(preferredPrefix,"IdentificationInfo"));
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

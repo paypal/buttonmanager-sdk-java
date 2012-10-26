@@ -11,43 +11,45 @@ import com.paypal.core.SDKUtil;
  */
 public class BillingApprovalDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * The Type of Approval requested - Billing Agreement or
 	 * Profile	  
 	 *@Required	 
 	 */ 
-	private ApprovalTypeType ApprovalType;
+	private ApprovalTypeType approvalType;
 
 	/**
 	 * The Approval subtype - Must be MerchantInitiatedBilling for
 	 * BillingAgreement ApprovalType	 
 	 */ 
-	private ApprovalSubTypeType ApprovalSubType;
+	private ApprovalSubTypeType approvalSubType;
 
 	/**
 	 * Description about the Order	 
 	 */ 
-	private OrderDetailsType OrderDetails;
+	private OrderDetailsType orderDetails;
 
 	/**
 	 * Directives about the type of payment	 
 	 */ 
-	private PaymentDirectivesType PaymentDirectives;
+	private PaymentDirectivesType paymentDirectives;
 
 	/**
 	 * Client may pass in its identification of this Billing
 	 * Agreement. It used for the client's tracking purposes.	 
 	 */ 
-	private String Custom;
+	private String custom;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public BillingApprovalDetailsType (ApprovalTypeType ApprovalType){
-		this.ApprovalType = ApprovalType;
+	public BillingApprovalDetailsType (ApprovalTypeType approvalType){
+		this.approvalType = approvalType;
 	}	
 
 	/**
@@ -57,100 +59,112 @@ public class BillingApprovalDetailsType{
 	}	
 
 	/**
-	 * Getter for ApprovalType
+	 * Getter for approvalType
 	 */
 	 public ApprovalTypeType getApprovalType() {
-	 	return ApprovalType;
+	 	return approvalType;
 	 }
 	 
 	/**
-	 * Setter for ApprovalType
+	 * Setter for approvalType
 	 */
-	 public void setApprovalType(ApprovalTypeType ApprovalType) {
-	 	this.ApprovalType = ApprovalType;
+	 public void setApprovalType(ApprovalTypeType approvalType) {
+	 	this.approvalType = approvalType;
 	 }
 	 
 	/**
-	 * Getter for ApprovalSubType
+	 * Getter for approvalSubType
 	 */
 	 public ApprovalSubTypeType getApprovalSubType() {
-	 	return ApprovalSubType;
+	 	return approvalSubType;
 	 }
 	 
 	/**
-	 * Setter for ApprovalSubType
+	 * Setter for approvalSubType
 	 */
-	 public void setApprovalSubType(ApprovalSubTypeType ApprovalSubType) {
-	 	this.ApprovalSubType = ApprovalSubType;
+	 public void setApprovalSubType(ApprovalSubTypeType approvalSubType) {
+	 	this.approvalSubType = approvalSubType;
 	 }
 	 
 	/**
-	 * Getter for OrderDetails
+	 * Getter for orderDetails
 	 */
 	 public OrderDetailsType getOrderDetails() {
-	 	return OrderDetails;
+	 	return orderDetails;
 	 }
 	 
 	/**
-	 * Setter for OrderDetails
+	 * Setter for orderDetails
 	 */
-	 public void setOrderDetails(OrderDetailsType OrderDetails) {
-	 	this.OrderDetails = OrderDetails;
+	 public void setOrderDetails(OrderDetailsType orderDetails) {
+	 	this.orderDetails = orderDetails;
 	 }
 	 
 	/**
-	 * Getter for PaymentDirectives
+	 * Getter for paymentDirectives
 	 */
 	 public PaymentDirectivesType getPaymentDirectives() {
-	 	return PaymentDirectives;
+	 	return paymentDirectives;
 	 }
 	 
 	/**
-	 * Setter for PaymentDirectives
+	 * Setter for paymentDirectives
 	 */
-	 public void setPaymentDirectives(PaymentDirectivesType PaymentDirectives) {
-	 	this.PaymentDirectives = PaymentDirectives;
+	 public void setPaymentDirectives(PaymentDirectivesType paymentDirectives) {
+	 	this.paymentDirectives = paymentDirectives;
 	 }
 	 
 	/**
-	 * Getter for Custom
+	 * Getter for custom
 	 */
 	 public String getCustom() {
-	 	return Custom;
+	 	return custom;
 	 }
 	 
 	/**
-	 * Setter for Custom
+	 * Setter for custom
 	 */
-	 public void setCustom(String Custom) {
-	 	this.Custom = Custom;
+	 public void setCustom(String custom) {
+	 	this.custom = custom;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(ApprovalType != null) {
-			sb.append("<ebl:ApprovalType>").append(SDKUtil.escapeInvalidXmlCharsRegex(ApprovalType.getValue()));
-			sb.append("</ebl:ApprovalType>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(ApprovalSubType != null) {
-			sb.append("<ebl:ApprovalSubType>").append(SDKUtil.escapeInvalidXmlCharsRegex(ApprovalSubType.getValue()));
-			sb.append("</ebl:ApprovalSubType>");
+		if(approvalType != null) {
+			sb.append("<").append(preferredPrefix).append(":ApprovalType>").append(SDKUtil.escapeInvalidXmlCharsRegex(approvalType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":ApprovalType>");
 		}
-		if(OrderDetails != null) {
-			sb.append("<ebl:OrderDetails>");
-			sb.append(OrderDetails.toXMLString());
-			sb.append("</ebl:OrderDetails>");
+		if(approvalSubType != null) {
+			sb.append("<").append(preferredPrefix).append(":ApprovalSubType>").append(SDKUtil.escapeInvalidXmlCharsRegex(approvalSubType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":ApprovalSubType>");
 		}
-		if(PaymentDirectives != null) {
-			sb.append("<ebl:PaymentDirectives>");
-			sb.append(PaymentDirectives.toXMLString());
-			sb.append("</ebl:PaymentDirectives>");
+		if(orderDetails != null) {
+			sb.append(orderDetails.toXMLString(preferredPrefix,"OrderDetails"));
 		}
-		if(Custom != null) {
-			sb.append("<ebl:Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(Custom));
-			sb.append("</ebl:Custom>");
+		if(paymentDirectives != null) {
+			sb.append(paymentDirectives.toXMLString(preferredPrefix,"PaymentDirectives"));
+		}
+		if(custom != null) {
+			sb.append("<").append(preferredPrefix).append(":Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(custom));
+			sb.append("</").append(preferredPrefix).append(":Custom>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

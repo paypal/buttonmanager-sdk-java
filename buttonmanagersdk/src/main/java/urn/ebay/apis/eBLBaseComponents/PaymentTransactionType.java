@@ -36,79 +36,79 @@ public class PaymentTransactionType{
 	/**
 	 * Information about the recipient of the payment 	 
 	 */ 
-	private ReceiverInfoType ReceiverInfo;
+	private ReceiverInfoType receiverInfo;
 
 	/**
 	 * Information about the payer 	 
 	 */ 
-	private PayerInfoType PayerInfo;
+	private PayerInfoType payerInfo;
 
 	/**
 	 * This field is for holding ReferenceId for shippment sent
 	 * from Merchant to the 3rd Party  	 
 	 */ 
-	private String TPLReferenceID;
+	private String tPLReferenceID;
 
 	/**
 	 * Information about the transaction 	 
 	 */ 
-	private PaymentInfoType PaymentInfo;
+	private PaymentInfoType paymentInfo;
 
 	/**
 	 * Information about an individual item in the transaction	 
 	 */ 
-	private PaymentItemInfoType PaymentItemInfo;
+	private PaymentItemInfoType paymentItemInfo;
 
 	/**
 	 * Information about an individual Offer and Coupon information
 	 * in the transaction	 
 	 */ 
-	private OfferCouponInfoType OfferCouponInfo;
+	private OfferCouponInfoType offerCouponInfo;
 
 	/**
 	 * Information about Secondary Address	 
 	 */ 
-	private AddressType SecondaryAddress;
+	private AddressType secondaryAddress;
 
 	/**
 	 * Information about the user selected options.  	 
 	 */ 
-	private UserSelectedOptionType UserSelectedOptions;
+	private UserSelectedOptionType userSelectedOptions;
 
 	/**
 	 * Information about the Gift message.  	 
 	 */ 
-	private String GiftMessage;
+	private String giftMessage;
 
 	/**
 	 * Information about the Gift receipt.  	 
 	 */ 
-	private String GiftReceipt;
+	private String giftReceipt;
 
 	/**
 	 * Information about the Gift Wrap name.  	 
 	 */ 
-	private String GiftWrapName;
+	private String giftWrapName;
 
 	/**
 	 * Information about the Gift Wrap amount.  	 
 	 */ 
-	private BasicAmountType GiftWrapAmount;
+	private BasicAmountType giftWrapAmount;
 
 	/**
 	 * Information about the Buyer email.  	 
 	 */ 
-	private String BuyerEmailOptIn;
+	private String buyerEmailOptIn;
 
 	/**
 	 * Information about the survey question.  	 
 	 */ 
-	private String SurveyQuestion;
+	private String surveyQuestion;
 
 	/**
 	 * Information about the survey choice selected by the user.  	 
 	 */ 
-	private List<String> SurveyChoiceSelected = new ArrayList<String>();
+	private List<String> surveyChoiceSelected = new ArrayList<String>();
 
 	
 
@@ -119,213 +119,213 @@ public class PaymentTransactionType{
 	}	
 
 	/**
-	 * Getter for ReceiverInfo
+	 * Getter for receiverInfo
 	 */
 	 public ReceiverInfoType getReceiverInfo() {
-	 	return ReceiverInfo;
+	 	return receiverInfo;
 	 }
 	 
 	/**
-	 * Setter for ReceiverInfo
+	 * Setter for receiverInfo
 	 */
-	 public void setReceiverInfo(ReceiverInfoType ReceiverInfo) {
-	 	this.ReceiverInfo = ReceiverInfo;
+	 public void setReceiverInfo(ReceiverInfoType receiverInfo) {
+	 	this.receiverInfo = receiverInfo;
 	 }
 	 
 	/**
-	 * Getter for PayerInfo
+	 * Getter for payerInfo
 	 */
 	 public PayerInfoType getPayerInfo() {
-	 	return PayerInfo;
+	 	return payerInfo;
 	 }
 	 
 	/**
-	 * Setter for PayerInfo
+	 * Setter for payerInfo
 	 */
-	 public void setPayerInfo(PayerInfoType PayerInfo) {
-	 	this.PayerInfo = PayerInfo;
+	 public void setPayerInfo(PayerInfoType payerInfo) {
+	 	this.payerInfo = payerInfo;
 	 }
 	 
 	/**
-	 * Getter for TPLReferenceID
+	 * Getter for tPLReferenceID
 	 */
 	 public String getTPLReferenceID() {
-	 	return TPLReferenceID;
+	 	return tPLReferenceID;
 	 }
 	 
 	/**
-	 * Setter for TPLReferenceID
+	 * Setter for tPLReferenceID
 	 */
-	 public void setTPLReferenceID(String TPLReferenceID) {
-	 	this.TPLReferenceID = TPLReferenceID;
+	 public void setTPLReferenceID(String tPLReferenceID) {
+	 	this.tPLReferenceID = tPLReferenceID;
 	 }
 	 
 	/**
-	 * Getter for PaymentInfo
+	 * Getter for paymentInfo
 	 */
 	 public PaymentInfoType getPaymentInfo() {
-	 	return PaymentInfo;
+	 	return paymentInfo;
 	 }
 	 
 	/**
-	 * Setter for PaymentInfo
+	 * Setter for paymentInfo
 	 */
-	 public void setPaymentInfo(PaymentInfoType PaymentInfo) {
-	 	this.PaymentInfo = PaymentInfo;
+	 public void setPaymentInfo(PaymentInfoType paymentInfo) {
+	 	this.paymentInfo = paymentInfo;
 	 }
 	 
 	/**
-	 * Getter for PaymentItemInfo
+	 * Getter for paymentItemInfo
 	 */
 	 public PaymentItemInfoType getPaymentItemInfo() {
-	 	return PaymentItemInfo;
+	 	return paymentItemInfo;
 	 }
 	 
 	/**
-	 * Setter for PaymentItemInfo
+	 * Setter for paymentItemInfo
 	 */
-	 public void setPaymentItemInfo(PaymentItemInfoType PaymentItemInfo) {
-	 	this.PaymentItemInfo = PaymentItemInfo;
+	 public void setPaymentItemInfo(PaymentItemInfoType paymentItemInfo) {
+	 	this.paymentItemInfo = paymentItemInfo;
 	 }
 	 
 	/**
-	 * Getter for OfferCouponInfo
+	 * Getter for offerCouponInfo
 	 */
 	 public OfferCouponInfoType getOfferCouponInfo() {
-	 	return OfferCouponInfo;
+	 	return offerCouponInfo;
 	 }
 	 
 	/**
-	 * Setter for OfferCouponInfo
+	 * Setter for offerCouponInfo
 	 */
-	 public void setOfferCouponInfo(OfferCouponInfoType OfferCouponInfo) {
-	 	this.OfferCouponInfo = OfferCouponInfo;
+	 public void setOfferCouponInfo(OfferCouponInfoType offerCouponInfo) {
+	 	this.offerCouponInfo = offerCouponInfo;
 	 }
 	 
 	/**
-	 * Getter for SecondaryAddress
+	 * Getter for secondaryAddress
 	 */
 	 public AddressType getSecondaryAddress() {
-	 	return SecondaryAddress;
+	 	return secondaryAddress;
 	 }
 	 
 	/**
-	 * Setter for SecondaryAddress
+	 * Setter for secondaryAddress
 	 */
-	 public void setSecondaryAddress(AddressType SecondaryAddress) {
-	 	this.SecondaryAddress = SecondaryAddress;
+	 public void setSecondaryAddress(AddressType secondaryAddress) {
+	 	this.secondaryAddress = secondaryAddress;
 	 }
 	 
 	/**
-	 * Getter for UserSelectedOptions
+	 * Getter for userSelectedOptions
 	 */
 	 public UserSelectedOptionType getUserSelectedOptions() {
-	 	return UserSelectedOptions;
+	 	return userSelectedOptions;
 	 }
 	 
 	/**
-	 * Setter for UserSelectedOptions
+	 * Setter for userSelectedOptions
 	 */
-	 public void setUserSelectedOptions(UserSelectedOptionType UserSelectedOptions) {
-	 	this.UserSelectedOptions = UserSelectedOptions;
+	 public void setUserSelectedOptions(UserSelectedOptionType userSelectedOptions) {
+	 	this.userSelectedOptions = userSelectedOptions;
 	 }
 	 
 	/**
-	 * Getter for GiftMessage
+	 * Getter for giftMessage
 	 */
 	 public String getGiftMessage() {
-	 	return GiftMessage;
+	 	return giftMessage;
 	 }
 	 
 	/**
-	 * Setter for GiftMessage
+	 * Setter for giftMessage
 	 */
-	 public void setGiftMessage(String GiftMessage) {
-	 	this.GiftMessage = GiftMessage;
+	 public void setGiftMessage(String giftMessage) {
+	 	this.giftMessage = giftMessage;
 	 }
 	 
 	/**
-	 * Getter for GiftReceipt
+	 * Getter for giftReceipt
 	 */
 	 public String getGiftReceipt() {
-	 	return GiftReceipt;
+	 	return giftReceipt;
 	 }
 	 
 	/**
-	 * Setter for GiftReceipt
+	 * Setter for giftReceipt
 	 */
-	 public void setGiftReceipt(String GiftReceipt) {
-	 	this.GiftReceipt = GiftReceipt;
+	 public void setGiftReceipt(String giftReceipt) {
+	 	this.giftReceipt = giftReceipt;
 	 }
 	 
 	/**
-	 * Getter for GiftWrapName
+	 * Getter for giftWrapName
 	 */
 	 public String getGiftWrapName() {
-	 	return GiftWrapName;
+	 	return giftWrapName;
 	 }
 	 
 	/**
-	 * Setter for GiftWrapName
+	 * Setter for giftWrapName
 	 */
-	 public void setGiftWrapName(String GiftWrapName) {
-	 	this.GiftWrapName = GiftWrapName;
+	 public void setGiftWrapName(String giftWrapName) {
+	 	this.giftWrapName = giftWrapName;
 	 }
 	 
 	/**
-	 * Getter for GiftWrapAmount
+	 * Getter for giftWrapAmount
 	 */
 	 public BasicAmountType getGiftWrapAmount() {
-	 	return GiftWrapAmount;
+	 	return giftWrapAmount;
 	 }
 	 
 	/**
-	 * Setter for GiftWrapAmount
+	 * Setter for giftWrapAmount
 	 */
-	 public void setGiftWrapAmount(BasicAmountType GiftWrapAmount) {
-	 	this.GiftWrapAmount = GiftWrapAmount;
+	 public void setGiftWrapAmount(BasicAmountType giftWrapAmount) {
+	 	this.giftWrapAmount = giftWrapAmount;
 	 }
 	 
 	/**
-	 * Getter for BuyerEmailOptIn
+	 * Getter for buyerEmailOptIn
 	 */
 	 public String getBuyerEmailOptIn() {
-	 	return BuyerEmailOptIn;
+	 	return buyerEmailOptIn;
 	 }
 	 
 	/**
-	 * Setter for BuyerEmailOptIn
+	 * Setter for buyerEmailOptIn
 	 */
-	 public void setBuyerEmailOptIn(String BuyerEmailOptIn) {
-	 	this.BuyerEmailOptIn = BuyerEmailOptIn;
+	 public void setBuyerEmailOptIn(String buyerEmailOptIn) {
+	 	this.buyerEmailOptIn = buyerEmailOptIn;
 	 }
 	 
 	/**
-	 * Getter for SurveyQuestion
+	 * Getter for surveyQuestion
 	 */
 	 public String getSurveyQuestion() {
-	 	return SurveyQuestion;
+	 	return surveyQuestion;
 	 }
 	 
 	/**
-	 * Setter for SurveyQuestion
+	 * Setter for surveyQuestion
 	 */
-	 public void setSurveyQuestion(String SurveyQuestion) {
-	 	this.SurveyQuestion = SurveyQuestion;
+	 public void setSurveyQuestion(String surveyQuestion) {
+	 	this.surveyQuestion = surveyQuestion;
 	 }
 	 
 	/**
-	 * Getter for SurveyChoiceSelected
+	 * Getter for surveyChoiceSelected
 	 */
 	 public List<String> getSurveyChoiceSelected() {
-	 	return SurveyChoiceSelected;
+	 	return surveyChoiceSelected;
 	 }
 	 
 	/**
-	 * Setter for SurveyChoiceSelected
+	 * Setter for surveyChoiceSelected
 	 */
-	 public void setSurveyChoiceSelected(List<String> SurveyChoiceSelected) {
-	 	this.SurveyChoiceSelected = SurveyChoiceSelected;
+	 public void setSurveyChoiceSelected(List<String> surveyChoiceSelected) {
+	 	this.surveyChoiceSelected = surveyChoiceSelected;
 	 }
 	 
 
@@ -349,64 +349,64 @@ public class PaymentTransactionType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("ReceiverInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.ReceiverInfo =  new ReceiverInfoType(childNode);
+		    this.receiverInfo =  new ReceiverInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("PayerInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PayerInfo =  new PayerInfoType(childNode);
+		    this.payerInfo =  new PayerInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("TPLReferenceID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.TPLReferenceID = childNode.getTextContent();
+		    this.tPLReferenceID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("PaymentInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentInfo =  new PaymentInfoType(childNode);
+		    this.paymentInfo =  new PaymentInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("PaymentItemInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.PaymentItemInfo =  new PaymentItemInfoType(childNode);
+		    this.paymentItemInfo =  new PaymentItemInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("OfferCouponInfo", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OfferCouponInfo =  new OfferCouponInfoType(childNode);
+		    this.offerCouponInfo =  new OfferCouponInfoType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("SecondaryAddress", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SecondaryAddress =  new AddressType(childNode);
+		    this.secondaryAddress =  new AddressType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("UserSelectedOptions", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.UserSelectedOptions =  new UserSelectedOptionType(childNode);
+		    this.userSelectedOptions =  new UserSelectedOptionType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("GiftMessage", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.GiftMessage = childNode.getTextContent();
+		    this.giftMessage = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("GiftReceipt", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.GiftReceipt = childNode.getTextContent();
+		    this.giftReceipt = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("GiftWrapName", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.GiftWrapName = childNode.getTextContent();
+		    this.giftWrapName = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("GiftWrapAmount", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.GiftWrapAmount =  new BasicAmountType(childNode);
+		    this.giftWrapAmount =  new BasicAmountType(childNode);
 		}
 		childNode = (Node) xpath.evaluate("BuyerEmailOptIn", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.BuyerEmailOptIn = childNode.getTextContent();
+		    this.buyerEmailOptIn = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("SurveyQuestion", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.SurveyQuestion = childNode.getTextContent();
+		    this.surveyQuestion = childNode.getTextContent();
 		}
 	
         nodeList = (NodeList) xpath.evaluate("SurveyChoiceSelected", node, XPathConstants.NODESET);
@@ -414,7 +414,7 @@ public class PaymentTransactionType{
 			for(int i=0; i < nodeList.getLength(); i++) {
 			    Node subNode = nodeList.item(i);
 			    String value = subNode.getTextContent();
-			    this.SurveyChoiceSelected.add(value);
+			    this.surveyChoiceSelected.add(value);
 					
 			}
 		}

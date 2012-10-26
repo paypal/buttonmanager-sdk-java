@@ -8,41 +8,43 @@ import com.paypal.core.SDKUtil;
  */
 public class DoNonReferencedCreditRequestDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType Amount;
+	private BasicAmountType amount;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType NetAmount;
+	private BasicAmountType netAmount;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType TaxAmount;
+	private BasicAmountType taxAmount;
 
 	/**
 	 * 	 
 	 */ 
-	private BasicAmountType ShippingAmount;
+	private BasicAmountType shippingAmount;
 
 	/**
 	 * 	 
 	 */ 
-	private CreditCardDetailsType CreditCard;
+	private CreditCardDetailsType creditCard;
 
 	/**
 	 * 	 
 	 */ 
-	private String ReceiverEmail;
+	private String receiverEmail;
 
 	/**
 	 * 	 
 	 */ 
-	private String Comment;
+	private String comment;
 
 	
 
@@ -53,139 +55,145 @@ public class DoNonReferencedCreditRequestDetailsType{
 	}	
 
 	/**
-	 * Getter for Amount
+	 * Getter for amount
 	 */
 	 public BasicAmountType getAmount() {
-	 	return Amount;
+	 	return amount;
 	 }
 	 
 	/**
-	 * Setter for Amount
+	 * Setter for amount
 	 */
-	 public void setAmount(BasicAmountType Amount) {
-	 	this.Amount = Amount;
+	 public void setAmount(BasicAmountType amount) {
+	 	this.amount = amount;
 	 }
 	 
 	/**
-	 * Getter for NetAmount
+	 * Getter for netAmount
 	 */
 	 public BasicAmountType getNetAmount() {
-	 	return NetAmount;
+	 	return netAmount;
 	 }
 	 
 	/**
-	 * Setter for NetAmount
+	 * Setter for netAmount
 	 */
-	 public void setNetAmount(BasicAmountType NetAmount) {
-	 	this.NetAmount = NetAmount;
+	 public void setNetAmount(BasicAmountType netAmount) {
+	 	this.netAmount = netAmount;
 	 }
 	 
 	/**
-	 * Getter for TaxAmount
+	 * Getter for taxAmount
 	 */
 	 public BasicAmountType getTaxAmount() {
-	 	return TaxAmount;
+	 	return taxAmount;
 	 }
 	 
 	/**
-	 * Setter for TaxAmount
+	 * Setter for taxAmount
 	 */
-	 public void setTaxAmount(BasicAmountType TaxAmount) {
-	 	this.TaxAmount = TaxAmount;
+	 public void setTaxAmount(BasicAmountType taxAmount) {
+	 	this.taxAmount = taxAmount;
 	 }
 	 
 	/**
-	 * Getter for ShippingAmount
+	 * Getter for shippingAmount
 	 */
 	 public BasicAmountType getShippingAmount() {
-	 	return ShippingAmount;
+	 	return shippingAmount;
 	 }
 	 
 	/**
-	 * Setter for ShippingAmount
+	 * Setter for shippingAmount
 	 */
-	 public void setShippingAmount(BasicAmountType ShippingAmount) {
-	 	this.ShippingAmount = ShippingAmount;
+	 public void setShippingAmount(BasicAmountType shippingAmount) {
+	 	this.shippingAmount = shippingAmount;
 	 }
 	 
 	/**
-	 * Getter for CreditCard
+	 * Getter for creditCard
 	 */
 	 public CreditCardDetailsType getCreditCard() {
-	 	return CreditCard;
+	 	return creditCard;
 	 }
 	 
 	/**
-	 * Setter for CreditCard
+	 * Setter for creditCard
 	 */
-	 public void setCreditCard(CreditCardDetailsType CreditCard) {
-	 	this.CreditCard = CreditCard;
+	 public void setCreditCard(CreditCardDetailsType creditCard) {
+	 	this.creditCard = creditCard;
 	 }
 	 
 	/**
-	 * Getter for ReceiverEmail
+	 * Getter for receiverEmail
 	 */
 	 public String getReceiverEmail() {
-	 	return ReceiverEmail;
+	 	return receiverEmail;
 	 }
 	 
 	/**
-	 * Setter for ReceiverEmail
+	 * Setter for receiverEmail
 	 */
-	 public void setReceiverEmail(String ReceiverEmail) {
-	 	this.ReceiverEmail = ReceiverEmail;
+	 public void setReceiverEmail(String receiverEmail) {
+	 	this.receiverEmail = receiverEmail;
 	 }
 	 
 	/**
-	 * Getter for Comment
+	 * Getter for comment
 	 */
 	 public String getComment() {
-	 	return Comment;
+	 	return comment;
 	 }
 	 
 	/**
-	 * Setter for Comment
+	 * Setter for comment
 	 */
-	 public void setComment(String Comment) {
-	 	this.Comment = Comment;
+	 public void setComment(String comment) {
+	 	this.comment = comment;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(Amount != null) {
-			sb.append("<ebl:Amount");
-			sb.append(Amount.toXMLString());
-			sb.append("</ebl:Amount>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(NetAmount != null) {
-			sb.append("<ebl:NetAmount");
-			sb.append(NetAmount.toXMLString());
-			sb.append("</ebl:NetAmount>");
+		if(amount != null) {
+			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
 		}
-		if(TaxAmount != null) {
-			sb.append("<ebl:TaxAmount");
-			sb.append(TaxAmount.toXMLString());
-			sb.append("</ebl:TaxAmount>");
+		if(netAmount != null) {
+			sb.append(netAmount.toXMLString(preferredPrefix,"NetAmount"));
 		}
-		if(ShippingAmount != null) {
-			sb.append("<ebl:ShippingAmount");
-			sb.append(ShippingAmount.toXMLString());
-			sb.append("</ebl:ShippingAmount>");
+		if(taxAmount != null) {
+			sb.append(taxAmount.toXMLString(preferredPrefix,"TaxAmount"));
 		}
-		if(CreditCard != null) {
-			sb.append("<ebl:CreditCard>");
-			sb.append(CreditCard.toXMLString());
-			sb.append("</ebl:CreditCard>");
+		if(shippingAmount != null) {
+			sb.append(shippingAmount.toXMLString(preferredPrefix,"ShippingAmount"));
 		}
-		if(ReceiverEmail != null) {
-			sb.append("<ebl:ReceiverEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(ReceiverEmail));
-			sb.append("</ebl:ReceiverEmail>");
+		if(creditCard != null) {
+			sb.append(creditCard.toXMLString(preferredPrefix,"CreditCard"));
 		}
-		if(Comment != null) {
-			sb.append("<ebl:Comment>").append(SDKUtil.escapeInvalidXmlCharsRegex(Comment));
-			sb.append("</ebl:Comment>");
+		if(receiverEmail != null) {
+			sb.append("<").append(preferredPrefix).append(":ReceiverEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(receiverEmail));
+			sb.append("</").append(preferredPrefix).append(":ReceiverEmail>");
+		}
+		if(comment != null) {
+			sb.append("<").append(preferredPrefix).append(":Comment>").append(SDKUtil.escapeInvalidXmlCharsRegex(comment));
+			sb.append("</").append(preferredPrefix).append(":Comment>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

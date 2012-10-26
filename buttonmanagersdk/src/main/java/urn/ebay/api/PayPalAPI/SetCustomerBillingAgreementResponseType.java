@@ -27,7 +27,7 @@ public class SetCustomerBillingAgreementResponseType extends AbstractResponseTyp
 	 * 	  
 	 *@Required	 
 	 */ 
-	private String Token;
+	private String token;
 
 	
 
@@ -38,17 +38,17 @@ public class SetCustomerBillingAgreementResponseType extends AbstractResponseTyp
 	}	
 
 	/**
-	 * Getter for Token
+	 * Getter for token
 	 */
 	 public String getToken() {
-	 	return Token;
+	 	return token;
 	 }
 	 
 	/**
-	 * Setter for Token
+	 * Setter for token
 	 */
-	 public void setToken(String Token) {
-	 	this.Token = Token;
+	 public void setToken(String token) {
+	 	this.token = token;
 	 }
 	 
 
@@ -73,7 +73,7 @@ public class SetCustomerBillingAgreementResponseType extends AbstractResponseTyp
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Token", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Token = childNode.getTextContent();
+		    this.token = childNode.getTextContent();
 		}
 	
 	}

@@ -9,30 +9,32 @@ import com.paypal.core.SDKUtil;
  */
 public class CoupledBucketsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * Relationship Type - LifeTime (default) 	 
 	 */ 
-	private CoupleType CoupleType;
+	private CoupleType coupleType;
 
 	/**
 	 * Identifier for this relation 	 
 	 */ 
-	private String CoupledPaymentRequestID;
+	private String coupledPaymentRequestID;
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private List<String> PaymentRequestID = new ArrayList<String>();
+	private List<String> paymentRequestID = new ArrayList<String>();
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public CoupledBucketsType (List<String> PaymentRequestID){
-		this.PaymentRequestID = PaymentRequestID;
+	public CoupledBucketsType (List<String> paymentRequestID){
+		this.paymentRequestID = paymentRequestID;
 	}	
 
 	/**
@@ -42,63 +44,79 @@ public class CoupledBucketsType{
 	}	
 
 	/**
-	 * Getter for CoupleType
+	 * Getter for coupleType
 	 */
 	 public CoupleType getCoupleType() {
-	 	return CoupleType;
+	 	return coupleType;
 	 }
 	 
 	/**
-	 * Setter for CoupleType
+	 * Setter for coupleType
 	 */
-	 public void setCoupleType(CoupleType CoupleType) {
-	 	this.CoupleType = CoupleType;
+	 public void setCoupleType(CoupleType coupleType) {
+	 	this.coupleType = coupleType;
 	 }
 	 
 	/**
-	 * Getter for CoupledPaymentRequestID
+	 * Getter for coupledPaymentRequestID
 	 */
 	 public String getCoupledPaymentRequestID() {
-	 	return CoupledPaymentRequestID;
+	 	return coupledPaymentRequestID;
 	 }
 	 
 	/**
-	 * Setter for CoupledPaymentRequestID
+	 * Setter for coupledPaymentRequestID
 	 */
-	 public void setCoupledPaymentRequestID(String CoupledPaymentRequestID) {
-	 	this.CoupledPaymentRequestID = CoupledPaymentRequestID;
+	 public void setCoupledPaymentRequestID(String coupledPaymentRequestID) {
+	 	this.coupledPaymentRequestID = coupledPaymentRequestID;
 	 }
 	 
 	/**
-	 * Getter for PaymentRequestID
+	 * Getter for paymentRequestID
 	 */
 	 public List<String> getPaymentRequestID() {
-	 	return PaymentRequestID;
+	 	return paymentRequestID;
 	 }
 	 
 	/**
-	 * Setter for PaymentRequestID
+	 * Setter for paymentRequestID
 	 */
-	 public void setPaymentRequestID(List<String> PaymentRequestID) {
-	 	this.PaymentRequestID = PaymentRequestID;
+	 public void setPaymentRequestID(List<String> paymentRequestID) {
+	 	this.paymentRequestID = paymentRequestID;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(CoupleType != null) {
-			sb.append("<ebl:CoupleType>").append(SDKUtil.escapeInvalidXmlCharsRegex(CoupleType.getValue()));
-			sb.append("</ebl:CoupleType>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(CoupledPaymentRequestID != null) {
-			sb.append("<ebl:CoupledPaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(CoupledPaymentRequestID));
-			sb.append("</ebl:CoupledPaymentRequestID>");
+		if(coupleType != null) {
+			sb.append("<").append(preferredPrefix).append(":CoupleType>").append(SDKUtil.escapeInvalidXmlCharsRegex(coupleType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":CoupleType>");
 		}
-		if(PaymentRequestID != null) {
-			for(int i=0; i < PaymentRequestID.size(); i++) {
-				sb.append("<ebl:PaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(PaymentRequestID.get(i)));
-				sb.append("</ebl:PaymentRequestID>");
+		if(coupledPaymentRequestID != null) {
+			sb.append("<").append(preferredPrefix).append(":CoupledPaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(coupledPaymentRequestID));
+			sb.append("</").append(preferredPrefix).append(":CoupledPaymentRequestID>");
+		}
+		if(paymentRequestID != null) {
+			for(int i=0; i < paymentRequestID.size(); i++) {
+				sb.append("<").append(preferredPrefix).append(":PaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentRequestID.get(i)));
+				sb.append("</").append(preferredPrefix).append(":PaymentRequestID>");
+			}
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
 			}
 		}
 		return sb.toString();

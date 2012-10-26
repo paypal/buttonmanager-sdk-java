@@ -28,7 +28,7 @@ public class DoMobileCheckoutPaymentResponseType extends AbstractResponseType {
 	 * 	  
 	 *@Required	 
 	 */ 
-	private DoMobileCheckoutPaymentResponseDetailsType DoMobileCheckoutPaymentResponseDetails;
+	private DoMobileCheckoutPaymentResponseDetailsType doMobileCheckoutPaymentResponseDetails;
 
 	
 
@@ -39,17 +39,17 @@ public class DoMobileCheckoutPaymentResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for DoMobileCheckoutPaymentResponseDetails
+	 * Getter for doMobileCheckoutPaymentResponseDetails
 	 */
 	 public DoMobileCheckoutPaymentResponseDetailsType getDoMobileCheckoutPaymentResponseDetails() {
-	 	return DoMobileCheckoutPaymentResponseDetails;
+	 	return doMobileCheckoutPaymentResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for DoMobileCheckoutPaymentResponseDetails
+	 * Setter for doMobileCheckoutPaymentResponseDetails
 	 */
-	 public void setDoMobileCheckoutPaymentResponseDetails(DoMobileCheckoutPaymentResponseDetailsType DoMobileCheckoutPaymentResponseDetails) {
-	 	this.DoMobileCheckoutPaymentResponseDetails = DoMobileCheckoutPaymentResponseDetails;
+	 public void setDoMobileCheckoutPaymentResponseDetails(DoMobileCheckoutPaymentResponseDetailsType doMobileCheckoutPaymentResponseDetails) {
+	 	this.doMobileCheckoutPaymentResponseDetails = doMobileCheckoutPaymentResponseDetails;
 	 }
 	 
 
@@ -74,7 +74,7 @@ public class DoMobileCheckoutPaymentResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("DoMobileCheckoutPaymentResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.DoMobileCheckoutPaymentResponseDetails =  new DoMobileCheckoutPaymentResponseDetailsType(childNode);
+		    this.doMobileCheckoutPaymentResponseDetails =  new DoMobileCheckoutPaymentResponseDetailsType(childNode);
 		}
 	}
  

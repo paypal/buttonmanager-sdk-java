@@ -8,25 +8,27 @@ import com.paypal.core.SDKUtil;
  */
 public class ActivationDetailsType{
 
+	private static final String nameSpace="urn:ebay:apis:eBLBaseComponents";
+	private static final String preferredPrefix="ebl";
 
 	/**
 	 * 	  
 	 *@Required	 
 	 */ 
-	private BasicAmountType InitialAmount;
+	private BasicAmountType initialAmount;
 
 	/**
 	 * 	 
 	 */ 
-	private FailedPaymentActionType FailedInitialAmountAction;
+	private FailedPaymentActionType failedInitialAmountAction;
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public ActivationDetailsType (BasicAmountType InitialAmount){
-		this.InitialAmount = InitialAmount;
+	public ActivationDetailsType (BasicAmountType initialAmount){
+		this.initialAmount = initialAmount;
 	}	
 
 	/**
@@ -36,45 +38,59 @@ public class ActivationDetailsType{
 	}	
 
 	/**
-	 * Getter for InitialAmount
+	 * Getter for initialAmount
 	 */
 	 public BasicAmountType getInitialAmount() {
-	 	return InitialAmount;
+	 	return initialAmount;
 	 }
 	 
 	/**
-	 * Setter for InitialAmount
+	 * Setter for initialAmount
 	 */
-	 public void setInitialAmount(BasicAmountType InitialAmount) {
-	 	this.InitialAmount = InitialAmount;
+	 public void setInitialAmount(BasicAmountType initialAmount) {
+	 	this.initialAmount = initialAmount;
 	 }
 	 
 	/**
-	 * Getter for FailedInitialAmountAction
+	 * Getter for failedInitialAmountAction
 	 */
 	 public FailedPaymentActionType getFailedInitialAmountAction() {
-	 	return FailedInitialAmountAction;
+	 	return failedInitialAmountAction;
 	 }
 	 
 	/**
-	 * Setter for FailedInitialAmountAction
+	 * Setter for failedInitialAmountAction
 	 */
-	 public void setFailedInitialAmountAction(FailedPaymentActionType FailedInitialAmountAction) {
-	 	this.FailedInitialAmountAction = FailedInitialAmountAction;
+	 public void setFailedInitialAmountAction(FailedPaymentActionType failedInitialAmountAction) {
+	 	this.failedInitialAmountAction = failedInitialAmountAction;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(InitialAmount != null) {
-			sb.append("<ebl:InitialAmount");
-			sb.append(InitialAmount.toXMLString());
-			sb.append("</ebl:InitialAmount>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(FailedInitialAmountAction != null) {
-			sb.append("<ebl:FailedInitialAmountAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(FailedInitialAmountAction.getValue()));
-			sb.append("</ebl:FailedInitialAmountAction>");
+		if(initialAmount != null) {
+			sb.append(initialAmount.toXMLString(preferredPrefix,"InitialAmount"));
+		}
+		if(failedInitialAmountAction != null) {
+			sb.append("<").append(preferredPrefix).append(":FailedInitialAmountAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(failedInitialAmountAction.getValue()));
+			sb.append("</").append(preferredPrefix).append(":FailedInitialAmountAction>");
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
 		return sb.toString();
 	}

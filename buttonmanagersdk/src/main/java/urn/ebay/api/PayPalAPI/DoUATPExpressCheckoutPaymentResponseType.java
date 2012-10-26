@@ -28,7 +28,7 @@ public class DoUATPExpressCheckoutPaymentResponseType extends DoExpressCheckoutP
 	 * 	  
 	 *@Required	 
 	 */ 
-	private UATPDetailsType UATPDetails;
+	private UATPDetailsType uATPDetails;
 
 	
 
@@ -39,17 +39,17 @@ public class DoUATPExpressCheckoutPaymentResponseType extends DoExpressCheckoutP
 	}	
 
 	/**
-	 * Getter for UATPDetails
+	 * Getter for uATPDetails
 	 */
 	 public UATPDetailsType getUATPDetails() {
-	 	return UATPDetails;
+	 	return uATPDetails;
 	 }
 	 
 	/**
-	 * Setter for UATPDetails
+	 * Setter for uATPDetails
 	 */
-	 public void setUATPDetails(UATPDetailsType UATPDetails) {
-	 	this.UATPDetails = UATPDetails;
+	 public void setUATPDetails(UATPDetailsType uATPDetails) {
+	 	this.uATPDetails = uATPDetails;
 	 }
 	 
 
@@ -74,7 +74,7 @@ public class DoUATPExpressCheckoutPaymentResponseType extends DoExpressCheckoutP
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("UATPDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.UATPDetails =  new UATPDetailsType(childNode);
+		    this.uATPDetails =  new UATPDetailsType(childNode);
 		}
 	}
  

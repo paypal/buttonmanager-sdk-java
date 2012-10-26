@@ -28,7 +28,7 @@ public class GetAuthDetailsResponseType extends AbstractResponseType {
 	 * 	  
 	 *@Required	 
 	 */ 
-	private GetAuthDetailsResponseDetailsType GetAuthDetailsResponseDetails;
+	private GetAuthDetailsResponseDetailsType getAuthDetailsResponseDetails;
 
 	
 
@@ -39,17 +39,17 @@ public class GetAuthDetailsResponseType extends AbstractResponseType {
 	}	
 
 	/**
-	 * Getter for GetAuthDetailsResponseDetails
+	 * Getter for getAuthDetailsResponseDetails
 	 */
 	 public GetAuthDetailsResponseDetailsType getGetAuthDetailsResponseDetails() {
-	 	return GetAuthDetailsResponseDetails;
+	 	return getAuthDetailsResponseDetails;
 	 }
 	 
 	/**
-	 * Setter for GetAuthDetailsResponseDetails
+	 * Setter for getAuthDetailsResponseDetails
 	 */
-	 public void setGetAuthDetailsResponseDetails(GetAuthDetailsResponseDetailsType GetAuthDetailsResponseDetails) {
-	 	this.GetAuthDetailsResponseDetails = GetAuthDetailsResponseDetails;
+	 public void setGetAuthDetailsResponseDetails(GetAuthDetailsResponseDetailsType getAuthDetailsResponseDetails) {
+	 	this.getAuthDetailsResponseDetails = getAuthDetailsResponseDetails;
 	 }
 	 
 
@@ -74,7 +74,7 @@ public class GetAuthDetailsResponseType extends AbstractResponseType {
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("GetAuthDetailsResponseDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.GetAuthDetailsResponseDetails =  new GetAuthDetailsResponseDetailsType(childNode);
+		    this.getAuthDetailsResponseDetails =  new GetAuthDetailsResponseDetailsType(childNode);
 		}
 	}
  

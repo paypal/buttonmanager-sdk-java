@@ -27,36 +27,38 @@ import org.xml.sax.SAXException;
  */
 public class OptionSelectionDetailsType{
 
+	private static final String nameSpace="urn:ebay:api:PayPalAPI";
+	private static final String preferredPrefix="ns";
 
 	/**
 	 * Option Selection. Required Character length and limitations:
 	 * 12 single-byte alphanumeric characters 	  
 	 *@Required	 
 	 */ 
-	private String OptionSelection;
+	private String optionSelection;
 
 	/**
 	 * Option Price. Optional 	 
 	 */ 
-	private String Price;
+	private String price;
 
 	/**
 	 * Option Type Optional 	 
 	 */ 
-	private OptionTypeListType OptionType;
+	private OptionTypeListType optionType;
 
 	/**
 	 * 	 
 	 */ 
-	private List<InstallmentDetailsType> PaymentPeriod = new ArrayList<InstallmentDetailsType>();
+	private List<InstallmentDetailsType> paymentPeriod = new ArrayList<InstallmentDetailsType>();
 
 	
 
 	/**
 	 * Constructor with arguments
 	 */
-	public OptionSelectionDetailsType (String OptionSelection){
-		this.OptionSelection = OptionSelection;
+	public OptionSelectionDetailsType (String optionSelection){
+		this.optionSelection = optionSelection;
 	}	
 
 	/**
@@ -66,82 +68,96 @@ public class OptionSelectionDetailsType{
 	}	
 
 	/**
-	 * Getter for OptionSelection
+	 * Getter for optionSelection
 	 */
 	 public String getOptionSelection() {
-	 	return OptionSelection;
+	 	return optionSelection;
 	 }
 	 
 	/**
-	 * Setter for OptionSelection
+	 * Setter for optionSelection
 	 */
-	 public void setOptionSelection(String OptionSelection) {
-	 	this.OptionSelection = OptionSelection;
+	 public void setOptionSelection(String optionSelection) {
+	 	this.optionSelection = optionSelection;
 	 }
 	 
 	/**
-	 * Getter for Price
+	 * Getter for price
 	 */
 	 public String getPrice() {
-	 	return Price;
+	 	return price;
 	 }
 	 
 	/**
-	 * Setter for Price
+	 * Setter for price
 	 */
-	 public void setPrice(String Price) {
-	 	this.Price = Price;
+	 public void setPrice(String price) {
+	 	this.price = price;
 	 }
 	 
 	/**
-	 * Getter for OptionType
+	 * Getter for optionType
 	 */
 	 public OptionTypeListType getOptionType() {
-	 	return OptionType;
+	 	return optionType;
 	 }
 	 
 	/**
-	 * Setter for OptionType
+	 * Setter for optionType
 	 */
-	 public void setOptionType(OptionTypeListType OptionType) {
-	 	this.OptionType = OptionType;
+	 public void setOptionType(OptionTypeListType optionType) {
+	 	this.optionType = optionType;
 	 }
 	 
 	/**
-	 * Getter for PaymentPeriod
+	 * Getter for paymentPeriod
 	 */
 	 public List<InstallmentDetailsType> getPaymentPeriod() {
-	 	return PaymentPeriod;
+	 	return paymentPeriod;
 	 }
 	 
 	/**
-	 * Setter for PaymentPeriod
+	 * Setter for paymentPeriod
 	 */
-	 public void setPaymentPeriod(List<InstallmentDetailsType> PaymentPeriod) {
-	 	this.PaymentPeriod = PaymentPeriod;
+	 public void setPaymentPeriod(List<InstallmentDetailsType> paymentPeriod) {
+	 	this.paymentPeriod = paymentPeriod;
 	 }
 	 
 
 
-	public String toXMLString() {
+	public String toXMLString(String prefix,String name) {
 		StringBuilder sb = new StringBuilder();
-		if(OptionSelection != null) {
-			sb.append("<urn:OptionSelection>").append(SDKUtil.escapeInvalidXmlCharsRegex(OptionSelection));
-			sb.append("</urn:OptionSelection>");
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("<").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("<").append(preferredPrefix).append(":").append(name).append(">");
+			}
 		}
-		if(Price != null) {
-			sb.append("<urn:Price>").append(SDKUtil.escapeInvalidXmlCharsRegex(Price));
-			sb.append("</urn:Price>");
+		if(optionSelection != null) {
+			sb.append("<").append(preferredPrefix).append(":OptionSelection>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionSelection));
+			sb.append("</").append(preferredPrefix).append(":OptionSelection>");
 		}
-		if(OptionType != null) {
-			sb.append("<urn:OptionType>").append(SDKUtil.escapeInvalidXmlCharsRegex(OptionType.getValue()));
-			sb.append("</urn:OptionType>");
+		if(price != null) {
+			sb.append("<").append(preferredPrefix).append(":Price>").append(SDKUtil.escapeInvalidXmlCharsRegex(price));
+			sb.append("</").append(preferredPrefix).append(":Price>");
 		}
-		if(PaymentPeriod != null) {
-			for(int i=0; i < PaymentPeriod.size(); i++) {
-				sb.append("<urn:PaymentPeriod>");
-				sb.append(PaymentPeriod.get(i).toXMLString());
-				sb.append("</urn:PaymentPeriod>");
+		if(optionType != null) {
+			sb.append("<").append(preferredPrefix).append(":OptionType>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":OptionType>");
+		}
+		if(paymentPeriod != null) {
+			for(int i=0; i < paymentPeriod.size(); i++) {
+				sb.append(paymentPeriod.get(i).toXMLString(preferredPrefix,"PaymentPeriod"));
+			}
+		}
+		if(name!=null){
+			if(prefix!=null){
+				sb.append("</").append(prefix).append(":").append(name).append(">");
+			}
+			else{
+				sb.append("</").append(preferredPrefix).append(":").append(name).append(">");
 			}
 		}
 		return sb.toString();
@@ -166,23 +182,23 @@ public class OptionSelectionDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("OptionSelection", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OptionSelection = childNode.getTextContent();
+		    this.optionSelection = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("Price", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.Price = childNode.getTextContent();
+		    this.price = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("OptionType", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-		    this.OptionType = OptionTypeListType.fromValue(childNode.getTextContent());
+		    this.optionType = OptionTypeListType.fromValue(childNode.getTextContent());
 		}
         nodeList = (NodeList) xpath.evaluate("PaymentPeriod", node, XPathConstants.NODESET);
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {
 				Node subNode = nodeList.item(i);
-				this.PaymentPeriod.add(new InstallmentDetailsType(subNode));
+				this.paymentPeriod.add(new InstallmentDetailsType(subNode));
 			}
 		}
 	}

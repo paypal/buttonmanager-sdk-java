@@ -36,7 +36,7 @@
 					<input type="submit" name="BMManageButtonStatusBtn"
 						value="BMManageButtonStatus" /><br />
 				</div>
-				<a href="/buttonmanager-sample/index.html">Home</a>
+				<a href="../index.html">Home</a>
 			</div>
 		</form>
 		<div id="relatedcalls">

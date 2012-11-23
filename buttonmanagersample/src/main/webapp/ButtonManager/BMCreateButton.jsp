@@ -171,7 +171,7 @@
 					<input type="submit" name="BMCreateButtonBtn"
 						value="BMCreateButton" /><br />
 				</div>
-				<a href="/buttonmanager-sample/index.html">Home</a> <br /> <br />
+				<a href="../index.html">Home</a> <br /> <br />
 				<p>
 					Note:All Button Types will not work with all Button Code types.In
 					order to know the details see <a

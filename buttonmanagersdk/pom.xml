@@ -4,12 +4,7 @@
   <artifactId>buttonmanagersdk</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>ButtonManagerSDK</name>
-  <parent>
-  	<groupId>com.paypal.sdk</groupId>
-  	<artifactId>buttonmanager</artifactId>
-  	<version>1.0-SNAPSHOT</version>
-  	<relativePath>../pom.xml</relativePath>
-  </parent>
+  
   <dependencies>
   	<dependency>
   		<groupId>com.paypal.sdk</groupId>

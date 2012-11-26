@@ -5,12 +5,7 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>ButtonManagerSample</name>
-  <parent>
-  	<groupId>com.paypal.sdk</groupId>
-  	<artifactId>buttonmanager</artifactId>
-  	<version>1.0-SNAPSHOT</version>
-  	<relativePath>../pom.xml</relativePath>
-  </parent>
+ 
   <dependencies>
   	<dependency>
   		<groupId>javax.servlet</groupId>

@@ -324,6 +324,21 @@ public class PaymentInfoType{
 	 */ 
 	private OfferDetailsType offerDetails;
 
+	/**
+	 * This field indicates whether the credit card number used for
+	 * this transaction is in a particular bin range registered
+	 * with PayPal by the merchant. This filed is optional and will
+	 * be present if merchant has a registered bin range. The value
+	 * of this field will be “true” if merchant has a
+	 * registered bin range and the credit card used in the
+	 * transaction is within the registered bin range. The value of
+	 * this field will be false if merchant has a registered bin
+	 * range and credit card used in the transaction outside
+	 * registered bin range or the transaction is not done using a
+	 * credit card. 	 
+	 */ 
+	private String binEligibility;
+
 	
 
 	/**
@@ -850,6 +865,20 @@ public class PaymentInfoType{
 	 	this.offerDetails = offerDetails;
 	 }
 	 
+	/**
+	 * Getter for binEligibility
+	 */
+	 public String getBinEligibility() {
+	 	return binEligibility;
+	 }
+	 
+	/**
+	 * Setter for binEligibility
+	 */
+	 public void setBinEligibility(String binEligibility) {
+	 	this.binEligibility = binEligibility;
+	 }
+	 
 
 
 
@@ -1037,6 +1066,11 @@ public class PaymentInfoType{
         if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.offerDetails =  new OfferDetailsType(childNode);
 		}
+		childNode = (Node) xpath.evaluate("BinEligibility", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.binEligibility = childNode.getTextContent();
+		}
+	
 	}
  
 }

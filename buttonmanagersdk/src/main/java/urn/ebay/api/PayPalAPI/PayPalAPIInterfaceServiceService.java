@@ -45,10 +45,10 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	public static final String SERVICE_NAME = "PayPalAPIInterfaceService";
 
 	//SDK Name
-	private static final String SDK_NAME="sdkname";
+	private static final String SDK_NAME="buttonmanager-java-sdk";
 	
 	//SDK Version
-	private static final String SDK_VERSION="sdkversion";
+	private static final String SDK_VERSION="2.0.96";
 
 	
 	public PayPalAPIInterfaceServiceService(File configFile) throws IOException {

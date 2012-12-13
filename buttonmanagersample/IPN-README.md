@@ -9,18 +9,18 @@ a response string "VERIFIED" or "INVALID".
 
 IPN configuration :
 -----------------
-    * Ipn endpoint url is specified in 'sdk_config.properties' as 'service.IPNEndpoint'. This will be used for ipn post back.
-    * A util class 'IPNMessage' is provided in java sdk-core for ipn message validation. IPN Listener can use this class 
-      for message validation.
+* Ipn endpoint url is specified in 'sdk_config.properties' as 'service.IPNEndpoint'. This will be used for ipn post back.
+* A util class 'IPNMessage' is provided in java sdk-core for ipn message validation. IPN Listener can use this class 
+for message validation.
     
 IPN How to run?
 --------------
-	* Ipn Listener sample provided under the package com/sample/ipn/IPNListenerServlet.java.
-	* Deploy IPN Listener sample in Cloud environment or you can expose your server port using any third party 
-	  LocalTunneling software , so that you can receive PayPal IPN call back.
-	* Make an PayPal api call (eg: BMCreateButton request), setting the IpnNotificationUrl field of api request class
-	  to the url of deployed IPNLIstener sample (eg: http://DNS-Name/buttonmanagersample/IPNListener).
-	* You will receive ipn call back from PayPal , which will be logged in to log file in case of IPN sample.   
+* Ipn Listener sample provided under the package com/sample/ipn/IPNListenerServlet.java.
+* Deploy IPN Listener sample in Cloud environment or you can expose your server port using any third party 
+  LocalTunneling software , so that you can receive PayPal IPN call back.
+* Make an PayPal api call (eg: BMCreateButton request), setting the IpnNotificationUrl field of api request class
+  to the url of deployed IPNLIstener sample (eg: http://DNS-Name/buttonmanagersample/IPNListener).
+* You will receive ipn call back from PayPal , which will be logged in to log file in case of IPN sample.   
 
        
 IPN variables :
@@ -52,45 +52,45 @@ IPN variables :
 
 [BuyerInfo]
 -----------
-sender_email,
-fees_payer,
-pin_type,
+* sender_email
+* fees_payer
+* pin_type
     
 [DisputeResolution]
 -------------------
-reason_code
+* reason_code
 
 [RecurringPayment]
 ------------------
-current_number_of_payments,
-current_period_attempts,
-current_total_amount_of_all_payments,
-date_of_month,
-day_of_week,
-ending_date,
-max_amount_per_payment,
-max_number_of_payments,
-max_total_amount_of_all_payments,
-payment_period,
-starting_date,
-payment_period,
+* current_number_of_payments
+* current_period_attempts
+* current_total_amount_of_all_payments
+* date_of_month
+* day_of_week
+* ending_date
+* max_amount_per_payment
+* max_number_of_payments
+* max_total_amount_of_all_payments
+* payment_period
+* starting_date
+* payment_period
     
 
 [Paymentinfo]
 -------------
-pay_key
-payment_request_date
-preapproval_key
-memo
-payment_request_date
-preapproval_key
-currencyCode
-status
-return_url
-cancel_url
-approved
-charset
-trackingId
+* pay_key
+* payment_request_date
+* preapproval_key
+* memo
+* payment_request_date
+* preapproval_key
+* currencyCode
+* status
+* return_url
+* cancel_url
+* approved
+* charset
+* trackingId
     
       
  

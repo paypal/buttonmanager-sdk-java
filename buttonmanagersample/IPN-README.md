@@ -78,19 +78,19 @@ payment_period,
 
 [Paymentinfo]
 -------------
-pay_key,
-payment_request_date,
-preapproval_key,
-memo,
-payment_request_date,    
-preapproval_key,
-currencyCode,
-status,
-return_url,              
-cancel_url,
-approved,
-charset,
-trackingId,
+pay_key
+payment_request_date
+preapproval_key
+memo
+payment_request_date
+preapproval_key
+currencyCode
+status
+return_url
+cancel_url
+approved
+charset
+trackingId
     
       
  

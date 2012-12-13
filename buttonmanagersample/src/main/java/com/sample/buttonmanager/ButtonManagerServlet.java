@@ -130,7 +130,8 @@ public class ButtonManagerServlet extends HttpServlet {
 				lst.add("return=" + req.getParameter("returnURL"));
 				lst.add("business=" + req.getParameter("businessMail"));
 				lst.add("amount=" + req.getParameter("amt"));
-
+				lst.add("notify_url=" + req.getParameter("notifyURL"));
+				
 				reqType.setButtonVar(lst);
 				// Construct the request values according to the Button Type and
 				// Button Code. To know more about that
@@ -211,7 +212,8 @@ public class ButtonManagerServlet extends HttpServlet {
 				lst.add("amount=" + req.getParameter("amt"));
 				lst.add("return=" + req.getParameter("returnURL"));
 				lst.add("business=" + req.getParameter("businessMail"));
-
+				lst.add("notify_url=" + req.getParameter("notifyURL"));
+				
 				reqType.setButtonVar(lst);
 				// Construct the request values according to the Button Type and
 				// Button Code

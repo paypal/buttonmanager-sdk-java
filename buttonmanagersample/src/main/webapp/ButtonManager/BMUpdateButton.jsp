@@ -90,6 +90,12 @@
 							maxlength="260" />
 					</div>
 				</div>
+				<div class="params">
+					<div class="param_name">IPN Notification URL (For receiving IPN call back from PayPal)*</div>
+					<div class="param_value">
+						<input type="text" name="notifyURL" value="" size="50"/>
+					</div>
+				</div>
 				<p>For Payment Plan Button</p>
 				<table class="params">
 					<tr>

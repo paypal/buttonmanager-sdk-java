@@ -28,27 +28,27 @@ IPN variables :
 
 [Transaction]
 -------------
-transaction_type,
-action_type,
-transaction[n].amount,
-transaction[n].id,
-transaction[n].id_for_sender,
-transaction[n].invoiceId,
-transaction[n].is_primary_receiver,
-transaction[n].receiver,
-transaction[n].refund_account_charged,
-transaction[n].refund_amount,
-transaction[n].refund_id,
-transaction[n].status,
-transaction[n].status_for _sender_txn,
-transaction[n].id_for_sender_txn, 
-transaction[n].pending_reason, 
-ipn_notification_url,
-verify_sign,
-notify_version,          
-test_ipn,                
-reverse_all_parallel_payments_on_error, 
-log_default_shipping_address_in_transaction
+* transaction_type
+* action_type
+* transaction[n].amount
+* transaction[n].id
+* transaction[n].id_for_sender
+* transaction[n].invoiceId
+* transaction[n].is_primary_receiver
+* transaction[n].receiver
+* transaction[n].refund_account_charged
+* transaction[n].refund_amount
+* transaction[n].refund_id
+* transaction[n].status
+* transaction[n].status_for _sender_txn
+* transaction[n].id_for_sender_txn 
+* transaction[n].pending_reason 
+* ipn_notification_url
+* verify_sign
+* notify_version          
+* test_ipn                
+* reverse_all_parallel_payments_on_error, 
+* log_default_shipping_address_in_transaction
 
 [BuyerInfo]
 -----------

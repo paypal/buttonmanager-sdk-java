@@ -333,7 +333,7 @@ public class SetMobileCheckoutRequestDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -356,42 +356,42 @@ public class SetMobileCheckoutRequestDetailsType{
 			sb.append(shipping.toXMLString(preferredPrefix,"Shipping"));
 		}
 		if(itemName != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemName>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemName));
+			sb.append("<").append(preferredPrefix).append(":ItemName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemName));
 			sb.append("</").append(preferredPrefix).append(":ItemName>");
 		}
 		if(itemNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemNumber));
+			sb.append("<").append(preferredPrefix).append(":ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemNumber));
 			sb.append("</").append(preferredPrefix).append(":ItemNumber>");
 		}
 		if(custom != null) {
-			sb.append("<").append(preferredPrefix).append(":Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(custom));
+			sb.append("<").append(preferredPrefix).append(":Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.custom));
 			sb.append("</").append(preferredPrefix).append(":Custom>");
 		}
 		if(invoiceID != null) {
-			sb.append("<").append(preferredPrefix).append(":InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(invoiceID));
+			sb.append("<").append(preferredPrefix).append(":InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.invoiceID));
 			sb.append("</").append(preferredPrefix).append(":InvoiceID>");
 		}
 		if(returnURL != null) {
-			sb.append("<").append(preferredPrefix).append(":ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(returnURL));
+			sb.append("<").append(preferredPrefix).append(":ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.returnURL));
 			sb.append("</").append(preferredPrefix).append(":ReturnURL>");
 		}
 		if(cancelURL != null) {
-			sb.append("<").append(preferredPrefix).append(":CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(cancelURL));
+			sb.append("<").append(preferredPrefix).append(":CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cancelURL));
 			sb.append("</").append(preferredPrefix).append(":CancelURL>");
 		}
 		if(addressDisplayOptions != null) {
-			sb.append("<").append(preferredPrefix).append(":AddressDisplayOptions>").append(SDKUtil.escapeInvalidXmlCharsRegex(addressDisplayOptions));
+			sb.append("<").append(preferredPrefix).append(":AddressDisplayOptions>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.addressDisplayOptions));
 			sb.append("</").append(preferredPrefix).append(":AddressDisplayOptions>");
 		}
 		if(sharePhone != null) {
-			sb.append("<").append(preferredPrefix).append(":SharePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(sharePhone));
+			sb.append("<").append(preferredPrefix).append(":SharePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.sharePhone));
 			sb.append("</").append(preferredPrefix).append(":SharePhone>");
 		}
 		if(shipToAddress != null) {
 			sb.append(shipToAddress.toXMLString(preferredPrefix,"ShipToAddress"));
 		}
 		if(buyerEmail != null) {
-			sb.append("<").append(preferredPrefix).append(":BuyerEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(buyerEmail));
+			sb.append("<").append(preferredPrefix).append(":BuyerEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buyerEmail));
 			sb.append("</").append(preferredPrefix).append(":BuyerEmail>");
 		}
 		if(name!=null){

@@ -69,7 +69,7 @@ public class DoReferenceTransactionRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -84,7 +84,7 @@ public class DoReferenceTransactionRequestType extends AbstractRequestType {
 			sb.append(doReferenceTransactionRequestDetails.toXMLString(null,"DoReferenceTransactionRequestDetails"));
 		}
 		if(returnFMFDetails != null) {
-			sb.append("<").append(preferredPrefix).append(":ReturnFMFDetails>").append(SDKUtil.escapeInvalidXmlCharsRegex(returnFMFDetails));
+			sb.append("<").append(preferredPrefix).append(":ReturnFMFDetails>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.returnFMFDetails));
 			sb.append("</").append(preferredPrefix).append(":ReturnFMFDetails>");
 		}
 		if(name!=null){

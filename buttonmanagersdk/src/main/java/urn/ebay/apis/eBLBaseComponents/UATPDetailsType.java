@@ -92,7 +92,7 @@ public class UATPDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -103,15 +103,15 @@ public class UATPDetailsType{
 			}
 		}
 		if(uATPNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":UATPNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(uATPNumber));
+			sb.append("<").append(preferredPrefix).append(":UATPNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.uATPNumber));
 			sb.append("</").append(preferredPrefix).append(":UATPNumber>");
 		}
 		if(expMonth != null) {
-			sb.append("<").append(preferredPrefix).append(":ExpMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(expMonth));
+			sb.append("<").append(preferredPrefix).append(":ExpMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.expMonth));
 			sb.append("</").append(preferredPrefix).append(":ExpMonth>");
 		}
 		if(expYear != null) {
-			sb.append("<").append(preferredPrefix).append(":ExpYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(expYear));
+			sb.append("<").append(preferredPrefix).append(":ExpYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.expYear));
 			sb.append("</").append(preferredPrefix).append(":ExpYear>");
 		}
 		if(name!=null){

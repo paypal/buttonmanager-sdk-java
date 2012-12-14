@@ -324,7 +324,7 @@ public class BusinessInfoType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -335,58 +335,58 @@ public class BusinessInfoType{
 			}
 		}
 		if(type != null) {
-			sb.append("<").append(preferredPrefix).append(":Type>").append(SDKUtil.escapeInvalidXmlCharsRegex(type.getValue()));
+			sb.append("<").append(preferredPrefix).append(":Type>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.type.getValue()));
 			sb.append("</").append(preferredPrefix).append(":Type>");
 		}
 		if(name != null) {
-			sb.append("<").append(preferredPrefix).append(":Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(name));
+			sb.append("<").append(preferredPrefix).append(":Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.name));
 			sb.append("</").append(preferredPrefix).append(":Name>");
 		}
 		if(address != null) {
 			sb.append(address.toXMLString(preferredPrefix,"Address"));
 		}
 		if(workPhone != null) {
-			sb.append("<").append(preferredPrefix).append(":WorkPhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(workPhone));
+			sb.append("<").append(preferredPrefix).append(":WorkPhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.workPhone));
 			sb.append("</").append(preferredPrefix).append(":WorkPhone>");
 		}
 		if(category != null) {
-			sb.append("<").append(preferredPrefix).append(":Category>").append(SDKUtil.escapeInvalidXmlCharsRegex(category.getValue()));
+			sb.append("<").append(preferredPrefix).append(":Category>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.category.getValue()));
 			sb.append("</").append(preferredPrefix).append(":Category>");
 		}
 		if(subCategory != null) {
-			sb.append("<").append(preferredPrefix).append(":SubCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(subCategory.getValue()));
+			sb.append("<").append(preferredPrefix).append(":SubCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.subCategory.getValue()));
 			sb.append("</").append(preferredPrefix).append(":SubCategory>");
 		}
 		if(averagePrice != null) {
-			sb.append("<").append(preferredPrefix).append(":AveragePrice>").append(SDKUtil.escapeInvalidXmlCharsRegex(averagePrice.getValue()));
+			sb.append("<").append(preferredPrefix).append(":AveragePrice>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.averagePrice.getValue()));
 			sb.append("</").append(preferredPrefix).append(":AveragePrice>");
 		}
 		if(averageMonthlyVolume != null) {
-			sb.append("<").append(preferredPrefix).append(":AverageMonthlyVolume>").append(SDKUtil.escapeInvalidXmlCharsRegex(averageMonthlyVolume.getValue()));
+			sb.append("<").append(preferredPrefix).append(":AverageMonthlyVolume>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.averageMonthlyVolume.getValue()));
 			sb.append("</").append(preferredPrefix).append(":AverageMonthlyVolume>");
 		}
 		if(salesVenue != null) {
-			sb.append("<").append(preferredPrefix).append(":SalesVenue>").append(SDKUtil.escapeInvalidXmlCharsRegex(salesVenue.getValue()));
+			sb.append("<").append(preferredPrefix).append(":SalesVenue>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.salesVenue.getValue()));
 			sb.append("</").append(preferredPrefix).append(":SalesVenue>");
 		}
 		if(website != null) {
-			sb.append("<").append(preferredPrefix).append(":Website>").append(SDKUtil.escapeInvalidXmlCharsRegex(website));
+			sb.append("<").append(preferredPrefix).append(":Website>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.website));
 			sb.append("</").append(preferredPrefix).append(":Website>");
 		}
 		if(revenueFromOnlineSales != null) {
-			sb.append("<").append(preferredPrefix).append(":RevenueFromOnlineSales>").append(SDKUtil.escapeInvalidXmlCharsRegex(revenueFromOnlineSales.getValue()));
+			sb.append("<").append(preferredPrefix).append(":RevenueFromOnlineSales>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.revenueFromOnlineSales.getValue()));
 			sb.append("</").append(preferredPrefix).append(":RevenueFromOnlineSales>");
 		}
 		if(businessEstablished != null) {
-			sb.append("<").append(preferredPrefix).append(":BusinessEstablished>").append(SDKUtil.escapeInvalidXmlCharsRegex(businessEstablished));
+			sb.append("<").append(preferredPrefix).append(":BusinessEstablished>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.businessEstablished));
 			sb.append("</").append(preferredPrefix).append(":BusinessEstablished>");
 		}
 		if(customerServiceEmail != null) {
-			sb.append("<").append(preferredPrefix).append(":CustomerServiceEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(customerServiceEmail));
+			sb.append("<").append(preferredPrefix).append(":CustomerServiceEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.customerServiceEmail));
 			sb.append("</").append(preferredPrefix).append(":CustomerServiceEmail>");
 		}
 		if(customerServicePhone != null) {
-			sb.append("<").append(preferredPrefix).append(":CustomerServicePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(customerServicePhone));
+			sb.append("<").append(preferredPrefix).append(":CustomerServicePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.customerServicePhone));
 			sb.append("</").append(preferredPrefix).append(":CustomerServicePhone>");
 		}
 		if(name!=null){

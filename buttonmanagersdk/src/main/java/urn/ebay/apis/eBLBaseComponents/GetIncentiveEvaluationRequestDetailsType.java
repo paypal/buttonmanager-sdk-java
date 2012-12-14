@@ -139,7 +139,7 @@ public class GetIncentiveEvaluationRequestDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -150,12 +150,12 @@ public class GetIncentiveEvaluationRequestDetailsType{
 			}
 		}
 		if(externalBuyerId != null) {
-			sb.append("<").append(preferredPrefix).append(":ExternalBuyerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(externalBuyerId));
+			sb.append("<").append(preferredPrefix).append(":ExternalBuyerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.externalBuyerId));
 			sb.append("</").append(preferredPrefix).append(":ExternalBuyerId>");
 		}
 		if(incentiveCodes != null) {
 			for(int i=0; i < incentiveCodes.size(); i++) {
-				sb.append("<").append(preferredPrefix).append(":IncentiveCodes>").append(SDKUtil.escapeInvalidXmlCharsRegex(incentiveCodes.get(i)));
+				sb.append("<").append(preferredPrefix).append(":IncentiveCodes>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.incentiveCodes.get(i)));
 				sb.append("</").append(preferredPrefix).append(":IncentiveCodes>");
 			}
 		}

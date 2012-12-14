@@ -46,7 +46,7 @@ public class IdentityTokenInfoType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -57,7 +57,7 @@ public class IdentityTokenInfoType{
 			}
 		}
 		if(accessToken != null) {
-			sb.append("<").append(preferredPrefix).append(":AccessToken>").append(SDKUtil.escapeInvalidXmlCharsRegex(accessToken));
+			sb.append("<").append(preferredPrefix).append(":AccessToken>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.accessToken));
 			sb.append("</").append(preferredPrefix).append(":AccessToken>");
 		}
 		if(name!=null){

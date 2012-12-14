@@ -289,7 +289,7 @@ public class AirlineItineraryType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -300,31 +300,31 @@ public class AirlineItineraryType{
 			}
 		}
 		if(passengerName != null) {
-			sb.append("<").append(preferredPrefix).append(":PassengerName>").append(SDKUtil.escapeInvalidXmlCharsRegex(passengerName));
+			sb.append("<").append(preferredPrefix).append(":PassengerName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.passengerName));
 			sb.append("</").append(preferredPrefix).append(":PassengerName>");
 		}
 		if(issueDate != null) {
-			sb.append("<").append(preferredPrefix).append(":IssueDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(issueDate));
+			sb.append("<").append(preferredPrefix).append(":IssueDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.issueDate));
 			sb.append("</").append(preferredPrefix).append(":IssueDate>");
 		}
 		if(travelAgencyName != null) {
-			sb.append("<").append(preferredPrefix).append(":TravelAgencyName>").append(SDKUtil.escapeInvalidXmlCharsRegex(travelAgencyName));
+			sb.append("<").append(preferredPrefix).append(":TravelAgencyName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.travelAgencyName));
 			sb.append("</").append(preferredPrefix).append(":TravelAgencyName>");
 		}
 		if(travelAgencyCode != null) {
-			sb.append("<").append(preferredPrefix).append(":TravelAgencyCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(travelAgencyCode));
+			sb.append("<").append(preferredPrefix).append(":TravelAgencyCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.travelAgencyCode));
 			sb.append("</").append(preferredPrefix).append(":TravelAgencyCode>");
 		}
 		if(ticketNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":TicketNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(ticketNumber));
+			sb.append("<").append(preferredPrefix).append(":TicketNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.ticketNumber));
 			sb.append("</").append(preferredPrefix).append(":TicketNumber>");
 		}
 		if(issuingCarrierCode != null) {
-			sb.append("<").append(preferredPrefix).append(":IssuingCarrierCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(issuingCarrierCode));
+			sb.append("<").append(preferredPrefix).append(":IssuingCarrierCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.issuingCarrierCode));
 			sb.append("</").append(preferredPrefix).append(":IssuingCarrierCode>");
 		}
 		if(customerCode != null) {
-			sb.append("<").append(preferredPrefix).append(":CustomerCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(customerCode));
+			sb.append("<").append(preferredPrefix).append(":CustomerCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.customerCode));
 			sb.append("</").append(preferredPrefix).append(":CustomerCode>");
 		}
 		if(totalFare != null) {
@@ -337,15 +337,15 @@ public class AirlineItineraryType{
 			sb.append(totalFee.toXMLString(preferredPrefix,"TotalFee"));
 		}
 		if(restrictedTicket != null) {
-			sb.append("<").append(preferredPrefix).append(":RestrictedTicket>").append(SDKUtil.escapeInvalidXmlCharsRegex(restrictedTicket));
+			sb.append("<").append(preferredPrefix).append(":RestrictedTicket>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.restrictedTicket));
 			sb.append("</").append(preferredPrefix).append(":RestrictedTicket>");
 		}
 		if(clearingSequence != null) {
-			sb.append("<").append(preferredPrefix).append(":ClearingSequence>").append(SDKUtil.escapeInvalidXmlCharsRegex(clearingSequence));
+			sb.append("<").append(preferredPrefix).append(":ClearingSequence>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.clearingSequence));
 			sb.append("</").append(preferredPrefix).append(":ClearingSequence>");
 		}
 		if(clearingCount != null) {
-			sb.append("<").append(preferredPrefix).append(":ClearingCount>").append(SDKUtil.escapeInvalidXmlCharsRegex(clearingCount));
+			sb.append("<").append(preferredPrefix).append(":ClearingCount>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.clearingCount));
 			sb.append("</").append(preferredPrefix).append(":ClearingCount>");
 		}
 		if(flightDetails != null) {

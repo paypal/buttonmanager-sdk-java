@@ -42,7 +42,7 @@ public class InfoSharingDirectivesType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -53,7 +53,7 @@ public class InfoSharingDirectivesType{
 			}
 		}
 		if(reqBillingAddress != null) {
-			sb.append("<").append(preferredPrefix).append(":ReqBillingAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(reqBillingAddress));
+			sb.append("<").append(preferredPrefix).append(":ReqBillingAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.reqBillingAddress));
 			sb.append("</").append(preferredPrefix).append(":ReqBillingAddress>");
 		}
 		if(name!=null){

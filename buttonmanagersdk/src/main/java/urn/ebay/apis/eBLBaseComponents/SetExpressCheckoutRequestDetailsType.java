@@ -1466,7 +1466,7 @@ public class SetExpressCheckoutRequestDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -1480,120 +1480,120 @@ public class SetExpressCheckoutRequestDetailsType{
 			sb.append(orderTotal.toXMLString(preferredPrefix,"OrderTotal"));
 		}
 		if(returnURL != null) {
-			sb.append("<").append(preferredPrefix).append(":ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(returnURL));
+			sb.append("<").append(preferredPrefix).append(":ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.returnURL));
 			sb.append("</").append(preferredPrefix).append(":ReturnURL>");
 		}
 		if(cancelURL != null) {
-			sb.append("<").append(preferredPrefix).append(":CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(cancelURL));
+			sb.append("<").append(preferredPrefix).append(":CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cancelURL));
 			sb.append("</").append(preferredPrefix).append(":CancelURL>");
 		}
 		if(trackingImageURL != null) {
-			sb.append("<").append(preferredPrefix).append(":TrackingImageURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(trackingImageURL));
+			sb.append("<").append(preferredPrefix).append(":TrackingImageURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.trackingImageURL));
 			sb.append("</").append(preferredPrefix).append(":TrackingImageURL>");
 		}
 		if(giropaySuccessURL != null) {
-			sb.append("<").append(preferredPrefix).append(":giropaySuccessURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(giropaySuccessURL));
+			sb.append("<").append(preferredPrefix).append(":giropaySuccessURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.giropaySuccessURL));
 			sb.append("</").append(preferredPrefix).append(":giropaySuccessURL>");
 		}
 		if(giropayCancelURL != null) {
-			sb.append("<").append(preferredPrefix).append(":giropayCancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(giropayCancelURL));
+			sb.append("<").append(preferredPrefix).append(":giropayCancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.giropayCancelURL));
 			sb.append("</").append(preferredPrefix).append(":giropayCancelURL>");
 		}
 		if(banktxnPendingURL != null) {
-			sb.append("<").append(preferredPrefix).append(":BanktxnPendingURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(banktxnPendingURL));
+			sb.append("<").append(preferredPrefix).append(":BanktxnPendingURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.banktxnPendingURL));
 			sb.append("</").append(preferredPrefix).append(":BanktxnPendingURL>");
 		}
 		if(token != null) {
-			sb.append("<").append(preferredPrefix).append(":Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(token));
+			sb.append("<").append(preferredPrefix).append(":Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.token));
 			sb.append("</").append(preferredPrefix).append(":Token>");
 		}
 		if(maxAmount != null) {
 			sb.append(maxAmount.toXMLString(preferredPrefix,"MaxAmount"));
 		}
 		if(orderDescription != null) {
-			sb.append("<").append(preferredPrefix).append(":OrderDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(orderDescription));
+			sb.append("<").append(preferredPrefix).append(":OrderDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.orderDescription));
 			sb.append("</").append(preferredPrefix).append(":OrderDescription>");
 		}
 		if(custom != null) {
-			sb.append("<").append(preferredPrefix).append(":Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(custom));
+			sb.append("<").append(preferredPrefix).append(":Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.custom));
 			sb.append("</").append(preferredPrefix).append(":Custom>");
 		}
 		if(invoiceID != null) {
-			sb.append("<").append(preferredPrefix).append(":InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(invoiceID));
+			sb.append("<").append(preferredPrefix).append(":InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.invoiceID));
 			sb.append("</").append(preferredPrefix).append(":InvoiceID>");
 		}
 		if(reqConfirmShipping != null) {
-			sb.append("<").append(preferredPrefix).append(":ReqConfirmShipping>").append(SDKUtil.escapeInvalidXmlCharsRegex(reqConfirmShipping));
+			sb.append("<").append(preferredPrefix).append(":ReqConfirmShipping>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.reqConfirmShipping));
 			sb.append("</").append(preferredPrefix).append(":ReqConfirmShipping>");
 		}
 		if(reqBillingAddress != null) {
-			sb.append("<").append(preferredPrefix).append(":ReqBillingAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(reqBillingAddress));
+			sb.append("<").append(preferredPrefix).append(":ReqBillingAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.reqBillingAddress));
 			sb.append("</").append(preferredPrefix).append(":ReqBillingAddress>");
 		}
 		if(billingAddress != null) {
 			sb.append(billingAddress.toXMLString(preferredPrefix,"BillingAddress"));
 		}
 		if(noShipping != null) {
-			sb.append("<").append(preferredPrefix).append(":NoShipping>").append(SDKUtil.escapeInvalidXmlCharsRegex(noShipping));
+			sb.append("<").append(preferredPrefix).append(":NoShipping>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.noShipping));
 			sb.append("</").append(preferredPrefix).append(":NoShipping>");
 		}
 		if(addressOverride != null) {
-			sb.append("<").append(preferredPrefix).append(":AddressOverride>").append(SDKUtil.escapeInvalidXmlCharsRegex(addressOverride));
+			sb.append("<").append(preferredPrefix).append(":AddressOverride>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.addressOverride));
 			sb.append("</").append(preferredPrefix).append(":AddressOverride>");
 		}
 		if(localeCode != null) {
-			sb.append("<").append(preferredPrefix).append(":LocaleCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(localeCode));
+			sb.append("<").append(preferredPrefix).append(":LocaleCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.localeCode));
 			sb.append("</").append(preferredPrefix).append(":LocaleCode>");
 		}
 		if(pageStyle != null) {
-			sb.append("<").append(preferredPrefix).append(":PageStyle>").append(SDKUtil.escapeInvalidXmlCharsRegex(pageStyle));
+			sb.append("<").append(preferredPrefix).append(":PageStyle>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.pageStyle));
 			sb.append("</").append(preferredPrefix).append(":PageStyle>");
 		}
 		if(cppHeaderImage != null) {
-			sb.append("<").append(preferredPrefix).append(":cpp-header-image>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderImage));
+			sb.append("<").append(preferredPrefix).append(":cpp-header-image>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cppHeaderImage));
 			sb.append("</").append(preferredPrefix).append(":cpp-header-image>");
 		}
 		if(cppHeaderBorderColor != null) {
-			sb.append("<").append(preferredPrefix).append(":cpp-header-border-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBorderColor));
+			sb.append("<").append(preferredPrefix).append(":cpp-header-border-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cppHeaderBorderColor));
 			sb.append("</").append(preferredPrefix).append(":cpp-header-border-color>");
 		}
 		if(cppHeaderBackColor != null) {
-			sb.append("<").append(preferredPrefix).append(":cpp-header-back-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBackColor));
+			sb.append("<").append(preferredPrefix).append(":cpp-header-back-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cppHeaderBackColor));
 			sb.append("</").append(preferredPrefix).append(":cpp-header-back-color>");
 		}
 		if(cppPayflowColor != null) {
-			sb.append("<").append(preferredPrefix).append(":cpp-payflow-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppPayflowColor));
+			sb.append("<").append(preferredPrefix).append(":cpp-payflow-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cppPayflowColor));
 			sb.append("</").append(preferredPrefix).append(":cpp-payflow-color>");
 		}
 		if(cppCartBorderColor != null) {
-			sb.append("<").append(preferredPrefix).append(":cpp-cart-border-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppCartBorderColor));
+			sb.append("<").append(preferredPrefix).append(":cpp-cart-border-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cppCartBorderColor));
 			sb.append("</").append(preferredPrefix).append(":cpp-cart-border-color>");
 		}
 		if(cppLogoImage != null) {
-			sb.append("<").append(preferredPrefix).append(":cpp-logo-image>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppLogoImage));
+			sb.append("<").append(preferredPrefix).append(":cpp-logo-image>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cppLogoImage));
 			sb.append("</").append(preferredPrefix).append(":cpp-logo-image>");
 		}
 		if(address != null) {
 			sb.append(address.toXMLString(preferredPrefix,"Address"));
 		}
 		if(paymentAction != null) {
-			sb.append("<").append(preferredPrefix).append(":PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentAction.getValue()));
+			sb.append("<").append(preferredPrefix).append(":PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.paymentAction.getValue()));
 			sb.append("</").append(preferredPrefix).append(":PaymentAction>");
 		}
 		if(solutionType != null) {
-			sb.append("<").append(preferredPrefix).append(":SolutionType>").append(SDKUtil.escapeInvalidXmlCharsRegex(solutionType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":SolutionType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.solutionType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":SolutionType>");
 		}
 		if(landingPage != null) {
-			sb.append("<").append(preferredPrefix).append(":LandingPage>").append(SDKUtil.escapeInvalidXmlCharsRegex(landingPage.getValue()));
+			sb.append("<").append(preferredPrefix).append(":LandingPage>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.landingPage.getValue()));
 			sb.append("</").append(preferredPrefix).append(":LandingPage>");
 		}
 		if(buyerEmail != null) {
-			sb.append("<").append(preferredPrefix).append(":BuyerEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(buyerEmail));
+			sb.append("<").append(preferredPrefix).append(":BuyerEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buyerEmail));
 			sb.append("</").append(preferredPrefix).append(":BuyerEmail>");
 		}
 		if(channelType != null) {
-			sb.append("<").append(preferredPrefix).append(":ChannelType>").append(SDKUtil.escapeInvalidXmlCharsRegex(channelType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":ChannelType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.channelType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":ChannelType>");
 		}
 		if(billingAgreementDetails != null) {
@@ -1603,39 +1603,39 @@ public class SetExpressCheckoutRequestDetailsType{
 		}
 		if(promoCodes != null) {
 			for(int i=0; i < promoCodes.size(); i++) {
-				sb.append("<").append(preferredPrefix).append(":PromoCodes>").append(SDKUtil.escapeInvalidXmlCharsRegex(promoCodes.get(i)));
+				sb.append("<").append(preferredPrefix).append(":PromoCodes>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.promoCodes.get(i)));
 				sb.append("</").append(preferredPrefix).append(":PromoCodes>");
 			}
 		}
 		if(payPalCheckOutBtnType != null) {
-			sb.append("<").append(preferredPrefix).append(":PayPalCheckOutBtnType>").append(SDKUtil.escapeInvalidXmlCharsRegex(payPalCheckOutBtnType));
+			sb.append("<").append(preferredPrefix).append(":PayPalCheckOutBtnType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.payPalCheckOutBtnType));
 			sb.append("</").append(preferredPrefix).append(":PayPalCheckOutBtnType>");
 		}
 		if(productCategory != null) {
-			sb.append("<").append(preferredPrefix).append(":ProductCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(productCategory.getValue()));
+			sb.append("<").append(preferredPrefix).append(":ProductCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.productCategory.getValue()));
 			sb.append("</").append(preferredPrefix).append(":ProductCategory>");
 		}
 		if(shippingMethod != null) {
-			sb.append("<").append(preferredPrefix).append(":ShippingMethod>").append(SDKUtil.escapeInvalidXmlCharsRegex(shippingMethod.getValue()));
+			sb.append("<").append(preferredPrefix).append(":ShippingMethod>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.shippingMethod.getValue()));
 			sb.append("</").append(preferredPrefix).append(":ShippingMethod>");
 		}
 		if(profileAddressChangeDate != null) {
-			sb.append("<").append(preferredPrefix).append(":ProfileAddressChangeDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(profileAddressChangeDate));
+			sb.append("<").append(preferredPrefix).append(":ProfileAddressChangeDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.profileAddressChangeDate));
 			sb.append("</").append(preferredPrefix).append(":ProfileAddressChangeDate>");
 		}
 		if(allowNote != null) {
-			sb.append("<").append(preferredPrefix).append(":AllowNote>").append(SDKUtil.escapeInvalidXmlCharsRegex(allowNote));
+			sb.append("<").append(preferredPrefix).append(":AllowNote>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.allowNote));
 			sb.append("</").append(preferredPrefix).append(":AllowNote>");
 		}
 		if(fundingSourceDetails != null) {
 			sb.append(fundingSourceDetails.toXMLString(preferredPrefix,"FundingSourceDetails"));
 		}
 		if(brandName != null) {
-			sb.append("<").append(preferredPrefix).append(":BrandName>").append(SDKUtil.escapeInvalidXmlCharsRegex(brandName));
+			sb.append("<").append(preferredPrefix).append(":BrandName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.brandName));
 			sb.append("</").append(preferredPrefix).append(":BrandName>");
 		}
 		if(callbackURL != null) {
-			sb.append("<").append(preferredPrefix).append(":CallbackURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(callbackURL));
+			sb.append("<").append(preferredPrefix).append(":CallbackURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.callbackURL));
 			sb.append("</").append(preferredPrefix).append(":CallbackURL>");
 		}
 		if(enhancedCheckoutData != null) {
@@ -1660,60 +1660,60 @@ public class SetExpressCheckoutRequestDetailsType{
 			}
 		}
 		if(callbackTimeout != null) {
-			sb.append("<").append(preferredPrefix).append(":CallbackTimeout>").append(SDKUtil.escapeInvalidXmlCharsRegex(callbackTimeout));
+			sb.append("<").append(preferredPrefix).append(":CallbackTimeout>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.callbackTimeout));
 			sb.append("</").append(preferredPrefix).append(":CallbackTimeout>");
 		}
 		if(callbackVersion != null) {
-			sb.append("<").append(preferredPrefix).append(":CallbackVersion>").append(SDKUtil.escapeInvalidXmlCharsRegex(callbackVersion));
+			sb.append("<").append(preferredPrefix).append(":CallbackVersion>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.callbackVersion));
 			sb.append("</").append(preferredPrefix).append(":CallbackVersion>");
 		}
 		if(customerServiceNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":CustomerServiceNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(customerServiceNumber));
+			sb.append("<").append(preferredPrefix).append(":CustomerServiceNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.customerServiceNumber));
 			sb.append("</").append(preferredPrefix).append(":CustomerServiceNumber>");
 		}
 		if(giftMessageEnable != null) {
-			sb.append("<").append(preferredPrefix).append(":GiftMessageEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(giftMessageEnable));
+			sb.append("<").append(preferredPrefix).append(":GiftMessageEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.giftMessageEnable));
 			sb.append("</").append(preferredPrefix).append(":GiftMessageEnable>");
 		}
 		if(giftReceiptEnable != null) {
-			sb.append("<").append(preferredPrefix).append(":GiftReceiptEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(giftReceiptEnable));
+			sb.append("<").append(preferredPrefix).append(":GiftReceiptEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.giftReceiptEnable));
 			sb.append("</").append(preferredPrefix).append(":GiftReceiptEnable>");
 		}
 		if(giftWrapEnable != null) {
-			sb.append("<").append(preferredPrefix).append(":GiftWrapEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(giftWrapEnable));
+			sb.append("<").append(preferredPrefix).append(":GiftWrapEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.giftWrapEnable));
 			sb.append("</").append(preferredPrefix).append(":GiftWrapEnable>");
 		}
 		if(giftWrapName != null) {
-			sb.append("<").append(preferredPrefix).append(":GiftWrapName>").append(SDKUtil.escapeInvalidXmlCharsRegex(giftWrapName));
+			sb.append("<").append(preferredPrefix).append(":GiftWrapName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.giftWrapName));
 			sb.append("</").append(preferredPrefix).append(":GiftWrapName>");
 		}
 		if(giftWrapAmount != null) {
 			sb.append(giftWrapAmount.toXMLString(preferredPrefix,"GiftWrapAmount"));
 		}
 		if(buyerEmailOptInEnable != null) {
-			sb.append("<").append(preferredPrefix).append(":BuyerEmailOptInEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(buyerEmailOptInEnable));
+			sb.append("<").append(preferredPrefix).append(":BuyerEmailOptInEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buyerEmailOptInEnable));
 			sb.append("</").append(preferredPrefix).append(":BuyerEmailOptInEnable>");
 		}
 		if(surveyEnable != null) {
-			sb.append("<").append(preferredPrefix).append(":SurveyEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(surveyEnable));
+			sb.append("<").append(preferredPrefix).append(":SurveyEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.surveyEnable));
 			sb.append("</").append(preferredPrefix).append(":SurveyEnable>");
 		}
 		if(surveyQuestion != null) {
-			sb.append("<").append(preferredPrefix).append(":SurveyQuestion>").append(SDKUtil.escapeInvalidXmlCharsRegex(surveyQuestion));
+			sb.append("<").append(preferredPrefix).append(":SurveyQuestion>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.surveyQuestion));
 			sb.append("</").append(preferredPrefix).append(":SurveyQuestion>");
 		}
 		if(surveyChoice != null) {
 			for(int i=0; i < surveyChoice.size(); i++) {
-				sb.append("<").append(preferredPrefix).append(":SurveyChoice>").append(SDKUtil.escapeInvalidXmlCharsRegex(surveyChoice.get(i)));
+				sb.append("<").append(preferredPrefix).append(":SurveyChoice>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.surveyChoice.get(i)));
 				sb.append("</").append(preferredPrefix).append(":SurveyChoice>");
 			}
 		}
 		if(totalType != null) {
-			sb.append("<").append(preferredPrefix).append(":TotalType>").append(SDKUtil.escapeInvalidXmlCharsRegex(totalType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":TotalType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.totalType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":TotalType>");
 		}
 		if(noteToBuyer != null) {
-			sb.append("<").append(preferredPrefix).append(":NoteToBuyer>").append(SDKUtil.escapeInvalidXmlCharsRegex(noteToBuyer));
+			sb.append("<").append(preferredPrefix).append(":NoteToBuyer>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.noteToBuyer));
 			sb.append("</").append(preferredPrefix).append(":NoteToBuyer>");
 		}
 		if(incentives != null) {
@@ -1722,7 +1722,7 @@ public class SetExpressCheckoutRequestDetailsType{
 			}
 		}
 		if(reqInstrumentDetails != null) {
-			sb.append("<").append(preferredPrefix).append(":ReqInstrumentDetails>").append(SDKUtil.escapeInvalidXmlCharsRegex(reqInstrumentDetails));
+			sb.append("<").append(preferredPrefix).append(":ReqInstrumentDetails>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.reqInstrumentDetails));
 			sb.append("</").append(preferredPrefix).append(":ReqInstrumentDetails>");
 		}
 		if(externalRememberMeOptInDetails != null) {

@@ -40,7 +40,7 @@ public class ManageRecurringPaymentsProfileStatusRequestType extends AbstractReq
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){

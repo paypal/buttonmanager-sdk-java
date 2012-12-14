@@ -77,7 +77,7 @@ public class ShippingOptionType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -88,14 +88,14 @@ public class ShippingOptionType{
 			}
 		}
 		if(shippingOptionIsDefault != null) {
-			sb.append("<").append(preferredPrefix).append(":ShippingOptionIsDefault>").append(SDKUtil.escapeInvalidXmlCharsRegex(shippingOptionIsDefault));
+			sb.append("<").append(preferredPrefix).append(":ShippingOptionIsDefault>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.shippingOptionIsDefault));
 			sb.append("</").append(preferredPrefix).append(":ShippingOptionIsDefault>");
 		}
 		if(shippingOptionAmount != null) {
 			sb.append(shippingOptionAmount.toXMLString(preferredPrefix,"ShippingOptionAmount"));
 		}
 		if(shippingOptionName != null) {
-			sb.append("<").append(preferredPrefix).append(":ShippingOptionName>").append(SDKUtil.escapeInvalidXmlCharsRegex(shippingOptionName));
+			sb.append("<").append(preferredPrefix).append(":ShippingOptionName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.shippingOptionName));
 			sb.append("</").append(preferredPrefix).append(":ShippingOptionName>");
 		}
 		if(name!=null){

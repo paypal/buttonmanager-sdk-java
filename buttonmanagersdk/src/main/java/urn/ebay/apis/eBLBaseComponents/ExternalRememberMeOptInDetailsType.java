@@ -66,7 +66,7 @@ public class ExternalRememberMeOptInDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -77,7 +77,7 @@ public class ExternalRememberMeOptInDetailsType{
 			}
 		}
 		if(externalRememberMeOptIn != null) {
-			sb.append("<").append(preferredPrefix).append(":ExternalRememberMeOptIn>").append(SDKUtil.escapeInvalidXmlCharsRegex(externalRememberMeOptIn));
+			sb.append("<").append(preferredPrefix).append(":ExternalRememberMeOptIn>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.externalRememberMeOptIn));
 			sb.append("</").append(preferredPrefix).append(":ExternalRememberMeOptIn>");
 		}
 		if(externalRememberMeOwnerDetails != null) {

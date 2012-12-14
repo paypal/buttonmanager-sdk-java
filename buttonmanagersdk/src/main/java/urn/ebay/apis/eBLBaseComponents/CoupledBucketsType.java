@@ -87,7 +87,7 @@ public class CoupledBucketsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -98,16 +98,16 @@ public class CoupledBucketsType{
 			}
 		}
 		if(coupleType != null) {
-			sb.append("<").append(preferredPrefix).append(":CoupleType>").append(SDKUtil.escapeInvalidXmlCharsRegex(coupleType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":CoupleType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.coupleType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":CoupleType>");
 		}
 		if(coupledPaymentRequestID != null) {
-			sb.append("<").append(preferredPrefix).append(":CoupledPaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(coupledPaymentRequestID));
+			sb.append("<").append(preferredPrefix).append(":CoupledPaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.coupledPaymentRequestID));
 			sb.append("</").append(preferredPrefix).append(":CoupledPaymentRequestID>");
 		}
 		if(paymentRequestID != null) {
 			for(int i=0; i < paymentRequestID.size(); i++) {
-				sb.append("<").append(preferredPrefix).append(":PaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentRequestID.get(i)));
+				sb.append("<").append(preferredPrefix).append(":PaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.paymentRequestID.get(i)));
 				sb.append("</").append(preferredPrefix).append(":PaymentRequestID>");
 			}
 		}

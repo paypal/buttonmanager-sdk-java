@@ -272,7 +272,7 @@ public class BMCreateButtonRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -284,20 +284,20 @@ public class BMCreateButtonRequestType extends AbstractRequestType {
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(buttonType != null) {
-			sb.append("<").append(preferredPrefix).append(":ButtonType>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":ButtonType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buttonType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":ButtonType>");
 		}
 		if(buttonCode != null) {
-			sb.append("<").append(preferredPrefix).append(":ButtonCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonCode.getValue()));
+			sb.append("<").append(preferredPrefix).append(":ButtonCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buttonCode.getValue()));
 			sb.append("</").append(preferredPrefix).append(":ButtonCode>");
 		}
 		if(buttonSubType != null) {
-			sb.append("<").append(preferredPrefix).append(":ButtonSubType>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonSubType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":ButtonSubType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buttonSubType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":ButtonSubType>");
 		}
 		if(buttonVar != null) {
 			for(int i=0; i < buttonVar.size(); i++) {
-				sb.append("<").append(preferredPrefix).append(":ButtonVar>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonVar.get(i)));
+				sb.append("<").append(preferredPrefix).append(":ButtonVar>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buttonVar.get(i)));
 				sb.append("</").append(preferredPrefix).append(":ButtonVar>");
 			}
 		}
@@ -308,32 +308,32 @@ public class BMCreateButtonRequestType extends AbstractRequestType {
 		}
 		if(textBox != null) {
 			for(int i=0; i < textBox.size(); i++) {
-				sb.append("<").append(preferredPrefix).append(":TextBox>").append(SDKUtil.escapeInvalidXmlCharsRegex(textBox.get(i)));
+				sb.append("<").append(preferredPrefix).append(":TextBox>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.textBox.get(i)));
 				sb.append("</").append(preferredPrefix).append(":TextBox>");
 			}
 		}
 		if(buttonImage != null) {
-			sb.append("<").append(preferredPrefix).append(":ButtonImage>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonImage.getValue()));
+			sb.append("<").append(preferredPrefix).append(":ButtonImage>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buttonImage.getValue()));
 			sb.append("</").append(preferredPrefix).append(":ButtonImage>");
 		}
 		if(buttonImageURL != null) {
-			sb.append("<").append(preferredPrefix).append(":ButtonImageURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonImageURL));
+			sb.append("<").append(preferredPrefix).append(":ButtonImageURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buttonImageURL));
 			sb.append("</").append(preferredPrefix).append(":ButtonImageURL>");
 		}
 		if(buyNowText != null) {
-			sb.append("<").append(preferredPrefix).append(":BuyNowText>").append(SDKUtil.escapeInvalidXmlCharsRegex(buyNowText.getValue()));
+			sb.append("<").append(preferredPrefix).append(":BuyNowText>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buyNowText.getValue()));
 			sb.append("</").append(preferredPrefix).append(":BuyNowText>");
 		}
 		if(subscribeText != null) {
-			sb.append("<").append(preferredPrefix).append(":SubscribeText>").append(SDKUtil.escapeInvalidXmlCharsRegex(subscribeText.getValue()));
+			sb.append("<").append(preferredPrefix).append(":SubscribeText>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.subscribeText.getValue()));
 			sb.append("</").append(preferredPrefix).append(":SubscribeText>");
 		}
 		if(buttonCountry != null) {
-			sb.append("<").append(preferredPrefix).append(":ButtonCountry>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonCountry.getValue()));
+			sb.append("<").append(preferredPrefix).append(":ButtonCountry>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buttonCountry.getValue()));
 			sb.append("</").append(preferredPrefix).append(":ButtonCountry>");
 		}
 		if(buttonLanguage != null) {
-			sb.append("<").append(preferredPrefix).append(":ButtonLanguage>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonLanguage));
+			sb.append("<").append(preferredPrefix).append(":ButtonLanguage>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buttonLanguage));
 			sb.append("</").append(preferredPrefix).append(":ButtonLanguage>");
 		}
 		if(name!=null){

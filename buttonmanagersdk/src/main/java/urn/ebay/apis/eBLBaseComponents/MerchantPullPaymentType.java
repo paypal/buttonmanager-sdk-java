@@ -303,7 +303,7 @@ public class MerchantPullPaymentType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -317,19 +317,19 @@ public class MerchantPullPaymentType{
 			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
 		}
 		if(mpID != null) {
-			sb.append("<").append(preferredPrefix).append(":MpID>").append(SDKUtil.escapeInvalidXmlCharsRegex(mpID));
+			sb.append("<").append(preferredPrefix).append(":MpID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.mpID));
 			sb.append("</").append(preferredPrefix).append(":MpID>");
 		}
 		if(paymentType != null) {
-			sb.append("<").append(preferredPrefix).append(":PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.paymentType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":PaymentType>");
 		}
 		if(memo != null) {
-			sb.append("<").append(preferredPrefix).append(":Memo>").append(SDKUtil.escapeInvalidXmlCharsRegex(memo));
+			sb.append("<").append(preferredPrefix).append(":Memo>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.memo));
 			sb.append("</").append(preferredPrefix).append(":Memo>");
 		}
 		if(emailSubject != null) {
-			sb.append("<").append(preferredPrefix).append(":EmailSubject>").append(SDKUtil.escapeInvalidXmlCharsRegex(emailSubject));
+			sb.append("<").append(preferredPrefix).append(":EmailSubject>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.emailSubject));
 			sb.append("</").append(preferredPrefix).append(":EmailSubject>");
 		}
 		if(tax != null) {
@@ -342,27 +342,27 @@ public class MerchantPullPaymentType{
 			sb.append(handling.toXMLString(preferredPrefix,"Handling"));
 		}
 		if(itemName != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemName>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemName));
+			sb.append("<").append(preferredPrefix).append(":ItemName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemName));
 			sb.append("</").append(preferredPrefix).append(":ItemName>");
 		}
 		if(itemNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemNumber));
+			sb.append("<").append(preferredPrefix).append(":ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemNumber));
 			sb.append("</").append(preferredPrefix).append(":ItemNumber>");
 		}
 		if(invoice != null) {
-			sb.append("<").append(preferredPrefix).append(":Invoice>").append(SDKUtil.escapeInvalidXmlCharsRegex(invoice));
+			sb.append("<").append(preferredPrefix).append(":Invoice>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.invoice));
 			sb.append("</").append(preferredPrefix).append(":Invoice>");
 		}
 		if(custom != null) {
-			sb.append("<").append(preferredPrefix).append(":Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(custom));
+			sb.append("<").append(preferredPrefix).append(":Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.custom));
 			sb.append("</").append(preferredPrefix).append(":Custom>");
 		}
 		if(buttonSource != null) {
-			sb.append("<").append(preferredPrefix).append(":ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonSource));
+			sb.append("<").append(preferredPrefix).append(":ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buttonSource));
 			sb.append("</").append(preferredPrefix).append(":ButtonSource>");
 		}
 		if(softDescriptor != null) {
-			sb.append("<").append(preferredPrefix).append(":SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(softDescriptor));
+			sb.append("<").append(preferredPrefix).append(":SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.softDescriptor));
 			sb.append("</").append(preferredPrefix).append(":SoftDescriptor>");
 		}
 		if(name!=null){

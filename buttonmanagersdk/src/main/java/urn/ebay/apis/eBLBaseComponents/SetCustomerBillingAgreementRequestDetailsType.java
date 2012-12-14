@@ -244,7 +244,7 @@ public class SetCustomerBillingAgreementRequestDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -258,43 +258,43 @@ public class SetCustomerBillingAgreementRequestDetailsType{
 			sb.append(billingAgreementDetails.toXMLString(preferredPrefix,"BillingAgreementDetails"));
 		}
 		if(returnURL != null) {
-			sb.append("<").append(preferredPrefix).append(":ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(returnURL));
+			sb.append("<").append(preferredPrefix).append(":ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.returnURL));
 			sb.append("</").append(preferredPrefix).append(":ReturnURL>");
 		}
 		if(cancelURL != null) {
-			sb.append("<").append(preferredPrefix).append(":CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(cancelURL));
+			sb.append("<").append(preferredPrefix).append(":CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cancelURL));
 			sb.append("</").append(preferredPrefix).append(":CancelURL>");
 		}
 		if(localeCode != null) {
-			sb.append("<").append(preferredPrefix).append(":LocaleCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(localeCode));
+			sb.append("<").append(preferredPrefix).append(":LocaleCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.localeCode));
 			sb.append("</").append(preferredPrefix).append(":LocaleCode>");
 		}
 		if(pageStyle != null) {
-			sb.append("<").append(preferredPrefix).append(":PageStyle>").append(SDKUtil.escapeInvalidXmlCharsRegex(pageStyle));
+			sb.append("<").append(preferredPrefix).append(":PageStyle>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.pageStyle));
 			sb.append("</").append(preferredPrefix).append(":PageStyle>");
 		}
 		if(cppHeaderImage != null) {
-			sb.append("<").append(preferredPrefix).append(":cpp-header-image>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderImage));
+			sb.append("<").append(preferredPrefix).append(":cpp-header-image>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cppHeaderImage));
 			sb.append("</").append(preferredPrefix).append(":cpp-header-image>");
 		}
 		if(cppHeaderBorderColor != null) {
-			sb.append("<").append(preferredPrefix).append(":cpp-header-border-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBorderColor));
+			sb.append("<").append(preferredPrefix).append(":cpp-header-border-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cppHeaderBorderColor));
 			sb.append("</").append(preferredPrefix).append(":cpp-header-border-color>");
 		}
 		if(cppHeaderBackColor != null) {
-			sb.append("<").append(preferredPrefix).append(":cpp-header-back-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBackColor));
+			sb.append("<").append(preferredPrefix).append(":cpp-header-back-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cppHeaderBackColor));
 			sb.append("</").append(preferredPrefix).append(":cpp-header-back-color>");
 		}
 		if(cppPayflowColor != null) {
-			sb.append("<").append(preferredPrefix).append(":cpp-payflow-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppPayflowColor));
+			sb.append("<").append(preferredPrefix).append(":cpp-payflow-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cppPayflowColor));
 			sb.append("</").append(preferredPrefix).append(":cpp-payflow-color>");
 		}
 		if(buyerEmail != null) {
-			sb.append("<").append(preferredPrefix).append(":BuyerEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(buyerEmail));
+			sb.append("<").append(preferredPrefix).append(":BuyerEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buyerEmail));
 			sb.append("</").append(preferredPrefix).append(":BuyerEmail>");
 		}
 		if(reqBillingAddress != null) {
-			sb.append("<").append(preferredPrefix).append(":ReqBillingAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(reqBillingAddress));
+			sb.append("<").append(preferredPrefix).append(":ReqBillingAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.reqBillingAddress));
 			sb.append("</").append(preferredPrefix).append(":ReqBillingAddress>");
 		}
 		if(name!=null){

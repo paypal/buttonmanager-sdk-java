@@ -102,7 +102,7 @@ public class AddressVerifyRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -114,15 +114,15 @@ public class AddressVerifyRequestType extends AbstractRequestType {
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(email != null) {
-			sb.append("<").append(preferredPrefix).append(":Email>").append(SDKUtil.escapeInvalidXmlCharsRegex(email));
+			sb.append("<").append(preferredPrefix).append(":Email>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.email));
 			sb.append("</").append(preferredPrefix).append(":Email>");
 		}
 		if(street != null) {
-			sb.append("<").append(preferredPrefix).append(":Street>").append(SDKUtil.escapeInvalidXmlCharsRegex(street));
+			sb.append("<").append(preferredPrefix).append(":Street>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.street));
 			sb.append("</").append(preferredPrefix).append(":Street>");
 		}
 		if(zip != null) {
-			sb.append("<").append(preferredPrefix).append(":Zip>").append(SDKUtil.escapeInvalidXmlCharsRegex(zip));
+			sb.append("<").append(preferredPrefix).append(":Zip>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.zip));
 			sb.append("</").append(preferredPrefix).append(":Zip>");
 		}
 		if(name!=null){

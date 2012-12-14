@@ -739,7 +739,7 @@ public class PaymentDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -765,45 +765,45 @@ public class PaymentDetailsType{
 			sb.append(taxTotal.toXMLString(preferredPrefix,"TaxTotal"));
 		}
 		if(orderDescription != null) {
-			sb.append("<").append(preferredPrefix).append(":OrderDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(orderDescription));
+			sb.append("<").append(preferredPrefix).append(":OrderDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.orderDescription));
 			sb.append("</").append(preferredPrefix).append(":OrderDescription>");
 		}
 		if(custom != null) {
-			sb.append("<").append(preferredPrefix).append(":Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(custom));
+			sb.append("<").append(preferredPrefix).append(":Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.custom));
 			sb.append("</").append(preferredPrefix).append(":Custom>");
 		}
 		if(invoiceID != null) {
-			sb.append("<").append(preferredPrefix).append(":InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(invoiceID));
+			sb.append("<").append(preferredPrefix).append(":InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.invoiceID));
 			sb.append("</").append(preferredPrefix).append(":InvoiceID>");
 		}
 		if(buttonSource != null) {
-			sb.append("<").append(preferredPrefix).append(":ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonSource));
+			sb.append("<").append(preferredPrefix).append(":ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buttonSource));
 			sb.append("</").append(preferredPrefix).append(":ButtonSource>");
 		}
 		if(notifyURL != null) {
-			sb.append("<").append(preferredPrefix).append(":NotifyURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(notifyURL));
+			sb.append("<").append(preferredPrefix).append(":NotifyURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.notifyURL));
 			sb.append("</").append(preferredPrefix).append(":NotifyURL>");
 		}
 		if(shipToAddress != null) {
 			sb.append(shipToAddress.toXMLString(preferredPrefix,"ShipToAddress"));
 		}
 		if(fulfillmentReferenceNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":FulfillmentReferenceNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(fulfillmentReferenceNumber));
+			sb.append("<").append(preferredPrefix).append(":FulfillmentReferenceNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.fulfillmentReferenceNumber));
 			sb.append("</").append(preferredPrefix).append(":FulfillmentReferenceNumber>");
 		}
 		if(fulfillmentAddress != null) {
 			sb.append(fulfillmentAddress.toXMLString(preferredPrefix,"FulfillmentAddress"));
 		}
 		if(paymentCategoryType != null) {
-			sb.append("<").append(preferredPrefix).append(":PaymentCategoryType>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentCategoryType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":PaymentCategoryType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.paymentCategoryType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":PaymentCategoryType>");
 		}
 		if(shippingMethod != null) {
-			sb.append("<").append(preferredPrefix).append(":ShippingMethod>").append(SDKUtil.escapeInvalidXmlCharsRegex(shippingMethod.getValue()));
+			sb.append("<").append(preferredPrefix).append(":ShippingMethod>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.shippingMethod.getValue()));
 			sb.append("</").append(preferredPrefix).append(":ShippingMethod>");
 		}
 		if(profileAddressChangeDate != null) {
-			sb.append("<").append(preferredPrefix).append(":ProfileAddressChangeDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(profileAddressChangeDate));
+			sb.append("<").append(preferredPrefix).append(":ProfileAddressChangeDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.profileAddressChangeDate));
 			sb.append("</").append(preferredPrefix).append(":ProfileAddressChangeDate>");
 		}
 		if(paymentDetailsItem != null) {
@@ -818,11 +818,11 @@ public class PaymentDetailsType{
 			sb.append(shippingDiscount.toXMLString(preferredPrefix,"ShippingDiscount"));
 		}
 		if(insuranceOptionOffered != null) {
-			sb.append("<").append(preferredPrefix).append(":InsuranceOptionOffered>").append(SDKUtil.escapeInvalidXmlCharsRegex(insuranceOptionOffered));
+			sb.append("<").append(preferredPrefix).append(":InsuranceOptionOffered>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.insuranceOptionOffered));
 			sb.append("</").append(preferredPrefix).append(":InsuranceOptionOffered>");
 		}
 		if(allowedPaymentMethod != null) {
-			sb.append("<").append(preferredPrefix).append(":AllowedPaymentMethod>").append(SDKUtil.escapeInvalidXmlCharsRegex(allowedPaymentMethod.getValue()));
+			sb.append("<").append(preferredPrefix).append(":AllowedPaymentMethod>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.allowedPaymentMethod.getValue()));
 			sb.append("</").append(preferredPrefix).append(":AllowedPaymentMethod>");
 		}
 		if(enhancedPaymentData != null) {
@@ -832,42 +832,42 @@ public class PaymentDetailsType{
 			sb.append(sellerDetails.toXMLString(preferredPrefix,"SellerDetails"));
 		}
 		if(noteText != null) {
-			sb.append("<").append(preferredPrefix).append(":NoteText>").append(SDKUtil.escapeInvalidXmlCharsRegex(noteText));
+			sb.append("<").append(preferredPrefix).append(":NoteText>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.noteText));
 			sb.append("</").append(preferredPrefix).append(":NoteText>");
 		}
 		if(transactionId != null) {
-			sb.append("<").append(preferredPrefix).append(":TransactionId>").append(SDKUtil.escapeInvalidXmlCharsRegex(transactionId));
+			sb.append("<").append(preferredPrefix).append(":TransactionId>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.transactionId));
 			sb.append("</").append(preferredPrefix).append(":TransactionId>");
 		}
 		if(paymentAction != null) {
-			sb.append("<").append(preferredPrefix).append(":PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentAction.getValue()));
+			sb.append("<").append(preferredPrefix).append(":PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.paymentAction.getValue()));
 			sb.append("</").append(preferredPrefix).append(":PaymentAction>");
 		}
 		if(paymentRequestID != null) {
-			sb.append("<").append(preferredPrefix).append(":PaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentRequestID));
+			sb.append("<").append(preferredPrefix).append(":PaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.paymentRequestID));
 			sb.append("</").append(preferredPrefix).append(":PaymentRequestID>");
 		}
 		if(orderURL != null) {
-			sb.append("<").append(preferredPrefix).append(":OrderURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(orderURL));
+			sb.append("<").append(preferredPrefix).append(":OrderURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.orderURL));
 			sb.append("</").append(preferredPrefix).append(":OrderURL>");
 		}
 		if(softDescriptor != null) {
-			sb.append("<").append(preferredPrefix).append(":SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(softDescriptor));
+			sb.append("<").append(preferredPrefix).append(":SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.softDescriptor));
 			sb.append("</").append(preferredPrefix).append(":SoftDescriptor>");
 		}
 		if(branchLevel != null) {
-			sb.append("<").append(preferredPrefix).append(":BranchLevel>").append(SDKUtil.escapeInvalidXmlCharsRegex(branchLevel));
+			sb.append("<").append(preferredPrefix).append(":BranchLevel>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.branchLevel));
 			sb.append("</").append(preferredPrefix).append(":BranchLevel>");
 		}
 		if(offerDetails != null) {
 			sb.append(offerDetails.toXMLString(preferredPrefix,"OfferDetails"));
 		}
 		if(recurring != null) {
-			sb.append("<").append(preferredPrefix).append(":Recurring>").append(SDKUtil.escapeInvalidXmlCharsRegex(recurring.getValue()));
+			sb.append("<").append(preferredPrefix).append(":Recurring>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.recurring.getValue()));
 			sb.append("</").append(preferredPrefix).append(":Recurring>");
 		}
 		if(paymentReason != null) {
-			sb.append("<").append(preferredPrefix).append(":PaymentReason>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentReason.getValue()));
+			sb.append("<").append(preferredPrefix).append(":PaymentReason>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.paymentReason.getValue()));
 			sb.append("</").append(preferredPrefix).append(":PaymentReason>");
 		}
 		if(name!=null){

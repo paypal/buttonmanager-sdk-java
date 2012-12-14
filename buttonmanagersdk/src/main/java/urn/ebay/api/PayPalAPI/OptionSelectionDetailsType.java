@@ -125,7 +125,7 @@ public class OptionSelectionDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -136,15 +136,15 @@ public class OptionSelectionDetailsType{
 			}
 		}
 		if(optionSelection != null) {
-			sb.append("<").append(preferredPrefix).append(":OptionSelection>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionSelection));
+			sb.append("<").append(preferredPrefix).append(":OptionSelection>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.optionSelection));
 			sb.append("</").append(preferredPrefix).append(":OptionSelection>");
 		}
 		if(price != null) {
-			sb.append("<").append(preferredPrefix).append(":Price>").append(SDKUtil.escapeInvalidXmlCharsRegex(price));
+			sb.append("<").append(preferredPrefix).append(":Price>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.price));
 			sb.append("</").append(preferredPrefix).append(":Price>");
 		}
 		if(optionType != null) {
-			sb.append("<").append(preferredPrefix).append(":OptionType>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":OptionType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.optionType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":OptionType>");
 		}
 		if(paymentPeriod != null) {

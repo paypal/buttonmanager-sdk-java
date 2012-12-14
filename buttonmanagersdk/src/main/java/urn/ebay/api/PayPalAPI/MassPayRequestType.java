@@ -121,7 +121,7 @@ public class MassPayRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -133,15 +133,15 @@ public class MassPayRequestType extends AbstractRequestType {
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(emailSubject != null) {
-			sb.append("<").append(preferredPrefix).append(":EmailSubject>").append(SDKUtil.escapeInvalidXmlCharsRegex(emailSubject));
+			sb.append("<").append(preferredPrefix).append(":EmailSubject>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.emailSubject));
 			sb.append("</").append(preferredPrefix).append(":EmailSubject>");
 		}
 		if(receiverType != null) {
-			sb.append("<").append(preferredPrefix).append(":ReceiverType>").append(SDKUtil.escapeInvalidXmlCharsRegex(receiverType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":ReceiverType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.receiverType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":ReceiverType>");
 		}
 		if(buttonSource != null) {
-			sb.append("<").append(preferredPrefix).append(":ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonSource));
+			sb.append("<").append(preferredPrefix).append(":ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buttonSource));
 			sb.append("</").append(preferredPrefix).append(":ButtonSource>");
 		}
 		if(massPayItem != null) {

@@ -143,7 +143,7 @@ public class DiscountType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -154,22 +154,22 @@ public class DiscountType{
 			}
 		}
 		if(name != null) {
-			sb.append("<").append(preferredPrefix).append(":Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(name));
+			sb.append("<").append(preferredPrefix).append(":Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.name));
 			sb.append("</").append(preferredPrefix).append(":Name>");
 		}
 		if(description != null) {
-			sb.append("<").append(preferredPrefix).append(":Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(description));
+			sb.append("<").append(preferredPrefix).append(":Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.description));
 			sb.append("</").append(preferredPrefix).append(":Description>");
 		}
 		if(amount != null) {
 			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
 		}
 		if(redeemedOfferType != null) {
-			sb.append("<").append(preferredPrefix).append(":RedeemedOfferType>").append(SDKUtil.escapeInvalidXmlCharsRegex(redeemedOfferType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":RedeemedOfferType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.redeemedOfferType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":RedeemedOfferType>");
 		}
 		if(redeemedOfferID != null) {
-			sb.append("<").append(preferredPrefix).append(":RedeemedOfferID>").append(SDKUtil.escapeInvalidXmlCharsRegex(redeemedOfferID));
+			sb.append("<").append(preferredPrefix).append(":RedeemedOfferID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.redeemedOfferID));
 			sb.append("</").append(preferredPrefix).append(":RedeemedOfferID>");
 		}
 		if(name!=null){

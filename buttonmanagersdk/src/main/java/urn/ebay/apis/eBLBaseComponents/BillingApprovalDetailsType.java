@@ -130,7 +130,7 @@ public class BillingApprovalDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -141,11 +141,11 @@ public class BillingApprovalDetailsType{
 			}
 		}
 		if(approvalType != null) {
-			sb.append("<").append(preferredPrefix).append(":ApprovalType>").append(SDKUtil.escapeInvalidXmlCharsRegex(approvalType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":ApprovalType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.approvalType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":ApprovalType>");
 		}
 		if(approvalSubType != null) {
-			sb.append("<").append(preferredPrefix).append(":ApprovalSubType>").append(SDKUtil.escapeInvalidXmlCharsRegex(approvalSubType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":ApprovalSubType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.approvalSubType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":ApprovalSubType>");
 		}
 		if(orderDetails != null) {
@@ -155,7 +155,7 @@ public class BillingApprovalDetailsType{
 			sb.append(paymentDirectives.toXMLString(preferredPrefix,"PaymentDirectives"));
 		}
 		if(custom != null) {
-			sb.append("<").append(preferredPrefix).append(":Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(custom));
+			sb.append("<").append(preferredPrefix).append(":Custom>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.custom));
 			sb.append("</").append(preferredPrefix).append(":Custom>");
 		}
 		if(name!=null){

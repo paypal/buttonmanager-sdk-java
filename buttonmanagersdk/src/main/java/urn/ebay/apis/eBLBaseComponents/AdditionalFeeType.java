@@ -74,7 +74,7 @@ public class AdditionalFeeType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -85,7 +85,7 @@ public class AdditionalFeeType{
 			}
 		}
 		if(type != null) {
-			sb.append("<").append(preferredPrefix).append(":Type>").append(SDKUtil.escapeInvalidXmlCharsRegex(type));
+			sb.append("<").append(preferredPrefix).append(":Type>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.type));
 			sb.append("</").append(preferredPrefix).append(":Type>");
 		}
 		if(amount != null) {

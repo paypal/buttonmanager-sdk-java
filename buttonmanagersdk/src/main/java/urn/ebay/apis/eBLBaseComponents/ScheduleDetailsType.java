@@ -147,7 +147,7 @@ public class ScheduleDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -158,7 +158,7 @@ public class ScheduleDetailsType{
 			}
 		}
 		if(description != null) {
-			sb.append("<").append(preferredPrefix).append(":Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(description));
+			sb.append("<").append(preferredPrefix).append(":Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.description));
 			sb.append("</").append(preferredPrefix).append(":Description>");
 		}
 		if(trialPeriod != null) {
@@ -168,14 +168,14 @@ public class ScheduleDetailsType{
 			sb.append(paymentPeriod.toXMLString(preferredPrefix,"PaymentPeriod"));
 		}
 		if(maxFailedPayments != null) {
-			sb.append("<").append(preferredPrefix).append(":MaxFailedPayments>").append(SDKUtil.escapeInvalidXmlCharsRegex(maxFailedPayments));
+			sb.append("<").append(preferredPrefix).append(":MaxFailedPayments>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.maxFailedPayments));
 			sb.append("</").append(preferredPrefix).append(":MaxFailedPayments>");
 		}
 		if(activationDetails != null) {
 			sb.append(activationDetails.toXMLString(preferredPrefix,"ActivationDetails"));
 		}
 		if(autoBillOutstandingAmount != null) {
-			sb.append("<").append(preferredPrefix).append(":AutoBillOutstandingAmount>").append(SDKUtil.escapeInvalidXmlCharsRegex(autoBillOutstandingAmount.getValue()));
+			sb.append("<").append(preferredPrefix).append(":AutoBillOutstandingAmount>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.autoBillOutstandingAmount.getValue()));
 			sb.append("</").append(preferredPrefix).append(":AutoBillOutstandingAmount>");
 		}
 		if(name!=null){

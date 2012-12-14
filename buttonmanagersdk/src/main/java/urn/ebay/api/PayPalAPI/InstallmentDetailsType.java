@@ -150,7 +150,7 @@ public class InstallmentDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -161,27 +161,27 @@ public class InstallmentDetailsType{
 			}
 		}
 		if(billingPeriod != null) {
-			sb.append("<").append(preferredPrefix).append(":BillingPeriod>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingPeriod.getValue()));
+			sb.append("<").append(preferredPrefix).append(":BillingPeriod>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.billingPeriod.getValue()));
 			sb.append("</").append(preferredPrefix).append(":BillingPeriod>");
 		}
 		if(billingFrequency != null) {
-			sb.append("<").append(preferredPrefix).append(":BillingFrequency>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingFrequency));
+			sb.append("<").append(preferredPrefix).append(":BillingFrequency>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.billingFrequency));
 			sb.append("</").append(preferredPrefix).append(":BillingFrequency>");
 		}
 		if(totalBillingCycles != null) {
-			sb.append("<").append(preferredPrefix).append(":TotalBillingCycles>").append(SDKUtil.escapeInvalidXmlCharsRegex(totalBillingCycles));
+			sb.append("<").append(preferredPrefix).append(":TotalBillingCycles>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.totalBillingCycles));
 			sb.append("</").append(preferredPrefix).append(":TotalBillingCycles>");
 		}
 		if(amount != null) {
-			sb.append("<").append(preferredPrefix).append(":Amount>").append(SDKUtil.escapeInvalidXmlCharsRegex(amount));
+			sb.append("<").append(preferredPrefix).append(":Amount>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.amount));
 			sb.append("</").append(preferredPrefix).append(":Amount>");
 		}
 		if(shippingAmount != null) {
-			sb.append("<").append(preferredPrefix).append(":ShippingAmount>").append(SDKUtil.escapeInvalidXmlCharsRegex(shippingAmount));
+			sb.append("<").append(preferredPrefix).append(":ShippingAmount>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.shippingAmount));
 			sb.append("</").append(preferredPrefix).append(":ShippingAmount>");
 		}
 		if(taxAmount != null) {
-			sb.append("<").append(preferredPrefix).append(":TaxAmount>").append(SDKUtil.escapeInvalidXmlCharsRegex(taxAmount));
+			sb.append("<").append(preferredPrefix).append(":TaxAmount>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.taxAmount));
 			sb.append("</").append(preferredPrefix).append(":TaxAmount>");
 		}
 		if(name!=null){

@@ -78,7 +78,7 @@ public class IncentiveRequestDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -89,15 +89,15 @@ public class IncentiveRequestDetailsType{
 			}
 		}
 		if(requestId != null) {
-			sb.append("<").append(preferredPrefix).append(":RequestId>").append(SDKUtil.escapeInvalidXmlCharsRegex(requestId));
+			sb.append("<").append(preferredPrefix).append(":RequestId>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.requestId));
 			sb.append("</").append(preferredPrefix).append(":RequestId>");
 		}
 		if(requestType != null) {
-			sb.append("<").append(preferredPrefix).append(":RequestType>").append(SDKUtil.escapeInvalidXmlCharsRegex(requestType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":RequestType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.requestType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":RequestType>");
 		}
 		if(requestDetailLevel != null) {
-			sb.append("<").append(preferredPrefix).append(":RequestDetailLevel>").append(SDKUtil.escapeInvalidXmlCharsRegex(requestDetailLevel.getValue()));
+			sb.append("<").append(preferredPrefix).append(":RequestDetailLevel>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.requestDetailLevel.getValue()));
 			sb.append("</").append(preferredPrefix).append(":RequestDetailLevel>");
 		}
 		if(name!=null){

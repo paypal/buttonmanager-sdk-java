@@ -67,7 +67,7 @@ public class ActivationDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -81,7 +81,7 @@ public class ActivationDetailsType{
 			sb.append(initialAmount.toXMLString(preferredPrefix,"InitialAmount"));
 		}
 		if(failedInitialAmountAction != null) {
-			sb.append("<").append(preferredPrefix).append(":FailedInitialAmountAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(failedInitialAmountAction.getValue()));
+			sb.append("<").append(preferredPrefix).append(":FailedInitialAmountAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.failedInitialAmountAction.getValue()));
 			sb.append("</").append(preferredPrefix).append(":FailedInitialAmountAction>");
 		}
 		if(name!=null){

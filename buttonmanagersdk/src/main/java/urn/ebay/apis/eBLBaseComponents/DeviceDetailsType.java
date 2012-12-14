@@ -42,7 +42,7 @@ public class DeviceDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -53,7 +53,7 @@ public class DeviceDetailsType{
 			}
 		}
 		if(deviceID != null) {
-			sb.append("<").append(preferredPrefix).append(":DeviceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(deviceID));
+			sb.append("<").append(preferredPrefix).append(":DeviceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.deviceID));
 			sb.append("</").append(preferredPrefix).append(":DeviceID>");
 		}
 		if(name!=null){

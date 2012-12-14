@@ -194,7 +194,7 @@ public class IncentiveBucketType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -210,15 +210,15 @@ public class IncentiveBucketType{
 			}
 		}
 		if(bucketId != null) {
-			sb.append("<").append(preferredPrefix).append(":BucketId>").append(SDKUtil.escapeInvalidXmlCharsRegex(bucketId));
+			sb.append("<").append(preferredPrefix).append(":BucketId>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.bucketId));
 			sb.append("</").append(preferredPrefix).append(":BucketId>");
 		}
 		if(sellerId != null) {
-			sb.append("<").append(preferredPrefix).append(":SellerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(sellerId));
+			sb.append("<").append(preferredPrefix).append(":SellerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.sellerId));
 			sb.append("</").append(preferredPrefix).append(":SellerId>");
 		}
 		if(externalSellerId != null) {
-			sb.append("<").append(preferredPrefix).append(":ExternalSellerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(externalSellerId));
+			sb.append("<").append(preferredPrefix).append(":ExternalSellerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.externalSellerId));
 			sb.append("</").append(preferredPrefix).append(":ExternalSellerId>");
 		}
 		if(bucketSubtotalAmt != null) {

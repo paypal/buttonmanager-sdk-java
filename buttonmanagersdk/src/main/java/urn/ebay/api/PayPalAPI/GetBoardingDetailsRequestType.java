@@ -53,7 +53,7 @@ public class GetBoardingDetailsRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -65,7 +65,7 @@ public class GetBoardingDetailsRequestType extends AbstractRequestType {
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(token != null) {
-			sb.append("<").append(preferredPrefix).append(":Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(token));
+			sb.append("<").append(preferredPrefix).append(":Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.token));
 			sb.append("</").append(preferredPrefix).append(":Token>");
 		}
 		if(name!=null){

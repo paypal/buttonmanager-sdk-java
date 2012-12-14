@@ -116,7 +116,7 @@ public class EbayItemPaymentDetailsItemType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -127,19 +127,19 @@ public class EbayItemPaymentDetailsItemType{
 			}
 		}
 		if(itemNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemNumber));
+			sb.append("<").append(preferredPrefix).append(":ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemNumber));
 			sb.append("</").append(preferredPrefix).append(":ItemNumber>");
 		}
 		if(auctionTransactionId != null) {
-			sb.append("<").append(preferredPrefix).append(":AuctionTransactionId>").append(SDKUtil.escapeInvalidXmlCharsRegex(auctionTransactionId));
+			sb.append("<").append(preferredPrefix).append(":AuctionTransactionId>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.auctionTransactionId));
 			sb.append("</").append(preferredPrefix).append(":AuctionTransactionId>");
 		}
 		if(orderId != null) {
-			sb.append("<").append(preferredPrefix).append(":OrderId>").append(SDKUtil.escapeInvalidXmlCharsRegex(orderId));
+			sb.append("<").append(preferredPrefix).append(":OrderId>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.orderId));
 			sb.append("</").append(preferredPrefix).append(":OrderId>");
 		}
 		if(cartID != null) {
-			sb.append("<").append(preferredPrefix).append(":CartID>").append(SDKUtil.escapeInvalidXmlCharsRegex(cartID));
+			sb.append("<").append(preferredPrefix).append(":CartID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cartID));
 			sb.append("</").append(preferredPrefix).append(":CartID>");
 		}
 		if(name!=null){

@@ -50,7 +50,7 @@ public class RememberMeIDInfoType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -61,7 +61,7 @@ public class RememberMeIDInfoType{
 			}
 		}
 		if(externalRememberMeID != null) {
-			sb.append("<").append(preferredPrefix).append(":ExternalRememberMeID>").append(SDKUtil.escapeInvalidXmlCharsRegex(externalRememberMeID));
+			sb.append("<").append(preferredPrefix).append(":ExternalRememberMeID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.externalRememberMeID));
 			sb.append("</").append(preferredPrefix).append(":ExternalRememberMeID>");
 		}
 		if(name!=null){

@@ -358,7 +358,7 @@ public class PaymentDetailsItemType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -369,15 +369,15 @@ public class PaymentDetailsItemType{
 			}
 		}
 		if(name != null) {
-			sb.append("<").append(preferredPrefix).append(":Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(name));
+			sb.append("<").append(preferredPrefix).append(":Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.name));
 			sb.append("</").append(preferredPrefix).append(":Name>");
 		}
 		if(number != null) {
-			sb.append("<").append(preferredPrefix).append(":Number>").append(SDKUtil.escapeInvalidXmlCharsRegex(number));
+			sb.append("<").append(preferredPrefix).append(":Number>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.number));
 			sb.append("</").append(preferredPrefix).append(":Number>");
 		}
 		if(quantity != null) {
-			sb.append("<").append(preferredPrefix).append(":Quantity>").append(SDKUtil.escapeInvalidXmlCharsRegex(quantity));
+			sb.append("<").append(preferredPrefix).append(":Quantity>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.quantity));
 			sb.append("</").append(preferredPrefix).append(":Quantity>");
 		}
 		if(tax != null) {
@@ -390,15 +390,15 @@ public class PaymentDetailsItemType{
 			sb.append(ebayItemPaymentDetailsItem.toXMLString(preferredPrefix,"EbayItemPaymentDetailsItem"));
 		}
 		if(promoCode != null) {
-			sb.append("<").append(preferredPrefix).append(":PromoCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(promoCode));
+			sb.append("<").append(preferredPrefix).append(":PromoCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.promoCode));
 			sb.append("</").append(preferredPrefix).append(":PromoCode>");
 		}
 		if(productCategory != null) {
-			sb.append("<").append(preferredPrefix).append(":ProductCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(productCategory.getValue()));
+			sb.append("<").append(preferredPrefix).append(":ProductCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.productCategory.getValue()));
 			sb.append("</").append(preferredPrefix).append(":ProductCategory>");
 		}
 		if(description != null) {
-			sb.append("<").append(preferredPrefix).append(":Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(description));
+			sb.append("<").append(preferredPrefix).append(":Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.description));
 			sb.append("</").append(preferredPrefix).append(":Description>");
 		}
 		if(itemWeight != null) {
@@ -414,14 +414,14 @@ public class PaymentDetailsItemType{
 			sb.append(itemHeight.toXMLString(preferredPrefix,"ItemHeight"));
 		}
 		if(itemURL != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemURL));
+			sb.append("<").append(preferredPrefix).append(":ItemURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemURL));
 			sb.append("</").append(preferredPrefix).append(":ItemURL>");
 		}
 		if(enhancedItemData != null) {
 			sb.append(enhancedItemData.toXMLString(preferredPrefix,"EnhancedItemData"));
 		}
 		if(itemCategory != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemCategory.getValue()));
+			sb.append("<").append(preferredPrefix).append(":ItemCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemCategory.getValue()));
 			sb.append("</").append(preferredPrefix).append(":ItemCategory>");
 		}
 		if(name!=null){

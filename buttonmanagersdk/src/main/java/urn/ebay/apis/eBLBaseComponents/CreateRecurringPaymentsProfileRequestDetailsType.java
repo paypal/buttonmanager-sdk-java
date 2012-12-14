@@ -131,7 +131,7 @@ public class CreateRecurringPaymentsProfileRequestDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -142,7 +142,7 @@ public class CreateRecurringPaymentsProfileRequestDetailsType{
 			}
 		}
 		if(token != null) {
-			sb.append("<").append(preferredPrefix).append(":Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(token));
+			sb.append("<").append(preferredPrefix).append(":Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.token));
 			sb.append("</").append(preferredPrefix).append(":Token>");
 		}
 		if(creditCard != null) {

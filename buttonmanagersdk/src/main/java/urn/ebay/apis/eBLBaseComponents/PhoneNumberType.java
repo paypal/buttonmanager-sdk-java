@@ -76,7 +76,7 @@ public class PhoneNumberType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -87,15 +87,15 @@ public class PhoneNumberType{
 			}
 		}
 		if(countryCode != null) {
-			sb.append("<").append(preferredPrefix).append(":CountryCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(countryCode));
+			sb.append("<").append(preferredPrefix).append(":CountryCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.countryCode));
 			sb.append("</").append(preferredPrefix).append(":CountryCode>");
 		}
 		if(phoneNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":PhoneNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(phoneNumber));
+			sb.append("<").append(preferredPrefix).append(":PhoneNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.phoneNumber));
 			sb.append("</").append(preferredPrefix).append(":PhoneNumber>");
 		}
 		if(extension != null) {
-			sb.append("<").append(preferredPrefix).append(":Extension>").append(SDKUtil.escapeInvalidXmlCharsRegex(extension));
+			sb.append("<").append(preferredPrefix).append(":Extension>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.extension));
 			sb.append("</").append(preferredPrefix).append(":Extension>");
 		}
 		if(name!=null){

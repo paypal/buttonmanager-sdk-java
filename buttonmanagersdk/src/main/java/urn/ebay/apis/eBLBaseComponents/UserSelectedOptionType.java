@@ -131,7 +131,7 @@ public class UserSelectedOptionType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -142,22 +142,22 @@ public class UserSelectedOptionType{
 			}
 		}
 		if(shippingCalculationMode != null) {
-			sb.append("<").append(preferredPrefix).append(":ShippingCalculationMode>").append(SDKUtil.escapeInvalidXmlCharsRegex(shippingCalculationMode));
+			sb.append("<").append(preferredPrefix).append(":ShippingCalculationMode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.shippingCalculationMode));
 			sb.append("</").append(preferredPrefix).append(":ShippingCalculationMode>");
 		}
 		if(insuranceOptionSelected != null) {
-			sb.append("<").append(preferredPrefix).append(":InsuranceOptionSelected>").append(SDKUtil.escapeInvalidXmlCharsRegex(insuranceOptionSelected));
+			sb.append("<").append(preferredPrefix).append(":InsuranceOptionSelected>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.insuranceOptionSelected));
 			sb.append("</").append(preferredPrefix).append(":InsuranceOptionSelected>");
 		}
 		if(shippingOptionIsDefault != null) {
-			sb.append("<").append(preferredPrefix).append(":ShippingOptionIsDefault>").append(SDKUtil.escapeInvalidXmlCharsRegex(shippingOptionIsDefault));
+			sb.append("<").append(preferredPrefix).append(":ShippingOptionIsDefault>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.shippingOptionIsDefault));
 			sb.append("</").append(preferredPrefix).append(":ShippingOptionIsDefault>");
 		}
 		if(shippingOptionAmount != null) {
 			sb.append(shippingOptionAmount.toXMLString(preferredPrefix,"ShippingOptionAmount"));
 		}
 		if(shippingOptionName != null) {
-			sb.append("<").append(preferredPrefix).append(":ShippingOptionName>").append(SDKUtil.escapeInvalidXmlCharsRegex(shippingOptionName));
+			sb.append("<").append(preferredPrefix).append(":ShippingOptionName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.shippingOptionName));
 			sb.append("</").append(preferredPrefix).append(":ShippingOptionName>");
 		}
 		if(name!=null){

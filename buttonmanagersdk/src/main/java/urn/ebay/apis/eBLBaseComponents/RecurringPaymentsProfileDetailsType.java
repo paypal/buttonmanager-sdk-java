@@ -125,7 +125,7 @@ public class RecurringPaymentsProfileDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -136,18 +136,18 @@ public class RecurringPaymentsProfileDetailsType{
 			}
 		}
 		if(subscriberName != null) {
-			sb.append("<").append(preferredPrefix).append(":SubscriberName>").append(SDKUtil.escapeInvalidXmlCharsRegex(subscriberName));
+			sb.append("<").append(preferredPrefix).append(":SubscriberName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.subscriberName));
 			sb.append("</").append(preferredPrefix).append(":SubscriberName>");
 		}
 		if(subscriberShippingAddress != null) {
 			sb.append(subscriberShippingAddress.toXMLString(preferredPrefix,"SubscriberShippingAddress"));
 		}
 		if(billingStartDate != null) {
-			sb.append("<").append(preferredPrefix).append(":BillingStartDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingStartDate));
+			sb.append("<").append(preferredPrefix).append(":BillingStartDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.billingStartDate));
 			sb.append("</").append(preferredPrefix).append(":BillingStartDate>");
 		}
 		if(profileReference != null) {
-			sb.append("<").append(preferredPrefix).append(":ProfileReference>").append(SDKUtil.escapeInvalidXmlCharsRegex(profileReference));
+			sb.append("<").append(preferredPrefix).append(":ProfileReference>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.profileReference));
 			sb.append("</").append(preferredPrefix).append(":ProfileReference>");
 		}
 		if(name!=null){

@@ -115,7 +115,7 @@ public class IncentiveItemType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -126,22 +126,22 @@ public class IncentiveItemType{
 			}
 		}
 		if(itemId != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemId>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemId));
+			sb.append("<").append(preferredPrefix).append(":ItemId>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemId));
 			sb.append("</").append(preferredPrefix).append(":ItemId>");
 		}
 		if(purchaseTime != null) {
-			sb.append("<").append(preferredPrefix).append(":PurchaseTime>").append(SDKUtil.escapeInvalidXmlCharsRegex(purchaseTime));
+			sb.append("<").append(preferredPrefix).append(":PurchaseTime>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.purchaseTime));
 			sb.append("</").append(preferredPrefix).append(":PurchaseTime>");
 		}
 		if(itemCategoryList != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemCategoryList>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemCategoryList));
+			sb.append("<").append(preferredPrefix).append(":ItemCategoryList>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemCategoryList));
 			sb.append("</").append(preferredPrefix).append(":ItemCategoryList>");
 		}
 		if(itemPrice != null) {
 			sb.append(itemPrice.toXMLString(preferredPrefix,"ItemPrice"));
 		}
 		if(itemQuantity != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemQuantity>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemQuantity));
+			sb.append("<").append(preferredPrefix).append(":ItemQuantity>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemQuantity));
 			sb.append("</").append(preferredPrefix).append(":ItemQuantity>");
 		}
 		if(name!=null){

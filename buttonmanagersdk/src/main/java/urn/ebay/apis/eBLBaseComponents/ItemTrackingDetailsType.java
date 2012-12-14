@@ -130,7 +130,7 @@ public class ItemTrackingDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -141,23 +141,23 @@ public class ItemTrackingDetailsType{
 			}
 		}
 		if(itemNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemNumber));
+			sb.append("<").append(preferredPrefix).append(":ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemNumber));
 			sb.append("</").append(preferredPrefix).append(":ItemNumber>");
 		}
 		if(itemQty != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemQty>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemQty));
+			sb.append("<").append(preferredPrefix).append(":ItemQty>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemQty));
 			sb.append("</").append(preferredPrefix).append(":ItemQty>");
 		}
 		if(itemQtyDelta != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemQtyDelta>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemQtyDelta));
+			sb.append("<").append(preferredPrefix).append(":ItemQtyDelta>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemQtyDelta));
 			sb.append("</").append(preferredPrefix).append(":ItemQtyDelta>");
 		}
 		if(itemAlert != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemAlert>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemAlert));
+			sb.append("<").append(preferredPrefix).append(":ItemAlert>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemAlert));
 			sb.append("</").append(preferredPrefix).append(":ItemAlert>");
 		}
 		if(itemCost != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemCost>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemCost));
+			sb.append("<").append(preferredPrefix).append(":ItemCost>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemCost));
 			sb.append("</").append(preferredPrefix).append(":ItemCost>");
 		}
 		if(name!=null){

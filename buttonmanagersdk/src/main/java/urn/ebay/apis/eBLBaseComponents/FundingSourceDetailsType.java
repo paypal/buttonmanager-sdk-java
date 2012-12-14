@@ -67,7 +67,7 @@ public class FundingSourceDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -78,11 +78,11 @@ public class FundingSourceDetailsType{
 			}
 		}
 		if(allowPushFunding != null) {
-			sb.append("<").append(preferredPrefix).append(":AllowPushFunding>").append(SDKUtil.escapeInvalidXmlCharsRegex(allowPushFunding));
+			sb.append("<").append(preferredPrefix).append(":AllowPushFunding>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.allowPushFunding));
 			sb.append("</").append(preferredPrefix).append(":AllowPushFunding>");
 		}
 		if(userSelectedFundingSource != null) {
-			sb.append("<").append(preferredPrefix).append(":UserSelectedFundingSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(userSelectedFundingSource.getValue()));
+			sb.append("<").append(preferredPrefix).append(":UserSelectedFundingSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.userSelectedFundingSource.getValue()));
 			sb.append("</").append(preferredPrefix).append(":UserSelectedFundingSource>");
 		}
 		if(name!=null){

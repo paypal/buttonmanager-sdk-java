@@ -100,7 +100,7 @@ public class DoVoidRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -112,15 +112,15 @@ public class DoVoidRequestType extends AbstractRequestType {
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(authorizationID != null) {
-			sb.append("<").append(preferredPrefix).append(":AuthorizationID>").append(SDKUtil.escapeInvalidXmlCharsRegex(authorizationID));
+			sb.append("<").append(preferredPrefix).append(":AuthorizationID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.authorizationID));
 			sb.append("</").append(preferredPrefix).append(":AuthorizationID>");
 		}
 		if(note != null) {
-			sb.append("<").append(preferredPrefix).append(":Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(note));
+			sb.append("<").append(preferredPrefix).append(":Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.note));
 			sb.append("</").append(preferredPrefix).append(":Note>");
 		}
 		if(msgSubID != null) {
-			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(msgSubID));
+			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.msgSubID));
 			sb.append("</").append(preferredPrefix).append(":MsgSubID>");
 		}
 		if(name!=null){

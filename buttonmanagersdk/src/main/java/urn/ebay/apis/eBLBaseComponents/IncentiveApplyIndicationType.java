@@ -58,7 +58,7 @@ public class IncentiveApplyIndicationType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -69,11 +69,11 @@ public class IncentiveApplyIndicationType{
 			}
 		}
 		if(paymentRequestID != null) {
-			sb.append("<").append(preferredPrefix).append(":PaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentRequestID));
+			sb.append("<").append(preferredPrefix).append(":PaymentRequestID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.paymentRequestID));
 			sb.append("</").append(preferredPrefix).append(":PaymentRequestID>");
 		}
 		if(itemId != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemId>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemId));
+			sb.append("<").append(preferredPrefix).append(":ItemId>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemId));
 			sb.append("</").append(preferredPrefix).append(":ItemId>");
 		}
 		if(name!=null){

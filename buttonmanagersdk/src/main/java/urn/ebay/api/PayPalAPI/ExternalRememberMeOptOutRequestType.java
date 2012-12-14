@@ -76,7 +76,7 @@ public class ExternalRememberMeOptOutRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -88,7 +88,7 @@ public class ExternalRememberMeOptOutRequestType extends AbstractRequestType {
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(externalRememberMeID != null) {
-			sb.append("<").append(preferredPrefix).append(":ExternalRememberMeID>").append(SDKUtil.escapeInvalidXmlCharsRegex(externalRememberMeID));
+			sb.append("<").append(preferredPrefix).append(":ExternalRememberMeID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.externalRememberMeID));
 			sb.append("</").append(preferredPrefix).append(":ExternalRememberMeID>");
 		}
 		if(externalRememberMeOwnerDetails != null) {

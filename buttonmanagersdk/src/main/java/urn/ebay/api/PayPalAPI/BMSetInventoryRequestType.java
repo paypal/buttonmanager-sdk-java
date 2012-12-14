@@ -238,7 +238,7 @@ public class BMSetInventoryRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -250,22 +250,22 @@ public class BMSetInventoryRequestType extends AbstractRequestType {
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(hostedButtonID != null) {
-			sb.append("<").append(preferredPrefix).append(":HostedButtonID>").append(SDKUtil.escapeInvalidXmlCharsRegex(hostedButtonID));
+			sb.append("<").append(preferredPrefix).append(":HostedButtonID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.hostedButtonID));
 			sb.append("</").append(preferredPrefix).append(":HostedButtonID>");
 		}
 		if(trackInv != null) {
-			sb.append("<").append(preferredPrefix).append(":TrackInv>").append(SDKUtil.escapeInvalidXmlCharsRegex(trackInv));
+			sb.append("<").append(preferredPrefix).append(":TrackInv>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.trackInv));
 			sb.append("</").append(preferredPrefix).append(":TrackInv>");
 		}
 		if(trackPnl != null) {
-			sb.append("<").append(preferredPrefix).append(":TrackPnl>").append(SDKUtil.escapeInvalidXmlCharsRegex(trackPnl));
+			sb.append("<").append(preferredPrefix).append(":TrackPnl>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.trackPnl));
 			sb.append("</").append(preferredPrefix).append(":TrackPnl>");
 		}
 		if(itemTrackingDetails != null) {
 			sb.append(itemTrackingDetails.toXMLString(null,"ItemTrackingDetails"));
 		}
 		if(optionIndex != null) {
-			sb.append("<").append(preferredPrefix).append(":OptionIndex>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionIndex));
+			sb.append("<").append(preferredPrefix).append(":OptionIndex>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.optionIndex));
 			sb.append("</").append(preferredPrefix).append(":OptionIndex>");
 		}
 		if(optionTrackingDetails != null) {
@@ -274,20 +274,20 @@ public class BMSetInventoryRequestType extends AbstractRequestType {
 			}
 		}
 		if(soldoutURL != null) {
-			sb.append("<").append(preferredPrefix).append(":SoldoutURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(soldoutURL));
+			sb.append("<").append(preferredPrefix).append(":SoldoutURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.soldoutURL));
 			sb.append("</").append(preferredPrefix).append(":SoldoutURL>");
 		}
 		if(reuseDigitalDownloadKeys != null) {
-			sb.append("<").append(preferredPrefix).append(":ReuseDigitalDownloadKeys>").append(SDKUtil.escapeInvalidXmlCharsRegex(reuseDigitalDownloadKeys));
+			sb.append("<").append(preferredPrefix).append(":ReuseDigitalDownloadKeys>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.reuseDigitalDownloadKeys));
 			sb.append("</").append(preferredPrefix).append(":ReuseDigitalDownloadKeys>");
 		}
 		if(appendDigitalDownloadKeys != null) {
-			sb.append("<").append(preferredPrefix).append(":AppendDigitalDownloadKeys>").append(SDKUtil.escapeInvalidXmlCharsRegex(appendDigitalDownloadKeys));
+			sb.append("<").append(preferredPrefix).append(":AppendDigitalDownloadKeys>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.appendDigitalDownloadKeys));
 			sb.append("</").append(preferredPrefix).append(":AppendDigitalDownloadKeys>");
 		}
 		if(digitalDownloadKeys != null) {
 			for(int i=0; i < digitalDownloadKeys.size(); i++) {
-				sb.append("<").append(preferredPrefix).append(":DigitalDownloadKeys>").append(SDKUtil.escapeInvalidXmlCharsRegex(digitalDownloadKeys.get(i)));
+				sb.append("<").append(preferredPrefix).append(":DigitalDownloadKeys>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.digitalDownloadKeys.get(i)));
 				sb.append("</").append(preferredPrefix).append(":DigitalDownloadKeys>");
 			}
 		}

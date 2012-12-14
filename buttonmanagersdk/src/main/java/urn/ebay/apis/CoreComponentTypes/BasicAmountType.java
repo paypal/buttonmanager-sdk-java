@@ -89,7 +89,7 @@ public class BasicAmountType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -102,7 +102,7 @@ public class BasicAmountType{
 		sb.append(">");
 		}
 		if(value != null) {
-			sb.append(SDKUtil.escapeInvalidXmlCharsRegex(value));
+			sb.append(SDKUtil.escapeInvalidXmlCharsRegex(this.value));
 		}
 		if(name!=null){
 			if(prefix!=null){
@@ -119,7 +119,7 @@ public class BasicAmountType{
 	private String getAttributeAsXml() {
 		StringBuilder sb = new StringBuilder();
 		if(currencyID != null) {
-			sb.append(" currencyID=\"").append(SDKUtil.escapeInvalidXmlCharsRegex(currencyID.getValue())).append("\"");	
+			sb.append(" currencyID=\"").append(SDKUtil.escapeInvalidXmlCharsRegex(this.currencyID.getValue())).append("\"");	
 		}
 		return sb.toString();
 	}

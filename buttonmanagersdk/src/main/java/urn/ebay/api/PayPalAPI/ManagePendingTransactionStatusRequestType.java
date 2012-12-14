@@ -69,7 +69,7 @@ public class ManagePendingTransactionStatusRequestType extends AbstractRequestTy
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -81,11 +81,11 @@ public class ManagePendingTransactionStatusRequestType extends AbstractRequestTy
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(transactionID != null) {
-			sb.append("<").append(preferredPrefix).append(":TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(transactionID));
+			sb.append("<").append(preferredPrefix).append(":TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.transactionID));
 			sb.append("</").append(preferredPrefix).append(":TransactionID>");
 		}
 		if(action != null) {
-			sb.append("<").append(preferredPrefix).append(":Action>").append(SDKUtil.escapeInvalidXmlCharsRegex(action.getValue()));
+			sb.append("<").append(preferredPrefix).append(":Action>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.action.getValue()));
 			sb.append("</").append(preferredPrefix).append(":Action>");
 		}
 		if(name!=null){

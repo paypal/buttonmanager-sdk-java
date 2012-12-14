@@ -51,7 +51,7 @@ public class BMGetInventoryRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -63,7 +63,7 @@ public class BMGetInventoryRequestType extends AbstractRequestType {
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(hostedButtonID != null) {
-			sb.append("<").append(preferredPrefix).append(":HostedButtonID>").append(SDKUtil.escapeInvalidXmlCharsRegex(hostedButtonID));
+			sb.append("<").append(preferredPrefix).append(":HostedButtonID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.hostedButtonID));
 			sb.append("</").append(preferredPrefix).append(":HostedButtonID>");
 		}
 		if(name!=null){

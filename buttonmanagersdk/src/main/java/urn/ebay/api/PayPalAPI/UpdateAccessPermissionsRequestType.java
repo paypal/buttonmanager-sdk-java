@@ -51,7 +51,7 @@ public class UpdateAccessPermissionsRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -63,7 +63,7 @@ public class UpdateAccessPermissionsRequestType extends AbstractRequestType {
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(payerID != null) {
-			sb.append("<").append(preferredPrefix).append(":PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(payerID));
+			sb.append("<").append(preferredPrefix).append(":PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.payerID));
 			sb.append("</").append(preferredPrefix).append(":PayerID>");
 		}
 		if(name!=null){

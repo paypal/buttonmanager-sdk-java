@@ -237,7 +237,7 @@ public class PayerInfoType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -248,33 +248,33 @@ public class PayerInfoType{
 			}
 		}
 		if(payer != null) {
-			sb.append("<").append(preferredPrefix).append(":Payer>").append(SDKUtil.escapeInvalidXmlCharsRegex(payer));
+			sb.append("<").append(preferredPrefix).append(":Payer>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.payer));
 			sb.append("</").append(preferredPrefix).append(":Payer>");
 		}
 		if(payerID != null) {
-			sb.append("<").append(preferredPrefix).append(":PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(payerID));
+			sb.append("<").append(preferredPrefix).append(":PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.payerID));
 			sb.append("</").append(preferredPrefix).append(":PayerID>");
 		}
 		if(payerStatus != null) {
-			sb.append("<").append(preferredPrefix).append(":PayerStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(payerStatus.getValue()));
+			sb.append("<").append(preferredPrefix).append(":PayerStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.payerStatus.getValue()));
 			sb.append("</").append(preferredPrefix).append(":PayerStatus>");
 		}
 		if(payerName != null) {
 			sb.append(payerName.toXMLString(preferredPrefix,"PayerName"));
 		}
 		if(payerCountry != null) {
-			sb.append("<").append(preferredPrefix).append(":PayerCountry>").append(SDKUtil.escapeInvalidXmlCharsRegex(payerCountry.getValue()));
+			sb.append("<").append(preferredPrefix).append(":PayerCountry>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.payerCountry.getValue()));
 			sb.append("</").append(preferredPrefix).append(":PayerCountry>");
 		}
 		if(payerBusiness != null) {
-			sb.append("<").append(preferredPrefix).append(":PayerBusiness>").append(SDKUtil.escapeInvalidXmlCharsRegex(payerBusiness));
+			sb.append("<").append(preferredPrefix).append(":PayerBusiness>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.payerBusiness));
 			sb.append("</").append(preferredPrefix).append(":PayerBusiness>");
 		}
 		if(address != null) {
 			sb.append(address.toXMLString(preferredPrefix,"Address"));
 		}
 		if(contactPhone != null) {
-			sb.append("<").append(preferredPrefix).append(":ContactPhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(contactPhone));
+			sb.append("<").append(preferredPrefix).append(":ContactPhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.contactPhone));
 			sb.append("</").append(preferredPrefix).append(":ContactPhone>");
 		}
 		if(taxIdDetails != null) {

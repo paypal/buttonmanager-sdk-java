@@ -135,7 +135,7 @@ public class DoUATPAuthorizationRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -150,18 +150,18 @@ public class DoUATPAuthorizationRequestType extends AbstractRequestType {
 			sb.append(uATPDetails.toXMLString(null,"UATPDetails"));
 		}
 		if(transactionEntity != null) {
-			sb.append("<").append(preferredPrefix).append(":TransactionEntity>").append(SDKUtil.escapeInvalidXmlCharsRegex(transactionEntity.getValue()));
+			sb.append("<").append(preferredPrefix).append(":TransactionEntity>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.transactionEntity.getValue()));
 			sb.append("</").append(preferredPrefix).append(":TransactionEntity>");
 		}
 		if(amount != null) {
 			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
 		}
 		if(invoiceID != null) {
-			sb.append("<").append(preferredPrefix).append(":InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(invoiceID));
+			sb.append("<").append(preferredPrefix).append(":InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.invoiceID));
 			sb.append("</").append(preferredPrefix).append(":InvoiceID>");
 		}
 		if(msgSubID != null) {
-			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(msgSubID));
+			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.msgSubID));
 			sb.append("</").append(preferredPrefix).append(":MsgSubID>");
 		}
 		if(name!=null){

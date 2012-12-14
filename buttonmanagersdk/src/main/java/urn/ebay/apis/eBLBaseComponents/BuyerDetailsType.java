@@ -119,7 +119,7 @@ public class BuyerDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -130,15 +130,15 @@ public class BuyerDetailsType{
 			}
 		}
 		if(buyerId != null) {
-			sb.append("<").append(preferredPrefix).append(":BuyerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(buyerId));
+			sb.append("<").append(preferredPrefix).append(":BuyerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buyerId));
 			sb.append("</").append(preferredPrefix).append(":BuyerId>");
 		}
 		if(buyerUserName != null) {
-			sb.append("<").append(preferredPrefix).append(":BuyerUserName>").append(SDKUtil.escapeInvalidXmlCharsRegex(buyerUserName));
+			sb.append("<").append(preferredPrefix).append(":BuyerUserName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buyerUserName));
 			sb.append("</").append(preferredPrefix).append(":BuyerUserName>");
 		}
 		if(buyerRegistrationDate != null) {
-			sb.append("<").append(preferredPrefix).append(":BuyerRegistrationDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(buyerRegistrationDate));
+			sb.append("<").append(preferredPrefix).append(":BuyerRegistrationDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buyerRegistrationDate));
 			sb.append("</").append(preferredPrefix).append(":BuyerRegistrationDate>");
 		}
 		if(taxIdDetails != null) {

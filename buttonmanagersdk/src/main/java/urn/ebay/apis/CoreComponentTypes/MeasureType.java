@@ -83,7 +83,7 @@ public class MeasureType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -96,7 +96,7 @@ public class MeasureType{
 		sb.append(">");
 		}
 		if(value != null) {
-			sb.append(SDKUtil.escapeInvalidXmlCharsRegex(value));
+			sb.append(SDKUtil.escapeInvalidXmlCharsRegex(this.value));
 		}
 		if(name!=null){
 			if(prefix!=null){
@@ -113,7 +113,7 @@ public class MeasureType{
 	private String getAttributeAsXml() {
 		StringBuilder sb = new StringBuilder();
 		if(unit != null) {
-			sb.append(" unit=\"").append(SDKUtil.escapeInvalidXmlCharsRegex(unit)).append("\"");	
+			sb.append(" unit=\"").append(SDKUtil.escapeInvalidXmlCharsRegex(this.unit)).append("\"");	
 		}
 		return sb.toString();
 	}

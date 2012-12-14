@@ -61,7 +61,7 @@ public class BMButtonSearchRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -73,11 +73,11 @@ public class BMButtonSearchRequestType extends AbstractRequestType {
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(startDate != null) {
-			sb.append("<").append(preferredPrefix).append(":StartDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(startDate));
+			sb.append("<").append(preferredPrefix).append(":StartDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.startDate));
 			sb.append("</").append(preferredPrefix).append(":StartDate>");
 		}
 		if(endDate != null) {
-			sb.append("<").append(preferredPrefix).append(":EndDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(endDate));
+			sb.append("<").append(preferredPrefix).append(":EndDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.endDate));
 			sb.append("</").append(preferredPrefix).append(":EndDate>");
 		}
 		if(name!=null){

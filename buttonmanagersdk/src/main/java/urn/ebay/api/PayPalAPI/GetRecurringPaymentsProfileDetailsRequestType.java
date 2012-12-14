@@ -47,7 +47,7 @@ public class GetRecurringPaymentsProfileDetailsRequestType extends AbstractReque
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -59,7 +59,7 @@ public class GetRecurringPaymentsProfileDetailsRequestType extends AbstractReque
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(profileID != null) {
-			sb.append("<").append(preferredPrefix).append(":ProfileID>").append(SDKUtil.escapeInvalidXmlCharsRegex(profileID));
+			sb.append("<").append(preferredPrefix).append(":ProfileID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.profileID));
 			sb.append("</").append(preferredPrefix).append(":ProfileID>");
 		}
 		if(name!=null){

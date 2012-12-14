@@ -273,7 +273,7 @@ public class RefundTransactionRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -285,38 +285,38 @@ public class RefundTransactionRequestType extends AbstractRequestType {
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(transactionID != null) {
-			sb.append("<").append(preferredPrefix).append(":TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(transactionID));
+			sb.append("<").append(preferredPrefix).append(":TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.transactionID));
 			sb.append("</").append(preferredPrefix).append(":TransactionID>");
 		}
 		if(payerID != null) {
-			sb.append("<").append(preferredPrefix).append(":PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(payerID));
+			sb.append("<").append(preferredPrefix).append(":PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.payerID));
 			sb.append("</").append(preferredPrefix).append(":PayerID>");
 		}
 		if(invoiceID != null) {
-			sb.append("<").append(preferredPrefix).append(":InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(invoiceID));
+			sb.append("<").append(preferredPrefix).append(":InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.invoiceID));
 			sb.append("</").append(preferredPrefix).append(":InvoiceID>");
 		}
 		if(refundType != null) {
-			sb.append("<").append(preferredPrefix).append(":RefundType>").append(SDKUtil.escapeInvalidXmlCharsRegex(refundType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":RefundType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.refundType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":RefundType>");
 		}
 		if(amount != null) {
 			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
 		}
 		if(memo != null) {
-			sb.append("<").append(preferredPrefix).append(":Memo>").append(SDKUtil.escapeInvalidXmlCharsRegex(memo));
+			sb.append("<").append(preferredPrefix).append(":Memo>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.memo));
 			sb.append("</").append(preferredPrefix).append(":Memo>");
 		}
 		if(retryUntil != null) {
-			sb.append("<").append(preferredPrefix).append(":RetryUntil>").append(SDKUtil.escapeInvalidXmlCharsRegex(retryUntil));
+			sb.append("<").append(preferredPrefix).append(":RetryUntil>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.retryUntil));
 			sb.append("</").append(preferredPrefix).append(":RetryUntil>");
 		}
 		if(refundSource != null) {
-			sb.append("<").append(preferredPrefix).append(":RefundSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(refundSource.getValue()));
+			sb.append("<").append(preferredPrefix).append(":RefundSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.refundSource.getValue()));
 			sb.append("</").append(preferredPrefix).append(":RefundSource>");
 		}
 		if(refundAdvice != null) {
-			sb.append("<").append(preferredPrefix).append(":RefundAdvice>").append(SDKUtil.escapeInvalidXmlCharsRegex(refundAdvice));
+			sb.append("<").append(preferredPrefix).append(":RefundAdvice>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.refundAdvice));
 			sb.append("</").append(preferredPrefix).append(":RefundAdvice>");
 		}
 		if(merchantStoreDetails != null) {
@@ -328,7 +328,7 @@ public class RefundTransactionRequestType extends AbstractRequestType {
 			}
 		}
 		if(msgSubID != null) {
-			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(msgSubID));
+			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.msgSubID));
 			sb.append("</").append(preferredPrefix).append(":MsgSubID>");
 		}
 		if(name!=null){

@@ -154,7 +154,7 @@ public class DoNonReferencedCreditRequestDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -180,11 +180,11 @@ public class DoNonReferencedCreditRequestDetailsType{
 			sb.append(creditCard.toXMLString(preferredPrefix,"CreditCard"));
 		}
 		if(receiverEmail != null) {
-			sb.append("<").append(preferredPrefix).append(":ReceiverEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(receiverEmail));
+			sb.append("<").append(preferredPrefix).append(":ReceiverEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.receiverEmail));
 			sb.append("</").append(preferredPrefix).append(":ReceiverEmail>");
 		}
 		if(comment != null) {
-			sb.append("<").append(preferredPrefix).append(":Comment>").append(SDKUtil.escapeInvalidXmlCharsRegex(comment));
+			sb.append("<").append(preferredPrefix).append(":Comment>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.comment));
 			sb.append("</").append(preferredPrefix).append(":Comment>");
 		}
 		if(name!=null){

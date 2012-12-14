@@ -90,7 +90,7 @@ public class DoCancelRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -102,15 +102,15 @@ public class DoCancelRequestType extends AbstractRequestType {
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(cancelMsgSubID != null) {
-			sb.append("<").append(preferredPrefix).append(":CancelMsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(cancelMsgSubID));
+			sb.append("<").append(preferredPrefix).append(":CancelMsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cancelMsgSubID));
 			sb.append("</").append(preferredPrefix).append(":CancelMsgSubID>");
 		}
 		if(aPIType != null) {
-			sb.append("<").append(preferredPrefix).append(":APIType>").append(SDKUtil.escapeInvalidXmlCharsRegex(aPIType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":APIType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.aPIType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":APIType>");
 		}
 		if(msgSubID != null) {
-			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(msgSubID));
+			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.msgSubID));
 			sb.append("</").append(preferredPrefix).append(":MsgSubID>");
 		}
 		if(name!=null){

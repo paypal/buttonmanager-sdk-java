@@ -175,7 +175,7 @@ public class OtherPaymentMethodDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -186,35 +186,35 @@ public class OtherPaymentMethodDetailsType{
 			}
 		}
 		if(otherPaymentMethodId != null) {
-			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodId>").append(SDKUtil.escapeInvalidXmlCharsRegex(otherPaymentMethodId));
+			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodId>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.otherPaymentMethodId));
 			sb.append("</").append(preferredPrefix).append(":OtherPaymentMethodId>");
 		}
 		if(otherPaymentMethodType != null) {
-			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodType>").append(SDKUtil.escapeInvalidXmlCharsRegex(otherPaymentMethodType));
+			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.otherPaymentMethodType));
 			sb.append("</").append(preferredPrefix).append(":OtherPaymentMethodType>");
 		}
 		if(otherPaymentMethodLabel != null) {
-			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodLabel>").append(SDKUtil.escapeInvalidXmlCharsRegex(otherPaymentMethodLabel));
+			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodLabel>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.otherPaymentMethodLabel));
 			sb.append("</").append(preferredPrefix).append(":OtherPaymentMethodLabel>");
 		}
 		if(otherPaymentMethodLabelDescription != null) {
-			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodLabelDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(otherPaymentMethodLabelDescription));
+			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodLabelDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.otherPaymentMethodLabelDescription));
 			sb.append("</").append(preferredPrefix).append(":OtherPaymentMethodLabelDescription>");
 		}
 		if(otherPaymentMethodLongDescriptionTitle != null) {
-			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodLongDescriptionTitle>").append(SDKUtil.escapeInvalidXmlCharsRegex(otherPaymentMethodLongDescriptionTitle));
+			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodLongDescriptionTitle>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.otherPaymentMethodLongDescriptionTitle));
 			sb.append("</").append(preferredPrefix).append(":OtherPaymentMethodLongDescriptionTitle>");
 		}
 		if(otherPaymentMethodLongDescription != null) {
-			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodLongDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(otherPaymentMethodLongDescription));
+			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodLongDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.otherPaymentMethodLongDescription));
 			sb.append("</").append(preferredPrefix).append(":OtherPaymentMethodLongDescription>");
 		}
 		if(otherPaymentMethodIcon != null) {
-			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodIcon>").append(SDKUtil.escapeInvalidXmlCharsRegex(otherPaymentMethodIcon));
+			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodIcon>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.otherPaymentMethodIcon));
 			sb.append("</").append(preferredPrefix).append(":OtherPaymentMethodIcon>");
 		}
 		if(otherPaymentMethodHideLabel != null) {
-			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodHideLabel>").append(SDKUtil.escapeInvalidXmlCharsRegex(otherPaymentMethodHideLabel));
+			sb.append("<").append(preferredPrefix).append(":OtherPaymentMethodHideLabel>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.otherPaymentMethodHideLabel));
 			sb.append("</").append(preferredPrefix).append(":OtherPaymentMethodHideLabel>");
 		}
 		if(name!=null){

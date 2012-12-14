@@ -370,7 +370,7 @@ public class SetAccessPermissionsRequestDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -381,67 +381,67 @@ public class SetAccessPermissionsRequestDetailsType{
 			}
 		}
 		if(returnURL != null) {
-			sb.append("<").append(preferredPrefix).append(":ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(returnURL));
+			sb.append("<").append(preferredPrefix).append(":ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.returnURL));
 			sb.append("</").append(preferredPrefix).append(":ReturnURL>");
 		}
 		if(cancelURL != null) {
-			sb.append("<").append(preferredPrefix).append(":CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(cancelURL));
+			sb.append("<").append(preferredPrefix).append(":CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cancelURL));
 			sb.append("</").append(preferredPrefix).append(":CancelURL>");
 		}
 		if(logoutURL != null) {
-			sb.append("<").append(preferredPrefix).append(":LogoutURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(logoutURL));
+			sb.append("<").append(preferredPrefix).append(":LogoutURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.logoutURL));
 			sb.append("</").append(preferredPrefix).append(":LogoutURL>");
 		}
 		if(initFlowType != null) {
-			sb.append("<").append(preferredPrefix).append(":InitFlowType>").append(SDKUtil.escapeInvalidXmlCharsRegex(initFlowType));
+			sb.append("<").append(preferredPrefix).append(":InitFlowType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.initFlowType));
 			sb.append("</").append(preferredPrefix).append(":InitFlowType>");
 		}
 		if(skipLoginPage != null) {
-			sb.append("<").append(preferredPrefix).append(":SkipLoginPage>").append(SDKUtil.escapeInvalidXmlCharsRegex(skipLoginPage));
+			sb.append("<").append(preferredPrefix).append(":SkipLoginPage>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.skipLoginPage));
 			sb.append("</").append(preferredPrefix).append(":SkipLoginPage>");
 		}
 		if(requiredAccessPermissions != null) {
 			for(int i=0; i < requiredAccessPermissions.size(); i++) {
-				sb.append("<").append(preferredPrefix).append(":RequiredAccessPermissions>").append(SDKUtil.escapeInvalidXmlCharsRegex(requiredAccessPermissions.get(i)));
+				sb.append("<").append(preferredPrefix).append(":RequiredAccessPermissions>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.requiredAccessPermissions.get(i)));
 				sb.append("</").append(preferredPrefix).append(":RequiredAccessPermissions>");
 			}
 		}
 		if(optionalAccessPermissions != null) {
 			for(int i=0; i < optionalAccessPermissions.size(); i++) {
-				sb.append("<").append(preferredPrefix).append(":OptionalAccessPermissions>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionalAccessPermissions.get(i)));
+				sb.append("<").append(preferredPrefix).append(":OptionalAccessPermissions>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.optionalAccessPermissions.get(i)));
 				sb.append("</").append(preferredPrefix).append(":OptionalAccessPermissions>");
 			}
 		}
 		if(localeCode != null) {
-			sb.append("<").append(preferredPrefix).append(":LocaleCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(localeCode));
+			sb.append("<").append(preferredPrefix).append(":LocaleCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.localeCode));
 			sb.append("</").append(preferredPrefix).append(":LocaleCode>");
 		}
 		if(pageStyle != null) {
-			sb.append("<").append(preferredPrefix).append(":PageStyle>").append(SDKUtil.escapeInvalidXmlCharsRegex(pageStyle));
+			sb.append("<").append(preferredPrefix).append(":PageStyle>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.pageStyle));
 			sb.append("</").append(preferredPrefix).append(":PageStyle>");
 		}
 		if(cppHeaderImage != null) {
-			sb.append("<").append(preferredPrefix).append(":cpp-header-image>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderImage));
+			sb.append("<").append(preferredPrefix).append(":cpp-header-image>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cppHeaderImage));
 			sb.append("</").append(preferredPrefix).append(":cpp-header-image>");
 		}
 		if(cppHeaderBorderColor != null) {
-			sb.append("<").append(preferredPrefix).append(":cpp-header-border-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBorderColor));
+			sb.append("<").append(preferredPrefix).append(":cpp-header-border-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cppHeaderBorderColor));
 			sb.append("</").append(preferredPrefix).append(":cpp-header-border-color>");
 		}
 		if(cppHeaderBackColor != null) {
-			sb.append("<").append(preferredPrefix).append(":cpp-header-back-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBackColor));
+			sb.append("<").append(preferredPrefix).append(":cpp-header-back-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cppHeaderBackColor));
 			sb.append("</").append(preferredPrefix).append(":cpp-header-back-color>");
 		}
 		if(cppPayflowColor != null) {
-			sb.append("<").append(preferredPrefix).append(":cpp-payflow-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppPayflowColor));
+			sb.append("<").append(preferredPrefix).append(":cpp-payflow-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cppPayflowColor));
 			sb.append("</").append(preferredPrefix).append(":cpp-payflow-color>");
 		}
 		if(firstName != null) {
-			sb.append("<").append(preferredPrefix).append(":FirstName>").append(SDKUtil.escapeInvalidXmlCharsRegex(firstName));
+			sb.append("<").append(preferredPrefix).append(":FirstName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.firstName));
 			sb.append("</").append(preferredPrefix).append(":FirstName>");
 		}
 		if(lastName != null) {
-			sb.append("<").append(preferredPrefix).append(":LastName>").append(SDKUtil.escapeInvalidXmlCharsRegex(lastName));
+			sb.append("<").append(preferredPrefix).append(":LastName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.lastName));
 			sb.append("</").append(preferredPrefix).append(":LastName>");
 		}
 		if(address != null) {

@@ -423,7 +423,7 @@ public class InvoiceItemType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -434,23 +434,23 @@ public class InvoiceItemType{
 			}
 		}
 		if(name != null) {
-			sb.append("<").append(preferredPrefix).append(":Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(name));
+			sb.append("<").append(preferredPrefix).append(":Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.name));
 			sb.append("</").append(preferredPrefix).append(":Name>");
 		}
 		if(description != null) {
-			sb.append("<").append(preferredPrefix).append(":Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(description));
+			sb.append("<").append(preferredPrefix).append(":Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.description));
 			sb.append("</").append(preferredPrefix).append(":Description>");
 		}
 		if(eAN != null) {
-			sb.append("<").append(preferredPrefix).append(":EAN>").append(SDKUtil.escapeInvalidXmlCharsRegex(eAN));
+			sb.append("<").append(preferredPrefix).append(":EAN>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.eAN));
 			sb.append("</").append(preferredPrefix).append(":EAN>");
 		}
 		if(sKU != null) {
-			sb.append("<").append(preferredPrefix).append(":SKU>").append(SDKUtil.escapeInvalidXmlCharsRegex(sKU));
+			sb.append("<").append(preferredPrefix).append(":SKU>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.sKU));
 			sb.append("</").append(preferredPrefix).append(":SKU>");
 		}
 		if(returnPolicyIdentifier != null) {
-			sb.append("<").append(preferredPrefix).append(":ReturnPolicyIdentifier>").append(SDKUtil.escapeInvalidXmlCharsRegex(returnPolicyIdentifier));
+			sb.append("<").append(preferredPrefix).append(":ReturnPolicyIdentifier>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.returnPolicyIdentifier));
 			sb.append("</").append(preferredPrefix).append(":ReturnPolicyIdentifier>");
 		}
 		if(price != null) {
@@ -460,11 +460,11 @@ public class InvoiceItemType{
 			sb.append(itemPrice.toXMLString(preferredPrefix,"ItemPrice"));
 		}
 		if(itemCount != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemCount>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemCount));
+			sb.append("<").append(preferredPrefix).append(":ItemCount>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemCount));
 			sb.append("</").append(preferredPrefix).append(":ItemCount>");
 		}
 		if(itemCountUnit != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemCountUnit>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemCountUnit.getValue()));
+			sb.append("<").append(preferredPrefix).append(":ItemCountUnit>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemCountUnit.getValue()));
 			sb.append("</").append(preferredPrefix).append(":ItemCountUnit>");
 		}
 		if(discount != null) {
@@ -473,11 +473,11 @@ public class InvoiceItemType{
 			}
 		}
 		if(taxable != null) {
-			sb.append("<").append(preferredPrefix).append(":Taxable>").append(SDKUtil.escapeInvalidXmlCharsRegex(taxable));
+			sb.append("<").append(preferredPrefix).append(":Taxable>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.taxable));
 			sb.append("</").append(preferredPrefix).append(":Taxable>");
 		}
 		if(taxRate != null) {
-			sb.append("<").append(preferredPrefix).append(":TaxRate>").append(SDKUtil.escapeInvalidXmlCharsRegex(taxRate));
+			sb.append("<").append(preferredPrefix).append(":TaxRate>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.taxRate));
 			sb.append("</").append(preferredPrefix).append(":TaxRate>");
 		}
 		if(additionalFees != null) {
@@ -486,27 +486,27 @@ public class InvoiceItemType{
 			}
 		}
 		if(reimbursable != null) {
-			sb.append("<").append(preferredPrefix).append(":Reimbursable>").append(SDKUtil.escapeInvalidXmlCharsRegex(reimbursable));
+			sb.append("<").append(preferredPrefix).append(":Reimbursable>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.reimbursable));
 			sb.append("</").append(preferredPrefix).append(":Reimbursable>");
 		}
 		if(mPN != null) {
-			sb.append("<").append(preferredPrefix).append(":MPN>").append(SDKUtil.escapeInvalidXmlCharsRegex(mPN));
+			sb.append("<").append(preferredPrefix).append(":MPN>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.mPN));
 			sb.append("</").append(preferredPrefix).append(":MPN>");
 		}
 		if(iSBN != null) {
-			sb.append("<").append(preferredPrefix).append(":ISBN>").append(SDKUtil.escapeInvalidXmlCharsRegex(iSBN));
+			sb.append("<").append(preferredPrefix).append(":ISBN>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.iSBN));
 			sb.append("</").append(preferredPrefix).append(":ISBN>");
 		}
 		if(pLU != null) {
-			sb.append("<").append(preferredPrefix).append(":PLU>").append(SDKUtil.escapeInvalidXmlCharsRegex(pLU));
+			sb.append("<").append(preferredPrefix).append(":PLU>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.pLU));
 			sb.append("</").append(preferredPrefix).append(":PLU>");
 		}
 		if(modelNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":ModelNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(modelNumber));
+			sb.append("<").append(preferredPrefix).append(":ModelNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.modelNumber));
 			sb.append("</").append(preferredPrefix).append(":ModelNumber>");
 		}
 		if(styleNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":StyleNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(styleNumber));
+			sb.append("<").append(preferredPrefix).append(":StyleNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.styleNumber));
 			sb.append("</").append(preferredPrefix).append(":StyleNumber>");
 		}
 		if(name!=null){

@@ -343,7 +343,7 @@ public class FlightDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -354,55 +354,55 @@ public class FlightDetailsType{
 			}
 		}
 		if(conjuctionTicket != null) {
-			sb.append("<").append(preferredPrefix).append(":ConjuctionTicket>").append(SDKUtil.escapeInvalidXmlCharsRegex(conjuctionTicket));
+			sb.append("<").append(preferredPrefix).append(":ConjuctionTicket>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.conjuctionTicket));
 			sb.append("</").append(preferredPrefix).append(":ConjuctionTicket>");
 		}
 		if(exchangeTicket != null) {
-			sb.append("<").append(preferredPrefix).append(":ExchangeTicket>").append(SDKUtil.escapeInvalidXmlCharsRegex(exchangeTicket));
+			sb.append("<").append(preferredPrefix).append(":ExchangeTicket>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.exchangeTicket));
 			sb.append("</").append(preferredPrefix).append(":ExchangeTicket>");
 		}
 		if(couponNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":CouponNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(couponNumber));
+			sb.append("<").append(preferredPrefix).append(":CouponNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.couponNumber));
 			sb.append("</").append(preferredPrefix).append(":CouponNumber>");
 		}
 		if(serviceClass != null) {
-			sb.append("<").append(preferredPrefix).append(":ServiceClass>").append(SDKUtil.escapeInvalidXmlCharsRegex(serviceClass));
+			sb.append("<").append(preferredPrefix).append(":ServiceClass>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.serviceClass));
 			sb.append("</").append(preferredPrefix).append(":ServiceClass>");
 		}
 		if(travelDate != null) {
-			sb.append("<").append(preferredPrefix).append(":TravelDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(travelDate));
+			sb.append("<").append(preferredPrefix).append(":TravelDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.travelDate));
 			sb.append("</").append(preferredPrefix).append(":TravelDate>");
 		}
 		if(carrierCode != null) {
-			sb.append("<").append(preferredPrefix).append(":CarrierCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(carrierCode));
+			sb.append("<").append(preferredPrefix).append(":CarrierCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.carrierCode));
 			sb.append("</").append(preferredPrefix).append(":CarrierCode>");
 		}
 		if(stopOverPermitted != null) {
-			sb.append("<").append(preferredPrefix).append(":StopOverPermitted>").append(SDKUtil.escapeInvalidXmlCharsRegex(stopOverPermitted));
+			sb.append("<").append(preferredPrefix).append(":StopOverPermitted>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.stopOverPermitted));
 			sb.append("</").append(preferredPrefix).append(":StopOverPermitted>");
 		}
 		if(departureAirport != null) {
-			sb.append("<").append(preferredPrefix).append(":DepartureAirport>").append(SDKUtil.escapeInvalidXmlCharsRegex(departureAirport));
+			sb.append("<").append(preferredPrefix).append(":DepartureAirport>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.departureAirport));
 			sb.append("</").append(preferredPrefix).append(":DepartureAirport>");
 		}
 		if(arrivalAirport != null) {
-			sb.append("<").append(preferredPrefix).append(":ArrivalAirport>").append(SDKUtil.escapeInvalidXmlCharsRegex(arrivalAirport));
+			sb.append("<").append(preferredPrefix).append(":ArrivalAirport>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.arrivalAirport));
 			sb.append("</").append(preferredPrefix).append(":ArrivalAirport>");
 		}
 		if(flightNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":FlightNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(flightNumber));
+			sb.append("<").append(preferredPrefix).append(":FlightNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.flightNumber));
 			sb.append("</").append(preferredPrefix).append(":FlightNumber>");
 		}
 		if(departureTime != null) {
-			sb.append("<").append(preferredPrefix).append(":DepartureTime>").append(SDKUtil.escapeInvalidXmlCharsRegex(departureTime));
+			sb.append("<").append(preferredPrefix).append(":DepartureTime>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.departureTime));
 			sb.append("</").append(preferredPrefix).append(":DepartureTime>");
 		}
 		if(arrivalTime != null) {
-			sb.append("<").append(preferredPrefix).append(":ArrivalTime>").append(SDKUtil.escapeInvalidXmlCharsRegex(arrivalTime));
+			sb.append("<").append(preferredPrefix).append(":ArrivalTime>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.arrivalTime));
 			sb.append("</").append(preferredPrefix).append(":ArrivalTime>");
 		}
 		if(fareBasisCode != null) {
-			sb.append("<").append(preferredPrefix).append(":FareBasisCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(fareBasisCode));
+			sb.append("<").append(preferredPrefix).append(":FareBasisCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.fareBasisCode));
 			sb.append("</").append(preferredPrefix).append(":FareBasisCode>");
 		}
 		if(fare != null) {
@@ -415,7 +415,7 @@ public class FlightDetailsType{
 			sb.append(fee.toXMLString(preferredPrefix,"Fee"));
 		}
 		if(endorsementOrRestrictions != null) {
-			sb.append("<").append(preferredPrefix).append(":EndorsementOrRestrictions>").append(SDKUtil.escapeInvalidXmlCharsRegex(endorsementOrRestrictions));
+			sb.append("<").append(preferredPrefix).append(":EndorsementOrRestrictions>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.endorsementOrRestrictions));
 			sb.append("</").append(preferredPrefix).append(":EndorsementOrRestrictions>");
 		}
 		if(name!=null){

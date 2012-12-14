@@ -99,7 +99,7 @@ public class BusinessOwnerInfoType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -113,15 +113,15 @@ public class BusinessOwnerInfoType{
 			sb.append(owner.toXMLString(preferredPrefix,"Owner"));
 		}
 		if(homePhone != null) {
-			sb.append("<").append(preferredPrefix).append(":HomePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(homePhone));
+			sb.append("<").append(preferredPrefix).append(":HomePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.homePhone));
 			sb.append("</").append(preferredPrefix).append(":HomePhone>");
 		}
 		if(mobilePhone != null) {
-			sb.append("<").append(preferredPrefix).append(":MobilePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(mobilePhone));
+			sb.append("<").append(preferredPrefix).append(":MobilePhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.mobilePhone));
 			sb.append("</").append(preferredPrefix).append(":MobilePhone>");
 		}
 		if(sSN != null) {
-			sb.append("<").append(preferredPrefix).append(":SSN>").append(SDKUtil.escapeInvalidXmlCharsRegex(sSN));
+			sb.append("<").append(preferredPrefix).append(":SSN>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.sSN));
 			sb.append("</").append(preferredPrefix).append(":SSN>");
 		}
 		if(name!=null){

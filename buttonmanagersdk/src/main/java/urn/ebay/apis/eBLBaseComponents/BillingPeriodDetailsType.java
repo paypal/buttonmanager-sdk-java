@@ -163,7 +163,7 @@ public class BillingPeriodDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -174,15 +174,15 @@ public class BillingPeriodDetailsType{
 			}
 		}
 		if(billingPeriod != null) {
-			sb.append("<").append(preferredPrefix).append(":BillingPeriod>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingPeriod.getValue()));
+			sb.append("<").append(preferredPrefix).append(":BillingPeriod>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.billingPeriod.getValue()));
 			sb.append("</").append(preferredPrefix).append(":BillingPeriod>");
 		}
 		if(billingFrequency != null) {
-			sb.append("<").append(preferredPrefix).append(":BillingFrequency>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingFrequency));
+			sb.append("<").append(preferredPrefix).append(":BillingFrequency>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.billingFrequency));
 			sb.append("</").append(preferredPrefix).append(":BillingFrequency>");
 		}
 		if(totalBillingCycles != null) {
-			sb.append("<").append(preferredPrefix).append(":TotalBillingCycles>").append(SDKUtil.escapeInvalidXmlCharsRegex(totalBillingCycles));
+			sb.append("<").append(preferredPrefix).append(":TotalBillingCycles>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.totalBillingCycles));
 			sb.append("</").append(preferredPrefix).append(":TotalBillingCycles>");
 		}
 		if(amount != null) {

@@ -105,7 +105,7 @@ public class BAUpdateRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -117,19 +117,19 @@ public class BAUpdateRequestType extends AbstractRequestType {
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(referenceID != null) {
-			sb.append("<").append(preferredPrefix).append(":ReferenceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(referenceID));
+			sb.append("<").append(preferredPrefix).append(":ReferenceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.referenceID));
 			sb.append("</").append(preferredPrefix).append(":ReferenceID>");
 		}
 		if(billingAgreementDescription != null) {
-			sb.append("<").append(preferredPrefix).append(":BillingAgreementDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingAgreementDescription));
+			sb.append("<").append(preferredPrefix).append(":BillingAgreementDescription>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.billingAgreementDescription));
 			sb.append("</").append(preferredPrefix).append(":BillingAgreementDescription>");
 		}
 		if(billingAgreementStatus != null) {
-			sb.append("<").append(preferredPrefix).append(":BillingAgreementStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingAgreementStatus.getValue()));
+			sb.append("<").append(preferredPrefix).append(":BillingAgreementStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.billingAgreementStatus.getValue()));
 			sb.append("</").append(preferredPrefix).append(":BillingAgreementStatus>");
 		}
 		if(billingAgreementCustom != null) {
-			sb.append("<").append(preferredPrefix).append(":BillingAgreementCustom>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingAgreementCustom));
+			sb.append("<").append(preferredPrefix).append(":BillingAgreementCustom>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.billingAgreementCustom));
 			sb.append("</").append(preferredPrefix).append(":BillingAgreementCustom>");
 		}
 		if(name!=null){

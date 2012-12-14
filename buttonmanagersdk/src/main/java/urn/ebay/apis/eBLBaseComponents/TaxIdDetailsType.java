@@ -74,7 +74,7 @@ public class TaxIdDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -85,11 +85,11 @@ public class TaxIdDetailsType{
 			}
 		}
 		if(taxIdType != null) {
-			sb.append("<").append(preferredPrefix).append(":TaxIdType>").append(SDKUtil.escapeInvalidXmlCharsRegex(taxIdType));
+			sb.append("<").append(preferredPrefix).append(":TaxIdType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.taxIdType));
 			sb.append("</").append(preferredPrefix).append(":TaxIdType>");
 		}
 		if(taxId != null) {
-			sb.append("<").append(preferredPrefix).append(":TaxId>").append(SDKUtil.escapeInvalidXmlCharsRegex(taxId));
+			sb.append("<").append(preferredPrefix).append(":TaxId>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.taxId));
 			sb.append("</").append(preferredPrefix).append(":TaxId>");
 		}
 		if(name!=null){

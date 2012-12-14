@@ -63,7 +63,7 @@ public class BMManageButtonStatusRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -75,11 +75,11 @@ public class BMManageButtonStatusRequestType extends AbstractRequestType {
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(hostedButtonID != null) {
-			sb.append("<").append(preferredPrefix).append(":HostedButtonID>").append(SDKUtil.escapeInvalidXmlCharsRegex(hostedButtonID));
+			sb.append("<").append(preferredPrefix).append(":HostedButtonID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.hostedButtonID));
 			sb.append("</").append(preferredPrefix).append(":HostedButtonID>");
 		}
 		if(buttonStatus != null) {
-			sb.append("<").append(preferredPrefix).append(":ButtonStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonStatus.getValue()));
+			sb.append("<").append(preferredPrefix).append(":ButtonStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buttonStatus.getValue()));
 			sb.append("</").append(preferredPrefix).append(":ButtonStatus>");
 		}
 		if(name!=null){

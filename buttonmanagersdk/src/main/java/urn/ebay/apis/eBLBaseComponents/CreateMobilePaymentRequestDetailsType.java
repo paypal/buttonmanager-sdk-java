@@ -322,7 +322,7 @@ public class CreateMobilePaymentRequestDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -333,22 +333,22 @@ public class CreateMobilePaymentRequestDetailsType{
 			}
 		}
 		if(paymentType != null) {
-			sb.append("<").append(preferredPrefix).append(":PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.paymentType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":PaymentType>");
 		}
 		if(paymentAction != null) {
-			sb.append("<").append(preferredPrefix).append(":PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentAction.getValue()));
+			sb.append("<").append(preferredPrefix).append(":PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.paymentAction.getValue()));
 			sb.append("</").append(preferredPrefix).append(":PaymentAction>");
 		}
 		if(senderPhone != null) {
 			sb.append(senderPhone.toXMLString(preferredPrefix,"SenderPhone"));
 		}
 		if(recipientType != null) {
-			sb.append("<").append(preferredPrefix).append(":RecipientType>").append(SDKUtil.escapeInvalidXmlCharsRegex(recipientType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":RecipientType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.recipientType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":RecipientType>");
 		}
 		if(recipientEmail != null) {
-			sb.append("<").append(preferredPrefix).append(":RecipientEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(recipientEmail));
+			sb.append("<").append(preferredPrefix).append(":RecipientEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.recipientEmail));
 			sb.append("</").append(preferredPrefix).append(":RecipientEmail>");
 		}
 		if(recipientPhone != null) {
@@ -364,27 +364,27 @@ public class CreateMobilePaymentRequestDetailsType{
 			sb.append(shipping.toXMLString(preferredPrefix,"Shipping"));
 		}
 		if(itemName != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemName>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemName));
+			sb.append("<").append(preferredPrefix).append(":ItemName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemName));
 			sb.append("</").append(preferredPrefix).append(":ItemName>");
 		}
 		if(itemNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(itemNumber));
+			sb.append("<").append(preferredPrefix).append(":ItemNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.itemNumber));
 			sb.append("</").append(preferredPrefix).append(":ItemNumber>");
 		}
 		if(note != null) {
-			sb.append("<").append(preferredPrefix).append(":Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(note));
+			sb.append("<").append(preferredPrefix).append(":Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.note));
 			sb.append("</").append(preferredPrefix).append(":Note>");
 		}
 		if(customID != null) {
-			sb.append("<").append(preferredPrefix).append(":CustomID>").append(SDKUtil.escapeInvalidXmlCharsRegex(customID));
+			sb.append("<").append(preferredPrefix).append(":CustomID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.customID));
 			sb.append("</").append(preferredPrefix).append(":CustomID>");
 		}
 		if(sharePhoneNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":SharePhoneNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(sharePhoneNumber));
+			sb.append("<").append(preferredPrefix).append(":SharePhoneNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.sharePhoneNumber));
 			sb.append("</").append(preferredPrefix).append(":SharePhoneNumber>");
 		}
 		if(shareHomeAddress != null) {
-			sb.append("<").append(preferredPrefix).append(":ShareHomeAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(shareHomeAddress));
+			sb.append("<").append(preferredPrefix).append(":ShareHomeAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.shareHomeAddress));
 			sb.append("</").append(preferredPrefix).append(":ShareHomeAddress>");
 		}
 		if(name!=null){

@@ -194,7 +194,7 @@ public class EnterBoardingRequestDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -205,23 +205,23 @@ public class EnterBoardingRequestDetailsType{
 			}
 		}
 		if(programCode != null) {
-			sb.append("<").append(preferredPrefix).append(":ProgramCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(programCode));
+			sb.append("<").append(preferredPrefix).append(":ProgramCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.programCode));
 			sb.append("</").append(preferredPrefix).append(":ProgramCode>");
 		}
 		if(productList != null) {
-			sb.append("<").append(preferredPrefix).append(":ProductList>").append(SDKUtil.escapeInvalidXmlCharsRegex(productList));
+			sb.append("<").append(preferredPrefix).append(":ProductList>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.productList));
 			sb.append("</").append(preferredPrefix).append(":ProductList>");
 		}
 		if(partnerCustom != null) {
-			sb.append("<").append(preferredPrefix).append(":PartnerCustom>").append(SDKUtil.escapeInvalidXmlCharsRegex(partnerCustom));
+			sb.append("<").append(preferredPrefix).append(":PartnerCustom>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.partnerCustom));
 			sb.append("</").append(preferredPrefix).append(":PartnerCustom>");
 		}
 		if(imageUrl != null) {
-			sb.append("<").append(preferredPrefix).append(":ImageUrl>").append(SDKUtil.escapeInvalidXmlCharsRegex(imageUrl));
+			sb.append("<").append(preferredPrefix).append(":ImageUrl>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.imageUrl));
 			sb.append("</").append(preferredPrefix).append(":ImageUrl>");
 		}
 		if(marketingCategory != null) {
-			sb.append("<").append(preferredPrefix).append(":MarketingCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(marketingCategory.getValue()));
+			sb.append("<").append(preferredPrefix).append(":MarketingCategory>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.marketingCategory.getValue()));
 			sb.append("</").append(preferredPrefix).append(":MarketingCategory>");
 		}
 		if(businessInfo != null) {

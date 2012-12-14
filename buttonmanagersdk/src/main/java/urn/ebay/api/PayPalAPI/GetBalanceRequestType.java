@@ -39,7 +39,7 @@ public class GetBalanceRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -51,7 +51,7 @@ public class GetBalanceRequestType extends AbstractRequestType {
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(returnAllCurrencies != null) {
-			sb.append("<").append(preferredPrefix).append(":ReturnAllCurrencies>").append(SDKUtil.escapeInvalidXmlCharsRegex(returnAllCurrencies));
+			sb.append("<").append(preferredPrefix).append(":ReturnAllCurrencies>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.returnAllCurrencies));
 			sb.append("</").append(preferredPrefix).append(":ReturnAllCurrencies>");
 		}
 		if(name!=null){

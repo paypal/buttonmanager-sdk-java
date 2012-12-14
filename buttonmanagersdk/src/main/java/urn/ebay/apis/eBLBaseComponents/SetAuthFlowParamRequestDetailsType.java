@@ -414,7 +414,7 @@ public class SetAuthFlowParamRequestDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -425,71 +425,71 @@ public class SetAuthFlowParamRequestDetailsType{
 			}
 		}
 		if(returnURL != null) {
-			sb.append("<").append(preferredPrefix).append(":ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(returnURL));
+			sb.append("<").append(preferredPrefix).append(":ReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.returnURL));
 			sb.append("</").append(preferredPrefix).append(":ReturnURL>");
 		}
 		if(cancelURL != null) {
-			sb.append("<").append(preferredPrefix).append(":CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(cancelURL));
+			sb.append("<").append(preferredPrefix).append(":CancelURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cancelURL));
 			sb.append("</").append(preferredPrefix).append(":CancelURL>");
 		}
 		if(logoutURL != null) {
-			sb.append("<").append(preferredPrefix).append(":LogoutURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(logoutURL));
+			sb.append("<").append(preferredPrefix).append(":LogoutURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.logoutURL));
 			sb.append("</").append(preferredPrefix).append(":LogoutURL>");
 		}
 		if(initFlowType != null) {
-			sb.append("<").append(preferredPrefix).append(":InitFlowType>").append(SDKUtil.escapeInvalidXmlCharsRegex(initFlowType));
+			sb.append("<").append(preferredPrefix).append(":InitFlowType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.initFlowType));
 			sb.append("</").append(preferredPrefix).append(":InitFlowType>");
 		}
 		if(skipLoginPage != null) {
-			sb.append("<").append(preferredPrefix).append(":SkipLoginPage>").append(SDKUtil.escapeInvalidXmlCharsRegex(skipLoginPage));
+			sb.append("<").append(preferredPrefix).append(":SkipLoginPage>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.skipLoginPage));
 			sb.append("</").append(preferredPrefix).append(":SkipLoginPage>");
 		}
 		if(serviceName1 != null) {
-			sb.append("<").append(preferredPrefix).append(":ServiceName1>").append(SDKUtil.escapeInvalidXmlCharsRegex(serviceName1));
+			sb.append("<").append(preferredPrefix).append(":ServiceName1>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.serviceName1));
 			sb.append("</").append(preferredPrefix).append(":ServiceName1>");
 		}
 		if(serviceDefReq1 != null) {
-			sb.append("<").append(preferredPrefix).append(":ServiceDefReq1>").append(SDKUtil.escapeInvalidXmlCharsRegex(serviceDefReq1));
+			sb.append("<").append(preferredPrefix).append(":ServiceDefReq1>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.serviceDefReq1));
 			sb.append("</").append(preferredPrefix).append(":ServiceDefReq1>");
 		}
 		if(serviceName2 != null) {
-			sb.append("<").append(preferredPrefix).append(":ServiceName2>").append(SDKUtil.escapeInvalidXmlCharsRegex(serviceName2));
+			sb.append("<").append(preferredPrefix).append(":ServiceName2>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.serviceName2));
 			sb.append("</").append(preferredPrefix).append(":ServiceName2>");
 		}
 		if(serviceDefReq2 != null) {
-			sb.append("<").append(preferredPrefix).append(":ServiceDefReq2>").append(SDKUtil.escapeInvalidXmlCharsRegex(serviceDefReq2));
+			sb.append("<").append(preferredPrefix).append(":ServiceDefReq2>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.serviceDefReq2));
 			sb.append("</").append(preferredPrefix).append(":ServiceDefReq2>");
 		}
 		if(localeCode != null) {
-			sb.append("<").append(preferredPrefix).append(":LocaleCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(localeCode));
+			sb.append("<").append(preferredPrefix).append(":LocaleCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.localeCode));
 			sb.append("</").append(preferredPrefix).append(":LocaleCode>");
 		}
 		if(pageStyle != null) {
-			sb.append("<").append(preferredPrefix).append(":PageStyle>").append(SDKUtil.escapeInvalidXmlCharsRegex(pageStyle));
+			sb.append("<").append(preferredPrefix).append(":PageStyle>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.pageStyle));
 			sb.append("</").append(preferredPrefix).append(":PageStyle>");
 		}
 		if(cppHeaderImage != null) {
-			sb.append("<").append(preferredPrefix).append(":cpp-header-image>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderImage));
+			sb.append("<").append(preferredPrefix).append(":cpp-header-image>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cppHeaderImage));
 			sb.append("</").append(preferredPrefix).append(":cpp-header-image>");
 		}
 		if(cppHeaderBorderColor != null) {
-			sb.append("<").append(preferredPrefix).append(":cpp-header-border-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBorderColor));
+			sb.append("<").append(preferredPrefix).append(":cpp-header-border-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cppHeaderBorderColor));
 			sb.append("</").append(preferredPrefix).append(":cpp-header-border-color>");
 		}
 		if(cppHeaderBackColor != null) {
-			sb.append("<").append(preferredPrefix).append(":cpp-header-back-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppHeaderBackColor));
+			sb.append("<").append(preferredPrefix).append(":cpp-header-back-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cppHeaderBackColor));
 			sb.append("</").append(preferredPrefix).append(":cpp-header-back-color>");
 		}
 		if(cppPayflowColor != null) {
-			sb.append("<").append(preferredPrefix).append(":cpp-payflow-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(cppPayflowColor));
+			sb.append("<").append(preferredPrefix).append(":cpp-payflow-color>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cppPayflowColor));
 			sb.append("</").append(preferredPrefix).append(":cpp-payflow-color>");
 		}
 		if(firstName != null) {
-			sb.append("<").append(preferredPrefix).append(":FirstName>").append(SDKUtil.escapeInvalidXmlCharsRegex(firstName));
+			sb.append("<").append(preferredPrefix).append(":FirstName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.firstName));
 			sb.append("</").append(preferredPrefix).append(":FirstName>");
 		}
 		if(lastName != null) {
-			sb.append("<").append(preferredPrefix).append(":LastName>").append(SDKUtil.escapeInvalidXmlCharsRegex(lastName));
+			sb.append("<").append(preferredPrefix).append(":LastName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.lastName));
 			sb.append("</").append(preferredPrefix).append(":LastName>");
 		}
 		if(address != null) {

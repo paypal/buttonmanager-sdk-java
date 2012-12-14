@@ -42,7 +42,7 @@ public class ReverseTransactionRequestDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -53,7 +53,7 @@ public class ReverseTransactionRequestDetailsType{
 			}
 		}
 		if(transactionID != null) {
-			sb.append("<").append(preferredPrefix).append(":TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(transactionID));
+			sb.append("<").append(preferredPrefix).append(":TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.transactionID));
 			sb.append("</").append(preferredPrefix).append(":TransactionID>");
 		}
 		if(name!=null){

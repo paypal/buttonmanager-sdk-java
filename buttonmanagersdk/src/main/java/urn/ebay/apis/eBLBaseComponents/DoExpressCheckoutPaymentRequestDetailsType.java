@@ -440,7 +440,7 @@ public class DoExpressCheckoutPaymentRequestDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -451,19 +451,19 @@ public class DoExpressCheckoutPaymentRequestDetailsType{
 			}
 		}
 		if(paymentAction != null) {
-			sb.append("<").append(preferredPrefix).append(":PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentAction.getValue()));
+			sb.append("<").append(preferredPrefix).append(":PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.paymentAction.getValue()));
 			sb.append("</").append(preferredPrefix).append(":PaymentAction>");
 		}
 		if(token != null) {
-			sb.append("<").append(preferredPrefix).append(":Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(token));
+			sb.append("<").append(preferredPrefix).append(":Token>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.token));
 			sb.append("</").append(preferredPrefix).append(":Token>");
 		}
 		if(payerID != null) {
-			sb.append("<").append(preferredPrefix).append(":PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(payerID));
+			sb.append("<").append(preferredPrefix).append(":PayerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.payerID));
 			sb.append("</").append(preferredPrefix).append(":PayerID>");
 		}
 		if(orderURL != null) {
-			sb.append("<").append(preferredPrefix).append(":OrderURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(orderURL));
+			sb.append("<").append(preferredPrefix).append(":OrderURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.orderURL));
 			sb.append("</").append(preferredPrefix).append(":OrderURL>");
 		}
 		if(paymentDetails != null) {
@@ -472,58 +472,58 @@ public class DoExpressCheckoutPaymentRequestDetailsType{
 			}
 		}
 		if(promoOverrideFlag != null) {
-			sb.append("<").append(preferredPrefix).append(":PromoOverrideFlag>").append(SDKUtil.escapeInvalidXmlCharsRegex(promoOverrideFlag));
+			sb.append("<").append(preferredPrefix).append(":PromoOverrideFlag>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.promoOverrideFlag));
 			sb.append("</").append(preferredPrefix).append(":PromoOverrideFlag>");
 		}
 		if(promoCode != null) {
-			sb.append("<").append(preferredPrefix).append(":PromoCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(promoCode));
+			sb.append("<").append(preferredPrefix).append(":PromoCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.promoCode));
 			sb.append("</").append(preferredPrefix).append(":PromoCode>");
 		}
 		if(enhancedData != null) {
 			sb.append(enhancedData.toXMLString(preferredPrefix,"EnhancedData"));
 		}
 		if(softDescriptor != null) {
-			sb.append("<").append(preferredPrefix).append(":SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(softDescriptor));
+			sb.append("<").append(preferredPrefix).append(":SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.softDescriptor));
 			sb.append("</").append(preferredPrefix).append(":SoftDescriptor>");
 		}
 		if(userSelectedOptions != null) {
 			sb.append(userSelectedOptions.toXMLString(preferredPrefix,"UserSelectedOptions"));
 		}
 		if(giftMessage != null) {
-			sb.append("<").append(preferredPrefix).append(":GiftMessage>").append(SDKUtil.escapeInvalidXmlCharsRegex(giftMessage));
+			sb.append("<").append(preferredPrefix).append(":GiftMessage>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.giftMessage));
 			sb.append("</").append(preferredPrefix).append(":GiftMessage>");
 		}
 		if(giftReceiptEnable != null) {
-			sb.append("<").append(preferredPrefix).append(":GiftReceiptEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(giftReceiptEnable));
+			sb.append("<").append(preferredPrefix).append(":GiftReceiptEnable>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.giftReceiptEnable));
 			sb.append("</").append(preferredPrefix).append(":GiftReceiptEnable>");
 		}
 		if(giftWrapName != null) {
-			sb.append("<").append(preferredPrefix).append(":GiftWrapName>").append(SDKUtil.escapeInvalidXmlCharsRegex(giftWrapName));
+			sb.append("<").append(preferredPrefix).append(":GiftWrapName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.giftWrapName));
 			sb.append("</").append(preferredPrefix).append(":GiftWrapName>");
 		}
 		if(giftWrapAmount != null) {
 			sb.append(giftWrapAmount.toXMLString(preferredPrefix,"GiftWrapAmount"));
 		}
 		if(buyerMarketingEmail != null) {
-			sb.append("<").append(preferredPrefix).append(":BuyerMarketingEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(buyerMarketingEmail));
+			sb.append("<").append(preferredPrefix).append(":BuyerMarketingEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buyerMarketingEmail));
 			sb.append("</").append(preferredPrefix).append(":BuyerMarketingEmail>");
 		}
 		if(surveyQuestion != null) {
-			sb.append("<").append(preferredPrefix).append(":SurveyQuestion>").append(SDKUtil.escapeInvalidXmlCharsRegex(surveyQuestion));
+			sb.append("<").append(preferredPrefix).append(":SurveyQuestion>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.surveyQuestion));
 			sb.append("</").append(preferredPrefix).append(":SurveyQuestion>");
 		}
 		if(surveyChoiceSelected != null) {
 			for(int i=0; i < surveyChoiceSelected.size(); i++) {
-				sb.append("<").append(preferredPrefix).append(":SurveyChoiceSelected>").append(SDKUtil.escapeInvalidXmlCharsRegex(surveyChoiceSelected.get(i)));
+				sb.append("<").append(preferredPrefix).append(":SurveyChoiceSelected>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.surveyChoiceSelected.get(i)));
 				sb.append("</").append(preferredPrefix).append(":SurveyChoiceSelected>");
 			}
 		}
 		if(buttonSource != null) {
-			sb.append("<").append(preferredPrefix).append(":ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(buttonSource));
+			sb.append("<").append(preferredPrefix).append(":ButtonSource>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buttonSource));
 			sb.append("</").append(preferredPrefix).append(":ButtonSource>");
 		}
 		if(skipBACreation != null) {
-			sb.append("<").append(preferredPrefix).append(":SkipBACreation>").append(SDKUtil.escapeInvalidXmlCharsRegex(skipBACreation));
+			sb.append("<").append(preferredPrefix).append(":SkipBACreation>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.skipBACreation));
 			sb.append("</").append(preferredPrefix).append(":SkipBACreation>");
 		}
 		if(coupledBuckets != null) {

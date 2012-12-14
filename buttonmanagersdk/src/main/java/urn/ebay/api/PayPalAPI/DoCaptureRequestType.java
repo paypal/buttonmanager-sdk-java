@@ -232,7 +232,7 @@ public class DoCaptureRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -244,36 +244,36 @@ public class DoCaptureRequestType extends AbstractRequestType {
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(authorizationID != null) {
-			sb.append("<").append(preferredPrefix).append(":AuthorizationID>").append(SDKUtil.escapeInvalidXmlCharsRegex(authorizationID));
+			sb.append("<").append(preferredPrefix).append(":AuthorizationID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.authorizationID));
 			sb.append("</").append(preferredPrefix).append(":AuthorizationID>");
 		}
 		if(amount != null) {
 			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
 		}
 		if(completeType != null) {
-			sb.append("<").append(preferredPrefix).append(":CompleteType>").append(SDKUtil.escapeInvalidXmlCharsRegex(completeType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":CompleteType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.completeType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":CompleteType>");
 		}
 		if(note != null) {
-			sb.append("<").append(preferredPrefix).append(":Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(note));
+			sb.append("<").append(preferredPrefix).append(":Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.note));
 			sb.append("</").append(preferredPrefix).append(":Note>");
 		}
 		if(invoiceID != null) {
-			sb.append("<").append(preferredPrefix).append(":InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(invoiceID));
+			sb.append("<").append(preferredPrefix).append(":InvoiceID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.invoiceID));
 			sb.append("</").append(preferredPrefix).append(":InvoiceID>");
 		}
 		if(enhancedData != null) {
 			sb.append(enhancedData.toXMLString(null,"EnhancedData"));
 		}
 		if(descriptor != null) {
-			sb.append("<").append(preferredPrefix).append(":Descriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(descriptor));
+			sb.append("<").append(preferredPrefix).append(":Descriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.descriptor));
 			sb.append("</").append(preferredPrefix).append(":Descriptor>");
 		}
 		if(merchantStoreDetails != null) {
 			sb.append(merchantStoreDetails.toXMLString(null,"MerchantStoreDetails"));
 		}
 		if(msgSubID != null) {
-			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(msgSubID));
+			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.msgSubID));
 			sb.append("</").append(preferredPrefix).append(":MsgSubID>");
 		}
 		if(name!=null){

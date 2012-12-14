@@ -356,7 +356,7 @@ public class UpdateRecurringPaymentsProfileRequestDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -367,30 +367,30 @@ public class UpdateRecurringPaymentsProfileRequestDetailsType{
 			}
 		}
 		if(profileID != null) {
-			sb.append("<").append(preferredPrefix).append(":ProfileID>").append(SDKUtil.escapeInvalidXmlCharsRegex(profileID));
+			sb.append("<").append(preferredPrefix).append(":ProfileID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.profileID));
 			sb.append("</").append(preferredPrefix).append(":ProfileID>");
 		}
 		if(note != null) {
-			sb.append("<").append(preferredPrefix).append(":Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(note));
+			sb.append("<").append(preferredPrefix).append(":Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.note));
 			sb.append("</").append(preferredPrefix).append(":Note>");
 		}
 		if(description != null) {
-			sb.append("<").append(preferredPrefix).append(":Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(description));
+			sb.append("<").append(preferredPrefix).append(":Description>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.description));
 			sb.append("</").append(preferredPrefix).append(":Description>");
 		}
 		if(subscriberName != null) {
-			sb.append("<").append(preferredPrefix).append(":SubscriberName>").append(SDKUtil.escapeInvalidXmlCharsRegex(subscriberName));
+			sb.append("<").append(preferredPrefix).append(":SubscriberName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.subscriberName));
 			sb.append("</").append(preferredPrefix).append(":SubscriberName>");
 		}
 		if(subscriberShippingAddress != null) {
 			sb.append(subscriberShippingAddress.toXMLString(preferredPrefix,"SubscriberShippingAddress"));
 		}
 		if(profileReference != null) {
-			sb.append("<").append(preferredPrefix).append(":ProfileReference>").append(SDKUtil.escapeInvalidXmlCharsRegex(profileReference));
+			sb.append("<").append(preferredPrefix).append(":ProfileReference>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.profileReference));
 			sb.append("</").append(preferredPrefix).append(":ProfileReference>");
 		}
 		if(additionalBillingCycles != null) {
-			sb.append("<").append(preferredPrefix).append(":AdditionalBillingCycles>").append(SDKUtil.escapeInvalidXmlCharsRegex(additionalBillingCycles));
+			sb.append("<").append(preferredPrefix).append(":AdditionalBillingCycles>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.additionalBillingCycles));
 			sb.append("</").append(preferredPrefix).append(":AdditionalBillingCycles>");
 		}
 		if(amount != null) {
@@ -406,18 +406,18 @@ public class UpdateRecurringPaymentsProfileRequestDetailsType{
 			sb.append(outstandingBalance.toXMLString(preferredPrefix,"OutstandingBalance"));
 		}
 		if(autoBillOutstandingAmount != null) {
-			sb.append("<").append(preferredPrefix).append(":AutoBillOutstandingAmount>").append(SDKUtil.escapeInvalidXmlCharsRegex(autoBillOutstandingAmount.getValue()));
+			sb.append("<").append(preferredPrefix).append(":AutoBillOutstandingAmount>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.autoBillOutstandingAmount.getValue()));
 			sb.append("</").append(preferredPrefix).append(":AutoBillOutstandingAmount>");
 		}
 		if(maxFailedPayments != null) {
-			sb.append("<").append(preferredPrefix).append(":MaxFailedPayments>").append(SDKUtil.escapeInvalidXmlCharsRegex(maxFailedPayments));
+			sb.append("<").append(preferredPrefix).append(":MaxFailedPayments>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.maxFailedPayments));
 			sb.append("</").append(preferredPrefix).append(":MaxFailedPayments>");
 		}
 		if(creditCard != null) {
 			sb.append(creditCard.toXMLString(preferredPrefix,"CreditCard"));
 		}
 		if(billingStartDate != null) {
-			sb.append("<").append(preferredPrefix).append(":BillingStartDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(billingStartDate));
+			sb.append("<").append(preferredPrefix).append(":BillingStartDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.billingStartDate));
 			sb.append("</").append(preferredPrefix).append(":BillingStartDate>");
 		}
 		if(trialPeriod != null) {

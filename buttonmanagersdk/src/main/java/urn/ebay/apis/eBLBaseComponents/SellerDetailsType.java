@@ -135,7 +135,7 @@ public class SellerDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -146,23 +146,23 @@ public class SellerDetailsType{
 			}
 		}
 		if(sellerId != null) {
-			sb.append("<").append(preferredPrefix).append(":SellerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(sellerId));
+			sb.append("<").append(preferredPrefix).append(":SellerId>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.sellerId));
 			sb.append("</").append(preferredPrefix).append(":SellerId>");
 		}
 		if(sellerUserName != null) {
-			sb.append("<").append(preferredPrefix).append(":SellerUserName>").append(SDKUtil.escapeInvalidXmlCharsRegex(sellerUserName));
+			sb.append("<").append(preferredPrefix).append(":SellerUserName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.sellerUserName));
 			sb.append("</").append(preferredPrefix).append(":SellerUserName>");
 		}
 		if(sellerRegistrationDate != null) {
-			sb.append("<").append(preferredPrefix).append(":SellerRegistrationDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(sellerRegistrationDate));
+			sb.append("<").append(preferredPrefix).append(":SellerRegistrationDate>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.sellerRegistrationDate));
 			sb.append("</").append(preferredPrefix).append(":SellerRegistrationDate>");
 		}
 		if(payPalAccountID != null) {
-			sb.append("<").append(preferredPrefix).append(":PayPalAccountID>").append(SDKUtil.escapeInvalidXmlCharsRegex(payPalAccountID));
+			sb.append("<").append(preferredPrefix).append(":PayPalAccountID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.payPalAccountID));
 			sb.append("</").append(preferredPrefix).append(":PayPalAccountID>");
 		}
 		if(secureMerchantAccountID != null) {
-			sb.append("<").append(preferredPrefix).append(":SecureMerchantAccountID>").append(SDKUtil.escapeInvalidXmlCharsRegex(secureMerchantAccountID));
+			sb.append("<").append(preferredPrefix).append(":SecureMerchantAccountID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.secureMerchantAccountID));
 			sb.append("</").append(preferredPrefix).append(":SecureMerchantAccountID>");
 		}
 		if(name!=null){

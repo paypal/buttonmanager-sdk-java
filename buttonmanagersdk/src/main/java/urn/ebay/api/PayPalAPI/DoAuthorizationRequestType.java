@@ -119,7 +119,7 @@ public class DoAuthorizationRequestType extends AbstractRequestType {
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -131,18 +131,18 @@ public class DoAuthorizationRequestType extends AbstractRequestType {
 		}
 		sb.append(super.toXMLString(prefix, null));
 		if(transactionID != null) {
-			sb.append("<").append(preferredPrefix).append(":TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(transactionID));
+			sb.append("<").append(preferredPrefix).append(":TransactionID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.transactionID));
 			sb.append("</").append(preferredPrefix).append(":TransactionID>");
 		}
 		if(transactionEntity != null) {
-			sb.append("<").append(preferredPrefix).append(":TransactionEntity>").append(SDKUtil.escapeInvalidXmlCharsRegex(transactionEntity.getValue()));
+			sb.append("<").append(preferredPrefix).append(":TransactionEntity>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.transactionEntity.getValue()));
 			sb.append("</").append(preferredPrefix).append(":TransactionEntity>");
 		}
 		if(amount != null) {
 			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
 		}
 		if(msgSubID != null) {
-			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(msgSubID));
+			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.msgSubID));
 			sb.append("</").append(preferredPrefix).append(":MsgSubID>");
 		}
 		if(name!=null){

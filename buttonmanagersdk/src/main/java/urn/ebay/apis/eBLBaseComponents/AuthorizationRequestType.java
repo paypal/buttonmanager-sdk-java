@@ -46,7 +46,7 @@ public class AuthorizationRequestType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -57,7 +57,7 @@ public class AuthorizationRequestType{
 			}
 		}
 		if(isRequested != null) {
-			sb.append("<").append(preferredPrefix).append(":IsRequested>").append(SDKUtil.escapeInvalidXmlCharsRegex(isRequested));
+			sb.append("<").append(preferredPrefix).append(":IsRequested>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.isRequested));
 			sb.append("</").append(preferredPrefix).append(":IsRequested>");
 		}
 		if(name!=null){

@@ -85,7 +85,7 @@ public class BillOutstandingAmountRequestDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -96,14 +96,14 @@ public class BillOutstandingAmountRequestDetailsType{
 			}
 		}
 		if(profileID != null) {
-			sb.append("<").append(preferredPrefix).append(":ProfileID>").append(SDKUtil.escapeInvalidXmlCharsRegex(profileID));
+			sb.append("<").append(preferredPrefix).append(":ProfileID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.profileID));
 			sb.append("</").append(preferredPrefix).append(":ProfileID>");
 		}
 		if(amount != null) {
 			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
 		}
 		if(note != null) {
-			sb.append("<").append(preferredPrefix).append(":Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(note));
+			sb.append("<").append(preferredPrefix).append(":Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.note));
 			sb.append("</").append(preferredPrefix).append(":Note>");
 		}
 		if(name!=null){

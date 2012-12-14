@@ -130,7 +130,7 @@ public class ThreeDSecureRequestType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -141,23 +141,23 @@ public class ThreeDSecureRequestType{
 			}
 		}
 		if(eci3ds != null) {
-			sb.append("<").append(preferredPrefix).append(":Eci3ds>").append(SDKUtil.escapeInvalidXmlCharsRegex(eci3ds));
+			sb.append("<").append(preferredPrefix).append(":Eci3ds>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.eci3ds));
 			sb.append("</").append(preferredPrefix).append(":Eci3ds>");
 		}
 		if(cavv != null) {
-			sb.append("<").append(preferredPrefix).append(":Cavv>").append(SDKUtil.escapeInvalidXmlCharsRegex(cavv));
+			sb.append("<").append(preferredPrefix).append(":Cavv>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cavv));
 			sb.append("</").append(preferredPrefix).append(":Cavv>");
 		}
 		if(xid != null) {
-			sb.append("<").append(preferredPrefix).append(":Xid>").append(SDKUtil.escapeInvalidXmlCharsRegex(xid));
+			sb.append("<").append(preferredPrefix).append(":Xid>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.xid));
 			sb.append("</").append(preferredPrefix).append(":Xid>");
 		}
 		if(mpiVendor3ds != null) {
-			sb.append("<").append(preferredPrefix).append(":MpiVendor3ds>").append(SDKUtil.escapeInvalidXmlCharsRegex(mpiVendor3ds));
+			sb.append("<").append(preferredPrefix).append(":MpiVendor3ds>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.mpiVendor3ds));
 			sb.append("</").append(preferredPrefix).append(":MpiVendor3ds>");
 		}
 		if(authStatus3ds != null) {
-			sb.append("<").append(preferredPrefix).append(":AuthStatus3ds>").append(SDKUtil.escapeInvalidXmlCharsRegex(authStatus3ds));
+			sb.append("<").append(preferredPrefix).append(":AuthStatus3ds>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.authStatus3ds));
 			sb.append("</").append(preferredPrefix).append(":AuthStatus3ds>");
 		}
 		if(name!=null){

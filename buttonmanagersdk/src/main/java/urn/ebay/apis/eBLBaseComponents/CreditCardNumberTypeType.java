@@ -58,7 +58,7 @@ public class CreditCardNumberTypeType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -69,11 +69,11 @@ public class CreditCardNumberTypeType{
 			}
 		}
 		if(creditCardType != null) {
-			sb.append("<").append(preferredPrefix).append(":CreditCardType>").append(SDKUtil.escapeInvalidXmlCharsRegex(creditCardType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":CreditCardType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.creditCardType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":CreditCardType>");
 		}
 		if(creditCardNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":CreditCardNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(creditCardNumber));
+			sb.append("<").append(preferredPrefix).append(":CreditCardNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.creditCardNumber));
 			sb.append("</").append(preferredPrefix).append(":CreditCardNumber>");
 		}
 		if(name!=null){

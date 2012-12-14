@@ -71,7 +71,7 @@ public class ExternalRememberMeOwnerDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -82,11 +82,11 @@ public class ExternalRememberMeOwnerDetailsType{
 			}
 		}
 		if(externalRememberMeOwnerIDType != null) {
-			sb.append("<").append(preferredPrefix).append(":ExternalRememberMeOwnerIDType>").append(SDKUtil.escapeInvalidXmlCharsRegex(externalRememberMeOwnerIDType));
+			sb.append("<").append(preferredPrefix).append(":ExternalRememberMeOwnerIDType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.externalRememberMeOwnerIDType));
 			sb.append("</").append(preferredPrefix).append(":ExternalRememberMeOwnerIDType>");
 		}
 		if(externalRememberMeOwnerID != null) {
-			sb.append("<").append(preferredPrefix).append(":ExternalRememberMeOwnerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(externalRememberMeOwnerID));
+			sb.append("<").append(preferredPrefix).append(":ExternalRememberMeOwnerID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.externalRememberMeOwnerID));
 			sb.append("</").append(preferredPrefix).append(":ExternalRememberMeOwnerID>");
 		}
 		if(name!=null){

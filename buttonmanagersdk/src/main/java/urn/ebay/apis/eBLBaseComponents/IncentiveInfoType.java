@@ -61,7 +61,7 @@ public class IncentiveInfoType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -72,7 +72,7 @@ public class IncentiveInfoType{
 			}
 		}
 		if(incentiveCode != null) {
-			sb.append("<").append(preferredPrefix).append(":IncentiveCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(incentiveCode));
+			sb.append("<").append(preferredPrefix).append(":IncentiveCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.incentiveCode));
 			sb.append("</").append(preferredPrefix).append(":IncentiveCode>");
 		}
 		if(applyIndication != null) {

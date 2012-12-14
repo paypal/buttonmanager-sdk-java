@@ -39,7 +39,7 @@ public class PaymentDirectivesType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -50,7 +50,7 @@ public class PaymentDirectivesType{
 			}
 		}
 		if(paymentType != null) {
-			sb.append("<").append(preferredPrefix).append(":PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentType.getValue()));
+			sb.append("<").append(preferredPrefix).append(":PaymentType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.paymentType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":PaymentType>");
 		}
 		if(name!=null){

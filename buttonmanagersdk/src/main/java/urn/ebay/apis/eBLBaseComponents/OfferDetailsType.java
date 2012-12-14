@@ -75,7 +75,7 @@ public class OfferDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -86,7 +86,7 @@ public class OfferDetailsType{
 			}
 		}
 		if(offerCode != null) {
-			sb.append("<").append(preferredPrefix).append(":OfferCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(offerCode));
+			sb.append("<").append(preferredPrefix).append(":OfferCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.offerCode));
 			sb.append("</").append(preferredPrefix).append(":OfferCode>");
 		}
 		if(bMLOfferInfo != null) {

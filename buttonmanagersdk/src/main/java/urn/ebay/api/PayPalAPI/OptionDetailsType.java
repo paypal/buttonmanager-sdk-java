@@ -84,7 +84,7 @@ public class OptionDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -95,7 +95,7 @@ public class OptionDetailsType{
 			}
 		}
 		if(optionName != null) {
-			sb.append("<").append(preferredPrefix).append(":OptionName>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionName));
+			sb.append("<").append(preferredPrefix).append(":OptionName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.optionName));
 			sb.append("</").append(preferredPrefix).append(":OptionName>");
 		}
 		if(optionSelectionDetails != null) {

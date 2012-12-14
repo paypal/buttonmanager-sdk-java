@@ -1,5 +1,6 @@
 package urn.ebay.api.PayPalAPI;
 import java.io.*;
+import java.util.Properties;
 import com.paypal.core.BaseService;
 import com.paypal.exception.*;
 import com.paypal.core.credential.ICredential;
@@ -35,7 +36,7 @@ import urn.ebay.api.PayPalAPI.BMButtonSearchReq;
 import urn.ebay.api.PayPalAPI.BMButtonSearchResponseType;
 import com.paypal.sdk.exceptions.OAuthException;
 
-public class PayPalAPIInterfaceServiceService extends BaseService{
+public class PayPalAPIInterfaceServiceService extends BaseService {
 
 
 	// Service Version
@@ -48,7 +49,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	private static final String SDK_NAME="buttonmanager-java-sdk";
 	
 	//SDK Version
-	private static final String SDK_VERSION="2.0.96";
+	private static final String SDK_VERSION="2.1.96";
 
 	
 	public PayPalAPIInterfaceServiceService(File configFile) throws IOException {
@@ -62,6 +63,10 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	public PayPalAPIInterfaceServiceService(String configFilePath) throws IOException {
 		initConfig(configFilePath);
 	}
+	
+	public PayPalAPIInterfaceServiceService(Properties properties) {
+		initConfig(properties);
+	}
 
 
 
@@ -71,7 +76,6 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 			request.setVersion(SERVICE_VERSION);
 		}
 	}
-		
 	/**	
 	 * AUTO_GENERATED
 	 * @throws SSLConfigurationException
@@ -87,11 +91,13 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 */
 	 public BMCreateButtonResponseType bMCreateButton(BMCreateButtonReq bMCreateButtonReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException, IOException {
 	 	APICallPreHandler apiCallPreHandler = null;
+	 	String portName = "PayPalAPI";
 		setStandardParams(bMCreateButtonReq.getBMCreateButtonRequest());
 		DefaultSOAPAPICallHandler defaultHandler = new DefaultSOAPAPICallHandler(bMCreateButtonReq.toXMLString(null, "BMCreateButtonReq"), null, null);
 		apiCallPreHandler = new MerchantAPICallPreHandler(defaultHandler, apiUsername, getAccessToken(), getTokenSecret());
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkName(SDK_NAME);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkVersion(SDK_VERSION);
+		((MerchantAPICallPreHandler) apiCallPreHandler).setPortName(portName);
 	 	String response = call(apiCallPreHandler);
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = builderFactory.newDocumentBuilder();
@@ -140,11 +146,13 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 */
 	 public BMCreateButtonResponseType bMCreateButton(BMCreateButtonReq bMCreateButtonReq, ICredential credential) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException  {
 	 	APICallPreHandler apiCallPreHandler = null;
+	 	String portName = "PayPalAPI";
 		setStandardParams(bMCreateButtonReq.getBMCreateButtonRequest());
 		DefaultSOAPAPICallHandler defaultHandler = new DefaultSOAPAPICallHandler(bMCreateButtonReq.toXMLString(null, "BMCreateButtonReq"), null, null);
 		apiCallPreHandler = new MerchantAPICallPreHandler(defaultHandler, credential);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkName(SDK_NAME);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkVersion(SDK_VERSION);
+		((MerchantAPICallPreHandler) apiCallPreHandler).setPortName(portName);
 	 	String response = call(apiCallPreHandler);
  	
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
@@ -163,7 +171,6 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 			throw new RuntimeException("Unable to parse response", exe);
 		}	
 	}
-		
 	/**	
 	 * AUTO_GENERATED
 	 * @throws SSLConfigurationException
@@ -179,11 +186,13 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 */
 	 public BMUpdateButtonResponseType bMUpdateButton(BMUpdateButtonReq bMUpdateButtonReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException, IOException {
 	 	APICallPreHandler apiCallPreHandler = null;
+	 	String portName = "PayPalAPI";
 		setStandardParams(bMUpdateButtonReq.getBMUpdateButtonRequest());
 		DefaultSOAPAPICallHandler defaultHandler = new DefaultSOAPAPICallHandler(bMUpdateButtonReq.toXMLString(null, "BMUpdateButtonReq"), null, null);
 		apiCallPreHandler = new MerchantAPICallPreHandler(defaultHandler, apiUsername, getAccessToken(), getTokenSecret());
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkName(SDK_NAME);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkVersion(SDK_VERSION);
+		((MerchantAPICallPreHandler) apiCallPreHandler).setPortName(portName);
 	 	String response = call(apiCallPreHandler);
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = builderFactory.newDocumentBuilder();
@@ -232,11 +241,13 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 */
 	 public BMUpdateButtonResponseType bMUpdateButton(BMUpdateButtonReq bMUpdateButtonReq, ICredential credential) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException  {
 	 	APICallPreHandler apiCallPreHandler = null;
+	 	String portName = "PayPalAPI";
 		setStandardParams(bMUpdateButtonReq.getBMUpdateButtonRequest());
 		DefaultSOAPAPICallHandler defaultHandler = new DefaultSOAPAPICallHandler(bMUpdateButtonReq.toXMLString(null, "BMUpdateButtonReq"), null, null);
 		apiCallPreHandler = new MerchantAPICallPreHandler(defaultHandler, credential);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkName(SDK_NAME);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkVersion(SDK_VERSION);
+		((MerchantAPICallPreHandler) apiCallPreHandler).setPortName(portName);
 	 	String response = call(apiCallPreHandler);
  	
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
@@ -255,7 +266,6 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 			throw new RuntimeException("Unable to parse response", exe);
 		}	
 	}
-		
 	/**	
 	 * AUTO_GENERATED
 	 * @throws SSLConfigurationException
@@ -271,11 +281,13 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 */
 	 public BMManageButtonStatusResponseType bMManageButtonStatus(BMManageButtonStatusReq bMManageButtonStatusReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException, IOException {
 	 	APICallPreHandler apiCallPreHandler = null;
+	 	String portName = "PayPalAPI";
 		setStandardParams(bMManageButtonStatusReq.getBMManageButtonStatusRequest());
 		DefaultSOAPAPICallHandler defaultHandler = new DefaultSOAPAPICallHandler(bMManageButtonStatusReq.toXMLString(null, "BMManageButtonStatusReq"), null, null);
 		apiCallPreHandler = new MerchantAPICallPreHandler(defaultHandler, apiUsername, getAccessToken(), getTokenSecret());
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkName(SDK_NAME);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkVersion(SDK_VERSION);
+		((MerchantAPICallPreHandler) apiCallPreHandler).setPortName(portName);
 	 	String response = call(apiCallPreHandler);
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = builderFactory.newDocumentBuilder();
@@ -324,11 +336,13 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 */
 	 public BMManageButtonStatusResponseType bMManageButtonStatus(BMManageButtonStatusReq bMManageButtonStatusReq, ICredential credential) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException  {
 	 	APICallPreHandler apiCallPreHandler = null;
+	 	String portName = "PayPalAPI";
 		setStandardParams(bMManageButtonStatusReq.getBMManageButtonStatusRequest());
 		DefaultSOAPAPICallHandler defaultHandler = new DefaultSOAPAPICallHandler(bMManageButtonStatusReq.toXMLString(null, "BMManageButtonStatusReq"), null, null);
 		apiCallPreHandler = new MerchantAPICallPreHandler(defaultHandler, credential);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkName(SDK_NAME);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkVersion(SDK_VERSION);
+		((MerchantAPICallPreHandler) apiCallPreHandler).setPortName(portName);
 	 	String response = call(apiCallPreHandler);
  	
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
@@ -347,7 +361,6 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 			throw new RuntimeException("Unable to parse response", exe);
 		}	
 	}
-		
 	/**	
 	 * AUTO_GENERATED
 	 * @throws SSLConfigurationException
@@ -363,11 +376,13 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 */
 	 public BMGetButtonDetailsResponseType bMGetButtonDetails(BMGetButtonDetailsReq bMGetButtonDetailsReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException, IOException {
 	 	APICallPreHandler apiCallPreHandler = null;
+	 	String portName = "PayPalAPI";
 		setStandardParams(bMGetButtonDetailsReq.getBMGetButtonDetailsRequest());
 		DefaultSOAPAPICallHandler defaultHandler = new DefaultSOAPAPICallHandler(bMGetButtonDetailsReq.toXMLString(null, "BMGetButtonDetailsReq"), null, null);
 		apiCallPreHandler = new MerchantAPICallPreHandler(defaultHandler, apiUsername, getAccessToken(), getTokenSecret());
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkName(SDK_NAME);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkVersion(SDK_VERSION);
+		((MerchantAPICallPreHandler) apiCallPreHandler).setPortName(portName);
 	 	String response = call(apiCallPreHandler);
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = builderFactory.newDocumentBuilder();
@@ -416,11 +431,13 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 */
 	 public BMGetButtonDetailsResponseType bMGetButtonDetails(BMGetButtonDetailsReq bMGetButtonDetailsReq, ICredential credential) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException  {
 	 	APICallPreHandler apiCallPreHandler = null;
+	 	String portName = "PayPalAPI";
 		setStandardParams(bMGetButtonDetailsReq.getBMGetButtonDetailsRequest());
 		DefaultSOAPAPICallHandler defaultHandler = new DefaultSOAPAPICallHandler(bMGetButtonDetailsReq.toXMLString(null, "BMGetButtonDetailsReq"), null, null);
 		apiCallPreHandler = new MerchantAPICallPreHandler(defaultHandler, credential);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkName(SDK_NAME);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkVersion(SDK_VERSION);
+		((MerchantAPICallPreHandler) apiCallPreHandler).setPortName(portName);
 	 	String response = call(apiCallPreHandler);
  	
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
@@ -439,7 +456,6 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 			throw new RuntimeException("Unable to parse response", exe);
 		}	
 	}
-		
 	/**	
 	 * AUTO_GENERATED
 	 * @throws SSLConfigurationException
@@ -455,11 +471,13 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 */
 	 public BMSetInventoryResponseType bMSetInventory(BMSetInventoryReq bMSetInventoryReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException, IOException {
 	 	APICallPreHandler apiCallPreHandler = null;
+	 	String portName = "PayPalAPI";
 		setStandardParams(bMSetInventoryReq.getBMSetInventoryRequest());
 		DefaultSOAPAPICallHandler defaultHandler = new DefaultSOAPAPICallHandler(bMSetInventoryReq.toXMLString(null, "BMSetInventoryReq"), null, null);
 		apiCallPreHandler = new MerchantAPICallPreHandler(defaultHandler, apiUsername, getAccessToken(), getTokenSecret());
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkName(SDK_NAME);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkVersion(SDK_VERSION);
+		((MerchantAPICallPreHandler) apiCallPreHandler).setPortName(portName);
 	 	String response = call(apiCallPreHandler);
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = builderFactory.newDocumentBuilder();
@@ -508,11 +526,13 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 */
 	 public BMSetInventoryResponseType bMSetInventory(BMSetInventoryReq bMSetInventoryReq, ICredential credential) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException  {
 	 	APICallPreHandler apiCallPreHandler = null;
+	 	String portName = "PayPalAPI";
 		setStandardParams(bMSetInventoryReq.getBMSetInventoryRequest());
 		DefaultSOAPAPICallHandler defaultHandler = new DefaultSOAPAPICallHandler(bMSetInventoryReq.toXMLString(null, "BMSetInventoryReq"), null, null);
 		apiCallPreHandler = new MerchantAPICallPreHandler(defaultHandler, credential);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkName(SDK_NAME);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkVersion(SDK_VERSION);
+		((MerchantAPICallPreHandler) apiCallPreHandler).setPortName(portName);
 	 	String response = call(apiCallPreHandler);
  	
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
@@ -531,7 +551,6 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 			throw new RuntimeException("Unable to parse response", exe);
 		}	
 	}
-		
 	/**	
 	 * AUTO_GENERATED
 	 * @throws SSLConfigurationException
@@ -547,11 +566,13 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 */
 	 public BMGetInventoryResponseType bMGetInventory(BMGetInventoryReq bMGetInventoryReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException, IOException {
 	 	APICallPreHandler apiCallPreHandler = null;
+	 	String portName = "PayPalAPI";
 		setStandardParams(bMGetInventoryReq.getBMGetInventoryRequest());
 		DefaultSOAPAPICallHandler defaultHandler = new DefaultSOAPAPICallHandler(bMGetInventoryReq.toXMLString(null, "BMGetInventoryReq"), null, null);
 		apiCallPreHandler = new MerchantAPICallPreHandler(defaultHandler, apiUsername, getAccessToken(), getTokenSecret());
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkName(SDK_NAME);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkVersion(SDK_VERSION);
+		((MerchantAPICallPreHandler) apiCallPreHandler).setPortName(portName);
 	 	String response = call(apiCallPreHandler);
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = builderFactory.newDocumentBuilder();
@@ -600,11 +621,13 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 */
 	 public BMGetInventoryResponseType bMGetInventory(BMGetInventoryReq bMGetInventoryReq, ICredential credential) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException  {
 	 	APICallPreHandler apiCallPreHandler = null;
+	 	String portName = "PayPalAPI";
 		setStandardParams(bMGetInventoryReq.getBMGetInventoryRequest());
 		DefaultSOAPAPICallHandler defaultHandler = new DefaultSOAPAPICallHandler(bMGetInventoryReq.toXMLString(null, "BMGetInventoryReq"), null, null);
 		apiCallPreHandler = new MerchantAPICallPreHandler(defaultHandler, credential);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkName(SDK_NAME);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkVersion(SDK_VERSION);
+		((MerchantAPICallPreHandler) apiCallPreHandler).setPortName(portName);
 	 	String response = call(apiCallPreHandler);
  	
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
@@ -623,7 +646,6 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 			throw new RuntimeException("Unable to parse response", exe);
 		}	
 	}
-		
 	/**	
 	 * AUTO_GENERATED
 	 * @throws SSLConfigurationException
@@ -639,11 +661,13 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 */
 	 public BMButtonSearchResponseType bMButtonSearch(BMButtonSearchReq bMButtonSearchReq, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException, IOException {
 	 	APICallPreHandler apiCallPreHandler = null;
+	 	String portName = "PayPalAPI";
 		setStandardParams(bMButtonSearchReq.getBMButtonSearchRequest());
 		DefaultSOAPAPICallHandler defaultHandler = new DefaultSOAPAPICallHandler(bMButtonSearchReq.toXMLString(null, "BMButtonSearchReq"), null, null);
 		apiCallPreHandler = new MerchantAPICallPreHandler(defaultHandler, apiUsername, getAccessToken(), getTokenSecret());
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkName(SDK_NAME);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkVersion(SDK_VERSION);
+		((MerchantAPICallPreHandler) apiCallPreHandler).setPortName(portName);
 	 	String response = call(apiCallPreHandler);
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = builderFactory.newDocumentBuilder();
@@ -692,11 +716,13 @@ public class PayPalAPIInterfaceServiceService extends BaseService{
 	 */
 	 public BMButtonSearchResponseType bMButtonSearch(BMButtonSearchReq bMButtonSearchReq, ICredential credential) throws SSLConfigurationException, InvalidCredentialException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException, ParserConfigurationException, SAXException  {
 	 	APICallPreHandler apiCallPreHandler = null;
+	 	String portName = "PayPalAPI";
 		setStandardParams(bMButtonSearchReq.getBMButtonSearchRequest());
 		DefaultSOAPAPICallHandler defaultHandler = new DefaultSOAPAPICallHandler(bMButtonSearchReq.toXMLString(null, "BMButtonSearchReq"), null, null);
 		apiCallPreHandler = new MerchantAPICallPreHandler(defaultHandler, credential);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkName(SDK_NAME);
 		((MerchantAPICallPreHandler) apiCallPreHandler).setSdkVersion(SDK_VERSION);
+		((MerchantAPICallPreHandler) apiCallPreHandler).setPortName(portName);
 	 	String response = call(apiCallPreHandler);
  	
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();

@@ -86,7 +86,7 @@ public class AbstractRequestType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -98,15 +98,15 @@ public class AbstractRequestType{
 		}
 		if(detailLevel != null) {
 			for(int i=0; i < detailLevel.size(); i++) {
-				sb.append("<").append(preferredPrefix).append(":DetailLevel>").append(SDKUtil.escapeInvalidXmlCharsRegex(detailLevel.get(i).getValue())).append("</").append(preferredPrefix).append(":DetailLevel>");
+				sb.append("<").append(preferredPrefix).append(":DetailLevel>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.detailLevel.get(i).getValue())).append("</").append(preferredPrefix).append(":DetailLevel>");
 			}
 		}
 		if(errorLanguage != null) {
-			sb.append("<").append(preferredPrefix).append(":ErrorLanguage>").append(SDKUtil.escapeInvalidXmlCharsRegex(errorLanguage));
+			sb.append("<").append(preferredPrefix).append(":ErrorLanguage>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.errorLanguage));
 			sb.append("</").append(preferredPrefix).append(":ErrorLanguage>");
 		}
 		if(version != null) {
-			sb.append("<").append(preferredPrefix).append(":Version>").append(SDKUtil.escapeInvalidXmlCharsRegex(version));
+			sb.append("<").append(preferredPrefix).append(":Version>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.version));
 			sb.append("</").append(preferredPrefix).append(":Version>");
 		}
 		if(name!=null){

@@ -194,7 +194,7 @@ public class ReferenceCreditCardDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -208,11 +208,11 @@ public class ReferenceCreditCardDetailsType{
 			sb.append(creditCardNumberType.toXMLString(preferredPrefix,"CreditCardNumberType"));
 		}
 		if(expMonth != null) {
-			sb.append("<").append(preferredPrefix).append(":ExpMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(expMonth));
+			sb.append("<").append(preferredPrefix).append(":ExpMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.expMonth));
 			sb.append("</").append(preferredPrefix).append(":ExpMonth>");
 		}
 		if(expYear != null) {
-			sb.append("<").append(preferredPrefix).append(":ExpYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(expYear));
+			sb.append("<").append(preferredPrefix).append(":ExpYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.expYear));
 			sb.append("</").append(preferredPrefix).append(":ExpYear>");
 		}
 		if(cardOwnerName != null) {
@@ -222,19 +222,19 @@ public class ReferenceCreditCardDetailsType{
 			sb.append(billingAddress.toXMLString(preferredPrefix,"BillingAddress"));
 		}
 		if(cVV2 != null) {
-			sb.append("<").append(preferredPrefix).append(":CVV2>").append(SDKUtil.escapeInvalidXmlCharsRegex(cVV2));
+			sb.append("<").append(preferredPrefix).append(":CVV2>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cVV2));
 			sb.append("</").append(preferredPrefix).append(":CVV2>");
 		}
 		if(startMonth != null) {
-			sb.append("<").append(preferredPrefix).append(":StartMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(startMonth));
+			sb.append("<").append(preferredPrefix).append(":StartMonth>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.startMonth));
 			sb.append("</").append(preferredPrefix).append(":StartMonth>");
 		}
 		if(startYear != null) {
-			sb.append("<").append(preferredPrefix).append(":StartYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(startYear));
+			sb.append("<").append(preferredPrefix).append(":StartYear>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.startYear));
 			sb.append("</").append(preferredPrefix).append(":StartYear>");
 		}
 		if(issueNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":IssueNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(issueNumber));
+			sb.append("<").append(preferredPrefix).append(":IssueNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.issueNumber));
 			sb.append("</").append(preferredPrefix).append(":IssueNumber>");
 		}
 		if(name!=null){

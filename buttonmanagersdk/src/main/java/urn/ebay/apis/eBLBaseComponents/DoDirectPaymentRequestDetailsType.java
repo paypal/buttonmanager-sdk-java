@@ -155,7 +155,7 @@ public class DoDirectPaymentRequestDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -166,7 +166,7 @@ public class DoDirectPaymentRequestDetailsType{
 			}
 		}
 		if(paymentAction != null) {
-			sb.append("<").append(preferredPrefix).append(":PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(paymentAction.getValue()));
+			sb.append("<").append(preferredPrefix).append(":PaymentAction>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.paymentAction.getValue()));
 			sb.append("</").append(preferredPrefix).append(":PaymentAction>");
 		}
 		if(paymentDetails != null) {
@@ -176,15 +176,15 @@ public class DoDirectPaymentRequestDetailsType{
 			sb.append(creditCard.toXMLString(preferredPrefix,"CreditCard"));
 		}
 		if(iPAddress != null) {
-			sb.append("<").append(preferredPrefix).append(":IPAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(iPAddress));
+			sb.append("<").append(preferredPrefix).append(":IPAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.iPAddress));
 			sb.append("</").append(preferredPrefix).append(":IPAddress>");
 		}
 		if(merchantSessionId != null) {
-			sb.append("<").append(preferredPrefix).append(":MerchantSessionId>").append(SDKUtil.escapeInvalidXmlCharsRegex(merchantSessionId));
+			sb.append("<").append(preferredPrefix).append(":MerchantSessionId>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.merchantSessionId));
 			sb.append("</").append(preferredPrefix).append(":MerchantSessionId>");
 		}
 		if(returnFMFDetails != null) {
-			sb.append("<").append(preferredPrefix).append(":ReturnFMFDetails>").append(SDKUtil.escapeInvalidXmlCharsRegex(returnFMFDetails));
+			sb.append("<").append(preferredPrefix).append(":ReturnFMFDetails>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.returnFMFDetails));
 			sb.append("</").append(preferredPrefix).append(":ReturnFMFDetails>");
 		}
 		if(name!=null){

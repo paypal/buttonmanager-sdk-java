@@ -48,7 +48,7 @@ public class ExternalPartnerTrackingDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -59,7 +59,7 @@ public class ExternalPartnerTrackingDetailsType{
 			}
 		}
 		if(externalPartnerSegmentID != null) {
-			sb.append("<").append(preferredPrefix).append(":ExternalPartnerSegmentID>").append(SDKUtil.escapeInvalidXmlCharsRegex(externalPartnerSegmentID));
+			sb.append("<").append(preferredPrefix).append(":ExternalPartnerSegmentID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.externalPartnerSegmentID));
 			sb.append("</").append(preferredPrefix).append(":ExternalPartnerSegmentID>");
 		}
 		if(name!=null){

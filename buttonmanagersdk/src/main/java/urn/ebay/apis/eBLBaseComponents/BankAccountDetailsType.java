@@ -99,7 +99,7 @@ public class BankAccountDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -110,19 +110,19 @@ public class BankAccountDetailsType{
 			}
 		}
 		if(name != null) {
-			sb.append("<").append(preferredPrefix).append(":Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(name));
+			sb.append("<").append(preferredPrefix).append(":Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.name));
 			sb.append("</").append(preferredPrefix).append(":Name>");
 		}
 		if(type != null) {
-			sb.append("<").append(preferredPrefix).append(":Type>").append(SDKUtil.escapeInvalidXmlCharsRegex(type.getValue()));
+			sb.append("<").append(preferredPrefix).append(":Type>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.type.getValue()));
 			sb.append("</").append(preferredPrefix).append(":Type>");
 		}
 		if(routingNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":RoutingNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(routingNumber));
+			sb.append("<").append(preferredPrefix).append(":RoutingNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.routingNumber));
 			sb.append("</").append(preferredPrefix).append(":RoutingNumber>");
 		}
 		if(accountNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":AccountNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(accountNumber));
+			sb.append("<").append(preferredPrefix).append(":AccountNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.accountNumber));
 			sb.append("</").append(preferredPrefix).append(":AccountNumber>");
 		}
 		if(name!=null){

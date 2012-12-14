@@ -41,7 +41,7 @@ public class DisplayControlDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -52,7 +52,7 @@ public class DisplayControlDetailsType{
 			}
 		}
 		if(inContextPaymentButtonImage != null) {
-			sb.append("<").append(preferredPrefix).append(":InContextPaymentButtonImage>").append(SDKUtil.escapeInvalidXmlCharsRegex(inContextPaymentButtonImage));
+			sb.append("<").append(preferredPrefix).append(":InContextPaymentButtonImage>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.inContextPaymentButtonImage));
 			sb.append("</").append(preferredPrefix).append(":InContextPaymentButtonImage>");
 		}
 		if(name!=null){

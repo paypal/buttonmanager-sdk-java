@@ -60,7 +60,7 @@ public class FlowControlDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -71,11 +71,11 @@ public class FlowControlDetailsType{
 			}
 		}
 		if(errorURL != null) {
-			sb.append("<").append(preferredPrefix).append(":ErrorURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(errorURL));
+			sb.append("<").append(preferredPrefix).append(":ErrorURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.errorURL));
 			sb.append("</").append(preferredPrefix).append(":ErrorURL>");
 		}
 		if(inContextReturnURL != null) {
-			sb.append("<").append(preferredPrefix).append(":InContextReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(inContextReturnURL));
+			sb.append("<").append(preferredPrefix).append(":InContextReturnURL>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.inContextReturnURL));
 			sb.append("</").append(preferredPrefix).append(":InContextReturnURL>");
 		}
 		if(name!=null){

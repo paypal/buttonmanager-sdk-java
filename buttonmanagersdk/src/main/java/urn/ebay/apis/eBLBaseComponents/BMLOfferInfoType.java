@@ -54,7 +54,7 @@ public class BMLOfferInfoType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -65,7 +65,7 @@ public class BMLOfferInfoType{
 			}
 		}
 		if(offerTrackingID != null) {
-			sb.append("<").append(preferredPrefix).append(":OfferTrackingID>").append(SDKUtil.escapeInvalidXmlCharsRegex(offerTrackingID));
+			sb.append("<").append(preferredPrefix).append(":OfferTrackingID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.offerTrackingID));
 			sb.append("</").append(preferredPrefix).append(":OfferTrackingID>");
 		}
 		if(name!=null){

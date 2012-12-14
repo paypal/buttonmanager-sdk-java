@@ -163,7 +163,7 @@ public class MassPayRequestItemType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -174,26 +174,26 @@ public class MassPayRequestItemType{
 			}
 		}
 		if(receiverEmail != null) {
-			sb.append("<").append(preferredPrefix).append(":ReceiverEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(receiverEmail));
+			sb.append("<").append(preferredPrefix).append(":ReceiverEmail>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.receiverEmail));
 			sb.append("</").append(preferredPrefix).append(":ReceiverEmail>");
 		}
 		if(receiverPhone != null) {
-			sb.append("<").append(preferredPrefix).append(":ReceiverPhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(receiverPhone));
+			sb.append("<").append(preferredPrefix).append(":ReceiverPhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.receiverPhone));
 			sb.append("</").append(preferredPrefix).append(":ReceiverPhone>");
 		}
 		if(receiverID != null) {
-			sb.append("<").append(preferredPrefix).append(":ReceiverID>").append(SDKUtil.escapeInvalidXmlCharsRegex(receiverID));
+			sb.append("<").append(preferredPrefix).append(":ReceiverID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.receiverID));
 			sb.append("</").append(preferredPrefix).append(":ReceiverID>");
 		}
 		if(amount != null) {
 			sb.append(amount.toXMLString(preferredPrefix,"Amount"));
 		}
 		if(uniqueId != null) {
-			sb.append("<").append(preferredPrefix).append(":UniqueId>").append(SDKUtil.escapeInvalidXmlCharsRegex(uniqueId));
+			sb.append("<").append(preferredPrefix).append(":UniqueId>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.uniqueId));
 			sb.append("</").append(preferredPrefix).append(":UniqueId>");
 		}
 		if(note != null) {
-			sb.append("<").append(preferredPrefix).append(":Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(note));
+			sb.append("<").append(preferredPrefix).append(":Note>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.note));
 			sb.append("</").append(preferredPrefix).append(":Note>");
 		}
 		if(name!=null){

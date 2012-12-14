@@ -149,7 +149,7 @@ public class OptionTrackingDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -160,27 +160,27 @@ public class OptionTrackingDetailsType{
 			}
 		}
 		if(optionNumber != null) {
-			sb.append("<").append(preferredPrefix).append(":OptionNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionNumber));
+			sb.append("<").append(preferredPrefix).append(":OptionNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.optionNumber));
 			sb.append("</").append(preferredPrefix).append(":OptionNumber>");
 		}
 		if(optionQty != null) {
-			sb.append("<").append(preferredPrefix).append(":OptionQty>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionQty));
+			sb.append("<").append(preferredPrefix).append(":OptionQty>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.optionQty));
 			sb.append("</").append(preferredPrefix).append(":OptionQty>");
 		}
 		if(optionSelect != null) {
-			sb.append("<").append(preferredPrefix).append(":OptionSelect>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionSelect));
+			sb.append("<").append(preferredPrefix).append(":OptionSelect>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.optionSelect));
 			sb.append("</").append(preferredPrefix).append(":OptionSelect>");
 		}
 		if(optionQtyDelta != null) {
-			sb.append("<").append(preferredPrefix).append(":OptionQtyDelta>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionQtyDelta));
+			sb.append("<").append(preferredPrefix).append(":OptionQtyDelta>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.optionQtyDelta));
 			sb.append("</").append(preferredPrefix).append(":OptionQtyDelta>");
 		}
 		if(optionAlert != null) {
-			sb.append("<").append(preferredPrefix).append(":OptionAlert>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionAlert));
+			sb.append("<").append(preferredPrefix).append(":OptionAlert>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.optionAlert));
 			sb.append("</").append(preferredPrefix).append(":OptionAlert>");
 		}
 		if(optionCost != null) {
-			sb.append("<").append(preferredPrefix).append(":OptionCost>").append(SDKUtil.escapeInvalidXmlCharsRegex(optionCost));
+			sb.append("<").append(preferredPrefix).append(":OptionCost>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.optionCost));
 			sb.append("</").append(preferredPrefix).append(":OptionCost>");
 		}
 		if(name!=null){

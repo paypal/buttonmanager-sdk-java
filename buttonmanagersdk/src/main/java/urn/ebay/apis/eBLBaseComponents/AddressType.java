@@ -405,7 +405,7 @@ public class AddressType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -416,67 +416,67 @@ public class AddressType{
 			}
 		}
 		if(name != null) {
-			sb.append("<").append(preferredPrefix).append(":Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(name));
+			sb.append("<").append(preferredPrefix).append(":Name>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.name));
 			sb.append("</").append(preferredPrefix).append(":Name>");
 		}
 		if(street1 != null) {
-			sb.append("<").append(preferredPrefix).append(":Street1>").append(SDKUtil.escapeInvalidXmlCharsRegex(street1));
+			sb.append("<").append(preferredPrefix).append(":Street1>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.street1));
 			sb.append("</").append(preferredPrefix).append(":Street1>");
 		}
 		if(street2 != null) {
-			sb.append("<").append(preferredPrefix).append(":Street2>").append(SDKUtil.escapeInvalidXmlCharsRegex(street2));
+			sb.append("<").append(preferredPrefix).append(":Street2>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.street2));
 			sb.append("</").append(preferredPrefix).append(":Street2>");
 		}
 		if(cityName != null) {
-			sb.append("<").append(preferredPrefix).append(":CityName>").append(SDKUtil.escapeInvalidXmlCharsRegex(cityName));
+			sb.append("<").append(preferredPrefix).append(":CityName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.cityName));
 			sb.append("</").append(preferredPrefix).append(":CityName>");
 		}
 		if(stateOrProvince != null) {
-			sb.append("<").append(preferredPrefix).append(":StateOrProvince>").append(SDKUtil.escapeInvalidXmlCharsRegex(stateOrProvince));
+			sb.append("<").append(preferredPrefix).append(":StateOrProvince>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.stateOrProvince));
 			sb.append("</").append(preferredPrefix).append(":StateOrProvince>");
 		}
 		if(country != null) {
-			sb.append("<").append(preferredPrefix).append(":Country>").append(SDKUtil.escapeInvalidXmlCharsRegex(country.getValue()));
+			sb.append("<").append(preferredPrefix).append(":Country>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.country.getValue()));
 			sb.append("</").append(preferredPrefix).append(":Country>");
 		}
 		if(countryName != null) {
-			sb.append("<").append(preferredPrefix).append(":CountryName>").append(SDKUtil.escapeInvalidXmlCharsRegex(countryName));
+			sb.append("<").append(preferredPrefix).append(":CountryName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.countryName));
 			sb.append("</").append(preferredPrefix).append(":CountryName>");
 		}
 		if(phone != null) {
-			sb.append("<").append(preferredPrefix).append(":Phone>").append(SDKUtil.escapeInvalidXmlCharsRegex(phone));
+			sb.append("<").append(preferredPrefix).append(":Phone>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.phone));
 			sb.append("</").append(preferredPrefix).append(":Phone>");
 		}
 		if(postalCode != null) {
-			sb.append("<").append(preferredPrefix).append(":PostalCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(postalCode));
+			sb.append("<").append(preferredPrefix).append(":PostalCode>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.postalCode));
 			sb.append("</").append(preferredPrefix).append(":PostalCode>");
 		}
 		if(addressID != null) {
-			sb.append("<").append(preferredPrefix).append(":AddressID>").append(SDKUtil.escapeInvalidXmlCharsRegex(addressID));
+			sb.append("<").append(preferredPrefix).append(":AddressID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.addressID));
 			sb.append("</").append(preferredPrefix).append(":AddressID>");
 		}
 		if(addressOwner != null) {
-			sb.append("<").append(preferredPrefix).append(":AddressOwner>").append(SDKUtil.escapeInvalidXmlCharsRegex(addressOwner.getValue()));
+			sb.append("<").append(preferredPrefix).append(":AddressOwner>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.addressOwner.getValue()));
 			sb.append("</").append(preferredPrefix).append(":AddressOwner>");
 		}
 		if(externalAddressID != null) {
-			sb.append("<").append(preferredPrefix).append(":ExternalAddressID>").append(SDKUtil.escapeInvalidXmlCharsRegex(externalAddressID));
+			sb.append("<").append(preferredPrefix).append(":ExternalAddressID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.externalAddressID));
 			sb.append("</").append(preferredPrefix).append(":ExternalAddressID>");
 		}
 		if(internationalName != null) {
-			sb.append("<").append(preferredPrefix).append(":InternationalName>").append(SDKUtil.escapeInvalidXmlCharsRegex(internationalName));
+			sb.append("<").append(preferredPrefix).append(":InternationalName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.internationalName));
 			sb.append("</").append(preferredPrefix).append(":InternationalName>");
 		}
 		if(internationalStateAndCity != null) {
-			sb.append("<").append(preferredPrefix).append(":InternationalStateAndCity>").append(SDKUtil.escapeInvalidXmlCharsRegex(internationalStateAndCity));
+			sb.append("<").append(preferredPrefix).append(":InternationalStateAndCity>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.internationalStateAndCity));
 			sb.append("</").append(preferredPrefix).append(":InternationalStateAndCity>");
 		}
 		if(internationalStreet != null) {
-			sb.append("<").append(preferredPrefix).append(":InternationalStreet>").append(SDKUtil.escapeInvalidXmlCharsRegex(internationalStreet));
+			sb.append("<").append(preferredPrefix).append(":InternationalStreet>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.internationalStreet));
 			sb.append("</").append(preferredPrefix).append(":InternationalStreet>");
 		}
 		if(addressStatus != null) {
-			sb.append("<").append(preferredPrefix).append(":AddressStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(addressStatus.getValue()));
+			sb.append("<").append(preferredPrefix).append(":AddressStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.addressStatus.getValue()));
 			sb.append("</").append(preferredPrefix).append(":AddressStatus>");
 		}
 		if(name!=null){

@@ -130,7 +130,7 @@ public class PersonNameType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -141,23 +141,23 @@ public class PersonNameType{
 			}
 		}
 		if(salutation != null) {
-			sb.append("<").append(preferredPrefix).append(":Salutation>").append(SDKUtil.escapeInvalidXmlCharsRegex(salutation));
+			sb.append("<").append(preferredPrefix).append(":Salutation>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.salutation));
 			sb.append("</").append(preferredPrefix).append(":Salutation>");
 		}
 		if(firstName != null) {
-			sb.append("<").append(preferredPrefix).append(":FirstName>").append(SDKUtil.escapeInvalidXmlCharsRegex(firstName));
+			sb.append("<").append(preferredPrefix).append(":FirstName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.firstName));
 			sb.append("</").append(preferredPrefix).append(":FirstName>");
 		}
 		if(middleName != null) {
-			sb.append("<").append(preferredPrefix).append(":MiddleName>").append(SDKUtil.escapeInvalidXmlCharsRegex(middleName));
+			sb.append("<").append(preferredPrefix).append(":MiddleName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.middleName));
 			sb.append("</").append(preferredPrefix).append(":MiddleName>");
 		}
 		if(lastName != null) {
-			sb.append("<").append(preferredPrefix).append(":LastName>").append(SDKUtil.escapeInvalidXmlCharsRegex(lastName));
+			sb.append("<").append(preferredPrefix).append(":LastName>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.lastName));
 			sb.append("</").append(preferredPrefix).append(":LastName>");
 		}
 		if(suffix != null) {
-			sb.append("<").append(preferredPrefix).append(":Suffix>").append(SDKUtil.escapeInvalidXmlCharsRegex(suffix));
+			sb.append("<").append(preferredPrefix).append(":Suffix>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.suffix));
 			sb.append("</").append(preferredPrefix).append(":Suffix>");
 		}
 		if(name!=null){

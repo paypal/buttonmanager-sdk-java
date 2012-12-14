@@ -38,7 +38,7 @@ public class MobileIDInfoType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -49,7 +49,7 @@ public class MobileIDInfoType{
 			}
 		}
 		if(sessionToken != null) {
-			sb.append("<").append(preferredPrefix).append(":SessionToken>").append(SDKUtil.escapeInvalidXmlCharsRegex(sessionToken));
+			sb.append("<").append(preferredPrefix).append(":SessionToken>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.sessionToken));
 			sb.append("</").append(preferredPrefix).append(":SessionToken>");
 		}
 		if(name!=null){

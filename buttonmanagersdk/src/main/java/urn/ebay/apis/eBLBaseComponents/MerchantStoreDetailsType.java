@@ -68,7 +68,7 @@ public class MerchantStoreDetailsType{
 	 
 
 
-	public String toXMLString(String prefix,String name) {
+	public String toXMLString(String prefix, String name) {
 		StringBuilder sb = new StringBuilder();
 		if(name!=null){
 			if(prefix!=null){
@@ -79,11 +79,11 @@ public class MerchantStoreDetailsType{
 			}
 		}
 		if(storeID != null) {
-			sb.append("<").append(preferredPrefix).append(":StoreID>").append(SDKUtil.escapeInvalidXmlCharsRegex(storeID));
+			sb.append("<").append(preferredPrefix).append(":StoreID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.storeID));
 			sb.append("</").append(preferredPrefix).append(":StoreID>");
 		}
 		if(terminalID != null) {
-			sb.append("<").append(preferredPrefix).append(":TerminalID>").append(SDKUtil.escapeInvalidXmlCharsRegex(terminalID));
+			sb.append("<").append(preferredPrefix).append(":TerminalID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.terminalID));
 			sb.append("</").append(preferredPrefix).append(":TerminalID>");
 		}
 		if(name!=null){

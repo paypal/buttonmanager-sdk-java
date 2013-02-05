@@ -2,6 +2,7 @@ package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.eBLBaseComponents.CountryCodeType;
 import urn.ebay.apis.eBLBaseComponents.AddressOwnerCodeType;
 import urn.ebay.apis.eBLBaseComponents.AddressStatusCodeType;
+import urn.ebay.apis.eBLBaseComponents.AddressNormalizationStatusCodeType;
 import com.paypal.core.SDKUtil;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -170,6 +171,12 @@ public class AddressType{
 	 * UpdateRecurringPaymentsProfile. 	 
 	 */ 
 	private AddressStatusCodeType addressStatus;
+
+	/**
+	 * Returns Normalization Status of the Address. Possible values
+	 * are Normalized, Unnormalized, and None. 	 
+	 */ 
+	private AddressNormalizationStatusCodeType addressNormalizationStatus;
 
 	
 
@@ -403,6 +410,20 @@ public class AddressType{
 	 	this.addressStatus = addressStatus;
 	 }
 	 
+	/**
+	 * Getter for addressNormalizationStatus
+	 */
+	 public AddressNormalizationStatusCodeType getAddressNormalizationStatus() {
+	 	return addressNormalizationStatus;
+	 }
+	 
+	/**
+	 * Setter for addressNormalizationStatus
+	 */
+	 public void setAddressNormalizationStatus(AddressNormalizationStatusCodeType addressNormalizationStatus) {
+	 	this.addressNormalizationStatus = addressNormalizationStatus;
+	 }
+	 
 
 
 	public String toXMLString(String prefix, String name) {
@@ -478,6 +499,10 @@ public class AddressType{
 		if(addressStatus != null) {
 			sb.append("<").append(preferredPrefix).append(":AddressStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.addressStatus.getValue()));
 			sb.append("</").append(preferredPrefix).append(":AddressStatus>");
+		}
+		if(addressNormalizationStatus != null) {
+			sb.append("<").append(preferredPrefix).append(":AddressNormalizationStatus>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.addressNormalizationStatus.getValue()));
+			sb.append("</").append(preferredPrefix).append(":AddressNormalizationStatus>");
 		}
 		if(name!=null){
 			if(prefix!=null){
@@ -583,6 +608,10 @@ public class AddressType{
 		childNode = (Node) xpath.evaluate("AddressStatus", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.addressStatus = AddressStatusCodeType.fromValue(childNode.getTextContent());
+		}
+		childNode = (Node) xpath.evaluate("AddressNormalizationStatus", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.addressNormalizationStatus = AddressNormalizationStatusCodeType.fromValue(childNode.getTextContent());
 		}
 	}
  

@@ -191,8 +191,11 @@ public class PaymentInfoType{
 	 * reached the monthly limit for transactions on your account.
 	 * verify: The payment is pending because you are not yet
 	 * verified. You must verify your account before you can accept
-	 * this payment. other: The payment is pending for a reason
-	 * other than those listed above. For more information, contact
+	 * this payment. regulatory-review: This payment is pending
+	 * while we make sure it meets regulatory requirements. We'll
+	 * contact you again in 24-72 hours with the outcome of our
+	 * review. other: The payment is pending for a reason other
+	 * than those listed above. For more information, contact
 	 * PayPal Customer Service.	 
 	 */ 
 	private PendingStatusCodeType pendingReason;

@@ -73,6 +73,18 @@ public class SubscriptionInfoType{
 	 */ 
 	private List<SubscriptionTermsType> terms = new ArrayList<SubscriptionTermsType>();
 
+	/**
+	 * 	  
+	 *@Required	 
+	 */ 
+	private String reattempt;
+
+	/**
+	 * 	  
+	 *@Required	 
+	 */ 
+	private String recurring;
+
 	
 
 	/**
@@ -193,6 +205,34 @@ public class SubscriptionInfoType{
 	 	this.terms = terms;
 	 }
 	 
+	/**
+	 * Getter for reattempt
+	 */
+	 public String getReattempt() {
+	 	return reattempt;
+	 }
+	 
+	/**
+	 * Setter for reattempt
+	 */
+	 public void setReattempt(String reattempt) {
+	 	this.reattempt = reattempt;
+	 }
+	 
+	/**
+	 * Getter for recurring
+	 */
+	 public String getRecurring() {
+	 	return recurring;
+	 }
+	 
+	/**
+	 * Setter for recurring
+	 */
+	 public void setRecurring(String recurring) {
+	 	this.recurring = recurring;
+	 }
+	 
 
 
 
@@ -254,6 +294,16 @@ public class SubscriptionInfoType{
 				this.terms.add(new SubscriptionTermsType(subNode));
 			}
 		}
+		childNode = (Node) xpath.evaluate("reattempt", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.reattempt = childNode.getTextContent();
+		}
+	
+		childNode = (Node) xpath.evaluate("recurring", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.recurring = childNode.getTextContent();
+		}
+	
 	}
  
 }

@@ -1,3 +1,11 @@
+Version 2.2.98 - February 05, 2013
+
+	- Updated stubs for 98 release.
+	- Bug fix for XML serialization issue for ampersand (https://github.com/paypal/SDKs/issues/40)
+	- Updated ipn sandbox endpoint in sample.
+	
+You can see source code of this release in github under https://github.com/paypal/buttonmanager-sdk-java/tree/v2.2.98.
+--------------------------------------------------------------------------------------------------
 Version 2.1.96 - December 14, 2012
 
 

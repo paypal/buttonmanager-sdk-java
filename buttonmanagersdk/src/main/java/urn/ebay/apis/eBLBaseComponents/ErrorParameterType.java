@@ -27,6 +27,12 @@ public class ErrorParameterType{
 	 */ 
 	private String value;
 
+	/**
+	 * 	  
+	 *@Required	 
+	 */ 
+	private String paramID;
+
 	
 
 	/**
@@ -47,6 +53,20 @@ public class ErrorParameterType{
 	 */
 	 public void setValue(String value) {
 	 	this.value = value;
+	 }
+	 
+	/**
+	 * Getter for paramID
+	 */
+	 public String getParamID() {
+	 	return paramID;
+	 }
+	 
+	/**
+	 * Setter for paramID
+	 */
+	 public void setParamID(String paramID) {
+	 	this.paramID = paramID;
 	 }
 	 
 
@@ -70,9 +90,14 @@ public class ErrorParameterType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("Value", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			String value = childNode.getTextContent();
-			this.value = value;
+		    this.value = childNode.getTextContent();
 		}
+	
+		childNode = (Node) xpath.evaluate("ParamID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.paramID = childNode.getTextContent();
+		}
+	
 	}
  
 }

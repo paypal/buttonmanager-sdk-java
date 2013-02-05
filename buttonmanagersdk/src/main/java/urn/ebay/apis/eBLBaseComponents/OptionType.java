@@ -22,6 +22,18 @@ import org.xml.sax.SAXException;
 public class OptionType{
 
 
+	/**
+	 * 	  
+	 *@Required	 
+	 */ 
+	private String name;
+
+	/**
+	 * 	  
+	 *@Required	 
+	 */ 
+	private String value;
+
 	
 
 	/**
@@ -30,6 +42,34 @@ public class OptionType{
 	public OptionType (){
 	}	
 
+	/**
+	 * Getter for name
+	 */
+	 public String getName() {
+	 	return name;
+	 }
+	 
+	/**
+	 * Setter for name
+	 */
+	 public void setName(String name) {
+	 	this.name = name;
+	 }
+	 
+	/**
+	 * Getter for value
+	 */
+	 public String getValue() {
+	 	return value;
+	 }
+	 
+	/**
+	 * Setter for value
+	 */
+	 public void setValue(String value) {
+	 	this.value = value;
+	 }
+	 
 
 
 
@@ -49,6 +89,16 @@ public class OptionType{
 		XPath xpath = factory.newXPath();
 		Node childNode = null;
 		NodeList nodeList = null;
+		childNode = (Node) xpath.evaluate("name", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.name = childNode.getTextContent();
+		}
+	
+		childNode = (Node) xpath.evaluate("value", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.value = childNode.getTextContent();
+		}
+	
 	}
  
 }

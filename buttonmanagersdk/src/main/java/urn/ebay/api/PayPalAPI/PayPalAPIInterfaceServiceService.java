@@ -40,7 +40,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 
 
 	// Service Version
-	public static final String SERVICE_VERSION = "94.0";
+	public static final String SERVICE_VERSION = "98.0";
 
 	// Service Name
 	public static final String SERVICE_NAME = "PayPalAPIInterfaceService";
@@ -49,7 +49,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	private static final String SDK_NAME="buttonmanager-java-sdk";
 	
 	//SDK Version
-	private static final String SDK_VERSION="2.1.96";
+	private static final String SDK_VERSION="2.2.98";
 
 	
 	public PayPalAPIInterfaceServiceService(File configFile) throws IOException {

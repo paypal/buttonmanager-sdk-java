@@ -32,6 +32,12 @@ public class AuctionInfoType{
 	 */ 
 	private String closingDate;
 
+	/**
+	 * 	  
+	 *@Required	 
+	 */ 
+	private String multiItem;
+
 	
 
 	/**
@@ -68,6 +74,20 @@ public class AuctionInfoType{
 	 	this.closingDate = closingDate;
 	 }
 	 
+	/**
+	 * Getter for multiItem
+	 */
+	 public String getMultiItem() {
+	 	return multiItem;
+	 }
+	 
+	/**
+	 * Setter for multiItem
+	 */
+	 public void setMultiItem(String multiItem) {
+	 	this.multiItem = multiItem;
+	 }
+	 
 
 
 
@@ -95,6 +115,11 @@ public class AuctionInfoType{
 		childNode = (Node) xpath.evaluate("ClosingDate", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.closingDate = childNode.getTextContent();
+		}
+	
+		childNode = (Node) xpath.evaluate("multiItem", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.multiItem = childNode.getTextContent();
 		}
 	
 	}

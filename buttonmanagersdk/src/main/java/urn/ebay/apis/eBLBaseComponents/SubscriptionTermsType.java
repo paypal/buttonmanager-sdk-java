@@ -28,6 +28,12 @@ public class SubscriptionTermsType{
 	 */ 
 	private BasicAmountType amount;
 
+	/**
+	 * 	  
+	 *@Required	 
+	 */ 
+	private String period;
+
 	
 
 	/**
@@ -48,6 +54,20 @@ public class SubscriptionTermsType{
 	 */
 	 public void setAmount(BasicAmountType amount) {
 	 	this.amount = amount;
+	 }
+	 
+	/**
+	 * Getter for period
+	 */
+	 public String getPeriod() {
+	 	return period;
+	 }
+	 
+	/**
+	 * Setter for period
+	 */
+	 public void setPeriod(String period) {
+	 	this.period = period;
 	 }
 	 
 
@@ -73,6 +93,11 @@ public class SubscriptionTermsType{
         if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.amount =  new BasicAmountType(childNode);
 		}
+		childNode = (Node) xpath.evaluate("period", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.period = childNode.getTextContent();
+		}
+	
 	}
  
 }

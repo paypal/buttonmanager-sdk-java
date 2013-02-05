@@ -31,7 +31,9 @@ public enum  PendingStatusCodeType {
 
 	ORDER("order"),
 
-	PAYMENTREVIEW("payment-review");
+	PAYMENTREVIEW("payment-review"),
+
+	REGULATORYREVIEW("regulatory-review");
 
 	private String value;
 

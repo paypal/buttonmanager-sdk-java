@@ -17,32 +17,38 @@ SDK Integration:
 
 *	Add dependency to sdk in your application's pom.xml as below.
 		
+```xml
 		<dependency>
 			<groupId>com.paypal.sdk</groupId>
 			<artifactId>buttonmanagersdk</artifactId>
 			<version>2.2.98</version>
 		</dependency>
-	
+```
 To make an API call:
 --------------------			
 *	Import PayPalAPIInterfaceServiceService.java into your code.
 		
-*	Copy the configuration file 'sdk_config.properties' in 'buttonmanagersample/src/main/resources' folder to your application 'src/main/resources'. And load it using,  
+*	Copy the configuration file 'sdk_config.properties' in 'merchantsample/src/main/resources' folder to your application 'src/main/resources'. Use the default constructor to run in default configuration.
 		  
     ```java
-    new PayPalAPIInterfaceServiceService(this.getClass().getResourceAsStream("/sdk_config.properties"));
+    new PayPalAPIInterfaceServiceService();
     ```
 	
 *	Or load the configuration file from any location using absolute path with the below method calls as required.
 
     ```java
-    new PayPalAPIInterfaceServiceService(new File(" .../sdk_config.properties"));
+    new PayPalAPIInterfaceServiceService(new File("/pathto/custom.properties"));
                          Or
-    new PayPalAPIInterfaceServiceService(new InputStream(new File(" .../sdk_config.properties")));
+    new PayPalAPIInterfaceServiceService(new FileInputStream(new File("/pathto/custom.properties")));
                          Or
-    new PayPalAPIInterfaceServiceService(" .../sdk_config.properties");
+    new PayPalAPIInterfaceServiceService("/pathto/custom.properties");
+    			 Or
+    new PayPalAPIInterfaceServiceService(Map<String, String> customConfigurationMap);
+    			 Or
+    new PayPalAPIInterfaceServiceService(Properties customProperties);
     ```
-  
+*	The SDK assumes defaults for certain parameters(refer sdk_config.properties for defaults). Either 'mode' or 'service.Endpoint' is a mandatory configuration. Account credentials are treated as mandatory parameters.
+
 *	Create a service wrapper object.
 
 *	Create a request object as per your project needs. 
@@ -67,8 +73,7 @@ To make an API call:
     request.setBMCreateButtonRequest(reqType);
 
 
-    PayPalAPIInterfaceServiceService service = new PayPalAPIInterfaceServiceService(
-                                                this.getClass().getResourceAsStream("/sdk_config.properties"));
+    PayPalAPIInterfaceServiceService service = new PayPalAPIInterfaceServiceService();
     //username is optional
     BMCreateButtonResponseType resp = service.bMCreateButton(request, username);
     ```
@@ -84,9 +89,11 @@ The SDK uses .properties format configuration file. Sample of this file is at
  
 'buttonmanagersample/src/main/resources/'. You can use the 'sdk_config.properties' configuration file to configure
 
-*	(Multiple) API account credentials.
+*	Mode is specified using the parameter name 'mode' with values 'sandbox' or 'live', if specified 'service.EndPoint' parameter is not required and the SDK chooses the sandbox or live endpoints automatically.
 
-*	HTTP connection parameters.
+*	(Multiple) API account credentials, by appending a '.' (dot) character and the service name to 'service.EndPoint' parameter.
+
+*	HTTP connection parameters, if certain connection parameters are not specified, the SDK will assume defaults for them.
 
 *	Service configuration.
 

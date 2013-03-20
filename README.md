@@ -29,15 +29,19 @@ To make an API call:
 		
 *	Copy the configuration file 'sdk_config.properties' in 'buttonmanagersample/src/main/resources' folder to your application 'src/main/resources'. And load it using,  
 		  
-		new PayPalAPIInterfaceServiceService(this.getClass().getResourceAsStream("/sdk_config.properties"));
+    ```java
+    new PayPalAPIInterfaceServiceService(this.getClass().getResourceAsStream("/sdk_config.properties"));
+    ```
 	
 *	Or load the configuration file from any location using absolute path with the below method calls as required.
 
-          new PayPalAPIInterfaceServiceService(new File(" .../sdk_config.properties"));
-                                 Or
-		  new PayPalAPIInterfaceServiceService(new InputStream(new File(" .../sdk_config.properties")));
-                                 Or
-          new PayPalAPIInterfaceServiceService(" .../sdk_config.properties");
+    ```java
+    new PayPalAPIInterfaceServiceService(new File(" .../sdk_config.properties"));
+                         Or
+    new PayPalAPIInterfaceServiceService(new InputStream(new File(" .../sdk_config.properties")));
+                         Or
+    new PayPalAPIInterfaceServiceService(" .../sdk_config.properties");
+    ```
   
 *	Create a service wrapper object.
 
@@ -45,32 +49,29 @@ To make an API call:
 
 *	Invoke the appropriate method on the service wrapper object.
 
-For example,
+    For example,
 
           
-	  import urn.ebay.api.PayPalAPI.PayPalAPIInterfaceServiceService;
-	  import urn.ebay.api.PayPalAPI.BMCreateButtonReq;
-	  import urn.ebay.api.PayPalAPI.BMCreateButtonRequestType;
-	  import urn.ebay.api.PayPalAPI.BMCreateButtonResponseType;
-	  ...
-	  
-          
-          
-      BMCreateButtonReq request = new BMCreateButtonReq();
-	  BMCreateButtonRequestType reqType = new BMCreateButtonRequestType();
+    ```java
+    import urn.ebay.api.PayPalAPI.*;
+    ...
+      
+    BMCreateButtonReq request = new BMCreateButtonReq();
+    BMCreateButtonRequestType reqType = new BMCreateButtonRequestType();
 
-	  reqType.setButtonType(ButtonTypeType.fromValue(req
-						.getParameter("buttonType")));
-	  reqType.setButtonCode(ButtonCodeType.fromValue(req
-						.getParameter("buttonCode")));
-	  reqType.setVersion("86.0");
-	  request.setBMCreateButtonRequest(reqType);
-	 
-	  
-      PayPalAPIInterfaceServiceService service = new PayPalAPIInterfaceServiceService(this.getClass().getResourceAsStream("/sdk_config.properties"));
-	  //username is optional
-	  BMCreateButtonResponseType resp = service.bMCreateButton(request, username);
-		  
+    reqType.setButtonType(ButtonTypeType.fromValue(req
+                    .getParameter("buttonType")));
+    reqType.setButtonCode(ButtonCodeType.fromValue(req
+                    .getParameter("buttonCode")));
+    reqType.setVersion("86.0");
+    request.setBMCreateButtonRequest(reqType);
+
+
+    PayPalAPIInterfaceServiceService service = new PayPalAPIInterfaceServiceService(
+                                                this.getClass().getResourceAsStream("/sdk_config.properties"));
+    //username is optional
+    BMCreateButtonResponseType resp = service.bMCreateButton(request, username);
+    ```
 
 SDK Logging:
 ------------
@@ -140,7 +141,4 @@ service.EndPoint.Invoice=https://svcs.paypal.com/
 service.EndPoint.Permissions=https://svcs.paypal.com/  
 
 For additional information on ButtonManager API, please refer to https://www.x.com/developers/paypal/documentation-tools/api
-
-
-
 

@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.ReverseTransactionRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class ReverseTransactionReq{
 
@@ -11,7 +11,7 @@ public class ReverseTransactionReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private ReverseTransactionRequestType reverseTransactionRequest;
 

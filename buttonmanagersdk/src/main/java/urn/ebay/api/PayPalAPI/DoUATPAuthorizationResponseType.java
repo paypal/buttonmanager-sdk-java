@@ -19,32 +19,32 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Auth Authorization Code. 
+ *  Auth Authorization Code. 
  */
 public class DoUATPAuthorizationResponseType extends DoAuthorizationResponseType {
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private UATPDetailsType uATPDetails;
 
 	/**
-	 * Auth Authorization Code. 	  
+	*  Auth Authorization Code. 	  
 	 *@Required	 
 	 */ 
 	private String authorizationCode;
 
 	/**
-	 * Invoice ID. A pass through. 	 
+	*  Invoice ID. A pass through. 	 
 	 */ 
 	private String invoiceID;
 
 	/**
-	 * Unique id for each API request to prevent duplicate
-	 * payments. Optional Character length and limits: 38
-	 * single-byte characters maximum. 	 
+	*  Unique id for each API request to prevent duplicate
+	*  payments. Optional Character length and limits: 38
+	*  single-byte characters maximum. 	 
 	 */ 
 	private String msgSubID;
 

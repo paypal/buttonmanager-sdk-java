@@ -5,8 +5,8 @@ import urn.ebay.apis.eBLBaseComponents.AddressType;
 import com.paypal.core.SDKUtil;
 
 /**
- * The phone number of the buyer's mobile device, if available.
- * Optional 
+ *  The phone number of the buyer's mobile device, if available.
+ *  Optional 
  */
 public class SetMobileCheckoutRequestDetailsType{
 
@@ -14,107 +14,107 @@ public class SetMobileCheckoutRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * The phone number of the buyer's mobile device, if available.
-	 * Optional 	 
+	*  The phone number of the buyer's mobile device, if available.
+	*  Optional 	 
 	 */ 
 	private PhoneNumberType buyerPhone;
 
 	/**
-	 * Cost of this item before tax and shipping.You must set the
-	 * currencyID attribute to one of the three-character currency
-	 * codes for any of the supported PayPal currencies. Required	  
+	*  Cost of this item before tax and shipping.You must set the
+	*  currencyID attribute to one of the three-character currency
+	*  codes for any of the supported PayPal currencies. Required	  
 	 *@Required	 
 	 */ 
 	private BasicAmountType itemAmount;
 
 	/**
-	 * Tax amount for this item.You must set the currencyID
-	 * attribute to one of the three-character currency codes for
-	 * any of the supported PayPal currencies. Optional	 
+	*  Tax amount for this item.You must set the currencyID
+	*  attribute to one of the three-character currency codes for
+	*  any of the supported PayPal currencies. Optional	 
 	 */ 
 	private BasicAmountType tax;
 
 	/**
-	 * Shipping amount for this item.You must set the currencyID
-	 * attribute to one of the three-character currency codes for
-	 * any of the supported PayPal currencies. Optional	 
+	*  Shipping amount for this item.You must set the currencyID
+	*  attribute to one of the three-character currency codes for
+	*  any of the supported PayPal currencies. Optional	 
 	 */ 
 	private BasicAmountType shipping;
 
 	/**
-	 * Description of the item that the customer is purchasing.
-	 * Required Character length and limitations: 127 single-byte
-	 * alphanumeric characters	  
+	*  Description of the item that the customer is purchasing.
+	*  Required Character length and limitations: 127 single-byte
+	*  alphanumeric characters	  
 	 *@Required	 
 	 */ 
 	private String itemName;
 
 	/**
-	 * Reference number of the item that the customer is
-	 * purchasing. Optional Character length and limitations: 127
-	 * single-byte alphanumeric characters	 
+	*  Reference number of the item that the customer is
+	*  purchasing. Optional Character length and limitations: 127
+	*  single-byte alphanumeric characters	 
 	 */ 
 	private String itemNumber;
 
 	/**
-	 * A free-form field for your own use, such as a tracking
-	 * number or other value you want returned to you in IPN.
-	 * Optional Character length and limitations: 256 single-byte
-	 * alphanumeric characters	 
+	*  A free-form field for your own use, such as a tracking
+	*  number or other value you want returned to you in IPN.
+	*  Optional Character length and limitations: 256 single-byte
+	*  alphanumeric characters	 
 	 */ 
 	private String custom;
 
 	/**
-	 * Your own unique invoice or tracking number. Optional
-	 * Character length and limitations: 127 single-byte
-	 * alphanumeric characters	 
+	*  Your own unique invoice or tracking number. Optional
+	*  Character length and limitations: 127 single-byte
+	*  alphanumeric characters	 
 	 */ 
 	private String invoiceID;
 
 	/**
-	 * URL to which the customer's browser is returned after
-	 * choosing to pay with PayPal. PayPal recommends that the
-	 * value of ReturnURL be the final review page on which the
-	 * customer confirms the order and payment. Required Character
-	 * length and limitations: no limit. 	  
+	*  URL to which the customer's browser is returned after
+	*  choosing to pay with PayPal. PayPal recommends that the
+	*  value of ReturnURL be the final review page on which the
+	*  customer confirms the order and payment. Required Character
+	*  length and limitations: no limit. 	  
 	 *@Required	 
 	 */ 
 	private String returnURL;
 
 	/**
-	 * URL to which the customer is returned if he does not approve
-	 * the use of PayPal to pay you. PayPal recommends that the
-	 * value of CancelURL be the original page on which the
-	 * customer chose to pay with PayPal. Optional Character length
-	 * and limitations: no limit	 
+	*  URL to which the customer is returned if he does not approve
+	*  the use of PayPal to pay you. PayPal recommends that the
+	*  value of CancelURL be the original page on which the
+	*  customer chose to pay with PayPal. Optional Character length
+	*  and limitations: no limit	 
 	 */ 
 	private String cancelURL;
 
 	/**
-	 * The value 1 indicates that you require that the customer's
-	 * shipping address on file with PayPal be a confirmed address.
-	 * Setting this element overrides the setting you have
-	 * specified in your Merchant Account Profile. Optional	 
+	*  The value 1 indicates that you require that the customer's
+	*  shipping address on file with PayPal be a confirmed address.
+	*  Setting this element overrides the setting you have
+	*  specified in your Merchant Account Profile. Optional	 
 	 */ 
 	private Integer addressDisplayOptions;
 
 	/**
-	 * The value 1 indicates that you require that the customer
-	 * specifies a contact phone for the transactxion. Default is 0
-	 * / none required. Optional	 
+	*  The value 1 indicates that you require that the customer
+	*  specifies a contact phone for the transactxion. Default is 0
+	*  / none required. Optional	 
 	 */ 
 	private Integer sharePhone;
 
 	/**
-	 * Customer's shipping address. Optional	 
+	*  Customer's shipping address. Optional	 
 	 */ 
 	private AddressType shipToAddress;
 
 	/**
-	 * Email address of the buyer as entered during checkout.
-	 * PayPal uses this value to pre-fill the login portion of the
-	 * PayPal login page. Optional Character length and limit: 127
-	 * single-byte alphanumeric characters 	 
+	*  Email address of the buyer as entered during checkout.
+	*  PayPal uses this value to pre-fill the login portion of the
+	*  PayPal login page. Optional Character length and limit: 127
+	*  single-byte alphanumeric characters 	 
 	 */ 
 	private String buyerEmail;
 

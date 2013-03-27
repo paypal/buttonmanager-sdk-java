@@ -1,11 +1,10 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  TransactionEntityType 
- *  This is the PayPal DoAuthorization TransactionEntityType
- * code
- * 
+ *   This is the PayPal DoAuthorization TransactionEntityType
+ *  code
+ *   
  */
 public enum  TransactionEntityType {
 

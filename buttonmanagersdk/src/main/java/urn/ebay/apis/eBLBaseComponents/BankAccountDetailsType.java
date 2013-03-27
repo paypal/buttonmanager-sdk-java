@@ -3,7 +3,7 @@ import urn.ebay.apis.eBLBaseComponents.BankAccountTypeType;
 import com.paypal.core.SDKUtil;
 
 /**
- * BankAccountDetailsType 
+ *  BankAccountDetailsType 
  */
 public class BankAccountDetailsType{
 
@@ -11,25 +11,25 @@ public class BankAccountDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * Name of bank Character length and limitations: 192
-	 * alphanumeric characters	 
+	*  Name of bank Character length and limitations: 192
+	*  alphanumeric characters	 
 	 */ 
 	private String name;
 
 	/**
-	 * Type of bank account: Checking or Savings	 
+	*  Type of bank account: Checking or Savings	 
 	 */ 
 	private BankAccountTypeType type;
 
 	/**
-	 * Merchant’s bank routing number Character length and
-	 * limitations: 23 alphanumeric characters	 
+	*  Merchant’s bank routing number Character length and
+	*  limitations: 23 alphanumeric characters	 
 	 */ 
 	private String routingNumber;
 
 	/**
-	 * Merchant’s bank account number Character length and
-	 * limitations: 256 alphanumeric characters	 
+	*  Merchant’s bank account number Character length and
+	*  limitations: 256 alphanumeric characters	 
 	 */ 
 	private String accountNumber;
 

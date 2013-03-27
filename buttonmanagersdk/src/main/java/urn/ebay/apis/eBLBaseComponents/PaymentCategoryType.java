@@ -1,9 +1,8 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  Category of payment like international shipping
- * 
+ *   
  */
 public enum  PaymentCategoryType {
 

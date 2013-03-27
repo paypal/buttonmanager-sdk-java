@@ -20,32 +20,32 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * An authorization identification number. Character length and
- * limits: 19 single-byte characters 
+ *  An authorization identification number. Character length and
+ *  limits: 19 single-byte characters 
  */
 public class DoAuthorizationResponseType extends AbstractResponseType {
 
 
 	/**
-	 * An authorization identification number. Character length and
-	 * limits: 19 single-byte characters	  
+	*  An authorization identification number. Character length and
+	*  limits: 19 single-byte characters	  
 	 *@Required	 
 	 */ 
 	private String transactionID;
 
 	/**
-	 * The amount and currency you specified in the request. 	  
+	*  The amount and currency you specified in the request. 	  
 	 *@Required	 
 	 */ 
 	private BasicAmountType amount;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private AuthorizationInfoType authorizationInfo;
 
 	/**
-	 * Return msgsubid back to merchant	 
+	*  Return msgsubid back to merchant	 
 	 */ 
 	private String msgSubID;
 

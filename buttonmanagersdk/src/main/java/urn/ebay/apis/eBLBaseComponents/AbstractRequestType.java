@@ -5,9 +5,9 @@ import urn.ebay.apis.eBLBaseComponents.DetailLevelCodeType;
 import com.paypal.core.SDKUtil;
 
 /**
- * Base type definition of request payload that can carry any
- * type of payload content with optional versioning information
- * and detail level requirements. 
+ *  Base type definition of request payload that can carry any
+ *  type of payload content with optional versioning information
+ *  and detail level requirements. 
  */
 public class AbstractRequestType{
 
@@ -15,22 +15,22 @@ public class AbstractRequestType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * This specifies the required detail level that is needed by a
-	 * client application pertaining to a particular data component
-	 * (e.g., Item, Transaction, etc.). The detail level is
-	 * specified in the DetailLevelCodeType which has all the
-	 * enumerated values of the detail level for each component. 	 
+	*  This specifies the required detail level that is needed by a
+	*  client application pertaining to a particular data component
+	*  (e.g., Item, Transaction, etc.). The detail level is
+	*  specified in the DetailLevelCodeType which has all the
+	*  enumerated values of the detail level for each component. 	 
 	 */ 
 	private List<DetailLevelCodeType> detailLevel = new ArrayList<DetailLevelCodeType>();
 
 	/**
-	 * This should be the standard RFC 3066 language identification
-	 * tag, e.g., en_US. 	 
+	*  This should be the standard RFC 3066 language identification
+	*  tag, e.g., en_US. 	 
 	 */ 
 	private String errorLanguage;
 
 	/**
-	 * This refers to the version of the request payload schema. 	 
+	*  This refers to the version of the request payload schema. 	 
 	 */ 
 	private String version;
 

@@ -21,13 +21,13 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * 
+ *  
  */
 public class BMButtonSearchResponseType extends AbstractResponseType {
 
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<ButtonSearchResultType> buttonSearchResult = new ArrayList<ButtonSearchResultType>();
 

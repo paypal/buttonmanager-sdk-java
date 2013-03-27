@@ -20,52 +20,52 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Unique transaction ID of the refund. Character length and
- * limitations:17 single-byte characters 
+ *  Unique transaction ID of the refund. Character length and
+ *  limitations:17 single-byte characters 
  */
 public class RefundTransactionResponseType extends AbstractResponseType {
 
 
 	/**
-	 * Unique transaction ID of the refund. Character length and
-	 * limitations:17 single-byte characters	 
+	*  Unique transaction ID of the refund. Character length and
+	*  limitations:17 single-byte characters	 
 	 */ 
 	private String refundTransactionID;
 
 	/**
-	 * Amount subtracted from PayPal balance of original recipient
-	 * of payment to make this refund 	 
+	*  Amount subtracted from PayPal balance of original recipient
+	*  of payment to make this refund 	 
 	 */ 
 	private BasicAmountType netRefundAmount;
 
 	/**
-	 * Transaction fee refunded to original recipient of payment 	 
+	*  Transaction fee refunded to original recipient of payment 	 
 	 */ 
 	private BasicAmountType feeRefundAmount;
 
 	/**
-	 * Amount of money refunded to original payer 	 
+	*  Amount of money refunded to original payer 	 
 	 */ 
 	private BasicAmountType grossRefundAmount;
 
 	/**
-	 * Total of all previous refunds	 
+	*  Total of all previous refunds	 
 	 */ 
 	private BasicAmountType totalRefundedAmount;
 
 	/**
-	 * Contains Refund Payment status information.	 
+	*  Contains Refund Payment status information.	 
 	 */ 
 	private RefundInfoType refundInfo;
 
 	/**
-	 * Any general information like offer details that is
-	 * reinstated or any other marketing data	 
+	*  Any general information like offer details that is
+	*  reinstated or any other marketing data	 
 	 */ 
 	private String receiptData;
 
 	/**
-	 * Return msgsubid back to merchant	 
+	*  Return msgsubid back to merchant	 
 	 */ 
 	private String msgSubID;
 

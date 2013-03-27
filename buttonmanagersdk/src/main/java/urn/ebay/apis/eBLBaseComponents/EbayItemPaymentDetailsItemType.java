@@ -18,8 +18,8 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * EbayItemPaymentDetailsItemType - Type declaration to be used
- * by other schemas. Information about an Ebay Payment Item. 
+ *  EbayItemPaymentDetailsItemType - Type declaration to be used
+ *  by other schemas. Information about an Ebay Payment Item. 
  */
 public class EbayItemPaymentDetailsItemType{
 
@@ -27,26 +27,26 @@ public class EbayItemPaymentDetailsItemType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * Auction ItemNumber. Optional Character length and
-	 * limitations: 765 single-byte characters	 
+	*  Auction ItemNumber. Optional Character length and
+	*  limitations: 765 single-byte characters	 
 	 */ 
 	private String itemNumber;
 
 	/**
-	 * Auction Transaction ID. Optional Character length and
-	 * limitations: 255 single-byte characters	 
+	*  Auction Transaction ID. Optional Character length and
+	*  limitations: 255 single-byte characters	 
 	 */ 
 	private String auctionTransactionId;
 
 	/**
-	 * Ebay Order ID. Optional Character length and limitations: 64
-	 * single-byte characters	 
+	*  Ebay Order ID. Optional Character length and limitations: 64
+	*  single-byte characters	 
 	 */ 
 	private String orderId;
 
 	/**
-	 * Ebay Cart ID. Optional Character length and limitations: 64
-	 * single-byte characters 	 
+	*  Ebay Cart ID. Optional Character length and limitations: 64
+	*  single-byte characters 	 
 	 */ 
 	private String cartID;
 

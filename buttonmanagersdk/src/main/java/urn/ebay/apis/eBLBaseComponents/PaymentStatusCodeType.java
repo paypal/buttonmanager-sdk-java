@@ -1,11 +1,10 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  PaymentStatusCodeType 
- *  This is the status of a PayPal Payment which matches the
- * output from IPN
- * 
+ *   This is the status of a PayPal Payment which matches the
+ *  output from IPN
+ *   
  */
 public enum  PaymentStatusCodeType {
 

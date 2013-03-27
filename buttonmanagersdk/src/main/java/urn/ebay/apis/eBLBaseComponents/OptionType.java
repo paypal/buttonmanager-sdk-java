@@ -17,19 +17,19 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * OptionType PayPal item options for shopping cart. 
+ *  OptionType PayPal item options for shopping cart. 
  */
 public class OptionType{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String name;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String value;

@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.BillUserRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class BillUserReq{
 
@@ -11,7 +11,7 @@ public class BillUserReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BillUserRequestType billUserRequest;
 

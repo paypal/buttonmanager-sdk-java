@@ -3,7 +3,7 @@ import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class BillOutstandingAmountRequestDetailsType{
 
@@ -11,18 +11,18 @@ public class BillOutstandingAmountRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String profileID;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BasicAmountType amount;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String note;
 

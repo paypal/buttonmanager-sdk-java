@@ -1,9 +1,8 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  values for buynow button text
- * 
+ *   
  */
 public enum  BuyNowTextType {
 

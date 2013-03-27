@@ -3,7 +3,7 @@ import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import com.paypal.core.SDKUtil;
 
 /**
- * Details of leg information 
+ *  Details of leg information 
  */
 public class FlightDetailsType{
 
@@ -11,87 +11,87 @@ public class FlightDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String conjuctionTicket;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String exchangeTicket;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String couponNumber;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String serviceClass;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String travelDate;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String carrierCode;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String stopOverPermitted;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String departureAirport;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String arrivalAirport;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String flightNumber;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String departureTime;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String arrivalTime;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String fareBasisCode;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BasicAmountType fare;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BasicAmountType taxes;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BasicAmountType fee;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String endorsementOrRestrictions;
 

@@ -4,7 +4,7 @@ import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import com.paypal.core.SDKUtil;
 
 /**
- * Unit of meausre for billing cycle 
+ *  Unit of meausre for billing cycle 
  */
 public class BillingPeriodDetailsType_Update{
 
@@ -12,32 +12,32 @@ public class BillingPeriodDetailsType_Update{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * Unit of meausre for billing cycle 	 
+	*  Unit of meausre for billing cycle 	 
 	 */ 
 	private BillingPeriodType billingPeriod;
 
 	/**
-	 * Number of BillingPeriod that make up one billing cycle 	 
+	*  Number of BillingPeriod that make up one billing cycle 	 
 	 */ 
 	private Integer billingFrequency;
 
 	/**
-	 * Total billing cycles in this portion of the schedule 	 
+	*  Total billing cycles in this portion of the schedule 	 
 	 */ 
 	private Integer totalBillingCycles;
 
 	/**
-	 * Amount to charge 	 
+	*  Amount to charge 	 
 	 */ 
 	private BasicAmountType amount;
 
 	/**
-	 * Additional shipping amount to charge 	 
+	*  Additional shipping amount to charge 	 
 	 */ 
 	private BasicAmountType shippingAmount;
 
 	/**
-	 * Additional tax amount to charge 	 
+	*  Additional tax amount to charge 	 
 	 */ 
 	private BasicAmountType taxAmount;
 

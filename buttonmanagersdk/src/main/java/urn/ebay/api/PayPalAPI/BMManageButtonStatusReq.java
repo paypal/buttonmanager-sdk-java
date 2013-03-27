@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.BMManageButtonStatusRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class BMManageButtonStatusReq{
 
@@ -11,7 +11,7 @@ public class BMManageButtonStatusReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BMManageButtonStatusRequestType bMManageButtonStatusRequest;
 

@@ -21,13 +21,13 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Results of a Transaction Search.
+ *  Results of a Transaction Search.
  */
 public class TransactionSearchResponseType extends AbstractResponseType {
 
 
 	/**
-	 * Results of a Transaction Search.	 
+	*  Results of a Transaction Search.	 
 	 */ 
 	private List<PaymentTransactionSearchResultType> paymentTransactions = new ArrayList<PaymentTransactionSearchResultType>();
 

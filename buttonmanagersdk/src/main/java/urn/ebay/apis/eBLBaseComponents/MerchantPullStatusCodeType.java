@@ -1,10 +1,9 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  MerchantPullStatusCodeType 
- *  Status of the merchant pull
- * 
+ *   Status of the merchant pull
+ *   
  */
 public enum  MerchantPullStatusCodeType {
 

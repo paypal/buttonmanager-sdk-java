@@ -3,9 +3,9 @@ import urn.ebay.apis.eBLBaseComponents.IdentificationInfoType;
 import com.paypal.core.SDKUtil;
 
 /**
- * Information that is used to indentify the Buyer. This is
- * used for auto authorization. Mandatory if Authorization is
- * requested. 
+ *  Information that is used to indentify the Buyer. This is
+ *  used for auto authorization. Mandatory if Authorization is
+ *  requested. 
  */
 public class BuyerDetailType{
 
@@ -13,9 +13,9 @@ public class BuyerDetailType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * Information that is used to indentify the Buyer. This is
-	 * used for auto authorization. Mandatory if Authorization is
-	 * requested.	 
+	*  Information that is used to indentify the Buyer. This is
+	*  used for auto authorization. Mandatory if Authorization is
+	*  requested.	 
 	 */ 
 	private IdentificationInfoType identificationInfo;
 

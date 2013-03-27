@@ -22,56 +22,56 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * 
+ *  
  */
 public class BMGetInventoryResponseType extends AbstractResponseType {
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String hostedButtonID;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String trackInv;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String trackPnl;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private ItemTrackingDetailsType itemTrackingDetails;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String optionIndex;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String optionName;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<OptionTrackingDetailsType> optionTrackingDetails = new ArrayList<OptionTrackingDetailsType>();
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String soldoutURL;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<String> digitalDownloadKeys = new ArrayList<String>();
 

@@ -3,7 +3,7 @@ import urn.ebay.apis.eBLBaseComponents.CreditCardTypeType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class CreditCardNumberTypeType{
 
@@ -11,12 +11,12 @@ public class CreditCardNumberTypeType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private CreditCardTypeType creditCardType;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String creditCardNumber;
 

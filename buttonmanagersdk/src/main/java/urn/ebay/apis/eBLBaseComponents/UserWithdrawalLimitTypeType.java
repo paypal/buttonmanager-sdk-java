@@ -1,9 +1,8 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  User Withdrawal Limit Type Type 
- * 
+ *   
  */
 public enum  UserWithdrawalLimitTypeType {
 

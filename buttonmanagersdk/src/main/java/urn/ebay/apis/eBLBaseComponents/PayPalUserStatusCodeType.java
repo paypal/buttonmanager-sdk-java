@@ -1,10 +1,9 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  PayPalUserStatusCodeType 
- *  PayPal status of a user Address
- * 
+ *   PayPal status of a user Address
+ *   
  */
 public enum  PayPalUserStatusCodeType {
 

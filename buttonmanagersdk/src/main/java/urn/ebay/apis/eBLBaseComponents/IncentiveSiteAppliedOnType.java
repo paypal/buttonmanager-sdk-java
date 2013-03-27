@@ -1,10 +1,8 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
- *                 This defines if the incentive is applied on
- * Ebay or PayPal.
- * 
+ *  This defines if the incentive is applied on Ebay or PayPal.
+ *              
  */
 public enum  IncentiveSiteAppliedOnType {
 

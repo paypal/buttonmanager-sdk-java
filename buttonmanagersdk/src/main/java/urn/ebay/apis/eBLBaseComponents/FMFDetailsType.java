@@ -18,29 +18,29 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Thes are filters that could result in accept/deny/pending
- * action. 
+ *  Thes are filters that could result in accept/deny/pending
+ *  action. 
  */
 public class FMFDetailsType{
 
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private RiskFilterListType acceptFilters;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private RiskFilterListType pendingFilters;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private RiskFilterListType denyFilters;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private RiskFilterListType reportFilters;
 

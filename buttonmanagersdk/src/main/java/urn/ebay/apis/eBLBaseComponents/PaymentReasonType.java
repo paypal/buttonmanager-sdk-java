@@ -1,12 +1,11 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  PaymentReasonType
- *  This is the Payment Reason type (used by DoRT and SetEC for
- * Refund of PI transaction, eBay return shipment, external
- * dispute)
- * 
+ *   This is the Payment Reason type (used by DoRT and SetEC for
+ *  Refund of PI transaction, eBay return shipment, external
+ *  dispute)
+ *   
  */
 public enum  PaymentReasonType {
 

@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.ManagePendingTransactionStatusRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class ManagePendingTransactionStatusReq{
 
@@ -11,7 +11,7 @@ public class ManagePendingTransactionStatusReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private ManagePendingTransactionStatusRequestType managePendingTransactionStatusRequest;
 

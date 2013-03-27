@@ -19,36 +19,36 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * A free-form field for your own use, such as a tracking
- * number or other value you want returned to you in IPN.
- * Optional Character length and limitations: 256 single-byte
- * alphanumeric characters 
+ *  A free-form field for your own use, such as a tracking
+ *  number or other value you want returned to you in IPN.
+ *  Optional Character length and limitations: 256 single-byte
+ *  alphanumeric characters 
  */
 public class DoMobileCheckoutPaymentResponseDetailsType{
 
 
 	/**
-	 * A free-form field for your own use, such as a tracking
-	 * number or other value you want returned to you in IPN.
-	 * Optional Character length and limitations: 256 single-byte
-	 * alphanumeric characters	 
+	*  A free-form field for your own use, such as a tracking
+	*  number or other value you want returned to you in IPN.
+	*  Optional Character length and limitations: 256 single-byte
+	*  alphanumeric characters	 
 	 */ 
 	private String custom;
 
 	/**
-	 * Your own unique invoice or tracking number. Optional
-	 * Character length and limitations: 127 single-byte
-	 * alphanumeric characters	 
+	*  Your own unique invoice or tracking number. Optional
+	*  Character length and limitations: 127 single-byte
+	*  alphanumeric characters	 
 	 */ 
 	private String invoiceID;
 
 	/**
-	 * Information about the payer	 
+	*  Information about the payer	 
 	 */ 
 	private PayerInfoType payerInfo;
 
 	/**
-	 * Information about the transaction	 
+	*  Information about the transaction	 
 	 */ 
 	private PaymentInfoType paymentInfo;
 

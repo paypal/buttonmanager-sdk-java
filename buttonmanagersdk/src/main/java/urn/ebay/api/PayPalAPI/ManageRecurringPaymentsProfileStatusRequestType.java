@@ -4,7 +4,7 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class ManageRecurringPaymentsProfileStatusRequestType extends AbstractRequestType {
 
@@ -12,7 +12,7 @@ public class ManageRecurringPaymentsProfileStatusRequestType extends AbstractReq
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private ManageRecurringPaymentsProfileStatusRequestDetailsType manageRecurringPaymentsProfileStatusRequestDetails;
 

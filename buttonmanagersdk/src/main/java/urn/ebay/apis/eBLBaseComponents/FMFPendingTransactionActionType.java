@@ -1,10 +1,9 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  This is various actions that a merchant can take on a FMF
- * Pending Transaction.
- * 
+ *  Pending Transaction.
+ *   
  */
 public enum  FMFPendingTransactionActionType {
 

@@ -1,11 +1,10 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  POSTransactionCodeType
- *  POS Transaction Code Type. F for Forced Post Transaction
- * and S for Single Call Checkout
- * 
+ *   POS Transaction Code Type. F for Forced Post Transaction
+ *  and S for Single Call Checkout
+ *   
  */
 public enum  POSTransactionCodeType {
 

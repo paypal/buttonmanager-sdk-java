@@ -21,25 +21,25 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * 
+ *  
  */
 public class GetBalanceResponseType extends AbstractResponseType {
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private BasicAmountType balance;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String balanceTimeStamp;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<BasicAmountType> balanceHoldings = new ArrayList<BasicAmountType>();
 

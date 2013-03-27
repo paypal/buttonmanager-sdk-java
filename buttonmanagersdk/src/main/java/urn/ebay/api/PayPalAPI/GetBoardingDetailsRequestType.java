@@ -3,10 +3,10 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * A unique token returned by the EnterBoarding API call that
- * identifies this boarding session. RequiredCharacter length
- * and limitations: 64 alphanumeric characters. The token has
- * the following format:OB-61characterstring
+ *  A unique token returned by the EnterBoarding API call that
+ *  identifies this boarding session. RequiredCharacter length
+ *  and limitations: 64 alphanumeric characters. The token has
+ *  the following format:OB-61characterstring
  */
 public class GetBoardingDetailsRequestType extends AbstractRequestType {
 
@@ -14,10 +14,10 @@ public class GetBoardingDetailsRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * A unique token returned by the EnterBoarding API call that
-	 * identifies this boarding session. RequiredCharacter length
-	 * and limitations: 64 alphanumeric characters. The token has
-	 * the following format:OB-61characterstring	  
+	*  A unique token returned by the EnterBoarding API call that
+	*  identifies this boarding session. RequiredCharacter length
+	*  and limitations: 64 alphanumeric characters. The token has
+	*  the following format:OB-61characterstring	  
 	 *@Required	 
 	 */ 
 	private String token;

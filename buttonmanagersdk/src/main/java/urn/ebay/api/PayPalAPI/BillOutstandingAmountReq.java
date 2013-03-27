@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.BillOutstandingAmountRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class BillOutstandingAmountReq{
 
@@ -11,7 +11,7 @@ public class BillOutstandingAmountReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BillOutstandingAmountRequestType billOutstandingAmountRequest;
 

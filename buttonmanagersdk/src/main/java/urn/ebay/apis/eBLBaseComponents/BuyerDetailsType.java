@@ -4,8 +4,8 @@ import urn.ebay.apis.eBLBaseComponents.IdentificationInfoType;
 import com.paypal.core.SDKUtil;
 
 /**
- * Details about the buyer's account passed in by the merchant
- * or partner. Optional. 
+ *  Details about the buyer's account passed in by the merchant
+ *  or partner. Optional. 
  */
 public class BuyerDetailsType{
 
@@ -13,29 +13,29 @@ public class BuyerDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * The client's unique ID for this user. 	 
+	*  The client's unique ID for this user. 	 
 	 */ 
 	private String buyerId;
 
 	/**
-	 * The user name of the user at the marketplaces site. 	 
+	*  The user name of the user at the marketplaces site. 	 
 	 */ 
 	private String buyerUserName;
 
 	/**
-	 * Date when the user registered with the marketplace. 	 
+	*  Date when the user registered with the marketplace. 	 
 	 */ 
 	private String buyerRegistrationDate;
 
 	/**
-	 * Details about payer's tax info. Refer to the
-	 * TaxIdDetailsType for more details. 	 
+	*  Details about payer's tax info. Refer to the
+	*  TaxIdDetailsType for more details. 	 
 	 */ 
 	private TaxIdDetailsType taxIdDetails;
 
 	/**
-	 * Contains information that identifies the buyer. e.g. email
-	 * address or the external remember me id. 	 
+	*  Contains information that identifies the buyer. e.g. email
+	*  address or the external remember me id. 	 
 	 */ 
 	private IdentificationInfoType identificationInfo;
 

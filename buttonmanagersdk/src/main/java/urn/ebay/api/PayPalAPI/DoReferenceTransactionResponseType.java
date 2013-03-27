@@ -20,19 +20,19 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * 
+ *  
  */
 public class DoReferenceTransactionResponseType extends AbstractResponseType {
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private DoReferenceTransactionResponseDetailsType doReferenceTransactionResponseDetails;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private FMFDetailsType fMFDetails;
 

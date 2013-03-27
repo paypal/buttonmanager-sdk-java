@@ -1,10 +1,9 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  MatchStatusCodeType 
- *  This is the PayPal (street/zip) match code
- * 
+ *   This is the PayPal (street/zip) match code
+ *   
  */
 public enum  MatchStatusCodeType {
 

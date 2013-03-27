@@ -1,10 +1,9 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  CompleteCodeType 
- *  This is the PayPal DoCapture CompleteType code
- * 
+ *   This is the PayPal DoCapture CompleteType code
+ *   
  */
 public enum  CompleteCodeType {
 

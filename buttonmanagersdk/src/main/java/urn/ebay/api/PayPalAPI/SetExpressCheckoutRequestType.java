@@ -4,7 +4,7 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class SetExpressCheckoutRequestType extends AbstractRequestType {
 
@@ -12,7 +12,7 @@ public class SetExpressCheckoutRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private SetExpressCheckoutRequestDetailsType setExpressCheckoutRequestDetails;

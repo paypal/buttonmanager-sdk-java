@@ -1,10 +1,9 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  ChannelType - Type declaration to be used by other schemas.
- *  This is the PayPal Channel type (used by Express Checkout)
- * 
+ *   This is the PayPal Channel type (used by Express Checkout)
+ *   
  */
 public enum  ChannelType {
 

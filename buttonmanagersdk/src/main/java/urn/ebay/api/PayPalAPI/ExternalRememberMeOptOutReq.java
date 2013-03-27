@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.ExternalRememberMeOptOutRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class ExternalRememberMeOptOutReq{
 
@@ -11,7 +11,7 @@ public class ExternalRememberMeOptOutReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private ExternalRememberMeOptOutRequestType externalRememberMeOptOutRequest;
 

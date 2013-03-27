@@ -1,14 +1,13 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
- *    CountryCodeType
- *    This code list module defines the enumerated types
- *     of standard 2-letter ISO 3166 country codes. This
- * codelist
- *     contains some additional country code not defined in
- *     the ISO 3166 country code set. 
- * 
+ *  CountryCodeType
+ *     This code list module defines the enumerated types
+ *      of standard 2-letter ISO 3166 country codes. This
+ *  codelist
+ *      contains some additional country code not defined in
+ *      the ISO 3166 country code set. 
+ *   
  */
 public enum  CountryCodeType {
 

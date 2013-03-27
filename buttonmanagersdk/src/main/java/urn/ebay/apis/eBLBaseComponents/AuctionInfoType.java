@@ -17,23 +17,23 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * AuctionInfoType Basic information about an auction. 
+ *  AuctionInfoType Basic information about an auction. 
  */
 public class AuctionInfoType{
 
 
 	/**
-	 * Customer's auction ID 	 
+	*  Customer's auction ID 	 
 	 */ 
 	private String buyerID;
 
 	/**
-	 * Auction's close date 	 
+	*  Auction's close date 	 
 	 */ 
 	private String closingDate;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String multiItem;

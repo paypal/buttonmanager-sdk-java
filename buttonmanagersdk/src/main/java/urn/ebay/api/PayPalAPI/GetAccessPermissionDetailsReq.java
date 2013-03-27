@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.GetAccessPermissionDetailsRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class GetAccessPermissionDetailsReq{
 
@@ -11,7 +11,7 @@ public class GetAccessPermissionDetailsReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private GetAccessPermissionDetailsRequestType getAccessPermissionDetailsRequest;
 

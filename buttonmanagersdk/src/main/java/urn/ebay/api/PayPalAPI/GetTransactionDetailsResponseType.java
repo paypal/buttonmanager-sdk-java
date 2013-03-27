@@ -20,18 +20,18 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * 
+ *  
  */
 public class GetTransactionDetailsResponseType extends AbstractResponseType {
 
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private PaymentTransactionType paymentTransactionDetails;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private ThreeDSecureInfoType threeDSecureDetails;
 

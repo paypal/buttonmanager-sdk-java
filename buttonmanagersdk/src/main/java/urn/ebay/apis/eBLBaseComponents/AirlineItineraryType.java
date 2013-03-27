@@ -6,7 +6,7 @@ import urn.ebay.apis.eBLBaseComponents.FlightDetailsType;
 import com.paypal.core.SDKUtil;
 
 /**
- * AID for Airlines 
+ *  AID for Airlines 
  */
 public class AirlineItineraryType{
 
@@ -14,72 +14,72 @@ public class AirlineItineraryType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String passengerName;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String issueDate;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String travelAgencyName;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String travelAgencyCode;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String ticketNumber;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String issuingCarrierCode;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String customerCode;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BasicAmountType totalFare;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BasicAmountType totalTaxes;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BasicAmountType totalFee;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String restrictedTicket;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String clearingSequence;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String clearingCount;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<FlightDetailsType> flightDetails = new ArrayList<FlightDetailsType>();
 

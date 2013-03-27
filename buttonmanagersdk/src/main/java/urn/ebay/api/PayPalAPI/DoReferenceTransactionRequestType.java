@@ -4,8 +4,8 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * This flag indicates that the response should include
- * FMFDetails 
+ *  This flag indicates that the response should include
+ *  FMFDetails 
  */
 public class DoReferenceTransactionRequestType extends AbstractRequestType {
 
@@ -13,14 +13,14 @@ public class DoReferenceTransactionRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private DoReferenceTransactionRequestDetailsType doReferenceTransactionRequestDetails;
 
 	/**
-	 * This flag indicates that the response should include
-	 * FMFDetails	 
+	*  This flag indicates that the response should include
+	*  FMFDetails	 
 	 */ 
 	private Integer returnFMFDetails;
 

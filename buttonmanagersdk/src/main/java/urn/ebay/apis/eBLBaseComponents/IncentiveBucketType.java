@@ -6,7 +6,7 @@ import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class IncentiveBucketType{
 
@@ -14,47 +14,47 @@ public class IncentiveBucketType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<IncentiveItemType> items = new ArrayList<IncentiveItemType>();
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String bucketId;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String sellerId;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String externalSellerId;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BasicAmountType bucketSubtotalAmt;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BasicAmountType bucketShippingAmt;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BasicAmountType bucketInsuranceAmt;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BasicAmountType bucketSalesTaxAmt;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BasicAmountType bucketTotalAmt;
 

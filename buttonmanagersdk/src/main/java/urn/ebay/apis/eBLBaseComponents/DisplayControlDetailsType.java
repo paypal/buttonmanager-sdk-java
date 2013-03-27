@@ -2,8 +2,8 @@ package urn.ebay.apis.eBLBaseComponents;
 import com.paypal.core.SDKUtil;
 
 /**
- * Contains elements that allows customization of display (user
- * interface) elements. 
+ *  Contains elements that allows customization of display (user
+ *  interface) elements. 
  */
 public class DisplayControlDetailsType{
 
@@ -11,9 +11,9 @@ public class DisplayControlDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * Optional URL to pay button image for the inline checkout
-	 * flow. Currently applicable only to the inline checkout flow
-	 * when the FlowControlDetails/InlineReturnURL is present. 	 
+	*  Optional URL to pay button image for the inline checkout
+	*  flow. Currently applicable only to the inline checkout flow
+	*  when the FlowControlDetails/InlineReturnURL is present. 	 
 	 */ 
 	private String inContextPaymentButtonImage;
 

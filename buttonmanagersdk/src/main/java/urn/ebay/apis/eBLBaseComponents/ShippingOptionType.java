@@ -3,7 +3,7 @@ import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import com.paypal.core.SDKUtil;
 
 /**
- * Fallback shipping options type. 
+ *  Fallback shipping options type. 
  */
 public class ShippingOptionType{
 
@@ -11,17 +11,17 @@ public class ShippingOptionType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String shippingOptionIsDefault;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BasicAmountType shippingOptionAmount;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String shippingOptionName;
 

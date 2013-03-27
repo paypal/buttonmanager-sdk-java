@@ -21,43 +21,43 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Error code can be used by a receiving application to
- * debugging a response message. These codes will need to be
- * uniquely defined for each application. 
+ *  Error code can be used by a receiving application to
+ *  debugging a response message. These codes will need to be
+ *  uniquely defined for each application. 
  */
 public class ErrorType{
 
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String shortMessage;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String longMessage;
 
 	/**
-	 * Error code can be used by a receiving application to
-	 * debugging a response message. These codes will need to be
-	 * uniquely defined for each application. 	 
+	*  Error code can be used by a receiving application to
+	*  debugging a response message. These codes will need to be
+	*  uniquely defined for each application. 	 
 	 */ 
 	private String errorCode;
 
 	/**
-	 * SeverityCode indicates whether the error is an application 
-	 * level error or if it is informational error, i.e., warning. 
-	 * 	 
+	*  SeverityCode indicates whether the error is an application 
+	*  level error or if it is informational error, i.e., warning. 
+	*  	 
 	 */ 
 	private SeverityCodeType severityCode;
 
 	/**
-	 * This optional element may carry additional
-	 * application-specific error variables that indicate specific
-	 * information about the error condition particularly in the
-	 * cases where there are multiple instances of the ErrorType
-	 * which require additional context.  	 
+	*  This optional element may carry additional
+	*  application-specific error variables that indicate specific
+	*  information about the error condition particularly in the
+	*  cases where there are multiple instances of the ErrorType
+	*  which require additional context.  	 
 	 */ 
 	private List<ErrorParameterType> errorParameters = new ArrayList<ErrorParameterType>();
 

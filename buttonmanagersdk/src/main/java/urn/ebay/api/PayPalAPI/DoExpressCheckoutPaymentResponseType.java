@@ -20,19 +20,19 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * 
+ *  
  */
 public class DoExpressCheckoutPaymentResponseType extends AbstractResponseType {
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private DoExpressCheckoutPaymentResponseDetailsType doExpressCheckoutPaymentResponseDetails;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private FMFDetailsType fMFDetails;
 

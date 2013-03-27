@@ -1,11 +1,10 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  PaymentDetailsCodeType 
- *  This is the PayPal payment details type (used by DCC and
- * Express Checkout)
- * 
+ *   This is the PayPal payment details type (used by DCC and
+ *  Express Checkout)
+ *   
  */
 public enum  PaymentActionCodeType {
 

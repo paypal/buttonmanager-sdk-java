@@ -3,11 +3,11 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * Unique identifier of a transaction. RequiredThe details for
- * some kinds of transactions cannot be retrieved with
- * GetTransactionDetailsRequest. You cannot obtain details of
- * bank transfer withdrawals, for example. Character length and
- * limitations: 17 single-byte alphanumeric characters
+ *  Unique identifier of a transaction. RequiredThe details for
+ *  some kinds of transactions cannot be retrieved with
+ *  GetTransactionDetailsRequest. You cannot obtain details of
+ *  bank transfer withdrawals, for example. Character length and
+ *  limitations: 17 single-byte alphanumeric characters
  */
 public class GetTransactionDetailsRequestType extends AbstractRequestType {
 
@@ -15,11 +15,11 @@ public class GetTransactionDetailsRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * Unique identifier of a transaction. RequiredThe details for
-	 * some kinds of transactions cannot be retrieved with
-	 * GetTransactionDetailsRequest. You cannot obtain details of
-	 * bank transfer withdrawals, for example. Character length and
-	 * limitations: 17 single-byte alphanumeric characters	 
+	*  Unique identifier of a transaction. RequiredThe details for
+	*  some kinds of transactions cannot be retrieved with
+	*  GetTransactionDetailsRequest. You cannot obtain details of
+	*  bank transfer withdrawals, for example. Character length and
+	*  limitations: 17 single-byte alphanumeric characters	 
 	 */ 
 	private String transactionID;
 

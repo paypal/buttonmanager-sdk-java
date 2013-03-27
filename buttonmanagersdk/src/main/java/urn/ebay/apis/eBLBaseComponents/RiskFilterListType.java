@@ -20,13 +20,13 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Details of Risk Filter. 
+ *  Details of Risk Filter. 
  */
 public class RiskFilterListType{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private List<RiskFilterDetailsType> filters = new ArrayList<RiskFilterDetailsType>();

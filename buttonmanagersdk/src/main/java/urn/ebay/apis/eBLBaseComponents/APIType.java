@@ -1,7 +1,7 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * Supported API Types for DoCancel operation
+ *  Supported API Types for DoCancel operation
  */
 public enum  APIType {
 

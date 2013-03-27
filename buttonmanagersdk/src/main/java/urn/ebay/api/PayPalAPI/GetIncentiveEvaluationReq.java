@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.GetIncentiveEvaluationRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class GetIncentiveEvaluationReq{
 
@@ -11,7 +11,7 @@ public class GetIncentiveEvaluationReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private GetIncentiveEvaluationRequestType getIncentiveEvaluationRequest;
 

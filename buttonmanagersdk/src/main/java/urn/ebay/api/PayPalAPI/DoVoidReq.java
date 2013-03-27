@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.DoVoidRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class DoVoidReq{
 
@@ -11,7 +11,7 @@ public class DoVoidReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private DoVoidRequestType doVoidRequest;
 

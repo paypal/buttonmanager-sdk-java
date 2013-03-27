@@ -18,27 +18,27 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * The authorization identification number you specified in the
- * request. Character length and limits: 19 single-byte
- * characters maximum 
+ *  The authorization identification number you specified in the
+ *  request. Character length and limits: 19 single-byte
+ *  characters maximum 
  */
 public class DoCaptureResponseDetailsType{
 
 
 	/**
-	 * The authorization identification number you specified in the
-	 * request. Character length and limits: 19 single-byte
-	 * characters maximum	 
+	*  The authorization identification number you specified in the
+	*  request. Character length and limits: 19 single-byte
+	*  characters maximum	 
 	 */ 
 	private String authorizationID;
 
 	/**
-	 * Information about the transaction 	 
+	*  Information about the transaction 	 
 	 */ 
 	private PaymentInfoType paymentInfo;
 
 	/**
-	 * Return msgsubid back to merchant 	 
+	*  Return msgsubid back to merchant 	 
 	 */ 
 	private String msgSubID;
 

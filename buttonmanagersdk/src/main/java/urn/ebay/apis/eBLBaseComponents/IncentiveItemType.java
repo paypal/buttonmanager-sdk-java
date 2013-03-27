@@ -3,7 +3,7 @@ import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class IncentiveItemType{
 
@@ -11,27 +11,27 @@ public class IncentiveItemType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String itemId;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String purchaseTime;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String itemCategoryList;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BasicAmountType itemPrice;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private Integer itemQuantity;
 

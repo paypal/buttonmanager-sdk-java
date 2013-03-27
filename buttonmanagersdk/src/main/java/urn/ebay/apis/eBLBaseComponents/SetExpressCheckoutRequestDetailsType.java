@@ -26,15 +26,15 @@ import urn.ebay.apis.eBLBaseComponents.CoupledBucketsType;
 import com.paypal.core.SDKUtil;
 
 /**
- * The total cost of the order to the customer. If shipping
- * cost and tax charges are known, include them in OrderTotal;
- * if not, OrderTotal should be the current sub-total of the
- * order. You must set the currencyID attribute to one of the
- * three-character currency codes for any of the supported
- * PayPal currencies. Limitations: Must not exceed $10,000 USD
- * in any currency. No currency symbol. Decimal separator must
- * be a period (.), and the thousands separator must be a comma
- * (,). 
+ *  The total cost of the order to the customer. If shipping
+ *  cost and tax charges are known, include them in OrderTotal;
+ *  if not, OrderTotal should be the current sub-total of the
+ *  order. You must set the currencyID attribute to one of the
+ *  three-character currency codes for any of the supported
+ *  PayPal currencies. Limitations: Must not exceed $10,000 USD
+ *  in any currency. No currency symbol. Decimal separator must
+ *  be a period (.), and the thousands separator must be a comma
+ *  (,). 
  */
 public class SetExpressCheckoutRequestDetailsType{
 
@@ -42,479 +42,479 @@ public class SetExpressCheckoutRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * The total cost of the order to the customer. If shipping
-	 * cost and tax charges are known, include them in OrderTotal;
-	 * if not, OrderTotal should be the current sub-total of the
-	 * order. You must set the currencyID attribute to one of the
-	 * three-character currency codes for any of the supported
-	 * PayPal currencies. Limitations: Must not exceed $10,000 USD
-	 * in any currency. No currency symbol. Decimal separator must
-	 * be a period (.), and the thousands separator must be a comma
-	 * (,).	 
+	*  The total cost of the order to the customer. If shipping
+	*  cost and tax charges are known, include them in OrderTotal;
+	*  if not, OrderTotal should be the current sub-total of the
+	*  order. You must set the currencyID attribute to one of the
+	*  three-character currency codes for any of the supported
+	*  PayPal currencies. Limitations: Must not exceed $10,000 USD
+	*  in any currency. No currency symbol. Decimal separator must
+	*  be a period (.), and the thousands separator must be a comma
+	*  (,).	 
 	 */ 
 	private BasicAmountType orderTotal;
 
 	/**
-	 * URL to which the customer's browser is returned after
-	 * choosing to pay with PayPal. PayPal recommends that the
-	 * value of ReturnURL be the final review page on which the
-	 * customer confirms the order and payment. Required Character
-	 * length and limitations: no limit. 	 
+	*  URL to which the customer's browser is returned after
+	*  choosing to pay with PayPal. PayPal recommends that the
+	*  value of ReturnURL be the final review page on which the
+	*  customer confirms the order and payment. Required Character
+	*  length and limitations: no limit. 	 
 	 */ 
 	private String returnURL;
 
 	/**
-	 * URL to which the customer is returned if he does not approve
-	 * the use of PayPal to pay you. PayPal recommends that the
-	 * value of CancelURL be the original page on which the
-	 * customer chose to pay with PayPal. Required Character length
-	 * and limitations: no limit	 
+	*  URL to which the customer is returned if he does not approve
+	*  the use of PayPal to pay you. PayPal recommends that the
+	*  value of CancelURL be the original page on which the
+	*  customer chose to pay with PayPal. Required Character length
+	*  and limitations: no limit	 
 	 */ 
 	private String cancelURL;
 
 	/**
-	 * Tracking URL for ebay. Required Character length and
-	 * limitations: no limit	 
+	*  Tracking URL for ebay. Required Character length and
+	*  limitations: no limit	 
 	 */ 
 	private String trackingImageURL;
 
 	/**
-	 * URL to which the customer's browser is returned after paying
-	 * with giropay online. Optional Character length and
-	 * limitations: no limit.	 
+	*  URL to which the customer's browser is returned after paying
+	*  with giropay online. Optional Character length and
+	*  limitations: no limit.	 
 	 */ 
 	private String giropaySuccessURL;
 
 	/**
-	 * URL to which the customer's browser is returned after fail
-	 * to pay with giropay online. Optional Character length and
-	 * limitations: no limit.	 
+	*  URL to which the customer's browser is returned after fail
+	*  to pay with giropay online. Optional Character length and
+	*  limitations: no limit.	 
 	 */ 
 	private String giropayCancelURL;
 
 	/**
-	 * URL to which the customer's browser can be returned in the
-	 * mEFT done page. Optional Character length and limitations:
-	 * no limit.	 
+	*  URL to which the customer's browser can be returned in the
+	*  mEFT done page. Optional Character length and limitations:
+	*  no limit.	 
 	 */ 
 	private String banktxnPendingURL;
 
 	/**
-	 * On your first invocation of SetExpressCheckoutRequest, the
-	 * value of this token is returned by
-	 * SetExpressCheckoutResponse. Optional Include this element
-	 * and its value only if you want to modify an existing
-	 * checkout session with another invocation of
-	 * SetExpressCheckoutRequest; for example, if you want the
-	 * customer to edit his shipping address on PayPal. Character
-	 * length and limitations: 20 single-byte characters	 
+	*  On your first invocation of SetExpressCheckoutRequest, the
+	*  value of this token is returned by
+	*  SetExpressCheckoutResponse. Optional Include this element
+	*  and its value only if you want to modify an existing
+	*  checkout session with another invocation of
+	*  SetExpressCheckoutRequest; for example, if you want the
+	*  customer to edit his shipping address on PayPal. Character
+	*  length and limitations: 20 single-byte characters	 
 	 */ 
 	private String token;
 
 	/**
-	 * The expected maximum total amount of the complete order,
-	 * including shipping cost and tax charges. Optional You must
-	 * set the currencyID attribute to one of the three-character
-	 * currency codes for any of the supported PayPal currencies.
-	 * Limitations: Must not exceed $10,000 USD in any currency. No
-	 * currency symbol. Decimal separator must be a period (.), and
-	 * the thousands separator must be a comma (,).	 
+	*  The expected maximum total amount of the complete order,
+	*  including shipping cost and tax charges. Optional You must
+	*  set the currencyID attribute to one of the three-character
+	*  currency codes for any of the supported PayPal currencies.
+	*  Limitations: Must not exceed $10,000 USD in any currency. No
+	*  currency symbol. Decimal separator must be a period (.), and
+	*  the thousands separator must be a comma (,).	 
 	 */ 
 	private BasicAmountType maxAmount;
 
 	/**
-	 * Description of items the customer is purchasing. Optional
-	 * Character length and limitations: 127 single-byte
-	 * alphanumeric characters	 
+	*  Description of items the customer is purchasing. Optional
+	*  Character length and limitations: 127 single-byte
+	*  alphanumeric characters	 
 	 */ 
 	private String orderDescription;
 
 	/**
-	 * A free-form field for your own use, such as a tracking
-	 * number or other value you want PayPal to return on
-	 * GetExpressCheckoutDetailsResponse and
-	 * DoExpressCheckoutPaymentResponse. Optional Character length
-	 * and limitations: 256 single-byte alphanumeric characters	 
+	*  A free-form field for your own use, such as a tracking
+	*  number or other value you want PayPal to return on
+	*  GetExpressCheckoutDetailsResponse and
+	*  DoExpressCheckoutPaymentResponse. Optional Character length
+	*  and limitations: 256 single-byte alphanumeric characters	 
 	 */ 
 	private String custom;
 
 	/**
-	 * Your own unique invoice or tracking number. PayPal returns
-	 * this value to you on DoExpressCheckoutPaymentResponse.
-	 * Optional Character length and limitations: 127 single-byte
-	 * alphanumeric characters	 
+	*  Your own unique invoice or tracking number. PayPal returns
+	*  this value to you on DoExpressCheckoutPaymentResponse.
+	*  Optional Character length and limitations: 127 single-byte
+	*  alphanumeric characters	 
 	 */ 
 	private String invoiceID;
 
 	/**
-	 * The value 1 indicates that you require that the customer's
-	 * shipping address on file with PayPal be a confirmed address.
-	 * Any value other than 1 indicates that the customer's
-	 * shipping address on file with PayPal need NOT be a confirmed
-	 * address. Setting this element overrides the setting you have
-	 * specified in the recipient's Merchant Account Profile.
-	 * Optional Character length and limitations: One single-byte
-	 * numeric character.	 
+	*  The value 1 indicates that you require that the customer's
+	*  shipping address on file with PayPal be a confirmed address.
+	*  Any value other than 1 indicates that the customer's
+	*  shipping address on file with PayPal need NOT be a confirmed
+	*  address. Setting this element overrides the setting you have
+	*  specified in the recipient's Merchant Account Profile.
+	*  Optional Character length and limitations: One single-byte
+	*  numeric character.	 
 	 */ 
 	private String reqConfirmShipping;
 
 	/**
-	 * The value 1 indicates that you require that the customer's
-	 * billing address on file. Setting this element overrides the
-	 * setting you have specified in Admin. Optional Character
-	 * length and limitations: One single-byte numeric character. 	 
+	*  The value 1 indicates that you require that the customer's
+	*  billing address on file. Setting this element overrides the
+	*  setting you have specified in Admin. Optional Character
+	*  length and limitations: One single-byte numeric character. 	 
 	 */ 
 	private String reqBillingAddress;
 
 	/**
-	 * The billing address for the buyer. Optional If you include
-	 * the BillingAddress element, the AddressType elements are
-	 * required: Name Street1 CityName CountryCode Do not set set
-	 * the CountryName element. 	 
+	*  The billing address for the buyer. Optional If you include
+	*  the BillingAddress element, the AddressType elements are
+	*  required: Name Street1 CityName CountryCode Do not set set
+	*  the CountryName element. 	 
 	 */ 
 	private AddressType billingAddress;
 
 	/**
-	 * The value 1 indicates that on the PayPal pages, no shipping
-	 * address fields should be displayed whatsoever. Optional
-	 * Character length and limitations: Four single-byte numeric
-	 * characters.	 
+	*  The value 1 indicates that on the PayPal pages, no shipping
+	*  address fields should be displayed whatsoever. Optional
+	*  Character length and limitations: Four single-byte numeric
+	*  characters.	 
 	 */ 
 	private String noShipping;
 
 	/**
-	 * The value 1 indicates that the PayPal pages should display
-	 * the shipping address set by you in the Address element on
-	 * this SetExpressCheckoutRequest, not the shipping address on
-	 * file with PayPal for this customer. Displaying the PayPal
-	 * street address on file does not allow the customer to edit
-	 * that address. Optional Character length and limitations:
-	 * Four single-byte numeric characters.	 
+	*  The value 1 indicates that the PayPal pages should display
+	*  the shipping address set by you in the Address element on
+	*  this SetExpressCheckoutRequest, not the shipping address on
+	*  file with PayPal for this customer. Displaying the PayPal
+	*  street address on file does not allow the customer to edit
+	*  that address. Optional Character length and limitations:
+	*  Four single-byte numeric characters.	 
 	 */ 
 	private String addressOverride;
 
 	/**
-	 * Locale of pages displayed by PayPal during Express Checkout.
-	 * Optional Character length and limitations: Five single-byte
-	 * alphabetic characters, upper- or lowercase. Allowable
-	 * values: AU or en_AUDE or de_DEFR or fr_FRGB or en_GBIT or
-	 * it_ITJP or ja_JPUS or en_US	 
+	*  Locale of pages displayed by PayPal during Express Checkout.
+	*  Optional Character length and limitations: Five single-byte
+	*  alphabetic characters, upper- or lowercase. Allowable
+	*  values: AU or en_AUDE or de_DEFR or fr_FRGB or en_GBIT or
+	*  it_ITJP or ja_JPUS or en_US	 
 	 */ 
 	private String localeCode;
 
 	/**
-	 * Sets the Custom Payment Page Style for payment pages
-	 * associated with this button/link. PageStyle corresponds to
-	 * the HTML variable page_style for customizing payment pages.
-	 * The value is the same as the Page Style Name you chose when
-	 * adding or editing the page style from the Profile subtab of
-	 * the My Account tab of your PayPal account. Optional
-	 * Character length and limitations: 30 single-byte alphabetic
-	 * characters. 	 
+	*  Sets the Custom Payment Page Style for payment pages
+	*  associated with this button/link. PageStyle corresponds to
+	*  the HTML variable page_style for customizing payment pages.
+	*  The value is the same as the Page Style Name you chose when
+	*  adding or editing the page style from the Profile subtab of
+	*  the My Account tab of your PayPal account. Optional
+	*  Character length and limitations: 30 single-byte alphabetic
+	*  characters. 	 
 	 */ 
 	private String pageStyle;
 
 	/**
-	 * A URL for the image you want to appear at the top left of
-	 * the payment page. The image has a maximum size of 750 pixels
-	 * wide by 90 pixels high. PayPal recommends that you provide
-	 * an image that is stored on a secure (https) server. Optional
-	 * Character length and limitations: 127	 
+	*  A URL for the image you want to appear at the top left of
+	*  the payment page. The image has a maximum size of 750 pixels
+	*  wide by 90 pixels high. PayPal recommends that you provide
+	*  an image that is stored on a secure (https) server. Optional
+	*  Character length and limitations: 127	 
 	 */ 
 	private String cppHeaderImage;
 
 	/**
-	 * Sets the border color around the header of the payment page.
-	 * The border is a 2-pixel perimeter around the header space,
-	 * which is 750 pixels wide by 90 pixels high. Optional
-	 * Character length and limitations: Six character HTML
-	 * hexadecimal color code in ASCII	 
+	*  Sets the border color around the header of the payment page.
+	*  The border is a 2-pixel perimeter around the header space,
+	*  which is 750 pixels wide by 90 pixels high. Optional
+	*  Character length and limitations: Six character HTML
+	*  hexadecimal color code in ASCII	 
 	 */ 
 	private String cppHeaderBorderColor;
 
 	/**
-	 * Sets the background color for the header of the payment
-	 * page. Optional Character length and limitation: Six
-	 * character HTML hexadecimal color code in ASCII	 
+	*  Sets the background color for the header of the payment
+	*  page. Optional Character length and limitation: Six
+	*  character HTML hexadecimal color code in ASCII	 
 	 */ 
 	private String cppHeaderBackColor;
 
 	/**
-	 * Sets the background color for the payment page. Optional
-	 * Character length and limitation: Six character HTML
-	 * hexadecimal color code in ASCII	 
+	*  Sets the background color for the payment page. Optional
+	*  Character length and limitation: Six character HTML
+	*  hexadecimal color code in ASCII	 
 	 */ 
 	private String cppPayflowColor;
 
 	/**
-	 * Sets the cart gradient color for the Mini Cart on 1X flow.
-	 * Optional Character length and limitation: Six character HTML
-	 * hexadecimal color code in ASCII	 
+	*  Sets the cart gradient color for the Mini Cart on 1X flow.
+	*  Optional Character length and limitation: Six character HTML
+	*  hexadecimal color code in ASCII	 
 	 */ 
 	private String cppCartBorderColor;
 
 	/**
-	 * A URL for the image you want to appear above the mini-cart.
-	 * The image has a maximum size of 190 pixels wide by 60 pixels
-	 * high. PayPal recommends that you provide an image that is
-	 * stored on a secure (https) server. Optional Character length
-	 * and limitations: 127	 
+	*  A URL for the image you want to appear above the mini-cart.
+	*  The image has a maximum size of 190 pixels wide by 60 pixels
+	*  high. PayPal recommends that you provide an image that is
+	*  stored on a secure (https) server. Optional Character length
+	*  and limitations: 127	 
 	 */ 
 	private String cppLogoImage;
 
 	/**
-	 * Customer's shipping address. Optional If you include a
-	 * shipping address and set the AddressOverride element on the
-	 * request, PayPal returns this same address in
-	 * GetExpressCheckoutDetailsResponse. 	 
+	*  Customer's shipping address. Optional If you include a
+	*  shipping address and set the AddressOverride element on the
+	*  request, PayPal returns this same address in
+	*  GetExpressCheckoutDetailsResponse. 	 
 	 */ 
 	private AddressType address;
 
 	/**
-	 * How you want to obtain payment. Required Authorization
-	 * indicates that this payment is a basic authorization subject
-	 * to settlement with PayPal Authorization and Capture. Order
-	 * indicates that this payment is is an order authorization
-	 * subject to settlement with PayPal Authorization and Capture.
-	 * Sale indicates that this is a final sale for which you are
-	 * requesting payment. IMPORTANT: You cannot set PaymentAction
-	 * to Sale or Order on SetExpressCheckoutRequest and then
-	 * change PaymentAction to Authorization on the final Express
-	 * Checkout API, DoExpressCheckoutPaymentRequest. Character
-	 * length and limit: Up to 13 single-byte alphabetic characters	 
+	*  How you want to obtain payment. Required Authorization
+	*  indicates that this payment is a basic authorization subject
+	*  to settlement with PayPal Authorization and Capture. Order
+	*  indicates that this payment is is an order authorization
+	*  subject to settlement with PayPal Authorization and Capture.
+	*  Sale indicates that this is a final sale for which you are
+	*  requesting payment. IMPORTANT: You cannot set PaymentAction
+	*  to Sale or Order on SetExpressCheckoutRequest and then
+	*  change PaymentAction to Authorization on the final Express
+	*  Checkout API, DoExpressCheckoutPaymentRequest. Character
+	*  length and limit: Up to 13 single-byte alphabetic characters	 
 	 */ 
 	private PaymentActionCodeType paymentAction;
 
 	/**
-	 * This will indicate which flow you are choosing
-	 * (expresschecheckout or expresscheckout optional) Optional
-	 * None Sole indicates that you are in the ExpressO flow Mark
-	 * indicates that you are in the old express flow. 	 
+	*  This will indicate which flow you are choosing
+	*  (expresschecheckout or expresscheckout optional) Optional
+	*  None Sole indicates that you are in the ExpressO flow Mark
+	*  indicates that you are in the old express flow. 	 
 	 */ 
 	private SolutionTypeType solutionType;
 
 	/**
-	 * This indicates Which page to display for ExpressO (Billing
-	 * or Login) Optional None Billing indicates that you are not a
-	 * paypal account holder Login indicates that you are a paypal
-	 * account holder 	 
+	*  This indicates Which page to display for ExpressO (Billing
+	*  or Login) Optional None Billing indicates that you are not a
+	*  paypal account holder Login indicates that you are a paypal
+	*  account holder 	 
 	 */ 
 	private LandingPageType landingPage;
 
 	/**
-	 * Email address of the buyer as entered during checkout.
-	 * PayPal uses this value to pre-fill the PayPal membership
-	 * sign-up portion of the PayPal login page. Optional Character
-	 * length and limit: 127 single-byte alphanumeric characters 	 
+	*  Email address of the buyer as entered during checkout.
+	*  PayPal uses this value to pre-fill the PayPal membership
+	*  sign-up portion of the PayPal login page. Optional Character
+	*  length and limit: 127 single-byte alphanumeric characters 	 
 	 */ 
 	private String buyerEmail;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private ChannelType channelType;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<BillingAgreementDetailsType> billingAgreementDetails = new ArrayList<BillingAgreementDetailsType>();
 
 	/**
-	 * Promo Code Optional List of promo codes supplied by
-	 * merchant. These promo codes enable the Merchant Services
-	 * Promotion Financing feature. 	 
+	*  Promo Code Optional List of promo codes supplied by
+	*  merchant. These promo codes enable the Merchant Services
+	*  Promotion Financing feature. 	 
 	 */ 
 	private List<String> promoCodes = new ArrayList<String>();
 
 	/**
-	 * Default Funding option for PayLater Checkout button. 	 
+	*  Default Funding option for PayLater Checkout button. 	 
 	 */ 
 	private String payPalCheckOutBtnType;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private ProductCategoryType productCategory;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private ShippingServiceCodeType shippingMethod;
 
 	/**
-	 * Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at
-	 * which address was changed by the user. 	 
+	*  Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at
+	*  which address was changed by the user. 	 
 	 */ 
 	private String profileAddressChangeDate;
 
 	/**
-	 * The value 1 indicates that the customer may enter a note to
-	 * the merchant on the PayPal page during checkout. The note is
-	 * returned in the GetExpressCheckoutDetails response and the
-	 * DoExpressCheckoutPayment response. Optional Character length
-	 * and limitations: One single-byte numeric character.
-	 * Allowable values: 0,1 	 
+	*  The value 1 indicates that the customer may enter a note to
+	*  the merchant on the PayPal page during checkout. The note is
+	*  returned in the GetExpressCheckoutDetails response and the
+	*  DoExpressCheckoutPayment response. Optional Character length
+	*  and limitations: One single-byte numeric character.
+	*  Allowable values: 0,1 	 
 	 */ 
 	private String allowNote;
 
 	/**
-	 * Funding source preferences. 	 
+	*  Funding source preferences. 	 
 	 */ 
 	private FundingSourceDetailsType fundingSourceDetails;
 
 	/**
-	 * The label that needs to be displayed on the cancel links in
-	 * the PayPal hosted checkout pages. Optional Character length
-	 * and limit: 127 single-byte alphanumeric characters 	 
+	*  The label that needs to be displayed on the cancel links in
+	*  the PayPal hosted checkout pages. Optional Character length
+	*  and limit: 127 single-byte alphanumeric characters 	 
 	 */ 
 	private String brandName;
 
 	/**
-	 * URL for PayPal to use to retrieve shipping, handling,
-	 * insurance, and tax details from your website. Optional
-	 * Character length and limitations: 2048 characters. 	 
+	*  URL for PayPal to use to retrieve shipping, handling,
+	*  insurance, and tax details from your website. Optional
+	*  Character length and limitations: 2048 characters. 	 
 	 */ 
 	private String callbackURL;
 
 	/**
-	 * Enhanced data for different industry segments. Optional 	 
+	*  Enhanced data for different industry segments. Optional 	 
 	 */ 
 	private EnhancedCheckoutDataType enhancedCheckoutData;
 
 	/**
-	 * List of other payment methods the user can pay with.
-	 * Optional Refer to the OtherPaymentMethodDetailsType for more
-	 * details. 	 
+	*  List of other payment methods the user can pay with.
+	*  Optional Refer to the OtherPaymentMethodDetailsType for more
+	*  details. 	 
 	 */ 
 	private List<OtherPaymentMethodDetailsType> otherPaymentMethods = new ArrayList<OtherPaymentMethodDetailsType>();
 
 	/**
-	 * Details about the buyer's account. Optional Refer to the
-	 * BuyerDetailsType for more details. 	 
+	*  Details about the buyer's account. Optional Refer to the
+	*  BuyerDetailsType for more details. 	 
 	 */ 
 	private BuyerDetailsType buyerDetails;
 
 	/**
-	 * Information about the payment. 	 
+	*  Information about the payment. 	 
 	 */ 
 	private List<PaymentDetailsType> paymentDetails = new ArrayList<PaymentDetailsType>();
 
 	/**
-	 * List of Fall Back Shipping options provided by merchant. 	 
+	*  List of Fall Back Shipping options provided by merchant. 	 
 	 */ 
 	private List<ShippingOptionType> flatRateShippingOptions = new ArrayList<ShippingOptionType>();
 
 	/**
-	 * Information about the call back timeout override. 	 
+	*  Information about the call back timeout override. 	 
 	 */ 
 	private String callbackTimeout;
 
 	/**
-	 * Information about the call back version. 	 
+	*  Information about the call back version. 	 
 	 */ 
 	private String callbackVersion;
 
 	/**
-	 * Information about the Customer service number. 	 
+	*  Information about the Customer service number. 	 
 	 */ 
 	private String customerServiceNumber;
 
 	/**
-	 * Information about the Gift message enable. 	 
+	*  Information about the Gift message enable. 	 
 	 */ 
 	private String giftMessageEnable;
 
 	/**
-	 * Information about the Gift receipt enable. 	 
+	*  Information about the Gift receipt enable. 	 
 	 */ 
 	private String giftReceiptEnable;
 
 	/**
-	 * Information about the Gift Wrap enable. 	 
+	*  Information about the Gift Wrap enable. 	 
 	 */ 
 	private String giftWrapEnable;
 
 	/**
-	 * Information about the Gift Wrap name. 	 
+	*  Information about the Gift Wrap name. 	 
 	 */ 
 	private String giftWrapName;
 
 	/**
-	 * Information about the Gift Wrap amount. 	 
+	*  Information about the Gift Wrap amount. 	 
 	 */ 
 	private BasicAmountType giftWrapAmount;
 
 	/**
-	 * Information about the Buyer email option enable . 	 
+	*  Information about the Buyer email option enable . 	 
 	 */ 
 	private String buyerEmailOptInEnable;
 
 	/**
-	 * Information about the survey enable. 	 
+	*  Information about the survey enable. 	 
 	 */ 
 	private String surveyEnable;
 
 	/**
-	 * Information about the survey question. 	 
+	*  Information about the survey question. 	 
 	 */ 
 	private String surveyQuestion;
 
 	/**
-	 * Information about the survey choices for survey question. 	 
+	*  Information about the survey choices for survey question. 	 
 	 */ 
 	private List<String> surveyChoice = new ArrayList<String>();
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private TotalType totalType;
 
 	/**
-	 * Any message the seller would like to be displayed in the
-	 * Mini Cart for UX. 	 
+	*  Any message the seller would like to be displayed in the
+	*  Mini Cart for UX. 	 
 	 */ 
 	private String noteToBuyer;
 
 	/**
-	 * Incentive Code Optional List of incentive codes supplied by
-	 * ebay/merchant. 	 
+	*  Incentive Code Optional List of incentive codes supplied by
+	*  ebay/merchant. 	 
 	 */ 
 	private List<IncentiveInfoType> incentives = new ArrayList<IncentiveInfoType>();
 
 	/**
-	 * Merchant specified flag which indicates whether to return
-	 * Funding Instrument Details in DoEC or not. Optional 	 
+	*  Merchant specified flag which indicates whether to return
+	*  Funding Instrument Details in DoEC or not. Optional 	 
 	 */ 
 	private String reqInstrumentDetails;
 
 	/**
-	 * This element contains information that allows the merchant
-	 * to request to opt into external remember me on behalf of the
-	 * buyer or to request login bypass using external remember me.
-	 * Note the opt-in details are silently ignored if the
-	 * ExternalRememberMeID is present. 	 
+	*  This element contains information that allows the merchant
+	*  to request to opt into external remember me on behalf of the
+	*  buyer or to request login bypass using external remember me.
+	*  Note the opt-in details are silently ignored if the
+	*  ExternalRememberMeID is present. 	 
 	 */ 
 	private ExternalRememberMeOptInDetailsType externalRememberMeOptInDetails;
 
 	/**
-	 * An optional set of values related to flow-specific details. 	 
+	*  An optional set of values related to flow-specific details. 	 
 	 */ 
 	private FlowControlDetailsType flowControlDetails;
 
 	/**
-	 * An optional set of values related to display-specific
-	 * details. 	 
+	*  An optional set of values related to display-specific
+	*  details. 	 
 	 */ 
 	private DisplayControlDetailsType displayControlDetails;
 
 	/**
-	 * An optional set of values related to tracking for external
-	 * partner. 	 
+	*  An optional set of values related to tracking for external
+	*  partner. 	 
 	 */ 
 	private ExternalPartnerTrackingDetailsType externalPartnerTrackingDetails;
 
 	/**
-	 * Optional element that defines relationship between buckets 	 
+	*  Optional element that defines relationship between buckets 	 
 	 */ 
 	private List<CoupledBucketsType> coupledBuckets = new ArrayList<CoupledBucketsType>();
 

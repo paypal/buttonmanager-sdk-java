@@ -2,9 +2,9 @@ package urn.ebay.apis.eBLBaseComponents;
 import com.paypal.core.SDKUtil;
 
 /**
- * If Billing Address should be returned in
- * GetExpressCheckoutDetails response, this parameter should be
- * set to yes here 
+ *  If Billing Address should be returned in
+ *  GetExpressCheckoutDetails response, this parameter should be
+ *  set to yes here 
  */
 public class InfoSharingDirectivesType{
 
@@ -12,9 +12,9 @@ public class InfoSharingDirectivesType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * If Billing Address should be returned in
-	 * GetExpressCheckoutDetails response, this parameter should be
-	 * set to yes here	 
+	*  If Billing Address should be returned in
+	*  GetExpressCheckoutDetails response, this parameter should be
+	*  set to yes here	 
 	 */ 
 	private String reqBillingAddress;
 

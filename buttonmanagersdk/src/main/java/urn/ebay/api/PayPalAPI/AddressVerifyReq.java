@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.AddressVerifyRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class AddressVerifyReq{
 
@@ -11,7 +11,7 @@ public class AddressVerifyReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private AddressVerifyRequestType addressVerifyRequest;
 

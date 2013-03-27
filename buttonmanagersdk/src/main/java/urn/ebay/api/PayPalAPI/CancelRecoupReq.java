@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.CancelRecoupRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class CancelRecoupReq{
 
@@ -11,7 +11,7 @@ public class CancelRecoupReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private CancelRecoupRequestType cancelRecoupRequest;
 

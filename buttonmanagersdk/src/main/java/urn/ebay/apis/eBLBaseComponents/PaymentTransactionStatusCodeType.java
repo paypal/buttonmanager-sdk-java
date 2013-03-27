@@ -1,10 +1,9 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  PaymentTransactionStatusCodeType 
- *  The status of the PayPal payment.
- * 
+ *   The status of the PayPal payment.
+ *   
  */
 public enum  PaymentTransactionStatusCodeType {
 

@@ -2,7 +2,7 @@ package urn.ebay.apis.eBLBaseComponents;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class AuthorizationRequestType{
 
@@ -10,7 +10,7 @@ public class AuthorizationRequestType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private Boolean isRequested;

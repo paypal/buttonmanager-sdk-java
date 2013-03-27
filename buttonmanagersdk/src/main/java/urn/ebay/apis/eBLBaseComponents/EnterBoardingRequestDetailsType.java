@@ -6,9 +6,9 @@ import urn.ebay.apis.eBLBaseComponents.BankAccountDetailsType;
 import com.paypal.core.SDKUtil;
 
 /**
- * Onboarding program code given to you by PayPal. Required
- * Character length and limitations: 64 alphanumeric characters
- * 
+ *  Onboarding program code given to you by PayPal. Required
+ *  Character length and limitations: 64 alphanumeric characters
+ *  
  */
 public class EnterBoardingRequestDetailsType{
 
@@ -16,59 +16,59 @@ public class EnterBoardingRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * Onboarding program code given to you by PayPal. Required
-	 * Character length and limitations: 64 alphanumeric characters	 
+	*  Onboarding program code given to you by PayPal. Required
+	*  Character length and limitations: 64 alphanumeric characters	 
 	 */ 
 	private String programCode;
 
 	/**
-	 * A list of comma-separated values that indicate the PayPal
-	 * products you are implementing for this merchant: Direct
-	 * Payment (dp) allows payments by credit card without
-	 * requiring the customer to have a PayPal account. Express
-	 * Checkout (ec) allows customers to fund transactions with
-	 * their PayPal account. Authorization and Capture
-	 * (auth_settle) allows merchants to verify availability of
-	 * funds in a PayPal account, but capture them at a later time.
-	 * Administrative APIs (admin_api) is a collection of the
-	 * PayPal APIs for transaction searching, getting transaction
-	 * details, refunding, and mass payments. Required Character
-	 * length and limitations: 64 alphanumeric characters	 
+	*  A list of comma-separated values that indicate the PayPal
+	*  products you are implementing for this merchant: Direct
+	*  Payment (dp) allows payments by credit card without
+	*  requiring the customer to have a PayPal account. Express
+	*  Checkout (ec) allows customers to fund transactions with
+	*  their PayPal account. Authorization and Capture
+	*  (auth_settle) allows merchants to verify availability of
+	*  funds in a PayPal account, but capture them at a later time.
+	*  Administrative APIs (admin_api) is a collection of the
+	*  PayPal APIs for transaction searching, getting transaction
+	*  details, refunding, and mass payments. Required Character
+	*  length and limitations: 64 alphanumeric characters	 
 	 */ 
 	private String productList;
 
 	/**
-	 * Any custom information you want to store for this partner
-	 * Optional Character length and limitations: 256 alphanumeric
-	 * characters	 
+	*  Any custom information you want to store for this partner
+	*  Optional Character length and limitations: 256 alphanumeric
+	*  characters	 
 	 */ 
 	private String partnerCustom;
 
 	/**
-	 * The URL for the logo displayed on the PayPal Partner Welcome
-	 * Page. Optional Character length and limitations: 2,048
-	 * alphanumeric characters	 
+	*  The URL for the logo displayed on the PayPal Partner Welcome
+	*  Page. Optional Character length and limitations: 2,048
+	*  alphanumeric characters	 
 	 */ 
 	private String imageUrl;
 
 	/**
-	 * Marketing category tha configures the graphic displayed n
-	 * the PayPal Partner Welcome page.	 
+	*  Marketing category tha configures the graphic displayed n
+	*  the PayPal Partner Welcome page.	 
 	 */ 
 	private MarketingCategoryType marketingCategory;
 
 	/**
-	 * Information about the merchant’s business	 
+	*  Information about the merchant’s business	 
 	 */ 
 	private BusinessInfoType businessInfo;
 
 	/**
-	 * Information about the merchant (the business owner)	 
+	*  Information about the merchant (the business owner)	 
 	 */ 
 	private BusinessOwnerInfoType ownerInfo;
 
 	/**
-	 * Information about the merchant's bank account	 
+	*  Information about the merchant's bank account	 
 	 */ 
 	private BankAccountDetailsType bankAccount;
 

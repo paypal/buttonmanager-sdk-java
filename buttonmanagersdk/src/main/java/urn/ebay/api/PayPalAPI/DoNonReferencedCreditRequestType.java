@@ -4,7 +4,7 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class DoNonReferencedCreditRequestType extends AbstractRequestType {
 
@@ -12,7 +12,7 @@ public class DoNonReferencedCreditRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private DoNonReferencedCreditRequestDetailsType doNonReferencedCreditRequestDetails;

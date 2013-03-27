@@ -7,7 +7,7 @@ import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import com.paypal.core.SDKUtil;
 
 /**
- * Type of the payment Required 
+ *  Type of the payment Required 
  */
 public class CreateMobilePaymentRequestDetailsType{
 
@@ -15,90 +15,90 @@ public class CreateMobilePaymentRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * Type of the payment Required 	 
+	*  Type of the payment Required 	 
 	 */ 
 	private MobilePaymentCodeType paymentType;
 
 	/**
-	 * How you want to obtain payment. Defaults to Sale. Optional
-	 * Authorization indicates that this payment is a basic
-	 * authorization subject to settlement with PayPal
-	 * Authorization and Capture. Sale indicates that this is a
-	 * final sale for which you are requesting payment. 	 
+	*  How you want to obtain payment. Defaults to Sale. Optional
+	*  Authorization indicates that this payment is a basic
+	*  authorization subject to settlement with PayPal
+	*  Authorization and Capture. Sale indicates that this is a
+	*  final sale for which you are requesting payment. 	 
 	 */ 
 	private PaymentActionCodeType paymentAction;
 
 	/**
-	 * Phone number of the user making the payment. Required 	 
+	*  Phone number of the user making the payment. Required 	 
 	 */ 
 	private PhoneNumberType senderPhone;
 
 	/**
-	 * Type of recipient specified, i.e., phone number or email
-	 * address Required 	 
+	*  Type of recipient specified, i.e., phone number or email
+	*  address Required 	 
 	 */ 
 	private MobileRecipientCodeType recipientType;
 
 	/**
-	 * Email address of the recipient 	 
+	*  Email address of the recipient 	 
 	 */ 
 	private String recipientEmail;
 
 	/**
-	 * Phone number of the recipipent Required 	 
+	*  Phone number of the recipipent Required 	 
 	 */ 
 	private PhoneNumberType recipientPhone;
 
 	/**
-	 * Amount of item before tax and shipping 	 
+	*  Amount of item before tax and shipping 	 
 	 */ 
 	private BasicAmountType itemAmount;
 
 	/**
-	 * The tax charged on the transactionTax Optional 	 
+	*  The tax charged on the transactionTax Optional 	 
 	 */ 
 	private BasicAmountType tax;
 
 	/**
-	 * Per-transaction shipping charge Optional 	 
+	*  Per-transaction shipping charge Optional 	 
 	 */ 
 	private BasicAmountType shipping;
 
 	/**
-	 * Name of the item being ordered Optional Character length and
-	 * limitations: 255 single-byte alphanumeric characters 	 
+	*  Name of the item being ordered Optional Character length and
+	*  limitations: 255 single-byte alphanumeric characters 	 
 	 */ 
 	private String itemName;
 
 	/**
-	 * SKU of the item being ordered Optional Character length and
-	 * limitations: 255 single-byte alphanumeric characters 	 
+	*  SKU of the item being ordered Optional Character length and
+	*  limitations: 255 single-byte alphanumeric characters 	 
 	 */ 
 	private String itemNumber;
 
 	/**
-	 * Memo entered by sender in PayPal Website Payments note
-	 * field. Optional Character length and limitations: 255
-	 * single-byte alphanumeric characters 	 
+	*  Memo entered by sender in PayPal Website Payments note
+	*  field. Optional Character length and limitations: 255
+	*  single-byte alphanumeric characters 	 
 	 */ 
 	private String note;
 
 	/**
-	 * Unique ID for the order. Required for non-P2P transactions
-	 * Optional Character length and limitations: 255 single-byte
-	 * alphanumeric characters 	 
+	*  Unique ID for the order. Required for non-P2P transactions
+	*  Optional Character length and limitations: 255 single-byte
+	*  alphanumeric characters 	 
 	 */ 
 	private String customID;
 
 	/**
-	 * Indicates whether the sender's phone number will be shared
-	 * with recipient Optional 	 
+	*  Indicates whether the sender's phone number will be shared
+	*  with recipient Optional 	 
 	 */ 
 	private Integer sharePhoneNumber;
 
 	/**
-	 * Indicates whether the sender's home address will be shared
-	 * with recipient Optional 	 
+	*  Indicates whether the sender's home address will be shared
+	*  with recipient Optional 	 
 	 */ 
 	private Integer shareHomeAddress;
 

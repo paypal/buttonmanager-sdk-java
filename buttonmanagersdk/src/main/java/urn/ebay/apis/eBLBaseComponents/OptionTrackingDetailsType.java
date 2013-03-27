@@ -18,7 +18,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Option Number. Optional 
+ *  Option Number. Optional 
  */
 public class OptionTrackingDetailsType{
 
@@ -26,32 +26,32 @@ public class OptionTrackingDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * Option Number. Optional 	 
+	*  Option Number. Optional 	 
 	 */ 
 	private String optionNumber;
 
 	/**
-	 * Option Quantity. Optional 	 
+	*  Option Quantity. Optional 	 
 	 */ 
 	private String optionQty;
 
 	/**
-	 * Option Select Name. Optional 	 
+	*  Option Select Name. Optional 	 
 	 */ 
 	private String optionSelect;
 
 	/**
-	 * Option Quantity Delta. Optional 	 
+	*  Option Quantity Delta. Optional 	 
 	 */ 
 	private String optionQtyDelta;
 
 	/**
-	 * Option Alert. Optional 	 
+	*  Option Alert. Optional 	 
 	 */ 
 	private String optionAlert;
 
 	/**
-	 * Option Cost. Optional 	 
+	*  Option Cost. Optional 	 
 	 */ 
 	private String optionCost;
 

@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.SetAccessPermissionsRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class SetAccessPermissionsReq{
 
@@ -11,7 +11,7 @@ public class SetAccessPermissionsReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private SetAccessPermissionsRequestType setAccessPermissionsRequest;
 

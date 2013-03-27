@@ -18,7 +18,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * 
+ *  
  */
 public class PersonNameType{
 
@@ -26,27 +26,27 @@ public class PersonNameType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String salutation;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String firstName;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String middleName;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String lastName;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String suffix;
 

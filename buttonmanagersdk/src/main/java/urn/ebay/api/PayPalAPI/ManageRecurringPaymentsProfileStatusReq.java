@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.ManageRecurringPaymentsProfileStatusRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class ManageRecurringPaymentsProfileStatusReq{
 
@@ -11,7 +11,7 @@ public class ManageRecurringPaymentsProfileStatusReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private ManageRecurringPaymentsProfileStatusRequestType manageRecurringPaymentsProfileStatusRequest;
 

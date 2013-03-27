@@ -1,11 +1,10 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  MobileRecipientCodeType 
- *  These are the accepted types of recipients for
- * mobile-originated transactions
- * 
+ *   These are the accepted types of recipients for
+ *  mobile-originated transactions
+ *   
  */
 public enum  MobileRecipientCodeType {
 

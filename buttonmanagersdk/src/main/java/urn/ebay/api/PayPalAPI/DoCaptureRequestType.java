@@ -7,9 +7,9 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * The authorization identification number of the payment you
- * want to capture. Required Character length and limits: 19
- * single-byte characters maximum 
+ *  The authorization identification number of the payment you
+ *  want to capture. Required Character length and limits: 19
+ *  single-byte characters maximum 
  */
 public class DoCaptureRequestType extends AbstractRequestType {
 
@@ -17,73 +17,73 @@ public class DoCaptureRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * The authorization identification number of the payment you
-	 * want to capture. Required Character length and limits: 19
-	 * single-byte characters maximum	  
+	*  The authorization identification number of the payment you
+	*  want to capture. Required Character length and limits: 19
+	*  single-byte characters maximum	  
 	 *@Required	 
 	 */ 
 	private String authorizationID;
 
 	/**
-	 * Amount to authorize. You must set the currencyID attribute
-	 * to USD. Required Limitations: Must not exceed $10,000 USD in
-	 * any currency. No currency symbol. Decimal separator must be
-	 * a period (.), and the thousands separator must be a comma
-	 * (,)	  
+	*  Amount to authorize. You must set the currencyID attribute
+	*  to USD. Required Limitations: Must not exceed $10,000 USD in
+	*  any currency. No currency symbol. Decimal separator must be
+	*  a period (.), and the thousands separator must be a comma
+	*  (,)	  
 	 *@Required	 
 	 */ 
 	private BasicAmountType amount;
 
 	/**
-	 * Indicates if this capture is the last capture you intend to
-	 * make. The default is Complete. If CompleteType is Complete,
-	 * any remaining amount of the original reauthorized
-	 * transaction is automatically voided. Required Character
-	 * length and limits: 12 single-byte alphanumeric characters	  
+	*  Indicates if this capture is the last capture you intend to
+	*  make. The default is Complete. If CompleteType is Complete,
+	*  any remaining amount of the original reauthorized
+	*  transaction is automatically voided. Required Character
+	*  length and limits: 12 single-byte alphanumeric characters	  
 	 *@Required	 
 	 */ 
 	private CompleteCodeType completeType;
 
 	/**
-	 * An informational note about this settlement that is
-	 * displayed to the payer in email and in transaction history.
-	 * Optional Character length and limits: 255 single-byte
-	 * characters	 
+	*  An informational note about this settlement that is
+	*  displayed to the payer in email and in transaction history.
+	*  Optional Character length and limits: 255 single-byte
+	*  characters	 
 	 */ 
 	private String note;
 
 	/**
-	 * Your invoice number or other identification number. The
-	 * InvoiceID value is recorded only if the authorization you
-	 * are capturing is an order authorization, not a basic
-	 * authorization. Optional Character length and limits: 127
-	 * single-byte alphanumeric characters	 
+	*  Your invoice number or other identification number. The
+	*  InvoiceID value is recorded only if the authorization you
+	*  are capturing is an order authorization, not a basic
+	*  authorization. Optional Character length and limits: 127
+	*  single-byte alphanumeric characters	 
 	 */ 
 	private String invoiceID;
 
 	/**
-	 * Contains enhanced data like airline itinerary information.
-	 * Not Required 	 
+	*  Contains enhanced data like airline itinerary information.
+	*  Not Required 	 
 	 */ 
 	private EnhancedDataType enhancedData;
 
 	/**
-	 * dynamic descriptor Dynamic descriptor is used for merchant
-	 * to provide detail of a transaction appears on statement
-	 * Optional Character length and limits: <18 characters
-	 * alphanumeric characters	 
+	*  dynamic descriptor Dynamic descriptor is used for merchant
+	*  to provide detail of a transaction appears on statement
+	*  Optional Character length and limits: <18 characters
+	*  alphanumeric characters	 
 	 */ 
 	private String descriptor;
 
 	/**
-	 * To pass the Merchant store informationOptional 	 
+	*  To pass the Merchant store informationOptional 	 
 	 */ 
 	private MerchantStoreDetailsType merchantStoreDetails;
 
 	/**
-	 * Unique id for each API request to prevent duplicate
-	 * payments. Optional Character length and limits: 38
-	 * single-byte characters maximum. 	 
+	*  Unique id for each API request to prevent duplicate
+	*  payments. Optional Character length and limits: 38
+	*  single-byte characters maximum. 	 
 	 */ 
 	private String msgSubID;
 

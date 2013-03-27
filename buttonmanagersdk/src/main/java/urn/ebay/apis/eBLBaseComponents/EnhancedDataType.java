@@ -3,7 +3,7 @@ import urn.ebay.apis.eBLBaseComponents.AirlineItineraryType;
 import com.paypal.core.SDKUtil;
 
 /**
- * Enhanced Data Information. Example: AID for Airlines 
+ *  Enhanced Data Information. Example: AID for Airlines 
  */
 public class EnhancedDataType{
 
@@ -11,7 +11,7 @@ public class EnhancedDataType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private AirlineItineraryType airlineItinerary;
 

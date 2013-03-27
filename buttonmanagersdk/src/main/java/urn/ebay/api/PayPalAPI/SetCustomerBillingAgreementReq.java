@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.SetCustomerBillingAgreementRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class SetCustomerBillingAgreementReq{
 
@@ -11,7 +11,7 @@ public class SetCustomerBillingAgreementReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private SetCustomerBillingAgreementRequestType setCustomerBillingAgreementRequest;
 

@@ -19,18 +19,18 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Holds refunds payment status information 
+ *  Holds refunds payment status information 
  */
 public class RefundInfoType{
 
 
 	/**
-	 * Refund status whether it is Instant or Delayed. 	 
+	*  Refund status whether it is Instant or Delayed. 	 
 	 */ 
 	private PaymentStatusCodeType refundStatus;
 
 	/**
-	 * Tells us the reason when refund payment status is Delayed. 	 
+	*  Tells us the reason when refund payment status is Delayed. 	 
 	 */ 
 	private PendingStatusCodeType pendingReason;
 

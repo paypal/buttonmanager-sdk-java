@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.BMCreateButtonRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class BMCreateButtonReq{
 
@@ -11,7 +11,7 @@ public class BMCreateButtonReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BMCreateButtonRequestType bMCreateButtonRequest;
 

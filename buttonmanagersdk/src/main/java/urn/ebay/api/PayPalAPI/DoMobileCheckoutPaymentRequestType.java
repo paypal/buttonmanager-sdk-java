@@ -3,9 +3,9 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * A timestamped token, the value of which was returned by
- * SetMobileCheckoutResponse. RequiredCharacter length and
- * limitations: 20 single-byte characters
+ *  A timestamped token, the value of which was returned by
+ *  SetMobileCheckoutResponse. RequiredCharacter length and
+ *  limitations: 20 single-byte characters
  */
 public class DoMobileCheckoutPaymentRequestType extends AbstractRequestType {
 
@@ -13,9 +13,9 @@ public class DoMobileCheckoutPaymentRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * A timestamped token, the value of which was returned by
-	 * SetMobileCheckoutResponse. RequiredCharacter length and
-	 * limitations: 20 single-byte characters	  
+	*  A timestamped token, the value of which was returned by
+	*  SetMobileCheckoutResponse. RequiredCharacter length and
+	*  limitations: 20 single-byte characters	  
 	 *@Required	 
 	 */ 
 	private String token;

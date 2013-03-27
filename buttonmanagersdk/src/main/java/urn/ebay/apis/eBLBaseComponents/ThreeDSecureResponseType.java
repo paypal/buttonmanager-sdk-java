@@ -17,18 +17,18 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * 3DS remaining fields. 
+ *  3DS remaining fields. 
  */
 public class ThreeDSecureResponseType{
 
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String vpas;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String eciSubmitted3DS;
 

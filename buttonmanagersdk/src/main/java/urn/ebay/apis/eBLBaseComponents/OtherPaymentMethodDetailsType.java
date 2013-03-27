@@ -2,8 +2,8 @@ package urn.ebay.apis.eBLBaseComponents;
 import com.paypal.core.SDKUtil;
 
 /**
- * Lists the Payment Methods (other than PayPal) that the use
- * can pay with e.g. Money Order. Optional. 
+ *  Lists the Payment Methods (other than PayPal) that the use
+ *  can pay with e.g. Money Order. Optional. 
  */
 public class OtherPaymentMethodDetailsType{
 
@@ -11,45 +11,45 @@ public class OtherPaymentMethodDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * The identifier of the Payment Method. 	 
+	*  The identifier of the Payment Method. 	 
 	 */ 
 	private String otherPaymentMethodId;
 
 	/**
-	 * Valid values are 'Method', 'SubMethod'. 	 
+	*  Valid values are 'Method', 'SubMethod'. 	 
 	 */ 
 	private String otherPaymentMethodType;
 
 	/**
-	 * The name of the Payment Method. 	 
+	*  The name of the Payment Method. 	 
 	 */ 
 	private String otherPaymentMethodLabel;
 
 	/**
-	 * The short description of the Payment Method, goes along with
-	 * the label. 	 
+	*  The short description of the Payment Method, goes along with
+	*  the label. 	 
 	 */ 
 	private String otherPaymentMethodLabelDescription;
 
 	/**
-	 * The title for the long description. 	 
+	*  The title for the long description. 	 
 	 */ 
 	private String otherPaymentMethodLongDescriptionTitle;
 
 	/**
-	 * The long description of the Payment Method. 	 
+	*  The long description of the Payment Method. 	 
 	 */ 
 	private String otherPaymentMethodLongDescription;
 
 	/**
-	 * The icon of the Payment Method. 	 
+	*  The icon of the Payment Method. 	 
 	 */ 
 	private String otherPaymentMethodIcon;
 
 	/**
-	 * If this flag is true, then OtherPaymentMethodIcon is
-	 * required to have a valid value; the label will be hidden and
-	 * only ICON will be shown. 	 
+	*  If this flag is true, then OtherPaymentMethodIcon is
+	*  required to have a valid value; the label will be hidden and
+	*  only ICON will be shown. 	 
 	 */ 
 	private Boolean otherPaymentMethodHideLabel;
 

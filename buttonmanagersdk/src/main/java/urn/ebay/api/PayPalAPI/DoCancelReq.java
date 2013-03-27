@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.DoCancelRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class DoCancelReq{
 
@@ -11,7 +11,7 @@ public class DoCancelReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private DoCancelRequestType doCancelRequest;
 

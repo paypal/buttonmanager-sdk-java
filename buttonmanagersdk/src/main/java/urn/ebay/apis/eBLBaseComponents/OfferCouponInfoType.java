@@ -17,29 +17,29 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * OffersAndCouponsInfoType Information about a Offers and
- * Coupons. 
+ *  OffersAndCouponsInfoType Information about a Offers and
+ *  Coupons. 
  */
 public class OfferCouponInfoType{
 
 
 	/**
-	 * Type of the incentive 	 
+	*  Type of the incentive 	 
 	 */ 
 	private String type;
 
 	/**
-	 * ID of the Incentive used in transaction	 
+	*  ID of the Incentive used in transaction	 
 	 */ 
 	private String iD;
 
 	/**
-	 * Amount used on transaction	 
+	*  Amount used on transaction	 
 	 */ 
 	private String amount;
 
 	/**
-	 * Amount Currency	 
+	*  Amount Currency	 
 	 */ 
 	private String amountCurrency;
 

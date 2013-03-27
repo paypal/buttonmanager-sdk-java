@@ -18,34 +18,34 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Details of incentive application on individual bucket/item. 
+ *  Details of incentive application on individual bucket/item. 
  */
 public class IncentiveAppliedDetailsType{
 
 
 	/**
-	 * PaymentRequestID uniquely identifies a bucket. It is the
-	 * "bucket id" in the world of EC API. 	 
+	*  PaymentRequestID uniquely identifies a bucket. It is the
+	*  "bucket id" in the world of EC API. 	 
 	 */ 
 	private String paymentRequestID;
 
 	/**
-	 * The item id passed through by the merchant. 	 
+	*  The item id passed through by the merchant. 	 
 	 */ 
 	private String itemId;
 
 	/**
-	 * The item transaction id passed through by the merchant. 	 
+	*  The item transaction id passed through by the merchant. 	 
 	 */ 
 	private String externalTxnId;
 
 	/**
-	 * Discount offerred for this bucket or item. 	 
+	*  Discount offerred for this bucket or item. 	 
 	 */ 
 	private BasicAmountType discountAmount;
 
 	/**
-	 * SubType for coupon. 	 
+	*  SubType for coupon. 	 
 	 */ 
 	private String subType;
 

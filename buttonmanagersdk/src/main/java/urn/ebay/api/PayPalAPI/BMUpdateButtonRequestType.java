@@ -13,9 +13,9 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * Hosted Button id of the button to update.  Required
- * Character length and limitations: 10 single-byte numeric
- * characters  
+ *  Hosted Button id of the button to update.  Required
+ *  Character length and limitations: 10 single-byte numeric
+ *  characters  
  */
 public class BMUpdateButtonRequestType extends AbstractRequestType {
 
@@ -23,82 +23,82 @@ public class BMUpdateButtonRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * Hosted Button id of the button to update.  Required
-	 * Character length and limitations: 10 single-byte numeric
-	 * characters 	  
+	*  Hosted Button id of the button to update.  Required
+	*  Character length and limitations: 10 single-byte numeric
+	*  characters 	  
 	 *@Required	 
 	 */ 
 	private String hostedButtonID;
 
 	/**
-	 * Type of Button to create.  Required Must be one of the
-	 * following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
-	 * PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE 	 
+	*  Type of Button to create.  Required Must be one of the
+	*  following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE,
+	*  PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE 	 
 	 */ 
 	private ButtonTypeType buttonType;
 
 	/**
-	 * button code.  optional Must be one of the following: hosted,
-	 * encrypted or cleartext 	 
+	*  button code.  optional Must be one of the following: hosted,
+	*  encrypted or cleartext 	 
 	 */ 
 	private ButtonCodeType buttonCode;
 
 	/**
-	 * Button sub type.  optional for button types buynow and cart
-	 * only Must Be either PRODUCTS or SERVICES 	 
+	*  Button sub type.  optional for button types buynow and cart
+	*  only Must Be either PRODUCTS or SERVICES 	 
 	 */ 
 	private ButtonSubTypeType buttonSubType;
 
 	/**
-	 * Button Variable information  At least one required recurring
-	 * Character length and limitations: 63 single-byte
-	 * alphanumeric characters 	 
+	*  Button Variable information  At least one required recurring
+	*  Character length and limitations: 63 single-byte
+	*  alphanumeric characters 	 
 	 */ 
 	private List<String> buttonVar = new ArrayList<String>();
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<OptionDetailsType> optionDetails = new ArrayList<OptionDetailsType>();
 
 	/**
-	 * Details of each option for the button.  Optional 	 
+	*  Details of each option for the button.  Optional 	 
 	 */ 
 	private List<String> textBox = new ArrayList<String>();
 
 	/**
-	 * Button image to use.  Optional Must be one of: REG, SML, or
-	 * CC 	 
+	*  Button image to use.  Optional Must be one of: REG, SML, or
+	*  CC 	 
 	 */ 
 	private ButtonImageType buttonImage;
 
 	/**
-	 * Button URL for custom button image.  Optional Character
-	 * length and limitations: 127 single-byte alphanumeric
-	 * characters 	 
+	*  Button URL for custom button image.  Optional Character
+	*  length and limitations: 127 single-byte alphanumeric
+	*  characters 	 
 	 */ 
 	private String buttonImageURL;
 
 	/**
-	 * Text to use on Buy Now Button.  Optional Must be either
-	 * BUYNOW or PAYNOW 	 
+	*  Text to use on Buy Now Button.  Optional Must be either
+	*  BUYNOW or PAYNOW 	 
 	 */ 
 	private BuyNowTextType buyNowText;
 
 	/**
-	 * Text to use on Subscribe button.  Optional Must be either
-	 * BUYNOW or SUBSCRIBE 	 
+	*  Text to use on Subscribe button.  Optional Must be either
+	*  BUYNOW or SUBSCRIBE 	 
 	 */ 
 	private SubscribeTextType subscribeText;
 
 	/**
-	 * Button Country.  Optional Must be valid ISO country code 	 
+	*  Button Country.  Optional Must be valid ISO country code 	 
 	 */ 
 	private CountryCodeType buttonCountry;
 
 	/**
-	 * Button language code.  Optional Character length and
-	 * limitations: 2 single-byte alphanumeric characters 	 
+	*  Button language code.  Optional Character length and
+	*  limitations: 2 single-byte alphanumeric characters 	 
 	 */ 
 	private String buttonLanguage;
 

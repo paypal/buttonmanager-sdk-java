@@ -19,8 +19,8 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Subscriber name - if missing, will use name in buyer's
- * account 
+ *  Subscriber name - if missing, will use name in buyer's
+ *  account 
  */
 public class RecurringPaymentsProfileDetailsType{
 
@@ -28,27 +28,27 @@ public class RecurringPaymentsProfileDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * Subscriber name - if missing, will use name in buyer's
-	 * account 	 
+	*  Subscriber name - if missing, will use name in buyer's
+	*  account 	 
 	 */ 
 	private String subscriberName;
 
 	/**
-	 * Subscriber address - if missing, will use address in buyer's
-	 * account 	 
+	*  Subscriber address - if missing, will use address in buyer's
+	*  account 	 
 	 */ 
 	private AddressType subscriberShippingAddress;
 
 	/**
-	 * When does this Profile begin billing? 	  
+	*  When does this Profile begin billing? 	  
 	 *@Required	 
 	 */ 
 	private String billingStartDate;
 
 	/**
-	 * Your own unique invoice or tracking number. Optional
-	 * Character length and limitations: 127 single-byte
-	 * alphanumeric characters 	 
+	*  Your own unique invoice or tracking number. Optional
+	*  Character length and limitations: 127 single-byte
+	*  alphanumeric characters 	 
 	 */ 
 	private String profileReference;
 

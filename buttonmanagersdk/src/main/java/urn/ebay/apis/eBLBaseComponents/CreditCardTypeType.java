@@ -1,10 +1,9 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  Type declaration to be used by other schemas.
- *  This is the credit card type
- * 
+ *   This is the credit card type
+ *   
  */
 public enum  CreditCardTypeType {
 

@@ -18,7 +18,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * UATP Card Details Type 
+ *  UATP Card Details Type 
  */
 public class UATPDetailsType{
 
@@ -26,17 +26,17 @@ public class UATPDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * UATP Card Number	 
+	*  UATP Card Number	 
 	 */ 
 	private String uATPNumber;
 
 	/**
-	 * UATP Card expirty month	 
+	*  UATP Card expirty month	 
 	 */ 
 	private Integer expMonth;
 
 	/**
-	 * UATP Card expirty year	 
+	*  UATP Card expirty year	 
 	 */ 
 	private Integer expYear;
 

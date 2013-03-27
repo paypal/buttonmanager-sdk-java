@@ -1,9 +1,8 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  BusinessTypeType
- * 
+ *   
  */
 public enum  BusinessTypeType {
 

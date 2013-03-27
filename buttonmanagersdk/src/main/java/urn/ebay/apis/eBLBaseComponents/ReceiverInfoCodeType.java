@@ -1,10 +1,9 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  ReceiverInfoCodeType 
- *  Payee identifier type for MassPay API
- * 
+ *   Payee identifier type for MassPay API
+ *   
  */
 public enum  ReceiverInfoCodeType {
 

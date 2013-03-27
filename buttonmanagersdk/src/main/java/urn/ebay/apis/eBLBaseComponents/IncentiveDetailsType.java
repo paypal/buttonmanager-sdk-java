@@ -23,43 +23,43 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Information about the incentives that were applied from Ebay
- * RYP page and PayPal RYP page. 
+ *  Information about the incentives that were applied from Ebay
+ *  RYP page and PayPal RYP page. 
  */
 public class IncentiveDetailsType{
 
 
 	/**
-	 * Unique Identifier consisting of redemption code, user
-	 * friendly descripotion, incentive type, campaign code,
-	 * incenitve application order and site redeemed on. 	 
+	*  Unique Identifier consisting of redemption code, user
+	*  friendly descripotion, incentive type, campaign code,
+	*  incenitve application order and site redeemed on. 	 
 	 */ 
 	private String uniqueIdentifier;
 
 	/**
-	 * Defines if the incentive has been applied on Ebay or PayPal.
-	 * 	 
+	*  Defines if the incentive has been applied on Ebay or PayPal.
+	*  	 
 	 */ 
 	private IncentiveSiteAppliedOnType siteAppliedOn;
 
 	/**
-	 * The total discount amount for the incentive, summation of
-	 * discounts up across all the buckets/items. 	 
+	*  The total discount amount for the incentive, summation of
+	*  discounts up across all the buckets/items. 	 
 	 */ 
 	private BasicAmountType totalDiscountAmount;
 
 	/**
-	 * Status of incentive processing. Sussess or Error. 	 
+	*  Status of incentive processing. Sussess or Error. 	 
 	 */ 
 	private IncentiveAppliedStatusType status;
 
 	/**
-	 * Error code if there are any errors. Zero otherwise. 	 
+	*  Error code if there are any errors. Zero otherwise. 	 
 	 */ 
 	private Integer errorCode;
 
 	/**
-	 * Details of incentive application on individual bucket/item. 	 
+	*  Details of incentive application on individual bucket/item. 	 
 	 */ 
 	private List<IncentiveAppliedDetailsType> incentiveAppliedDetails = new ArrayList<IncentiveAppliedDetailsType>();
 

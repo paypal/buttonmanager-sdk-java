@@ -20,20 +20,20 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * If Checkout session was initialized successfully, the
- * corresponding token is returned in this element. 
+ *  If Checkout session was initialized successfully, the
+ *  corresponding token is returned in this element. 
  */
 public class SetDataResponseType{
 
 
 	/**
-	 * If Checkout session was initialized successfully, the
-	 * corresponding token is returned in this element. 	 
+	*  If Checkout session was initialized successfully, the
+	*  corresponding token is returned in this element. 	 
 	 */ 
 	private String token;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<ErrorType> setDataError = new ArrayList<ErrorType>();
 

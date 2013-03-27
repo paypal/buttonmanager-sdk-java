@@ -28,97 +28,97 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Type of button. One of the following: BUYNOW, CART,
- * GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING,
- * DONATE, VIEWCART or UNSUBSCRIBE 
+ *  Type of button. One of the following: BUYNOW, CART,
+ *  GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING,
+ *  DONATE, VIEWCART or UNSUBSCRIBE 
  */
 public class BMGetButtonDetailsResponseType extends AbstractResponseType {
 
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String website;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String email;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String mobile;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String hostedButtonID;
 
 	/**
-	 * Type of button. One of the following: BUYNOW, CART,
-	 * GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING,
-	 * DONATE, VIEWCART or UNSUBSCRIBE 	 
+	*  Type of button. One of the following: BUYNOW, CART,
+	*  GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING,
+	*  DONATE, VIEWCART or UNSUBSCRIBE 	 
 	 */ 
 	private ButtonTypeType buttonType;
 
 	/**
-	 * Type of button code. One of the following: hosted, encrypted
-	 * or cleartext 	 
+	*  Type of button code. One of the following: hosted, encrypted
+	*  or cleartext 	 
 	 */ 
 	private ButtonCodeType buttonCode;
 
 	/**
-	 * Button sub type. optional for button types buynow and cart
-	 * only Either PRODUCTS or SERVICES 	 
+	*  Button sub type. optional for button types buynow and cart
+	*  only Either PRODUCTS or SERVICES 	 
 	 */ 
 	private ButtonSubTypeType buttonSubType;
 
 	/**
-	 * Button Variable information Character length and
-	 * limitations: 63 single-byte alphanumeric characters 	 
+	*  Button Variable information Character length and
+	*  limitations: 63 single-byte alphanumeric characters 	 
 	 */ 
 	private List<String> buttonVar = new ArrayList<String>();
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<OptionDetailsType> optionDetails = new ArrayList<OptionDetailsType>();
 
 	/**
-	 * Text field 	 
+	*  Text field 	 
 	 */ 
 	private List<String> textBox = new ArrayList<String>();
 
 	/**
-	 * Button image to use. One of: REG, SML, or CC 	 
+	*  Button image to use. One of: REG, SML, or CC 	 
 	 */ 
 	private ButtonImageType buttonImage;
 
 	/**
-	 * Button URL for custom button image. 	 
+	*  Button URL for custom button image. 	 
 	 */ 
 	private String buttonImageURL;
 
 	/**
-	 * Text to use on Buy Now Button. Either BUYNOW or PAYNOW 	 
+	*  Text to use on Buy Now Button. Either BUYNOW or PAYNOW 	 
 	 */ 
 	private BuyNowTextType buyNowText;
 
 	/**
-	 * Text to use on Subscribe button. Must be either BUYNOW or
-	 * SUBSCRIBE 	 
+	*  Text to use on Subscribe button. Must be either BUYNOW or
+	*  SUBSCRIBE 	 
 	 */ 
 	private SubscribeTextType subscribeText;
 
 	/**
-	 * Button Country. Valid ISO country code or 'International' 	 
+	*  Button Country. Valid ISO country code or 'International' 	 
 	 */ 
 	private CountryCodeType buttonCountry;
 
 	/**
-	 * Button language code. Character length and limitations: 3
-	 * single-byte alphanumeric characters 	 
+	*  Button language code. Character length and limitations: 3
+	*  single-byte alphanumeric characters 	 
 	 */ 
 	private String buttonLanguage;
 

@@ -18,23 +18,23 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * The authorization identification number you specified in the
- * request. Character length and limits: 19 single-byte
- * characters 
+ *  The authorization identification number you specified in the
+ *  request. Character length and limits: 19 single-byte
+ *  characters 
  */
 public class DoVoidResponseType extends AbstractResponseType {
 
 
 	/**
-	 * The authorization identification number you specified in the
-	 * request. Character length and limits: 19 single-byte
-	 * characters	  
+	*  The authorization identification number you specified in the
+	*  request. Character length and limits: 19 single-byte
+	*  characters	  
 	 *@Required	 
 	 */ 
 	private String authorizationID;
 
 	/**
-	 * Return msgsubid back to merchant	 
+	*  Return msgsubid back to merchant	 
 	 */ 
 	private String msgSubID;
 

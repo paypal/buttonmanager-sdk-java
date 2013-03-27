@@ -17,19 +17,19 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Information about Coupled Payment transactions. 
+ *  Information about Coupled Payment transactions. 
  */
 public class CoupledPaymentInfoType{
 
 
 	/**
-	 * ID received in the Coupled Payment Request	 
+	*  ID received in the Coupled Payment Request	 
 	 */ 
 	private String coupledPaymentRequestID;
 
 	/**
-	 * ID that uniquely identifies this CoupledPayment. Generated
-	 * by PP in Response	  
+	*  ID that uniquely identifies this CoupledPayment. Generated
+	*  by PP in Response	  
 	 *@Required	 
 	 */ 
 	private String coupledPaymentID;

@@ -4,7 +4,7 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class UpdateRecurringPaymentsProfileRequestType extends AbstractRequestType {
 
@@ -12,7 +12,7 @@ public class UpdateRecurringPaymentsProfileRequestType extends AbstractRequestTy
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private UpdateRecurringPaymentsProfileRequestDetailsType updateRecurringPaymentsProfileRequestDetails;
 

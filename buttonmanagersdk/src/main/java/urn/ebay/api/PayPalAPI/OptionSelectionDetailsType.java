@@ -22,8 +22,8 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Option Selection. Required Character length and limitations:
- * 12 single-byte alphanumeric characters 
+ *  Option Selection. Required Character length and limitations:
+ *  12 single-byte alphanumeric characters 
  */
 public class OptionSelectionDetailsType{
 
@@ -31,24 +31,24 @@ public class OptionSelectionDetailsType{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * Option Selection. Required Character length and limitations:
-	 * 12 single-byte alphanumeric characters 	  
+	*  Option Selection. Required Character length and limitations:
+	*  12 single-byte alphanumeric characters 	  
 	 *@Required	 
 	 */ 
 	private String optionSelection;
 
 	/**
-	 * Option Price. Optional 	 
+	*  Option Price. Optional 	 
 	 */ 
 	private String price;
 
 	/**
-	 * Option Type Optional 	 
+	*  Option Type Optional 	 
 	 */ 
 	private OptionTypeListType optionType;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<InstallmentDetailsType> paymentPeriod = new ArrayList<InstallmentDetailsType>();
 

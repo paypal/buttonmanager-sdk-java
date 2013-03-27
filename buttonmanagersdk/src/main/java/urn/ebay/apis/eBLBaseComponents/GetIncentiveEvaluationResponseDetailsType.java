@@ -20,18 +20,18 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * 
+ *  
  */
 public class GetIncentiveEvaluationResponseDetailsType{
 
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<IncentiveDetailType> incentiveDetails = new ArrayList<IncentiveDetailType>();
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String requestId;
 

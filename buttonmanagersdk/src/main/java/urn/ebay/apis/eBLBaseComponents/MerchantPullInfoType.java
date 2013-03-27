@@ -19,46 +19,46 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * MerchantPullInfoType Information about the merchant pull. 
+ *  MerchantPullInfoType Information about the merchant pull. 
  */
 public class MerchantPullInfoType{
 
 
 	/**
-	 * Current status of billing agreement 	 
+	*  Current status of billing agreement 	 
 	 */ 
 	private MerchantPullStatusCodeType mpStatus;
 
 	/**
-	 * Monthly maximum payment amount	 
+	*  Monthly maximum payment amount	 
 	 */ 
 	private BasicAmountType mpMax;
 
 	/**
-	 * The value of the mp_custom variable that you specified in a
-	 * FORM submission to PayPal during the creation or updating of
-	 * a customer billing agreement 	 
+	*  The value of the mp_custom variable that you specified in a
+	*  FORM submission to PayPal during the creation or updating of
+	*  a customer billing agreement 	 
 	 */ 
 	private String mpCustom;
 
 	/**
-	 * The value of the mp_desc variable (description of goods or
-	 * services) associated with the billing agreement 	 
+	*  The value of the mp_desc variable (description of goods or
+	*  services) associated with the billing agreement 	 
 	 */ 
 	private String desc;
 
 	/**
-	 * Invoice value as set by BillUserRequest API call 	 
+	*  Invoice value as set by BillUserRequest API call 	 
 	 */ 
 	private String invoice;
 
 	/**
-	 * Custom field as set by BillUserRequest API call 	 
+	*  Custom field as set by BillUserRequest API call 	 
 	 */ 
 	private String custom;
 
 	/**
-	 * Note: This field is no longer used and is always empty.	 
+	*  Note: This field is no longer used and is always empty.	 
 	 */ 
 	private String paymentSourceID;
 

@@ -3,9 +3,9 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * Email address of buyer to be verified. Required Maximum
- * string length: 255 single-byte characters Input mask: ?@?.??
- * 
+ *  Email address of buyer to be verified. Required Maximum
+ *  string length: 255 single-byte characters Input mask: ?@?.??
+ *  
  */
 public class AddressVerifyRequestType extends AbstractRequestType {
 
@@ -13,30 +13,30 @@ public class AddressVerifyRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * Email address of buyer to be verified. Required Maximum
-	 * string length: 255 single-byte characters Input mask: ?@?.??	  
+	*  Email address of buyer to be verified. Required Maximum
+	*  string length: 255 single-byte characters Input mask: ?@?.??	  
 	 *@Required	 
 	 */ 
 	private String email;
 
 	/**
-	 * First line of buyer’s billing or shipping street address
-	 * to be verified. Required For verification, input value of
-	 * street address must match the first three single-byte
-	 * characters of the street address on file for the PayPal
-	 * account. Maximum string length: 35 single-byte characters
-	 * Alphanumeric plus - , . ‘ # \ Whitespace and case of input
-	 * value are ignored.	  
+	*  First line of buyer’s billing or shipping street address
+	*  to be verified. Required For verification, input value of
+	*  street address must match the first three single-byte
+	*  characters of the street address on file for the PayPal
+	*  account. Maximum string length: 35 single-byte characters
+	*  Alphanumeric plus - , . ‘ # \ Whitespace and case of input
+	*  value are ignored.	  
 	 *@Required	 
 	 */ 
 	private String street;
 
 	/**
-	 * Postal code to be verified. Required For verification, input
-	 * value of postal code must match the first five single-byte
-	 * characters of the postal code on file for the PayPal
-	 * account. Maximum string length: 16 single-byte characters
-	 * Whitespace and case of input value are ignored.	  
+	*  Postal code to be verified. Required For verification, input
+	*  value of postal code must match the first five single-byte
+	*  characters of the postal code on file for the PayPal
+	*  account. Maximum string length: 16 single-byte characters
+	*  Whitespace and case of input value are ignored.	  
 	 *@Required	 
 	 */ 
 	private String zip;

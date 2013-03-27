@@ -3,7 +3,7 @@ import urn.ebay.apis.eBLBaseComponents.PhoneNumberType;
 import com.paypal.core.SDKUtil;
 
 /**
- * Phone number for status inquiry 
+ *  Phone number for status inquiry 
  */
 public class GetMobileStatusRequestDetailsType{
 
@@ -11,7 +11,7 @@ public class GetMobileStatusRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * Phone number for status inquiry 	 
+	*  Phone number for status inquiry 	 
 	 */ 
 	private PhoneNumberType phone;
 

@@ -1,11 +1,10 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  PaymentCodeType 
- *  This is the type of PayPal payment which matches the output
- * from IPN.
- * 
+ *   This is the type of PayPal payment which matches the output
+ *  from IPN.
+ *   
  */
 public enum  PaymentCodeType {
 

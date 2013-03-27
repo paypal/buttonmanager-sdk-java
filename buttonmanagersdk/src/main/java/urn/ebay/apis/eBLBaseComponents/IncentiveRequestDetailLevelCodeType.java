@@ -1,12 +1,11 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  IncentiveRequestDetailLevelType 
- *  This identifies the granularity of information requested by
- * the client application. This information will be used to
- * define the contents and details of the response.
- * 
+ *   This identifies the granularity of information requested by
+ *  the client application. This information will be used to
+ *  define the contents and details of the response.
+ *   
  */
 public enum  IncentiveRequestDetailLevelCodeType {
 

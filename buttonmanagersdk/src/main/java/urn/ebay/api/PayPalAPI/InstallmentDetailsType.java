@@ -19,7 +19,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Installment Period. Optional 
+ *  Installment Period. Optional 
  */
 public class InstallmentDetailsType{
 
@@ -27,32 +27,32 @@ public class InstallmentDetailsType{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * Installment Period. Optional 	 
+	*  Installment Period. Optional 	 
 	 */ 
 	private BillingPeriodType billingPeriod;
 
 	/**
-	 * Installment Frequency. Optional 	 
+	*  Installment Frequency. Optional 	 
 	 */ 
 	private Integer billingFrequency;
 
 	/**
-	 * Installment Cycles. Optional 	 
+	*  Installment Cycles. Optional 	 
 	 */ 
 	private Integer totalBillingCycles;
 
 	/**
-	 * Installment Amount. Optional 	 
+	*  Installment Amount. Optional 	 
 	 */ 
 	private String amount;
 
 	/**
-	 * Installment Amount. Optional 	 
+	*  Installment Amount. Optional 	 
 	 */ 
 	private String shippingAmount;
 
 	/**
-	 * Installment Amount. Optional 	 
+	*  Installment Amount. Optional 	 
 	 */ 
 	private String taxAmount;
 

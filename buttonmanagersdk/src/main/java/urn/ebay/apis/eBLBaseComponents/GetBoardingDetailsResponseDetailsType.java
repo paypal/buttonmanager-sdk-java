@@ -21,97 +21,97 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Status of merchant's onboarding process:
- * CompletedCancelledPending Character length and limitations:
- * Eight alphabetic characters 
+ *  Status of merchant's onboarding process:
+ *  CompletedCancelledPending Character length and limitations:
+ *  Eight alphabetic characters 
  */
 public class GetBoardingDetailsResponseDetailsType{
 
 
 	/**
-	 * Status of merchant's onboarding process:
-	 * CompletedCancelledPending Character length and limitations:
-	 * Eight alphabetic characters	 
+	*  Status of merchant's onboarding process:
+	*  CompletedCancelledPending Character length and limitations:
+	*  Eight alphabetic characters	 
 	 */ 
 	private BoardingStatusType status;
 
 	/**
-	 * Date the boarding process started	 
+	*  Date the boarding process started	 
 	 */ 
 	private String startDate;
 
 	/**
-	 * Date the merchant’s status or progress was last updated	 
+	*  Date the merchant’s status or progress was last updated	 
 	 */ 
 	private String lastUpdated;
 
 	/**
-	 * Reason for merchant’s cancellation of sign-up. Character
-	 * length and limitations: 1,024 alphanumeric characters	 
+	*  Reason for merchant’s cancellation of sign-up. Character
+	*  length and limitations: 1,024 alphanumeric characters	 
 	 */ 
 	private String reason;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String programName;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String programCode;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String campaignID;
 
 	/**
-	 * Indicates if there is a limitation on the amount of money
-	 * the business can withdraw from PayPal	 
+	*  Indicates if there is a limitation on the amount of money
+	*  the business can withdraw from PayPal	 
 	 */ 
 	private UserWithdrawalLimitTypeType userWithdrawalLimit;
 
 	/**
-	 * Custom information you set on the EnterBoarding API call
-	 * Character length and limitations: 256 alphanumeric
-	 * characters	 
+	*  Custom information you set on the EnterBoarding API call
+	*  Character length and limitations: 256 alphanumeric
+	*  characters	 
 	 */ 
 	private String partnerCustom;
 
 	/**
-	 * Details about the owner of the account	 
+	*  Details about the owner of the account	 
 	 */ 
 	private PayerInfoType accountOwner;
 
 	/**
-	 * Merchant’s PayPal API credentials	 
+	*  Merchant’s PayPal API credentials	 
 	 */ 
 	private APICredentialsType credentials;
 
 	/**
-	 * The APIs that this merchant has granted the business partner
-	 * permission to call on his behalf. For example:
-	 * SetExpressCheckout,GetExpressCheckoutDetails,DoExpressCheckoutPayment	 
+	*  The APIs that this merchant has granted the business partner
+	*  permission to call on his behalf. For example:
+	*  SetExpressCheckout,GetExpressCheckoutDetails,DoExpressCheckoutPayment	 
 	 */ 
 	private String configureAPIs;
 
 	/**
-	 * Primary email verification status. Confirmed, Unconfirmed	 
+	*  Primary email verification status. Confirmed, Unconfirmed	 
 	 */ 
 	private String emailVerificationStatus;
 
 	/**
-	 * Gives VettingStatus - Pending, Cancelled, Approved,
-	 * UnderReview Character length and limitations: 256
-	 * alphanumeric characters	 
+	*  Gives VettingStatus - Pending, Cancelled, Approved,
+	*  UnderReview Character length and limitations: 256
+	*  alphanumeric characters	 
 	 */ 
 	private String vettingStatus;
 
 	/**
-	 * Gives BankAccountVerificationStatus - Added, Confirmed
-	 * Character length and limitations: 256 alphanumeric
-	 * characters	 
+	*  Gives BankAccountVerificationStatus - Added, Confirmed
+	*  Character length and limitations: 256 alphanumeric
+	*  characters	 
 	 */ 
 	private String bankAccountVerificationStatus;
 

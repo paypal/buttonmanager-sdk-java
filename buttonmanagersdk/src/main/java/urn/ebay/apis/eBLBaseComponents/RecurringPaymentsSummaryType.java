@@ -18,47 +18,47 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * 
+ *  
  */
 public class RecurringPaymentsSummaryType{
 
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String nextBillingDate;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private Integer numberCyclesCompleted;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private Integer numberCyclesRemaining;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private BasicAmountType outstandingBalance;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private Integer failedPaymentCount;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String lastPaymentDate;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BasicAmountType lastPaymentAmount;
 

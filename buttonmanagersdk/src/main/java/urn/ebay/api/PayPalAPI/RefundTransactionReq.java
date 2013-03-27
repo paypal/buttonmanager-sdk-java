@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.RefundTransactionRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class RefundTransactionReq{
 
@@ -11,7 +11,7 @@ public class RefundTransactionReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private RefundTransactionRequestType refundTransactionRequest;
 

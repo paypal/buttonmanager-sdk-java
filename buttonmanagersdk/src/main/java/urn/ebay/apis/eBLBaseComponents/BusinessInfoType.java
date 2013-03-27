@@ -10,7 +10,7 @@ import urn.ebay.apis.eBLBaseComponents.PercentageRevenueFromOnlineSalesType;
 import com.paypal.core.SDKUtil;
 
 /**
- * BusinessInfoType 
+ *  BusinessInfoType 
  */
 public class BusinessInfoType{
 
@@ -18,103 +18,103 @@ public class BusinessInfoType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * Type of business, such as corporation or sole proprietorship	 
+	*  Type of business, such as corporation or sole proprietorship	 
 	 */ 
 	private BusinessTypeType type;
 
 	/**
-	 * Official name of business Character length and limitations:
-	 * 75 alphanumeric characters	 
+	*  Official name of business Character length and limitations:
+	*  75 alphanumeric characters	 
 	 */ 
 	private String name;
 
 	/**
-	 * Merchant’s business postal address	 
+	*  Merchant’s business postal address	 
 	 */ 
 	private AddressType address;
 
 	/**
-	 * Business’s primary telephone number Character length and
-	 * limitations: 20 alphanumeric characters	 
+	*  Business’s primary telephone number Character length and
+	*  limitations: 20 alphanumeric characters	 
 	 */ 
 	private String workPhone;
 
 	/**
-	 * Line of business, as defined in the enumerations	 
+	*  Line of business, as defined in the enumerations	 
 	 */ 
 	private BusinessCategoryType category;
 
 	/**
-	 * Business sub-category, as defined in the enumerations	 
+	*  Business sub-category, as defined in the enumerations	 
 	 */ 
 	private BusinessSubCategoryType subCategory;
 
 	/**
-	 * Average transaction price, as defined by the enumerations.
-	 * Enumeration Meaning AverageTransactionPrice-Not-Applicable
-	 * AverageTransactionPrice-Range1 Less than $25 USD
-	 * AverageTransactionPrice-Range2 $25 USD to $50 USD
-	 * AverageTransactionPrice-Range3 $50 USD to $100 USD
-	 * AverageTransactionPrice-Range4 $100 USD to $250 USD
-	 * AverageTransactionPrice-Range5 $250 USD to $500 USD
-	 * AverageTransactionPrice-Range6 $500 USD to $1,000 USD
-	 * AverageTransactionPrice-Range7 $1,000 USD to $2,000 USD
-	 * AverageTransactionPrice-Range8 $2,000 USD to $5,000 USD
-	 * AverageTransactionPrice-Range9 $5,000 USD to $10,000 USD
-	 * AverageTransactionPrice-Range10 More than $10,000 USD 	 
+	*  Average transaction price, as defined by the enumerations.
+	*  Enumeration Meaning AverageTransactionPrice-Not-Applicable
+	*  AverageTransactionPrice-Range1 Less than $25 USD
+	*  AverageTransactionPrice-Range2 $25 USD to $50 USD
+	*  AverageTransactionPrice-Range3 $50 USD to $100 USD
+	*  AverageTransactionPrice-Range4 $100 USD to $250 USD
+	*  AverageTransactionPrice-Range5 $250 USD to $500 USD
+	*  AverageTransactionPrice-Range6 $500 USD to $1,000 USD
+	*  AverageTransactionPrice-Range7 $1,000 USD to $2,000 USD
+	*  AverageTransactionPrice-Range8 $2,000 USD to $5,000 USD
+	*  AverageTransactionPrice-Range9 $5,000 USD to $10,000 USD
+	*  AverageTransactionPrice-Range10 More than $10,000 USD 	 
 	 */ 
 	private AverageTransactionPriceType averagePrice;
 
 	/**
-	 * Average monthly sales volume, as defined by the
-	 * enumerations. Enumeration Meaning
-	 * AverageMonthlyVolume-Not-Applicable
-	 * AverageMonthlyVolume-Range1 Less than $1,000 USD
-	 * AverageMonthlyVolume-Range2 $1,000 USD to $5,000 USD
-	 * AverageMonthlyVolume-Range3 $5,000 USD to $25,000 USD
-	 * AverageMonthlyVolume-Range4 $25,000 USD to $100,000 USD
-	 * AverageMonthlyVolume-Range5 $100,000 USD to $1,000,000 USD
-	 * AverageMonthlyVolume-Range6 More than $1,000,000 USD 	 
+	*  Average monthly sales volume, as defined by the
+	*  enumerations. Enumeration Meaning
+	*  AverageMonthlyVolume-Not-Applicable
+	*  AverageMonthlyVolume-Range1 Less than $1,000 USD
+	*  AverageMonthlyVolume-Range2 $1,000 USD to $5,000 USD
+	*  AverageMonthlyVolume-Range3 $5,000 USD to $25,000 USD
+	*  AverageMonthlyVolume-Range4 $25,000 USD to $100,000 USD
+	*  AverageMonthlyVolume-Range5 $100,000 USD to $1,000,000 USD
+	*  AverageMonthlyVolume-Range6 More than $1,000,000 USD 	 
 	 */ 
 	private AverageMonthlyVolumeType averageMonthlyVolume;
 
 	/**
-	 * Main sales venue, such as eBay	 
+	*  Main sales venue, such as eBay	 
 	 */ 
 	private SalesVenueType salesVenue;
 
 	/**
-	 * Primary URL of business Character length and limitations:
-	 * 2,048 alphanumeric characters	 
+	*  Primary URL of business Character length and limitations:
+	*  2,048 alphanumeric characters	 
 	 */ 
 	private String website;
 
 	/**
-	 * Percentage of revenue attributable to online sales, as
-	 * defined by the enumerations Enumeration Meaning
-	 * PercentageRevenueFromOnlineSales-Not-Applicable
-	 * PercentageRevenueFromOnlineSales-Range1 Less than 25%
-	 * PercentageRevenueFromOnlineSales-Range2 25% to 50%
-	 * PercentageRevenueFromOnlineSales-Range3 50% to 75%
-	 * PercentageRevenueFromOnlineSales-Range4 75% to 100% 	 
+	*  Percentage of revenue attributable to online sales, as
+	*  defined by the enumerations Enumeration Meaning
+	*  PercentageRevenueFromOnlineSales-Not-Applicable
+	*  PercentageRevenueFromOnlineSales-Range1 Less than 25%
+	*  PercentageRevenueFromOnlineSales-Range2 25% to 50%
+	*  PercentageRevenueFromOnlineSales-Range3 50% to 75%
+	*  PercentageRevenueFromOnlineSales-Range4 75% to 100% 	 
 	 */ 
 	private PercentageRevenueFromOnlineSalesType revenueFromOnlineSales;
 
 	/**
-	 * Date the merchant’s business was established	 
+	*  Date the merchant’s business was established	 
 	 */ 
 	private String businessEstablished;
 
 	/**
-	 * Email address to contact business’s customer service
-	 * Character length and limitations: 127 alphanumeric
-	 * characters	 
+	*  Email address to contact business’s customer service
+	*  Character length and limitations: 127 alphanumeric
+	*  characters	 
 	 */ 
 	private String customerServiceEmail;
 
 	/**
-	 * Telephone number to contact business’s customer service
-	 * Character length and limitations: 32 alphanumeric characters	 
+	*  Telephone number to contact business’s customer service
+	*  Character length and limitations: 32 alphanumeric characters	 
 	 */ 
 	private String customerServicePhone;
 

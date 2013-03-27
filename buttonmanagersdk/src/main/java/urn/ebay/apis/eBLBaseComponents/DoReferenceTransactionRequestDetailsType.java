@@ -7,7 +7,7 @@ import urn.ebay.apis.eBLBaseComponents.SenderDetailsType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class DoReferenceTransactionRequestDetailsType{
 
@@ -15,62 +15,62 @@ public class DoReferenceTransactionRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String referenceID;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private PaymentActionCodeType paymentAction;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private MerchantPullPaymentCodeType paymentType;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private PaymentDetailsType paymentDetails;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private ReferenceCreditCardDetailsType creditCard;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String iPAddress;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String merchantSessionId;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String reqConfirmShipping;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String softDescriptor;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private SenderDetailsType senderDetails;
 
 	/**
-	 * Unique id for each API request to prevent duplicate
-	 * payments. Optional Character length and limits: 38
-	 * single-byte characters maximum. 	 
+	*  Unique id for each API request to prevent duplicate
+	*  payments. Optional Character length and limits: 38
+	*  single-byte characters maximum. 	 
 	 */ 
 	private String msgSubID;
 

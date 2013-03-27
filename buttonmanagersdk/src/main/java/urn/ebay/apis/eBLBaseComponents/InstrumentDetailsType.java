@@ -17,14 +17,14 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * InstrumentDetailsType Promotional Instrument Information. 
+ *  InstrumentDetailsType Promotional Instrument Information. 
  */
 public class InstrumentDetailsType{
 
 
 	/**
-	 * This field holds the category of the instrument only when it
-	 * is promotional. Return value 1 represents BML. 	 
+	*  This field holds the category of the instrument only when it
+	*  is promotional. Return value 1 represents BML. 	 
 	 */ 
 	private String instrumentCategory;
 

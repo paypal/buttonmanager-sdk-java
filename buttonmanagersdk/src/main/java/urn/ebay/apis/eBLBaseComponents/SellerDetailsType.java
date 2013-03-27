@@ -18,7 +18,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Details about the seller. 
+ *  Details about the seller. 
  */
 public class SellerDetailsType{
 
@@ -26,32 +26,32 @@ public class SellerDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * Unique identifier for the seller. Optional 	 
+	*  Unique identifier for the seller. Optional 	 
 	 */ 
 	private String sellerId;
 
 	/**
-	 * The user name of the user at the marketplaces site. Optional
-	 * 	 
+	*  The user name of the user at the marketplaces site. Optional
+	*  	 
 	 */ 
 	private String sellerUserName;
 
 	/**
-	 * Date when the user registered with the marketplace. Optional
-	 * 	 
+	*  Date when the user registered with the marketplace. Optional
+	*  	 
 	 */ 
 	private String sellerRegistrationDate;
 
 	/**
-	 * Seller Paypal Account Id contains the seller EmailId or
-	 * PayerId or PhoneNo passed during the Request. 	 
+	*  Seller Paypal Account Id contains the seller EmailId or
+	*  PayerId or PhoneNo passed during the Request. 	 
 	 */ 
 	private String payPalAccountID;
 
 	/**
-	 * Unique PayPal customer account identification number (of the
-	 * seller). This feild is meant for Response. This field is
-	 * ignored, if passed in the Request. 	 
+	*  Unique PayPal customer account identification number (of the
+	*  seller). This feild is meant for Response. This field is
+	*  ignored, if passed in the Request. 	 
 	 */ 
 	private String secureMerchantAccountID;
 

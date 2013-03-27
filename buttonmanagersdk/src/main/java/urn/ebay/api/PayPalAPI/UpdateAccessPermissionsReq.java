@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.UpdateAccessPermissionsRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class UpdateAccessPermissionsReq{
 
@@ -11,7 +11,7 @@ public class UpdateAccessPermissionsReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private UpdateAccessPermissionsRequestType updateAccessPermissionsRequest;
 

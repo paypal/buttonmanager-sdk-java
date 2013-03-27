@@ -1,10 +1,9 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- * 
  *  MerchantPullPaymentCodeType 
- *  Type of Payment to be initiated by the merchant
- * 
+ *   Type of Payment to be initiated by the merchant
+ *   
  */
 public enum  MerchantPullPaymentCodeType {
 

@@ -2,9 +2,9 @@ package urn.ebay.apis.eBLBaseComponents;
 import com.paypal.core.SDKUtil;
 
 /**
- * Identifier of the transaction to reverse. Required Character
- * length and limitations: 17 single-byte alphanumeric
- * characters 
+ *  Identifier of the transaction to reverse. Required Character
+ *  length and limitations: 17 single-byte alphanumeric
+ *  characters 
  */
 public class ReverseTransactionRequestDetailsType{
 
@@ -12,9 +12,9 @@ public class ReverseTransactionRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * Identifier of the transaction to reverse. Required Character
-	 * length and limitations: 17 single-byte alphanumeric
-	 * characters 	 
+	*  Identifier of the transaction to reverse. Required Character
+	*  length and limitations: 17 single-byte alphanumeric
+	*  characters 	 
 	 */ 
 	private String transactionID;
 

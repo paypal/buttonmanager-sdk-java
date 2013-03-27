@@ -21,49 +21,49 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * 
+ *  
  */
 public class BAUpdateResponseDetailsType{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String billingAgreementID;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String billingAgreementDescription;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private MerchantPullStatusCodeType billingAgreementStatus;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String billingAgreementCustom;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private PayerInfoType payerInfo;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BasicAmountType billingAgreementMax;
 
 	/**
-	 * Customer's billing address. Optional If you have credit card
-	 * mapped in your account then billing address of the credit
-	 * card is returned otherwise your primary address is returned
-	 * , PayPal returns this address in BAUpdateResponseDetails. 	 
+	*  Customer's billing address. Optional If you have credit card
+	*  mapped in your account then billing address of the credit
+	*  card is returned otherwise your primary address is returned
+	*  , PayPal returns this address in BAUpdateResponseDetails. 	 
 	 */ 
 	private AddressType billingAddress;
 

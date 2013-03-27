@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.TransactionSearchRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class TransactionSearchReq{
 
@@ -11,7 +11,7 @@ public class TransactionSearchReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private TransactionSearchRequestType transactionSearchRequest;
 

@@ -7,9 +7,9 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * Hosted Button ID of button you wish to change.  Required
- * Character length and limitations: 10 single-byte numeric
- * characters  
+ *  Hosted Button ID of button you wish to change.  Required
+ *  Character length and limitations: 10 single-byte numeric
+ *  characters  
  */
 public class BMSetInventoryRequestType extends AbstractRequestType {
 
@@ -17,65 +17,65 @@ public class BMSetInventoryRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * Hosted Button ID of button you wish to change.  Required
-	 * Character length and limitations: 10 single-byte numeric
-	 * characters 	  
+	*  Hosted Button ID of button you wish to change.  Required
+	*  Character length and limitations: 10 single-byte numeric
+	*  characters 	  
 	 *@Required	 
 	 */ 
 	private String hostedButtonID;
 
 	/**
-	 * Is Inventory tracked.  Required 0 or 1 	  
+	*  Is Inventory tracked.  Required 0 or 1 	  
 	 *@Required	 
 	 */ 
 	private String trackInv;
 
 	/**
-	 * Is PNL Tracked.  Required 0 or 1 	  
+	*  Is PNL Tracked.  Required 0 or 1 	  
 	 *@Required	 
 	 */ 
 	private String trackPnl;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private ItemTrackingDetailsType itemTrackingDetails;
 
 	/**
-	 * Option Index.  Optional Character length and limitations: 1
-	 * single-byte alphanumeric characters 	 
+	*  Option Index.  Optional Character length and limitations: 1
+	*  single-byte alphanumeric characters 	 
 	 */ 
 	private String optionIndex;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<OptionTrackingDetailsType> optionTrackingDetails = new ArrayList<OptionTrackingDetailsType>();
 
 	/**
-	 * URL of page to display when an item is soldout.  Optional
-	 * Character length and limitations: 127 single-byte
-	 * alphanumeric characters 	 
+	*  URL of page to display when an item is soldout.  Optional
+	*  Character length and limitations: 127 single-byte
+	*  alphanumeric characters 	 
 	 */ 
 	private String soldoutURL;
 
 	/**
-	 * Whether to use the same digital download key repeatedly. 
-	 * Optional 	 
+	*  Whether to use the same digital download key repeatedly. 
+	*  Optional 	 
 	 */ 
 	private String reuseDigitalDownloadKeys;
 
 	/**
-	 * Whether to append these keys to the list or not (replace). 
-	 * Optional 	 
+	*  Whether to append these keys to the list or not (replace). 
+	*  Optional 	 
 	 */ 
 	private String appendDigitalDownloadKeys;
 
 	/**
-	 * Zero or more digital download keys to distribute to
-	 * customers after transaction is completed.  Optional
-	 * Character length and limitations: 1000 single-byte
-	 * alphanumeric characters 	 
+	*  Zero or more digital download keys to distribute to
+	*  customers after transaction is completed.  Optional
+	*  Character length and limitations: 1000 single-byte
+	*  alphanumeric characters 	 
 	 */ 
 	private List<String> digitalDownloadKeys = new ArrayList<String>();
 

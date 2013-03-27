@@ -18,29 +18,29 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * 
+ *  
  */
 public class BMUpdateButtonResponseType extends AbstractResponseType {
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String website;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String email;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String mobile;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String hostedButtonID;
 

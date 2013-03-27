@@ -3,8 +3,8 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * The earliest transaction date at which to start the search.
- * No wildcards are allowed. Required 
+ *  The earliest transaction date at which to start the search.
+ *  No wildcards are allowed. Required 
  */
 public class BMButtonSearchRequestType extends AbstractRequestType {
 
@@ -12,14 +12,14 @@ public class BMButtonSearchRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * The earliest transaction date at which to start the search.
-	 * No wildcards are allowed. Required 	 
+	*  The earliest transaction date at which to start the search.
+	*  No wildcards are allowed. Required 	 
 	 */ 
 	private String startDate;
 
 	/**
-	 * The latest transaction date to be included in the search
-	 * Optional 	 
+	*  The latest transaction date to be included in the search
+	*  Optional 	 
 	 */ 
 	private String endDate;
 

@@ -22,56 +22,56 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * The timestamped token value that was returned by
- * SetExpressCheckoutResponse and passed on
- * GetExpressCheckoutDetailsRequest. Character length and
- * limitations:20 single-byte characters 
+ *  The timestamped token value that was returned by
+ *  SetExpressCheckoutResponse and passed on
+ *  GetExpressCheckoutDetailsRequest. Character length and
+ *  limitations:20 single-byte characters 
  */
 public class DoExpressCheckoutPaymentResponseDetailsType{
 
 
 	/**
-	 * The timestamped token value that was returned by
-	 * SetExpressCheckoutResponse and passed on
-	 * GetExpressCheckoutDetailsRequest. Character length and
-	 * limitations:20 single-byte characters	 
+	*  The timestamped token value that was returned by
+	*  SetExpressCheckoutResponse and passed on
+	*  GetExpressCheckoutDetailsRequest. Character length and
+	*  limitations:20 single-byte characters	 
 	 */ 
 	private String token;
 
 	/**
-	 * Information about the transaction 	 
+	*  Information about the transaction 	 
 	 */ 
 	private List<PaymentInfoType> paymentInfo = new ArrayList<PaymentInfoType>();
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String billingAgreementID;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String redirectRequired;
 
 	/**
-	 * Memo entered by sender in PayPal Review Page note field.
-	 * Optional Character length and limitations: 255 single-byte
-	 * alphanumeric characters 	 
+	*  Memo entered by sender in PayPal Review Page note field.
+	*  Optional Character length and limitations: 255 single-byte
+	*  alphanumeric characters 	 
 	 */ 
 	private String note;
 
 	/**
-	 * Redirect back to PayPal, PayPal can host the success page. 	 
+	*  Redirect back to PayPal, PayPal can host the success page. 	 
 	 */ 
 	private String successPageRedirectRequested;
 
 	/**
-	 * Information about the user selected options. 	 
+	*  Information about the user selected options. 	 
 	 */ 
 	private UserSelectedOptionType userSelectedOptions;
 
 	/**
-	 * Information about Coupled Payment transactions. 	 
+	*  Information about Coupled Payment transactions. 	 
 	 */ 
 	private List<CoupledPaymentInfoType> coupledPaymentInfo = new ArrayList<CoupledPaymentInfoType>();
 

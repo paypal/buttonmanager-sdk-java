@@ -4,7 +4,7 @@ import urn.ebay.apis.eBLBaseComponents.FailedPaymentActionType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class ActivationDetailsType{
 
@@ -12,13 +12,13 @@ public class ActivationDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private BasicAmountType initialAmount;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private FailedPaymentActionType failedInitialAmountAction;
 

@@ -18,19 +18,19 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * 
+ *  
  */
 public class ManagePendingTransactionStatusResponseType extends AbstractResponseType {
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String transactionID;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String status;
 

@@ -4,7 +4,7 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- * 
+ *  
  */
 public class ManagePendingTransactionStatusRequestType extends AbstractRequestType {
 
@@ -12,13 +12,13 @@ public class ManagePendingTransactionStatusRequestType extends AbstractRequestTy
 	private static final String preferredPrefix="ns";
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String transactionID;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private FMFPendingTransactionActionType action;

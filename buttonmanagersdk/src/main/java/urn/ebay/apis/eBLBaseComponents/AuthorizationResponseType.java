@@ -21,21 +21,21 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * Status will denote whether Auto authorization was successful
- * or not. 
+ *  Status will denote whether Auto authorization was successful
+ *  or not. 
  */
 public class AuthorizationResponseType{
 
 
 	/**
-	 * Status will denote whether Auto authorization was successful
-	 * or not. 	  
+	*  Status will denote whether Auto authorization was successful
+	*  or not. 	  
 	 *@Required	 
 	 */ 
 	private AckCodeType status;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<ErrorType> authorizationError = new ArrayList<ErrorType>();
 

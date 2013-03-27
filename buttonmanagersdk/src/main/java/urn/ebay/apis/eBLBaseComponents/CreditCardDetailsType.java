@@ -21,7 +21,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * CreditCardDetailsType Information about a Credit Card. 
+ *  CreditCardDetailsType Information about a Credit Card. 
  */
 public class CreditCardDetailsType{
 
@@ -29,52 +29,52 @@ public class CreditCardDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private CreditCardTypeType creditCardType;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String creditCardNumber;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private Integer expMonth;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private Integer expYear;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private PayerInfoType cardOwner;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String cVV2;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private Integer startMonth;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private Integer startYear;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String issueNumber;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private ThreeDSecureRequestType threeDSecureRequest;
 

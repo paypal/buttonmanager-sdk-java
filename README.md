@@ -21,7 +21,7 @@ SDK Integration:
     <dependency>
         <groupId>com.paypal.sdk</groupId>
         <artifactId>buttonmanagersdk</artifactId>
-        <version>2.2.98</version>
+        <version>2.3.100</version>
     </dependency>
     ```
 

@@ -112,76 +112,147 @@ public class ButtonManagerServlet extends HttpServlet {
 				"<ul><li><a href='BM/BMCreateButton'>BMCreateButton</a></li><li><a href='BM/BMUpdateButton'>BMUpdateButton</a></li><li><a href='BM/BMButtonSearch'>BMButtonSearch</a></li><li><a href='BM/BMGetButtonDetails'>BMGetButtonDetails</a></li><li><a href='BM/BMManageButtonStatus'>BMManageButtonStatus</a></li><li><a href='BM/BMSetInventory'>BMSetInventory</a></li><li><a href='BM/BMGetInventory'>BMGetInventory</a></li></ul>");
 		res.setContentType("text/html");
 		try {
+			// ## Creating service wrapper object
+			// Creating service wrapper object to make API call and loading
+			// configuration file for your credentials and endpoint
 			PayPalAPIInterfaceServiceService service = new PayPalAPIInterfaceServiceService(this
 					.getClass().getResourceAsStream("/sdk_config.properties"));
+			
 			if (req.getRequestURI().contains("BMCreateButton")) {
 
 				BMCreateButtonReq request = new BMCreateButtonReq();
 				BMCreateButtonRequestType reqType = new BMCreateButtonRequestType();
+				
+				/*
+				 *  (Required) The kind of button you want to create. 
+				 *  It is one of the following values:
 
-				reqType.setButtonType(ButtonTypeType.fromValue(req
-						.getParameter("buttonType")));
-				reqType.setButtonCode(ButtonCodeType.fromValue(req
-						.getParameter("buttonCode")));
+				    BUYNOW - Buy Now button
+				    CART - Add to Cart button
+				    GIFTCERTIFICATE - Gift Certificate button
+				    SUBSCRIBE - Subscribe button
+				    DONATE - Donate button
+				    UNSUBSCRIBE - Unsubscribe button
+				    VIEWCART - View Cart button
+				    PAYMENTPLAN - Installment Plan button; since version 63.0
+				    AUTOBILLING - Automatic Billing button; since version 63.0
+				    PAYMENT - Pay Now button; since version 65.1
 
+					Note: Do not specify BUYNOW if BUTTONCODE=TOKEN; specify PAYMENT instead. 
+					Do not specify PAYMENT if BUTTONCODE=HOSTED. 
+				 */
+				reqType.setButtonType(ButtonTypeType.fromValue(req.getParameter("buttonType")));
+				
+				/*
+				 *  (Optional) The kind of button code to create. 
+				 *  It is one of the following values:
+
+				    1.HOSTED - A secure button stored on PayPal; default for all buttons 
+				      except View Cart, Unsubscribe, and Pay Now
+				    2.ENCRYPTED - An encrypted button, not stored on PayPal; default for 
+				       View Cart button
+				    3.CLEARTEXT - An unencrypted button, not stored on PayPal; default for 
+				      Unsubscribe button
+				    4.TOKEN - A secure button, not stored on PayPal, used only to initiate the Hosted 
+				      Solution checkout flow; default for Pay Now button. Since version 65.1
+				 */
+				reqType.setButtonCode(ButtonCodeType.fromValue(req.getParameter("buttonCode")));
+				
+				//(Optional) HTML standard button variables
 				List<String> lst = new ArrayList<String>();
-
 				lst.add("item_name=" + req.getParameter("itemName"));
 				lst.add("return=" + req.getParameter("returnURL"));
 				lst.add("business=" + req.getParameter("businessMail"));
 				lst.add("amount=" + req.getParameter("amt"));
 				lst.add("notify_url=" + req.getParameter("notifyURL"));
-				
 				reqType.setButtonVar(lst);
-				// Construct the request values according to the Button Type and
-				// Button Code. To know more about that
-				if (req.getParameter("buttonType").equalsIgnoreCase(
-						"PAYMENTPLAN")) {
-					OptionSelectionDetailsType detailsType = new OptionSelectionDetailsType(
-							"CreateButton");
+				
+				/* 
+				 * Construct the request values according to the Button Type and
+				   Button Code.
+				 */
+				if (req.getParameter("buttonType").equalsIgnoreCase("PAYMENTPLAN")) {
+					
+					OptionSelectionDetailsType detailsType = new OptionSelectionDetailsType("CreateButton");
 
 					List<InstallmentDetailsType> insList = new ArrayList<InstallmentDetailsType>();
 					InstallmentDetailsType insType = new InstallmentDetailsType();
-					insType.setTotalBillingCycles(Integer.parseInt(req
-							.getParameter("billingCycles")));
+					/*
+					 * (Optional) The total number of billing cycles, regardless of the duration 
+					 * of a cycle; 1 is the default
+					 */
+					insType.setTotalBillingCycles(Integer.parseInt(req.getParameter("billingCycles")));
+					
+					//(Optional) The base amount to bill for the cycle.
 					insType.setAmount(req.getParameter("installmentAmt"));
-					insType.setBillingFrequency(Integer.parseInt(req
-							.getParameter("billingFreq")));
+					
+					/*
+					 * (Optional) The installment cycle frequency in units, e.g. if the billing frequency is 2 
+					 * and the billing period is Month, the billing cycle is every 2 months. 
+					 * The default billing frequency is 1.
+					 */
+					insType.setBillingFrequency(Integer.parseInt(req.getParameter("billingFreq")));
+					
+					/*
+					 *  (Optional) The installment cycle unit, 
+					 *  which is one of the following values:
 
-					insType.setBillingPeriod(BillingPeriodType.fromValue(req
-							.getParameter("billingPeriod")));
+					    NoBillingPeriodType - None (default)
+					    Day
+					    Week
+					    SemiMonth
+					    Month
+					    Year
+					 */
+					insType.setBillingPeriod(BillingPeriodType.fromValue(req.getParameter("billingPeriod")));
 					insList.add(insType);
-					detailsType.setOptionType(OptionTypeListType.fromValue(req
-							.getParameter("optionType")));
+					
+					/*
+					 *  (Optional) The installment option type for an OPTIONnNAME, 
+					 *  which is one of the following values:
+
+					    FULL - Payment in full
+					    VARIABLE - Variable installments
+					    EMI - Equal installments
+					 */
+					detailsType.setOptionType(OptionTypeListType.fromValue(req.getParameter("optionType")));
+					
+					//(Optional) Information about an installment option
 					detailsType.setPaymentPeriod(insList);
-					OptionDetailsType optType = new OptionDetailsType(
-							"CreateButton");
+					
+					//Option Details created with Menu name
+					OptionDetailsType optType = new OptionDetailsType("CreateButton");
 					List<OptionSelectionDetailsType> optSelectList = new ArrayList<OptionSelectionDetailsType>();
 					optSelectList.add(detailsType);
 					List<OptionDetailsType> optList = new ArrayList<OptionDetailsType>();
+					
+					//(Optional) Menu items
 					optType.setOptionSelectionDetails(optSelectList);
 
 					optList.add(optType);
 					reqType.setOptionDetails(optList);
-				} else if (req.getParameter("buttonType").equalsIgnoreCase(
-						"AUTOBILLING")) {
+				} else if (req.getParameter("buttonType").equalsIgnoreCase("AUTOBILLING")) {
+					
+					//(Optional) HTML standard button variables
 					lst.add("min_amount=" + req.getParameter("minAmt"));
-				} else if (req.getParameter("buttonType").equalsIgnoreCase(
-						"GIFTCERTIFICATE")) {
+				} else if (req.getParameter("buttonType").equalsIgnoreCase("GIFTCERTIFICATE")) {
+					
+					//(Optional) HTML standard button variables
 					lst.add("shopping_url=" + req.getParameter("shoppingUrl"));
-				} else if (req.getParameter("buttonType").equalsIgnoreCase(
-						"PAYMENT")) {
+				} else if (req.getParameter("buttonType").equalsIgnoreCase("PAYMENT")) {
+					
+					//(Optional) HTML standard button variables
 					lst.add("subtotal=" + req.getParameter("subTotal"));
 
-				} else if (req.getParameter("buttonType").equalsIgnoreCase(
-						"SUBSCRIBE")) {
+				} else if (req.getParameter("buttonType").equalsIgnoreCase("SUBSCRIBE")) {
+					
+					//(Optional) HTML standard button variables
 					lst.add("a3=" + req.getParameter("subAmt"));
 					lst.add("p3=" + req.getParameter("subPeriod"));
 					lst.add("t3=" + req.getParameter("subInterval"));
 				}
 				request.setBMCreateButtonRequest(reqType);
-				BMCreateButtonResponseType resp = service
-						.bMCreateButton(request);
+				BMCreateButtonResponseType resp = service.bMCreateButton(request);
 
 				if (resp != null) {
 					session.setAttribute("lastReq", service.getLastRequest());
@@ -189,7 +260,10 @@ public class ButtonManagerServlet extends HttpServlet {
 					if (resp.getAck().toString().equalsIgnoreCase("SUCCESS")) {
 						Map<Object, Object> map = new LinkedHashMap<Object, Object>();
 						map.put("Ack", resp.getAck());
+						
+						//ID of a PayPal-hosted button or a Hosted Solution token
 						map.put("Hosted Button ID", resp.getHostedButtonID());
+						
 						session.setAttribute("map", map);
 						res.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
 					} else {
@@ -197,17 +271,43 @@ public class ButtonManagerServlet extends HttpServlet {
 						res.sendRedirect(this.getServletContext().getContextPath()+"/Error.jsp");
 					}
 				}
+				
 			} else if (req.getRequestURI().contains("BMUpdateButton")) {
+				
 				BMUpdateButtonReq request = new BMUpdateButtonReq();
 				BMUpdateButtonRequestType reqType = new BMUpdateButtonRequestType();
+				/*
+				 *  (Required) The kind of button you want to update. It is one of the following values:
 
-				reqType.setButtonType(ButtonTypeType.fromValue(req
-						.getParameter("buttonType")));
-				reqType.setButtonCode(ButtonCodeType.fromValue(req
-						.getParameter("buttonCode")));
+				    BUYNOW - Buy Now button
+				    CART - Add to Cart button
+				    GIFTCERTIFICATE - Gift Certificate button
+				    SUBSCRIBE - Subscribe button
+				    DONATE - Donate button
+				    UNSUBSCRIBE - Unsubscribe button
+				    VIEWCART - View Cart button
+				    PAYMENTPLAN - Installment Plan button; since version 63.0
+				    AUTOBILLING - Automatic Billing button; since version 63.0
 
+				Note:
+				 You cannot change the kind of button after the button has been created.
+
+				 */
+				reqType.setButtonType(ButtonTypeType.fromValue(req.getParameter("buttonType")));
+				/*
+				 *  (Optional) The kind of button code to create. 
+				 *  It is one of the following values:
+
+				    HOSTED - A secure button stored on PayPal; default for all buttons except View Cart and Unsubscribe
+				    ENCRYPTED - An encrypted button, not stored on PayPal; default for View Cart button
+				    CLEARTEXT - An unencrypted button, not stored on PayPal; default for Unsubscribe button
+    				Note:
+    					You cannot change the kind of button code after after the button has been created.
+				 */
+				reqType.setButtonCode(ButtonCodeType.fromValue(req.getParameter("buttonCode")));
+				
+				//(Optional) HTML standard button variables
 				List<String> lst = new ArrayList<String>();
-
 				lst.add("item_name=" + req.getParameter("itemName"));
 				lst.add("amount=" + req.getParameter("amt"));
 				lst.add("return=" + req.getParameter("returnURL"));
@@ -217,50 +317,93 @@ public class ButtonManagerServlet extends HttpServlet {
 				reqType.setButtonVar(lst);
 				// Construct the request values according to the Button Type and
 				// Button Code
-				if (req.getParameter("buttonType").equalsIgnoreCase(
-						"PAYMENTPLAN")) {
+				if (req.getParameter("buttonType").equalsIgnoreCase("PAYMENTPLAN")) {
+					
 					OptionSelectionDetailsType detailsType = new OptionSelectionDetailsType(
 							"CreateButton");
 
 					List<InstallmentDetailsType> insList = new ArrayList<InstallmentDetailsType>();
 					InstallmentDetailsType insType = new InstallmentDetailsType();
+					
+					/*
+					 * (Optional) The total number of billing cycles, regardless of the duration 
+					 * of a cycle; 1 is the default
+					 */
 					insType.setTotalBillingCycles(3);
+					
+					//(Optional) The base amount to bill for the cycle.
 					insType.setAmount("2.00");
+					
+					/*
+					 * (Optional) The installment cycle frequency in units, e.g. 
+					 * if the billing frequency is 2 and the billing period is Month, 
+					 * the billing cycle is every 2 months. The default billing frequency is 1.
+					 */
 					insType.setBillingFrequency(2);
+					
+					/*
+					 *  (Optional) The installment cycle unit, which is one of the following values:
 
+					    NoBillingPeriodType - None (default)
+					    Day
+					    Week
+					    SemiMonth
+					    Month
+					    Year
+					 */
 					insType.setBillingPeriod(BillingPeriodType.MONTH);
 					insList.add(insType);
+					/*
+					 *  (Optional) The installment option type for an OPTIONnNAME, 
+					 *  which is one of the following values:
+						
+					    FULL - Payment in full
+					    VARIABLE - Variable installments
+					    EMI - Equal installments
+					    
+						Note:
+						Only available for Installment Plan buttons.
+					 */
 					detailsType.setOptionType(OptionTypeListType.EMI);
+					
+					//(Optional) Information about an installment option
 					detailsType.setPaymentPeriod(insList);
-					OptionDetailsType optType = new OptionDetailsType(
-							"CreateButton");
+					
+					//Option Details created with Menu name
+					OptionDetailsType optType = new OptionDetailsType("CreateButton");
 					List<OptionSelectionDetailsType> optSelectList = new ArrayList<OptionSelectionDetailsType>();
 					optSelectList.add(detailsType);
 					List<OptionDetailsType> optList = new ArrayList<OptionDetailsType>();
+					
+					//(Optional) Menu items
 					optType.setOptionSelectionDetails(optSelectList);
 
 					optList.add(optType);
 					reqType.setOptionDetails(optList);
-				} else if (req.getParameter("buttonType").equalsIgnoreCase(
-						"AUTOBILLING")) {
+				} else if (req.getParameter("buttonType").equalsIgnoreCase("AUTOBILLING")) {
+					//(Optional) HTML standard button variables
 					lst.add("min_amount=4.00");
-				} else if (req.getParameter("buttonType").equalsIgnoreCase(
-						"GIFTCERTIFICATE")) {
+				} else if (req.getParameter("buttonType").equalsIgnoreCase("GIFTCERTIFICATE")) {
+					//(Optional) HTML standard button variables
 					lst.add("shopping_url=http://www.ebay.com");
-				} else if (req.getParameter("buttonType").equalsIgnoreCase(
-						"PAYMENT")) {
+				} else if (req.getParameter("buttonType").equalsIgnoreCase("PAYMENT")) {
+					//(Optional) HTML standard button variables
 					lst.add("subtotal=2.00");
-				} else if (req.getParameter("buttonType").equalsIgnoreCase(
-						"SUBSCRIBE")) {
+				} else if (req.getParameter("buttonType").equalsIgnoreCase("SUBSCRIBE")) {
+					//(Optional) HTML standard button variables
 					lst.add("a3=2.00");
 					lst.add("p3=3");
 					lst.add("t3=W");
 				}
+				
+				//(Required) The ID of the hosted button you want to modify.
 				reqType.setHostedButtonID(req.getParameter("hostedID"));
 				request.setBMUpdateButtonRequest(reqType);
-
-				BMUpdateButtonResponseType resp = service
-						.bMUpdateButton(request);
+				
+				// ## Making API call
+				// Invoke the appropriate method corresponding to API in service
+				// wrapper object
+				BMUpdateButtonResponseType resp = service.bMUpdateButton(request);
 
 				if (resp != null) {
 					session.setAttribute("lastReq", service.getLastRequest());
@@ -268,6 +411,8 @@ public class ButtonManagerServlet extends HttpServlet {
 					if (resp.getAck().toString().equalsIgnoreCase("SUCCESS")) {
 						Map<Object, Object> map = new LinkedHashMap<Object, Object>();
 						map.put("Ack", resp.getAck());
+						
+						//ID of a PayPal hosted button
 						map.put("Hosted Button ID", resp.getHostedButtonID());
 						session.setAttribute("map", map);
 						res.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
@@ -279,13 +424,24 @@ public class ButtonManagerServlet extends HttpServlet {
 			} else if (req.getRequestURI().contains("BMButtonSearch")) {
 				BMButtonSearchReq request = new BMButtonSearchReq();
 				BMButtonSearchRequestType reqType = new BMButtonSearchRequestType();
-				reqType.setStartDate(req.getParameter("startDate")
-						+ "T00:00:00.000Z");
-				reqType.setEndDate(req.getParameter("endDate")
-						+ "T23:59:59.000Z");
+				
+				/*
+				 * (Required) Starting date for the search. The value must be in UTC/GMT format; 
+				 * for example, 2009-08-24T05:38:48Z. No wildcards are allowed. 
+				 */
+				reqType.setStartDate(req.getParameter("startDate") + "T00:00:00.000Z");
+				/*
+				 * (Optional) Ending date for the search. The value must be in UTC/GMT format; 
+				 * for example, 2010-05-01T05:38:48Z. No wildcards are allowed.
+				 */
+				reqType.setEndDate(req.getParameter("endDate")+ "T23:59:59.000Z");
+				
 				request.setBMButtonSearchRequest(reqType);
-				BMButtonSearchResponseType resp = service
-						.bMButtonSearch(request);
+				
+				// ## Making API call
+				// Invoke the appropriate method corresponding to API in service
+				// wrapper object
+				BMButtonSearchResponseType resp = service.bMButtonSearch(request);
 				if (resp != null) {
 					session.setAttribute("lastReq", service.getLastRequest());
 					session.setAttribute("lastResp", service.getLastResponse());
@@ -297,9 +453,14 @@ public class ButtonManagerServlet extends HttpServlet {
 						while (iterator.hasNext()) {
 							ButtonSearchResultType result = (ButtonSearchResultType) iterator
 									.next();
+							
+							//The hosted button ID
 							map.put("ButtonType", result.getButtonType());
-							map.put("Hosted Button ID",
-									result.getHostedButtonID());
+							
+							//The hosted button ID
+							map.put("Hosted Button ID",result.getHostedButtonID());
+							
+							//The item name
 							map.put("Item Name", result.getItemName());
 						}
 
@@ -312,22 +473,50 @@ public class ButtonManagerServlet extends HttpServlet {
 				}
 
 			} else if (req.getRequestURI().contains("BMGetButtonDetails")) {
+				
 				BMGetButtonDetailsReq request = new BMGetButtonDetailsReq();
 				BMGetButtonDetailsRequestType reqType = new BMGetButtonDetailsRequestType();
-
+				
+				//(Required) The ID of the hosted button whose details you want to obtain.
 				reqType.setHostedButtonID(req.getParameter("hostedID"));
 
 				request.setBMGetButtonDetailsRequest(reqType);
-				BMGetButtonDetailsResponseType resp = service
-						.bMGetButtonDetails(request);
+				
+				// ## Making API call
+				// Invoke the appropriate method corresponding to API in service
+				// wrapper object
+				BMGetButtonDetailsResponseType resp = service.bMGetButtonDetails(request);
 				if (resp != null) {
 					session.setAttribute("lastReq", service.getLastRequest());
 					session.setAttribute("lastResp", service.getLastResponse());
 					if (resp.getAck().toString().equalsIgnoreCase("SUCCESS")) {
 						Map<Object, Object> map = new LinkedHashMap<Object, Object>();
 						map.put("Ack", resp.getAck());
+						/*
+						 * The kind of button. It is one of the following values:
+
+						    BUYNOW - Buy Now button
+						    CART - Add to Cart button
+						    GIFTCERTIFICATE - Gift Certificate button
+						    SUBSCRIBE - Subscribe button
+						    DONATE - Donate button
+						    UNSUBSCRIBE - Unsubscribe button
+						    VIEWCART - View Cart button
+						    PAYMENTPLAN - Installment Plan button; since version 63.0
+						    AUTOBILLING - Automatic Billing button; since version 63.0
+						 */
 						map.put("ButtonType", resp.getButtonType());
+						
+						/*
+						 * The kind of button code. It is one of the following values:
+
+						    HOSTED - A secure button stored on PayPal
+						    ENCRYPTED - An encrypted button, not stored on PayPal
+						    CLEARTEXT - An unencrypted button, not stored on PayPal
+						 */
 						map.put("ButtonCode", resp.getButtonCode());
+						
+						//HTML code for web pages
 						map.put("Website", resp.getWebsite());
 						session.setAttribute("map", map);
 						res.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
@@ -340,12 +529,22 @@ public class ButtonManagerServlet extends HttpServlet {
 			} else if (req.getRequestURI().contains("BMManageButtonStatus")) {
 				BMManageButtonStatusReq request = new BMManageButtonStatusReq();
 				BMManageButtonStatusRequestType reqType = new BMManageButtonStatusRequestType();
+				
+				//(Required) The ID of the hosted button whose status you want to change.
 				reqType.setHostedButtonID(req.getParameter("hostedID"));
-				reqType.setButtonStatus(ButtonStatusType.fromValue(req
-						.getParameter("buttonStatus")));
+				
+				/*
+				 *  (Required) The new status of the button. It is one of the following values:
+    				 DELETE - the button is deleted from PayPal
+				 */
+				reqType.setButtonStatus(ButtonStatusType.fromValue(req.getParameter("buttonStatus")));
 				request.setBMManageButtonStatusRequest(reqType);
-				BMManageButtonStatusResponseType resp = service
-						.bMManageButtonStatus(request);
+				
+				// ## Making API call
+				// Invoke the appropriate method corresponding to API in service
+				// wrapper object
+				BMManageButtonStatusResponseType resp = service.bMManageButtonStatus(request);
+				
 				if (resp != null) {
 					session.setAttribute("lastReq", service.getLastRequest());
 					session.setAttribute("lastResp", service.getLastResponse());
@@ -363,10 +562,14 @@ public class ButtonManagerServlet extends HttpServlet {
 			} else if (req.getRequestURI().contains("BMGetInventory")) {
 				BMGetInventoryReq request = new BMGetInventoryReq();
 				BMGetInventoryRequestType reqType = new BMGetInventoryRequestType();
+				//(Required) The ID of the hosted button whose inventory information you want to obtain.
 				reqType.setHostedButtonID(req.getParameter("hostedID"));
 				request.setBMGetInventoryRequest(reqType);
-				BMGetInventoryResponseType resp = service
-						.bMGetInventory(request);
+				
+				// ## Making API call
+				// Invoke the appropriate method corresponding to API in service
+				// wrapper object
+				BMGetInventoryResponseType resp = service.bMGetInventory(request);
 
 				if (resp != null) {
 					if (resp.getAck().toString().equalsIgnoreCase("SUCCESS")) {
@@ -378,14 +581,36 @@ public class ButtonManagerServlet extends HttpServlet {
 								.equalsIgnoreCase("SUCCESS")) {
 							Map<Object, Object> map = new LinkedHashMap<Object, Object>();
 							map.put("Ack", resp.getAck());
+							/*
+							 * Whether to track inventory levels associated with the button. 
+							 * It is one of the following values:
+
+							    0 - do not track inventory
+							    1 - track inventory
+							 */
 							map.put("TrackInv", resp.getTrackInv());
+							
+							/*
+							 * Whether to track the gross profit associated with inventory changes. 
+							 * It is one of the following values:
+							
+							    0 - do not track the gross profit
+							    1 - track the gross profit
+							
+							Note:
+							The gross profit is calculated as the price of the item less its cost, 
+							multiplied by the change in the inventory level since the last call to 
+							BMSetInventory.
+							 */
 							map.put("TrackPnl", resp.getTrackPnl());
-							map.put("Hosted Button ID",
-									resp.getHostedButtonID());
-							map.put("Item Cost", resp.getItemTrackingDetails()
-									.getItemCost());
-							map.put("Item Quantity", resp
-									.getItemTrackingDetails().getItemQty());
+							//The ID of the hosted button whose inventory you want to set.
+							map.put("Hosted Button ID",resp.getHostedButtonID());
+							
+							//The cost of the item associated with this button 
+							map.put("Item Cost", resp.getItemTrackingDetails().getItemCost());
+							
+							//The current inventory level of the item associated with this button 
+							map.put("Item Quantity", resp.getItemTrackingDetails().getItemQty());
 							session.setAttribute("map", map);
 							res.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
 						}
@@ -398,19 +623,51 @@ public class ButtonManagerServlet extends HttpServlet {
 			} else if (req.getRequestURI().contains("BMSetInventory")) {
 				BMSetInventoryReq request = new BMSetInventoryReq();
 				BMSetInventoryRequestType reqType = new BMSetInventoryRequestType();
-
-				reqType.setVersion("82");
-
+				
+				//API Version
+				reqType.setVersion("82");	
+				
+				//(Required) The ID of the hosted button whose inventory you want to set.
 				reqType.setHostedButtonID(req.getParameter("hostedID"));
+				
+				/*
+				 *  (Required) Whether to track inventory levels associated with the button. 
+				 *  It is one of the following values:
+
+				    0 - do not track inventory
+				    1 - track inventory
+				 */
 				reqType.setTrackInv(req.getParameter("trackInv"));
+				
+				/*
+				 *  (Required) Whether to track the gross profit associated with inventory changes. 
+				 *  It is one of the following values:
+
+				    0 - do not track the gross profit
+				    1 - track the gross profit
+					Note: The gross profit is calculated as the price of the item less its cost, 
+					multiplied by the change in the inventory level since the last call to 
+					BMSetInventory
+				 */
 				reqType.setTrackPnl(req.getParameter("trackPnl"));
 				ItemTrackingDetailsType itemTrackDetails = new ItemTrackingDetailsType();
+				
+				/*
+				 * The quantity you want to specify for the item associated with this button. 
+				 * Specify either the absolute quantity in this field or the change in quantity in 
+				 * the quantity delta field
+				 */
 				itemTrackDetails.setItemQty(req.getParameter("itemQty"));
+				
+				//(Optional) The cost of the item associated with this button
 				itemTrackDetails.setItemCost(req.getParameter("itemCost"));
 				reqType.setItemTrackingDetails(itemTrackDetails);
 				request.setBMSetInventoryRequest(reqType);
-				BMSetInventoryResponseType resp = service
-						.bMSetInventory(request);
+				
+				// ## Making API call
+				// Invoke the appropriate method corresponding to API in service
+				// wrapper object
+				BMSetInventoryResponseType resp = service.bMSetInventory(request);
 				res.setContentType("text/html");
 				if (resp != null) {
 					session.setAttribute("lastReq", service.getLastRequest());

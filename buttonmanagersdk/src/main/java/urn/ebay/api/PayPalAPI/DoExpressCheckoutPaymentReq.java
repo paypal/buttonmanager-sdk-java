@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.DoExpressCheckoutPaymentRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class DoExpressCheckoutPaymentReq{
 
@@ -11,7 +11,7 @@ public class DoExpressCheckoutPaymentReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private DoExpressCheckoutPaymentRequestType doExpressCheckoutPaymentRequest;
 

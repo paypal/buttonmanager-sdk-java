@@ -21,48 +21,48 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  
+ * 
  */
 public class IncentiveDetailType{
 
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String redemptionCode;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String displayCode;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String programId;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private IncentiveTypeCodeType incentiveType;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String incentiveDescription;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private List<IncentiveAppliedToType> appliedTo = new ArrayList<IncentiveAppliedToType>();
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String status;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String errorCode;
 

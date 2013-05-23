@@ -18,7 +18,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  
+ * 
  */
 public class MeasureType{
 
@@ -26,13 +26,13 @@ public class MeasureType{
 	private static final String preferredPrefix="cc";
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String unit;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private Double value;

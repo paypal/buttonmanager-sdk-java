@@ -19,13 +19,13 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  
+ * 
  */
 public class GetAuthDetailsResponseType extends AbstractResponseType {
 
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private GetAuthDetailsResponseDetailsType getAuthDetailsResponseDetails;

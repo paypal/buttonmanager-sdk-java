@@ -18,7 +18,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  The Common 3DS fields. Common for both GTD and DCC API's. 
+ * The Common 3DS fields. Common for both GTD and DCC API's. 
  */
 public class ThreeDSecureRequestType{
 
@@ -26,27 +26,27 @@ public class ThreeDSecureRequestType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String eci3ds;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String cavv;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String xid;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String mpiVendor3ds;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String authStatus3ds;
 

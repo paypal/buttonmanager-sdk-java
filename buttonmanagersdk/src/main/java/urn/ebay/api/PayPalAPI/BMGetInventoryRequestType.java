@@ -3,9 +3,9 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Hosted Button ID of the button to return inventory for. 
- *  Required Character length and limitations: 10 single-byte
- *  numeric characters  
+ * Hosted Button ID of the button to return inventory for. 
+ * Required Character length and limitations: 10 single-byte
+ * numeric characters  
  */
 public class BMGetInventoryRequestType extends AbstractRequestType {
 
@@ -13,9 +13,9 @@ public class BMGetInventoryRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  Hosted Button ID of the button to return inventory for. 
-	*  Required Character length and limitations: 10 single-byte
-	*  numeric characters 	  
+	 * Hosted Button ID of the button to return inventory for. 
+	 * Required Character length and limitations: 10 single-byte
+	 * numeric characters 	  
 	 *@Required	 
 	 */ 
 	private String hostedButtonID;

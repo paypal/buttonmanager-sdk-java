@@ -4,7 +4,7 @@ import urn.ebay.apis.eBLBaseComponents.MerchantPullPaymentCodeType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class BillingAgreementDetailsType{
 
@@ -12,23 +12,23 @@ public class BillingAgreementDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private BillingCodeType billingType;
 
 	/**
-	*  Only needed for AutoBill billinng type. 	 
+	 * Only needed for AutoBill billinng type. 	 
 	 */ 
 	private String billingAgreementDescription;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private MerchantPullPaymentCodeType paymentType;
 
 	/**
-	*  Custom annotation field for your exclusive use. 	 
+	 * Custom annotation field for your exclusive use. 	 
 	 */ 
 	private String billingAgreementCustom;
 

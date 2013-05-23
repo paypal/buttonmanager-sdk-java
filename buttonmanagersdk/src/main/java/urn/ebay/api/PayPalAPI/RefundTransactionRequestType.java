@@ -10,9 +10,9 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Unique identifier of the transaction you are refunding.
- *  Optional Character length and limitations: 17 single-byte
- *  alphanumeric characters 
+ * Unique identifier of the transaction you are refunding.
+ * Optional Character length and limitations: 17 single-byte
+ * alphanumeric characters 
  */
 public class RefundTransactionRequestType extends AbstractRequestType {
 
@@ -20,78 +20,78 @@ public class RefundTransactionRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  Unique identifier of the transaction you are refunding.
-	*  Optional Character length and limitations: 17 single-byte
-	*  alphanumeric characters 	 
+	 * Unique identifier of the transaction you are refunding.
+	 * Optional Character length and limitations: 17 single-byte
+	 * alphanumeric characters 	 
 	 */ 
 	private String transactionID;
 
 	/**
-	*  Encrypted PayPal customer account identification number.
-	*  Optional Character length and limitations: 127 single-byte
-	*  alphanumeric characters	 
+	 * Encrypted PayPal customer account identification number.
+	 * Optional Character length and limitations: 127 single-byte
+	 * alphanumeric characters	 
 	 */ 
 	private String payerID;
 
 	/**
-	*  Invoice number corresponding to transaction details for
-	*  tracking the refund of a payment. This parameter is passed
-	*  by the merchant or recipient while refunding the
-	*  transaction. This parameter does not affect the business
-	*  logic, it is persisted in the DB for transaction reference
-	*  Optional 	 
+	 * Invoice number corresponding to transaction details for
+	 * tracking the refund of a payment. This parameter is passed
+	 * by the merchant or recipient while refunding the
+	 * transaction. This parameter does not affect the business
+	 * logic, it is persisted in the DB for transaction reference
+	 * Optional 	 
 	 */ 
 	private String invoiceID;
 
 	/**
-	*  Type of refund you are making Required 	 
+	 * Type of refund you are making Required 	 
 	 */ 
 	private RefundType refundType;
 
 	/**
-	*  Refund amount. Amount is required if RefundType is Partial.
-	*  NOTE: If RefundType is Full, do not set Amount.	 
+	 * Refund amount. Amount is required if RefundType is Partial.
+	 * NOTE: If RefundType is Full, do not set Amount.	 
 	 */ 
 	private BasicAmountType amount;
 
 	/**
-	*  Custom memo about the refund. Optional Character length and
-	*  limitations: 255 single-byte alphanumeric characters	 
+	 * Custom memo about the refund. Optional Character length and
+	 * limitations: 255 single-byte alphanumeric characters	 
 	 */ 
 	private String memo;
 
 	/**
-	*  The maximum time till which refund must be tried. Optional 	 
+	 * The maximum time till which refund must be tried. Optional 	 
 	 */ 
 	private String retryUntil;
 
 	/**
-	*  The type of funding source for refund. Optional 	 
+	 * The type of funding source for refund. Optional 	 
 	 */ 
 	private RefundSourceCodeType refundSource;
 
 	/**
-	*  Flag to indicate that the customer was already given store
-	*  credit for a given transaction. This will allow us to make
-	*  sure we do not double refund. Optional 	 
+	 * Flag to indicate that the customer was already given store
+	 * credit for a given transaction. This will allow us to make
+	 * sure we do not double refund. Optional 	 
 	 */ 
 	private Boolean refundAdvice;
 
 	/**
-	*  To pass the Merchant store informationOptional 	 
+	 * To pass the Merchant store informationOptional 	 
 	 */ 
 	private MerchantStoreDetailsType merchantStoreDetails;
 
 	/**
-	*  Information about the individual details of the items to be
-	*  refunded.Optional 	 
+	 * Information about the individual details of the items to be
+	 * refunded.Optional 	 
 	 */ 
 	private List<InvoiceItemType> refundItemDetails = new ArrayList<InvoiceItemType>();
 
 	/**
-	*  Unique id for each API request to prevent duplicate
-	*  payments. Optional Character length and limits: 38
-	*  single-byte characters maximum. 	 
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 	 
 	 */ 
 	private String msgSubID;
 

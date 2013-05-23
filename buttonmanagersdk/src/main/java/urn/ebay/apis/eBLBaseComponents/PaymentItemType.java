@@ -22,88 +22,88 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  PaymentItemType Information about a Payment Item. 
+ * PaymentItemType Information about a Payment Item. 
  */
 public class PaymentItemType{
 
 
 	/**
-	*  eBay Auction Transaction ID of the Item Optional Character
-	*  length and limitations: 255 single-byte characters 	 
+	 * eBay Auction Transaction ID of the Item Optional Character
+	 * length and limitations: 255 single-byte characters 	 
 	 */ 
 	private String ebayItemTxnId;
 
 	/**
-	*  Item name set by you or entered by the customer. Character
-	*  length and limitations: 127 single-byte alphanumeric
-	*  characters	 
+	 * Item name set by you or entered by the customer. Character
+	 * length and limitations: 127 single-byte alphanumeric
+	 * characters	 
 	 */ 
 	private String name;
 
 	/**
-	*  Item number set by you. Character length and limitations:
-	*  127 single-byte alphanumeric characters	 
+	 * Item number set by you. Character length and limitations:
+	 * 127 single-byte alphanumeric characters	 
 	 */ 
 	private String number;
 
 	/**
-	*  Quantity set by you or entered by the customer. Character
-	*  length and limitations: no limit	 
+	 * Quantity set by you or entered by the customer. Character
+	 * length and limitations: no limit	 
 	 */ 
 	private String quantity;
 
 	/**
-	*  Amount of tax charged on payment 	 
+	 * Amount of tax charged on payment 	 
 	 */ 
 	private String salesTax;
 
 	/**
-	*  Amount of shipping charged on payment 	 
+	 * Amount of shipping charged on payment 	 
 	 */ 
 	private String shippingAmount;
 
 	/**
-	*  Amount of handling charged on payment 	 
+	 * Amount of handling charged on payment 	 
 	 */ 
 	private String handlingAmount;
 
 	/**
-	*  Invoice item details 	 
+	 * Invoice item details 	 
 	 */ 
 	private InvoiceItemType invoiceItemDetails;
 
 	/**
-	*  Coupon ID Number 	 
+	 * Coupon ID Number 	 
 	 */ 
 	private String couponID;
 
 	/**
-	*  Amount Value of The Coupon 	 
+	 * Amount Value of The Coupon 	 
 	 */ 
 	private String couponAmount;
 
 	/**
-	*  Currency of the Coupon Amount 	 
+	 * Currency of the Coupon Amount 	 
 	 */ 
 	private String couponAmountCurrency;
 
 	/**
-	*  Amount of Discount on this Loyalty Card	 
+	 * Amount of Discount on this Loyalty Card	 
 	 */ 
 	private String loyaltyCardDiscountAmount;
 
 	/**
-	*  Currency of the Discount	 
+	 * Currency of the Discount	 
 	 */ 
 	private String loyaltyCardDiscountCurrency;
 
 	/**
-	*  Cost of item 	 
+	 * Cost of item 	 
 	 */ 
 	private BasicAmountType amount;
 
 	/**
-	*  Item options selected in PayPal shopping cart 	 
+	 * Item options selected in PayPal shopping cart 	 
 	 */ 
 	private List<OptionType> options = new ArrayList<OptionType>();
 

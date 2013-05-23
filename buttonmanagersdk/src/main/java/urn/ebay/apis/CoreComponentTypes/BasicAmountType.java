@@ -19,12 +19,12 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  On requests, you must set the currencyID attribute to one of
- *  the three-character currency codes for any of the supported
- *  PayPal currencies. Limitations: Must not exceed $10,000 USD
- *  in any currency. No currency symbol. Decimal separator must
- *  be a period (.), and the thousands separator must be a comma
- *  (,).
+ * On requests, you must set the currencyID attribute to one of
+ * the three-character currency codes for any of the supported
+ * PayPal currencies. Limitations: Must not exceed $10,000 USD
+ * in any currency. No currency symbol. Decimal separator must
+ * be a period (.), and the thousands separator must be a comma
+ * (,).
  */
 public class BasicAmountType{
 
@@ -32,13 +32,13 @@ public class BasicAmountType{
 	private static final String preferredPrefix="cc";
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private CurrencyCodeType currencyID;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String value;

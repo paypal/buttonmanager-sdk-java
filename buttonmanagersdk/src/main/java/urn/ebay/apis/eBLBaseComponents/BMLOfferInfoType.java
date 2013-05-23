@@ -18,7 +18,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  BMLOfferInfoType Specific information for BML. 
+ * BMLOfferInfoType Specific information for BML. 
  */
 public class BMLOfferInfoType{
 
@@ -26,7 +26,7 @@ public class BMLOfferInfoType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Unique identification for merchant/buyer/offer combo. 	 
+	 * Unique identification for merchant/buyer/offer combo. 	 
 	 */ 
 	private String offerTrackingID;
 

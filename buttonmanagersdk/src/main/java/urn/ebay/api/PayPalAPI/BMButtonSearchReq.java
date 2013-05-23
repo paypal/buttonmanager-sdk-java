@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.BMButtonSearchRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class BMButtonSearchReq{
 
@@ -11,7 +11,7 @@ public class BMButtonSearchReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BMButtonSearchRequestType bMButtonSearchRequest;
 

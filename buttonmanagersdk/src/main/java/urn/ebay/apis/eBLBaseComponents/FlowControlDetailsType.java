@@ -2,7 +2,7 @@ package urn.ebay.apis.eBLBaseComponents;
 import com.paypal.core.SDKUtil;
 
 /**
- *  An optional set of values related to flow-specific details. 
+ * An optional set of values related to flow-specific details. 
  */
 public class FlowControlDetailsType{
 
@@ -10,15 +10,15 @@ public class FlowControlDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  The URL to redirect to for an unpayable transaction. This
-	*  field is currently used only for the inline checkout flow. 	 
+	 * The URL to redirect to for an unpayable transaction. This
+	 * field is currently used only for the inline checkout flow. 	 
 	 */ 
 	private String errorURL;
 
 	/**
-	*  The URL to redirect to after a user clicks the "Pay" or
-	*  "Continue" button on the merchant's site. This field is
-	*  currently used only for the inline checkout flow. 	 
+	 * The URL to redirect to after a user clicks the "Pay" or
+	 * "Continue" button on the merchant's site. This field is
+	 * currently used only for the inline checkout flow. 	 
 	 */ 
 	private String inContextReturnURL;
 

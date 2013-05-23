@@ -18,24 +18,24 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  Contains payment request information for each bucket in the
- *  cart.  
+ * Contains payment request information for each bucket in the
+ * cart.  
  */
 public class PaymentRequestInfoType{
 
 
 	/**
-	*  Contains the transaction id of the bucket.  	 
+	 * Contains the transaction id of the bucket.  	 
 	 */ 
 	private String transactionId;
 
 	/**
-	*  Contains the bucket id.  	 
+	 * Contains the bucket id.  	 
 	 */ 
 	private String paymentRequestID;
 
 	/**
-	*  Contains the error details.  	 
+	 * Contains the error details.  	 
 	 */ 
 	private ErrorType paymentError;
 

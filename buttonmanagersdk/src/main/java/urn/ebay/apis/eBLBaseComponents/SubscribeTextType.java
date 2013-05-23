@@ -1,8 +1,8 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  values for subscribe button text
- *   
+ * values for subscribe button text
+ *  
  */
 public enum  SubscribeTextType {
 

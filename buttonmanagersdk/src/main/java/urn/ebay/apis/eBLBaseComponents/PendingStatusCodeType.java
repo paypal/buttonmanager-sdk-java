@@ -1,10 +1,10 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  PendingStatusCodeType 
- *   The pending status for a PayPal Payment transaction which
- *  matches the output from IPN
- *   
+ * PendingStatusCodeType 
+ *  The pending status for a PayPal Payment transaction which
+ * matches the output from IPN
+ *  
  */
 public enum  PendingStatusCodeType {
 

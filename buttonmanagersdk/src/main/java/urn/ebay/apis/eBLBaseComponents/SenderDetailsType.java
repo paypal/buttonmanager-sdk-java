@@ -3,7 +3,7 @@ import urn.ebay.apis.eBLBaseComponents.DeviceDetailsType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class SenderDetailsType{
 
@@ -11,7 +11,7 @@ public class SenderDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private DeviceDetailsType deviceDetails;
 

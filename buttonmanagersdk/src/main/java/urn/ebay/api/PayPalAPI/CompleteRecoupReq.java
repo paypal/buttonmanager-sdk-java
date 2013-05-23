@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.CompleteRecoupRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class CompleteRecoupReq{
 
@@ -11,7 +11,7 @@ public class CompleteRecoupReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private CompleteRecoupRequestType completeRecoupRequest;
 

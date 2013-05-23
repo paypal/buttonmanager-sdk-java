@@ -1,13 +1,13 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  SeverityCodeType
- *      This code identifies the Severity code types in terms of
- *  whether
- *      there is an API-level error or warning that needs to be
- *  communicated
- *      to the client.
- *   
+ * SeverityCodeType
+ *     This code identifies the Severity code types in terms of
+ * whether
+ *     there is an API-level error or warning that needs to be
+ * communicated
+ *     to the client.
+ *  
  */
 public enum  SeverityCodeType {
 

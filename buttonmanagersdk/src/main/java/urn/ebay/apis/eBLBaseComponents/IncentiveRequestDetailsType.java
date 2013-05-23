@@ -4,7 +4,7 @@ import urn.ebay.apis.eBLBaseComponents.IncentiveRequestDetailLevelCodeType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class IncentiveRequestDetailsType{
 
@@ -12,17 +12,17 @@ public class IncentiveRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String requestId;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private IncentiveRequestCodeType requestType;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private IncentiveRequestDetailLevelCodeType requestDetailLevel;
 

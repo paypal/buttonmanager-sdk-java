@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.DoReferenceTransactionRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class DoReferenceTransactionReq{
 
@@ -11,7 +11,7 @@ public class DoReferenceTransactionReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private DoReferenceTransactionRequestType doReferenceTransactionRequest;
 

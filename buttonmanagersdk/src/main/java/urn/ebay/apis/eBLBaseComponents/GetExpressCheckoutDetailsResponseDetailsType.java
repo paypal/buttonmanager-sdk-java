@@ -28,156 +28,156 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  The timestamped token value that was returned by
- *  SetExpressCheckoutResponse and passed on
- *  GetExpressCheckoutDetailsRequest. Character length and
- *  limitations: 20 single-byte characters 
+ * The timestamped token value that was returned by
+ * SetExpressCheckoutResponse and passed on
+ * GetExpressCheckoutDetailsRequest. Character length and
+ * limitations: 20 single-byte characters 
  */
 public class GetExpressCheckoutDetailsResponseDetailsType{
 
 
 	/**
-	*  The timestamped token value that was returned by
-	*  SetExpressCheckoutResponse and passed on
-	*  GetExpressCheckoutDetailsRequest. Character length and
-	*  limitations: 20 single-byte characters	 
+	 * The timestamped token value that was returned by
+	 * SetExpressCheckoutResponse and passed on
+	 * GetExpressCheckoutDetailsRequest. Character length and
+	 * limitations: 20 single-byte characters	 
 	 */ 
 	private String token;
 
 	/**
-	*  Information about the payer	 
+	 * Information about the payer	 
 	 */ 
 	private PayerInfoType payerInfo;
 
 	/**
-	*  A free-form field for your own use, as set by you in the
-	*  Custom element of SetExpressCheckoutRequest. Character
-	*  length and limitations: 256 single-byte alphanumeric
-	*  characters	 
+	 * A free-form field for your own use, as set by you in the
+	 * Custom element of SetExpressCheckoutRequest. Character
+	 * length and limitations: 256 single-byte alphanumeric
+	 * characters	 
 	 */ 
 	private String custom;
 
 	/**
-	*  Your own invoice or tracking number, as set by you in the
-	*  InvoiceID element of SetExpressCheckoutRequest. Character
-	*  length and limitations: 127 single-byte alphanumeric
-	*  characters	 
+	 * Your own invoice or tracking number, as set by you in the
+	 * InvoiceID element of SetExpressCheckoutRequest. Character
+	 * length and limitations: 127 single-byte alphanumeric
+	 * characters	 
 	 */ 
 	private String invoiceID;
 
 	/**
-	*  Payer's contact telephone number. PayPal returns a contact
-	*  telephone number only if your Merchant account profile
-	*  settings require that the buyer enter one.	 
+	 * Payer's contact telephone number. PayPal returns a contact
+	 * telephone number only if your Merchant account profile
+	 * settings require that the buyer enter one.	 
 	 */ 
 	private String contactPhone;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private Boolean billingAgreementAcceptedStatus;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String redirectRequired;
 
 	/**
-	*  Customer's billing address. Optional If you have credit card
-	*  mapped in your account then billing address of the credit
-	*  card is returned otherwise your primary address is returned
-	*  , PayPal returns this address in
-	*  GetExpressCheckoutDetailsResponse.	 
+	 * Customer's billing address. Optional If you have credit card
+	 * mapped in your account then billing address of the credit
+	 * card is returned otherwise your primary address is returned
+	 * , PayPal returns this address in
+	 * GetExpressCheckoutDetailsResponse.	 
 	 */ 
 	private AddressType billingAddress;
 
 	/**
-	*  Text note entered by the buyer in PayPal flow. 	 
+	 * Text note entered by the buyer in PayPal flow. 	 
 	 */ 
 	private String note;
 
 	/**
-	*  Returns the status of the EC checkout session. Values
-	*  include 'PaymentActionNotInitiated', 'PaymentActionFailed',
-	*  'PaymentActionInProgress', 'PaymentCompleted'. 	 
+	 * Returns the status of the EC checkout session. Values
+	 * include 'PaymentActionNotInitiated', 'PaymentActionFailed',
+	 * 'PaymentActionInProgress', 'PaymentCompleted'. 	 
 	 */ 
 	private String checkoutStatus;
 
 	/**
-	*  PayPal may offer a discount or gift certificate to the
-	*  buyer, which will be represented by a negativeamount. If the
-	*  buyer has a negative balance, PayPal will add that amount to
-	*  the current charges, which will be represented as a positive
-	*  amount. 	 
+	 * PayPal may offer a discount or gift certificate to the
+	 * buyer, which will be represented by a negativeamount. If the
+	 * buyer has a negative balance, PayPal will add that amount to
+	 * the current charges, which will be represented as a positive
+	 * amount. 	 
 	 */ 
 	private BasicAmountType payPalAdjustment;
 
 	/**
-	*  Information about the individual purchased items. 	 
+	 * Information about the individual purchased items. 	 
 	 */ 
 	private List<PaymentDetailsType> paymentDetails = new ArrayList<PaymentDetailsType>();
 
 	/**
-	*  Information about the user selected options. 	 
+	 * Information about the user selected options. 	 
 	 */ 
 	private UserSelectedOptionType userSelectedOptions;
 
 	/**
-	*  Information about the incentives that were applied from Ebay
-	*  RYP page and PayPal RYP page. 	 
+	 * Information about the incentives that were applied from Ebay
+	 * RYP page and PayPal RYP page. 	 
 	 */ 
 	private List<IncentiveDetailsType> incentiveDetails = new ArrayList<IncentiveDetailsType>();
 
 	/**
-	*  Information about the Gift message. 	 
+	 * Information about the Gift message. 	 
 	 */ 
 	private String giftMessage;
 
 	/**
-	*  Information about the Gift receipt enable. 	 
+	 * Information about the Gift receipt enable. 	 
 	 */ 
 	private String giftReceiptEnable;
 
 	/**
-	*  Information about the Gift Wrap name. 	 
+	 * Information about the Gift Wrap name. 	 
 	 */ 
 	private String giftWrapName;
 
 	/**
-	*  Information about the Gift Wrap amount. 	 
+	 * Information about the Gift Wrap amount. 	 
 	 */ 
 	private BasicAmountType giftWrapAmount;
 
 	/**
-	*  Information about the Buyer marketing email. 	 
+	 * Information about the Buyer marketing email. 	 
 	 */ 
 	private String buyerMarketingEmail;
 
 	/**
-	*  Information about the survey question. 	 
+	 * Information about the survey question. 	 
 	 */ 
 	private String surveyQuestion;
 
 	/**
-	*  Information about the survey choice selected by the user. 	 
+	 * Information about the survey choice selected by the user. 	 
 	 */ 
 	private List<String> surveyChoiceSelected = new ArrayList<String>();
 
 	/**
-	*  Contains payment request information about each bucket in
-	*  the cart. 	 
+	 * Contains payment request information about each bucket in
+	 * the cart. 	 
 	 */ 
 	private List<PaymentRequestInfoType> paymentRequestInfo = new ArrayList<PaymentRequestInfoType>();
 
 	/**
-	*  Response information resulting from opt-in operation or
-	*  current login bypass status. 	 
+	 * Response information resulting from opt-in operation or
+	 * current login bypass status. 	 
 	 */ 
 	private ExternalRememberMeStatusDetailsType externalRememberMeStatusDetails;
 
 	/**
-	*  Response information resulting from opt-in operation or
-	*  current login bypass status. 	 
+	 * Response information resulting from opt-in operation or
+	 * current login bypass status. 	 
 	 */ 
 	private RefreshTokenStatusDetailsType refreshTokenStatusDetails;
 

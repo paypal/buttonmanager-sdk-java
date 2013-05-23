@@ -19,13 +19,13 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  
+ * 
  */
 public class ExecuteCheckoutOperationsResponseType extends AbstractResponseType {
 
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private ExecuteCheckoutOperationsResponseDetailsType executeCheckoutOperationsResponseDetails;

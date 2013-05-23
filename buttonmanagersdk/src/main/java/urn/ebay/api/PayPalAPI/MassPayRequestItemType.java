@@ -3,7 +3,7 @@ import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  MassPayRequestItemType 
+ * MassPayRequestItemType 
  */
 public class MassPayRequestItemType{
 
@@ -11,54 +11,54 @@ public class MassPayRequestItemType{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  Email address of recipient. Required You must specify
-	*  ReceiverEmail, ReceiverPhone, or ReceiverID, but all
-	*  MassPayItems in a request must use the same field to specify
-	*  recipients. Character length and limitations: 127
-	*  single-byte characters maximum.	 
+	 * Email address of recipient. Required You must specify
+	 * ReceiverEmail, ReceiverPhone, or ReceiverID, but all
+	 * MassPayItems in a request must use the same field to specify
+	 * recipients. Character length and limitations: 127
+	 * single-byte characters maximum.	 
 	 */ 
 	private String receiverEmail;
 
 	/**
-	*  Phone number of recipient. Required You must specify
-	*  ReceiverEmail, ReceiverPhone, or ReceiverID, but all
-	*  MassPayItems in a request must use the same field to specify
-	*  recipients.	 
+	 * Phone number of recipient. Required You must specify
+	 * ReceiverEmail, ReceiverPhone, or ReceiverID, but all
+	 * MassPayItems in a request must use the same field to specify
+	 * recipients.	 
 	 */ 
 	private String receiverPhone;
 
 	/**
-	*  Unique PayPal customer account number. This value
-	*  corresponds to the value of PayerID returned by
-	*  GetTransactionDetails. Required You must specify
-	*  ReceiverEmail, ReceiverPhone, or ReceiverID, but all
-	*  MassPayItems in a request must use the same field to specify
-	*  recipients. Character length and limitations: 17 single-byte
-	*  characters maximum.	 
+	 * Unique PayPal customer account number. This value
+	 * corresponds to the value of PayerID returned by
+	 * GetTransactionDetails. Required You must specify
+	 * ReceiverEmail, ReceiverPhone, or ReceiverID, but all
+	 * MassPayItems in a request must use the same field to specify
+	 * recipients. Character length and limitations: 17 single-byte
+	 * characters maximum.	 
 	 */ 
 	private String receiverID;
 
 	/**
-	*  Payment amount. You must set the currencyID attribute to one
-	*  of the three-character currency codes for any of the
-	*  supported PayPal currencies. Required You cannot mix
-	*  currencies in a single MassPayRequest. A single request must
-	*  include items that are of the same currency.	  
+	 * Payment amount. You must set the currencyID attribute to one
+	 * of the three-character currency codes for any of the
+	 * supported PayPal currencies. Required You cannot mix
+	 * currencies in a single MassPayRequest. A single request must
+	 * include items that are of the same currency.	  
 	 *@Required	 
 	 */ 
 	private BasicAmountType amount;
 
 	/**
-	*  Transaction-specific identification number for tracking in
-	*  an accounting system. Optional Character length and
-	*  limitations: 30 single-byte characters. No whitespace
-	*  allowed.	 
+	 * Transaction-specific identification number for tracking in
+	 * an accounting system. Optional Character length and
+	 * limitations: 30 single-byte characters. No whitespace
+	 * allowed.	 
 	 */ 
 	private String uniqueId;
 
 	/**
-	*  Custom note for each recipient. Optional Character length
-	*  and limitations: 4,000 single-byte alphanumeric characters	 
+	 * Custom note for each recipient. Optional Character length
+	 * and limitations: 4,000 single-byte alphanumeric characters	 
 	 */ 
 	private String note;
 

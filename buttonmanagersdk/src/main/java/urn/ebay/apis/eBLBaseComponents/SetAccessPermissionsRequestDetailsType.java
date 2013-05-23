@@ -5,9 +5,9 @@ import urn.ebay.apis.eBLBaseComponents.AddressType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  URL to which the customer's browser is returned after
- *  choosing to login with PayPal. Required Character length and
- *  limitations: no limit. 
+ * URL to which the customer's browser is returned after
+ * choosing to login with PayPal. Required Character length and
+ * limitations: no limit. 
  */
 public class SetAccessPermissionsRequestDetailsType{
 
@@ -15,124 +15,124 @@ public class SetAccessPermissionsRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  URL to which the customer's browser is returned after
-	*  choosing to login with PayPal. Required Character length and
-	*  limitations: no limit. 	 
+	 * URL to which the customer's browser is returned after
+	 * choosing to login with PayPal. Required Character length and
+	 * limitations: no limit. 	 
 	 */ 
 	private String returnURL;
 
 	/**
-	*  URL to which the customer is returned if he does not approve
-	*  the use of PayPal login. Required Character length and
-	*  limitations: no limit 	 
+	 * URL to which the customer is returned if he does not approve
+	 * the use of PayPal login. Required Character length and
+	 * limitations: no limit 	 
 	 */ 
 	private String cancelURL;
 
 	/**
-	*  URL to which the customer's browser is returned after user
-	*  logs out from PayPal. Required Character length and
-	*  limitations: no limit. 	 
+	 * URL to which the customer's browser is returned after user
+	 * logs out from PayPal. Required Character length and
+	 * limitations: no limit. 	 
 	 */ 
 	private String logoutURL;
 
 	/**
-	*  The type of the flow. Optional Character length and
-	*  limitations: 127 single-byte alphanumeric characters 	 
+	 * The type of the flow. Optional Character length and
+	 * limitations: 127 single-byte alphanumeric characters 	 
 	 */ 
 	private String initFlowType;
 
 	/**
-	*  The used to decide SkipLogin allowed or not. Optional
-	*  Character length and limitations: 127 single-byte
-	*  alphanumeric characters 	 
+	 * The used to decide SkipLogin allowed or not. Optional
+	 * Character length and limitations: 127 single-byte
+	 * alphanumeric characters 	 
 	 */ 
 	private String skipLoginPage;
 
 	/**
-	*  contains information about API Services 	 
+	 * contains information about API Services 	 
 	 */ 
 	private List<String> requiredAccessPermissions = new ArrayList<String>();
 
 	/**
-	*  contains information about API Services 	 
+	 * contains information about API Services 	 
 	 */ 
 	private List<String> optionalAccessPermissions = new ArrayList<String>();
 
 	/**
-	*  Locale of pages displayed by PayPal during Authentication
-	*  Login. Optional Character length and limitations: Five
-	*  single-byte alphabetic characters, upper- or lowercase.
-	*  Allowable values: AU or en_AUDE or de_DEFR or fr_FRGB or
-	*  en_GBIT or it_ITJP or ja_JPUS or en_US 	 
+	 * Locale of pages displayed by PayPal during Authentication
+	 * Login. Optional Character length and limitations: Five
+	 * single-byte alphabetic characters, upper- or lowercase.
+	 * Allowable values: AU or en_AUDE or de_DEFR or fr_FRGB or
+	 * en_GBIT or it_ITJP or ja_JPUS or en_US 	 
 	 */ 
 	private String localeCode;
 
 	/**
-	*  Sets the Custom Payment Page Style for flow pages associated
-	*  with this button/link. PageStyle corresponds to the HTML
-	*  variable page_style for customizing flow pages. The value is
-	*  the same as the Page Style Name you chose when adding or
-	*  editing the page style from the Profile subtab of the My
-	*  Account tab of your PayPal account. Optional Character
-	*  length and limitations: 30 single-byte alphabetic
-	*  characters. 	 
+	 * Sets the Custom Payment Page Style for flow pages associated
+	 * with this button/link. PageStyle corresponds to the HTML
+	 * variable page_style for customizing flow pages. The value is
+	 * the same as the Page Style Name you chose when adding or
+	 * editing the page style from the Profile subtab of the My
+	 * Account tab of your PayPal account. Optional Character
+	 * length and limitations: 30 single-byte alphabetic
+	 * characters. 	 
 	 */ 
 	private String pageStyle;
 
 	/**
-	*  A URL for the image you want to appear at the top left of
-	*  the flow page. The image has a maximum size of 750 pixels
-	*  wide by 90 pixels high. PayPal recommends that you provide
-	*  an image that is stored on a secure (https) server. Optional
-	*  Character length and limitations: 127 	 
+	 * A URL for the image you want to appear at the top left of
+	 * the flow page. The image has a maximum size of 750 pixels
+	 * wide by 90 pixels high. PayPal recommends that you provide
+	 * an image that is stored on a secure (https) server. Optional
+	 * Character length and limitations: 127 	 
 	 */ 
 	private String cppHeaderImage;
 
 	/**
-	*  Sets the border color around the header of the flow page.
-	*  The border is a 2-pixel perimeter around the header space,
-	*  which is 750 pixels wide by 90 pixels high. Optional
-	*  Character length and limitations: Six character HTML
-	*  hexadecimal color code in ASCII 	 
+	 * Sets the border color around the header of the flow page.
+	 * The border is a 2-pixel perimeter around the header space,
+	 * which is 750 pixels wide by 90 pixels high. Optional
+	 * Character length and limitations: Six character HTML
+	 * hexadecimal color code in ASCII 	 
 	 */ 
 	private String cppHeaderBorderColor;
 
 	/**
-	*  Sets the background color for the header of the flow page.
-	*  Optional Character length and limitation: Six character HTML
-	*  hexadecimal color code in ASCII 	 
+	 * Sets the background color for the header of the flow page.
+	 * Optional Character length and limitation: Six character HTML
+	 * hexadecimal color code in ASCII 	 
 	 */ 
 	private String cppHeaderBackColor;
 
 	/**
-	*  Sets the background color for the payment page. Optional
-	*  Character length and limitation: Six character HTML
-	*  hexadecimal color code in ASCII 	 
+	 * Sets the background color for the payment page. Optional
+	 * Character length and limitation: Six character HTML
+	 * hexadecimal color code in ASCII 	 
 	 */ 
 	private String cppPayflowColor;
 
 	/**
-	*  First Name of the user, this information is used if user
-	*  chooses to signup with PayPal. Optional Character length and
-	*  limitation: Six character HTML hexadecimal color code in
-	*  ASCII 	 
+	 * First Name of the user, this information is used if user
+	 * chooses to signup with PayPal. Optional Character length and
+	 * limitation: Six character HTML hexadecimal color code in
+	 * ASCII 	 
 	 */ 
 	private String firstName;
 
 	/**
-	*  Last Name of the user, this information is used if user
-	*  chooses to signup with PayPal. Optional Character length and
-	*  limitation: Six character HTML hexadecimal color code in
-	*  ASCII 	 
+	 * Last Name of the user, this information is used if user
+	 * chooses to signup with PayPal. Optional Character length and
+	 * limitation: Six character HTML hexadecimal color code in
+	 * ASCII 	 
 	 */ 
 	private String lastName;
 
 	/**
-	*  User address, this information is used when user chooses to
-	*  signup for PayPal. Optional If you include a shipping
-	*  address and set the AddressOverride element on the request,
-	*  PayPal returns this same address in
-	*  GetExpressCheckoutDetailsResponse. 	 
+	 * User address, this information is used when user chooses to
+	 * signup for PayPal. Optional If you include a shipping
+	 * address and set the AddressOverride element on the request,
+	 * PayPal returns this same address in
+	 * GetExpressCheckoutDetailsResponse. 	 
 	 */ 
 	private AddressType address;
 

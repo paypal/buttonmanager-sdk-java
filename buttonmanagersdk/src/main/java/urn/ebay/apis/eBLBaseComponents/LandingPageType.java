@@ -1,10 +1,10 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  LandingPageType 
- *   This is the PayPal payment Landing Page details type (used
- *  by Express Checkout)
- *   
+ * LandingPageType 
+ *  This is the PayPal payment Landing Page details type (used
+ * by Express Checkout)
+ *  
  */
 public enum  LandingPageType {
 

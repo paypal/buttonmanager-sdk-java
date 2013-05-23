@@ -4,14 +4,14 @@ import urn.ebay.apis.eBLBaseComponents.AuthorizationRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  On your first invocation of
- *  ExecuteCheckoutOperationsRequest, the value of this token is
- *  returned by ExecuteCheckoutOperationsResponse. Optional
- *  Include this element and its value only if you want to
- *  modify an existing checkout session with another invocation
- *  of ExecuteCheckoutOperationsRequest; for example, if you
- *  want the customer to edit his shipping address on PayPal.
- *  Character length and limitations: 20 single-byte characters 
+ * On your first invocation of
+ * ExecuteCheckoutOperationsRequest, the value of this token is
+ * returned by ExecuteCheckoutOperationsResponse. Optional
+ * Include this element and its value only if you want to
+ * modify an existing checkout session with another invocation
+ * of ExecuteCheckoutOperationsRequest; for example, if you
+ * want the customer to edit his shipping address on PayPal.
+ * Character length and limitations: 20 single-byte characters 
  */
 public class ExecuteCheckoutOperationsRequestDetailsType{
 
@@ -19,27 +19,27 @@ public class ExecuteCheckoutOperationsRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  On your first invocation of
-	*  ExecuteCheckoutOperationsRequest, the value of this token is
-	*  returned by ExecuteCheckoutOperationsResponse. Optional
-	*  Include this element and its value only if you want to
-	*  modify an existing checkout session with another invocation
-	*  of ExecuteCheckoutOperationsRequest; for example, if you
-	*  want the customer to edit his shipping address on PayPal.
-	*  Character length and limitations: 20 single-byte characters 	 
+	 * On your first invocation of
+	 * ExecuteCheckoutOperationsRequest, the value of this token is
+	 * returned by ExecuteCheckoutOperationsResponse. Optional
+	 * Include this element and its value only if you want to
+	 * modify an existing checkout session with another invocation
+	 * of ExecuteCheckoutOperationsRequest; for example, if you
+	 * want the customer to edit his shipping address on PayPal.
+	 * Character length and limitations: 20 single-byte characters 	 
 	 */ 
 	private String token;
 
 	/**
-	*  All the Data required to initiate the checkout session is
-	*  passed in this element. 	  
+	 * All the Data required to initiate the checkout session is
+	 * passed in this element. 	  
 	 *@Required	 
 	 */ 
 	private SetDataRequestType setDataRequest;
 
 	/**
-	*  If auto authorization is required, this should be passed in
-	*  with IsRequested set to yes. 	 
+	 * If auto authorization is required, this should be passed in
+	 * with IsRequested set to yes. 	 
 	 */ 
 	private AuthorizationRequestType authorizationRequest;
 

@@ -18,13 +18,13 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  
+ * 
  */
 public class SetCustomerBillingAgreementResponseType extends AbstractResponseType {
 
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String token;

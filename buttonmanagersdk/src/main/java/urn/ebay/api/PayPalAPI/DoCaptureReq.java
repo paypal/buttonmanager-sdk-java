@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.DoCaptureRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class DoCaptureReq{
 
@@ -11,7 +11,7 @@ public class DoCaptureReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private DoCaptureRequestType doCaptureRequest;
 

@@ -2,8 +2,8 @@ package urn.ebay.apis.eBLBaseComponents;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Defines which bucket or item that the incentive should be
- *  applied to. 
+ * Defines which bucket or item that the incentive should be
+ * applied to. 
  */
 public class IncentiveApplyIndicationType{
 
@@ -11,12 +11,12 @@ public class IncentiveApplyIndicationType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  The Bucket ID that the incentive is applied to. 	 
+	 * The Bucket ID that the incentive is applied to. 	 
 	 */ 
 	private String paymentRequestID;
 
 	/**
-	*  The item that the incentive is applied to. 	 
+	 * The item that the incentive is applied to. 	 
 	 */ 
 	private String itemId;
 

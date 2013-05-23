@@ -1,9 +1,9 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  TotalType - Type declaration for the label to be displayed
- *   in MiniCart for UX.
- *   
+ * TotalType - Type declaration for the label to be displayed
+ *  in MiniCart for UX.
+ *  
  */
 public enum  TotalType {
 

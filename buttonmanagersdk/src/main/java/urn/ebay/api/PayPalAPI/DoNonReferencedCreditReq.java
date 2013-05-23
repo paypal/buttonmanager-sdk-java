@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.DoNonReferencedCreditRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class DoNonReferencedCreditReq{
 
@@ -11,7 +11,7 @@ public class DoNonReferencedCreditReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private DoNonReferencedCreditRequestType doNonReferencedCreditRequest;
 

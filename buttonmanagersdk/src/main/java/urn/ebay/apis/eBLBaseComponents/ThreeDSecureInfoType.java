@@ -19,18 +19,18 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  3DSecureInfoType Information about 3D Secure parameters. 
+ * 3DSecureInfoType Information about 3D Secure parameters. 
  */
 public class ThreeDSecureInfoType{
 
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private ThreeDSecureRequestType threeDSecureRequest;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private ThreeDSecureResponseType threeDSecureResponse;
 

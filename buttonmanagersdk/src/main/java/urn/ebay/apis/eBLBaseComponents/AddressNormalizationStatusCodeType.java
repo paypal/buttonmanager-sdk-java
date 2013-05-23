@@ -1,8 +1,8 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  Normalization Status of the Address
- *   
+ * Normalization Status of the Address
+ *  
  */
 public enum  AddressNormalizationStatusCodeType {
 

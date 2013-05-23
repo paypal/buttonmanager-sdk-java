@@ -22,51 +22,51 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  PaymentItemInfoType Information about a PayPal item. 
+ * PaymentItemInfoType Information about a PayPal item. 
  */
 public class PaymentItemInfoType{
 
 
 	/**
-	*  Invoice number you set in the original transaction.
-	*  Character length and limitations: 127 single-byte
-	*  alphanumeric characters 	 
+	 * Invoice number you set in the original transaction.
+	 * Character length and limitations: 127 single-byte
+	 * alphanumeric characters 	 
 	 */ 
 	private String invoiceID;
 
 	/**
-	*  Custom field you set in the original transaction. Character
-	*  length and limitations: 127 single-byte alphanumeric
-	*  characters	 
+	 * Custom field you set in the original transaction. Character
+	 * length and limitations: 127 single-byte alphanumeric
+	 * characters	 
 	 */ 
 	private String custom;
 
 	/**
-	*  Memo entered by your customer in PayPal Website Payments
-	*  note field. Character length and limitations: 255
-	*  single-byte alphanumeric characters	 
+	 * Memo entered by your customer in PayPal Website Payments
+	 * note field. Character length and limitations: 255
+	 * single-byte alphanumeric characters	 
 	 */ 
 	private String memo;
 
 	/**
-	*  Amount of tax charged on transaction	 
+	 * Amount of tax charged on transaction	 
 	 */ 
 	private String salesTax;
 
 	/**
-	*  Details about the indivudal purchased item	 
+	 * Details about the indivudal purchased item	 
 	 */ 
 	private List<PaymentItemType> paymentItem = new ArrayList<PaymentItemType>();
 
 	/**
-	*  Information about the transaction if it was created via
-	*  PayPal Subcriptions	 
+	 * Information about the transaction if it was created via
+	 * PayPal Subcriptions	 
 	 */ 
 	private SubscriptionInfoType subscription;
 
 	/**
-	*  Information about the transaction if it was created via an
-	*  auction	 
+	 * Information about the transaction if it was created via an
+	 * auction	 
 	 */ 
 	private AuctionInfoType auction;
 

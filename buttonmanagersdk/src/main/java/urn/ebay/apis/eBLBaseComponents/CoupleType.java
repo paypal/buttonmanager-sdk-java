@@ -1,7 +1,7 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  Defines couple relationship type between buckets 
+ * Defines couple relationship type between buckets 
  */
 public enum  CoupleType {
 

@@ -1,11 +1,11 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  AddressOwnerCodeType
- *      This code identifies the AddressOwner code types which
- *  indicates
- *      who owns the user'a address.
- *   
+ * AddressOwnerCodeType
+ *     This code identifies the AddressOwner code types which
+ * indicates
+ *     who owns the user'a address.
+ *  
  */
 public enum  AddressOwnerCodeType {
 

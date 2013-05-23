@@ -1,7 +1,7 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  
+ * 
  */
 public enum  OptionTypeListType {
 

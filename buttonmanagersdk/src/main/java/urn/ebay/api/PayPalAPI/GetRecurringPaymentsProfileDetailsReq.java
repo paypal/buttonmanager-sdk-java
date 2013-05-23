@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.GetRecurringPaymentsProfileDetailsRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class GetRecurringPaymentsProfileDetailsReq{
 
@@ -11,7 +11,7 @@ public class GetRecurringPaymentsProfileDetailsReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private GetRecurringPaymentsProfileDetailsRequestType getRecurringPaymentsProfileDetailsRequest;
 

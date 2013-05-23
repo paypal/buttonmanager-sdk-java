@@ -1,10 +1,10 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  IncentiveType 
- *   This identifies the type of INCENTIVE for the redemption
- *  code.
- *   
+ * IncentiveType 
+ *  This identifies the type of INCENTIVE for the redemption
+ * code.
+ *  
  */
 public enum  IncentiveTypeCodeType {
 

@@ -21,7 +21,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  Option Name. Optional 
+ * Option Name. Optional 
  */
 public class OptionDetailsType{
 
@@ -29,13 +29,13 @@ public class OptionDetailsType{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  Option Name. Optional 	  
+	 * Option Name. Optional 	  
 	 *@Required	 
 	 */ 
 	private String optionName;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private List<OptionSelectionDetailsType> optionSelectionDetails = new ArrayList<OptionSelectionDetailsType>();
 

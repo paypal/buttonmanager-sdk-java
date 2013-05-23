@@ -18,7 +18,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  Item Number. Required 
+ * Item Number. Required 
  */
 public class ItemTrackingDetailsType{
 
@@ -26,27 +26,27 @@ public class ItemTrackingDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Item Number. Required 	 
+	 * Item Number. Required 	 
 	 */ 
 	private String itemNumber;
 
 	/**
-	*  Option Quantity. Optional 	 
+	 * Option Quantity. Optional 	 
 	 */ 
 	private String itemQty;
 
 	/**
-	*  Item Quantity Delta. Optional 	 
+	 * Item Quantity Delta. Optional 	 
 	 */ 
 	private String itemQtyDelta;
 
 	/**
-	*  Item Alert. Optional 	 
+	 * Item Alert. Optional 	 
 	 */ 
 	private String itemAlert;
 
 	/**
-	*  Item Cost. Optional 	 
+	 * Item Cost. Optional 	 
 	 */ 
 	private String itemCost;
 

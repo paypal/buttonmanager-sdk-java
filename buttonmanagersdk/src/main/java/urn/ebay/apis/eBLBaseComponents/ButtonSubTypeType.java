@@ -1,8 +1,8 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  Types of button sub types
- *   
+ * Types of button sub types
+ *  
  */
 public enum  ButtonSubTypeType {
 

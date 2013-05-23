@@ -17,28 +17,28 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  
+ * 
  */
 public class ButtonSearchResultType{
 
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String hostedButtonID;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String buttonType;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String itemName;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String modifyDate;
 

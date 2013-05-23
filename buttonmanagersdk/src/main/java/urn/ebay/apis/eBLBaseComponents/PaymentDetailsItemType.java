@@ -24,7 +24,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  PaymentDetailsItemType Information about a Payment Item. 
+ * PaymentDetailsItemType Information about a Payment Item. 
  */
 public class PaymentDetailsItemType{
 
@@ -32,95 +32,95 @@ public class PaymentDetailsItemType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Item name. Optional Character length and limitations: 127
-	*  single-byte characters	 
+	 * Item name. Optional Character length and limitations: 127
+	 * single-byte characters	 
 	 */ 
 	private String name;
 
 	/**
-	*  Item number. Optional Character length and limitations: 127
-	*  single-byte characters	 
+	 * Item number. Optional Character length and limitations: 127
+	 * single-byte characters	 
 	 */ 
 	private String number;
 
 	/**
-	*  Item quantity. Optional Character length and limitations:
-	*  Any positive integer	 
+	 * Item quantity. Optional Character length and limitations:
+	 * Any positive integer	 
 	 */ 
 	private Integer quantity;
 
 	/**
-	*  Item sales tax. Optional Character length and limitations:
-	*  any valid currency amount; currency code is set the same as
-	*  for OrderTotal.	 
+	 * Item sales tax. Optional Character length and limitations:
+	 * any valid currency amount; currency code is set the same as
+	 * for OrderTotal.	 
 	 */ 
 	private BasicAmountType tax;
 
 	/**
-	*  Cost of item You must set the currencyID attribute to one of
-	*  the three-character currency codes for any of the supported
-	*  PayPal currencies. Optional Limitations: Must not exceed
-	*  $10,000 USD in any currency. No currency symbol. Decimal
-	*  separator must be a period (.), and the thousands separator
-	*  must be a comma (,).	 
+	 * Cost of item You must set the currencyID attribute to one of
+	 * the three-character currency codes for any of the supported
+	 * PayPal currencies. Optional Limitations: Must not exceed
+	 * $10,000 USD in any currency. No currency symbol. Decimal
+	 * separator must be a period (.), and the thousands separator
+	 * must be a comma (,).	 
 	 */ 
 	private BasicAmountType amount;
 
 	/**
-	*  Ebay specific details. Optional 	 
+	 * Ebay specific details. Optional 	 
 	 */ 
 	private EbayItemPaymentDetailsItemType ebayItemPaymentDetailsItem;
 
 	/**
-	*  Promotional financing code for item. Part of the Merchant
-	*  Services Promotion Financing feature. 	 
+	 * Promotional financing code for item. Part of the Merchant
+	 * Services Promotion Financing feature. 	 
 	 */ 
 	private String promoCode;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private ProductCategoryType productCategory;
 
 	/**
-	*  Item description. Optional Character length and limitations:
-	*  127 single-byte characters 	 
+	 * Item description. Optional Character length and limitations:
+	 * 127 single-byte characters 	 
 	 */ 
 	private String description;
 
 	/**
-	*  Information about the Item weight. 	 
+	 * Information about the Item weight. 	 
 	 */ 
 	private MeasureType itemWeight;
 
 	/**
-	*  Information about the Item length. 	 
+	 * Information about the Item length. 	 
 	 */ 
 	private MeasureType itemLength;
 
 	/**
-	*  Information about the Item width. 	 
+	 * Information about the Item width. 	 
 	 */ 
 	private MeasureType itemWidth;
 
 	/**
-	*  Information about the Item height. 	 
+	 * Information about the Item height. 	 
 	 */ 
 	private MeasureType itemHeight;
 
 	/**
-	*  URL for the item. Optional Character length and limitations:
-	*  no limit. 	 
+	 * URL for the item. Optional Character length and limitations:
+	 * no limit. 	 
 	 */ 
 	private String itemURL;
 
 	/**
-	*  Enhanced data for each item in the cart. Optional 	 
+	 * Enhanced data for each item in the cart. Optional 	 
 	 */ 
 	private EnhancedItemDataType enhancedItemData;
 
 	/**
-	*  Item category - physical or digital. Optional 	 
+	 * Item category - physical or digital. Optional 	 
 	 */ 
 	private ItemCategoryType itemCategory;
 

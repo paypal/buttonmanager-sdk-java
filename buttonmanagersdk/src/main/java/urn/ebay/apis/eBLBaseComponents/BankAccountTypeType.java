@@ -1,8 +1,8 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  BankAccountTypeType 
- *   
+ * BankAccountTypeType 
+ *  
  */
 public enum  BankAccountTypeType {
 

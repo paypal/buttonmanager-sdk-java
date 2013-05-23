@@ -8,7 +8,7 @@ import urn.ebay.apis.eBLBaseComponents.PaymentDetailsItemType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Billing Agreement token (required if Express Checkout) 
+ * Billing Agreement token (required if Express Checkout) 
  */
 public class CreateRecurringPaymentsProfileRequestDetailsType{
 
@@ -16,30 +16,30 @@ public class CreateRecurringPaymentsProfileRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Billing Agreement token (required if Express Checkout) 	 
+	 * Billing Agreement token (required if Express Checkout) 	 
 	 */ 
 	private String token;
 
 	/**
-	*  Information about the credit card to be charged (required if
-	*  Direct Payment) 	 
+	 * Information about the credit card to be charged (required if
+	 * Direct Payment) 	 
 	 */ 
 	private CreditCardDetailsType creditCard;
 
 	/**
-	*  Customer Information for this Recurring Payments 	  
+	 * Customer Information for this Recurring Payments 	  
 	 *@Required	 
 	 */ 
 	private RecurringPaymentsProfileDetailsType recurringPaymentsProfileDetails;
 
 	/**
-	*  Schedule Information for this Recurring Payments 	  
+	 * Schedule Information for this Recurring Payments 	  
 	 *@Required	 
 	 */ 
 	private ScheduleDetailsType scheduleDetails;
 
 	/**
-	*  Information about the Item Details. 	 
+	 * Information about the Item Details. 	 
 	 */ 
 	private List<PaymentDetailsItemType> paymentDetailsItem = new ArrayList<PaymentDetailsItemType>();
 

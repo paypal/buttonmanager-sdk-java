@@ -1,8 +1,8 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  API Authentication Type 
- *   
+ * API Authentication Type 
+ *  
  */
 public enum  APIAuthenticationType {
 

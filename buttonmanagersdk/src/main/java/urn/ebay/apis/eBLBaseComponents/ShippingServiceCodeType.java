@@ -1,11 +1,11 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  ShippingServiceCodeType
- *        These are the possible codes to describe insurance
- *  option as part of shipping
- *        service.
- *   
+ * ShippingServiceCodeType
+ *       These are the possible codes to describe insurance
+ * option as part of shipping
+ *       service.
+ *  
  */
 public enum  ShippingServiceCodeType {
 

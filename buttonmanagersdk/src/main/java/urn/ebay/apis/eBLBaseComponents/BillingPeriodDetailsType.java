@@ -20,7 +20,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  Unit of meausre for billing cycle 
+ * Unit of meausre for billing cycle 
  */
 public class BillingPeriodDetailsType{
 
@@ -28,35 +28,35 @@ public class BillingPeriodDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Unit of meausre for billing cycle 	  
+	 * Unit of meausre for billing cycle 	  
 	 *@Required	 
 	 */ 
 	private BillingPeriodType billingPeriod;
 
 	/**
-	*  Number of BillingPeriod that make up one billing cycle 	  
+	 * Number of BillingPeriod that make up one billing cycle 	  
 	 *@Required	 
 	 */ 
 	private Integer billingFrequency;
 
 	/**
-	*  Total billing cycles in this portion of the schedule 	 
+	 * Total billing cycles in this portion of the schedule 	 
 	 */ 
 	private Integer totalBillingCycles;
 
 	/**
-	*  Amount to charge 	  
+	 * Amount to charge 	  
 	 *@Required	 
 	 */ 
 	private BasicAmountType amount;
 
 	/**
-	*  Additional shipping amount to charge 	 
+	 * Additional shipping amount to charge 	 
 	 */ 
 	private BasicAmountType shippingAmount;
 
 	/**
-	*  Additional tax amount to charge 	 
+	 * Additional tax amount to charge 	 
 	 */ 
 	private BasicAmountType taxAmount;
 

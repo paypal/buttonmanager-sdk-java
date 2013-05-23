@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.GetMobileStatusRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class GetMobileStatusReq{
 
@@ -11,7 +11,7 @@ public class GetMobileStatusReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private GetMobileStatusRequestType getMobileStatusRequest;
 

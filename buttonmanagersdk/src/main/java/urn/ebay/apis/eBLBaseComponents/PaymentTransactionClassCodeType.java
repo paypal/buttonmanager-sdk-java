@@ -1,9 +1,9 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  PaymentTransactionClassCodeType 
- *   The Type of PayPal payment.
- *   
+ * PaymentTransactionClassCodeType 
+ *  The Type of PayPal payment.
+ *  
  */
 public enum  PaymentTransactionClassCodeType {
 

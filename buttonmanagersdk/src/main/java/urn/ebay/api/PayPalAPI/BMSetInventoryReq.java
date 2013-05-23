@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.BMSetInventoryRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class BMSetInventoryReq{
 
@@ -11,7 +11,7 @@ public class BMSetInventoryReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BMSetInventoryRequestType bMSetInventoryRequest;
 

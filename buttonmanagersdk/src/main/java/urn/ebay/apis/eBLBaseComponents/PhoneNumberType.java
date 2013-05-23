@@ -2,7 +2,7 @@ package urn.ebay.apis.eBLBaseComponents;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Country code associated with this phone number. 
+ * Country code associated with this phone number. 
  */
 public class PhoneNumberType{
 
@@ -10,17 +10,17 @@ public class PhoneNumberType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Country code associated with this phone number. 	 
+	 * Country code associated with this phone number. 	 
 	 */ 
 	private String countryCode;
 
 	/**
-	*  Phone number associated with this phone. 	 
+	 * Phone number associated with this phone. 	 
 	 */ 
 	private String phoneNumber;
 
 	/**
-	*  Extension associated with this phone number. 	 
+	 * Extension associated with this phone number. 	 
 	 */ 
 	private String extension;
 

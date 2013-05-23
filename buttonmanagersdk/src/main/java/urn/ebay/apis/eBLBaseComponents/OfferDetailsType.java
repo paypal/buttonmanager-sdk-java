@@ -19,7 +19,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  OfferDetailsType Specific information for an offer. 
+ * OfferDetailsType Specific information for an offer. 
  */
 public class OfferDetailsType{
 
@@ -27,13 +27,13 @@ public class OfferDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Code used to identify the promotion offer. 	 
+	 * Code used to identify the promotion offer. 	 
 	 */ 
 	private String offerCode;
 
 	/**
-	*  Specific infromation for BML, Similar structure could be
-	*  added for sepcific  promotion needs like CrossPromotions 	 
+	 * Specific infromation for BML, Similar structure could be
+	 * added for sepcific  promotion needs like CrossPromotions 	 
 	 */ 
 	private BMLOfferInfoType bMLOfferInfo;
 

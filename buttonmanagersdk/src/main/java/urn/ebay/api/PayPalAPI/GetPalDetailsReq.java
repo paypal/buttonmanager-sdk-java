@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.GetPalDetailsRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class GetPalDetailsReq{
 
@@ -11,7 +11,7 @@ public class GetPalDetailsReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private GetPalDetailsRequestType getPalDetailsRequest;
 

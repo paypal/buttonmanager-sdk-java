@@ -3,7 +3,7 @@ import urn.ebay.apis.eBLBaseComponents.BillingAgreementDetailsType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class SetCustomerBillingAgreementRequestDetailsType{
 
@@ -11,63 +11,63 @@ public class SetCustomerBillingAgreementRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private BillingAgreementDetailsType billingAgreementDetails;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String returnURL;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String cancelURL;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String localeCode;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String pageStyle;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String cppHeaderImage;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String cppHeaderBorderColor;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String cppHeaderBackColor;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String cppPayflowColor;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String buyerEmail;
 
 	/**
-	*  The value 1 indicates that you require that the customer's
-	*  billing address on file. Setting this element overrides the
-	*  setting you have specified in Admin. Optional Character
-	*  length and limitations: One single-byte numeric character.	 
+	 * The value 1 indicates that you require that the customer's
+	 * billing address on file. Setting this element overrides the
+	 * setting you have specified in Admin. Optional Character
+	 * length and limitations: One single-byte numeric character.	 
 	 */ 
 	private String reqBillingAddress;
 

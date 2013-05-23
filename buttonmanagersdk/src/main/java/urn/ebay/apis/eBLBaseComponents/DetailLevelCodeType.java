@@ -1,8 +1,8 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  DetailLevelCodeType   
- *   
+ * DetailLevelCodeType   
+ *  
  */
 public enum  DetailLevelCodeType {
 

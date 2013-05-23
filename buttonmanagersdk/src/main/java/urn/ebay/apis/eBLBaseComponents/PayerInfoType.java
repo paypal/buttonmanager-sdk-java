@@ -24,7 +24,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  PayerInfoType Payer information 
+ * PayerInfoType Payer information 
  */
 public class PayerInfoType{
 
@@ -32,58 +32,58 @@ public class PayerInfoType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Email address of payer Character length and limitations: 127
-	*  single-byte characters	 
+	 * Email address of payer Character length and limitations: 127
+	 * single-byte characters	 
 	 */ 
 	private String payer;
 
 	/**
-	*  Unique customer ID Character length and limitations: 17
-	*  single-byte characters	 
+	 * Unique customer ID Character length and limitations: 17
+	 * single-byte characters	 
 	 */ 
 	private String payerID;
 
 	/**
-	*  Status of payer's email address 	 
+	 * Status of payer's email address 	 
 	 */ 
 	private PayPalUserStatusCodeType payerStatus;
 
 	/**
-	*  Name of payer 	 
+	 * Name of payer 	 
 	 */ 
 	private PersonNameType payerName;
 
 	/**
-	*  Payment sender's country of residence using standard
-	*  two-character ISO 3166 country codes. Character length and
-	*  limitations: Two single-byte characters	 
+	 * Payment sender's country of residence using standard
+	 * two-character ISO 3166 country codes. Character length and
+	 * limitations: Two single-byte characters	 
 	 */ 
 	private CountryCodeType payerCountry;
 
 	/**
-	*  Payer's business name. Character length and limitations: 127
-	*  single-byte characters	 
+	 * Payer's business name. Character length and limitations: 127
+	 * single-byte characters	 
 	 */ 
 	private String payerBusiness;
 
 	/**
-	*  Payer's business address	 
+	 * Payer's business address	 
 	 */ 
 	private AddressType address;
 
 	/**
-	*  Business contact telephone number	 
+	 * Business contact telephone number	 
 	 */ 
 	private String contactPhone;
 
 	/**
-	*  Details about payer's tax info. Refer to the
-	*  TaxIdDetailsType for more details. 	 
+	 * Details about payer's tax info. Refer to the
+	 * TaxIdDetailsType for more details. 	 
 	 */ 
 	private TaxIdDetailsType taxIdDetails;
 
 	/**
-	*  Holds any enhanced information about the payer	 
+	 * Holds any enhanced information about the payer	 
 	 */ 
 	private EnhancedPayerInfoType enhancedPayerInfo;
 

@@ -27,86 +27,86 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  PaymentTransactionType Information about a PayPal payment
- *  from the seller side 
+ * PaymentTransactionType Information about a PayPal payment
+ * from the seller side 
  */
 public class PaymentTransactionType{
 
 
 	/**
-	*  Information about the recipient of the payment 	 
+	 * Information about the recipient of the payment 	 
 	 */ 
 	private ReceiverInfoType receiverInfo;
 
 	/**
-	*  Information about the payer 	 
+	 * Information about the payer 	 
 	 */ 
 	private PayerInfoType payerInfo;
 
 	/**
-	*  This field is for holding ReferenceId for shippment sent
-	*  from Merchant to the 3rd Party  	 
+	 * This field is for holding ReferenceId for shippment sent
+	 * from Merchant to the 3rd Party  	 
 	 */ 
 	private String tPLReferenceID;
 
 	/**
-	*  Information about the transaction 	 
+	 * Information about the transaction 	 
 	 */ 
 	private PaymentInfoType paymentInfo;
 
 	/**
-	*  Information about an individual item in the transaction	 
+	 * Information about an individual item in the transaction	 
 	 */ 
 	private PaymentItemInfoType paymentItemInfo;
 
 	/**
-	*  Information about an individual Offer and Coupon information
-	*  in the transaction	 
+	 * Information about an individual Offer and Coupon information
+	 * in the transaction	 
 	 */ 
 	private OfferCouponInfoType offerCouponInfo;
 
 	/**
-	*  Information about Secondary Address	 
+	 * Information about Secondary Address	 
 	 */ 
 	private AddressType secondaryAddress;
 
 	/**
-	*  Information about the user selected options.  	 
+	 * Information about the user selected options.  	 
 	 */ 
 	private UserSelectedOptionType userSelectedOptions;
 
 	/**
-	*  Information about the Gift message.  	 
+	 * Information about the Gift message.  	 
 	 */ 
 	private String giftMessage;
 
 	/**
-	*  Information about the Gift receipt.  	 
+	 * Information about the Gift receipt.  	 
 	 */ 
 	private String giftReceipt;
 
 	/**
-	*  Information about the Gift Wrap name.  	 
+	 * Information about the Gift Wrap name.  	 
 	 */ 
 	private String giftWrapName;
 
 	/**
-	*  Information about the Gift Wrap amount.  	 
+	 * Information about the Gift Wrap amount.  	 
 	 */ 
 	private BasicAmountType giftWrapAmount;
 
 	/**
-	*  Information about the Buyer email.  	 
+	 * Information about the Buyer email.  	 
 	 */ 
 	private String buyerEmailOptIn;
 
 	/**
-	*  Information about the survey question.  	 
+	 * Information about the survey question.  	 
 	 */ 
 	private String surveyQuestion;
 
 	/**
-	*  Information about the survey choice selected by the user.  	 
+	 * Information about the survey choice selected by the user.  	 
 	 */ 
 	private List<String> surveyChoiceSelected = new ArrayList<String>();
 

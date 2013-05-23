@@ -3,9 +3,9 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Unique PayPal customer account number, the value of which
- *  was returned by GetAuthDetails Response. Required Character
- *  length and limitations: 20 single-byte characters 
+ * Unique PayPal customer account number, the value of which
+ * was returned by GetAuthDetails Response. Required Character
+ * length and limitations: 20 single-byte characters 
  */
 public class UpdateAccessPermissionsRequestType extends AbstractRequestType {
 
@@ -13,9 +13,9 @@ public class UpdateAccessPermissionsRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  Unique PayPal customer account number, the value of which
-	*  was returned by GetAuthDetails Response. Required Character
-	*  length and limitations: 20 single-byte characters 	  
+	 * Unique PayPal customer account number, the value of which
+	 * was returned by GetAuthDetails Response. Required Character
+	 * length and limitations: 20 single-byte characters 	  
 	 *@Required	 
 	 */ 
 	private String payerID;

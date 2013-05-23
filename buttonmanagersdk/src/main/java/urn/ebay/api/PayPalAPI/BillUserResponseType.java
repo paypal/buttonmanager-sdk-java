@@ -20,18 +20,18 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  
+ * 
  */
 public class BillUserResponseType extends AbstractResponseType {
 
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private MerchantPullPaymentResponseType billUserResponseDetails;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private FMFDetailsType fMFDetails;
 

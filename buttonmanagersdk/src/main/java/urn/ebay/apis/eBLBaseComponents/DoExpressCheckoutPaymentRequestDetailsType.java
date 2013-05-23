@@ -10,17 +10,17 @@ import urn.ebay.apis.eBLBaseComponents.CoupledBucketsType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  How you want to obtain payment. Required Authorization
- *  indicates that this payment is a basic authorization subject
- *  to settlement with PayPal Authorization and Capture. Order
- *  indicates that this payment is is an order authorization
- *  subject to settlement with PayPal Authorization and Capture.
- *  Sale indicates that this is a final sale for which you are
- *  requesting payment. IMPORTANT: You cannot set PaymentAction
- *  to Sale on SetExpressCheckoutRequest and then change
- *  PaymentAction to Authorization on the final Express Checkout
- *  API, DoExpressCheckoutPaymentRequest. Character length and
- *  limit: Up to 13 single-byte alphabetic characters 
+ * How you want to obtain payment. Required Authorization
+ * indicates that this payment is a basic authorization subject
+ * to settlement with PayPal Authorization and Capture. Order
+ * indicates that this payment is is an order authorization
+ * subject to settlement with PayPal Authorization and Capture.
+ * Sale indicates that this is a final sale for which you are
+ * requesting payment. IMPORTANT: You cannot set PaymentAction
+ * to Sale on SetExpressCheckoutRequest and then change
+ * PaymentAction to Authorization on the final Express Checkout
+ * API, DoExpressCheckoutPaymentRequest. Character length and
+ * limit: Up to 13 single-byte alphabetic characters 
  */
 public class DoExpressCheckoutPaymentRequestDetailsType{
 
@@ -28,125 +28,125 @@ public class DoExpressCheckoutPaymentRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  How you want to obtain payment. Required Authorization
-	*  indicates that this payment is a basic authorization subject
-	*  to settlement with PayPal Authorization and Capture. Order
-	*  indicates that this payment is is an order authorization
-	*  subject to settlement with PayPal Authorization and Capture.
-	*  Sale indicates that this is a final sale for which you are
-	*  requesting payment. IMPORTANT: You cannot set PaymentAction
-	*  to Sale on SetExpressCheckoutRequest and then change
-	*  PaymentAction to Authorization on the final Express Checkout
-	*  API, DoExpressCheckoutPaymentRequest. Character length and
-	*  limit: Up to 13 single-byte alphabetic characters	 
+	 * How you want to obtain payment. Required Authorization
+	 * indicates that this payment is a basic authorization subject
+	 * to settlement with PayPal Authorization and Capture. Order
+	 * indicates that this payment is is an order authorization
+	 * subject to settlement with PayPal Authorization and Capture.
+	 * Sale indicates that this is a final sale for which you are
+	 * requesting payment. IMPORTANT: You cannot set PaymentAction
+	 * to Sale on SetExpressCheckoutRequest and then change
+	 * PaymentAction to Authorization on the final Express Checkout
+	 * API, DoExpressCheckoutPaymentRequest. Character length and
+	 * limit: Up to 13 single-byte alphabetic characters	 
 	 */ 
 	private PaymentActionCodeType paymentAction;
 
 	/**
-	*  The timestamped token value that was returned by
-	*  SetExpressCheckoutResponse and passed on
-	*  GetExpressCheckoutDetailsRequest. Required Character length
-	*  and limitations: 20 single-byte characters	 
+	 * The timestamped token value that was returned by
+	 * SetExpressCheckoutResponse and passed on
+	 * GetExpressCheckoutDetailsRequest. Required Character length
+	 * and limitations: 20 single-byte characters	 
 	 */ 
 	private String token;
 
 	/**
-	*  Encrypted PayPal customer account identification number as
-	*  returned by GetExpressCheckoutDetailsResponse. Required
-	*  Character length and limitations: 127 single-byte
-	*  characters.	 
+	 * Encrypted PayPal customer account identification number as
+	 * returned by GetExpressCheckoutDetailsResponse. Required
+	 * Character length and limitations: 127 single-byte
+	 * characters.	 
 	 */ 
 	private String payerID;
 
 	/**
-	*  URL on Merchant site pertaining to this invoice. Optional 	 
+	 * URL on Merchant site pertaining to this invoice. Optional 	 
 	 */ 
 	private String orderURL;
 
 	/**
-	*  Information about the payment Required 	 
+	 * Information about the payment Required 	 
 	 */ 
 	private List<PaymentDetailsType> paymentDetails = new ArrayList<PaymentDetailsType>();
 
 	/**
-	*  Flag to indicate if previously set promoCode shall be
-	*  overriden. Value 1 indicates overriding.  	 
+	 * Flag to indicate if previously set promoCode shall be
+	 * overriden. Value 1 indicates overriding.  	 
 	 */ 
 	private String promoOverrideFlag;
 
 	/**
-	*  Promotional financing code for item. Overrides any previous
-	*  PromoCode setting. 	 
+	 * Promotional financing code for item. Overrides any previous
+	 * PromoCode setting. 	 
 	 */ 
 	private String promoCode;
 
 	/**
-	*  Contains data for enhanced data like Airline Itinerary Data.
-	*  	 
+	 * Contains data for enhanced data like Airline Itinerary Data.
+	 * 	 
 	 */ 
 	private EnhancedDataType enhancedData;
 
 	/**
-	*  Soft Descriptor supported for Sale and Auth in DEC only. For
-	*  Order this will be ignored. 	 
+	 * Soft Descriptor supported for Sale and Auth in DEC only. For
+	 * Order this will be ignored. 	 
 	 */ 
 	private String softDescriptor;
 
 	/**
-	*  Information about the user selected options. 	 
+	 * Information about the user selected options. 	 
 	 */ 
 	private UserSelectedOptionType userSelectedOptions;
 
 	/**
-	*  Information about the Gift message. 	 
+	 * Information about the Gift message. 	 
 	 */ 
 	private String giftMessage;
 
 	/**
-	*  Information about the Gift receipt enable. 	 
+	 * Information about the Gift receipt enable. 	 
 	 */ 
 	private String giftReceiptEnable;
 
 	/**
-	*  Information about the Gift Wrap name. 	 
+	 * Information about the Gift Wrap name. 	 
 	 */ 
 	private String giftWrapName;
 
 	/**
-	*  Information about the Gift Wrap amount. 	 
+	 * Information about the Gift Wrap amount. 	 
 	 */ 
 	private BasicAmountType giftWrapAmount;
 
 	/**
-	*  Information about the Buyer marketing email. 	 
+	 * Information about the Buyer marketing email. 	 
 	 */ 
 	private String buyerMarketingEmail;
 
 	/**
-	*  Information about the survey question. 	 
+	 * Information about the survey question. 	 
 	 */ 
 	private String surveyQuestion;
 
 	/**
-	*  Information about the survey choice selected by the user. 	 
+	 * Information about the survey choice selected by the user. 	 
 	 */ 
 	private List<String> surveyChoiceSelected = new ArrayList<String>();
 
 	/**
-	*  An identification code for use by third-party applications
-	*  to identify transactions. Optional Character length and
-	*  limitations: 32 single-byte alphanumeric characters 	 
+	 * An identification code for use by third-party applications
+	 * to identify transactions. Optional Character length and
+	 * limitations: 32 single-byte alphanumeric characters 	 
 	 */ 
 	private String buttonSource;
 
 	/**
-	*  Merchant specified flag which indicates whether to create
-	*  billing agreement as part of DoEC or not. Optional 	 
+	 * Merchant specified flag which indicates whether to create
+	 * billing agreement as part of DoEC or not. Optional 	 
 	 */ 
 	private Boolean skipBACreation;
 
 	/**
-	*  Optional element that defines relationship between buckets 	 
+	 * Optional element that defines relationship between buckets 	 
 	 */ 
 	private List<CoupledBucketsType> coupledBuckets = new ArrayList<CoupledBucketsType>();
 

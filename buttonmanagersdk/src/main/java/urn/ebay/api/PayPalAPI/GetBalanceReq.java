@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.GetBalanceRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class GetBalanceReq{
 
@@ -11,7 +11,7 @@ public class GetBalanceReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private GetBalanceRequestType getBalanceRequest;
 

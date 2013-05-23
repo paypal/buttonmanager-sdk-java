@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.MassPayRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class MassPayReq{
 
@@ -11,7 +11,7 @@ public class MassPayReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private MassPayRequestType massPayRequest;
 

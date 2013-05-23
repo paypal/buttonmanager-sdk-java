@@ -5,7 +5,7 @@ import urn.ebay.apis.eBLBaseComponents.IdentityTokenInfoType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Mobile specific buyer identification. 
+ * Mobile specific buyer identification. 
  */
 public class IdentificationInfoType{
 
@@ -13,17 +13,17 @@ public class IdentificationInfoType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Mobile specific buyer identification.	 
+	 * Mobile specific buyer identification.	 
 	 */ 
 	private MobileIDInfoType mobileIDInfo;
 
 	/**
-	*  Contains login bypass information.	 
+	 * Contains login bypass information.	 
 	 */ 
 	private RememberMeIDInfoType rememberMeIDInfo;
 
 	/**
-	*  Identity Access Token.	 
+	 * Identity Access Token.	 
 	 */ 
 	private IdentityTokenInfoType identityTokenInfo;
 

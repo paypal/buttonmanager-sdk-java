@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.DoDirectPaymentRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class DoDirectPaymentReq{
 
@@ -11,7 +11,7 @@ public class DoDirectPaymentReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private DoDirectPaymentRequestType doDirectPaymentRequest;
 

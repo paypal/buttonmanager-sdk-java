@@ -1,12 +1,12 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  IncentiveRequestType 
- *   This identifies the type of request for the API call. The
- *  type of request may be used to determine whether the request
- *  is for evaluating incentives in pre-checkout or in-checkout
- *  phase.
- *   
+ * IncentiveRequestType 
+ *  This identifies the type of request for the API call. The
+ * type of request may be used to determine whether the request
+ * is for evaluating incentives in pre-checkout or in-checkout
+ * phase.
+ *  
  */
 public enum  IncentiveRequestCodeType {
 

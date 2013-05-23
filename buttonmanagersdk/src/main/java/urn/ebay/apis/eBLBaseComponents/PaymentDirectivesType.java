@@ -3,7 +3,7 @@ import urn.ebay.apis.eBLBaseComponents.MerchantPullPaymentCodeType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Type of the Payment is it Instant or Echeck or Any. 
+ * Type of the Payment is it Instant or Echeck or Any. 
  */
 public class PaymentDirectivesType{
 
@@ -11,7 +11,7 @@ public class PaymentDirectivesType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Type of the Payment is it Instant or Echeck or Any.	 
+	 * Type of the Payment is it Instant or Echeck or Any.	 
 	 */ 
 	private MerchantPullPaymentCodeType paymentType;
 

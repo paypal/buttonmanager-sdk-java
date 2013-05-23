@@ -19,49 +19,49 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  
+ * 
  */
 public class DoReferenceTransactionResponseDetailsType{
 
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String billingAgreementID;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private PaymentInfoType paymentInfo;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BasicAmountType amount;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String aVSCode;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String cVV2Code;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String transactionID;
 
 	/**
-	*  Response code from the processor when a recurring
-	*  transaction is declined 	 
+	 * Response code from the processor when a recurring
+	 * transaction is declined 	 
 	 */ 
 	private String paymentAdviceCode;
 
 	/**
-	*  Return msgsubid back to merchant 	 
+	 * Return msgsubid back to merchant 	 
 	 */ 
 	private String msgSubID;
 

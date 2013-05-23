@@ -5,7 +5,7 @@ import urn.ebay.apis.eBLBaseComponents.IncentiveApplyIndicationType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Details of incentive application on individual bucket. 
+ * Details of incentive application on individual bucket. 
  */
 public class IncentiveInfoType{
 
@@ -13,13 +13,13 @@ public class IncentiveInfoType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Incentive redemption code. 	 
+	 * Incentive redemption code. 	 
 	 */ 
 	private String incentiveCode;
 
 	/**
-	*  Defines which bucket or item that the incentive should be
-	*  applied to. 	 
+	 * Defines which bucket or item that the incentive should be
+	 * applied to. 	 
 	 */ 
 	private List<IncentiveApplyIndicationType> applyIndication = new ArrayList<IncentiveApplyIndicationType>();
 

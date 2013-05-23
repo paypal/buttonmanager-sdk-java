@@ -17,25 +17,25 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  Details of Risk Filter. 
+ * Details of Risk Filter. 
  */
 public class RiskFilterDetailsType{
 
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private Integer id;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String name;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String description;

@@ -24,95 +24,95 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  Recurring Billing Profile ID 
+ * Recurring Billing Profile ID 
  */
 public class GetRecurringPaymentsProfileDetailsResponseDetailsType{
 
 
 	/**
-	*  Recurring Billing Profile ID 	  
+	 * Recurring Billing Profile ID 	  
 	 *@Required	 
 	 */ 
 	private String profileID;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private RecurringPaymentsProfileStatusType profileStatus;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String description;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private AutoBillType autoBillOutstandingAmount;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private Integer maxFailedPayments;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private RecurringPaymentsProfileDetailsType recurringPaymentsProfileDetails;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BillingPeriodDetailsType currentRecurringPaymentsPeriod;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private RecurringPaymentsSummaryType recurringPaymentsSummary;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private CreditCardDetailsType creditCard;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BillingPeriodDetailsType trialRecurringPaymentsPeriod;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BillingPeriodDetailsType regularRecurringPaymentsPeriod;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BasicAmountType trialAmountPaid;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BasicAmountType regularAmountPaid;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BasicAmountType aggregateAmount;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BasicAmountType aggregateOptionalAmount;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String finalPaymentDueDate;
 

@@ -19,7 +19,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  Information on user selected options 
+ * Information on user selected options 
  */
 public class UserSelectedOptionType{
 
@@ -27,27 +27,27 @@ public class UserSelectedOptionType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String shippingCalculationMode;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String insuranceOptionSelected;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String shippingOptionIsDefault;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BasicAmountType shippingOptionAmount;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String shippingOptionName;
 

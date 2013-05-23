@@ -8,7 +8,7 @@ import urn.ebay.apis.eBLBaseComponents.IncentiveRequestDetailsType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class GetIncentiveEvaluationRequestDetailsType{
 
@@ -16,32 +16,32 @@ public class GetIncentiveEvaluationRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String externalBuyerId;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private List<String> incentiveCodes = new ArrayList<String>();
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private List<IncentiveApplyIndicationType> applyIndication = new ArrayList<IncentiveApplyIndicationType>();
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private List<IncentiveBucketType> buckets = new ArrayList<IncentiveBucketType>();
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BasicAmountType cartTotalAmt;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private IncentiveRequestDetailsType requestDetails;
 

@@ -7,7 +7,7 @@ import urn.ebay.apis.eBLBaseComponents.BillingPeriodDetailsType_Update;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class UpdateRecurringPaymentsProfileRequestDetailsType{
 
@@ -15,89 +15,89 @@ public class UpdateRecurringPaymentsProfileRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String profileID;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String note;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String description;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String subscriberName;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private AddressType subscriberShippingAddress;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String profileReference;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private Integer additionalBillingCycles;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BasicAmountType amount;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BasicAmountType shippingAmount;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BasicAmountType taxAmount;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BasicAmountType outstandingBalance;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private AutoBillType autoBillOutstandingAmount;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private Integer maxFailedPayments;
 
 	/**
-	*  Information about the credit card to be charged (required if
-	*  Direct Payment) 	 
+	 * Information about the credit card to be charged (required if
+	 * Direct Payment) 	 
 	 */ 
 	private CreditCardDetailsType creditCard;
 
 	/**
-	*  When does this Profile begin billing? 	 
+	 * When does this Profile begin billing? 	 
 	 */ 
 	private String billingStartDate;
 
 	/**
-	*  Trial period of this schedule 	 
+	 * Trial period of this schedule 	 
 	 */ 
 	private BillingPeriodDetailsType_Update trialPeriod;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BillingPeriodDetailsType_Update paymentPeriod;
 

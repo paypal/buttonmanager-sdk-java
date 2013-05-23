@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.EnterBoardingRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class EnterBoardingReq{
 
@@ -11,7 +11,7 @@ public class EnterBoardingReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private EnterBoardingRequestType enterBoardingRequest;
 

@@ -19,44 +19,44 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  The first name of the User. Character length and
- *  limitations: 127 single-byte alphanumeric characters 
+ * The first name of the User. Character length and
+ * limitations: 127 single-byte alphanumeric characters 
  */
 public class GetAccessPermissionDetailsResponseDetailsType{
 
 
 	/**
-	*  The first name of the User. Character length and
-	*  limitations: 127 single-byte alphanumeric characters	 
+	 * The first name of the User. Character length and
+	 * limitations: 127 single-byte alphanumeric characters	 
 	 */ 
 	private String firstName;
 
 	/**
-	*  The Last name of the user. Character length and limitations:
-	*  127 single-byte alphanumeric characters 	 
+	 * The Last name of the user. Character length and limitations:
+	 * 127 single-byte alphanumeric characters 	 
 	 */ 
 	private String lastName;
 
 	/**
-	*  The email address of the user. Character length and
-	*  limitations: 256 single-byte alphanumeric characters. 	 
+	 * The email address of the user. Character length and
+	 * limitations: 256 single-byte alphanumeric characters. 	 
 	 */ 
 	private String email;
 
 	/**
-	*  contains information about API Services 	 
+	 * contains information about API Services 	 
 	 */ 
 	private List<String> accessPermissionName = new ArrayList<String>();
 
 	/**
-	*  contains information about API Services 	 
+	 * contains information about API Services 	 
 	 */ 
 	private List<String> accessPermissionStatus = new ArrayList<String>();
 
 	/**
-	*  Encrypted PayPal customer account identification number.
-	*  Required Character length and limitations: 127 single-byte
-	*  characters. 	 
+	 * Encrypted PayPal customer account identification number.
+	 * Required Character length and limitations: 127 single-byte
+	 * characters. 	 
 	 */ 
 	private String payerID;
 

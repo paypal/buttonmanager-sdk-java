@@ -1,9 +1,9 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  This defines if the incentive is applied successfully or
- *  not.
- *              
+ * This defines if the incentive is applied successfully or
+ * not.
+ *             
  */
 public enum  IncentiveAppliedStatusType {
 

@@ -18,61 +18,61 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  PaymentTransactionSearchResultType Results from a
- *  PaymentTransaction search 
+ * PaymentTransactionSearchResultType Results from a
+ * PaymentTransaction search 
  */
 public class PaymentTransactionSearchResultType{
 
 
 	/**
-	*  The date and time (in UTC/GMT format) the transaction
-	*  occurred	 
+	 * The date and time (in UTC/GMT format) the transaction
+	 * occurred	 
 	 */ 
 	private String timestamp;
 
 	/**
-	*  The time zone of the transaction 	 
+	 * The time zone of the transaction 	 
 	 */ 
 	private String timezone;
 
 	/**
-	*  The type of the transaction	 
+	 * The type of the transaction	 
 	 */ 
 	private String type;
 
 	/**
-	*  The email address of the payer	 
+	 * The email address of the payer	 
 	 */ 
 	private String payer;
 
 	/**
-	*  Display name of the payer	 
+	 * Display name of the payer	 
 	 */ 
 	private String payerDisplayName;
 
 	/**
-	*  The transaction ID of the seller	 
+	 * The transaction ID of the seller	 
 	 */ 
 	private String transactionID;
 
 	/**
-	*  The status of the transaction	 
+	 * The status of the transaction	 
 	 */ 
 	private String status;
 
 	/**
-	*  The total gross amount charged, including any profile
-	*  shipping cost and taxes	 
+	 * The total gross amount charged, including any profile
+	 * shipping cost and taxes	 
 	 */ 
 	private BasicAmountType grossAmount;
 
 	/**
-	*  The fee that PayPal charged for the transaction 	 
+	 * The fee that PayPal charged for the transaction 	 
 	 */ 
 	private BasicAmountType feeAmount;
 
 	/**
-	*  The net amount of the transaction 	 
+	 * The net amount of the transaction 	 
 	 */ 
 	private BasicAmountType netAmount;
 

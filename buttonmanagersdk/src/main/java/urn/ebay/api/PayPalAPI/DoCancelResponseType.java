@@ -18,13 +18,13 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  Return msgsubid back to merchant 
+ * Return msgsubid back to merchant 
  */
 public class DoCancelResponseType extends AbstractResponseType {
 
 
 	/**
-	*  Return msgsubid back to merchant	 
+	 * Return msgsubid back to merchant	 
 	 */ 
 	private String msgSubID;
 

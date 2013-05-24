@@ -3,7 +3,7 @@ import urn.ebay.apis.eBLBaseComponents.StatusChangeActionType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class ManageRecurringPaymentsProfileStatusRequestDetailsType{
 
@@ -11,19 +11,19 @@ public class ManageRecurringPaymentsProfileStatusRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String profileID;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private StatusChangeActionType action;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String note;
 

@@ -18,8 +18,8 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  Details about the payer's tax info passed in by the merchant
- *  or partner. Optional. 
+ * Details about the payer's tax info passed in by the merchant
+ * or partner. Optional. 
  */
 public class TaxIdDetailsType{
 
@@ -27,12 +27,12 @@ public class TaxIdDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  The payer's Tax ID type; CNPJ/CPF for BR country. 	 
+	 * The payer's Tax ID type; CNPJ/CPF for BR country. 	 
 	 */ 
 	private String taxIdType;
 
 	/**
-	*  The payer's Tax ID 	 
+	 * The payer's Tax ID 	 
 	 */ 
 	private String taxId;
 

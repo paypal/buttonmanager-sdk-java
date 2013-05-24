@@ -18,18 +18,18 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  SubscriptionTermsType Terms of a PayPal subscription. 
+ * SubscriptionTermsType Terms of a PayPal subscription. 
  */
 public class SubscriptionTermsType{
 
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BasicAmountType amount;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String period;

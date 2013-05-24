@@ -3,7 +3,7 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class GetBalanceRequestType extends AbstractRequestType {
 
@@ -11,7 +11,7 @@ public class GetBalanceRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String returnAllCurrencies;
 

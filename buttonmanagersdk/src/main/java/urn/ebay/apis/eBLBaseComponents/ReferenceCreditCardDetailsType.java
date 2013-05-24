@@ -5,8 +5,8 @@ import urn.ebay.apis.eBLBaseComponents.AddressType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  CreditCardDetailsType for DCC Reference Transaction
- *  Information about a Credit Card. 
+ * CreditCardDetailsType for DCC Reference Transaction
+ * Information about a Credit Card. 
  */
 public class ReferenceCreditCardDetailsType{
 
@@ -14,47 +14,47 @@ public class ReferenceCreditCardDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private CreditCardNumberTypeType creditCardNumberType;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private Integer expMonth;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private Integer expYear;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private PersonNameType cardOwnerName;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private AddressType billingAddress;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String cVV2;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private Integer startMonth;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private Integer startYear;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String issueNumber;
 

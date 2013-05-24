@@ -1,10 +1,10 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  SolutionTypeType 
- *   This is the PayPal payment Solution details type (used by
- *  Express Checkout)
- *   
+ * SolutionTypeType 
+ *  This is the PayPal payment Solution details type (used by
+ * Express Checkout)
+ *  
  */
 public enum  SolutionTypeType {
 

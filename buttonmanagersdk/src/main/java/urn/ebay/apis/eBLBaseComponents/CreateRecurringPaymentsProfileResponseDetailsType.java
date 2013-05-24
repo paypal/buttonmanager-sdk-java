@@ -18,34 +18,34 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  Recurring Billing Profile ID 
+ * Recurring Billing Profile ID 
  */
 public class CreateRecurringPaymentsProfileResponseDetailsType{
 
 
 	/**
-	*  Recurring Billing Profile ID 	  
+	 * Recurring Billing Profile ID 	  
 	 *@Required	 
 	 */ 
 	private String profileID;
 
 	/**
-	*  Recurring Billing Profile Status 	 
+	 * Recurring Billing Profile Status 	 
 	 */ 
 	private RecurringPaymentsProfileStatusType profileStatus;
 
 	/**
-	*  Transaction id from DCC initial payment 	 
+	 * Transaction id from DCC initial payment 	 
 	 */ 
 	private String transactionID;
 
 	/**
-	*  Response from DCC initial payment 	 
+	 * Response from DCC initial payment 	 
 	 */ 
 	private String dCCProcessorResponse;
 
 	/**
-	*  Return code if DCC initial payment fails 	 
+	 * Return code if DCC initial payment fails 	 
 	 */ 
 	private String dCCReturnCode;
 

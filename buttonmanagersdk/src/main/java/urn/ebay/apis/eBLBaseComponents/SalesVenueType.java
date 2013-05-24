@@ -1,8 +1,8 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  SalesVenueType 
- *   
+ * SalesVenueType 
+ *  
  */
 public enum  SalesVenueType {
 

@@ -4,8 +4,8 @@ import urn.ebay.apis.eBLBaseComponents.MerchantPullPaymentCodeType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  MerchantPullPayment Parameters to make initiate a pull
- *  payment 
+ * MerchantPullPayment Parameters to make initiate a pull
+ * payment 
  */
 public class MerchantPullPaymentType{
 
@@ -13,87 +13,87 @@ public class MerchantPullPaymentType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  The amount to charge to the customer. Required Only numeric
-	*  characters and a decimal separator are allowed. Limit: 10
-	*  single-byte characters, including two for decimals You must
-	*  set the currencyID attribute to one of the three-character
-	*  currency code for any of the supported PayPal currencies. 	 
+	 * The amount to charge to the customer. Required Only numeric
+	 * characters and a decimal separator are allowed. Limit: 10
+	 * single-byte characters, including two for decimals You must
+	 * set the currencyID attribute to one of the three-character
+	 * currency code for any of the supported PayPal currencies. 	 
 	 */ 
 	private BasicAmountType amount;
 
 	/**
-	*  Preapproved Payments billing agreement identification number
-	*  between the PayPal customer and you. Required Character
-	*  limit: 19 single-byte alphanumeric characters. The format of
-	*  a billing agreement identification number is the
-	*  single-character prefix B, followed by a hyphen and an
-	*  alphanumeric character string: B-unique_alphanumeric_string	 
+	 * Preapproved Payments billing agreement identification number
+	 * between the PayPal customer and you. Required Character
+	 * limit: 19 single-byte alphanumeric characters. The format of
+	 * a billing agreement identification number is the
+	 * single-character prefix B, followed by a hyphen and an
+	 * alphanumeric character string: B-unique_alphanumeric_string	 
 	 */ 
 	private String mpID;
 
 	/**
-	*  Specifies type of PayPal payment you require Optional	 
+	 * Specifies type of PayPal payment you require Optional	 
 	 */ 
 	private MerchantPullPaymentCodeType paymentType;
 
 	/**
-	*  Text entered by the customer in the Note field during
-	*  enrollment Optional	 
+	 * Text entered by the customer in the Note field during
+	 * enrollment Optional	 
 	 */ 
 	private String memo;
 
 	/**
-	*  Subject line of confirmation email sent to recipient
-	*  Optional	 
+	 * Subject line of confirmation email sent to recipient
+	 * Optional	 
 	 */ 
 	private String emailSubject;
 
 	/**
-	*  The tax charged on the transaction Optional	 
+	 * The tax charged on the transaction Optional	 
 	 */ 
 	private BasicAmountType tax;
 
 	/**
-	*  Per-transaction shipping charge Optional	 
+	 * Per-transaction shipping charge Optional	 
 	 */ 
 	private BasicAmountType shipping;
 
 	/**
-	*  Per-transaction handling charge Optional	 
+	 * Per-transaction handling charge Optional	 
 	 */ 
 	private BasicAmountType handling;
 
 	/**
-	*  Name of purchased item Optional	 
+	 * Name of purchased item Optional	 
 	 */ 
 	private String itemName;
 
 	/**
-	*  Reference number of purchased item Optional	 
+	 * Reference number of purchased item Optional	 
 	 */ 
 	private String itemNumber;
 
 	/**
-	*  Your invoice number Optional	 
+	 * Your invoice number Optional	 
 	 */ 
 	private String invoice;
 
 	/**
-	*  Custom annotation field for tracking or other use Optional	 
+	 * Custom annotation field for tracking or other use Optional	 
 	 */ 
 	private String custom;
 
 	/**
-	*  An identification code for use by third-party applications
-	*  to identify transactions. Optional Character length and
-	*  limitations: 32 single-byte alphanumeric characters	 
+	 * An identification code for use by third-party applications
+	 * to identify transactions. Optional Character length and
+	 * limitations: 32 single-byte alphanumeric characters	 
 	 */ 
 	private String buttonSource;
 
 	/**
-	*  Passed in soft descriptor string to be appended. Optional
-	*  Character length and limitations: single-byte alphanumeric
-	*  characters	 
+	 * Passed in soft descriptor string to be appended. Optional
+	 * Character length and limitations: single-byte alphanumeric
+	 * characters	 
 	 */ 
 	private String softDescriptor;
 

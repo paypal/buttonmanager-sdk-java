@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.SetAuthFlowParamRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class SetAuthFlowParamReq{
 
@@ -11,7 +11,7 @@ public class SetAuthFlowParamReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private SetAuthFlowParamRequestType setAuthFlowParamRequest;
 

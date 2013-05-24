@@ -1,9 +1,9 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  AddressStatusCodeType 
- *   This is the PayPal address status
- *   
+ * AddressStatusCodeType 
+ *  This is the PayPal address status
+ *  
  */
 public enum  AddressStatusCodeType {
 

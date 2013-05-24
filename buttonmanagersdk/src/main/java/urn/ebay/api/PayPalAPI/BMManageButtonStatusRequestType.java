@@ -4,8 +4,8 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Button ID of Hosted button.  Required Character length and
- *  limitations: 10 single-byte numeric characters  
+ * Button ID of Hosted button.  Required Character length and
+ * limitations: 10 single-byte numeric characters  
  */
 public class BMManageButtonStatusRequestType extends AbstractRequestType {
 
@@ -13,15 +13,15 @@ public class BMManageButtonStatusRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  Button ID of Hosted button.  Required Character length and
-	*  limitations: 10 single-byte numeric characters 	 
+	 * Button ID of Hosted button.  Required Character length and
+	 * limitations: 10 single-byte numeric characters 	 
 	 */ 
 	private String hostedButtonID;
 
 	/**
-	*  Requested Status change for hosted button.  Required
-	*  Character length and limitations: 1 single-byte alphanumeric
-	*  characters 	 
+	 * Requested Status change for hosted button.  Required
+	 * Character length and limitations: 1 single-byte alphanumeric
+	 * characters 	 
 	 */ 
 	private ButtonStatusType buttonStatus;
 

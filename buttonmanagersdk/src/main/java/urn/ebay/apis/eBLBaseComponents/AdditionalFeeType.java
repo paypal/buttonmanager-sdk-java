@@ -19,7 +19,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  
+ * 
  */
 public class AdditionalFeeType{
 
@@ -27,12 +27,12 @@ public class AdditionalFeeType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String type;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BasicAmountType amount;
 

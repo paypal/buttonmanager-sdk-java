@@ -2,7 +2,7 @@ package urn.ebay.apis.eBLBaseComponents;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Identity Access token from merchant 
+ * Identity Access token from merchant 
  */
 public class IdentityTokenInfoType{
 
@@ -10,7 +10,7 @@ public class IdentityTokenInfoType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Identity Access token from merchant	  
+	 * Identity Access token from merchant	  
 	 *@Required	 
 	 */ 
 	private String accessToken;

@@ -3,7 +3,7 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class CreateBillingAgreementRequestType extends AbstractRequestType {
 
@@ -11,7 +11,7 @@ public class CreateBillingAgreementRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String token;

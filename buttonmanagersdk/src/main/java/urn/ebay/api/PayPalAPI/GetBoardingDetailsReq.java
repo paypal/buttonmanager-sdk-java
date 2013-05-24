@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.GetBoardingDetailsRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class GetBoardingDetailsReq{
 
@@ -11,7 +11,7 @@ public class GetBoardingDetailsReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private GetBoardingDetailsRequestType getBoardingDetailsRequest;
 

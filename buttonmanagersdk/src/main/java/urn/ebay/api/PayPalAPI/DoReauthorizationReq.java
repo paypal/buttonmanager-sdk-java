@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.DoReauthorizationRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class DoReauthorizationReq{
 
@@ -11,7 +11,7 @@ public class DoReauthorizationReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private DoReauthorizationRequestType doReauthorizationRequest;
 

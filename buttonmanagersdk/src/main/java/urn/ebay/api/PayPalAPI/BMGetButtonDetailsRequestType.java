@@ -3,8 +3,8 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Button ID of button to return.  Required Character length
- *  and limitations: 10 single-byte numeric characters  
+ * Button ID of button to return.  Required Character length
+ * and limitations: 10 single-byte numeric characters  
  */
 public class BMGetButtonDetailsRequestType extends AbstractRequestType {
 
@@ -12,8 +12,8 @@ public class BMGetButtonDetailsRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  Button ID of button to return.  Required Character length
-	*  and limitations: 10 single-byte numeric characters 	  
+	 * Button ID of button to return.  Required Character length
+	 * and limitations: 10 single-byte numeric characters 	  
 	 *@Required	 
 	 */ 
 	private String hostedButtonID;

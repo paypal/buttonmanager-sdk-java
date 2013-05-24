@@ -18,15 +18,15 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  The status of the update call, Success/Failure. Character
- *  length and limitations: 20 single-byte characters 
+ * The status of the update call, Success/Failure. Character
+ * length and limitations: 20 single-byte characters 
  */
 public class UpdateAccessPermissionsResponseType extends AbstractResponseType {
 
 
 	/**
-	*  The status of the update call, Success/Failure. Character
-	*  length and limitations: 20 single-byte characters 	  
+	 * The status of the update call, Success/Failure. Character
+	 * length and limitations: 20 single-byte characters 	  
 	 *@Required	 
 	 */ 
 	private String status;

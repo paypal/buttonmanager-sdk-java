@@ -2,8 +2,8 @@ package urn.ebay.apis.eBLBaseComponents;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Store IDOptional Character length and limits: 50 single-byte
- *  characters 
+ * Store IDOptional Character length and limits: 50 single-byte
+ * characters 
  */
 public class MerchantStoreDetailsType{
 
@@ -11,15 +11,15 @@ public class MerchantStoreDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Store IDOptional Character length and limits: 50 single-byte
-	*  characters 	  
+	 * Store IDOptional Character length and limits: 50 single-byte
+	 * characters 	  
 	 *@Required	 
 	 */ 
 	private String storeID;
 
 	/**
-	*  Terminal IDOptional Character length and limits: 50
-	*  single-byte characters 	 
+	 * Terminal IDOptional Character length and limits: 50
+	 * single-byte characters 	 
 	 */ 
 	private String terminalID;
 

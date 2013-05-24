@@ -5,13 +5,13 @@ import urn.ebay.apis.eBLBaseComponents.CreditCardDetailsType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  How you want to obtain payment. Required Authorization
- *  indicates that this payment is a basic authorization subject
- *  to settlement with PayPal Authorization and Capture. Sale
- *  indicates that this is a final sale for which you are
- *  requesting payment. NOTE: Order is not allowed for Direct
- *  Payment. Character length and limit: Up to 13 single-byte
- *  alphabetic characters 
+ * How you want to obtain payment. Required Authorization
+ * indicates that this payment is a basic authorization subject
+ * to settlement with PayPal Authorization and Capture. Sale
+ * indicates that this is a final sale for which you are
+ * requesting payment. NOTE: Order is not allowed for Direct
+ * Payment. Character length and limit: Up to 13 single-byte
+ * alphabetic characters 
  */
 public class DoDirectPaymentRequestDetailsType{
 
@@ -19,45 +19,45 @@ public class DoDirectPaymentRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  How you want to obtain payment. Required Authorization
-	*  indicates that this payment is a basic authorization subject
-	*  to settlement with PayPal Authorization and Capture. Sale
-	*  indicates that this is a final sale for which you are
-	*  requesting payment. NOTE: Order is not allowed for Direct
-	*  Payment. Character length and limit: Up to 13 single-byte
-	*  alphabetic characters	 
+	 * How you want to obtain payment. Required Authorization
+	 * indicates that this payment is a basic authorization subject
+	 * to settlement with PayPal Authorization and Capture. Sale
+	 * indicates that this is a final sale for which you are
+	 * requesting payment. NOTE: Order is not allowed for Direct
+	 * Payment. Character length and limit: Up to 13 single-byte
+	 * alphabetic characters	 
 	 */ 
 	private PaymentActionCodeType paymentAction;
 
 	/**
-	*  Information about the payment Required 	 
+	 * Information about the payment Required 	 
 	 */ 
 	private PaymentDetailsType paymentDetails;
 
 	/**
-	*  Information about the credit card to be charged. Required 	 
+	 * Information about the credit card to be charged. Required 	 
 	 */ 
 	private CreditCardDetailsType creditCard;
 
 	/**
-	*  IP address of the payer's browser as recorded in its HTTP
-	*  request to your website. PayPal records this IP addresses as
-	*  a means to detect possible fraud. Required Character length
-	*  and limitations: 15 single-byte characters, including
-	*  periods, in dotted-quad format: ???.???.???.???	 
+	 * IP address of the payer's browser as recorded in its HTTP
+	 * request to your website. PayPal records this IP addresses as
+	 * a means to detect possible fraud. Required Character length
+	 * and limitations: 15 single-byte characters, including
+	 * periods, in dotted-quad format: ???.???.???.???	 
 	 */ 
 	private String iPAddress;
 
 	/**
-	*  Your customer session identification token. PayPal records
-	*  this optional session identification token as an additional
-	*  means to detect possible fraud. Optional Character length
-	*  and limitations: 64 single-byte numeric characters	 
+	 * Your customer session identification token. PayPal records
+	 * this optional session identification token as an additional
+	 * means to detect possible fraud. Optional Character length
+	 * and limitations: 64 single-byte numeric characters	 
 	 */ 
 	private String merchantSessionId;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private Boolean returnFMFDetails;
 

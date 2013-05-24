@@ -1,8 +1,8 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  BusinessSubCategoryType 
- *   
+ * BusinessSubCategoryType 
+ *  
  */
 public enum  BusinessSubCategoryType {
 

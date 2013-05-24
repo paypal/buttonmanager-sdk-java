@@ -22,8 +22,8 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  Person's name associated with this address. Character length
- *  and limitations: 32 single-byte alphanumeric characters 
+ * Person's name associated with this address. Character length
+ * and limitations: 32 single-byte alphanumeric characters 
  */
 public class AddressType{
 
@@ -31,150 +31,150 @@ public class AddressType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Person's name associated with this address. Character length
-	*  and limitations: 32 single-byte alphanumeric characters	 
+	 * Person's name associated with this address. Character length
+	 * and limitations: 32 single-byte alphanumeric characters	 
 	 */ 
 	private String name;
 
 	/**
-	*  First street address. Character length and limitations: 300
-	*  single-byte alphanumeric characters	 
+	 * First street address. Character length and limitations: 300
+	 * single-byte alphanumeric characters	 
 	 */ 
 	private String street1;
 
 	/**
-	*  Second street address. Character length and limitations: 300
-	*  single-byte alphanumeric characters	 
+	 * Second street address. Character length and limitations: 300
+	 * single-byte alphanumeric characters	 
 	 */ 
 	private String street2;
 
 	/**
-	*  Name of city. Character length and limitations: 120
-	*  single-byte alphanumeric characters	 
+	 * Name of city. Character length and limitations: 120
+	 * single-byte alphanumeric characters	 
 	 */ 
 	private String cityName;
 
 	/**
-	*  State or province. Character length and limitations: 120
-	*  single-byte alphanumeric characters For Canada and the USA,
-	*  StateOrProvince must be the standard 2-character
-	*  abbreviation of a state or province. Canadian Provinces
-	*  Alberta AB British_Columbia BC Manitoba MB New_Brunswick NB
-	*  Newfoundland NF Northwest_Territories NT Nova_Scotia NS
-	*  Nunavut NU Ontario ON Prince_Edward_Island PE Quebec QC
-	*  Saskatchewan SK Yukon YK United States Alabama  AL Alaska AK
-	*  American_Samoa AS Arizona AZ Arkansas AR California CA
-	*  Colorado CO Connecticut CT Delaware DE District_Of_Columbia
-	*  DC Federated_States_Of_Micronesia FM Florida FL Georgia GA
-	*  Guam GU Hawaii HI Idaho ID Illinois IL Indiana IN Iowa IA
-	*  Kansas KS Kentucky KY Louisiana LA Maine ME Marshall_Islands
-	*  MH Maryland MD Massachusetts MA Michigan MI Minnesota MN
-	*  Mississippi MS Missouri MO Montana MT Nebraska NE Nevada NV
-	*  New_Hampshire NH New_Jersey NJ New_Mexico NM New_York NY
-	*  North_Carolina NC North_Dakota ND Northern_Mariana_Islands
-	*  MP Ohio OH Oklahoma OK Oregon OR Palau PW Pennsylvania PA
-	*  Puerto_Rico PR Rhode_Island RI South_Carolina SC
-	*  South_Dakota SD Tennessee TN Texas TX Utah UT Vermont VT
-	*  Virgin_Islands VI Virginia VA Washington WA West_Virginia WV
-	*  Wisconsin WI Wyoming WY Armed_Forces_Americas AA
-	*  Armed_Forces AE Armed_Forces_Pacific AP 	 
+	 * State or province. Character length and limitations: 120
+	 * single-byte alphanumeric characters For Canada and the USA,
+	 * StateOrProvince must be the standard 2-character
+	 * abbreviation of a state or province. Canadian Provinces
+	 * Alberta AB British_Columbia BC Manitoba MB New_Brunswick NB
+	 * Newfoundland NF Northwest_Territories NT Nova_Scotia NS
+	 * Nunavut NU Ontario ON Prince_Edward_Island PE Quebec QC
+	 * Saskatchewan SK Yukon YK United States Alabama  AL Alaska AK
+	 * American_Samoa AS Arizona AZ Arkansas AR California CA
+	 * Colorado CO Connecticut CT Delaware DE District_Of_Columbia
+	 * DC Federated_States_Of_Micronesia FM Florida FL Georgia GA
+	 * Guam GU Hawaii HI Idaho ID Illinois IL Indiana IN Iowa IA
+	 * Kansas KS Kentucky KY Louisiana LA Maine ME Marshall_Islands
+	 * MH Maryland MD Massachusetts MA Michigan MI Minnesota MN
+	 * Mississippi MS Missouri MO Montana MT Nebraska NE Nevada NV
+	 * New_Hampshire NH New_Jersey NJ New_Mexico NM New_York NY
+	 * North_Carolina NC North_Dakota ND Northern_Mariana_Islands
+	 * MP Ohio OH Oklahoma OK Oregon OR Palau PW Pennsylvania PA
+	 * Puerto_Rico PR Rhode_Island RI South_Carolina SC
+	 * South_Dakota SD Tennessee TN Texas TX Utah UT Vermont VT
+	 * Virgin_Islands VI Virginia VA Washington WA West_Virginia WV
+	 * Wisconsin WI Wyoming WY Armed_Forces_Americas AA
+	 * Armed_Forces AE Armed_Forces_Pacific AP 	 
 	 */ 
 	private String stateOrProvince;
 
 	/**
-	*  ISO 3166 standard country code Character limit: Two
-	*  single-byte characters. 	 
+	 * ISO 3166 standard country code Character limit: Two
+	 * single-byte characters. 	 
 	 */ 
 	private CountryCodeType country;
 
 	/**
-	*  IMPORTANT: Do not set this element for SetExpressCheckout,
-	*  DoExpressCheckoutPayment, DoDirectPayment,
-	*  CreateRecurringPaymentsProfile or
-	*  UpdateRecurringPaymentsProfile.  This element should only be
-	*  used in response elements and typically  should not be used
-	*  in creating request messages which specify the name of a
-	*  country using the Country element (which refers to a 
-	*  2-letter country code). 	 
+	 * IMPORTANT: Do not set this element for SetExpressCheckout,
+	 * DoExpressCheckoutPayment, DoDirectPayment,
+	 * CreateRecurringPaymentsProfile or
+	 * UpdateRecurringPaymentsProfile.  This element should only be
+	 * used in response elements and typically  should not be used
+	 * in creating request messages which specify the name of a
+	 * country using the Country element (which refers to a 
+	 * 2-letter country code). 	 
 	 */ 
 	private String countryName;
 
 	/**
-	*  Telephone number associated with this address	 
+	 * Telephone number associated with this address	 
 	 */ 
 	private String phone;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String postalCode;
 
 	/**
-	*  IMPORTANT: Do not set this element for SetExpressCheckout,
-	*  DoExpressCheckoutPayment, DoDirectPayment,
-	*  CreateRecurringPaymentsProfile, or
-	*  UpdateRecurringPaymentsProfile.	 
+	 * IMPORTANT: Do not set this element for SetExpressCheckout,
+	 * DoExpressCheckoutPayment, DoDirectPayment,
+	 * CreateRecurringPaymentsProfile, or
+	 * UpdateRecurringPaymentsProfile.	 
 	 */ 
 	private String addressID;
 
 	/**
-	*  IMPORTANT: Do not set this element for SetExpressCheckout,
-	*  DoExpressCheckoutPayment, DoDirectPayment,
-	*  CreateRecurringPaymentsProfile or
-	*  UpdateRecurringPaymentsProfile.	 
+	 * IMPORTANT: Do not set this element for SetExpressCheckout,
+	 * DoExpressCheckoutPayment, DoDirectPayment,
+	 * CreateRecurringPaymentsProfile or
+	 * UpdateRecurringPaymentsProfile.	 
 	 */ 
 	private AddressOwnerCodeType addressOwner;
 
 	/**
-	*  IMPORTANT: Do not set this element for SetExpressCheckout,
-	*  DoExpressCheckoutPayment, DoDirectPayment,
-	*  CreateRecurringPaymentsProfile or
-	*  UpdateRecurringPaymentsProfile.	 
+	 * IMPORTANT: Do not set this element for SetExpressCheckout,
+	 * DoExpressCheckoutPayment, DoDirectPayment,
+	 * CreateRecurringPaymentsProfile or
+	 * UpdateRecurringPaymentsProfile.	 
 	 */ 
 	private String externalAddressID;
 
 	/**
-	*  IMPORTANT: Do not set this element for SetExpressCheckout,
-	*  DoExpressCheckoutPayment, DoDirectPayment,
-	*  CreateRecurringPaymentsProfile or
-	*  UpdateRecurringPaymentsProfile.  Only applicable to
-	*  SellerPaymentAddress today. Seller's international name that
-	*  is associated with the payment address. 	 
+	 * IMPORTANT: Do not set this element for SetExpressCheckout,
+	 * DoExpressCheckoutPayment, DoDirectPayment,
+	 * CreateRecurringPaymentsProfile or
+	 * UpdateRecurringPaymentsProfile.  Only applicable to
+	 * SellerPaymentAddress today. Seller's international name that
+	 * is associated with the payment address. 	 
 	 */ 
 	private String internationalName;
 
 	/**
-	*  IMPORTANT: Do not set this element for SetExpressCheckout,
-	*  DoExpressCheckoutPayment, DoDirectPayment,
-	*  CreateRecurringPaymentsProfile or
-	*  UpdateRecurringPaymentsProfile. Only applicable to
-	*  SellerPaymentAddress today. International state and city for
-	*  the seller's payment address. 	 
+	 * IMPORTANT: Do not set this element for SetExpressCheckout,
+	 * DoExpressCheckoutPayment, DoDirectPayment,
+	 * CreateRecurringPaymentsProfile or
+	 * UpdateRecurringPaymentsProfile. Only applicable to
+	 * SellerPaymentAddress today. International state and city for
+	 * the seller's payment address. 	 
 	 */ 
 	private String internationalStateAndCity;
 
 	/**
-	*  IMPORTANT: Do not set this element for SetExpressCheckout,
-	*  DoExpressCheckoutPayment, DoDirectPayment,
-	*  CreateRecurringPaymentsProfile or
-	*  UpdateRecurringPaymentsProfile. Only applicable to
-	*  SellerPaymentAddress today. Seller's international street
-	*  address that is associated with the payment address. 	 
+	 * IMPORTANT: Do not set this element for SetExpressCheckout,
+	 * DoExpressCheckoutPayment, DoDirectPayment,
+	 * CreateRecurringPaymentsProfile or
+	 * UpdateRecurringPaymentsProfile. Only applicable to
+	 * SellerPaymentAddress today. Seller's international street
+	 * address that is associated with the payment address. 	 
 	 */ 
 	private String internationalStreet;
 
 	/**
-	*  Status of the address on file with PayPal. IMPORTANT: Do not
-	*  set this element for SetExpressCheckout,
-	*  DoExpressCheckoutPayment, DoDirectPayment,
-	*  CreateRecurringPaymentsProfile or
-	*  UpdateRecurringPaymentsProfile. 	 
+	 * Status of the address on file with PayPal. IMPORTANT: Do not
+	 * set this element for SetExpressCheckout,
+	 * DoExpressCheckoutPayment, DoDirectPayment,
+	 * CreateRecurringPaymentsProfile or
+	 * UpdateRecurringPaymentsProfile. 	 
 	 */ 
 	private AddressStatusCodeType addressStatus;
 
 	/**
-	*  Returns Normalization Status of the Address. Possible values
-	*  are Normalized, Unnormalized, and None. 	 
+	 * Returns Normalization Status of the Address. Possible values
+	 * are Normalized, Unnormalized, and None. 	 
 	 */ 
 	private AddressNormalizationStatusCodeType addressNormalizationStatus;
 

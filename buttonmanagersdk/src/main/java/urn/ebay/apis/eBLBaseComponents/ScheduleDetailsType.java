@@ -5,7 +5,7 @@ import urn.ebay.apis.eBLBaseComponents.AutoBillType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Schedule details for the Recurring Payment 
+ * Schedule details for the Recurring Payment 
  */
 public class ScheduleDetailsType{
 
@@ -13,35 +13,35 @@ public class ScheduleDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Schedule details for the Recurring Payment 	  
+	 * Schedule details for the Recurring Payment 	  
 	 *@Required	 
 	 */ 
 	private String description;
 
 	/**
-	*  Trial period of this schedule 	 
+	 * Trial period of this schedule 	 
 	 */ 
 	private BillingPeriodDetailsType trialPeriod;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private BillingPeriodDetailsType paymentPeriod;
 
 	/**
-	*  The max number of payments the buyer can fail before this
-	*  Recurring Payments profile is cancelled 	 
+	 * The max number of payments the buyer can fail before this
+	 * Recurring Payments profile is cancelled 	 
 	 */ 
 	private Integer maxFailedPayments;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private ActivationDetailsType activationDetails;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private AutoBillType autoBillOutstandingAmount;
 

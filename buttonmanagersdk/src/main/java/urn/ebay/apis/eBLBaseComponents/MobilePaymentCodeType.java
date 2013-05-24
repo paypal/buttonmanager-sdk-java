@@ -1,9 +1,9 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  MobilePaymentCodeType 
- *   These are the accepted types of mobile payments
- *   
+ * MobilePaymentCodeType 
+ *  These are the accepted types of mobile payments
+ *  
  */
 public enum  MobilePaymentCodeType {
 

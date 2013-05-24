@@ -32,8 +32,8 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  PaymentDetailsType Information about a payment. Used by DCC
- *  and Express Checkout. 
+ * PaymentDetailsType Information about a payment. Used by DCC
+ * and Express Checkout. 
  */
 public class PaymentDetailsType{
 
@@ -41,229 +41,229 @@ public class PaymentDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Total of order, including shipping, handling, and tax. You
-	*  must set the currencyID attribute to one of the
-	*  three-character currency codes for any of the supported
-	*  PayPal currencies. Limitations: Must not exceed $10,000 USD
-	*  in any currency. No currency symbol. Decimal separator must
-	*  be a period (.), and the thousands separator must be a comma
-	*  (,). 	 
+	 * Total of order, including shipping, handling, and tax. You
+	 * must set the currencyID attribute to one of the
+	 * three-character currency codes for any of the supported
+	 * PayPal currencies. Limitations: Must not exceed $10,000 USD
+	 * in any currency. No currency symbol. Decimal separator must
+	 * be a period (.), and the thousands separator must be a comma
+	 * (,). 	 
 	 */ 
 	private BasicAmountType orderTotal;
 
 	/**
-	*  Sum of cost of all items in this order. You must set the
-	*  currencyID attribute to one of the three-character currency
-	*  codes for any of the supported PayPal currencies. Optional
-	*  separator must be a comma (,).	 
+	 * Sum of cost of all items in this order. You must set the
+	 * currencyID attribute to one of the three-character currency
+	 * codes for any of the supported PayPal currencies. Optional
+	 * separator must be a comma (,).	 
 	 */ 
 	private BasicAmountType itemTotal;
 
 	/**
-	*  Total shipping costs for this order. You must set the
-	*  currencyID attribute to one of the three-character currency
-	*  codes for any of the supported PayPal currencies. Optional
-	*  Limitations: Must not exceed $10,000 USD in any currency. No
-	*  currency symbol. Decimal separator must be a period (.), and
-	*  the thousands separator must be a comma (,).	 
+	 * Total shipping costs for this order. You must set the
+	 * currencyID attribute to one of the three-character currency
+	 * codes for any of the supported PayPal currencies. Optional
+	 * Limitations: Must not exceed $10,000 USD in any currency. No
+	 * currency symbol. Decimal separator must be a period (.), and
+	 * the thousands separator must be a comma (,).	 
 	 */ 
 	private BasicAmountType shippingTotal;
 
 	/**
-	*  Total handling costs for this order. You must set the
-	*  currencyID attribute to one of the three-character currency
-	*  codes for any of the supported PayPal currencies. Optional
-	*  Limitations: Must not exceed $10,000 USD in any currency. No
-	*  currency symbol. Decimal separator must be a period (.), and
-	*  the thousands separator must be a comma (,).	 
+	 * Total handling costs for this order. You must set the
+	 * currencyID attribute to one of the three-character currency
+	 * codes for any of the supported PayPal currencies. Optional
+	 * Limitations: Must not exceed $10,000 USD in any currency. No
+	 * currency symbol. Decimal separator must be a period (.), and
+	 * the thousands separator must be a comma (,).	 
 	 */ 
 	private BasicAmountType handlingTotal;
 
 	/**
-	*  Sum of tax for all items in this order. You must set the
-	*  currencyID attribute to one of the three-character currency
-	*  codes for any of the supported PayPal currencies. Optional
-	*  Limitations: Must not exceed $10,000 USD in any currency. No
-	*  currency symbol. Decimal separator must be a period (.), and
-	*  the thousands separator must be a comma (,).	 
+	 * Sum of tax for all items in this order. You must set the
+	 * currencyID attribute to one of the three-character currency
+	 * codes for any of the supported PayPal currencies. Optional
+	 * Limitations: Must not exceed $10,000 USD in any currency. No
+	 * currency symbol. Decimal separator must be a period (.), and
+	 * the thousands separator must be a comma (,).	 
 	 */ 
 	private BasicAmountType taxTotal;
 
 	/**
-	*  Description of items the customer is purchasing. Optional
-	*  Character length and limitations: 127 single-byte
-	*  alphanumeric characters	 
+	 * Description of items the customer is purchasing. Optional
+	 * Character length and limitations: 127 single-byte
+	 * alphanumeric characters	 
 	 */ 
 	private String orderDescription;
 
 	/**
-	*  A free-form field for your own use. Optional Character
-	*  length and limitations: 256 single-byte alphanumeric
-	*  characters	 
+	 * A free-form field for your own use. Optional Character
+	 * length and limitations: 256 single-byte alphanumeric
+	 * characters	 
 	 */ 
 	private String custom;
 
 	/**
-	*  Your own invoice or tracking number. Optional Character
-	*  length and limitations: 127 single-byte alphanumeric
-	*  characters	 
+	 * Your own invoice or tracking number. Optional Character
+	 * length and limitations: 127 single-byte alphanumeric
+	 * characters	 
 	 */ 
 	private String invoiceID;
 
 	/**
-	*  An identification code for use by third-party applications
-	*  to identify transactions. Optional Character length and
-	*  limitations: 32 single-byte alphanumeric characters	 
+	 * An identification code for use by third-party applications
+	 * to identify transactions. Optional Character length and
+	 * limitations: 32 single-byte alphanumeric characters	 
 	 */ 
 	private String buttonSource;
 
 	/**
-	*  Your URL for receiving Instant Payment Notification (IPN)
-	*  about this transaction. Optional If you do not specify
-	*  NotifyURL in the request, the notification URL from your
-	*  Merchant Profile is used, if one exists. Character length
-	*  and limitations: 2,048 single-byte alphanumeric characters	 
+	 * Your URL for receiving Instant Payment Notification (IPN)
+	 * about this transaction. Optional If you do not specify
+	 * NotifyURL in the request, the notification URL from your
+	 * Merchant Profile is used, if one exists. Character length
+	 * and limitations: 2,048 single-byte alphanumeric characters	 
 	 */ 
 	private String notifyURL;
 
 	/**
-	*  Address the order will be shipped to. Optional If you
-	*  include the ShipToAddress element, the AddressType elements
-	*  are required: Name Street1 CityName CountryCode Do not set
-	*  set the CountryName element. 	 
+	 * Address the order will be shipped to. Optional If you
+	 * include the ShipToAddress element, the AddressType elements
+	 * are required: Name Street1 CityName CountryCode Do not set
+	 * set the CountryName element. 	 
 	 */ 
 	private AddressType shipToAddress;
 
 	/**
-	*  Thirdparty Fulfillment Reference Number. Optional Character
-	*  length and limitations: 32 alphanumeric characters. 	 
+	 * Thirdparty Fulfillment Reference Number. Optional Character
+	 * length and limitations: 32 alphanumeric characters. 	 
 	 */ 
 	private String fulfillmentReferenceNumber;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private AddressType fulfillmentAddress;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private PaymentCategoryType paymentCategoryType;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private ShippingServiceCodeType shippingMethod;
 
 	/**
-	*  Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at
-	*  which address was changed by the user. 	 
+	 * Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at
+	 * which address was changed by the user. 	 
 	 */ 
 	private String profileAddressChangeDate;
 
 	/**
-	*  Information about the individual purchased items	 
+	 * Information about the individual purchased items	 
 	 */ 
 	private List<PaymentDetailsItemType> paymentDetailsItem = new ArrayList<PaymentDetailsItemType>();
 
 	/**
-	*  Total shipping insurance costs for this order. Optional 	 
+	 * Total shipping insurance costs for this order. Optional 	 
 	 */ 
 	private BasicAmountType insuranceTotal;
 
 	/**
-	*  Shipping discount for this order, specified as a negative
-	*  number. Optional 	 
+	 * Shipping discount for this order, specified as a negative
+	 * number. Optional 	 
 	 */ 
 	private BasicAmountType shippingDiscount;
 
 	/**
-	*  Information about the Insurance options. 	 
+	 * Information about the Insurance options. 	 
 	 */ 
 	private String insuranceOptionOffered;
 
 	/**
-	*  Allowed payment methods for this transaction. 	 
+	 * Allowed payment methods for this transaction. 	 
 	 */ 
 	private AllowedPaymentMethodType allowedPaymentMethod;
 
 	/**
-	*  Enhanced Data section to accept channel specific data.
-	*  Optional Refer to EnhancedPaymentDataType for details. 	 
+	 * Enhanced Data section to accept channel specific data.
+	 * Optional Refer to EnhancedPaymentDataType for details. 	 
 	 */ 
 	private EnhancedPaymentDataType enhancedPaymentData;
 
 	/**
-	*  Details about the seller. Optional 	 
+	 * Details about the seller. Optional 	 
 	 */ 
 	private SellerDetailsType sellerDetails;
 
 	/**
-	*  Note to recipient/seller. Optional Character length and
-	*  limitations: 127 single-byte alphanumeric characters. 	 
+	 * Note to recipient/seller. Optional Character length and
+	 * limitations: 127 single-byte alphanumeric characters. 	 
 	 */ 
 	private String noteText;
 
 	/**
-	*  PayPal Transaction Id, returned once DoExpressCheckout is
-	*  completed. 	 
+	 * PayPal Transaction Id, returned once DoExpressCheckout is
+	 * completed. 	 
 	 */ 
 	private String transactionId;
 
 	/**
-	*  How you want to obtain payment. This payment action input
-	*  will be used for split payments Authorization indicates that
-	*  this payment is a basic authorization subject to settlement
-	*  with PayPal Authorization and Capture. Order indicates that
-	*  this payment is is an order authorization subject to
-	*  settlement with PayPal Authorization and Capture. Sale
-	*  indicates that this is a final sale for which you are
-	*  requesting payment. IMPORTANT: You cannot set PaymentAction
-	*  to Sale on SetExpressCheckoutRequest and then change
-	*  PaymentAction to Authorization on the final Express Checkout
-	*  API, DoExpressCheckoutPaymentRequest. Character length and
-	*  limit: Up to 13 single-byte alphabetic characters 	 
+	 * How you want to obtain payment. This payment action input
+	 * will be used for split payments Authorization indicates that
+	 * this payment is a basic authorization subject to settlement
+	 * with PayPal Authorization and Capture. Order indicates that
+	 * this payment is is an order authorization subject to
+	 * settlement with PayPal Authorization and Capture. Sale
+	 * indicates that this is a final sale for which you are
+	 * requesting payment. IMPORTANT: You cannot set PaymentAction
+	 * to Sale on SetExpressCheckoutRequest and then change
+	 * PaymentAction to Authorization on the final Express Checkout
+	 * API, DoExpressCheckoutPaymentRequest. Character length and
+	 * limit: Up to 13 single-byte alphabetic characters 	 
 	 */ 
 	private PaymentActionCodeType paymentAction;
 
 	/**
-	*  Unique identifier and mandatory for the particular payment
-	*  request in case of multiple payment 	 
+	 * Unique identifier and mandatory for the particular payment
+	 * request in case of multiple payment 	 
 	 */ 
 	private String paymentRequestID;
 
 	/**
-	*  URL on Merchant site pertaining to this invoice. Optional 	 
+	 * URL on Merchant site pertaining to this invoice. Optional 	 
 	 */ 
 	private String orderURL;
 
 	/**
-	*  Soft Descriptor supported for Sale and Auth in DEC only. For
-	*  Order this will be ignored. 	 
+	 * Soft Descriptor supported for Sale and Auth in DEC only. For
+	 * Order this will be ignored. 	 
 	 */ 
 	private String softDescriptor;
 
 	/**
-	*  BranchLevel is used to identify chain payment. If
-	*  BranchLevel is 0 or 1, this payment is where money moves to.
-	*  If BranchLevel greater than 1, this payment contains the
-	*  actual seller info. Optional 	 
+	 * BranchLevel is used to identify chain payment. If
+	 * BranchLevel is 0 or 1, this payment is where money moves to.
+	 * If BranchLevel greater than 1, this payment contains the
+	 * actual seller info. Optional 	 
 	 */ 
 	private Integer branchLevel;
 
 	/**
-	*  Soft Descriptor supported for Sale and Auth in DEC only. For
-	*  Order this will be ignored. 	 
+	 * Soft Descriptor supported for Sale and Auth in DEC only. For
+	 * Order this will be ignored. 	 
 	 */ 
 	private OfferDetailsType offerDetails;
 
 	/**
-	*  Flag to indicate the recurring transaction 	 
+	 * Flag to indicate the recurring transaction 	 
 	 */ 
 	private RecurringFlagType recurring;
 
 	/**
-	*  Indicates the purpose of this payment like Refund 	 
+	 * Indicates the purpose of this payment like Refund 	 
 	 */ 
 	private PaymentReasonType paymentReason;
 

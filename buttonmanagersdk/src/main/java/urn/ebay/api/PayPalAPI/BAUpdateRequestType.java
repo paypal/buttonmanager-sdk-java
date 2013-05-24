@@ -4,7 +4,7 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class BAUpdateRequestType extends AbstractRequestType {
 
@@ -12,23 +12,23 @@ public class BAUpdateRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String referenceID;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String billingAgreementDescription;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private MerchantPullStatusCodeType billingAgreementStatus;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String billingAgreementCustom;
 

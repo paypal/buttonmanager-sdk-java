@@ -1,11 +1,11 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  RefundType - Type declaration to be used by other 
- *   schema. This code identifies the types of refund
- *  transactions 
- *   supported.
- *   
+ * RefundType - Type declaration to be used by other 
+ *  schema. This code identifies the types of refund
+ * transactions 
+ *  supported.
+ *  
  */
 public enum  RefundType {
 

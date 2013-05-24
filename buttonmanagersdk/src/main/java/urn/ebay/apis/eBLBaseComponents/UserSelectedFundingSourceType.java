@@ -1,9 +1,9 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  UserSelectedFundingSourceType
- *   User Selected Funding Source (used by Express Checkout)
- *   
+ * UserSelectedFundingSourceType
+ *  User Selected Funding Source (used by Express Checkout)
+ *  
  */
 public enum  UserSelectedFundingSourceType {
 

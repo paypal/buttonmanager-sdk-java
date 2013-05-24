@@ -4,7 +4,7 @@ import urn.ebay.apis.eBLBaseComponents.CreditCardDetailsType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class DoNonReferencedCreditRequestDetailsType{
 
@@ -12,37 +12,37 @@ public class DoNonReferencedCreditRequestDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BasicAmountType amount;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BasicAmountType netAmount;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BasicAmountType taxAmount;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BasicAmountType shippingAmount;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private CreditCardDetailsType creditCard;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String receiverEmail;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String comment;
 

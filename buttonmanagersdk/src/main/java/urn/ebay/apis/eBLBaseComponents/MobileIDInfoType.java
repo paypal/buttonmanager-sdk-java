@@ -2,7 +2,7 @@ package urn.ebay.apis.eBLBaseComponents;
 import com.paypal.core.SDKUtil;
 
 /**
- *  The Session token returned during buyer authentication. 
+ * The Session token returned during buyer authentication. 
  */
 public class MobileIDInfoType{
 
@@ -10,7 +10,7 @@ public class MobileIDInfoType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  The Session token returned during buyer authentication.	 
+	 * The Session token returned during buyer authentication.	 
 	 */ 
 	private String sessionToken;
 

@@ -1,8 +1,8 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  MarketingCategoryType 
- *   
+ * MarketingCategoryType 
+ *  
  */
 public enum  MarketingCategoryType {
 

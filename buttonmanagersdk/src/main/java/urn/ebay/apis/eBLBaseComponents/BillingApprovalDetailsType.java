@@ -6,8 +6,8 @@ import urn.ebay.apis.eBLBaseComponents.PaymentDirectivesType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  The Type of Approval requested - Billing Agreement or
- *  Profile 
+ * The Type of Approval requested - Billing Agreement or
+ * Profile 
  */
 public class BillingApprovalDetailsType{
 
@@ -15,31 +15,31 @@ public class BillingApprovalDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  The Type of Approval requested - Billing Agreement or
-	*  Profile	  
+	 * The Type of Approval requested - Billing Agreement or
+	 * Profile	  
 	 *@Required	 
 	 */ 
 	private ApprovalTypeType approvalType;
 
 	/**
-	*  The Approval subtype - Must be MerchantInitiatedBilling for
-	*  BillingAgreement ApprovalType	 
+	 * The Approval subtype - Must be MerchantInitiatedBilling for
+	 * BillingAgreement ApprovalType	 
 	 */ 
 	private ApprovalSubTypeType approvalSubType;
 
 	/**
-	*  Description about the Order	 
+	 * Description about the Order	 
 	 */ 
 	private OrderDetailsType orderDetails;
 
 	/**
-	*  Directives about the type of payment	 
+	 * Directives about the type of payment	 
 	 */ 
 	private PaymentDirectivesType paymentDirectives;
 
 	/**
-	*  Client may pass in its identification of this Billing
-	*  Agreement. It used for the client's tracking purposes.	 
+	 * Client may pass in its identification of this Billing
+	 * Agreement. It used for the client's tracking purposes.	 
 	 */ 
 	private String custom;
 

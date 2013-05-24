@@ -18,28 +18,28 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  
+ * 
  */
 public class IncentiveAppliedToType{
 
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String bucketId;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String itemId;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BasicAmountType incentiveAmount;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String subType;
 

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Defines relationship between buckets 
+ * Defines relationship between buckets 
  */
 public class CoupledBucketsType{
 
@@ -13,17 +13,17 @@ public class CoupledBucketsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Relationship Type - LifeTime (default) 	 
+	 * Relationship Type - LifeTime (default) 	 
 	 */ 
 	private CoupleType coupleType;
 
 	/**
-	*  Identifier for this relation 	 
+	 * Identifier for this relation 	 
 	 */ 
 	private String coupledPaymentRequestID;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private List<String> paymentRequestID = new ArrayList<String>();

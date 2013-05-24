@@ -46,7 +46,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	private static final String SDK_NAME = "buttonmanager-java-sdk";
 	
 	//SDK Version
-	private static final String SDK_VERSION = "2.3.101";
+	private static final String SDK_VERSION = "2.3.102";
 
 
 	/**
@@ -148,7 +148,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	}
 
 	/** 
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -165,7 +165,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	 }
 
 	/** 
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -193,7 +193,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	}
 	
 	/**	
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -221,7 +221,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	 }
 
 	/** 
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -238,7 +238,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	 }
 
 	/** 
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -266,7 +266,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	}
 	
 	/**	
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -294,7 +294,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	 }
 
 	/** 
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -311,7 +311,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	 }
 
 	/** 
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -339,7 +339,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	}
 	
 	/**	
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -367,7 +367,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	 }
 
 	/** 
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -384,7 +384,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	 }
 
 	/** 
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -412,7 +412,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	}
 	
 	/**	
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -440,7 +440,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	 }
 
 	/** 
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -457,7 +457,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	 }
 
 	/** 
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -485,7 +485,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	}
 	
 	/**	
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -513,7 +513,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	 }
 
 	/** 
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -530,7 +530,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	 }
 
 	/** 
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -558,7 +558,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	}
 	
 	/**	
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -586,7 +586,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	 }
 
 	/** 
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -603,7 +603,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	 }
 
 	/** 
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -631,7 +631,7 @@ public class PayPalAPIInterfaceServiceService extends BaseService {
 	}
 	
 	/**	
-	*  
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException

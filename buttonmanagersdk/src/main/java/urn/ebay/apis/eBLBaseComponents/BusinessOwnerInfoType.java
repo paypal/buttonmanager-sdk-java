@@ -3,7 +3,7 @@ import urn.ebay.apis.eBLBaseComponents.PayerInfoType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  BusinessOwnerInfoType 
+ * BusinessOwnerInfoType 
  */
 public class BusinessOwnerInfoType{
 
@@ -11,25 +11,25 @@ public class BusinessOwnerInfoType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Details about the business owner	 
+	 * Details about the business owner	 
 	 */ 
 	private PayerInfoType owner;
 
 	/**
-	*  Business owner’s home telephone number Character length
-	*  and limitations: 32 alphanumeric characters	 
+	 * Business owner’s home telephone number Character length
+	 * and limitations: 32 alphanumeric characters	 
 	 */ 
 	private String homePhone;
 
 	/**
-	*  Business owner’s mobile telephone number Character length
-	*  and limitations: 32 alphanumeric characters	 
+	 * Business owner’s mobile telephone number Character length
+	 * and limitations: 32 alphanumeric characters	 
 	 */ 
 	private String mobilePhone;
 
 	/**
-	*  Business owner’s social security number Character length
-	*  and limitations: 9 alphanumeric characters	 
+	 * Business owner’s social security number Character length
+	 * and limitations: 9 alphanumeric characters	 
 	 */ 
 	private String sSN;
 

@@ -18,21 +18,21 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  Indicates whether the phone is activated for mobile payments
- *  
+ * Indicates whether the phone is activated for mobile payments
+ * 
  */
 public class GetMobileStatusResponseType extends AbstractResponseType {
 
 
 	/**
-	*  Indicates whether the phone is activated for mobile payments
-	*  	  
+	 * Indicates whether the phone is activated for mobile payments
+	 * 	  
 	 *@Required	 
 	 */ 
 	private Integer isActivated;
 
 	/**
-	*  Indicates whether there is a payment pending from the phone 	  
+	 * Indicates whether there is a payment pending from the phone 	  
 	 *@Required	 
 	 */ 
 	private Integer paymentPending;

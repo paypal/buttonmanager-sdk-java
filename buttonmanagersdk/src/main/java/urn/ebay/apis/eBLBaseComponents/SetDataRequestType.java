@@ -7,7 +7,7 @@ import urn.ebay.apis.eBLBaseComponents.InfoSharingDirectivesType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Details about Billing Agreements requested to be created. 
+ * Details about Billing Agreements requested to be created. 
  */
 public class SetDataRequestType{
 
@@ -15,20 +15,20 @@ public class SetDataRequestType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Details about Billing Agreements requested to be created. 	 
+	 * Details about Billing Agreements requested to be created. 	 
 	 */ 
 	private List<BillingApprovalDetailsType> billingApprovalDetails = new ArrayList<BillingApprovalDetailsType>();
 
 	/**
-	*  Only needed if Auto Authorization is requested. The
-	*  authentication session token will be passed in here. 	 
+	 * Only needed if Auto Authorization is requested. The
+	 * authentication session token will be passed in here. 	 
 	 */ 
 	private BuyerDetailType buyerDetail;
 
 	/**
-	*  Requests for specific buyer information like Billing Address
-	*  to be returned through GetExpressCheckoutDetails should be
-	*  specified under this. 	 
+	 * Requests for specific buyer information like Billing Address
+	 * to be returned through GetExpressCheckoutDetails should be
+	 * specified under this. 	 
 	 */ 
 	private InfoSharingDirectivesType infoSharingDirectives;
 

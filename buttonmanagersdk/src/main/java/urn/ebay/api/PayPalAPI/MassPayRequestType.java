@@ -7,10 +7,10 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Subject line of the email sent to all recipients. This
- *  subject is not contained in the input file; you must create
- *  it with your application. Optional Character length and
- *  limitations: 255 single-byte alphanumeric characters 
+ * Subject line of the email sent to all recipients. This
+ * subject is not contained in the input file; you must create
+ * it with your application. Optional Character length and
+ * limitations: 255 single-byte alphanumeric characters 
  */
 public class MassPayRequestType extends AbstractRequestType {
 
@@ -18,32 +18,32 @@ public class MassPayRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  Subject line of the email sent to all recipients. This
-	*  subject is not contained in the input file; you must create
-	*  it with your application. Optional Character length and
-	*  limitations: 255 single-byte alphanumeric characters	 
+	 * Subject line of the email sent to all recipients. This
+	 * subject is not contained in the input file; you must create
+	 * it with your application. Optional Character length and
+	 * limitations: 255 single-byte alphanumeric characters	 
 	 */ 
 	private String emailSubject;
 
 	/**
-	*  Indicates how you identify the recipients of payments in all
-	*  MassPayItems: either by EmailAddress (ReceiverEmail in
-	*  MassPayItem), PhoneNumber (ReceiverPhone in MassPayItem), or
-	*  by UserID (ReceiverID in MassPayItem). Required. You must
-	*  specify one or the other of EmailAddress or UserID.	 
+	 * Indicates how you identify the recipients of payments in all
+	 * MassPayItems: either by EmailAddress (ReceiverEmail in
+	 * MassPayItem), PhoneNumber (ReceiverPhone in MassPayItem), or
+	 * by UserID (ReceiverID in MassPayItem). Required. You must
+	 * specify one or the other of EmailAddress or UserID.	 
 	 */ 
 	private ReceiverInfoCodeType receiverType;
 
 	/**
-	*  Known as BN code, to track the partner referred merchant
-	*  transactions. OptionalCharacter length and limitations: 32
-	*  single-byte alphanumeric characters	 
+	 * Known as BN code, to track the partner referred merchant
+	 * transactions. OptionalCharacter length and limitations: 32
+	 * single-byte alphanumeric characters	 
 	 */ 
 	private String buttonSource;
 
 	/**
-	*  Details of each payment. A single MassPayRequest can include
-	*  up to 250 MassPayItems. Required 	  
+	 * Details of each payment. A single MassPayRequest can include
+	 * up to 250 MassPayItems. Required 	  
 	 *@Required	 
 	 */ 
 	private List<MassPayRequestItemType> massPayItem = new ArrayList<MassPayRequestItemType>();

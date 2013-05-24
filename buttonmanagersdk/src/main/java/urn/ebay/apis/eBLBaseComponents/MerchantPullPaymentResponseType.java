@@ -20,24 +20,24 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  MerchantPullPaymentResponseType Response data from the
- *  merchant pull. 
+ * MerchantPullPaymentResponseType Response data from the
+ * merchant pull. 
  */
 public class MerchantPullPaymentResponseType{
 
 
 	/**
-	*  information about the customer	 
+	 * information about the customer	 
 	 */ 
 	private PayerInfoType payerInfo;
 
 	/**
-	*  Information about the transaction 	 
+	 * Information about the transaction 	 
 	 */ 
 	private PaymentInfoType paymentInfo;
 
 	/**
-	*  Specific information about the preapproved payment 	 
+	 * Specific information about the preapproved payment 	 
 	 */ 
 	private MerchantPullInfoType merchantPullInfo;
 

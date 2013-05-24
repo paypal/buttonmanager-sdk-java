@@ -4,7 +4,7 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Msg Sub Id that was used for the orginal operation. 
+ * Msg Sub Id that was used for the orginal operation. 
  */
 public class DoCancelRequestType extends AbstractRequestType {
 
@@ -12,21 +12,21 @@ public class DoCancelRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  Msg Sub Id that was used for the orginal operation. 	  
+	 * Msg Sub Id that was used for the orginal operation. 	  
 	 *@Required	 
 	 */ 
 	private String cancelMsgSubID;
 
 	/**
-	*  Original API's type	  
+	 * Original API's type	  
 	 *@Required	 
 	 */ 
 	private APIType aPIType;
 
 	/**
-	*  Unique id for each API request to prevent duplicate
-	*  payments. Optional Character length and limits: 38
-	*  single-byte characters maximum. 	 
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 	 
 	 */ 
 	private String msgSubID;
 

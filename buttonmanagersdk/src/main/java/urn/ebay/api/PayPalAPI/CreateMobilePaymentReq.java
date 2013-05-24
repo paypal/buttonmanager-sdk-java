@@ -3,7 +3,7 @@ import urn.ebay.api.PayPalAPI.CreateMobilePaymentRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class CreateMobilePaymentReq{
 
@@ -11,7 +11,7 @@ public class CreateMobilePaymentReq{
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private CreateMobilePaymentRequestType createMobilePaymentRequest;
 

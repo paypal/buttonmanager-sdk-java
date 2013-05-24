@@ -1,10 +1,10 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  ReversalReasonCodeType 
- *   Reason for a reversal on a PayPal transaction which matches
- *  the output from IPN
- *   
+ * ReversalReasonCodeType 
+ *  Reason for a reversal on a PayPal transaction which matches
+ * the output from IPN
+ *  
  */
 public enum  ReversalReasonCodeType {
 

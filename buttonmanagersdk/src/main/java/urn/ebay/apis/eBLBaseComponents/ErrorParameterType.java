@@ -17,18 +17,18 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  Value of the application-specific error parameter.  
+ * Value of the application-specific error parameter.  
  */
 public class ErrorParameterType{
 
 
 	/**
-	*  Value of the application-specific error parameter.  	 
+	 * Value of the application-specific error parameter.  	 
 	 */ 
 	private String value;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String paramID;

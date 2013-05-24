@@ -3,7 +3,7 @@ import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  Description of the Order. 
+ * Description of the Order. 
  */
 public class OrderDetailsType{
 
@@ -11,13 +11,13 @@ public class OrderDetailsType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Description of the Order.	 
+	 * Description of the Order.	 
 	 */ 
 	private String description;
 
 	/**
-	*  Expected maximum amount that the merchant may pull using
-	*  DoReferenceTransaction	 
+	 * Expected maximum amount that the merchant may pull using
+	 * DoReferenceTransaction	 
 	 */ 
 	private BasicAmountType maxAmount;
 

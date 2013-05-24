@@ -3,7 +3,7 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  
+ * 
  */
 public class GetPalDetailsRequestType extends AbstractRequestType {
 

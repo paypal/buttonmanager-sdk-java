@@ -1,8 +1,8 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  Boarding Status 
- *   
+ * Boarding Status 
+ *  
  */
 public enum  BoardingStatusType {
 

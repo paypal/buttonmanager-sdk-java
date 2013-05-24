@@ -1,8 +1,8 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  Based on NRF-ARTS Specification for Units of Measure
- *   
+ * Based on NRF-ARTS Specification for Units of Measure
+ *  
  */
 public enum  UnitOfMeasure {
 

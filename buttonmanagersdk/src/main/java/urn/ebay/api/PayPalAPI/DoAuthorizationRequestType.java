@@ -5,9 +5,9 @@ import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
 /**
- *  The value of the order’s transaction identification number
- *  returned by a PayPal product. Required Character length and
- *  limits: 19 single-byte characters maximum 
+ * The value of the order’s transaction identification number
+ * returned by a PayPal product. Required Character length and
+ * limits: 19 single-byte characters maximum 
  */
 public class DoAuthorizationRequestType extends AbstractRequestType {
 
@@ -15,33 +15,33 @@ public class DoAuthorizationRequestType extends AbstractRequestType {
 	private static final String preferredPrefix="ns";
 
 	/**
-	*  The value of the order’s transaction identification number
-	*  returned by a PayPal product. Required Character length and
-	*  limits: 19 single-byte characters maximum	  
+	 * The value of the order’s transaction identification number
+	 * returned by a PayPal product. Required Character length and
+	 * limits: 19 single-byte characters maximum	  
 	 *@Required	 
 	 */ 
 	private String transactionID;
 
 	/**
-	*  Type of transaction to authorize. The only allowable value
-	*  is Order, which means that the transaction represents a
-	*  customer order that can be fulfilled over 29 days. Optional	 
+	 * Type of transaction to authorize. The only allowable value
+	 * is Order, which means that the transaction represents a
+	 * customer order that can be fulfilled over 29 days. Optional	 
 	 */ 
 	private TransactionEntityType transactionEntity;
 
 	/**
-	*  Amount to authorize. Required Limitations: Must not exceed
-	*  $10,000 USD in any currency. No currency symbol. Decimal
-	*  separator must be a period (.), and the thousands separator
-	*  must be a comma (,).	  
+	 * Amount to authorize. Required Limitations: Must not exceed
+	 * $10,000 USD in any currency. No currency symbol. Decimal
+	 * separator must be a period (.), and the thousands separator
+	 * must be a comma (,).	  
 	 *@Required	 
 	 */ 
 	private BasicAmountType amount;
 
 	/**
-	*  Unique id for each API request to prevent duplicate
-	*  payments. Optional Character length and limits: 38
-	*  single-byte characters maximum. 	 
+	 * Unique id for each API request to prevent duplicate
+	 * payments. Optional Character length and limits: 38
+	 * single-byte characters maximum. 	 
 	 */ 
 	private String msgSubID;
 

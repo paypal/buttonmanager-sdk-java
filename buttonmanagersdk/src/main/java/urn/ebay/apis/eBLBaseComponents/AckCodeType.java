@@ -1,16 +1,16 @@
 package urn.ebay.apis.eBLBaseComponents;
 
 /**
- *  AckCodeType
- *      This code identifies the acknowledgement code types that
+ * AckCodeType
+ *     This code identifies the acknowledgement code types that
+ * 
+ *     could be used to communicate the status of processing a 
+ *     (request) message to an application. This code would be
+ * used 
+ *     as part of a response message that contains an
+ * application 
+ *     level acknowledgement element.
  *  
- *      could be used to communicate the status of processing a 
- *      (request) message to an application. This code would be
- *  used 
- *      as part of a response message that contains an
- *  application 
- *      level acknowledgement element.
- *   
  */
 public enum  AckCodeType {
 

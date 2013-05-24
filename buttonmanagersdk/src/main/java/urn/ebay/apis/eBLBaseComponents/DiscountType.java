@@ -20,7 +20,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *  Describes discount information 
+ * Describes discount information 
  */
 public class DiscountType{
 
@@ -28,31 +28,31 @@ public class DiscountType{
 	private static final String preferredPrefix="ebl";
 
 	/**
-	*  Item nameOptional Character length and limits: 127
-	*  single-byte characters 	 
+	 * Item nameOptional Character length and limits: 127
+	 * single-byte characters 	 
 	 */ 
 	private String name;
 
 	/**
-	*  description of the discountOptional Character length and
-	*  limits: 127 single-byte characters 	 
+	 * description of the discountOptional Character length and
+	 * limits: 127 single-byte characters 	 
 	 */ 
 	private String description;
 
 	/**
-	*  amount discountedOptional 	  
+	 * amount discountedOptional 	  
 	 *@Required	 
 	 */ 
 	private BasicAmountType amount;
 
 	/**
-	*  offer typeOptional 	 
+	 * offer typeOptional 	 
 	 */ 
 	private RedeemedOfferType redeemedOfferType;
 
 	/**
-	*  offer IDOptional Character length and limits: 64 single-byte
-	*  characters 	 
+	 * offer IDOptional Character length and limits: 64 single-byte
+	 * characters 	 
 	 */ 
 	private String redeemedOfferID;
 

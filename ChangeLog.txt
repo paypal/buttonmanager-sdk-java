@@ -1,3 +1,9 @@
+Version 2.3.103 - June 06, 2013
+
+	- Updated stubs for 103 release
+	
+You can see source code of this release in github under https://github.com/paypal/buttonmanager-sdk-java/tree/v2.3.103.
+--------------------------------------------------------------------------------------------------
 Version 2.3.102 - May 23, 2013
 
 	- Updated core sdk version.

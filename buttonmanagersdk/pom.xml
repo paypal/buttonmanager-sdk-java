@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.paypal.sdk</groupId>
 	<artifactId>buttonmanagersdk</artifactId>
-	<version>2.3.102</version>
+	<version>2.0.103</version>
 	<packaging>jar</packaging>
 	<name>ButtonManagerSDK</name>
 	<description>The PayPal Button Manager SDK provides Java APIs to create, and manage PayPal Payments Standard buttons programmatically.</description>
@@ -31,7 +31,7 @@
 		<dependency>
 			<groupId>com.paypal.sdk</groupId>
 			<artifactId>paypal-core</artifactId>
-			<version>1.4.2</version>
+			<version>1.4.3</version>
 		</dependency>
 	</dependencies>
 	<build>

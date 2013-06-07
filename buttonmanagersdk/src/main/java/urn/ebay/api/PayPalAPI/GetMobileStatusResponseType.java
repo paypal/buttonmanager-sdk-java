@@ -32,6 +32,13 @@ public class GetMobileStatusResponseType extends AbstractResponseType {
 	private Integer isActivated;
 
 	/**
+	 * Indicates whether the password is enabled for particular
+	 * account 	  
+	 *@Required	 
+	 */ 
+	private Integer isPasswordSet;
+
+	/**
 	 * Indicates whether there is a payment pending from the phone 	  
 	 *@Required	 
 	 */ 
@@ -57,6 +64,20 @@ public class GetMobileStatusResponseType extends AbstractResponseType {
 	 */
 	 public void setIsActivated(Integer isActivated) {
 	 	this.isActivated = isActivated;
+	 }
+	 
+	/**
+	 * Getter for isPasswordSet
+	 */
+	 public Integer getIsPasswordSet() {
+	 	return isPasswordSet;
+	 }
+	 
+	/**
+	 * Setter for isPasswordSet
+	 */
+	 public void setIsPasswordSet(Integer isPasswordSet) {
+	 	this.isPasswordSet = isPasswordSet;
 	 }
 	 
 	/**
@@ -96,6 +117,11 @@ public class GetMobileStatusResponseType extends AbstractResponseType {
 		childNode = (Node) xpath.evaluate("IsActivated", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 			this.isActivated = Integer.valueOf(childNode.getTextContent());
+		}
+	
+		childNode = (Node) xpath.evaluate("IsPasswordSet", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+			this.isPasswordSet = Integer.valueOf(childNode.getTextContent());
 		}
 	
 		childNode = (Node) xpath.evaluate("PaymentPending", node, XPathConstants.NODE);

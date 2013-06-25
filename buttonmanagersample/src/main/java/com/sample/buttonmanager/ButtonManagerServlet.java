@@ -115,8 +115,7 @@ public class ButtonManagerServlet extends HttpServlet {
 			// ## Creating service wrapper object
 			// Creating service wrapper object to make API call and loading
 			// configuration file for your credentials and endpoint
-			PayPalAPIInterfaceServiceService service = new PayPalAPIInterfaceServiceService(this
-					.getClass().getResourceAsStream("/sdk_config.properties"));
+			PayPalAPIInterfaceServiceService service = new PayPalAPIInterfaceServiceService(Configuration.getSignatureConfig());
 			
 			if (req.getRequestURI().contains("BMCreateButton")) {
 

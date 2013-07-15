@@ -38,4 +38,11 @@ public class Configuration {
 		
 		return configMap;
 	}
+	
+	public static final Map<String,String> getMode(){
+		Map<String,String> mode = new HashMap<String,String>();
+		// Endpoints are varied depending on whether sandbox OR live is chosen for mode
+		mode.put("mode", "sandbox");
+		return mode;
+	}
 }

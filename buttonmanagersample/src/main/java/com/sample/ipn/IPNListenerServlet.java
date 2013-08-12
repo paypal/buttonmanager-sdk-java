@@ -8,18 +8,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.paypal.core.ConfigManager;
 import com.paypal.core.LoggingManager;
 import com.paypal.ipn.IPNMessage;
+import com.sample.buttonmanager.Configuration;
 
 public class IPNListenerServlet extends HttpServlet{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/* 
 	 * receiver for PayPal ipn call back.
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		ConfigManager.getInstance().load(this.getClass().getResourceAsStream("/sdk_config.properties"));
-		IPNMessage 	ipnlistener = new IPNMessage(request);
+		// For a full list of configuration parameters refer at 
+		// (https://github.com/paypal/adaptivepayments-sdk-java/wiki/SDK-Configuration-Parameters)
+		Map<String,String> mode =  Configuration.getConfig();
+		IPNMessage 	ipnlistener = new IPNMessage(request,mode);
 		boolean isIpnVerified = ipnlistener.validate();
 		String transactionType = ipnlistener.getTransactionType();
 		Map<String,String> map = ipnlistener.getIpnMap();

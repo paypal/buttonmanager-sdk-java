@@ -36,7 +36,6 @@ public class Configuration {
 		// Endpoints are varied depending on whether sandbox OR live is chosen for mode
 		configMap.put("mode", "sandbox");
 		
-
 		// These values are defaulted in SDK. If you want to override default values, uncomment it and add your value.
 		// configMap.put("http.ConnectionTimeOut", "5000");
 		// configMap.put("http.Retry", "2");

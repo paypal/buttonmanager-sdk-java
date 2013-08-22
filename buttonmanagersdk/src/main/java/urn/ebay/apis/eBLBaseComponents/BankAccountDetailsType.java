@@ -22,13 +22,13 @@ public class BankAccountDetailsType{
 	private BankAccountTypeType type;
 
 	/**
-	 * Merchant’s bank routing number Character length and
+	 * Merchantâs bank routing number Character length and
 	 * limitations: 23 alphanumeric characters	 
 	 */ 
 	private String routingNumber;
 
 	/**
-	 * Merchant’s bank account number Character length and
+	 * Merchantâs bank account number Character length and
 	 * limitations: 256 alphanumeric characters	 
 	 */ 
 	private String accountNumber;

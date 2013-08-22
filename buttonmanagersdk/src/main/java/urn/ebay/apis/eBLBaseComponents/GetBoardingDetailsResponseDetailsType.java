@@ -41,12 +41,12 @@ public class GetBoardingDetailsResponseDetailsType{
 	private String startDate;
 
 	/**
-	 * Date the merchant’s status or progress was last updated	 
+	 * Date the merchantâs status or progress was last updated	 
 	 */ 
 	private String lastUpdated;
 
 	/**
-	 * Reason for merchant’s cancellation of sign-up. Character
+	 * Reason for merchantâs cancellation of sign-up. Character
 	 * length and limitations: 1,024 alphanumeric characters	 
 	 */ 
 	private String reason;
@@ -85,7 +85,7 @@ public class GetBoardingDetailsResponseDetailsType{
 	private PayerInfoType accountOwner;
 
 	/**
-	 * Merchant’s PayPal API credentials	 
+	 * Merchantâs PayPal API credentials	 
 	 */ 
 	private APICredentialsType credentials;
 

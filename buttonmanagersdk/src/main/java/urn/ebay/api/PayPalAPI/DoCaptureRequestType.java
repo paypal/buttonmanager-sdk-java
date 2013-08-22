@@ -3,6 +3,7 @@ import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.CompleteCodeType;
 import urn.ebay.apis.eBLBaseComponents.EnhancedDataType;
 import urn.ebay.apis.eBLBaseComponents.MerchantStoreDetailsType;
+import urn.ebay.apis.eBLBaseComponents.MerchantDataType;
 import urn.ebay.apis.eBLBaseComponents.AbstractRequestType;
 import com.paypal.core.SDKUtil;
 
@@ -86,6 +87,12 @@ public class DoCaptureRequestType extends AbstractRequestType {
 	 * single-byte characters maximum. 	 
 	 */ 
 	private String msgSubID;
+
+	/**
+	 * This holds key-value pair which merchants wants to pass it
+	 * to the open wallet-PLCC processorOptional 	 
+	 */ 
+	private MerchantDataType merchantData;
 
 	
 
@@ -230,6 +237,20 @@ public class DoCaptureRequestType extends AbstractRequestType {
 	 	this.msgSubID = msgSubID;
 	 }
 	 
+	/**
+	 * Getter for merchantData
+	 */
+	 public MerchantDataType getMerchantData() {
+	 	return merchantData;
+	 }
+	 
+	/**
+	 * Setter for merchantData
+	 */
+	 public void setMerchantData(MerchantDataType merchantData) {
+	 	this.merchantData = merchantData;
+	 }
+	 
 
 
 	public String toXMLString(String prefix, String name) {
@@ -275,6 +296,9 @@ public class DoCaptureRequestType extends AbstractRequestType {
 		if(msgSubID != null) {
 			sb.append("<").append(preferredPrefix).append(":MsgSubID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.msgSubID));
 			sb.append("</").append(preferredPrefix).append(":MsgSubID>");
+		}
+		if(merchantData != null) {
+			sb.append(merchantData.toXMLString(null,"MerchantData"));
 		}
 		if(name!=null){
 			if(prefix!=null){

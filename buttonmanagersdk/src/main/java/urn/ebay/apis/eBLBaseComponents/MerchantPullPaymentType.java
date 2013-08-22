@@ -88,7 +88,7 @@ public class MerchantPullPaymentType{
 	 * to identify transactions. Optional Character length and
 	 * limitations: 32 single-byte alphanumeric characters	 
 	 */ 
-	private String buttonSource;
+	private String buttonSource = "PayPal_SDK";
 
 	/**
 	 * Passed in soft descriptor string to be appended. Optional

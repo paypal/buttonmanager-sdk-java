@@ -29,12 +29,12 @@ public class BusinessInfoType{
 	private String name;
 
 	/**
-	 * Merchant’s business postal address	 
+	 * Merchantâs business postal address	 
 	 */ 
 	private AddressType address;
 
 	/**
-	 * Business’s primary telephone number Character length and
+	 * Businessâs primary telephone number Character length and
 	 * limitations: 20 alphanumeric characters	 
 	 */ 
 	private String workPhone;
@@ -101,19 +101,19 @@ public class BusinessInfoType{
 	private PercentageRevenueFromOnlineSalesType revenueFromOnlineSales;
 
 	/**
-	 * Date the merchant’s business was established	 
+	 * Date the merchantâs business was established	 
 	 */ 
 	private String businessEstablished;
 
 	/**
-	 * Email address to contact business’s customer service
+	 * Email address to contact businessâs customer service
 	 * Character length and limitations: 127 alphanumeric
 	 * characters	 
 	 */ 
 	private String customerServiceEmail;
 
 	/**
-	 * Telephone number to contact business’s customer service
+	 * Telephone number to contact businessâs customer service
 	 * Character length and limitations: 32 alphanumeric characters	 
 	 */ 
 	private String customerServicePhone;

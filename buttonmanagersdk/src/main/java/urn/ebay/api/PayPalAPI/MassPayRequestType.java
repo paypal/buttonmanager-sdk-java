@@ -39,7 +39,7 @@ public class MassPayRequestType extends AbstractRequestType {
 	 * transactions. OptionalCharacter length and limitations: 32
 	 * single-byte alphanumeric characters	 
 	 */ 
-	private String buttonSource;
+	private String buttonSource = "PayPal_SDK";
 
 	/**
 	 * Details of each payment. A single MassPayRequest can include

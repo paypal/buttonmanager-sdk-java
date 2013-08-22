@@ -115,7 +115,7 @@ public class PaymentDetailsType{
 	 * to identify transactions. Optional Character length and
 	 * limitations: 32 single-byte alphanumeric characters	 
 	 */ 
-	private String buttonSource;
+	private String buttonSource = "PayPal_SDK";
 
 	/**
 	 * Your URL for receiving Instant Payment Notification (IPN)
@@ -133,6 +133,13 @@ public class PaymentDetailsType{
 	 * set the CountryName element. 	 
 	 */ 
 	private AddressType shipToAddress;
+
+	/**
+	 * The value 1 indicates that this payment is associated with
+	 * multiple shipping addresses. Optional Character length and
+	 * limitations: Four single-byte numeric characters. 	 
+	 */ 
+	private String multiShipping;
 
 	/**
 	 * Thirdparty Fulfillment Reference Number. Optional Character
@@ -427,6 +434,20 @@ public class PaymentDetailsType{
 	 */
 	 public void setShipToAddress(AddressType shipToAddress) {
 	 	this.shipToAddress = shipToAddress;
+	 }
+	 
+	/**
+	 * Getter for multiShipping
+	 */
+	 public String getMultiShipping() {
+	 	return multiShipping;
+	 }
+	 
+	/**
+	 * Setter for multiShipping
+	 */
+	 public void setMultiShipping(String multiShipping) {
+	 	this.multiShipping = multiShipping;
 	 }
 	 
 	/**
@@ -787,6 +808,10 @@ public class PaymentDetailsType{
 		if(shipToAddress != null) {
 			sb.append(shipToAddress.toXMLString(preferredPrefix,"ShipToAddress"));
 		}
+		if(multiShipping != null) {
+			sb.append("<").append(preferredPrefix).append(":MultiShipping>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.multiShipping));
+			sb.append("</").append(preferredPrefix).append(":MultiShipping>");
+		}
 		if(fulfillmentReferenceNumber != null) {
 			sb.append("<").append(preferredPrefix).append(":FulfillmentReferenceNumber>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.fulfillmentReferenceNumber));
 			sb.append("</").append(preferredPrefix).append(":FulfillmentReferenceNumber>");
@@ -947,6 +972,11 @@ public class PaymentDetailsType{
         if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.shipToAddress =  new AddressType(childNode);
 		}
+		childNode = (Node) xpath.evaluate("MultiShipping", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.multiShipping = childNode.getTextContent();
+		}
+	
 		childNode = (Node) xpath.evaluate("FulfillmentReferenceNumber", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.fulfillmentReferenceNumber = childNode.getTextContent();

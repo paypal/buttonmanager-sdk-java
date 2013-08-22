@@ -16,19 +16,19 @@ public class BusinessOwnerInfoType{
 	private PayerInfoType owner;
 
 	/**
-	 * Business owner’s home telephone number Character length
-	 * and limitations: 32 alphanumeric characters	 
+	 * Business ownerâs home telephone number Character length and
+	 * limitations: 32 alphanumeric characters	 
 	 */ 
 	private String homePhone;
 
 	/**
-	 * Business owner’s mobile telephone number Character length
+	 * Business ownerâs mobile telephone number Character length
 	 * and limitations: 32 alphanumeric characters	 
 	 */ 
 	private String mobilePhone;
 
 	/**
-	 * Business owner’s social security number Character length
+	 * Business ownerâs social security number Character length
 	 * and limitations: 9 alphanumeric characters	 
 	 */ 
 	private String sSN;

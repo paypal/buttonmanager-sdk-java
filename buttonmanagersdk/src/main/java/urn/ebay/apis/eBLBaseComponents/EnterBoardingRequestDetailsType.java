@@ -58,7 +58,7 @@ public class EnterBoardingRequestDetailsType{
 	private MarketingCategoryType marketingCategory;
 
 	/**
-	 * Information about the merchant’s business	 
+	 * Information about the merchantâs business	 
 	 */ 
 	private BusinessInfoType businessInfo;
 

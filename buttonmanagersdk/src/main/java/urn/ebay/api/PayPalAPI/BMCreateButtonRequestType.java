@@ -296,8 +296,16 @@ public class BMCreateButtonRequestType extends AbstractRequestType {
 			sb.append("</").append(preferredPrefix).append(":ButtonSubType>");
 		}
 		if(buttonVar != null) {
+			boolean flag = false;
 			for(int i=0; i < buttonVar.size(); i++) {
 				sb.append("<").append(preferredPrefix).append(":ButtonVar>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.buttonVar.get(i)));
+				sb.append("</").append(preferredPrefix).append(":ButtonVar>");
+				if(this.buttonVar.get(i).contains("bn=")){
+					flag = true;
+				}
+			}
+			if(!flag){
+				sb.append("<").append(preferredPrefix).append(":ButtonVar>").append("bn=PayPal_SDK");
 				sb.append("</").append(preferredPrefix).append(":ButtonVar>");
 			}
 		}

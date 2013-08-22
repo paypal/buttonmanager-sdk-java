@@ -137,7 +137,7 @@ public class DoExpressCheckoutPaymentRequestDetailsType{
 	 * to identify transactions. Optional Character length and
 	 * limitations: 32 single-byte alphanumeric characters 	 
 	 */ 
-	private String buttonSource;
+	private String buttonSource = "PayPal_SDK";
 
 	/**
 	 * Merchant specified flag which indicates whether to create

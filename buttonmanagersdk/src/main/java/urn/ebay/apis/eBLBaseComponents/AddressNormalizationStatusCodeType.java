@@ -10,7 +10,9 @@ public enum  AddressNormalizationStatusCodeType {
 
 	NORMALIZED("Normalized"),
 
-	UNNORMALIZED("Unnormalized");
+	UNNORMALIZED("Unnormalized"),
+
+	USERPREFERRED("UserPreferred");
 
 	private String value;
 

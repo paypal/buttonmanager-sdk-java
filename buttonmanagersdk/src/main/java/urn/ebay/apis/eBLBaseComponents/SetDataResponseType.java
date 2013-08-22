@@ -1,6 +1,7 @@
 package urn.ebay.apis.eBLBaseComponents;
 import java.util.List;
 import java.util.ArrayList;
+import urn.ebay.apis.eBLBaseComponents.AddressType;
 import urn.ebay.apis.eBLBaseComponents.ErrorType;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -35,6 +36,11 @@ public class SetDataResponseType{
 	/**
 	 * 	 
 	 */ 
+	private List<AddressType> shippingAddresses = new ArrayList<AddressType>();
+
+	/**
+	 * 	 
+	 */ 
 	private List<ErrorType> setDataError = new ArrayList<ErrorType>();
 
 	
@@ -57,6 +63,20 @@ public class SetDataResponseType{
 	 */
 	 public void setToken(String token) {
 	 	this.token = token;
+	 }
+	 
+	/**
+	 * Getter for shippingAddresses
+	 */
+	 public List<AddressType> getShippingAddresses() {
+	 	return shippingAddresses;
+	 }
+	 
+	/**
+	 * Setter for shippingAddresses
+	 */
+	 public void setShippingAddresses(List<AddressType> shippingAddresses) {
+	 	this.shippingAddresses = shippingAddresses;
 	 }
 	 
 	/**
@@ -97,6 +117,13 @@ public class SetDataResponseType{
 		    this.token = childNode.getTextContent();
 		}
 	
+        nodeList = (NodeList) xpath.evaluate("ShippingAddresses", node, XPathConstants.NODESET);
+		if (nodeList != null && nodeList.getLength() > 0) {
+			for(int i=0; i < nodeList.getLength(); i++) {
+				Node subNode = nodeList.item(i);
+				this.shippingAddresses.add(new AddressType(subNode));
+			}
+		}
         nodeList = (NodeList) xpath.evaluate("SetDataError", node, XPathConstants.NODESET);
 		if (nodeList != null && nodeList.getLength() > 0) {
 			for(int i=0; i < nodeList.getLength(); i++) {

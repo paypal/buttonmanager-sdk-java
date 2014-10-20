@@ -24,9 +24,16 @@ public class InstrumentDetailsType{
 
 	/**
 	 * This field holds the category of the instrument only when it
-	 * is promotional. Return value 1 represents BML. 	 
+	 * is promotional. Return value 1 represents BML, 2 reprasents
+	 * PLCC/Cobranded. 	 
 	 */ 
 	private String instrumentCategory;
+
+	/**
+	 * This field holds the InstrumentID issued by external party
+	 * corresponding to the funding source used in payment. 	 
+	 */ 
+	private String instrumentID;
 
 	
 
@@ -50,6 +57,20 @@ public class InstrumentDetailsType{
 	 	this.instrumentCategory = instrumentCategory;
 	 }
 	 
+	/**
+	 * Getter for instrumentID
+	 */
+	 public String getInstrumentID() {
+	 	return instrumentID;
+	 }
+	 
+	/**
+	 * Setter for instrumentID
+	 */
+	 public void setInstrumentID(String instrumentID) {
+	 	this.instrumentID = instrumentID;
+	 }
+	 
 
 
 
@@ -71,9 +92,14 @@ public class InstrumentDetailsType{
 		NodeList nodeList = null;
 		childNode = (Node) xpath.evaluate("InstrumentCategory", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
-			String value = childNode.getTextContent();
-			this.instrumentCategory = value;
+		    this.instrumentCategory = childNode.getTextContent();
 		}
+	
+		childNode = (Node) xpath.evaluate("InstrumentID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.instrumentID = childNode.getTextContent();
+		}
+	
 	}
  
 }

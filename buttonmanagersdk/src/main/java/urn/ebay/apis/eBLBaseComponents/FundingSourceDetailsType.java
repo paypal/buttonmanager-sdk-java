@@ -22,10 +22,11 @@ public class FundingSourceDetailsType{
 	private String allowPushFunding;
 
 	/**
-	 * Allowable values: ELV, CreditCard, ChinaUnionPay, BML This
-	 * element could be used to specify the perered funding option
-	 * for a guest users. It has effect only if LandingPage element
-	 * is set to Billing. Otherwise it will be ignored. 	 
+	 * Allowable values: ELV, CreditCard, ChinaUnionPay, BML,
+	 * Finance This element could be used to specify the preferred
+	 * funding option for a guest users. It has effect only if
+	 * LandingPage element is set to Billing. Otherwise it will be
+	 * ignored. 	 
 	 */ 
 	private UserSelectedFundingSourceType userSelectedFundingSource;
 

@@ -3,6 +3,9 @@ import urn.ebay.apis.eBLBaseComponents.PayPalUserStatusCodeType;
 import urn.ebay.apis.eBLBaseComponents.PersonNameType;
 import urn.ebay.apis.eBLBaseComponents.CountryCodeType;
 import urn.ebay.apis.eBLBaseComponents.AddressType;
+import java.util.List;
+import java.util.ArrayList;
+import urn.ebay.apis.eBLBaseComponents.WalletItemsType;
 import urn.ebay.apis.eBLBaseComponents.TaxIdDetailsType;
 import urn.ebay.apis.EnhancedDataTypes.EnhancedPayerInfoType;
 import com.paypal.core.SDKUtil;
@@ -75,6 +78,12 @@ public class PayerInfoType{
 	 * Business contact telephone number	 
 	 */ 
 	private String contactPhone;
+
+	/**
+	 * Items such as merchant coupons, loyalty cards, and
+	 * manufacturer coupons in the PayPal wallet.	 
+	 */ 
+	private List<WalletItemsType> walletItems = new ArrayList<WalletItemsType>();
 
 	/**
 	 * Details about payer's tax info. Refer to the
@@ -208,6 +217,20 @@ public class PayerInfoType{
 	 }
 	 
 	/**
+	 * Getter for walletItems
+	 */
+	 public List<WalletItemsType> getWalletItems() {
+	 	return walletItems;
+	 }
+	 
+	/**
+	 * Setter for walletItems
+	 */
+	 public void setWalletItems(List<WalletItemsType> walletItems) {
+	 	this.walletItems = walletItems;
+	 }
+	 
+	/**
 	 * Getter for taxIdDetails
 	 */
 	 public TaxIdDetailsType getTaxIdDetails() {
@@ -276,6 +299,11 @@ public class PayerInfoType{
 		if(contactPhone != null) {
 			sb.append("<").append(preferredPrefix).append(":ContactPhone>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.contactPhone));
 			sb.append("</").append(preferredPrefix).append(":ContactPhone>");
+		}
+		if(walletItems != null) {
+			for(int i=0; i < walletItems.size(); i++) {
+				sb.append(walletItems.get(i).toXMLString(preferredPrefix,"WalletItems"));
+			}
 		}
 		if(taxIdDetails != null) {
 			sb.append(taxIdDetails.toXMLString(preferredPrefix,"TaxIdDetails"));
@@ -347,6 +375,13 @@ public class PayerInfoType{
 		    this.contactPhone = childNode.getTextContent();
 		}
 	
+        nodeList = (NodeList) xpath.evaluate("WalletItems", node, XPathConstants.NODESET);
+		if (nodeList != null && nodeList.getLength() > 0) {
+			for(int i=0; i < nodeList.getLength(); i++) {
+				Node subNode = nodeList.item(i);
+				this.walletItems.add(new WalletItemsType(subNode));
+			}
+		}
 		childNode = (Node) xpath.evaluate("TaxIdDetails", node, XPathConstants.NODE);
         if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.taxIdDetails =  new TaxIdDetailsType(childNode);

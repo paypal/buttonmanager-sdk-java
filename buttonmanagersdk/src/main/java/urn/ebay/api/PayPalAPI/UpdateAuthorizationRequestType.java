@@ -31,6 +31,12 @@ public class UpdateAuthorizationRequestType extends AbstractRequestType {
 	 */ 
 	private String iPAddress;
 
+	/**
+	 * A flag indicating that this transaction is a Ship to Store
+	 * transaction. Optional 	 
+	 */ 
+	private String shipToStore;
+
 	
 
 	/**
@@ -88,6 +94,20 @@ public class UpdateAuthorizationRequestType extends AbstractRequestType {
 	 	this.iPAddress = iPAddress;
 	 }
 	 
+	/**
+	 * Getter for shipToStore
+	 */
+	 public String getShipToStore() {
+	 	return shipToStore;
+	 }
+	 
+	/**
+	 * Setter for shipToStore
+	 */
+	 public void setShipToStore(String shipToStore) {
+	 	this.shipToStore = shipToStore;
+	 }
+	 
 
 
 	public String toXMLString(String prefix, String name) {
@@ -111,6 +131,10 @@ public class UpdateAuthorizationRequestType extends AbstractRequestType {
 		if(iPAddress != null) {
 			sb.append("<").append(preferredPrefix).append(":IPAddress>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.iPAddress));
 			sb.append("</").append(preferredPrefix).append(":IPAddress>");
+		}
+		if(shipToStore != null) {
+			sb.append("<").append(preferredPrefix).append(":ShipToStore>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.shipToStore));
+			sb.append("</").append(preferredPrefix).append(":ShipToStore>");
 		}
 		if(name!=null){
 			if(prefix!=null){

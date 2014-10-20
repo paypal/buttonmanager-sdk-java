@@ -6,7 +6,13 @@ package urn.ebay.apis.eBLBaseComponents;
  */
 public enum  PaymentCategoryType {
 
-	INTERNATIONALSHIPPING("InternationalShipping");
+	INTERNATIONALSHIPPING("InternationalShipping"),
+
+	LOCALDELIVERY("LocalDelivery"),
+
+	BOPIS("BOPIS"),
+
+	PUDO("PUDO");
 
 	private String value;
 

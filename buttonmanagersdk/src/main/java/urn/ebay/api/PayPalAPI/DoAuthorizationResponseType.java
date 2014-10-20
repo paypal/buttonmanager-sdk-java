@@ -34,8 +34,7 @@ public class DoAuthorizationResponseType extends AbstractResponseType {
 	private String transactionID;
 
 	/**
-	 * The amount and currency you specified in the request. 	  
-	 *@Required	 
+	 * The amount and currency you specified in the request. 	 
 	 */ 
 	private BasicAmountType amount;
 

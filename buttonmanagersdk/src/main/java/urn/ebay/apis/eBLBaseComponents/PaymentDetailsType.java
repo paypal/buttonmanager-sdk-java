@@ -2,6 +2,7 @@ package urn.ebay.apis.eBLBaseComponents;
 import urn.ebay.apis.CoreComponentTypes.BasicAmountType;
 import urn.ebay.apis.eBLBaseComponents.AddressType;
 import urn.ebay.apis.eBLBaseComponents.PaymentCategoryType;
+import urn.ebay.apis.eBLBaseComponents.LocationType;
 import urn.ebay.apis.eBLBaseComponents.ShippingServiceCodeType;
 import java.util.List;
 import java.util.ArrayList;
@@ -13,6 +14,8 @@ import urn.ebay.apis.eBLBaseComponents.PaymentActionCodeType;
 import urn.ebay.apis.eBLBaseComponents.OfferDetailsType;
 import urn.ebay.apis.eBLBaseComponents.RecurringFlagType;
 import urn.ebay.apis.eBLBaseComponents.PaymentReasonType;
+import urn.ebay.apis.eBLBaseComponents.DiscountInfoType;
+import urn.ebay.apis.eBLBaseComponents.MerchantDataType;
 import com.paypal.core.SDKUtil;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -160,6 +163,11 @@ public class PaymentDetailsType{
 	/**
 	 * 	 
 	 */ 
+	private LocationType locationType;
+
+	/**
+	 * 	 
+	 */ 
 	private ShippingServiceCodeType shippingMethod;
 
 	/**
@@ -273,6 +281,30 @@ public class PaymentDetailsType{
 	 * Indicates the purpose of this payment like Refund 	 
 	 */ 
 	private PaymentReasonType paymentReason;
+
+	/**
+	 * Location ID Specified by merchant Optional Character length
+	 * and limitations: 50 single-byte alphanumeric characters 	 
+	 */ 
+	private String locationID;
+
+	/**
+	 * For instance single use coupons should not be returned in
+	 * future CheckIn calls once they are redeemed. 	 
+	 */ 
+	private List<DiscountInfoType> redeemedOffers = new ArrayList<DiscountInfoType>();
+
+	/**
+	 * Total loyalty points for a given id accumulated by the
+	 * consumre so far. 	 
+	 */ 
+	private List<DiscountInfoType> cummulativePoints = new ArrayList<DiscountInfoType>();
+
+	/**
+	 * Merchant Data that is passed through from Merchant to
+	 * Processor 	 
+	 */ 
+	private List<MerchantDataType> merchantData = new ArrayList<MerchantDataType>();
 
 	
 
@@ -490,6 +522,20 @@ public class PaymentDetailsType{
 	 */
 	 public void setPaymentCategoryType(PaymentCategoryType paymentCategoryType) {
 	 	this.paymentCategoryType = paymentCategoryType;
+	 }
+	 
+	/**
+	 * Getter for locationType
+	 */
+	 public LocationType getLocationType() {
+	 	return locationType;
+	 }
+	 
+	/**
+	 * Setter for locationType
+	 */
+	 public void setLocationType(LocationType locationType) {
+	 	this.locationType = locationType;
 	 }
 	 
 	/**
@@ -758,6 +804,62 @@ public class PaymentDetailsType{
 	 	this.paymentReason = paymentReason;
 	 }
 	 
+	/**
+	 * Getter for locationID
+	 */
+	 public String getLocationID() {
+	 	return locationID;
+	 }
+	 
+	/**
+	 * Setter for locationID
+	 */
+	 public void setLocationID(String locationID) {
+	 	this.locationID = locationID;
+	 }
+	 
+	/**
+	 * Getter for redeemedOffers
+	 */
+	 public List<DiscountInfoType> getRedeemedOffers() {
+	 	return redeemedOffers;
+	 }
+	 
+	/**
+	 * Setter for redeemedOffers
+	 */
+	 public void setRedeemedOffers(List<DiscountInfoType> redeemedOffers) {
+	 	this.redeemedOffers = redeemedOffers;
+	 }
+	 
+	/**
+	 * Getter for cummulativePoints
+	 */
+	 public List<DiscountInfoType> getCummulativePoints() {
+	 	return cummulativePoints;
+	 }
+	 
+	/**
+	 * Setter for cummulativePoints
+	 */
+	 public void setCummulativePoints(List<DiscountInfoType> cummulativePoints) {
+	 	this.cummulativePoints = cummulativePoints;
+	 }
+	 
+	/**
+	 * Getter for merchantData
+	 */
+	 public List<MerchantDataType> getMerchantData() {
+	 	return merchantData;
+	 }
+	 
+	/**
+	 * Setter for merchantData
+	 */
+	 public void setMerchantData(List<MerchantDataType> merchantData) {
+	 	this.merchantData = merchantData;
+	 }
+	 
 
 
 	public String toXMLString(String prefix, String name) {
@@ -822,6 +924,10 @@ public class PaymentDetailsType{
 		if(paymentCategoryType != null) {
 			sb.append("<").append(preferredPrefix).append(":PaymentCategoryType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.paymentCategoryType.getValue()));
 			sb.append("</").append(preferredPrefix).append(":PaymentCategoryType>");
+		}
+		if(locationType != null) {
+			sb.append("<").append(preferredPrefix).append(":LocationType>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.locationType.getValue()));
+			sb.append("</").append(preferredPrefix).append(":LocationType>");
 		}
 		if(shippingMethod != null) {
 			sb.append("<").append(preferredPrefix).append(":ShippingMethod>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.shippingMethod.getValue()));
@@ -894,6 +1000,25 @@ public class PaymentDetailsType{
 		if(paymentReason != null) {
 			sb.append("<").append(preferredPrefix).append(":PaymentReason>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.paymentReason.getValue()));
 			sb.append("</").append(preferredPrefix).append(":PaymentReason>");
+		}
+		if(locationID != null) {
+			sb.append("<").append(preferredPrefix).append(":LocationID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.locationID));
+			sb.append("</").append(preferredPrefix).append(":LocationID>");
+		}
+		if(redeemedOffers != null) {
+			for(int i=0; i < redeemedOffers.size(); i++) {
+				sb.append(redeemedOffers.get(i).toXMLString(preferredPrefix,"RedeemedOffers"));
+			}
+		}
+		if(cummulativePoints != null) {
+			for(int i=0; i < cummulativePoints.size(); i++) {
+				sb.append(cummulativePoints.get(i).toXMLString(preferredPrefix,"CummulativePoints"));
+			}
+		}
+		if(merchantData != null) {
+			for(int i=0; i < merchantData.size(); i++) {
+				sb.append(merchantData.get(i).toXMLString(preferredPrefix,"MerchantData"));
+			}
 		}
 		if(name!=null){
 			if(prefix!=null){
@@ -990,6 +1115,10 @@ public class PaymentDetailsType{
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.paymentCategoryType = PaymentCategoryType.fromValue(childNode.getTextContent());
 		}
+		childNode = (Node) xpath.evaluate("LocationType", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.locationType = LocationType.fromValue(childNode.getTextContent());
+		}
 		childNode = (Node) xpath.evaluate("ShippingMethod", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.shippingMethod = ShippingServiceCodeType.fromValue(childNode.getTextContent());
@@ -1076,6 +1205,32 @@ public class PaymentDetailsType{
 		childNode = (Node) xpath.evaluate("PaymentReason", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.paymentReason = PaymentReasonType.fromValue(childNode.getTextContent());
+		}
+		childNode = (Node) xpath.evaluate("LocationID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.locationID = childNode.getTextContent();
+		}
+	
+        nodeList = (NodeList) xpath.evaluate("RedeemedOffers", node, XPathConstants.NODESET);
+		if (nodeList != null && nodeList.getLength() > 0) {
+			for(int i=0; i < nodeList.getLength(); i++) {
+				Node subNode = nodeList.item(i);
+				this.redeemedOffers.add(new DiscountInfoType(subNode));
+			}
+		}
+        nodeList = (NodeList) xpath.evaluate("CummulativePoints", node, XPathConstants.NODESET);
+		if (nodeList != null && nodeList.getLength() > 0) {
+			for(int i=0; i < nodeList.getLength(); i++) {
+				Node subNode = nodeList.item(i);
+				this.cummulativePoints.add(new DiscountInfoType(subNode));
+			}
+		}
+        nodeList = (NodeList) xpath.evaluate("MerchantData", node, XPathConstants.NODESET);
+		if (nodeList != null && nodeList.getLength() > 0) {
+			for(int i=0; i < nodeList.getLength(); i++) {
+				Node subNode = nodeList.item(i);
+				this.merchantData.add(new MerchantDataType(subNode));
+			}
 		}
 	}
  

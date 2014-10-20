@@ -65,6 +65,11 @@ public class DoReferenceTransactionRequestDetailsType{
 	/**
 	 * 	 
 	 */ 
+	private String softDescriptorCity;
+
+	/**
+	 * 	 
+	 */ 
 	private SenderDetailsType senderDetails;
 
 	/**
@@ -218,6 +223,20 @@ public class DoReferenceTransactionRequestDetailsType{
 	 }
 	 
 	/**
+	 * Getter for softDescriptorCity
+	 */
+	 public String getSoftDescriptorCity() {
+	 	return softDescriptorCity;
+	 }
+	 
+	/**
+	 * Setter for softDescriptorCity
+	 */
+	 public void setSoftDescriptorCity(String softDescriptorCity) {
+	 	this.softDescriptorCity = softDescriptorCity;
+	 }
+	 
+	/**
 	 * Getter for senderDetails
 	 */
 	 public SenderDetailsType getSenderDetails() {
@@ -290,6 +309,10 @@ public class DoReferenceTransactionRequestDetailsType{
 		if(softDescriptor != null) {
 			sb.append("<").append(preferredPrefix).append(":SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.softDescriptor));
 			sb.append("</").append(preferredPrefix).append(":SoftDescriptor>");
+		}
+		if(softDescriptorCity != null) {
+			sb.append("<").append(preferredPrefix).append(":SoftDescriptorCity>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.softDescriptorCity));
+			sb.append("</").append(preferredPrefix).append(":SoftDescriptorCity>");
 		}
 		if(senderDetails != null) {
 			sb.append(senderDetails.toXMLString(preferredPrefix,"SenderDetails"));

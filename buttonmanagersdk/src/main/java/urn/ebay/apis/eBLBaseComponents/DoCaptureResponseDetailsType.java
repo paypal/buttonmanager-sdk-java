@@ -42,6 +42,12 @@ public class DoCaptureResponseDetailsType{
 	 */ 
 	private String msgSubID;
 
+	/**
+	 * Partner funding source id corresponding to the FS used in
+	 * authorization. 	 
+	 */ 
+	private String partnerFundingSourceID;
+
 	
 
 	/**
@@ -92,6 +98,20 @@ public class DoCaptureResponseDetailsType{
 	 	this.msgSubID = msgSubID;
 	 }
 	 
+	/**
+	 * Getter for partnerFundingSourceID
+	 */
+	 public String getPartnerFundingSourceID() {
+	 	return partnerFundingSourceID;
+	 }
+	 
+	/**
+	 * Setter for partnerFundingSourceID
+	 */
+	 public void setPartnerFundingSourceID(String partnerFundingSourceID) {
+	 	this.partnerFundingSourceID = partnerFundingSourceID;
+	 }
+	 
 
 
 
@@ -123,6 +143,11 @@ public class DoCaptureResponseDetailsType{
 		childNode = (Node) xpath.evaluate("MsgSubID", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.msgSubID = childNode.getTextContent();
+		}
+	
+		childNode = (Node) xpath.evaluate("PartnerFundingSourceID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.partnerFundingSourceID = childNode.getTextContent();
 		}
 	
 	}

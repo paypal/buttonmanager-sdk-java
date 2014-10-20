@@ -43,6 +43,30 @@ public class CreateRecurringPaymentsProfileRequestDetailsType{
 	 */ 
 	private List<PaymentDetailsItemType> paymentDetailsItem = new ArrayList<PaymentDetailsItemType>();
 
+	/**
+	 * Use this optional parameter to pass in your business name
+	 * and other data describing the transaction. Optional This
+	 * information is usually displayed in the CC account holder's
+	 * statement. Example: RedCross Haiti, RedCross Uganda,
+	 * Realtor.com dues, Realtor.com list fee Length 25 characters.
+	 * Alphanumeric characters and dash(-), dot(.), asterisk(*),
+	 * space( ) On the customer's statement, an asterisk is used to
+	 * separate the DBA name and product name. The asterisk
+	 * delimiter can appear in position 4, 8, or 13. 	 
+	 */ 
+	private String softDescriptor;
+
+	/**
+	 * Use this optional parameter to pass information about how
+	 * consumer should contact the merchant. Optional This
+	 * information is usually displayed in the CC account holder's
+	 * statement. For Ecom trx: phone, email or URL is allowed For
+	 * Retail trx: only the actual city is allowed For details on
+	 * allowed characters in Soft Descriptor City refer to the API
+	 * documentation. 	 
+	 */ 
+	private String softDescriptorCity;
+
 	
 
 	/**
@@ -129,6 +153,34 @@ public class CreateRecurringPaymentsProfileRequestDetailsType{
 	 	this.paymentDetailsItem = paymentDetailsItem;
 	 }
 	 
+	/**
+	 * Getter for softDescriptor
+	 */
+	 public String getSoftDescriptor() {
+	 	return softDescriptor;
+	 }
+	 
+	/**
+	 * Setter for softDescriptor
+	 */
+	 public void setSoftDescriptor(String softDescriptor) {
+	 	this.softDescriptor = softDescriptor;
+	 }
+	 
+	/**
+	 * Getter for softDescriptorCity
+	 */
+	 public String getSoftDescriptorCity() {
+	 	return softDescriptorCity;
+	 }
+	 
+	/**
+	 * Setter for softDescriptorCity
+	 */
+	 public void setSoftDescriptorCity(String softDescriptorCity) {
+	 	this.softDescriptorCity = softDescriptorCity;
+	 }
+	 
 
 
 	public String toXMLString(String prefix, String name) {
@@ -158,6 +210,14 @@ public class CreateRecurringPaymentsProfileRequestDetailsType{
 			for(int i=0; i < paymentDetailsItem.size(); i++) {
 				sb.append(paymentDetailsItem.get(i).toXMLString(preferredPrefix,"PaymentDetailsItem"));
 			}
+		}
+		if(softDescriptor != null) {
+			sb.append("<").append(preferredPrefix).append(":SoftDescriptor>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.softDescriptor));
+			sb.append("</").append(preferredPrefix).append(":SoftDescriptor>");
+		}
+		if(softDescriptorCity != null) {
+			sb.append("<").append(preferredPrefix).append(":SoftDescriptorCity>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.softDescriptorCity));
+			sb.append("</").append(preferredPrefix).append(":SoftDescriptorCity>");
 		}
 		if(name!=null){
 			if(prefix!=null){

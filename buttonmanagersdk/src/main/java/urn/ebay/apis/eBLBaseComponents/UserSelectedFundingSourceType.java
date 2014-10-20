@@ -13,7 +13,9 @@ public enum  UserSelectedFundingSourceType {
 
 	CHINAUNIONPAY("ChinaUnionPay"),
 
-	BML("BML");
+	BML("BML"),
+
+	FINANCE("Finance");
 
 	private String value;
 

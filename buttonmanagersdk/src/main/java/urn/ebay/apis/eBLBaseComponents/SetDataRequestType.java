@@ -72,6 +72,12 @@ public class SetDataRequestType{
 	 */ 
 	private ExternalPartnerTrackingDetailsType externalPartnerTrackingDetails;
 
+	/**
+	 * URI(uniform resource identifier), the source from which the
+	 * request is initiated. 	 
+	 */ 
+	private String uRI;
+
 	
 
 	/**
@@ -192,6 +198,20 @@ public class SetDataRequestType{
 	 	this.externalPartnerTrackingDetails = externalPartnerTrackingDetails;
 	 }
 	 
+	/**
+	 * Getter for uRI
+	 */
+	 public String getURI() {
+	 	return uRI;
+	 }
+	 
+	/**
+	 * Setter for uRI
+	 */
+	 public void setURI(String uRI) {
+	 	this.uRI = uRI;
+	 }
+	 
 
 
 	public String toXMLString(String prefix, String name) {
@@ -234,6 +254,10 @@ public class SetDataRequestType{
 		}
 		if(externalPartnerTrackingDetails != null) {
 			sb.append(externalPartnerTrackingDetails.toXMLString(preferredPrefix,"ExternalPartnerTrackingDetails"));
+		}
+		if(uRI != null) {
+			sb.append("<").append(preferredPrefix).append(":URI>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.uRI));
+			sb.append("</").append(preferredPrefix).append(":URI>");
 		}
 		if(name!=null){
 			if(prefix!=null){

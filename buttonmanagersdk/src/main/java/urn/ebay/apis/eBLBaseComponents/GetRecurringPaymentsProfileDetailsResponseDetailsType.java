@@ -116,6 +116,30 @@ public class GetRecurringPaymentsProfileDetailsResponseDetailsType{
 	 */ 
 	private String finalPaymentDueDate;
 
+	/**
+	 * Use this optional parameter to pass in your business name
+	 * and other data describing the transaction. Optional This
+	 * information is usually displayed in the account holder's
+	 * statement. Example: RedCross Haiti, RedCross Uganda,
+	 * Realtor.com dues, Realtor.com list fee Length 25 characters.
+	 * Alphanumeric characters and dash(-), dot(.), asterisk(*),
+	 * space( ) On the customer's statement, an asterisk is used to
+	 * separate the DBA name and product name. The asterisk
+	 * delimiter can appear in position 4, 8, or 13. 	 
+	 */ 
+	private String softDescriptor;
+
+	/**
+	 * Use this optional parameter to pass information about how
+	 * consumer should contact the merchant. Optional This
+	 * information is usually displayed in the account holder's
+	 * statement. For Ecom trx: phone, email or URL is allowed For
+	 * Retail trx: only the actual city is allowed For details on
+	 * allowed characters in Soft Descriptor City refer to the API
+	 * documentation. 	 
+	 */ 
+	private String softDescriptorCity;
+
 	
 
 	/**
@@ -348,6 +372,34 @@ public class GetRecurringPaymentsProfileDetailsResponseDetailsType{
 	 	this.finalPaymentDueDate = finalPaymentDueDate;
 	 }
 	 
+	/**
+	 * Getter for softDescriptor
+	 */
+	 public String getSoftDescriptor() {
+	 	return softDescriptor;
+	 }
+	 
+	/**
+	 * Setter for softDescriptor
+	 */
+	 public void setSoftDescriptor(String softDescriptor) {
+	 	this.softDescriptor = softDescriptor;
+	 }
+	 
+	/**
+	 * Getter for softDescriptorCity
+	 */
+	 public String getSoftDescriptorCity() {
+	 	return softDescriptorCity;
+	 }
+	 
+	/**
+	 * Setter for softDescriptorCity
+	 */
+	 public void setSoftDescriptorCity(String softDescriptorCity) {
+	 	this.softDescriptorCity = softDescriptorCity;
+	 }
+	 
 
 
 
@@ -433,6 +485,16 @@ public class GetRecurringPaymentsProfileDetailsResponseDetailsType{
 		childNode = (Node) xpath.evaluate("FinalPaymentDueDate", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.finalPaymentDueDate = childNode.getTextContent();
+		}
+	
+		childNode = (Node) xpath.evaluate("SoftDescriptor", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.softDescriptor = childNode.getTextContent();
+		}
+	
+		childNode = (Node) xpath.evaluate("SoftDescriptorCity", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.softDescriptorCity = childNode.getTextContent();
 		}
 	
 	}

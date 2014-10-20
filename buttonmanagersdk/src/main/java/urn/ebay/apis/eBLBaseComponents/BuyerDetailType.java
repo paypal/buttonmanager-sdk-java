@@ -19,6 +19,12 @@ public class BuyerDetailType{
 	 */ 
 	private IdentificationInfoType identificationInfo;
 
+	/**
+	 * Correlation id related to risk process done for the device.
+	 * Max length is 36 Chars.	 
+	 */ 
+	private String riskSessionCorrelationID;
+
 	
 
 	/**
@@ -41,6 +47,20 @@ public class BuyerDetailType{
 	 	this.identificationInfo = identificationInfo;
 	 }
 	 
+	/**
+	 * Getter for riskSessionCorrelationID
+	 */
+	 public String getRiskSessionCorrelationID() {
+	 	return riskSessionCorrelationID;
+	 }
+	 
+	/**
+	 * Setter for riskSessionCorrelationID
+	 */
+	 public void setRiskSessionCorrelationID(String riskSessionCorrelationID) {
+	 	this.riskSessionCorrelationID = riskSessionCorrelationID;
+	 }
+	 
 
 
 	public String toXMLString(String prefix, String name) {
@@ -55,6 +75,10 @@ public class BuyerDetailType{
 		}
 		if(identificationInfo != null) {
 			sb.append(identificationInfo.toXMLString(preferredPrefix,"IdentificationInfo"));
+		}
+		if(riskSessionCorrelationID != null) {
+			sb.append("<").append(preferredPrefix).append(":RiskSessionCorrelationID>").append(SDKUtil.escapeInvalidXmlCharsRegex(this.riskSessionCorrelationID));
+			sb.append("</").append(preferredPrefix).append(":RiskSessionCorrelationID>");
 		}
 		if(name!=null){
 			if(prefix!=null){

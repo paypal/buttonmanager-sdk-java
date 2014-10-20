@@ -61,6 +61,11 @@ public class DoExpressCheckoutPaymentResponseDetailsType{
 	private String note;
 
 	/**
+	 * Unique id passed in the DoEC call. 	 
+	 */ 
+	private String msgSubID;
+
+	/**
 	 * Redirect back to PayPal, PayPal can host the success page. 	 
 	 */ 
 	private String successPageRedirectRequested;
@@ -154,6 +159,20 @@ public class DoExpressCheckoutPaymentResponseDetailsType{
 	 }
 	 
 	/**
+	 * Getter for msgSubID
+	 */
+	 public String getMsgSubID() {
+	 	return msgSubID;
+	 }
+	 
+	/**
+	 * Setter for msgSubID
+	 */
+	 public void setMsgSubID(String msgSubID) {
+	 	this.msgSubID = msgSubID;
+	 }
+	 
+	/**
 	 * Getter for successPageRedirectRequested
 	 */
 	 public String getSuccessPageRedirectRequested() {
@@ -239,6 +258,11 @@ public class DoExpressCheckoutPaymentResponseDetailsType{
 		childNode = (Node) xpath.evaluate("Note", node, XPathConstants.NODE);
 		if (childNode != null && !isWhitespaceNode(childNode)) {
 		    this.note = childNode.getTextContent();
+		}
+	
+		childNode = (Node) xpath.evaluate("MsgSubID", node, XPathConstants.NODE);
+		if (childNode != null && !isWhitespaceNode(childNode)) {
+		    this.msgSubID = childNode.getTextContent();
 		}
 	
 		childNode = (Node) xpath.evaluate("SuccessPageRedirectRequested", node, XPathConstants.NODE);

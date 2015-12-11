@@ -1,3 +1,9 @@
+Version 2.7.106
+
+	- Updated core version.
+	
+You can see source code of this release in github under https://github.com/paypal/buttonmanager-sdk-java/tree/v2.7.106.
+--------------------------------------------------------------------------------------------------
 Version 2.6.106 - October 17, 2014
 
 	- Updated core version.

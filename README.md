@@ -121,5 +121,5 @@ one for each service used, The existing service.EndPoint property is still suppo
 a single SDK). The list below specifies endpoints for different services, in SANDBOX and PRODUCTION, with their 
 property keys and end-point as property values.
 
-For additional information on ButtonManager API, please refer to https://www.x.com/developers/paypal/documentation-tools/api
+For additional information on ButtonManager API, please refer to [the Button Manager API docs](https://developer.paypal.com/docs/classic/button-manager/integration-guide/NVP/ButtonMgrAPI/).
 

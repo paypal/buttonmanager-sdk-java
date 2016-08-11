@@ -24,7 +24,7 @@ public class IPNListenerServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// For a full list of configuration parameters refer in wiki page. 
-		// (https://github.com/paypal/sdk-core-java/wiki/SDK-Configuration-Parameters)
+		// (https://github.com/paypal/sdk-core-java/blob/master/README.md)
 		Map<String,String> mode =  Configuration.getConfig();
 		IPNMessage 	ipnlistener = new IPNMessage(request,mode);
 		boolean isIpnVerified = ipnlistener.validate();
